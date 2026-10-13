@@ -715,6 +715,37 @@
     font-family: "Tenor Sans", sans-serif !important;
   }
 
+  /* Hero Slider: Side arrows removed */
+  .slideshow-section slideshow-arrows,
+  slideshow-component slideshow-arrows,
+  slideshow-arrows {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Hero Slider: Label and Title in Instrument Serif (font-weight: 400) */
+  .slideshow-section slideshow-slide .group-block:first-child :is(p, span, em, strong),
+  slideshow-component slideshow-slide .group-block:first-child :is(p, span, em, strong) {
+    font-family: "Instrument Serif", serif !important;
+    font-weight: 400 !important;
+  }
+
+  .slideshow-section slideshow-slide .group-block:first-child :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3),
+  slideshow-component slideshow-slide .group-block:first-child :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3),
+  .slideshow-section slideshow-slide .group-block:first-child :is(h1, h2, h3, h4, h5, h6) :is(span, a, strong, em, b),
+  slideshow-component slideshow-slide .group-block:first-child :is(h1, h2, h3, h4, h5, h6) :is(span, a, strong, em, b) {
+    font-family: "Instrument Serif", serif !important;
+    font-weight: 400 !important;
+  }
+
+  /* Hero Slider: Description on bottom right in Outfit */
+  .slideshow-section slideshow-slide .group-block:last-child :is(p, span, em, strong),
+  slideshow-component slideshow-slide .group-block:last-child :is(p, span, em, strong) {
+    font-family: "Outfit", sans-serif !important;
+    font-weight: 400 !important;
+  }
+
   /* Header, Announcement Bar, and Navigation Menu: Outfit */
   header,
   header *,

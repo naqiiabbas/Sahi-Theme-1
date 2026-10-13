@@ -11,6 +11,10 @@
       assign preview_image = block_settings.video_1.preview_image
     endif
 
+    assign slide_num = block_index | modulo: 3 | plus: 1
+    assign default_asset = 'hero-slide-' | append: slide_num | append: '.jpg'
+    assign slide_asset = block_settings.image_asset | default: default_asset
+
     assign rounded_image_corners = false
     if block_settings.background_color == blank or section.settings.background_color == block_settings.background_color
       assign rounded_image_corners = true
@@ -39,9 +43,6 @@
   {% endif %}
 
   <div class="slide__image-container{% if rounded_image_corners %} slide__image-container--rounded{% endif %}">
-    {%- if block_settings.toggle_overlay -%}
-      {% render 'overlay', settings: block_settings %}
-    {%- endif -%}
     {%- if preview_image -%}
       {%- liquid
         assign height = preview_image.width | divided_by: preview_image.aspect_ratio | round
@@ -93,6 +94,16 @@
           | video_tag: poster: nil, autoplay: true, loop: true, controls: false, muted: true, class: 'slide__video'
         }}
       {%- endif -%}
+    {%- elsif slide_asset != blank -%}
+      <img
+        src="{{ slide_asset | asset_url }}"
+        alt="{{ shop.name | default: 'Sahi' }}"
+        class="slide__image"
+        loading="{% if block_index == 0 %}eager{% else %}lazy{% endif %}"
+        fetchpriority="{% if block_index == 0 %}high{% else %}low{% endif %}"
+        width="3168"
+        height="1344"
+      >
     {%- else -%}
       {%- liquid
         assign modulo_result = block_index | modulo: 2
@@ -101,9 +112,12 @@
       -%}
       {{ placeholder_name | placeholder_svg_tag: 'slide__image' }}
     {%- endif -%}
+    {%- if block_settings.toggle_overlay -%}
+      {% render 'overlay', settings: block_settings, layer: '1' %}
+    {%- endif -%}
   </div>
   <div
-    class="spacing-style slide__content {{ class }}{% if preview_image or block_settings.toggle_overlay %} background-transparent{% endif %}"
+    class="spacing-style slide__content {{ class }}{% if preview_image or block_settings.toggle_overlay or slide_asset != blank %} background-transparent{% endif %}"
     style="{% render 'spacing-style', settings: block_settings %}"
     {{ block.shopify_attributes }}
   >
@@ -131,8 +145,16 @@
 {% stylesheet %}
   .slide__content {
     height: 100%;
+    width: 100%;
     position: relative;
-    z-index: var(--layer-flat);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding-block-end: calc(var(--padding-lg, 48px) + 16px);
+    padding-inline: calc(var(--page-margin, 24px) + 32px);
 
     @supports (animation-timeline: auto) {
       opacity: 0;
@@ -146,12 +168,131 @@
     }
   }
 
-  .slide__content > * {
-    margin: auto;
-  }
-
   .slide__content.background-transparent {
     background-color: transparent;
+  }
+
+  /* Full-width bottom split layout across the slide */
+  .slide__content > .group-block-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2.5rem;
+  }
+
+  /* Bottom Left Group: Label & Title in Instrument Serif, font-weight 400 */
+  slideshow-slide .group-block:first-child,
+  .slide__content > .group-block-content > .group-block:first-child {
+    max-width: min(100%, 52rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+  }
+
+  slideshow-slide .group-block:first-child p,
+  .slide__content .group-block:first-child .text-block:first-child p {
+    font-family: "Instrument Serif", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem) !important;
+    letter-spacing: 0.04em !important;
+    color: #D6AA5A !important;
+    margin: 0 0 0.25rem 0 !important;
+    line-height: 1.2 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  slideshow-slide .group-block:first-child :is(h1, h2, h3),
+  .slide__content .group-block:first-child .text-block:last-child :is(h1, h2, h3) {
+    font-family: "Instrument Serif", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: clamp(2.75rem, 4.8vw, 4.85rem) !important;
+    line-height: 1.05 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Bottom Right Group: Description in Outfit font */
+  slideshow-slide .group-block:last-child,
+  .slide__content > .group-block-content > .group-block:last-child {
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+    flex: 0 1 auto;
+  }
+
+  slideshow-slide .group-block:last-child p,
+  .slide__content .group-block:last-child .text-block p {
+    font-family: "Outfit", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: clamp(0.95rem, 1.15vw, 1.15rem) !important;
+    line-height: 1.65 !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    margin: 0 !important;
+    text-align: right;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Hide side arrows */
+  slideshow-arrows {
+    display: none !important;
+  }
+
+  /* Responsive layout for tablets & mobile */
+  @media screen and (max-width: 900px) {
+    .slide__content {
+      padding-inline: var(--page-margin, 20px) !important;
+      padding-block-end: calc(var(--padding-lg, 48px) + 20px) !important;
+    }
+
+    .slide__content > .group-block-content {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-end !important;
+      gap: 1rem !important;
+    }
+
+    slideshow-slide .group-block:first-child,
+    slideshow-slide .group-block:last-child,
+    .slide__content > .group-block-content > .group-block:first-child,
+    .slide__content > .group-block-content > .group-block:last-child {
+      max-width: 100% !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    slideshow-slide .group-block:last-child p,
+    .slide__content .group-block:last-child .text-block p {
+      text-align: left !important;
+      max-width: 100% !important;
+    }
+
+    slideshow-slide .group-block:first-child :is(h1, h2, h3) {
+      font-size: clamp(2.2rem, 6vw, 3.25rem) !important;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .slide__content > .group-block-content {
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
   }
 
   slideshow-slide > .slide__image-container {
@@ -160,6 +301,7 @@
     height: 100%;
     overflow: hidden;
     position: absolute;
+    inset: 0;
   }
 
   .slide__image-container > .slide__image,
@@ -170,6 +312,11 @@
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    z-index: 0;
+  }
+
+  .slide__image-container > .overlay {
+    z-index: 1;
   }
 
   .slide__image-container > .slide__video-poster {
@@ -246,6 +393,12 @@
       "id": "image_1",
       "label": "t:settings.image",
       "visible_if": "{{ block.settings.media_type_1 == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Asset image file",
+      "info": "Filename in assets folder, e.g. hero-slide-1.jpg"
     },
     {
       "type": "video",
