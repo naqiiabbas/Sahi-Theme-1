@@ -170,11 +170,13 @@
 
   .header-logo__image {
     object-fit: contain;
-    height: var(--header-logo-image-height-mobile);
+    max-width: 100%;
+    height: auto;
+    max-height: var(--header-logo-image-height-mobile);
     width: var(--header-logo-image-width-mobile);
 
     @media screen and (min-width: 750px) {
-      height: var(--header-logo-image-height);
+      max-height: var(--header-logo-image-height);
       width: var(--header-logo-image-width);
     }
   }

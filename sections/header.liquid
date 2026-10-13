@@ -920,6 +920,9 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
       }
 
       &:not(:has(header-actions)) .search-action {
@@ -932,6 +935,9 @@
 
       .search-action {
         grid-area: leftB;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .header__icon--menu {
@@ -940,7 +946,10 @@
       }
 
       header-actions {
-        grid-area: rightB;
+        grid-area: rightA / rightA / rightB / rightB;
+        grid-column: 4 / 6;
+        display: flex;
+        align-items: center;
         justify-content: flex-end;
       }
     }
@@ -962,8 +971,22 @@
        --page-margin already includes the larger safe-area inset at this breakpoint. */
     padding-inline: var(--page-margin);
 
+    .header__drawer {
+      grid-area: leftA;
+      display: flex !important;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
     .header-logo {
       grid-area: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     &:not(:has(header-actions)) .search-action {
@@ -976,6 +999,9 @@
 
     .search-action {
       grid-area: leftB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* Pin glyphs to the content edge of the 44px bookend; keep the full tap target */
@@ -985,7 +1011,10 @@
     }
 
     header-actions {
-      grid-area: rightB;
+      grid-area: rightA / rightA / rightB / rightB;
+      grid-column: 4 / 6;
+      display: flex;
+      align-items: center;
       justify-content: flex-end;
     }
   }

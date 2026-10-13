@@ -10,6 +10,8 @@ body {
   margin: 0;
   min-height: 100svh;
   font-variation-settings: 'slnt' 0;
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 :root {
@@ -23,6 +25,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--color-foreground-rgb) / var(--opacity-40)) var(--color-background);
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (min-width: 990px) {
@@ -50,6 +53,8 @@ html[scroll-lock] {
   flex-direction: column;
   min-height: 100dvh;
   transition: margin-inline-end var(--animation-speed) var(--animation-timing-fade-out);
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 @media (min-width: 990px) {
@@ -88,6 +93,22 @@ svg {
 img {
   width: 100%;
   height: auto;
+}
+
+pre,
+code,
+table {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
 }
 
 input,

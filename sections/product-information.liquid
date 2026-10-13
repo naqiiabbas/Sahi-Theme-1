@@ -191,8 +191,8 @@
     opacity: 0;
     transform: translateX(-50%) translateY(calc(100% + 40px));
     z-index: calc(var(--layer-sticky) - 1); /* Below sticky header */
-    display: block;
-    width: 600px;
+    width: min(600px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
     border-radius: calc(
       var(--style-border-radius-buttons-primary) + min(var(--padding-sm), var(--style-border-radius-buttons-primary))
     );
