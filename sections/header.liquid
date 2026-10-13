@@ -516,7 +516,7 @@
     display: none;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 990px) {
     #header-component[data-menu-style='menu'] :is(.header-menu, .dropdown-localization) {
       display: flex;
     }
@@ -526,7 +526,7 @@
     display: contents;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 990px) {
     #header-component[data-menu-style='menu'] .header__navigation-bar-row {
       display: none;
     }
@@ -809,8 +809,8 @@
     display: flex;
     align-items: center;
 
-    /* on mobile, header__column nodes are ignored to create a new grid-template-area based on all visible content */
-    @media screen and (max-width: 749px) {
+    /* on mobile and tablet, header__column nodes are ignored to create a new grid-template-area based on all visible content */
+    @media screen and (max-width: 989px) {
       display: contents;
     }
   }
@@ -893,7 +893,7 @@
       }
     }
 
-    @media screen and (max-width: 749px) {
+    @media screen and (max-width: 989px) {
       --header-template-columns: var(--header-mobile-bookend) var(--header-mobile-bookend) 1fr
         var(--header-mobile-bookend) var(--header-mobile-bookend);
 
@@ -907,8 +907,19 @@
          --page-margin already includes the larger safe-area inset at this breakpoint. */
       padding-inline: var(--page-margin);
 
+      .header__drawer {
+        grid-area: leftA;
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
       .header-logo {
         grid-area: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
       }
 
       &:not(:has(header-actions)) .search-action {
@@ -1009,25 +1020,123 @@
 
   /* Header action button styles */
   .header-actions__action {
-    --button-color: var(--color-foreground);
+    --button-color: var(--color-foreground, #D6AA5A);
     color: var(--button-color);
     cursor: pointer;
     display: flex;
+    align-items: center;
     justify-content: center;
+    transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
     &:hover {
-      --button-color: var(--color-foreground);
+      --button-color: #ffffff;
+      color: #ffffff !important;
     }
   }
 
-  .header-actions__action:not(.account-button) .svg-wrapper {
+  .header-actions__action .svg-wrapper,
+  .search-action .svg-wrapper,
+  .account-button .svg-wrapper,
+  .header-actions__cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: var(--button-size);
     width: var(--button-size);
   }
 
-  .header-actions__action:not(.account-button) svg {
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
+  /* Header icons: Google Material Symbols 26px with smooth hover */
+  .header-actions__action svg,
+  .search-action svg,
+  .account-button svg,
+  .header-actions__cart-icon svg,
+  .header__icon--menu svg {
+    width: 26px !important;
+    height: 26px !important;
+    fill: currentColor !important;
+    stroke: none !important;
+    color: inherit;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), fill 0.25s ease, color 0.25s ease, filter 0.25s ease;
+    transform-origin: center center;
+  }
+
+  .account-button,
+  .header-actions__action,
+  .search-action button {
+    color: #D6AA5A !important;
+    transition: color 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* Icon hover interactions */
+  .account-button:hover,
+  .search-action button:hover,
+  .header-actions__action:hover,
+  .header__icon--menu:hover {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  .account-button:hover svg,
+  .search-action button:hover svg,
+  .header-actions__action:hover svg,
+  .header__icon--menu:hover svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    transform: scale(1.14);
+    filter: drop-shadow(0 0 6px rgba(214, 170, 90, 0.4));
+  }
+
+  /* Menu items color and hover effects */
+  .header-menu .menu-list__link,
+  .header-menu .menu-list__link-title,
+  .header-menu .menu-list__item,
+  .header__row--bottom .menu-list__link {
+    color: #D6AA5A !important;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .header-menu .menu-list__link:hover,
+  .header-menu .menu-list__link-title:hover,
+  .header__row--bottom .menu-list__link:hover {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 8px rgba(214, 170, 90, 0.3);
+  }
+
+  /* Mobile and Tablet side drawer menu styling */
+  .menu-drawer {
+    background-color: #2C130C !important;
+    border-inline-end: 1px solid rgba(214, 170, 90, 0.2) !important;
+  }
+
+  .menu-drawer__menu-item,
+  .menu-drawer__menu-item-text,
+  .menu-drawer__title,
+  .menu-drawer accordion-custom summary {
+    color: #D6AA5A !important;
+    font-family: "Outfit", sans-serif !important;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menu-drawer__menu-item:hover,
+  .menu-drawer__menu-item:hover .menu-drawer__menu-item-text,
+  .menu-drawer__title:hover,
+  .menu-drawer accordion-custom summary:hover {
+    color: #ffffff !important;
+  }
+
+  .menu-drawer .close-button,
+  .menu-drawer .close-button svg {
+    color: #D6AA5A !important;
+    stroke: #D6AA5A !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .menu-drawer .close-button:hover,
+  .menu-drawer .close-button:hover svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    transform: scale(1.1);
   }
 
   .header:has(#Details-menu-drawer-container[open]) {
@@ -1047,13 +1156,47 @@
     --header-padding: var(--padding-xs);
   }
 
+  .header__row--bottom .header__columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header__row--bottom .header__column--center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Spacing between logo and bottom menu */
+  .header-logo {
+    margin-block-end: 4px;
+  }
+
   .header--collapse-row-paddings {
     .header__row--top .header__columns {
-      --padding-block-end: 0px;
+      --padding-block-end: 6px;
     }
 
     .header__row--bottom .header__columns {
-      --padding-block-start: 0px;
+      --padding-block-start: 6px;
+      --padding-block-end: 14px;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .header__row--bottom {
+      display: none !important;
+    }
+
+    .header__drawer {
+      display: flex !important;
+    }
+
+    .header-logo {
+      margin-block-end: 0;
     }
   }
 

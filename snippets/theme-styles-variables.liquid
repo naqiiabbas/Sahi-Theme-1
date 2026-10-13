@@ -160,18 +160,18 @@
     --letter-spacing-sm: 0.06em;
 
     /* Font families */
-    --font-body--family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-    --font-body--style: {{ settings.type_body_font.style }};
-    --font-body--weight: {{ settings.type_body_font.weight }};
-    --font-subheading--family: {{ settings.type_subheading_font.family }}, {{ settings.type_subheading_font.fallback_families }};
-    --font-subheading--style: {{ settings.type_subheading_font.style }};
-    --font-subheading--weight: {{ settings.type_subheading_font.weight }};
-    --font-heading--family: {{ settings.type_heading_font.family }}, {{ settings.type_heading_font.fallback_families }};
-    --font-heading--style: {{ settings.type_heading_font.style }};
-    --font-heading--weight: {{ settings.type_heading_font.weight }};
-    --font-accent--family: {{ settings.type_accent_font.family }}, {{ settings.type_accent_font.fallback_families }};
-    --font-accent--style: {{ settings.type_accent_font.style }};
-    --font-accent--weight: {{ settings.type_accent_font.weight }};
+    --font-body--family: "Outfit", sans-serif;
+    --font-body--style: normal;
+    --font-body--weight: 400;
+    --font-subheading--family: "Outfit", sans-serif;
+    --font-subheading--style: normal;
+    --font-subheading--weight: 500;
+    --font-heading--family: "Tenor Sans", sans-serif;
+    --font-heading--style: normal;
+    --font-heading--weight: 400;
+    --font-accent--family: "Tenor Sans", sans-serif;
+    --font-accent--style: normal;
+    --font-accent--weight: 400;
 
     /* Margin sizes */
     --font-heading--spacing: 0.25em;
@@ -566,8 +566,8 @@
     --button-padding-block: 16px;
 
     /* Button font-family */
-    --button-font-family-primary: var(--font-{{ settings.type_font_button_primary }}--family);
-    --button-font-family-secondary: var(--font-{{ settings.type_font_button_secondary }}--family);
+    --button-font-family-primary: "Outfit", sans-serif;
+    --button-font-family-secondary: "Outfit", sans-serif;
 
     /* Button text case */
     --button-text-case-primary: {{ settings.button_text_case_primary }};
@@ -653,6 +653,152 @@
   .custom-color-quick-add {
     --quick-add-background: {{ settings.quick_add_background }};
     --quick-add-foreground: {{ settings.quick_add_text }};
+  }
+
+  /* ==========================================================================
+     GLOBAL TYPOGRAPHY RULES:
+     - Section Headings: "Tenor Sans", sans-serif
+     - Header, Announcement Bar, Menu, Text, Buttons, Product Titles, Paragraphs: "Outfit", sans-serif
+     ========================================================================== */
+
+  /* Global Base & Body Typography: Outfit */
+  html,
+  body,
+  p,
+  .paragraph,
+  .paragraph > *,
+  .text-block.paragraph,
+  .text-block.paragraph > *,
+  .rte,
+  .rte *,
+  input,
+  textarea,
+  select,
+  label {
+    font-family: "Outfit", sans-serif !important;
+  }
+
+  /* General inline text elements default to Outfit */
+  span,
+  li,
+  b,
+  strong,
+  em,
+  small,
+  sub,
+  sup {
+    font-family: "Outfit", sans-serif;
+  }
+
+  /* Section Headings everywhere: Tenor Sans */
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .section h1, .section h2, .section h3, .section h4, .section h5, .section h6,
+  .section :is(h1, h2, h3, h4, h5, h6),
+  .section-title,
+  .section__title,
+  .section-heading,
+  .section__heading,
+  .section-header,
+  .section__header,
+  .collection__title,
+  .collection-title,
+  .banner__heading,
+  .slideshow__heading,
+  .rich-text__heading,
+  [class*='heading']:not([class*='product']):not([class*='account']) {
+    font-family: "Tenor Sans", sans-serif !important;
+  }
+
+  /* Keep nested elements inside section headings in Tenor Sans */
+  :is(h1, h2, h3, h4, h5, h6, .section-title, .section__title, .section-heading, .collection__title, .banner__heading, .slideshow__heading, .rich-text__heading) :is(span, a, strong, em, b) {
+    font-family: "Tenor Sans", sans-serif !important;
+  }
+
+  /* Header, Announcement Bar, and Navigation Menu: Outfit */
+  header,
+  header *,
+  .header,
+  .header *,
+  #header-component,
+  #header-component *,
+  .header__row,
+  .header__row *,
+  .header-section,
+  .header-section *,
+  .header-menu,
+  .header-menu *,
+  .menu-list,
+  .menu-list *,
+  .menu-list__link,
+  .menu-list__item,
+  .overflow-menu,
+  .overflow-menu *,
+  .overflow-menu::part(list),
+  .header-actions,
+  .header-actions *,
+  .header-actions__action,
+  .account-button,
+  .search-action,
+  .announcement-bar,
+  .announcement-bar *,
+  announcement-bar-component,
+  announcement-bar-component * {
+    font-family: "Outfit", sans-serif !important;
+  }
+
+  /* Buttons: Outfit */
+  button,
+  button *,
+  .button,
+  .button *,
+  .button-secondary,
+  .button-secondary *,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .quick-add__button,
+  .shopify-payment-button__button,
+  .cart-drawer__checkout-button {
+    font-family: "Outfit", sans-serif !important;
+  }
+
+  /* Product Titles (Product Page, Product Cards, Cart, Quick Add, Sticky ATC): Outfit */
+  product-title,
+  product-title *,
+  .product-title,
+  .product-title *,
+  .product__title,
+  .product__title *,
+  [data-testid="product-title"],
+  [data-testid="product-title"] *,
+  [data-testid="sticky-product-title"],
+  .sticky-add-to-cart__title,
+  .product-details h1,
+  .product-details h1 *,
+  .product-details .h1,
+  .product-information h1,
+  .product-information h1 *,
+  .featured-product h1,
+  .featured-product h1 *,
+  .featured-product-information h1,
+  .featured-product-information h1 *,
+  .product-card [role="heading"],
+  .product-card [role="heading"] *,
+  .product-card :is(h1, h2, h3, h4, h5, h6, p, a, span),
+  .product-card__link,
+  .product-card__link *,
+  .product-grid__card :is(h1, h2, h3, h4, h5, h6, p, a, span),
+  [ref="productTitleLink"],
+  [ref="productTitleLink"] *,
+  .view-product-title,
+  .view-product-title *,
+  .cart-items__title,
+  .cart-items__title *,
+  .hotspot-dialog__product-title,
+  .quick-add-modal__content .view-product-title,
+  .quick-add-modal__content .view-product-title * {
+    font-family: "Outfit", sans-serif !important;
   }
 {% endstyle %}
 

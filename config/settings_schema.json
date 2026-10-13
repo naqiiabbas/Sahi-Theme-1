@@ -31,7 +31,7 @@
         "label": "t:settings.desktop_height",
         "min": 12,
         "max": 200,
-        "step": 1,
+        "step": 2,
         "unit": "px",
         "default": 96,
         "info": "t:info.logo_height"
@@ -42,7 +42,7 @@
         "label": "t:settings.mobile_height",
         "min": 12,
         "max": 150,
-        "step": 1,
+        "step": 2,
         "unit": "px",
         "default": 52,
         "info": "t:info.logo_height"

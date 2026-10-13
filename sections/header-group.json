@@ -34,10 +34,10 @@
       "settings": {
         "speed": 5,
         "section_width": "full-width",
-        "background_color": "{{ settings.color_palette.color3 }}",
+        "background_color": "#FCEFDF",
         "divider_width": 0,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 12,
+        "padding-block-end": 12
       }
     },
     "header_section": {
@@ -48,8 +48,8 @@
           "static": true,
           "settings": {
             "hide_logo_on_home_page": false,
-            "padding-block-start": 0,
-            "padding-block-end": 0
+            "padding-block-start": 6,
+            "padding-block-end": 6
           },
           "blocks": {}
         },
@@ -59,7 +59,7 @@
           "settings": {
             "menu": "main-menu",
             "background_color": "#2C130C",
-            "text_color": "#ffffff",
+            "text_color": "#D6AA5A",
             "type_font_primary_size": "0.875rem",
             "menu_font_style": "inverse",
             "type_font_primary_link": "body",
@@ -103,12 +103,12 @@
         "actions_font": "body",
         "actions_text_case": "none",
         "background_color_top": "#2C130C",
-        "text_color_top": "#ffffff",
+        "text_color_top": "#D6AA5A",
         "background_color_bottom": "#2C130C",
-        "text_color_bottom": "#ffffff",
-        "text_color_transparent_home": "#ffffff",
+        "text_color_bottom": "#D6AA5A",
+        "text_color_transparent_home": "#D6AA5A",
         "bubble_style": "custom",
-        "bubble_background_color": "#D4AF37",
+        "bubble_background_color": "#D6AA5A",
         "bubble_text_color": "#2C130C",
         "enable_transparent_header_home": false,
         "home_inverse_logo": false,
@@ -120,7 +120,7 @@
     }
   },
   "order": [
-    "header_announcements_WbCTVz",
-    "header_section"
+    "header_section",
+    "header_announcements_WbCTVz"
   ]
 }
