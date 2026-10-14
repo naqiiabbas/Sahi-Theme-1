@@ -17,35 +17,68 @@
         "announcement_mxxhta": {
           "type": "_announcement",
           "settings": {
-            "text": "Uplevel your office with new decor",
+            "text": "Flat 200/- Delivery charges all over Pakistan",
             "link": "shopify://collections/all",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
-            "letter_spacing": "normal",
-            "case": "none"
+            "weight": "",
+            "letter_spacing": "tight",
+            "case": "none",
+            "text_color": ""
+          },
+          "blocks": {}
+        },
+        "announcement_NNAHyT": {
+          "type": "_announcement",
+          "settings": {
+            "text": "10% Off on Nut Butters avail now!",
+            "link": "shopify://collections/all",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "tight",
+            "case": "none",
+            "text_color": ""
           },
           "blocks": {}
         },
         "announcement-social-links": {
           "type": "social-links",
           "static": true,
-          "settings": {},
+          "settings": {
+            "icon_color": "",
+            "facebook_url": "https://www.facebook.com/share/1Cdyof9Xn5/",
+            "instagram_url": "https://instagram.com/sahifoods.co",
+            "youtube_url": "",
+            "tiktok_url": "https://www.tiktok.com/@sahifoods.co",
+            "twitter_url": "",
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
+          },
           "blocks": {}
         }
       },
       "block_order": [
-        "announcement_mxxhta"
+        "announcement_mxxhta",
+        "announcement_NNAHyT"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
-        "speed": 5,
+        "speed": 3,
         "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
-        "divider_width": 0,
-        "padding-block-start": 12,
-        "padding-block-end": 12,
         "show_social_links": true,
-        "text_color": "{{ settings.color_palette.color2 }}"
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color2 }}",
+        "divider_width": 0,
+        "divider_color": "",
+        "padding-block-start": 12,
+        "padding-block-end": 12
       }
     },
     "header_section": {
@@ -78,6 +111,7 @@
             "image_border_radius": 0,
             "navigation_bar": false,
             "background_color_navigation_bar": "{{ settings.color_palette.color1 }}",
+            "text_color_navigation_bar": "",
             "drawer_accordion": false,
             "drawer_accordion_expand_first": false,
             "drawer_dividers": false
@@ -89,8 +123,14 @@
         "logo_position": "center",
         "menu_position": "center",
         "menu_row": "bottom",
+        "menu-row-padding-block-start": 15,
+        "menu-row-padding-block-end": 15,
         "customer_account_menu": "customer-account-main-menu",
         "show_search": true,
+        "search_style": "bar",
+        "search_placeholder": "Search for...",
+        "search_bar_width": 400,
+        "search_results_limit": 6,
         "search_position": "left",
         "search_row": "top",
         "show_country": false,
@@ -102,36 +142,35 @@
         "localization_row": "top",
         "section_width": "page-width",
         "section_height": "compact",
-        "menu-row-padding-block-start": 15,
-        "menu-row-padding-block-end": 15,
         "enable_sticky_header": "scroll-up",
         "divider_width": 1,
-        "divider_color": "{{ settings.color_palette.color3 }}",
         "divider_size": "page-width",
+        "divider_color": "{{ settings.color_palette.color3 }}",
         "border_width": 0,
+        "bottom_border_color": "",
         "actions_display_style": "button",
+        "show_cart_total": true,
+        "show_account_label": false,
         "actions_font_size": "1rem",
         "actions_font": "body",
         "actions_text_case": "none",
         "background_color_top": "{{ settings.color_palette.color1 }}",
         "text_color_top": "{{ settings.color_palette.color3 }}",
+        "text_hover_color": "{{ settings.color_palette.background }}",
         "background_color_bottom": "{{ settings.color_palette.color1 }}",
         "text_color_bottom": "{{ settings.color_palette.color3 }}",
-        "text_color_transparent_home": "{{ settings.color_palette.color3 }}",
         "bubble_style": "custom",
         "bubble_background_color": "{{ settings.color_palette.color3 }}",
         "bubble_text_color": "{{ settings.color_palette.color1 }}",
         "enable_transparent_header_home": false,
         "home_inverse_logo": false,
+        "text_color_transparent_home": "{{ settings.color_palette.color3 }}",
         "enable_transparent_header_product": false,
         "product_inverse_logo": false,
+        "text_color_transparent_product": "",
         "enable_transparent_header_collection": false,
         "collection_inverse_logo": false,
-        "search_style": "bar",
-        "search_placeholder": "Search for...",
-        "show_cart_total": true,
-        "show_account_label": false,
-        "text_hover_color": "{{ settings.color_palette.background }}"
+        "text_color_transparent_collection": ""
       }
     }
   },
