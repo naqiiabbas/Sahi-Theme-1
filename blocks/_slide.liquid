@@ -202,10 +202,10 @@
     font-style: normal !important;
     font-size: clamp(1.35rem, 2.2vw, 1.85rem) !important;
     letter-spacing: 0.04em !important;
-    color: #D6AA5A !important;
+    color: var(--color-brand-accent) !important;
     margin: 0 0 0.25rem 0 !important;
     line-height: 1.2 !important;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 1px 6px rgb(var(--palette-darkest-rgb) / var(--opacity-70));
   }
 
   slideshow-slide .group-block:first-child :is(h1, h2, h3),
@@ -215,9 +215,9 @@
     font-style: normal !important;
     font-size: clamp(2.75rem, 4.8vw, 4.85rem) !important;
     line-height: 1.05 !important;
-    color: #ffffff !important;
+    color: var(--palette-lightest) !important;
     margin: 0 !important;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 2px 12px rgb(var(--palette-darkest-rgb) / var(--opacity-70));
   }
 
   /* Bottom Right Group: Description in Outfit font */
@@ -239,10 +239,10 @@
     font-style: normal !important;
     font-size: clamp(0.95rem, 1.15vw, 1.15rem) !important;
     line-height: 1.65 !important;
-    color: rgba(255, 255, 255, 0.92) !important;
+    color: rgb(var(--palette-lightest-rgb) / var(--opacity-90)) !important;
     margin: 0 !important;
     text-align: right;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 1px 6px rgb(var(--palette-darkest-rgb) / var(--opacity-70));
   }
 
   /* Hide side arrows */
@@ -286,12 +286,12 @@
 
   @media screen and (max-width: 749px) {
     .slide__content > .group-block-content {
-      background: rgba(0, 0, 0, 0.35);
+      background: rgb(var(--palette-darkest-rgb) / var(--opacity-40));
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       padding: 1.25rem 1.5rem;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgb(var(--palette-lightest-rgb) / var(--opacity-10));
     }
   }
 

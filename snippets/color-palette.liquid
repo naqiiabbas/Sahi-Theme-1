@@ -175,6 +175,13 @@
     --palette-lightest-rgb: {{ palette_lightest.rgb }};
     --palette-darkest: {{ palette_darkest }};
     --palette-darkest-rgb: {{ palette_darkest.rgb }};
+    /* Brand palette slots (Theme settings > Colors): color1 primary, color2 secondary, color3 logo/accent. */
+    --color-brand-primary: {{ settings.color_palette.color1 | default: settings.page_text_color }};
+    --color-brand-primary-rgb: {{ settings.color_palette.color1.rgb | default: settings.page_text_color.rgb }};
+    --color-brand-secondary: {{ settings.color_palette.color2 | default: settings.page_text_color }};
+    --color-brand-secondary-rgb: {{ settings.color_palette.color2.rgb | default: settings.page_text_color.rgb }};
+    --color-brand-accent: {{ settings.color_palette.color3 | default: settings.page_text_color }};
+    --color-brand-accent-rgb: {{ settings.color_palette.color3.rgb | default: settings.page_text_color.rgb }};
     {% render 'brightness-opacities', background: settings.page_background_color %}
 
     --color-primary-button-text: rgb({{ settings.palette_primary_button_text.rgba }});

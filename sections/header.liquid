@@ -368,6 +368,8 @@
   style="
     --color-background-top-row: rgba({{ section.settings.background_color_top.rgba | default: settings.page_background_color.rgba }});
     --color-background-bottom-row: rgba({{ section.settings.background_color_bottom.rgba | default: settings.page_background_color.rgba }});
+    --color-text-top-row: {{ section.settings.text_color_top | default: settings.page_text_color }};
+    --color-text-top-row-rgb: {{ section.settings.text_color_top.rgb | default: settings.page_text_color.rgb }};
     {% if transparent and text_color_transparent != blank %}
       --color-transparent-text: {{ text_color_transparent }};
       --color-transparent-text-rgb: {{ text_color_transparent.rgb }};
@@ -1146,17 +1148,17 @@
     text-shadow: 0 0 8px rgb(var(--color-foreground-rgb) / var(--opacity-30));
   }
 
-  /* Mobile and Tablet side drawer menu styling */
+  /* Mobile and Tablet side drawer menu styling: follows the header's top row colors. */
   .menu-drawer {
-    background-color: #2C130C !important;
-    border-inline-end: 1px solid rgba(214, 170, 90, 0.2) !important;
+    background-color: var(--color-background-top-row) !important;
+    border-inline-end: 1px solid rgb(var(--color-text-top-row-rgb) / var(--opacity-20)) !important;
   }
 
   .menu-drawer__menu-item,
   .menu-drawer__menu-item-text,
   .menu-drawer__title,
   .menu-drawer accordion-custom summary {
-    color: #D6AA5A !important;
+    color: var(--color-text-top-row) !important;
     font-family: "Outfit", sans-serif !important;
     transition: color 0.2s ease, opacity 0.2s ease;
   }
@@ -1165,20 +1167,20 @@
   .menu-drawer__menu-item:hover .menu-drawer__menu-item-text,
   .menu-drawer__title:hover,
   .menu-drawer accordion-custom summary:hover {
-    color: #ffffff !important;
+    color: var(--header-hover-color, var(--color-text-top-row)) !important;
   }
 
   .menu-drawer .close-button,
   .menu-drawer .close-button svg {
-    color: #D6AA5A !important;
-    stroke: #D6AA5A !important;
+    color: var(--color-text-top-row) !important;
+    stroke: var(--color-text-top-row) !important;
     transition: color 0.2s ease, transform 0.2s ease;
   }
 
   .menu-drawer .close-button:hover,
   .menu-drawer .close-button:hover svg {
-    color: #ffffff !important;
-    stroke: #ffffff !important;
+    color: var(--header-hover-color, var(--color-text-top-row)) !important;
+    stroke: var(--header-hover-color, var(--color-text-top-row)) !important;
     transform: scale(1.1);
   }
 

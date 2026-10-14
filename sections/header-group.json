@@ -40,11 +40,12 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "background_color": "#FCEFDF",
+        "background_color": "{{ settings.color_palette.color2 }}",
         "divider_width": 0,
         "padding-block-start": 12,
         "padding-block-end": 12,
-        "show_social_links": true
+        "show_social_links": true,
+        "text_color": "{{ settings.color_palette.color3 }}"
       }
     },
     "header_section": {
@@ -65,8 +66,8 @@
           "static": true,
           "settings": {
             "menu": "main-menu",
-            "background_color": "#2C130C",
-            "text_color": "#D6AA5A",
+            "background_color": "{{ settings.color_palette.color1 }}",
+            "text_color": "{{ settings.color_palette.color3 }}",
             "type_font_primary_size": "0.875rem",
             "menu_font_style": "inverse",
             "type_font_primary_link": "body",
@@ -76,7 +77,7 @@
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
             "navigation_bar": false,
-            "background_color_navigation_bar": "#2C130C",
+            "background_color_navigation_bar": "{{ settings.color_palette.color1 }}",
             "drawer_accordion": false,
             "drawer_accordion_expand_first": false,
             "drawer_dividers": false
@@ -103,21 +104,21 @@
         "section_height": "standard",
         "enable_sticky_header": "scroll-up",
         "divider_width": 1,
-        "divider_color": "#D6AA5A4D",
+        "divider_color": "{{ settings.color_palette.color3 }}",
         "divider_size": "page-width",
         "border_width": 0,
         "actions_display_style": "button",
         "actions_font_size": "1rem",
         "actions_font": "body",
         "actions_text_case": "none",
-        "background_color_top": "#2C130C",
-        "text_color_top": "#D6AA5A",
-        "background_color_bottom": "#2C130C",
-        "text_color_bottom": "#D6AA5A",
-        "text_color_transparent_home": "#D6AA5A",
+        "background_color_top": "{{ settings.color_palette.color1 }}",
+        "text_color_top": "{{ settings.color_palette.color3 }}",
+        "background_color_bottom": "{{ settings.color_palette.color1 }}",
+        "text_color_bottom": "{{ settings.color_palette.color3 }}",
+        "text_color_transparent_home": "{{ settings.color_palette.color3 }}",
         "bubble_style": "custom",
-        "bubble_background_color": "#D6AA5A",
-        "bubble_text_color": "#2C130C",
+        "bubble_background_color": "{{ settings.color_palette.color3 }}",
+        "bubble_text_color": "{{ settings.color_palette.color1 }}",
         "enable_transparent_header_home": false,
         "home_inverse_logo": false,
         "enable_transparent_header_product": false,
@@ -128,7 +129,7 @@
         "search_placeholder": "Search for...",
         "show_cart_total": true,
         "show_account_label": false,
-        "text_hover_color": "#FFFFFF"
+        "text_hover_color": "{{ settings.color_palette.background }}"
       }
     }
   },
