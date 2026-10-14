@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Tanıtım afişi",
     "category": "Kategori",
     "category_showcase": "Kategori vitrini",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "tagline_color": "Slogan rengi",
+    "button_text_color": "Düğme metni rengi",
+    "button_background": "Düğme arka planı",
+    "accent_color": "Vurgu rengi",
+    "tagline_flourish": "Dekoratif alt çizgiyi göster",
+    "tagline": "Slogan",
+    "eyebrow": "Üst metin",
     "underline_color": "Alt çizgi rengi",
     "image_height": "Görsel yüksekliği",
     "fallback_image": "Yedek görsel dosyası",
@@ -1105,6 +1113,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "heading_accent": "İtalik metin vurgu rengini kullanır.",
     "fallback_image": "Görsel seçilmediğinde gösterilir. Temanın assets klasöründen bir dosya adı girin.",
     "announcement_social_links": "Bağlantıları Sosyal medya bağlantıları bloğuna ekleyin",
     "video_alt_text": "Yardımcı teknoloji kullanıcıları için videoyu açıklayın",

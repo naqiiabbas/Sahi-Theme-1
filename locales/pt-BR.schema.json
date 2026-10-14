@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Banner promocional",
     "category": "Categoria",
     "category_showcase": "Vitrine de categorias",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "tagline_color": "Cor do slogan",
+    "button_text_color": "Cor do texto do botão",
+    "button_background": "Fundo do botão",
+    "accent_color": "Cor de destaque",
+    "tagline_flourish": "Mostrar sublinhado decorativo",
+    "tagline": "Slogan",
+    "eyebrow": "Texto de apoio",
     "underline_color": "Cor do sublinhado",
     "image_height": "Altura da imagem",
     "fallback_image": "Arquivo de imagem alternativo",
@@ -1105,6 +1113,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "heading_accent": "O texto em itálico usa a cor de destaque.",
     "fallback_image": "Exibida quando nenhuma imagem é selecionada. Insira um nome de arquivo da pasta assets do tema.",
     "announcement_social_links": "Adicione links no bloco Links de redes sociais",
     "video_alt_text": "Descreva o vídeo para usuários de tecnologia assistiva",

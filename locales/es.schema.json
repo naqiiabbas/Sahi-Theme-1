@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Banner promocional",
     "category": "Categoría",
     "category_showcase": "Muestra de categorías",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "tagline_color": "Color del eslogan",
+    "button_text_color": "Color del texto del botón",
+    "button_background": "Fondo del botón",
+    "accent_color": "Color de acento",
+    "tagline_flourish": "Mostrar subrayado decorativo",
+    "tagline": "Eslogan",
+    "eyebrow": "Texto superior",
     "underline_color": "Color de subrayado",
     "image_height": "Altura de imagen",
     "fallback_image": "Archivo de imagen alternativo",
@@ -1105,6 +1113,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "heading_accent": "El texto en cursiva usa el color de acento.",
     "fallback_image": "Se muestra cuando no se selecciona ninguna imagen. Ingresa un nombre de archivo de la carpeta assets del tema.",
     "announcement_social_links": "Agrega enlaces en el bloque Enlaces de redes sociales",
     "carousel_layout_on_mobile": "En dispositivos móviles siempre se usa el carrusel",

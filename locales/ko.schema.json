@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "프로모션 배너",
     "category": "카테고리",
     "category_showcase": "카테고리 쇼케이스",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "tagline_color": "태그라인 색상",
+    "button_text_color": "버튼 텍스트 색상",
+    "button_background": "버튼 배경",
+    "accent_color": "강조 색상",
+    "tagline_flourish": "장식 밑줄 표시",
+    "tagline": "태그라인",
+    "eyebrow": "상단 문구",
     "underline_color": "밑줄 색상",
     "image_height": "이미지 높이",
     "fallback_image": "대체 이미지 파일",
@@ -1105,6 +1113,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "heading_accent": "기울임꼴 텍스트는 강조 색상을 사용합니다.",
     "fallback_image": "이미지를 선택하지 않으면 표시됩니다. 테마 assets 폴더의 파일 이름을 입력하세요.",
     "announcement_social_links": "소셜 미디어 링크 블록에서 링크를 추가하세요",
     "carousel_layout_on_mobile": "모바일에서는 항상 캐러셀이 사용됩니다.",

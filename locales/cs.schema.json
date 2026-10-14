@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Propagační banner",
     "category": "Kategorie",
     "category_showcase": "Přehled kategorií",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "tagline_color": "Barva sloganu",
+    "button_text_color": "Barva textu tlačítka",
+    "button_background": "Pozadí tlačítka",
+    "accent_color": "Barva zvýraznění",
+    "tagline_flourish": "Zobrazit ozdobné podtržení",
+    "tagline": "Slogan",
+    "eyebrow": "Úvodní text",
     "underline_color": "Barva podtržení",
     "image_height": "Výška obrázku",
     "fallback_image": "Záložní soubor obrázku",
@@ -1105,6 +1113,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "heading_accent": "Kurzíva používá barvu zvýraznění.",
     "fallback_image": "Zobrazí se, když není vybrán obrázek. Zadejte název souboru ze složky assets motivu.",
     "announcement_social_links": "Odkazy přidejte v bloku Odkazy na sociální sítě",
     "video_alt_text": "Popište video pro uživatele asistivních technologií",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "促销横幅",
     "category": "类别",
     "category_showcase": "类别展示",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "tagline_color": "标语颜色",
+    "button_text_color": "按钮文字颜色",
+    "button_background": "按钮背景",
+    "accent_color": "强调色",
+    "tagline_flourish": "显示装饰下划线",
+    "tagline": "标语",
+    "eyebrow": "引导文字",
     "underline_color": "下划线颜色",
     "image_height": "图片高度",
     "fallback_image": "备用图片文件",
@@ -1105,6 +1113,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "heading_accent": "斜体文字使用强调色。",
     "fallback_image": "未选择图片时显示。请输入主题 assets 文件夹中的文件名。",
     "announcement_social_links": "在“社交媒体链接”区块中添加链接",
     "video_alt_text": "为使用辅助技术的用户描述视频",

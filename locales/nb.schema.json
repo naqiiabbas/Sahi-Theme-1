@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Kampanjebanner",
     "category": "Kategori",
     "category_showcase": "Kategorioversikt",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "tagline_color": "Slagordfarge",
+    "button_text_color": "Knappetekstfarge",
+    "button_background": "Knappebakgrunn",
+    "accent_color": "Aksentfarge",
+    "tagline_flourish": "Vis dekorativ understreking",
+    "tagline": "Slagord",
+    "eyebrow": "Overtekst",
     "underline_color": "Understrekingsfarge",
     "image_height": "Bildehøyde",
     "fallback_image": "Reservebildefil",
@@ -1105,6 +1113,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "heading_accent": "Kursiv tekst bruker aksentfargen.",
     "fallback_image": "Vises når ingen bilde er valgt. Skriv inn et filnavn fra temaets assets-mappe.",
     "announcement_social_links": "Legg til lenker i blokken Lenker til sosiale medier",
     "carousel_layout_on_mobile": "Karusell brukes alltid på mobil",

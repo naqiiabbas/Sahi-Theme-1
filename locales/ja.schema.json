@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "プロモーションバナー",
     "category": "カテゴリー",
     "category_showcase": "カテゴリーショーケース",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "tagline_color": "タグラインの色",
+    "button_text_color": "ボタンのテキストカラー",
+    "button_background": "ボタンの背景",
+    "accent_color": "アクセントカラー",
+    "tagline_flourish": "装飾の下線を表示",
+    "tagline": "タグライン",
+    "eyebrow": "リード文",
     "underline_color": "下線の色",
     "image_height": "画像の高さ",
     "fallback_image": "代替画像ファイル",
@@ -1105,6 +1113,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "heading_accent": "斜体のテキストにはアクセントカラーが使われます。",
     "fallback_image": "画像が選択されていない場合に表示されます。テーマのassetsフォルダ内のファイル名を入力してください。",
     "announcement_social_links": "ソーシャルメディアリンクのブロックでリンクを追加します",
     "video_alt_text": "支援技術のユーザーのために動画の説明を記述します",

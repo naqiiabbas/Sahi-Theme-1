@@ -223,6 +223,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "heading_accent": "Italic text uses the accent color.",
     "fallback_image": "Shown when no image is selected. Enter a file name from the theme's assets folder.",
     "actions_display_style": "Icons are always used on mobile",
     "announcement_social_links": "Add links in the Social media links block",
@@ -254,6 +255,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "promo_banner": "Promo banner",
     "category": "Category",
     "category_showcase": "Category showcase",
     "column": "Column",
@@ -752,6 +754,13 @@
     "below_media": "Below media"
   },
   "settings": {
+    "tagline_color": "Tagline color",
+    "button_text_color": "Button text color",
+    "button_background": "Button background",
+    "accent_color": "Accent color",
+    "tagline_flourish": "Show underline flourish",
+    "tagline": "Tagline",
+    "eyebrow": "Eyebrow text",
     "underline_color": "Underline color",
     "image_height": "Image height",
     "fallback_image": "Fallback image file",

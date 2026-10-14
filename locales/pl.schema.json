@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Baner promocyjny",
     "category": "Kategoria",
     "category_showcase": "Prezentacja kategorii",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "tagline_color": "Kolor hasła",
+    "button_text_color": "Kolor tekstu przycisku",
+    "button_background": "Tło przycisku",
+    "accent_color": "Kolor akcentu",
+    "tagline_flourish": "Pokaż ozdobne podkreślenie",
+    "tagline": "Hasło",
+    "eyebrow": "Nadtytuł",
     "underline_color": "Kolor podkreślenia",
     "image_height": "Wysokość obrazu",
     "fallback_image": "Zapasowy plik obrazu",
@@ -1105,6 +1113,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "heading_accent": "Kursywa używa koloru akcentu.",
     "fallback_image": "Wyświetlany, gdy nie wybrano obrazu. Wpisz nazwę pliku z folderu assets motywu.",
     "announcement_social_links": "Dodaj linki w bloku Linki do mediów społecznościowych",
     "video_alt_text": "Opisz wideo dla użytkowników technologii wspomagających",

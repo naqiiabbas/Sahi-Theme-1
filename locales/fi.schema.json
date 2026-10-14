@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Mainosbanneri",
     "category": "Kategoria",
     "category_showcase": "Kategorianäyttö",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "tagline_color": "Iskulauseen väri",
+    "button_text_color": "Painikkeen tekstin väri",
+    "button_background": "Painikkeen tausta",
+    "accent_color": "Korostusväri",
+    "tagline_flourish": "Näytä koristeellinen alleviivaus",
+    "tagline": "Iskulause",
+    "eyebrow": "Yläotsikko",
     "underline_color": "Alleviivauksen väri",
     "image_height": "Kuvan korkeus",
     "fallback_image": "Varakuvatiedosto",
@@ -1105,6 +1113,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "heading_accent": "Kursiivi käyttää korostusväriä.",
     "fallback_image": "Näytetään, kun kuvaa ei ole valittu. Anna tiedostonimi teeman assets-kansiosta.",
     "announcement_social_links": "Lisää linkit Sosiaalisen median linkit -lohkoon",
     "carousel_layout_on_mobile": "Mobiilissa käytetään aina karusellia.",

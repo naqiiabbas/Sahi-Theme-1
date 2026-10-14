@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Kampagnebanner",
     "category": "Kategori",
     "category_showcase": "Kategorioversigt",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "tagline_color": "Sloganfarve",
+    "button_text_color": "Knaptekstfarve",
+    "button_background": "Knapbaggrund",
+    "accent_color": "Accentfarve",
+    "tagline_flourish": "Vis dekorativ understregning",
+    "tagline": "Slogan",
+    "eyebrow": "Overtekst",
     "underline_color": "Understregningsfarve",
     "image_height": "Billedhøjde",
     "fallback_image": "Reservebilledfil",
@@ -1105,6 +1113,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "heading_accent": "Kursiv tekst bruger accentfarven.",
     "fallback_image": "Vises, når der ikke er valgt et billede. Angiv et filnavn fra temaets assets-mappe.",
     "announcement_social_links": "Tilføj links i blokken Links til sociale medier",
     "carousel_layout_on_mobile": "Karrusellen bruges altid på mobil",

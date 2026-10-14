@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Bannière promotionnelle",
     "category": "Catégorie",
     "category_showcase": "Vitrine de catégories",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "tagline_color": "Couleur du slogan",
+    "button_text_color": "Couleur du texte du bouton",
+    "button_background": "Arrière-plan du bouton",
+    "accent_color": "Couleur d'accent",
+    "tagline_flourish": "Afficher le soulignement décoratif",
+    "tagline": "Slogan",
+    "eyebrow": "Surtitre",
     "underline_color": "Couleur du soulignement",
     "image_height": "Hauteur de l'image",
     "fallback_image": "Fichier d'image de secours",
@@ -1105,6 +1113,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "heading_accent": "Le texte en italique utilise la couleur d'accent.",
     "fallback_image": "Affiché lorsqu'aucune image n'est sélectionnée. Saisissez un nom de fichier du dossier assets du thème.",
     "announcement_social_links": "Ajoutez des liens dans le bloc Liens vers les réseaux sociaux",
     "carousel_layout_on_mobile": "Le carrousel est toujours utilisé sur mobile",

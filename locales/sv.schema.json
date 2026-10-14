@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Kampanjbanner",
     "category": "Kategori",
     "category_showcase": "Kategoriöversikt",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "tagline_color": "Slogans färg",
+    "button_text_color": "Knapptextfärg",
+    "button_background": "Knappbakgrund",
+    "accent_color": "Accentfärg",
+    "tagline_flourish": "Visa dekorativ understrykning",
+    "tagline": "Slogan",
+    "eyebrow": "Överrubrik",
     "underline_color": "Understrykningsfärg",
     "image_height": "Bildhöjd",
     "fallback_image": "Reservbildfil",
@@ -1105,6 +1113,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "heading_accent": "Kursiv text använder accentfärgen.",
     "fallback_image": "Visas när ingen bild är vald. Ange ett filnamn från temats assets-mapp.",
     "announcement_social_links": "Lägg till länkar i blocket Länkar till sociala medier",
     "video_alt_text": "Beskriv videon för användare av hjälpmedelsteknik",

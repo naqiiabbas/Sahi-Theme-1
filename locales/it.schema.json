@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Banner promozionale",
     "category": "Categoria",
     "category_showcase": "Vetrina categorie",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "tagline_color": "Colore dello slogan",
+    "button_text_color": "Colore del testo del pulsante",
+    "button_background": "Sfondo del pulsante",
+    "accent_color": "Colore di accento",
+    "tagline_flourish": "Mostra sottolineatura decorativa",
+    "tagline": "Slogan",
+    "eyebrow": "Occhiello",
     "underline_color": "Colore sottolineatura",
     "image_height": "Altezza dell'immagine",
     "fallback_image": "File immagine di riserva",
@@ -1105,6 +1113,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "heading_accent": "Il testo in corsivo usa il colore di accento.",
     "fallback_image": "Mostrata quando non è selezionata alcuna immagine. Inserisci il nome di un file dalla cartella assets del tema.",
     "announcement_social_links": "Aggiungi i link nel blocco Link ai social media",
     "carousel_layout_on_mobile": "Sui dispositivi mobili viene sempre utilizzato il carosello.",

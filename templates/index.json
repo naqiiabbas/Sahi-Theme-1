@@ -1019,11 +1019,43 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "promo_banner_products": {
+      "type": "promo-banner",
+      "settings": {
+        "fallback_image": "promo-banner-pickles.jpg",
+        "image_position": 75,
+        "section_width": "full-width",
+        "min_height": 460,
+        "overlay_color": "{{ settings.color_palette.background }}",
+        "overlay_opacity": 85,
+        "eyebrow": "Our products",
+        "title": "Pure Ingredients for <em>a Better You.</em>",
+        "text": "Explore our carefully crafted range of organic essentials made from real, natural ingredients.",
+        "title_font": "instrument_serif_n4",
+        "title_size": 64,
+        "button_label": "Shop all products",
+        "button_link": "shopify://collections/all",
+        "tagline": "Real\nGoodness.\nEveryday.",
+        "tagline_font": "pinyon_script_n4",
+        "tagline_size": 32,
+        "button_radius": 2,
+        "show_tagline_flourish": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "button_background": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "tagline_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "hero_iLBwPd",
     "category_showcase_main",
+    "promo_banner_products",
     "product_list_EDUBdR",
     "media_with_content_LfPdEJ",
     "collection_list_xpBxCm"

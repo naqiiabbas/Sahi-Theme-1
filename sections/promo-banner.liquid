@@ -1,0 +1,643 @@
+{% comment %}
+  Section contract.
+  Full-bleed promotional banner: background image with a soft side fade, an eyebrow, a serif heading
+  (italic words take the accent color), supporting text, a button, and an optional script tagline.
+  On mobile the image sits above the text.
+  @example
+  <!-- Add "Promo banner" to a template; pick an image or enter a fallback file from the assets folder -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign title_font_italic = title_font | font_modify: 'style', 'italic'
+  assign tagline_font = section.settings.tagline_font
+
+  assign image_position = section.settings.image_position | append: '% center'
+  if section.settings.image != blank and section.settings.image.presentation.focal_point != blank
+    assign image_position = section.settings.image.presentation.focal_point
+  endif
+
+  assign has_button = false
+  if section.settings.button_label != blank and section.settings.button_link != blank
+    assign has_button = true
+  endif
+
+  assign image_loading = 'lazy'
+  if section.index <= 2
+    assign image_loading = 'eager'
+  endif
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+  {%- if title_font_italic -%}
+    {{ title_font_italic | font_face: font_display: 'swap' }}
+  {%- endif -%}
+  {{ tagline_font | font_face: font_display: 'swap' }}
+
+  .promo-banner-{{ section.id }} {
+    --promo-banner-title-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --promo-banner-title-weight: {{ title_font.weight }};
+    --promo-banner-tagline-font: {{ tagline_font.family }}, {{ tagline_font.fallback_families }};
+    --promo-banner-tagline-weight: {{ tagline_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="promo-banner promo-banner-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --promo-banner-min-height: {{ section.settings.min_height }}px;
+    --promo-banner-image-position: {{ image_position }};
+    --promo-banner-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --promo-banner-title-size: {{ section.settings.title_size }}px;
+    --promo-banner-tagline-size: {{ section.settings.tagline_size }}px;
+    --promo-banner-button-radius: {{ section.settings.button_radius }}px;
+    {% if section.settings.overlay_color != blank %}--promo-banner-overlay-rgb: {{ section.settings.overlay_color.rgb }};{% endif %}
+    {% if section.settings.accent_color != blank %}--promo-banner-accent: {{ section.settings.accent_color }};{% endif %}
+    {% if section.settings.button_background != blank %}--promo-banner-button-bg: {{ section.settings.button_background }};{% endif %}
+    {% if section.settings.button_text_color != blank %}--promo-banner-button-text: {{ section.settings.button_text_color }};{% endif %}
+    {% if section.settings.tagline_color != blank %}--promo-banner-tagline-color: {{ section.settings.tagline_color }};{% endif %}
+  "
+>
+  <div class="promo-banner__inner">
+    <div class="promo-banner__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 2400
+          | image_tag:
+            widths: '750, 1100, 1500, 2000, 2400',
+            sizes: '100vw',
+            loading: image_loading,
+            alt: section.settings.image.alt | default: '',
+            class: 'promo-banner__image'
+        }}
+      {%- elsif section.settings.fallback_image != blank -%}
+        <img
+          src="{{ section.settings.fallback_image | asset_url }}"
+          alt=""
+          width="2000"
+          height="667"
+          loading="{{ image_loading }}"
+          class="promo-banner__image"
+        >
+      {%- else -%}
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'promo-banner__image promo-banner__placeholder' }}
+      {%- endif -%}
+
+      {%- if section.settings.tagline != blank -%}
+        <p class="promo-banner__tagline">
+          <span class="promo-banner__tagline-text">{{ section.settings.tagline | escape | newline_to_br }}</span>
+          {%- if section.settings.show_tagline_flourish -%}
+            <svg
+              class="promo-banner__flourish"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 120 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M2 11c26-6 62-10 116-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="promo-banner__overlay"
+      aria-hidden="true"
+    ></div>
+
+    <div class="promo-banner__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="promo-banner__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="promo-banner__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <p class="promo-banner__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+
+      {%- if has_button -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="promo-banner__button"
+        >
+          <span>{{ section.settings.button_label | escape }}</span>
+          <svg
+            class="promo-banner__button-arrow"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .promo-banner {
+    --promo-banner-padding-inline: max(var(--page-margin), 4vw);
+
+    color: var(--color-foreground);
+  }
+
+  .promo-banner__inner {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+  }
+
+  .promo-banner__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .promo-banner__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--promo-banner-image-position);
+  }
+
+  .promo-banner__placeholder {
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-20));
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .promo-banner__overlay {
+    display: none;
+  }
+
+  .promo-banner__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-md);
+    min-width: 0;
+    padding: var(--padding-2xl) var(--promo-banner-padding-inline);
+  }
+
+  /* Desktop: text sits over the image with a fade from the overlay color on the text side. */
+  @media screen and (min-width: 750px) {
+    .promo-banner__inner {
+      min-height: var(--promo-banner-min-height);
+    }
+
+    .promo-banner__media {
+      position: absolute;
+      inset: 0;
+      aspect-ratio: auto;
+    }
+
+    .promo-banner__overlay {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgb(var(--promo-banner-overlay-rgb, var(--color-background-rgb)) / var(--promo-banner-overlay-opacity)) 0%,
+        rgb(var(--promo-banner-overlay-rgb, var(--color-background-rgb)) / calc(var(--promo-banner-overlay-opacity) * 0.75)) 30%,
+        rgb(var(--promo-banner-overlay-rgb, var(--color-background-rgb)) / 0) 58%
+      );
+    }
+
+    [dir='rtl'] .promo-banner__overlay {
+      background: linear-gradient(
+        to left,
+        rgb(var(--promo-banner-overlay-rgb, var(--color-background-rgb)) / var(--promo-banner-overlay-opacity)) 0%,
+        rgb(var(--promo-banner-overlay-rgb, var(--color-background-rgb)) / calc(var(--promo-banner-overlay-opacity) * 0.75)) 30%,
+        rgb(var(--promo-banner-overlay-rgb, var(--color-background-rgb)) / 0) 58%
+      );
+    }
+
+    .promo-banner__content {
+      justify-content: center;
+      max-width: min(40rem, 55%);
+      padding-block: var(--padding-3xl);
+    }
+  }
+
+  .promo-banner__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    color: var(--promo-banner-accent, var(--color-foreground));
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      width: 2.5rem;
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+  /* !important and the extra class beat the global heading/paragraph font overrides in
+     theme-styles-variables.liquid, so the section's font setting applies. */
+  .promo-banner .promo-banner__title,
+  .promo-banner .promo-banner__title em,
+  .promo-banner .promo-banner__text {
+    font-family: var(--promo-banner-title-font) !important;
+  }
+
+  .promo-banner__title {
+    margin: 0;
+    max-width: 14ch;
+    font-weight: var(--promo-banner-title-weight);
+    font-size: calc(var(--promo-banner-title-size) * 0.62);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
+    overflow-wrap: break-word;
+
+    em {
+      font-style: italic;
+      color: var(--promo-banner-accent, var(--color-foreground));
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: calc(var(--promo-banner-title-size) * 0.8);
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: var(--promo-banner-title-size);
+    }
+  }
+
+  .promo-banner__text {
+    margin: 0;
+    max-width: 30rem;
+    font-size: 1.125rem;
+    line-height: 1.45;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+
+    @media screen and (min-width: 1200px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  .promo-banner__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-block-start: var(--margin-xs);
+    min-height: 3.25rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: var(--promo-banner-button-radius);
+    background-color: var(--promo-banner-button-bg, var(--color-foreground));
+    color: var(--promo-banner-button-text, var(--color-background));
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      opacity: var(--opacity-85);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--promo-banner-button-bg, var(--color-foreground));
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  .promo-banner__button-arrow {
+    width: 1.5rem;
+    height: 1rem;
+    flex-shrink: 0;
+    transition: transform var(--animation-speed) var(--animation-easing);
+  }
+
+  .promo-banner__button:hover .promo-banner__button-arrow {
+    transform: translateX(0.25rem);
+  }
+
+  [dir='rtl'] .promo-banner__button-arrow {
+    scale: -1 1;
+  }
+
+  [dir='rtl'] .promo-banner__button:hover .promo-banner__button-arrow {
+    transform: translateX(-0.25rem);
+  }
+
+  /* Script tagline in the image's top corner. */
+  .promo-banner__tagline {
+    position: absolute;
+    inset-block-start: 8%;
+    inset-inline-end: var(--promo-banner-padding-inline);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    width: max-content;
+    color: var(--promo-banner-tagline-color, var(--color-background));
+    transform: rotate(-8deg);
+    transform-origin: top right;
+    pointer-events: none;
+  }
+
+  .promo-banner .promo-banner__tagline-text {
+    font-family: var(--promo-banner-tagline-font) !important;
+    font-weight: var(--promo-banner-tagline-weight);
+    font-size: calc(var(--promo-banner-tagline-size) * 0.55);
+    line-height: 1.05;
+    text-align: start;
+    text-shadow: 0 1px 8px rgb(0 0 0 / var(--opacity-15));
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--promo-banner-tagline-size);
+    }
+  }
+
+  /* Sized from the tagline font size so it stays a short flourish under the last line. */
+  .promo-banner__flourish {
+    width: calc(var(--promo-banner-tagline-size) * 1.6);
+    height: auto;
+    margin-block-start: 0.15em;
+
+    @media screen and (min-width: 750px) {
+      width: calc(var(--promo-banner-tagline-size) * 2.8);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .promo-banner__button,
+    .promo-banner__button-arrow {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.promo_banner",
+  "class": "promo-banner-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "fallback_image",
+      "label": "t:settings.fallback_image",
+      "info": "t:info.fallback_image"
+    },
+    {
+      "type": "range",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 75
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "t:settings.height",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 460
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:settings.overlay_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:settings.overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 85
+    },
+    {
+      "type": "header",
+      "content": "t:content.text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "default": "Our products"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:settings.heading",
+      "info": "t:info.heading_accent",
+      "default": "Pure Ingredients for <em>a Better You.</em>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Explore our carefully crafted range of organic essentials made from real, natural ingredients."
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "t:settings.size",
+      "min": 32,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "t:names.button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.label",
+      "default": "Shop all products"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "t:settings.tagline"
+    },
+    {
+      "type": "textarea",
+      "id": "tagline",
+      "label": "t:settings.text",
+      "default": "Real\nGoodness.\nEveryday."
+    },
+    {
+      "type": "font_picker",
+      "id": "tagline_font",
+      "label": "t:settings.font",
+      "default": "pinyon_script_n4"
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "label": "t:settings.size",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tagline_flourish",
+      "label": "t:settings.tagline_flourish",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "t:settings.button_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "t:settings.button_text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "t:settings.tagline_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.promo_banner"
+    }
+  ]
+}
+{% endschema %}

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "促銷橫幅",
     "category": "類別",
     "category_showcase": "類別展示",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "tagline_color": "標語顏色",
+    "button_text_color": "按鈕文字顏色",
+    "button_background": "按鈕背景",
+    "accent_color": "強調色",
+    "tagline_flourish": "顯示裝飾底線",
+    "tagline": "標語",
+    "eyebrow": "引導文字",
     "underline_color": "底線顏色",
     "image_height": "圖片高度",
     "fallback_image": "備用圖片檔案",
@@ -1105,6 +1113,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "heading_accent": "斜體文字使用強調色。",
     "fallback_image": "未選取圖片時顯示。請輸入佈景主題 assets 資料夾中的檔案名稱。",
     "announcement_social_links": "在「社群媒體連結」區塊中新增連結",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",

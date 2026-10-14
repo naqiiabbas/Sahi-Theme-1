@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "แบนเนอร์โปรโมชัน",
     "category": "หมวดหมู่",
     "category_showcase": "แสดงหมวดหมู่",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "tagline_color": "สีสโลแกน",
+    "button_text_color": "สีข้อความปุ่ม",
+    "button_background": "พื้นหลังปุ่ม",
+    "accent_color": "สีเน้น",
+    "tagline_flourish": "แสดงเส้นใต้ตกแต่ง",
+    "tagline": "สโลแกน",
+    "eyebrow": "ข้อความนำ",
     "underline_color": "สีขีดเส้นใต้",
     "image_height": "ความสูงของรูปภาพ",
     "fallback_image": "ไฟล์รูปภาพสำรอง",
@@ -1105,6 +1113,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "heading_accent": "ข้อความตัวเอียงใช้สีเน้น",
     "fallback_image": "แสดงเมื่อไม่ได้เลือกรูปภาพ ป้อนชื่อไฟล์จากโฟลเดอร์ assets ของธีม",
     "announcement_social_links": "เพิ่มลิงก์ในบล็อกลิงก์โซเชียลมีเดีย",
     "video_alt_text": "โปรดอธิบายวิดีโอสำหรับผู้ใช้เทคโนโลยีความช่วยเหลือพิเศษ",

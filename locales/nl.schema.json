@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "promo_banner": "Promotiebanner",
     "category": "Categorie",
     "category_showcase": "Categorieoverzicht",
     "404": "404",
@@ -173,6 +174,13 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "tagline_color": "Sloganskleur",
+    "button_text_color": "Tekstkleur knop",
+    "button_background": "Knopachtergrond",
+    "accent_color": "Accentkleur",
+    "tagline_flourish": "Decoratieve onderstreping weergeven",
+    "tagline": "Slogan",
+    "eyebrow": "Bovenregel",
     "underline_color": "Onderstreepkleur",
     "image_height": "Afbeeldingshoogte",
     "fallback_image": "Reserve-afbeeldingsbestand",
@@ -1105,6 +1113,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "heading_accent": "Cursieve tekst gebruikt de accentkleur.",
     "fallback_image": "Wordt getoond als er geen afbeelding is geselecteerd. Voer een bestandsnaam uit de assets-map van het thema in.",
     "announcement_social_links": "Voeg links toe in het blok Socialemedialinks",
     "carousel_layout_on_mobile": "Op mobiel wordt altijd een carrousel gebruikt",
