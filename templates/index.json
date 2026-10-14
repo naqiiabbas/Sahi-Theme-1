@@ -1050,12 +1050,83 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "category_product_tabs_main": {
+      "type": "category-product-tabs",
+      "blocks": {
+        "nut_butters": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "label": "Nut Butters",
+            "fallback_icon": "category-icon-nut-butters.png"
+          }
+        },
+        "achaars": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "label": "Achaars",
+            "fallback_icon": "category-icon-achaars.png"
+          }
+        },
+        "raw_honey": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "label": "Raw Honey",
+            "fallback_icon": "category-icon-raw-honey.png"
+          }
+        },
+        "olive_oils": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "label": "Olive Oils",
+            "fallback_icon": "category-icon-olive-oils.png"
+          }
+        },
+        "desi_ghee": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "label": "Desi Ghee",
+            "fallback_icon": "category-icon-desi-ghee.png"
+          }
+        }
+      },
+      "block_order": [
+        "nut_butters",
+        "achaars",
+        "raw_honey",
+        "olive_oils",
+        "desi_ghee"
+      ],
+      "settings": {
+        "tabs_label": "Shop by category",
+        "products_limit": 16,
+        "columns": 4,
+        "mobile_columns": "2",
+        "show_arrows": true,
+        "image_ratio": "4 / 3",
+        "card_corner_radius": 4,
+        "title_font": "instrument_serif_n4",
+        "show_weight": true,
+        "show_rating": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "section_width": "page-width",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "hero_iLBwPd",
     "category_showcase_main",
     "promo_banner_products",
+    "category_product_tabs_main",
     "product_list_EDUBdR",
     "media_with_content_LfPdEJ",
     "collection_list_xpBxCm"

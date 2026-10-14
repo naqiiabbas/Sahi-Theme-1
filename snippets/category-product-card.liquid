@@ -1,0 +1,132 @@
+{%- doc -%}
+  Renders a product card for the category product tabs: image, title, weight or variant, rating,
+  price, and a quick add button. Renders a placeholder card when no product is passed.
+  Styles are owned by sections/category-product-tabs.liquid.
+
+  @param {product} [product] - The product to render. Omit to render a placeholder card.
+  @param {string} section_id - The section ID, used for unique IDs and the quick add form.
+  @param {number} [index] - Position in the grid; used to pick a placeholder image.
+  @param {boolean} [show_weight] - Shows the first variant's weight, or its title when it has no weight.
+  @param {boolean} [show_rating] - Shows the product rating from the standard reviews metafields.
+  @param {string} [image_sizes] - The sizes attribute for the product image.
+
+  @example
+  {% render 'category-product-card', product: product, section_id: section.id, index: forloop.index, show_weight: true, show_rating: true, image_sizes: '(min-width: 990px) 25vw, 50vw' %}
+{%- enddoc -%}
+
+{%- liquid
+  assign sizes = image_sizes | default: '(min-width: 990px) 25vw, 50vw'
+-%}
+
+{%- if product != blank -%}
+  {%- liquid
+    assign variant = product.selected_or_first_available_variant
+    assign card_link_id = 'CategoryProductLink-' | append: section_id | append: '-' | append: product.id
+
+    assign subtitle = ''
+    if show_weight
+      if variant.weight > 0
+        assign subtitle = variant.weight_in_unit | append: ' ' | append: variant.weight_unit
+      elsif product.has_only_default_variant == false
+        assign subtitle = variant.title
+      endif
+    endif
+
+    assign rating = product.metafields.reviews.rating.value
+    assign rating_count = product.metafields.reviews.rating_count.value
+  -%}
+
+  <product-card
+    class="category-product-card"
+    data-product-id="{{ product.id }}"
+    {% if request.design_mode %}
+      data-no-navigation
+    {% endif %}
+  >
+    {% comment %} Stretched link: the whole card opens the product; the quick add button sits above it. {% endcomment %}
+    <a
+      id="{{ card_link_id }}"
+      href="{{ product.url }}"
+      class="category-product-card__link"
+      ref="productCardLink"
+      aria-label="{{ product.title | escape }}"
+    ></a>
+
+    <div class="category-product-card__media">
+      {%- if product.featured_media -%}
+        {{
+          product.featured_media.preview_image
+          | image_url: width: 900
+          | image_tag:
+            widths: '300, 450, 600, 900',
+            sizes: sizes,
+            loading: 'lazy',
+            alt: product.featured_media.alt | default: product.title,
+            class: 'category-product-card__image'
+        }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'category-product-card__image category-product-card__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="category-product-card__body">
+      <h3 class="category-product-card__title">{{ product.title | escape }}</h3>
+
+      {%- if subtitle != blank -%}
+        <p class="category-product-card__subtitle">{{ subtitle | escape }}</p>
+      {%- endif -%}
+
+      {%- if show_rating and rating != blank and rating.rating > 0 -%}
+        {%- liquid
+          assign rating_value = rating.rating | times: 1.0
+          assign rating_max = rating.scale_max | default: 5 | times: 1.0
+          assign rating_percent = rating_value | divided_by: rating_max | times: 100 | round: 1
+        -%}
+        <p class="category-product-card__rating">
+          <span
+            class="category-product-card__stars"
+            style="--rating-percent: {{ rating_percent }}%;"
+            role="img"
+            aria-label="{{ 'accessibility.rating' | t: rating: rating_value }}"
+          ></span>
+          {%- if rating_count != blank -%}
+            <span class="category-product-card__rating-count">({{ rating_count }})</span>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      <div class="category-product-card__footer">
+        <p class="category-product-card__price">
+          {%- if product.compare_at_price > product.price -%}
+            <span class="visually-hidden">{{ 'content.price_sale' | t }}</span>
+            <span>{{ product.price | money }}</span>
+            <span class="visually-hidden">{{ 'content.price_regular' | t }}</span>
+            <s class="category-product-card__compare">{{ product.compare_at_price | money }}</s>
+          {%- else -%}
+            <span>{{ product.price | money }}</span>
+          {%- endif -%}
+        </p>
+
+        <div class="category-product-card__quick-add">
+          {% render 'quick-add', product: product, section_id: section_id %}
+        </div>
+      </div>
+    </div>
+  </product-card>
+{%- else -%}
+  {%- liquid
+    assign placeholder_index = index | default: 1 | modulo: 6 | plus: 1
+    assign placeholder_name = 'product-' | append: placeholder_index
+  -%}
+  <div class="category-product-card category-product-card--placeholder">
+    <div class="category-product-card__media">
+      {{ placeholder_name | placeholder_svg_tag: 'category-product-card__image category-product-card__placeholder' }}
+    </div>
+    <div class="category-product-card__body">
+      <h3 class="category-product-card__title">{{ 'placeholders.product_title' | t }}</h3>
+      <div class="category-product-card__footer">
+        <p class="category-product-card__price">{{ 1999 | money }}</p>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

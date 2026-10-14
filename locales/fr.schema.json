@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Catégorie",
+    "category_product_tabs": "Onglets de produits par catégorie",
     "promo_banner": "Bannière promotionnelle",
     "category": "Catégorie",
     "category_showcase": "Vitrine de catégories",
@@ -174,6 +176,11 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "star_color": "Couleur des étoiles",
+    "card_background": "Arrière-plan de la carte",
+    "active_icon_color": "Couleur de l'icône active",
+    "show_rating": "Afficher l'évaluation",
+    "show_weight": "Afficher le poids",
     "tagline_color": "Couleur du slogan",
     "button_text_color": "Couleur du texte du bouton",
     "button_background": "Arrière-plan du bouton",
@@ -1113,6 +1120,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "show_rating": "Utilise les champs d'évaluation des produits Shopify, remplis par les applications d'avis.",
+    "category_tabs_heading": "Non affiché. Les lecteurs d'écran l'utilisent pour décrire les onglets de catégories.",
+    "category_tab_label": "Par défaut, le titre de la collection.",
     "heading_accent": "Le texte en italique utilise la couleur d'accent.",
     "fallback_image": "Affiché lorsqu'aucune image n'est sélectionnée. Saisissez un nom de fichier du dossier assets du thème.",
     "announcement_social_links": "Ajoutez des liens dans le bloc Liens vers les réseaux sociaux",

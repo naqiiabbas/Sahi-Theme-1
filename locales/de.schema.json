@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategorie",
+    "category_product_tabs": "Produkt-Tabs nach Kategorie",
     "promo_banner": "Werbebanner",
     "category": "Kategorie",
     "category_showcase": "Kategorienübersicht",
@@ -174,6 +176,11 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "star_color": "Sternfarbe",
+    "card_background": "Kartenhintergrund",
+    "active_icon_color": "Farbe des aktiven Symbols",
+    "show_rating": "Bewertung anzeigen",
+    "show_weight": "Gewicht anzeigen",
     "tagline_color": "Slogan-Farbe",
     "button_text_color": "Schaltflächentextfarbe",
     "button_background": "Schaltflächenhintergrund",
@@ -1113,6 +1120,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "show_rating": "Nutzt Shopifys Produktbewertungsfelder, die von Bewertungs-Apps befüllt werden.",
+    "category_tabs_heading": "Nicht sichtbar. Screenreader beschreiben damit die Kategorie-Tabs.",
+    "category_tab_label": "Standardmäßig der Titel der Kollektion.",
     "heading_accent": "Kursiver Text verwendet die Akzentfarbe.",
     "fallback_image": "Wird angezeigt, wenn kein Bild ausgewählt ist. Gib einen Dateinamen aus dem Assets-Ordner des Themes ein.",
     "announcement_social_links": "Füge Links im Block „Social-Media-Links“ hinzu",

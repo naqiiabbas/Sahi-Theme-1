@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "类别",
+    "category_product_tabs": "分类商品标签页",
     "promo_banner": "促销横幅",
     "category": "类别",
     "category_showcase": "类别展示",
@@ -174,6 +176,11 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "star_color": "星级颜色",
+    "card_background": "卡片背景",
+    "active_icon_color": "当前图标颜色",
+    "show_rating": "显示评分",
+    "show_weight": "显示重量",
     "tagline_color": "标语颜色",
     "button_text_color": "按钮文字颜色",
     "button_background": "按钮背景",
@@ -1113,6 +1120,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "show_rating": "使用 Shopify 商品评分字段，由评论应用填写。",
+    "category_tabs_heading": "不显示。屏幕阅读器用它描述分类标签页。",
+    "category_tab_label": "默认为商品系列标题。",
     "heading_accent": "斜体文字使用强调色。",
     "fallback_image": "未选择图片时显示。请输入主题 assets 文件夹中的文件名。",
     "announcement_social_links": "在“社交媒体链接”区块中添加链接",

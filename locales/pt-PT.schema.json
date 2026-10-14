@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Categoria",
+    "category_product_tabs": "Separadores de produtos por categoria",
     "promo_banner": "Faixa promocional",
     "category": "Categoria",
     "category_showcase": "Montra de categorias",
@@ -174,6 +176,11 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "star_color": "Cor das estrelas",
+    "card_background": "Fundo do cartão",
+    "active_icon_color": "Cor do ícone ativo",
+    "show_rating": "Mostrar classificação",
+    "show_weight": "Mostrar peso",
     "tagline_color": "Cor do slogan",
     "button_text_color": "Cor do texto do botão",
     "button_background": "Fundo do botão",
@@ -1113,6 +1120,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "show_rating": "Usa os campos de classificação de produtos da Shopify, preenchidos por apps de avaliações.",
+    "category_tabs_heading": "Não apresentado. Os leitores de ecrã usam-no para descrever os separadores de categorias.",
+    "category_tab_label": "Por predefinição, o título da coleção.",
     "heading_accent": "O texto em itálico usa a cor de destaque.",
     "fallback_image": "Apresentada quando nenhuma imagem é selecionada. Introduza um nome de ficheiro da pasta assets do tema.",
     "announcement_social_links": "Adicione ligações no bloco Ligações de redes sociais",

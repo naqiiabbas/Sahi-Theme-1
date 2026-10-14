@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategori",
+    "category_product_tabs": "Kategoriye göre ürün sekmeleri",
     "promo_banner": "Tanıtım afişi",
     "category": "Kategori",
     "category_showcase": "Kategori vitrini",
@@ -174,6 +176,11 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "star_color": "Yıldız rengi",
+    "card_background": "Kart arka planı",
+    "active_icon_color": "Etkin simge rengi",
+    "show_rating": "Puanı göster",
+    "show_weight": "Ağırlığı göster",
     "tagline_color": "Slogan rengi",
     "button_text_color": "Düğme metni rengi",
     "button_background": "Düğme arka planı",
@@ -1113,6 +1120,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "show_rating": "Değerlendirme uygulamalarının doldurduğu Shopify ürün puanı alanlarını kullanır.",
+    "category_tabs_heading": "Gösterilmez. Ekran okuyucular kategori sekmelerini tanımlamak için kullanır.",
+    "category_tab_label": "Varsayılan olarak koleksiyon başlığıdır.",
     "heading_accent": "İtalik metin vurgu rengini kullanır.",
     "fallback_image": "Görsel seçilmediğinde gösterilir. Temanın assets klasöründen bir dosya adı girin.",
     "announcement_social_links": "Bağlantıları Sosyal medya bağlantıları bloğuna ekleyin",

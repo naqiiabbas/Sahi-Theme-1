@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategoria",
+    "category_product_tabs": "Karty produktów według kategorii",
     "promo_banner": "Baner promocyjny",
     "category": "Kategoria",
     "category_showcase": "Prezentacja kategorii",
@@ -174,6 +176,11 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "star_color": "Kolor gwiazdek",
+    "card_background": "Tło karty",
+    "active_icon_color": "Kolor aktywnej ikony",
+    "show_rating": "Pokaż ocenę",
+    "show_weight": "Pokaż wagę",
     "tagline_color": "Kolor hasła",
     "button_text_color": "Kolor tekstu przycisku",
     "button_background": "Tło przycisku",
@@ -1113,6 +1120,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "show_rating": "Używa pól ocen produktów Shopify, które wypełniają aplikacje z recenzjami.",
+    "category_tabs_heading": "Niewidoczne. Czytniki ekranu używają go do opisu kart kategorii.",
+    "category_tab_label": "Domyślnie tytuł kolekcji.",
     "heading_accent": "Kursywa używa koloru akcentu.",
     "fallback_image": "Wyświetlany, gdy nie wybrano obrazu. Wpisz nazwę pliku z folderu assets motywu.",
     "announcement_social_links": "Dodaj linki w bloku Linki do mediów społecznościowych",

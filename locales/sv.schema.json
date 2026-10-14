@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategori",
+    "category_product_tabs": "Produktflikar per kategori",
     "promo_banner": "Kampanjbanner",
     "category": "Kategori",
     "category_showcase": "Kategoriöversikt",
@@ -174,6 +176,11 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "star_color": "Stjärnfärg",
+    "card_background": "Kortbakgrund",
+    "active_icon_color": "Färg på aktiv ikon",
+    "show_rating": "Visa betyg",
+    "show_weight": "Visa vikt",
     "tagline_color": "Slogans färg",
     "button_text_color": "Knapptextfärg",
     "button_background": "Knappbakgrund",
@@ -1113,6 +1120,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "show_rating": "Använder Shopifys fält för produktbetyg, som recensionsappar fyller i.",
+    "category_tabs_heading": "Visas inte. Skärmläsare använder den för att beskriva kategoriflikarna.",
+    "category_tab_label": "Standard är kollektionens titel.",
     "heading_accent": "Kursiv text använder accentfärgen.",
     "fallback_image": "Visas när ingen bild är vald. Ange ett filnamn från temats assets-mapp.",
     "announcement_social_links": "Lägg till länkar i blocket Länkar till sociala medier",

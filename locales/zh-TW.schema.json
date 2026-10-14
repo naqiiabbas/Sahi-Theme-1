@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "類別",
+    "category_product_tabs": "分類商品分頁",
     "promo_banner": "促銷橫幅",
     "category": "類別",
     "category_showcase": "類別展示",
@@ -174,6 +176,11 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "star_color": "星星顏色",
+    "card_background": "卡片背景",
+    "active_icon_color": "使用中圖示顏色",
+    "show_rating": "顯示評分",
+    "show_weight": "顯示重量",
     "tagline_color": "標語顏色",
     "button_text_color": "按鈕文字顏色",
     "button_background": "按鈕背景",
@@ -1113,6 +1120,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "show_rating": "使用 Shopify 商品評分欄位，由評論應用程式填寫。",
+    "category_tabs_heading": "不顯示。螢幕閱讀器用它描述分類分頁。",
+    "category_tab_label": "預設為商品系列標題。",
     "heading_accent": "斜體文字使用強調色。",
     "fallback_image": "未選取圖片時顯示。請輸入佈景主題 assets 資料夾中的檔案名稱。",
     "announcement_social_links": "在「社群媒體連結」區塊中新增連結",

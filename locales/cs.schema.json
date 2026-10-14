@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategorie",
+    "category_product_tabs": "Záložky produktů podle kategorií",
     "promo_banner": "Propagační banner",
     "category": "Kategorie",
     "category_showcase": "Přehled kategorií",
@@ -174,6 +176,11 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "star_color": "Barva hvězdiček",
+    "card_background": "Pozadí karty",
+    "active_icon_color": "Barva aktivní ikony",
+    "show_rating": "Zobrazit hodnocení",
+    "show_weight": "Zobrazit hmotnost",
     "tagline_color": "Barva sloganu",
     "button_text_color": "Barva textu tlačítka",
     "button_background": "Pozadí tlačítka",
@@ -1113,6 +1120,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "show_rating": "Používá pole hodnocení produktů Shopify, která vyplňují aplikace recenzí.",
+    "category_tabs_heading": "Nezobrazuje se. Čtečky obrazovky jím popisují záložky kategorií.",
+    "category_tab_label": "Výchozí je název kolekce.",
     "heading_accent": "Kurzíva používá barvu zvýraznění.",
     "fallback_image": "Zobrazí se, když není vybrán obrázek. Zadejte název souboru ze složky assets motivu.",
     "announcement_social_links": "Odkazy přidejte v bloku Odkazy na sociální sítě",

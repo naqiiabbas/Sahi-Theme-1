@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "カテゴリー",
+    "category_product_tabs": "カテゴリー別商品タブ",
     "promo_banner": "プロモーションバナー",
     "category": "カテゴリー",
     "category_showcase": "カテゴリーショーケース",
@@ -174,6 +176,11 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "star_color": "星の色",
+    "card_background": "カードの背景",
+    "active_icon_color": "アクティブなアイコンの色",
+    "show_rating": "評価を表示",
+    "show_weight": "重量を表示",
     "tagline_color": "タグラインの色",
     "button_text_color": "ボタンのテキストカラー",
     "button_background": "ボタンの背景",
@@ -1113,6 +1120,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "show_rating": "レビューアプリが入力するShopifyの商品評価フィールドを使用します。",
+    "category_tabs_heading": "表示されません。スクリーンリーダーがカテゴリータブの説明に使用します。",
+    "category_tab_label": "初期設定はコレクションのタイトルです。",
     "heading_accent": "斜体のテキストにはアクセントカラーが使われます。",
     "fallback_image": "画像が選択されていない場合に表示されます。テーマのassetsフォルダ内のファイル名を入力してください。",
     "announcement_social_links": "ソーシャルメディアリンクのブロックでリンクを追加します",

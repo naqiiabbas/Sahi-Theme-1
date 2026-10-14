@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategoria",
+    "category_product_tabs": "Tuotevälilehdet kategorioittain",
     "promo_banner": "Mainosbanneri",
     "category": "Kategoria",
     "category_showcase": "Kategorianäyttö",
@@ -174,6 +176,11 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "star_color": "Tähtien väri",
+    "card_background": "Kortin tausta",
+    "active_icon_color": "Aktiivisen kuvakkeen väri",
+    "show_rating": "Näytä arvio",
+    "show_weight": "Näytä paino",
     "tagline_color": "Iskulauseen väri",
     "button_text_color": "Painikkeen tekstin väri",
     "button_background": "Painikkeen tausta",
@@ -1113,6 +1120,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "show_rating": "Käyttää Shopifyn tuotearviokenttiä, jotka arvostelusovellukset täyttävät.",
+    "category_tabs_heading": "Ei näytetä. Näytönlukuohjelmat kuvaavat sillä kategoriavälilehtiä.",
+    "category_tab_label": "Oletuksena kokoelman nimi.",
     "heading_accent": "Kursiivi käyttää korostusväriä.",
     "fallback_image": "Näytetään, kun kuvaa ei ole valittu. Anna tiedostonimi teeman assets-kansiosta.",
     "announcement_social_links": "Lisää linkit Sosiaalisen median linkit -lohkoon",

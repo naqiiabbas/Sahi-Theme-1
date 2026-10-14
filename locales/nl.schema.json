@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Categorie",
+    "category_product_tabs": "Producttabbladen per categorie",
     "promo_banner": "Promotiebanner",
     "category": "Categorie",
     "category_showcase": "Categorieoverzicht",
@@ -174,6 +176,11 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "star_color": "Sterkleur",
+    "card_background": "Kaartachtergrond",
+    "active_icon_color": "Kleur actief pictogram",
+    "show_rating": "Beoordeling weergeven",
+    "show_weight": "Gewicht weergeven",
     "tagline_color": "Sloganskleur",
     "button_text_color": "Tekstkleur knop",
     "button_background": "Knopachtergrond",
@@ -1113,6 +1120,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "show_rating": "Gebruikt de productbeoordelingsvelden van Shopify, die review-apps invullen.",
+    "category_tabs_heading": "Niet zichtbaar. Schermlezers gebruiken dit om de categorietabbladen te beschrijven.",
+    "category_tab_label": "Standaard de titel van de collectie.",
     "heading_accent": "Cursieve tekst gebruikt de accentkleur.",
     "fallback_image": "Wordt getoond als er geen afbeelding is geselecteerd. Voer een bestandsnaam uit de assets-map van het thema in.",
     "announcement_social_links": "Voeg links toe in het blok Socialemedialinks",

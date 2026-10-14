@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Kategori",
+    "category_product_tabs": "Produktfaner efter kategori",
     "promo_banner": "Kampagnebanner",
     "category": "Kategori",
     "category_showcase": "Kategorioversigt",
@@ -174,6 +176,11 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "star_color": "Stjernefarve",
+    "card_background": "Kortbaggrund",
+    "active_icon_color": "Farve på aktivt ikon",
+    "show_rating": "Vis bedømmelse",
+    "show_weight": "Vis vægt",
     "tagline_color": "Sloganfarve",
     "button_text_color": "Knaptekstfarve",
     "button_background": "Knapbaggrund",
@@ -1113,6 +1120,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "show_rating": "Bruger Shopifys produktbedømmelsesfelter, som anmeldelsesapps udfylder.",
+    "category_tabs_heading": "Vises ikke. Skærmlæsere bruger den til at beskrive kategorifanerne.",
+    "category_tab_label": "Standard er kollektionens titel.",
     "heading_accent": "Kursiv tekst bruger accentfarven.",
     "fallback_image": "Vises, når der ikke er valgt et billede. Angiv et filnavn fra temaets assets-mappe.",
     "announcement_social_links": "Tilføj links i blokken Links til sociale medier",

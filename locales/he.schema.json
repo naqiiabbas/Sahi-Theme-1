@@ -215,6 +215,9 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "show_rating": "משתמש בשדות דירוג המוצרים של Shopify, שאפליקציות ביקורות ממלאות.",
+    "category_tabs_heading": "לא מוצג. קוראי מסך משתמשים בו לתיאור כרטיסיות הקטגוריות.",
+    "category_tab_label": "ברירת המחדל היא שם הקולקציה.",
     "heading_accent": "טקסט נטוי משתמש בצבע ההדגשה.",
     "fallback_image": "מוצג כשלא נבחרה תמונה. הזינו שם קובץ מתיקיית assets של העיצוב.",
     "announcement_social_links": "הוסיפו קישורים בבלוק קישורים לרשתות חברתיות",
@@ -247,6 +250,8 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "category_tab": "קטגוריה",
+    "category_product_tabs": "כרטיסיות מוצרים לפי קטגוריה",
     "promo_banner": "באנר קידום",
     "category": "קטגוריה",
     "category_showcase": "תצוגת קטגוריות",
@@ -696,6 +701,11 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "star_color": "צבע הכוכבים",
+    "card_background": "רקע הכרטיס",
+    "active_icon_color": "צבע הסמל הפעיל",
+    "show_rating": "הצגת דירוג",
+    "show_weight": "הצגת משקל",
     "tagline_color": "צבע הסלוגן",
     "button_text_color": "צבע טקסט הלחצן",
     "button_background": "רקע הלחצן",

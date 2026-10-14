@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "หมวดหมู่",
+    "category_product_tabs": "แท็บสินค้าตามหมวดหมู่",
     "promo_banner": "แบนเนอร์โปรโมชัน",
     "category": "หมวดหมู่",
     "category_showcase": "แสดงหมวดหมู่",
@@ -174,6 +176,11 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "star_color": "สีดาว",
+    "card_background": "พื้นหลังการ์ด",
+    "active_icon_color": "สีไอคอนที่ใช้งานอยู่",
+    "show_rating": "แสดงคะแนน",
+    "show_weight": "แสดงน้ำหนัก",
     "tagline_color": "สีสโลแกน",
     "button_text_color": "สีข้อความปุ่ม",
     "button_background": "พื้นหลังปุ่ม",
@@ -1113,6 +1120,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "show_rating": "ใช้ฟิลด์คะแนนสินค้าของ Shopify ซึ่งแอปรีวิวเป็นผู้กรอก",
+    "category_tabs_heading": "ไม่แสดง โปรแกรมอ่านหน้าจอใช้เพื่ออธิบายแท็บหมวดหมู่",
+    "category_tab_label": "ค่าเริ่มต้นคือชื่อคอลเลกชัน",
     "heading_accent": "ข้อความตัวเอียงใช้สีเน้น",
     "fallback_image": "แสดงเมื่อไม่ได้เลือกรูปภาพ ป้อนชื่อไฟล์จากโฟลเดอร์ assets ของธีม",
     "announcement_social_links": "เพิ่มลิงก์ในบล็อกลิงก์โซเชียลมีเดีย",

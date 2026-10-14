@@ -223,6 +223,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "show_rating": "Uses Shopify product rating fields, which review apps fill in.",
+    "category_tabs_heading": "Not shown. Screen readers use it to describe the category tabs.",
+    "category_tab_label": "Defaults to the collection title.",
     "heading_accent": "Italic text uses the accent color.",
     "fallback_image": "Shown when no image is selected. Enter a file name from the theme's assets folder.",
     "actions_display_style": "Icons are always used on mobile",
@@ -255,6 +258,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "category_tab": "Category",
+    "category_product_tabs": "Category product tabs",
     "promo_banner": "Promo banner",
     "category": "Category",
     "category_showcase": "Category showcase",
@@ -754,6 +759,11 @@
     "below_media": "Below media"
   },
   "settings": {
+    "star_color": "Star color",
+    "card_background": "Card background",
+    "active_icon_color": "Active icon color",
+    "show_rating": "Show rating",
+    "show_weight": "Show weight",
     "tagline_color": "Tagline color",
     "button_text_color": "Button text color",
     "button_background": "Button background",

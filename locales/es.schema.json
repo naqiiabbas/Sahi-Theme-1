@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category_tab": "Categoría",
+    "category_product_tabs": "Pestañas de productos por categoría",
     "promo_banner": "Banner promocional",
     "category": "Categoría",
     "category_showcase": "Muestra de categorías",
@@ -174,6 +176,11 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "star_color": "Color de las estrellas",
+    "card_background": "Fondo de la tarjeta",
+    "active_icon_color": "Color del ícono activo",
+    "show_rating": "Mostrar valoración",
+    "show_weight": "Mostrar peso",
     "tagline_color": "Color del eslogan",
     "button_text_color": "Color del texto del botón",
     "button_background": "Fondo del botón",
@@ -1113,6 +1120,9 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "show_rating": "Usa los campos de valoración de productos de Shopify, que completan las apps de reseñas.",
+    "category_tabs_heading": "No se muestra. Los lectores de pantalla lo usan para describir las pestañas de categorías.",
+    "category_tab_label": "De forma predeterminada, el título de la colección.",
     "heading_accent": "El texto en cursiva usa el color de acento.",
     "fallback_image": "Se muestra cuando no se selecciona ninguna imagen. Ingresa un nombre de archivo de la carpeta assets del tema.",
     "announcement_social_links": "Agrega enlaces en el bloque Enlaces de redes sociales",
