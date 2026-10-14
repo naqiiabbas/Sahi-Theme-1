@@ -171,6 +171,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "show_pause_button": "Mostrar botón de pausa",
     "show_account_label": "Mostrar etiqueta de cuenta",
     "show_social_links": "Mostrar enlaces de redes sociales",
     "search_placeholder": "Texto de marcador de posición",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "bars": "Barras",
     "search_bar": "Barra de búsqueda",
     "apple": "Apple",
     "arrow": "Flecha",

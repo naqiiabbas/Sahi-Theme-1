@@ -407,6 +407,7 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "bars": "أشرطة",
     "search_bar": "شريط البحث",
     "above_carousel": "أعلى العرض الدائري",
     "accent": "تمييز",
@@ -690,6 +691,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "show_pause_button": "إظهار زر الإيقاف المؤقت",
     "show_account_label": "إظهار تسمية الحساب",
     "show_social_links": "إظهار روابط وسائل التواصل الاجتماعي",
     "search_placeholder": "نص العنصر النائب",

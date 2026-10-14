@@ -171,6 +171,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_pause_button": "Näytä taukopainike",
     "show_account_label": "Näytä tilin nimi",
     "show_social_links": "Näytä sosiaalisen median linkit",
     "search_placeholder": "Paikkamerkkiteksti",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "bars": "Palkit",
     "search_bar": "Hakupalkki",
     "apple": "Omena",
     "arrow": "Nuoli",

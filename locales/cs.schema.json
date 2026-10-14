@@ -171,6 +171,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_pause_button": "Zobrazit tlačítko pozastavení",
     "show_account_label": "Zobrazit popisek účtu",
     "show_social_links": "Zobrazit odkazy na sociální sítě",
     "search_placeholder": "Zástupný text",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "bars": "Pruhy",
     "search_bar": "Vyhledávací pole",
     "apple": "Apple",
     "arrow": "Šipka",

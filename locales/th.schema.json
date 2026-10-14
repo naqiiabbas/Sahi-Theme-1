@@ -171,6 +171,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_pause_button": "แสดงปุ่มหยุดชั่วคราว",
     "show_account_label": "แสดงป้ายกำกับบัญชี",
     "show_social_links": "แสดงลิงก์โซเชียลมีเดีย",
     "search_placeholder": "ข้อความตัวยึดตำแหน่ง",
@@ -590,6 +591,7 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "bars": "แถบ",
     "search_bar": "แถบค้นหา",
     "apple": "Apple",
     "arrow": "ลูกศร",

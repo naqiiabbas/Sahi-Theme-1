@@ -171,6 +171,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_pause_button": "显示暂停按钮",
     "show_account_label": "显示账户标签",
     "show_social_links": "显示社交媒体链接",
     "search_placeholder": "占位符文本",
@@ -590,6 +591,7 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "bars": "条形",
     "search_bar": "搜索栏",
     "apple": "Apple",
     "arrow": "箭头",

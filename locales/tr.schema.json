@@ -171,6 +171,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_pause_button": "Duraklat düğmesini göster",
     "show_account_label": "Hesap etiketini göster",
     "show_social_links": "Sosyal medya bağlantılarını göster",
     "search_placeholder": "Yer tutucu metin",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "bars": "Çubuklar",
     "search_bar": "Arama çubuğu",
     "apple": "Apple",
     "arrow": "Ok",

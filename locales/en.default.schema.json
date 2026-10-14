@@ -422,6 +422,7 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "bars": "Bars",
     "above_carousel": "Above carousel",
     "accent": "Accent",
     "all": "All",
@@ -748,6 +749,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_pause_button": "Show pause button",
     "show_account_label": "Show account label",
     "accordion": "Accordion",
     "account": "Account",

@@ -171,6 +171,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_pause_button": "顯示暫停按鈕",
     "show_account_label": "顯示帳號標籤",
     "show_social_links": "顯示社群媒體連結",
     "search_placeholder": "預留位置文字",
@@ -590,6 +591,7 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "bars": "橫條",
     "search_bar": "搜尋列",
     "apple": "Apple",
     "arrow": "箭頭",

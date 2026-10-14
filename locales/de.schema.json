@@ -171,6 +171,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_pause_button": "Pause-Schaltfläche anzeigen",
     "show_account_label": "Kontobeschriftung anzeigen",
     "show_social_links": "Social-Media-Links anzeigen",
     "search_placeholder": "Platzhaltertext",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "bars": "Balken",
     "search_bar": "Suchleiste",
     "apple": "Apfel",
     "arrow": "Pfeil",

@@ -407,6 +407,7 @@
     "comparison_slider": "موازنہ کرنے والا سلائیڈر"
   },
   "options": {
+    "bars": "بارز",
     "search_bar": "سرچ بار",
     "above_carousel": "کیرول کے اوپر",
     "accent": "ایکسنٹ",
@@ -690,6 +691,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "show_pause_button": "توقف کا بٹن دکھائیں",
     "show_account_label": "اکاؤنٹ لیبل دکھائیں",
     "show_social_links": "سوشل میڈیا لنکس دکھائیں",
     "search_placeholder": "پلیس ہولڈر ٹیکسٹ",

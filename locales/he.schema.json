@@ -407,6 +407,7 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "bars": "פסים",
     "search_bar": "שורת חיפוש",
     "above_carousel": "מעל הקרוסלה",
     "accent": "הדגשה",
@@ -690,6 +691,7 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "show_pause_button": "הצגת לחצן השהיה",
     "show_account_label": "הצגת תווית החשבון",
     "show_social_links": "הצגת קישורים לרשתות חברתיות",
     "search_placeholder": "טקסט מציין מיקום",

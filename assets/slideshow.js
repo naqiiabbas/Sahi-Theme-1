@@ -233,6 +233,12 @@ export class Slideshow extends Component {
 
     event?.preventDefault();
 
+    // A shopper-chosen slide gets a full autoplay interval, keeping progress indicators in sync.
+    if (event && this.#interval) {
+      this.suspend();
+      this.play();
+    }
+
     const { animate = true } = options;
     const lastIndex = slides.length - 1;
 
@@ -351,6 +357,23 @@ export class Slideshow extends Component {
 
       this.next();
     }, interval);
+
+    this.#restartAutoplayProgress(interval);
+  }
+
+  /**
+   * Restarts CSS progress indicators (such as bars pagination) for a new autoplay interval.
+   * @param {number} [interval] - The interval in milliseconds.
+   */
+  #restartAutoplayProgress(interval) {
+    if (!interval) return;
+
+    this.style.setProperty('--slideshow-autoplay-duration', `${interval}ms`);
+    this.removeAttribute('autoplay-suspended');
+    this.removeAttribute('autoplay-running');
+    // Read layout so removing and re-adding the attribute restarts the animation.
+    void this.offsetWidth;
+    this.setAttribute('autoplay-running', '');
   }
 
   /**
@@ -379,6 +402,8 @@ export class Slideshow extends Component {
   suspend() {
     clearInterval(this.#interval);
     this.#interval = undefined;
+    // Freezes progress indicators until play() starts a fresh interval.
+    if (this.hasAttribute('autoplay-running')) this.setAttribute('autoplay-suspended', '');
   }
 
   /**

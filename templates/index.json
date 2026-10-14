@@ -433,9 +433,11 @@
         "content_position": "on-media",
         "icons_style": "none",
         "icons_shape": "none",
-        "slideshow_controls_style": "dots",
+        "slideshow_controls_style": "bars",
+        "pagination_color": "{{ settings.color_palette.color3 }}",
         "autoplay": true,
         "autoplay_speed": 5,
+        "show_pause_button": false,
         "padding-block-start": 0,
         "padding-block-end": 0
       }

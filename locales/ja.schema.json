@@ -171,6 +171,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "show_pause_button": "一時停止ボタンを表示",
     "show_account_label": "アカウントのラベルを表示",
     "show_social_links": "ソーシャルメディアリンクを表示",
     "search_placeholder": "プレースホルダーテキスト",
@@ -590,6 +591,7 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "bars": "バー",
     "search_bar": "検索バー",
     "apple": "Apple",
     "arrow": "矢印",

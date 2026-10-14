@@ -171,6 +171,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "show_pause_button": "Afficher le bouton pause",
     "show_account_label": "Afficher le libellé du compte",
     "show_social_links": "Afficher les liens vers les réseaux sociaux",
     "search_placeholder": "Texte d’espace réservé",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "bars": "Barres",
     "search_bar": "Barre de recherche",
     "apple": "Pomme",
     "arrow": "Flèche",

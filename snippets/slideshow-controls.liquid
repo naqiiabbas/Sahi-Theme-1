@@ -1,7 +1,8 @@
 {%- doc -%}
   Renders controls for a slider component
 
-  @param {string} [style] - { 'dots' | 'counter' | 'thumbnails' | 'none' } The display style of the controls
+  @param {string} [style] - { 'dots' | 'bars' | 'counter' | 'thumbnails' | 'none' } The display style of the controls
+  @param {string} [pagination_color] - Color for the 'bars' style. Defaults to the foreground color.
   @param {boolean} [autoplay] - Whether the controls will display an autoplay option
   @param {number} [item_count] - The total number of slides
   @param {boolean} [show_arrows] - Whether the controls will display arrows
@@ -66,8 +67,8 @@
     {% if class %}
       class="{{ class }}"
     {% endif %}
-    {% if thumbnail_radius %}
-      style="--thumbnail-radius: {{ thumbnail_radius }}px;"
+    {% if thumbnail_radius or pagination_color != blank %}
+      style="{% if thumbnail_radius %}--thumbnail-radius: {{ thumbnail_radius }}px;{% endif %}{% if pagination_color != blank %} --slideshow-pagination-color: {{ pagination_color }}; --slideshow-pagination-color-rgb: {{ pagination_color.rgb }};{% endif %}"
     {% endif %}
   >
     {% if show_arrows_separately == false and show_arrows and pagination_position != 'left' %}
@@ -172,6 +173,23 @@
               >
                 {{ forloop.index }}
               </button>
+            </li>
+          {% endfor %}
+        </ol>
+      {% when 'bars' %}
+        {% comment %} Shares the dots[] ref so slideshow.js keeps aria-selected on the active bar. {% endcomment %}
+        <ol class="slideshow-controls__bars">
+          {% for i in (1..item_count) %}
+            <li>
+              <button
+                class="slideshow-control button button-unstyled slideshow-controls__bar"
+                aria-label="{{ 'accessibility.slide_status' | t: index: forloop.index, length: forloop.length }}"
+                on:click="/select/{{ forloop.index0 }}"
+                ref="dots[]"
+                {% if forloop.first %}
+                  aria-selected="true"
+                {% endif %}
+              ></button>
             </li>
           {% endfor %}
         </ol>
@@ -299,7 +317,7 @@
   slideshow-controls[controls-on-media] {
     z-index: var(--layer-raised);
 
-    &:has(.slideshow-controls__dots, .slideshow-controls__counter) {
+    &:has(.slideshow-controls__dots, .slideshow-controls__bars, .slideshow-controls__counter) {
       --color-foreground: #fff;
       --color-foreground-rgb: var(--color-white-rgb);
     }
@@ -410,6 +428,113 @@
   .slideshow-controls__counter {
     &:only-child {
       margin-inline: auto;
+    }
+  }
+
+  /* Bars pagination: one bar per slide, the active one at full strength.
+     Bars use an explicit color, so they skip the difference blend used for dots and autoplay controls. */
+  slideshow-controls:has(.slideshow-controls__bars),
+  slideshow-component[autoplay] slideshow-controls:has(.slideshow-controls__bars) {
+    mix-blend-mode: normal;
+  }
+
+  .slideshow-controls__bars {
+    --bar-color-rgb: var(--slideshow-pagination-color-rgb, var(--color-foreground-rgb));
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-xs);
+    margin: 0;
+    padding: 0 var(--padding-lg);
+    list-style: none;
+
+    &:only-child {
+      margin-inline: auto;
+    }
+  }
+
+  /* Each bar is a faint track (::after) with a fill (::before) that marks the active slide. */
+  .slideshow-controls__bar {
+    --bar-height: 3px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    height: var(--minimum-touch-target);
+    padding: 0;
+    background: transparent;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: var(--bar-height);
+      border-radius: var(--bar-height);
+      background-color: rgb(var(--bar-color-rgb) / var(--opacity-40));
+      transition: background-color var(--animation-speed) var(--animation-easing);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      top: calc(50% - var(--bar-height) / 2);
+      z-index: 1;
+      height: var(--bar-height);
+      border-radius: var(--bar-height);
+      background-color: rgb(var(--bar-color-rgb));
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    &:hover::after {
+      background-color: rgb(var(--bar-color-rgb) / var(--opacity-70));
+    }
+
+    &[aria-selected='true']::before {
+      transform: scaleX(1);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid rgb(var(--bar-color-rgb));
+      outline-offset: -0.5rem;
+    }
+  }
+
+  [dir='rtl'] .slideshow-controls__bar::before {
+    transform-origin: right center;
+  }
+
+  /* With autoplay, the active bar fills over the slide's interval. slideshow.js restarts it with each
+     interval (autoplay-running) and freezes it while autoplay is suspended, for example on hover. */
+  slideshow-component[autoplay-running]:not([paused]) .slideshow-controls__bar[aria-selected='true']::before {
+    animation: slideshow-bar-progress var(--slideshow-autoplay-duration, 5s) linear both;
+  }
+
+  slideshow-component[autoplay-running][autoplay-suspended]:not([paused])
+    .slideshow-controls__bar[aria-selected='true']::before {
+    animation-play-state: paused;
+  }
+
+  @keyframes slideshow-bar-progress {
+    from {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slideshow-controls__bar::after {
+      transition: none;
+    }
+
+    slideshow-component[autoplay-running]:not([paused]) .slideshow-controls__bar[aria-selected='true']::before {
+      animation: none;
     }
   }
 

@@ -171,6 +171,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_pause_button": "Pauzeknop weergeven",
     "show_account_label": "Accountlabel weergeven",
     "show_social_links": "Socialemedialinks weergeven",
     "search_placeholder": "Tijdelijke tekst",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "bars": "Balken",
     "search_bar": "Zoekbalk",
     "apple": "Apple",
     "arrow": "Pijl",

@@ -171,6 +171,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "show_pause_button": "Visa pausknapp",
     "show_account_label": "Visa kontoetikett",
     "show_social_links": "Visa länkar till sociala medier",
     "search_placeholder": "Platshållartext",
@@ -590,6 +591,7 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "bars": "Staplar",
     "search_bar": "Sökfält",
     "apple": "Apple",
     "arrow": "Pil",
