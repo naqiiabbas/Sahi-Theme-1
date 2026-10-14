@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Kollektion i fokus",
     "footer_perk": "Förmån",
     "footer_products": "Produktlänkar",
     "brand_footer": "Varumärkessidfot",
@@ -181,6 +182,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "title_accent_color": "Rubrikens accentfärg",
+    "show_products": "Visa produkter",
+    "accent_new_line": "Lägg kursiv text på en ny rad",
     "smooth_scroll_intensity": "Mjukhet",
     "smooth_scroll_enabled": "Mjuk rullning",
     "closing_note": "Avslutande anteckning",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "molecule": "Molekyl",
+    "flask": "Kolv",
     "gift": "Present",
     "bars": "Staplar",
     "search_bar": "Sökfält",
@@ -1136,6 +1142,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "spotlight_icon_image": "Ersätter den inbyggda ikonen. Använd en transparent PNG eller SVG; den får sektionens textfärg.",
+    "spotlight_products_link": "Lämna tomt för att länka till vald kollektion.",
     "smooth_scroll": "Gäller rullning med mus och styrplatta. Av för besökare som föredrar minskad rörelse och på pekskärmar.",
     "brand_footer_logo": "Använder temats logotyp om du inte väljer en bild här.",
     "feature_number": "Lämna tomt för automatisk numrering: 01, 02, 03.",

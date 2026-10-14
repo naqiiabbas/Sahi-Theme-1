@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Kokoelma esittelyssä",
     "footer_perk": "Etu",
     "footer_products": "Tuotelinkit",
     "brand_footer": "Brändin alatunniste",
@@ -181,6 +182,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "title_accent_color": "Otsikon korostusväri",
+    "show_products": "Näytä tuotteet",
+    "accent_new_line": "Kursiivi omalle rivilleen",
     "smooth_scroll_intensity": "Pehmeys",
     "smooth_scroll_enabled": "Pehmeä vieritys",
     "closing_note": "Loppuhuomautus",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "molecule": "Molekyyli",
+    "flask": "Kolvi",
     "gift": "Lahja",
     "bars": "Palkit",
     "search_bar": "Hakupalkki",
@@ -1136,6 +1142,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "spotlight_icon_image": "Korvaa sisäänrakennetun kuvakkeen. Käytä läpinäkyvää PNG- tai SVG-tiedostoa; se saa osion tekstin värin.",
+    "spotlight_products_link": "Jätä tyhjäksi, niin linkki vie valittuun kokoelmaan.",
     "smooth_scroll": "Koskee hiiri- ja kosketuslevyvieritystä. Pois käytöstä vähennettyä liikettä suosiville kävijöille ja kosketusnäytöillä.",
     "brand_footer_logo": "Käyttää teeman logoa, ellei tässä valita kuvaa.",
     "feature_number": "Jätä tyhjäksi, niin numerointi tehdään automaattisesti: 01, 02, 03.",

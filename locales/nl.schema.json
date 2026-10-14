@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Collectie in de kijker",
     "footer_perk": "Voordeel",
     "footer_products": "Productlinks",
     "brand_footer": "Merkfooter",
@@ -181,6 +182,9 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "title_accent_color": "Accentkleur kop",
+    "show_products": "Producten weergeven",
+    "accent_new_line": "Cursieve tekst op een nieuwe regel",
     "smooth_scroll_intensity": "Vloeiendheid",
     "smooth_scroll_enabled": "Vloeiend scrollen",
     "closing_note": "Slotnotitie",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "molecule": "Molecuul",
+    "flask": "Kolf",
     "gift": "Cadeau",
     "bars": "Balken",
     "search_bar": "Zoekbalk",
@@ -1136,6 +1142,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "spotlight_icon_image": "Vervangt het ingebouwde pictogram. Gebruik een transparante PNG of SVG; deze krijgt de tekstkleur van de sectie.",
+    "spotlight_products_link": "Laat leeg om naar de gekozen collectie te linken.",
     "smooth_scroll": "Geldt voor scrollen met muis en trackpad. Uit voor bezoekers die minder beweging willen en op touchscreens.",
     "brand_footer_logo": "Gebruikt het themalogo, tenzij je hier een afbeelding kiest.",
     "feature_number": "Laat leeg om automatisch te nummeren: 01, 02, 03.",

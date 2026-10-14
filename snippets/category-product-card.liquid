@@ -1,7 +1,7 @@
 {%- doc -%}
   Renders a product card for the category product tabs: image, title, weight or variant, rating,
   price, and a quick add button. Renders a placeholder card when no product is passed.
-  Styles are owned by sections/category-product-tabs.liquid.
+  Styles are owned by snippets/category-product-card-styles.liquid, which this snippet renders.
 
   @param {product} [product] - The product to render. Omit to render a placeholder card.
   @param {string} section_id - The section ID, used for unique IDs and the quick add form.
@@ -17,6 +17,8 @@
 {%- liquid
   assign sizes = image_sizes | default: '(min-width: 990px) 25vw, 50vw'
 -%}
+
+{% render 'category-product-card-styles' %}
 
 {%- if product != blank -%}
   {%- liquid

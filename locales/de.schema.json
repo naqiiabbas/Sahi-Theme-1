@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Kollektion im Fokus",
     "footer_perk": "Vorteil",
     "footer_products": "Produktlinks",
     "brand_footer": "Marken-Fußzeile",
@@ -181,6 +182,9 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "title_accent_color": "Akzentfarbe der Überschrift",
+    "show_products": "Produkte anzeigen",
+    "accent_new_line": "Kursiven Text in neue Zeile setzen",
     "smooth_scroll_intensity": "Sanftheit",
     "smooth_scroll_enabled": "Sanftes Scrollen",
     "closing_note": "Abschlusshinweis",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "molecule": "Molekül",
+    "flask": "Kolben",
     "gift": "Geschenk",
     "bars": "Balken",
     "search_bar": "Suchleiste",
@@ -1136,6 +1142,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "spotlight_icon_image": "Ersetzt das integrierte Symbol. Verwende ein transparentes PNG oder SVG; es übernimmt die Textfarbe des Abschnitts.",
+    "spotlight_products_link": "Leer lassen, um auf die ausgewählte Kollektion zu verlinken.",
     "smooth_scroll": "Gilt für Maus und Trackpad. Deaktiviert für Besucher mit reduzierter Bewegung und auf Touchscreens.",
     "brand_footer_logo": "Verwendet das Theme-Logo, sofern du hier kein Bild auswählst.",
     "feature_number": "Leer lassen, um automatisch zu nummerieren: 01, 02, 03.",

@@ -215,6 +215,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "spotlight_icon_image": "מחליף את הסמל המובנה. השתמשו ב-PNG או SVG שקופים; הם יקבלו את צבע הטקסט של המקטע.",
+    "spotlight_products_link": "השאירו ריק כדי לקשר לקולקציה שנבחרה.",
     "smooth_scroll": "חל על גלילה בעכבר ובמשטח מגע. כבוי למבקרים שמעדיפים תנועה מופחתת ובמסכי מגע.",
     "brand_footer_logo": "משתמש בלוגו של העיצוב אלא אם תבחרו תמונה כאן.",
     "feature_number": "השאירו ריק למספור אוטומטי: 01, 02, 03.",
@@ -253,6 +255,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "collection_spotlight": "קולקציה בזרקור",
     "footer_perk": "הטבה",
     "footer_products": "קישורי מוצרים",
     "brand_footer": "כותרת תחתונה של המותג",
@@ -425,6 +428,8 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "molecule": "מולקולה",
+    "flask": "מבחנה",
     "gift": "מתנה",
     "bars": "פסים",
     "search_bar": "שורת חיפוש",
@@ -710,6 +715,9 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "title_accent_color": "צבע הדגשה לכותרת",
+    "show_products": "הצגת מוצרים",
+    "accent_new_line": "הצבת הטקסט הנטוי בשורה חדשה",
     "smooth_scroll_intensity": "רמת חלקות",
     "smooth_scroll_enabled": "גלילה חלקה",
     "closing_note": "הערת סיום",

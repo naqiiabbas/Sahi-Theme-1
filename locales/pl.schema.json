@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Wyróżniona kolekcja",
     "footer_perk": "Korzyść",
     "footer_products": "Linki do produktów",
     "brand_footer": "Stopka marki",
@@ -181,6 +182,9 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "title_accent_color": "Kolor akcentu nagłówka",
+    "show_products": "Pokaż produkty",
+    "accent_new_line": "Umieść kursywę w nowym wierszu",
     "smooth_scroll_intensity": "Płynność",
     "smooth_scroll_enabled": "Płynne przewijanie",
     "closing_note": "Notka końcowa",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "molecule": "Cząsteczka",
+    "flask": "Kolba",
     "gift": "Prezent",
     "bars": "Paski",
     "search_bar": "Pasek wyszukiwania",
@@ -1136,6 +1142,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "spotlight_icon_image": "Zastępuje wbudowaną ikonę. Użyj przezroczystego PNG lub SVG; przyjmie kolor tekstu sekcji.",
+    "spotlight_products_link": "Pozostaw puste, aby linkować do wybranej kolekcji.",
     "smooth_scroll": "Dotyczy przewijania myszą i gładzikiem. Wyłączone dla osób preferujących ograniczony ruch i na ekranach dotykowych.",
     "brand_footer_logo": "Używa logo motywu, chyba że wybierzesz tu obraz.",
     "feature_number": "Pozostaw puste, aby numerować automatycznie: 01, 02, 03.",

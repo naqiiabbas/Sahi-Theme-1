@@ -849,6 +849,73 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "collection_spotlight_honey": {
+      "type": "collection-spotlight",
+      "blocks": {
+        "pure_natural": {
+          "type": "feature",
+          "settings": {
+            "icon": "leaf",
+            "label": "100%\nPure & Natural",
+            "fallback_icon": "feature-icon-pure-natural.png"
+          }
+        },
+        "no_preservatives": {
+          "type": "feature",
+          "settings": {
+            "icon": "flask",
+            "label": "No Added\nPreservatives",
+            "fallback_icon": "feature-icon-no-preservatives.png"
+          }
+        },
+        "nutrients": {
+          "type": "feature",
+          "settings": {
+            "icon": "molecule",
+            "label": "Rich in\nNatural Nutrients",
+            "fallback_icon": "feature-icon-nutrients.png"
+          }
+        }
+      },
+      "block_order": [
+        "pure_natural",
+        "no_preservatives",
+        "nutrients"
+      ],
+      "settings": {
+        "fallback_image": "collection-spotlight-honey.jpg",
+        "image_position": 70,
+        "min_height": 600,
+        "overlay_color": "{{ settings.color_palette.background }}",
+        "overlay_opacity": 85,
+        "show_decoration": true,
+        "eyebrow": "Pure & natural",
+        "title": "Organic <em>Raw Honey</em>",
+        "accent_new_line": true,
+        "text": "Nature’s sweetness in its purest form. Unprocessed, nutrient-rich and full of natural goodness.",
+        "button_label": "Explore honey collection",
+        "button_link": "shopify://collections/raw-honey",
+        "show_products": true,
+        "collection": "raw-honey",
+        "product_count": 4,
+        "products_eyebrow": "Our honey range",
+        "products_title": "Nature’s <em>Golden Goodness.</em>",
+        "products_text": "Choose from our premium range of organic honeys, sourced from the finest natural environments.",
+        "products_button_label": "View all honey products",
+        "products_button_link": "",
+        "image_ratio": "4 / 3",
+        "show_weight": true,
+        "show_rating": true,
+        "title_font": "instrument_serif_n4",
+        "title_size": 88,
+        "card_corner_radius": 4,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 0,
+        "padding-block-end": 64
+      }
     }
   },
   "order": [
@@ -856,6 +923,7 @@
     "category_showcase_main",
     "promo_banner_products",
     "category_product_tabs_main",
-    "feature_highlights_main"
+    "feature_highlights_main",
+    "collection_spotlight_honey"
   ]
 }

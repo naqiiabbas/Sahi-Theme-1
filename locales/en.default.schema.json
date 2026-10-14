@@ -223,6 +223,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "spotlight_icon_image": "Replaces the built-in icon. Use a transparent PNG or SVG; it takes the section text color.",
+    "spotlight_products_link": "Leave blank to link to the selected collection.",
     "smooth_scroll": "Applies to mouse and trackpad scrolling. Off for visitors who prefer reduced motion and on touch screens.",
     "brand_footer_logo": "Uses the theme logo unless you pick an image here.",
     "feature_number": "Leave blank to number features automatically: 01, 02, 03.",
@@ -261,6 +263,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "collection_spotlight": "Collection spotlight",
     "footer_perk": "Perk",
     "footer_products": "Product links",
     "brand_footer": "Brand footer",
@@ -440,6 +443,8 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "molecule": "Molecule",
+    "flask": "Flask",
     "gift": "Gift",
     "bars": "Bars",
     "above_carousel": "Above carousel",
@@ -768,6 +773,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "title_accent_color": "Heading accent color",
+    "show_products": "Show products",
+    "accent_new_line": "Put italic text on a new line",
     "smooth_scroll_intensity": "Smoothness",
     "smooth_scroll_enabled": "Smooth scrolling",
     "closing_note": "Closing note",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Představení kolekce",
     "footer_perk": "Výhoda",
     "footer_products": "Odkazy na produkty",
     "brand_footer": "Patička značky",
@@ -181,6 +182,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "title_accent_color": "Barva zvýraznění nadpisu",
+    "show_products": "Zobrazit produkty",
+    "accent_new_line": "Kurzívu umístit na nový řádek",
     "smooth_scroll_intensity": "Plynulost",
     "smooth_scroll_enabled": "Plynulé posouvání",
     "closing_note": "Závěrečná poznámka",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "molecule": "Molekula",
+    "flask": "Baňka",
     "gift": "Dárek",
     "bars": "Pruhy",
     "search_bar": "Vyhledávací pole",
@@ -1136,6 +1142,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "spotlight_icon_image": "Nahradí vestavěnou ikonu. Použijte průhledný PNG nebo SVG; převezme barvu textu sekce.",
+    "spotlight_products_link": "Ponechte prázdné pro odkaz na vybranou kolekci.",
     "smooth_scroll": "Platí pro posouvání myší a touchpadem. Vypnuto pro návštěvníky s omezeným pohybem a na dotykových obrazovkách.",
     "brand_footer_logo": "Použije logo motivu, pokud zde nevyberete obrázek.",
     "feature_number": "Ponechte prázdné pro automatické číslování: 01, 02, 03.",

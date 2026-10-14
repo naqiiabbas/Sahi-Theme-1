@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Collezione in evidenza",
     "footer_perk": "Vantaggio",
     "footer_products": "Link ai prodotti",
     "brand_footer": "Footer del brand",
@@ -181,6 +182,9 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "title_accent_color": "Colore di accento del titolo",
+    "show_products": "Mostra prodotti",
+    "accent_new_line": "Metti il testo in corsivo su una nuova riga",
     "smooth_scroll_intensity": "Fluidità",
     "smooth_scroll_enabled": "Scorrimento fluido",
     "closing_note": "Nota finale",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "molecule": "Molecola",
+    "flask": "Ampolla",
     "gift": "Regalo",
     "bars": "Barre",
     "search_bar": "Barra di ricerca",
@@ -1136,6 +1142,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "spotlight_icon_image": "Sostituisce l'icona integrata. Usa un PNG o SVG trasparente; assume il colore del testo della sezione.",
+    "spotlight_products_link": "Lascia vuoto per collegare la collezione selezionata.",
     "smooth_scroll": "Vale per lo scorrimento con mouse e trackpad. Disattivato per chi preferisce meno movimento e sugli schermi touch.",
     "brand_footer_logo": "Usa il logo del tema, a meno che tu non scelga un'immagine qui.",
     "feature_number": "Lascia vuoto per numerare automaticamente: 01, 02, 03.",

@@ -1,0 +1,1023 @@
+{% comment %}
+  Section contract.
+  Collection spotlight: a banner (image, eyebrow, two-line heading with an accent, text, button, and a row
+  of feature icons) followed by an intro column and product cards from a chosen collection.
+  Feature icons are blocks. Cards render snippets/category-product-card.liquid.
+  @example
+  <!-- Add "Collection spotlight", pick a banner image and a collection, then add Feature blocks -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign collection = section.settings.collection
+  assign columns = section.settings.product_count | at_most: 4
+  assign image_vw = 70 | divided_by: columns
+
+  assign image_position = section.settings.image_position | append: '% center'
+  if section.settings.image != blank and section.settings.image.presentation.focal_point != blank
+    assign image_position = section.settings.image.presentation.focal_point
+  endif
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+  {%- assign title_font_italic = title_font | font_modify: 'style', 'italic' -%}
+  {%- if title_font_italic -%}
+    {{ title_font_italic | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
+  .collection-spotlight-{{ section.id }} {
+    --spotlight-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --spotlight-font-weight: {{ title_font.weight }};
+    --cpt-title-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --cpt-title-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="collection-spotlight collection-spotlight-{{ section.id }} spacing-style section section--full-width color-custom-{{ section.id }}{% if section.settings.accent_new_line %} collection-spotlight--accent-break{% endif %}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --spotlight-min-height: {{ section.settings.min_height }}px;
+    --spotlight-image-position: {{ image_position }};
+    --spotlight-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --spotlight-title-size: {{ section.settings.title_size }}px;
+    --cpt-columns: {{ columns }};
+    --cpt-image-ratio: {{ section.settings.image_ratio }};
+    --cpt-card-radius: {{ section.settings.card_corner_radius }}px;
+    {% if section.settings.overlay_color != blank %}--spotlight-overlay-rgb: {{ section.settings.overlay_color.rgb }};{% endif %}
+    {% if section.settings.accent_color != blank %}--cpt-accent: {{ section.settings.accent_color }}; --cpt-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
+    {% if section.settings.title_accent_color != blank %}--spotlight-title-accent: {{ section.settings.title_accent_color }};{% endif %}
+    {% if section.settings.card_background != blank %}--cpt-card-bg: {{ section.settings.card_background }};{% endif %}
+    {% if section.settings.star_color != blank %}--cpt-star: {{ section.settings.star_color }};{% endif %}
+  "
+>
+  {%- comment -%} Banner {%- endcomment -%}
+  <div class="collection-spotlight__banner">
+    <div class="collection-spotlight__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 2400
+          | image_tag:
+            widths: '750, 1100, 1500, 2000, 2400',
+            sizes: '100vw',
+            loading: 'lazy',
+            alt: section.settings.image.alt | default: '',
+            class: 'collection-spotlight__image'
+        }}
+      {%- elsif section.settings.fallback_image != blank -%}
+        <img
+          src="{{ section.settings.fallback_image | asset_url }}"
+          alt=""
+          width="2000"
+          height="766"
+          loading="lazy"
+          class="collection-spotlight__image"
+        >
+      {%- else -%}
+        {{ 'hero-apparel-2' | placeholder_svg_tag: 'collection-spotlight__image collection-spotlight__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div
+      class="collection-spotlight__overlay"
+      aria-hidden="true"
+    ></div>
+
+    {%- if section.settings.show_decoration -%}
+      <svg
+        class="collection-spotlight__decoration"
+        aria-hidden="true"
+        focusable="false"
+        viewBox="0 0 160 220"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 216C40 170 62 120 96 78C112 58 128 42 150 30"/>
+          <path d="M44 162C20 150 10 124 14 98C38 106 52 130 44 162Z"/>
+          <path d="M44 162C34 140 24 120 14 98"/>
+          <path d="M36 150L22 140M30 132L18 126M26 116L16 112"/>
+          <path d="M64 128C64 100 80 78 104 68C108 94 92 118 64 128Z"/>
+          <path d="M64 128C78 108 90 88 104 68"/>
+          <path d="M74 112L66 100M84 98L78 86M94 84L90 74"/>
+          <path d="M70 118C46 118 28 104 22 82"/>
+          <path d="M96 78C88 54 96 30 116 14C126 38 118 62 96 78Z"/>
+          <path d="M96 78C104 58 110 36 116 14"/>
+          <path d="M100 62L94 54M106 46L100 38"/>
+          <path d="M120 50C140 36 156 36 158 38C150 54 134 60 120 50Z"/>
+          <path d="M120 50C132 46 144 42 158 38"/>
+        </g>
+      </svg>
+    {%- endif -%}
+
+    <div class="collection-spotlight__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="collection-spotlight__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="collection-spotlight__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <p class="collection-spotlight__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="collection-spotlight__button"
+        >
+          <span>{{ section.settings.button_label | escape }}</span>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="collection-spotlight__features">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign icon_url = ''
+              if block.settings.icon_image != blank
+                assign icon_url = block.settings.icon_image | image_url: width: 160
+              elsif block.settings.fallback_icon != blank
+                assign icon_url = block.settings.fallback_icon | asset_url
+              endif
+            -%}
+            <li
+              class="collection-spotlight__feature"
+              {{ block.shopify_attributes }}
+            >
+              {%- if icon_url != blank -%}
+                {% comment %} Uploaded icons are masks, so they take the section's text color. {% endcomment %}
+                <span
+                  class="collection-spotlight__feature-icon collection-spotlight__feature-icon--image"
+                  style="--spotlight-icon: url('{{ icon_url }}');"
+                  aria-hidden="true"
+                ></span>
+              {%- else -%}
+              <span
+                class="collection-spotlight__feature-icon"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  focusable="false"
+                >
+                  <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                    {%- case block.settings.icon -%}
+                      {%- when 'flask' -%}
+                        <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/>
+                        <path d="M7.5 14h9"/>
+                        <path d="M4 4l16 16"/>
+                      {%- when 'molecule' -%}
+                        <circle cx="12" cy="7" r="2.6"/>
+                        <circle cx="7" cy="15" r="2.6"/>
+                        <circle cx="17" cy="15" r="2.6"/>
+                        <circle cx="12" cy="20.5" r="1.6"/>
+                        <path d="M10.7 9.3 8.3 12.7M13.3 9.3l2.4 3.4M9.6 15h4.8"/>
+                      {%- when 'heart' -%}
+                        <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/>
+                      {%- when 'star' -%}
+                        <path d="m12 4 2.4 5 5.4.7-4 3.7 1 5.4L12 16.2 7.2 18.8l1-5.4-4-3.7 5.4-.7Z"/>
+                      {%- when 'truck' -%}
+                        <path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/>
+                        <circle cx="7" cy="17.5" r="1.8"/>
+                        <circle cx="17" cy="17.5" r="1.8"/>
+                      {%- else -%}
+                        <path d="M6 18C6 10 11 5 19 5c0 8-5 13-13 13Z"/>
+                        <path d="M6 18 14 10"/>
+                    {%- endcase -%}
+                  </g>
+                </svg>
+              </span>
+              {%- endif -%}
+              <span class="collection-spotlight__feature-label">{{ block.settings.label | escape | newline_to_br }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} Products {%- endcomment -%}
+  {%- if section.settings.show_products -%}
+    <div class="collection-spotlight__products">
+      <div class="collection-spotlight__intro">
+        {%- if section.settings.products_eyebrow != blank -%}
+          <p class="collection-spotlight__eyebrow">{{ section.settings.products_eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.products_title != blank -%}
+          <h2 class="collection-spotlight__title collection-spotlight__title--small">{{ section.settings.products_title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.products_text != blank -%}
+          <p class="collection-spotlight__text">{{ section.settings.products_text }}</p>
+        {%- endif -%}
+        {%- liquid
+          assign products_link = section.settings.products_button_link
+          if products_link == blank and collection != blank
+            assign products_link = collection.url
+          endif
+        -%}
+        {%- if section.settings.products_button_label != blank and products_link != blank -%}
+          <a
+            href="{{ products_link }}"
+            class="collection-spotlight__button"
+          >
+            <span>{{ section.settings.products_button_label | escape }}</span>
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- assign image_sizes = '(min-width: 990px) ' | append: image_vw | append: 'vw, 50vw' -%}
+      {%- if collection == blank -%}
+        <ul class="collection-spotlight__grid">
+          {%- for i in (1..section.settings.product_count) -%}
+            <li class="collection-spotlight__item">
+              {% render 'category-product-card', section_id: section.id, index: i %}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- elsif collection.products_count == 0 -%}
+        <p class="collection-spotlight__empty">{{ 'content.no_products_found' | t }}</p>
+      {%- else -%}
+        <ul class="collection-spotlight__grid">
+          {%- for product in collection.products limit: section.settings.product_count -%}
+            <li class="collection-spotlight__item">
+              {% render 'category-product-card',
+                product: product,
+                section_id: section.id,
+                index: forloop.index,
+                show_weight: section.settings.show_weight,
+                show_rating: section.settings.show_rating,
+                image_sizes: image_sizes
+              %}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .collection-spotlight {
+    --cpt-accent-color: var(--cpt-accent, var(--color-foreground));
+    --cpt-accent-color-rgb: var(--cpt-accent-rgb, var(--color-foreground-rgb));
+    --cpt-active-icon-color: var(--color-background);
+    --cpt-card-bg-color: var(--cpt-card-bg, color-mix(in srgb, var(--color-background) 55%, white));
+    --cpt-star-color: var(--cpt-star, var(--cpt-accent-color));
+    --spotlight-padding-inline: max(var(--page-margin), 4vw);
+
+    color: var(--color-foreground);
+  }
+
+  /* Banner */
+  .collection-spotlight__banner {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+  }
+
+  .collection-spotlight__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .collection-spotlight__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--spotlight-image-position);
+  }
+
+  .collection-spotlight__placeholder {
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-20));
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .collection-spotlight__overlay,
+  .collection-spotlight__decoration {
+    display: none;
+  }
+
+  .collection-spotlight__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-md);
+    min-width: 0;
+    padding: var(--padding-2xl) var(--spotlight-padding-inline);
+  }
+
+  @media screen and (min-width: 750px) {
+    .collection-spotlight__banner {
+      min-height: var(--spotlight-min-height);
+    }
+
+    .collection-spotlight__media {
+      position: absolute;
+      inset: 0;
+      aspect-ratio: auto;
+    }
+
+    .collection-spotlight__overlay {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgb(var(--spotlight-overlay-rgb, var(--color-background-rgb)) / var(--spotlight-overlay-opacity)) 0%,
+        rgb(var(--spotlight-overlay-rgb, var(--color-background-rgb)) / calc(var(--spotlight-overlay-opacity) * 0.75)) 40%,
+        rgb(var(--spotlight-overlay-rgb, var(--color-background-rgb)) / 0) 66%
+      );
+    }
+
+    [dir='rtl'] .collection-spotlight__overlay {
+      background: linear-gradient(
+        to left,
+        rgb(var(--spotlight-overlay-rgb, var(--color-background-rgb)) / var(--spotlight-overlay-opacity)) 0%,
+        rgb(var(--spotlight-overlay-rgb, var(--color-background-rgb)) / calc(var(--spotlight-overlay-opacity) * 0.75)) 40%,
+        rgb(var(--spotlight-overlay-rgb, var(--color-background-rgb)) / 0) 66%
+      );
+    }
+
+    .collection-spotlight__content {
+      justify-content: center;
+      max-width: min(46rem, 58%);
+      padding-block: var(--padding-3xl);
+      padding-inline-start: calc(var(--spotlight-padding-inline) + 3rem);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .collection-spotlight__decoration {
+      display: block;
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 50%;
+      z-index: 1;
+      width: 8rem;
+      height: auto;
+      color: var(--spotlight-title-accent, var(--cpt-accent-color));
+      opacity: var(--opacity-50);
+      transform: translate(-25%, -50%);
+      pointer-events: none;
+    }
+
+    [dir='rtl'] .collection-spotlight__decoration {
+      transform: translate(25%, -50%) scaleX(-1);
+    }
+  }
+
+  .collection-spotlight__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--cpt-accent-color);
+
+    &::after {
+      content: '';
+      width: 2.5rem;
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+  /* !important and the extra class beat the global heading/paragraph font overrides in
+     theme-styles-variables.liquid, so the section's font setting applies. */
+  .collection-spotlight .collection-spotlight__title,
+  .collection-spotlight .collection-spotlight__title em,
+  .collection-spotlight .collection-spotlight__text,
+  .collection-spotlight .collection-spotlight__feature-label {
+    font-family: var(--spotlight-font) !important;
+  }
+
+  .collection-spotlight__title {
+    margin: 0;
+    font-weight: var(--spotlight-font-weight);
+    font-size: calc(var(--spotlight-title-size) * 0.6);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
+    overflow-wrap: break-word;
+
+    em {
+      font-style: italic;
+      color: var(--spotlight-title-accent, var(--cpt-accent-color));
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: calc(var(--spotlight-title-size) * 0.8);
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: var(--spotlight-title-size);
+    }
+  }
+
+  .collection-spotlight--accent-break .collection-spotlight__title em {
+    display: block;
+  }
+
+  .collection-spotlight__title--small {
+    font-size: calc(var(--spotlight-title-size) * 0.5);
+
+    @media screen and (min-width: 750px) {
+      font-size: calc(var(--spotlight-title-size) * 0.6);
+    }
+  }
+
+  .collection-spotlight__text {
+    margin: 0;
+    max-width: 30rem;
+    font-size: 1.125rem;
+    line-height: 1.45;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+
+    @media screen and (min-width: 1200px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  .collection-spotlight__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-block-start: var(--margin-xs);
+    min-height: 3.25rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: var(--cpt-card-radius);
+    background-color: var(--cpt-accent-color);
+    color: var(--color-background);
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+
+    svg {
+      width: 1.5rem;
+      height: 1rem;
+      flex-shrink: 0;
+      transition: transform var(--animation-speed) var(--animation-easing);
+    }
+
+    &:hover {
+      opacity: var(--opacity-85);
+
+      svg {
+        transform: translateX(0.25rem);
+      }
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cpt-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  [dir='rtl'] .collection-spotlight__button svg {
+    scale: -1 1;
+  }
+
+  /* Feature icons */
+  /* Two-column grid on mobile; a single row with dividers from tablet up. */
+  .collection-spotlight__features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-lg) var(--gap-md);
+    margin: var(--margin-xl) 0 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap-md) 0;
+    }
+  }
+
+  .collection-spotlight__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    min-width: 0;
+
+    @media screen and (min-width: 750px) {
+      padding-inline-end: var(--padding-xl);
+
+      & + & {
+        padding-inline-start: var(--padding-xl);
+        border-inline-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+      }
+    }
+  }
+
+  .collection-spotlight__feature-icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-60));
+    border-radius: 50%;
+    color: var(--color-foreground);
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  /* Uploaded icons already include their circle. */
+  .collection-spotlight__feature-icon--image {
+    border: 0;
+    background-color: var(--color-foreground);
+    -webkit-mask: var(--spotlight-icon) center / contain no-repeat;
+    mask: var(--spotlight-icon) center / contain no-repeat;
+  }
+
+  .collection-spotlight__feature-label {
+    font-size: 1rem;
+    line-height: 1.3;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+  }
+
+  /* Products */
+  .collection-spotlight__products {
+    display: grid;
+    gap: var(--gap-2xl);
+    padding: var(--padding-3xl) var(--spotlight-padding-inline) 0;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
+      align-items: center;
+    }
+  }
+
+  .collection-spotlight__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-md);
+    min-width: 0;
+  }
+
+  .collection-spotlight__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--cpt-columns), minmax(0, 1fr));
+      gap: var(--gap-lg);
+    }
+  }
+
+  .collection-spotlight__item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .collection-spotlight__empty {
+    margin: 0;
+    padding-block: var(--padding-xl);
+    text-align: center;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collection-spotlight__button,
+    .collection-spotlight__button svg {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.collection_spotlight",
+  "class": "collection-spotlight-section",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "t:names.feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:settings.icon",
+          "options": [
+            {
+              "value": "leaf",
+              "label": "t:options.leaf"
+            },
+            {
+              "value": "flask",
+              "label": "t:options.flask"
+            },
+            {
+              "value": "molecule",
+              "label": "t:options.molecule"
+            },
+            {
+              "value": "heart",
+              "label": "t:options.heart"
+            },
+            {
+              "value": "star",
+              "label": "t:options.star"
+            },
+            {
+              "value": "truck",
+              "label": "t:options.truck"
+            }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "t:settings.image",
+          "info": "t:info.spotlight_icon_image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_icon",
+          "label": "t:settings.fallback_image",
+          "info": "t:info.fallback_image"
+        },
+        {
+          "type": "textarea",
+          "id": "label",
+          "label": "t:settings.label",
+          "default": "100%\nPure & Natural"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "fallback_image",
+      "label": "t:settings.fallback_image",
+      "info": "t:info.fallback_image"
+    },
+    {
+      "type": "range",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "t:settings.height",
+      "min": 360,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:settings.overlay_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:settings.overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 85
+    },
+    {
+      "type": "checkbox",
+      "id": "show_decoration",
+      "label": "t:settings.show_decoration",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "default": "Pure & natural"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:settings.heading",
+      "info": "t:info.heading_accent",
+      "default": "Organic <em>Raw Honey</em>"
+    },
+    {
+      "type": "checkbox",
+      "id": "accent_new_line",
+      "label": "t:settings.accent_new_line",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Nature’s sweetness in its purest form. Unprocessed, nutrient-rich and full of natural goodness."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.label",
+      "default": "Explore honey collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "header",
+      "content": "t:settings.products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_products",
+      "label": "t:settings.show_products",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:settings.collection"
+    },
+    {
+      "type": "range",
+      "id": "product_count",
+      "label": "t:settings.product_count",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4,
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "text",
+      "id": "products_eyebrow",
+      "label": "t:settings.eyebrow",
+      "default": "Our honey range",
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "products_title",
+      "label": "t:settings.heading",
+      "default": "Nature’s <em>Golden Goodness.</em>",
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "products_text",
+      "label": "t:settings.text",
+      "default": "Choose from our premium range of honeys, sourced from the finest natural environments.",
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "text",
+      "id": "products_button_label",
+      "label": "t:settings.label",
+      "default": "View all honey products",
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "url",
+      "id": "products_button_link",
+      "label": "t:settings.link",
+      "info": "t:info.spotlight_products_link",
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "t:settings.image_ratio",
+      "options": [
+        {
+          "value": "4 / 3",
+          "label": "t:options.landscape"
+        },
+        {
+          "value": "1 / 1",
+          "label": "t:options.square"
+        },
+        {
+          "value": "4 / 5",
+          "label": "t:options.portrait"
+        }
+      ],
+      "default": "4 / 3",
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_weight",
+      "label": "t:settings.show_weight",
+      "default": true,
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "t:settings.show_rating",
+      "info": "t:info.show_rating",
+      "default": true,
+      "visible_if": "{{ section.settings.show_products }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "t:settings.size",
+      "min": 40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "card_corner_radius",
+      "label": "t:settings.card_corner_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "title_accent_color",
+      "label": "t:settings.title_accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "t:settings.card_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "t:settings.star_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.collection_spotlight",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "leaf",
+            "label": "100%\nPure & Natural"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "flask",
+            "label": "No Added\nPreservatives"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "molecule",
+            "label": "Rich in\nNatural Nutrients"
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3"]
+    }
+  ]
+}
+{% endschema %}

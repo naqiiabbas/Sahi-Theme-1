@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Kollektion i fokus",
     "footer_perk": "Fordel",
     "footer_products": "Produktlinks",
     "brand_footer": "Brandfooter",
@@ -181,6 +182,9 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "title_accent_color": "Accentfarve for overskrift",
+    "show_products": "Vis produkter",
+    "accent_new_line": "Placer kursiv tekst på en ny linje",
     "smooth_scroll_intensity": "Blødhed",
     "smooth_scroll_enabled": "Blød rulning",
     "closing_note": "Afsluttende note",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "molecule": "Molekyle",
+    "flask": "Kolbe",
     "gift": "Gave",
     "bars": "Bjælker",
     "search_bar": "Søgefelt",
@@ -1136,6 +1142,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "spotlight_icon_image": "Erstatter det indbyggede ikon. Brug en gennemsigtig PNG eller SVG; den får sektionens tekstfarve.",
+    "spotlight_products_link": "Lad feltet være tomt for at linke til den valgte kollektion.",
     "smooth_scroll": "Gælder rulning med mus og pegefelt. Slået fra for besøgende, der foretrækker reduceret bevægelse, og på touchskærme.",
     "brand_footer_logo": "Bruger temaets logo, medmindre du vælger et billede her.",
     "feature_number": "Lad feltet være tomt for automatisk nummerering: 01, 02, 03.",

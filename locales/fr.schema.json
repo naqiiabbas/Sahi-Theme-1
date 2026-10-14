@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Collection à la une",
     "footer_perk": "Avantage",
     "footer_products": "Liens produits",
     "brand_footer": "Pied de page de marque",
@@ -181,6 +182,9 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "title_accent_color": "Couleur d'accent du titre",
+    "show_products": "Afficher les produits",
+    "accent_new_line": "Placer le texte en italique sur une nouvelle ligne",
     "smooth_scroll_intensity": "Fluidité",
     "smooth_scroll_enabled": "Défilement fluide",
     "closing_note": "Note de fin",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "molecule": "Molécule",
+    "flask": "Flacon",
     "gift": "Cadeau",
     "bars": "Barres",
     "search_bar": "Barre de recherche",
@@ -1136,6 +1142,8 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "spotlight_icon_image": "Remplace l'icône intégrée. Utilisez un PNG ou SVG transparent ; il prend la couleur du texte de la section.",
+    "spotlight_products_link": "Laissez vide pour lier la collection sélectionnée.",
     "smooth_scroll": "S’applique au défilement à la souris et au pavé tactile. Désactivé pour les visiteurs qui préfèrent réduire les animations et sur écrans tactiles.",
     "brand_footer_logo": "Utilise le logo du thème, sauf si vous choisissez une image ici.",
     "feature_number": "Laissez vide pour numéroter automatiquement : 01, 02, 03.",

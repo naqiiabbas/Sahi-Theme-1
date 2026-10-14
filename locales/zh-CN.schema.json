@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "精选系列",
     "footer_perk": "权益",
     "footer_products": "商品链接",
     "brand_footer": "品牌页脚",
@@ -181,6 +182,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "title_accent_color": "标题强调色",
+    "show_products": "显示商品",
+    "accent_new_line": "将斜体文字放在新的一行",
     "smooth_scroll_intensity": "平滑程度",
     "smooth_scroll_enabled": "平滑滚动",
     "closing_note": "结尾语",
@@ -626,6 +630,8 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "molecule": "分子",
+    "flask": "烧瓶",
     "gift": "礼物",
     "bars": "条形",
     "search_bar": "搜索栏",
@@ -1136,6 +1142,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "spotlight_icon_image": "替换内置图标。请使用透明的 PNG 或 SVG；图标会使用分区文字颜色。",
+    "spotlight_products_link": "留空则链接到所选商品系列。",
     "smooth_scroll": "适用于鼠标和触控板滚动。对偏好减少动态效果的访客和触屏设备关闭。",
     "brand_footer_logo": "除非在此选择图片，否则使用主题徽标。",
     "feature_number": "留空则自动编号：01、02、03。",

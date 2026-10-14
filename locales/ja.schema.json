@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "コレクション特集",
     "footer_perk": "特典",
     "footer_products": "商品リンク",
     "brand_footer": "ブランドフッター",
@@ -181,6 +182,9 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "title_accent_color": "見出しのアクセントカラー",
+    "show_products": "商品を表示",
+    "accent_new_line": "斜体テキストを改行して表示",
     "smooth_scroll_intensity": "滑らかさ",
     "smooth_scroll_enabled": "スムーズスクロール",
     "closing_note": "結びの言葉",
@@ -626,6 +630,8 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "molecule": "分子",
+    "flask": "フラスコ",
     "gift": "ギフト",
     "bars": "バー",
     "search_bar": "検索バー",
@@ -1136,6 +1142,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "spotlight_icon_image": "内蔵アイコンを置き換えます。透明なPNGまたはSVGを使用してください。セクションのテキストカラーが適用されます。",
+    "spotlight_products_link": "空欄の場合は選択したコレクションにリンクします。",
     "smooth_scroll": "マウスとトラックパッドのスクロールに適用されます。動きを減らす設定の訪問者とタッチスクリーンでは無効です。",
     "brand_footer_logo": "ここで画像を選択しない場合はテーマのロゴを使用します。",
     "feature_number": "空欄にすると自動で番号が付きます：01、02、03。",

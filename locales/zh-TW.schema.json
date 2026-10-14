@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "精選系列",
     "footer_perk": "優惠",
     "footer_products": "商品連結",
     "brand_footer": "品牌頁尾",
@@ -181,6 +182,9 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "title_accent_color": "標題強調色",
+    "show_products": "顯示商品",
+    "accent_new_line": "將斜體文字放在新的一行",
     "smooth_scroll_intensity": "平滑程度",
     "smooth_scroll_enabled": "平滑捲動",
     "closing_note": "結語",
@@ -626,6 +630,8 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "molecule": "分子",
+    "flask": "燒瓶",
     "gift": "禮物",
     "bars": "橫條",
     "search_bar": "搜尋列",
@@ -1136,6 +1142,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "spotlight_icon_image": "取代內建圖示。請使用透明的 PNG 或 SVG；圖示會套用區段文字顏色。",
+    "spotlight_products_link": "留空則連結到所選商品系列。",
     "smooth_scroll": "適用於滑鼠與觸控板捲動。對偏好減少動態效果的訪客及觸控螢幕關閉。",
     "brand_footer_logo": "除非在此選擇圖片，否則使用佈景主題標誌。",
     "feature_number": "留空即可自動編號：01、02、03。",

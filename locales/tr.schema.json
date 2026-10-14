@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_spotlight": "Öne çıkan koleksiyon",
     "footer_perk": "Avantaj",
     "footer_products": "Ürün bağlantıları",
     "brand_footer": "Marka alt bilgisi",
@@ -181,6 +182,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "title_accent_color": "Başlık vurgu rengi",
+    "show_products": "Ürünleri göster",
+    "accent_new_line": "İtalik metni yeni satıra al",
     "smooth_scroll_intensity": "Yumuşaklık",
     "smooth_scroll_enabled": "Yumuşak kaydırma",
     "closing_note": "Kapanış notu",
@@ -626,6 +630,8 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "molecule": "Molekül",
+    "flask": "Şişe",
     "gift": "Hediye",
     "bars": "Çubuklar",
     "search_bar": "Arama çubuğu",
@@ -1136,6 +1142,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "spotlight_icon_image": "Yerleşik simgenin yerini alır. Saydam bir PNG veya SVG kullanın; bölümün metin rengini alır.",
+    "spotlight_products_link": "Seçilen koleksiyona bağlantı vermek için boş bırakın.",
     "smooth_scroll": "Fare ve dokunmatik yüzey kaydırması için geçerlidir. Azaltılmış hareket tercih eden ziyaretçilerde ve dokunmatik ekranlarda kapalıdır.",
     "brand_footer_logo": "Burada bir görsel seçmezseniz tema logosunu kullanır.",
     "feature_number": "Otomatik numaralandırma için boş bırakın: 01, 02, 03.",
