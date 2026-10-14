@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "특징",
+    "feature_highlights": "특징 하이라이트",
     "category_tab": "카테고리",
     "category_product_tabs": "카테고리별 상품 탭",
     "promo_banner": "프로모션 배너",
@@ -176,6 +178,8 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "number_size": "번호 크기",
+    "number": "번호",
     "star_color": "별 색상",
     "card_background": "카드 배경",
     "active_icon_color": "활성 아이콘 색상",
@@ -1120,6 +1124,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "feature_number": "비워 두면 자동으로 번호가 매겨집니다: 01, 02, 03.",
     "show_rating": "리뷰 앱이 채우는 Shopify 상품 평점 필드를 사용합니다.",
     "category_tabs_heading": "표시되지 않습니다. 화면 낭독기가 카테고리 탭을 설명하는 데 사용합니다.",
     "category_tab_label": "기본값은 컬렉션 제목입니다.",

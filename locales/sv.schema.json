@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Höjdpunkt",
+    "feature_highlights": "Höjdpunkter",
     "category_tab": "Kategori",
     "category_product_tabs": "Produktflikar per kategori",
     "promo_banner": "Kampanjbanner",
@@ -176,6 +178,8 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "number_size": "Nummerstorlek",
+    "number": "Nummer",
     "star_color": "Stjärnfärg",
     "card_background": "Kortbakgrund",
     "active_icon_color": "Färg på aktiv ikon",
@@ -1120,6 +1124,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "feature_number": "Lämna tomt för automatisk numrering: 01, 02, 03.",
     "show_rating": "Använder Shopifys fält för produktbetyg, som recensionsappar fyller i.",
     "category_tabs_heading": "Visas inte. Skärmläsare använder den för att beskriva kategoriflikarna.",
     "category_tab_label": "Standard är kollektionens titel.",

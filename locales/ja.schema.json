@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "特長",
+    "feature_highlights": "特長ハイライト",
     "category_tab": "カテゴリー",
     "category_product_tabs": "カテゴリー別商品タブ",
     "promo_banner": "プロモーションバナー",
@@ -176,6 +178,8 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "number_size": "番号のサイズ",
+    "number": "番号",
     "star_color": "星の色",
     "card_background": "カードの背景",
     "active_icon_color": "アクティブなアイコンの色",
@@ -1120,6 +1124,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "feature_number": "空欄にすると自動で番号が付きます：01、02、03。",
     "show_rating": "レビューアプリが入力するShopifyの商品評価フィールドを使用します。",
     "category_tabs_heading": "表示されません。スクリーンリーダーがカテゴリータブの説明に使用します。",
     "category_tab_label": "初期設定はコレクションのタイトルです。",

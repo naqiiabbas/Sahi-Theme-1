@@ -804,12 +804,58 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "feature_highlights_main": {
+      "type": "feature-highlights",
+      "blocks": {
+        "certified_organic": {
+          "type": "feature",
+          "settings": {
+            "number": "",
+            "title": "Certified Organic",
+            "text": "Grown without synthetic chemicals for a cleaner tomorrow."
+          }
+        },
+        "traditional_methods": {
+          "type": "feature",
+          "settings": {
+            "number": "",
+            "title": "Traditional Methods",
+            "text": "Time-honoured processes for authentic flavour."
+          }
+        },
+        "real_ingredients": {
+          "type": "feature",
+          "settings": {
+            "number": "",
+            "title": "Real Ingredients",
+            "text": "Nothing artificial. Nothing unnecessary. Just Sahi."
+          }
+        }
+      },
+      "block_order": [
+        "certified_organic",
+        "traditional_methods",
+        "real_ingredients"
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "show_dividers": true,
+        "title_font": "instrument_serif_n4",
+        "number_size": 52,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
   "order": [
     "hero_iLBwPd",
     "category_showcase_main",
     "promo_banner_products",
-    "category_product_tabs_main"
+    "category_product_tabs_main",
+    "feature_highlights_main"
   ]
 }

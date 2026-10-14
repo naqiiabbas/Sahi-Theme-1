@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Fordel",
+    "feature_highlights": "Fremhævede fordele",
     "category_tab": "Kategori",
     "category_product_tabs": "Produktfaner efter kategori",
     "promo_banner": "Kampagnebanner",
@@ -176,6 +178,8 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "number_size": "Talstørrelse",
+    "number": "Nummer",
     "star_color": "Stjernefarve",
     "card_background": "Kortbaggrund",
     "active_icon_color": "Farve på aktivt ikon",
@@ -1120,6 +1124,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "feature_number": "Lad feltet være tomt for automatisk nummerering: 01, 02, 03.",
     "show_rating": "Bruger Shopifys produktbedømmelsesfelter, som anmeldelsesapps udfylder.",
     "category_tabs_heading": "Vises ikke. Skærmlæsere bruger den til at beskrive kategorifanerne.",
     "category_tab_label": "Standard er kollektionens titel.",

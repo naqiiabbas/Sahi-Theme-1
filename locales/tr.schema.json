@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Özellik",
+    "feature_highlights": "Öne çıkan özellikler",
     "category_tab": "Kategori",
     "category_product_tabs": "Kategoriye göre ürün sekmeleri",
     "promo_banner": "Tanıtım afişi",
@@ -176,6 +178,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "number_size": "Numara boyutu",
+    "number": "Numara",
     "star_color": "Yıldız rengi",
     "card_background": "Kart arka planı",
     "active_icon_color": "Etkin simge rengi",
@@ -1120,6 +1124,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "feature_number": "Otomatik numaralandırma için boş bırakın: 01, 02, 03.",
     "show_rating": "Değerlendirme uygulamalarının doldurduğu Shopify ürün puanı alanlarını kullanır.",
     "category_tabs_heading": "Gösterilmez. Ekran okuyucular kategori sekmelerini tanımlamak için kullanır.",
     "category_tab_label": "Varsayılan olarak koleksiyon başlığıdır.",

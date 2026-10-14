@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "特色",
+    "feature_highlights": "特色亮点",
     "category_tab": "类别",
     "category_product_tabs": "分类商品标签页",
     "promo_banner": "促销横幅",
@@ -176,6 +178,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "number_size": "编号大小",
+    "number": "编号",
     "star_color": "星级颜色",
     "card_background": "卡片背景",
     "active_icon_color": "当前图标颜色",
@@ -1120,6 +1124,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "feature_number": "留空则自动编号：01、02、03。",
     "show_rating": "使用 Shopify 商品评分字段，由评论应用填写。",
     "category_tabs_heading": "不显示。屏幕阅读器用它描述分类标签页。",
     "category_tab_label": "默认为商品系列标题。",

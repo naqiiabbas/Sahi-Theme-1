@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Kenmerk",
+    "feature_highlights": "Kenmerken in de kijker",
     "category_tab": "Categorie",
     "category_product_tabs": "Producttabbladen per categorie",
     "promo_banner": "Promotiebanner",
@@ -176,6 +178,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "number_size": "Nummergrootte",
+    "number": "Nummer",
     "star_color": "Sterkleur",
     "card_background": "Kaartachtergrond",
     "active_icon_color": "Kleur actief pictogram",
@@ -1120,6 +1124,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "feature_number": "Laat leeg om automatisch te nummeren: 01, 02, 03.",
     "show_rating": "Gebruikt de productbeoordelingsvelden van Shopify, die review-apps invullen.",
     "category_tabs_heading": "Niet zichtbaar. Schermlezers gebruiken dit om de categorietabbladen te beschrijven.",
     "category_tab_label": "Standaard de titel van de collectie.",

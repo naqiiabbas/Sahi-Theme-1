@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Punto di forza",
+    "feature_highlights": "Punti di forza",
     "category_tab": "Categoria",
     "category_product_tabs": "Schede prodotti per categoria",
     "promo_banner": "Banner promozionale",
@@ -176,6 +178,8 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "number_size": "Dimensione del numero",
+    "number": "Numero",
     "star_color": "Colore delle stelle",
     "card_background": "Sfondo della scheda",
     "active_icon_color": "Colore dell'icona attiva",
@@ -1120,6 +1124,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "feature_number": "Lascia vuoto per numerare automaticamente: 01, 02, 03.",
     "show_rating": "Usa i campi di valutazione dei prodotti di Shopify, compilati dalle app di recensioni.",
     "category_tabs_heading": "Non visibile. Gli screen reader lo usano per descrivere le schede delle categorie.",
     "category_tab_label": "Per impostazione predefinita, il titolo della collezione.",

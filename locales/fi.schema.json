@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Kohokohta",
+    "feature_highlights": "Kohokohdat",
     "category_tab": "Kategoria",
     "category_product_tabs": "Tuotevälilehdet kategorioittain",
     "promo_banner": "Mainosbanneri",
@@ -176,6 +178,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "number_size": "Numeron koko",
+    "number": "Numero",
     "star_color": "Tähtien väri",
     "card_background": "Kortin tausta",
     "active_icon_color": "Aktiivisen kuvakkeen väri",
@@ -1120,6 +1124,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "feature_number": "Jätä tyhjäksi, niin numerointi tehdään automaattisesti: 01, 02, 03.",
     "show_rating": "Käyttää Shopifyn tuotearviokenttiä, jotka arvostelusovellukset täyttävät.",
     "category_tabs_heading": "Ei näytetä. Näytönlukuohjelmat kuvaavat sillä kategoriavälilehtiä.",
     "category_tab_label": "Oletuksena kokoelman nimi.",

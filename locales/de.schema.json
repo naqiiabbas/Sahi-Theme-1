@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Highlight",
+    "feature_highlights": "Highlights",
     "category_tab": "Kategorie",
     "category_product_tabs": "Produkt-Tabs nach Kategorie",
     "promo_banner": "Werbebanner",
@@ -176,6 +178,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "number_size": "Zahlengröße",
+    "number": "Nummer",
     "star_color": "Sternfarbe",
     "card_background": "Kartenhintergrund",
     "active_icon_color": "Farbe des aktiven Symbols",
@@ -1120,6 +1124,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "feature_number": "Leer lassen, um automatisch zu nummerieren: 01, 02, 03.",
     "show_rating": "Nutzt Shopifys Produktbewertungsfelder, die von Bewertungs-Apps befüllt werden.",
     "category_tabs_heading": "Nicht sichtbar. Screenreader beschreiben damit die Kategorie-Tabs.",
     "category_tab_label": "Standardmäßig der Titel der Kollektion.",

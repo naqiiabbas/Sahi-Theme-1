@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "特色",
+    "feature_highlights": "特色亮點",
     "category_tab": "類別",
     "category_product_tabs": "分類商品分頁",
     "promo_banner": "促銷橫幅",
@@ -176,6 +178,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "number_size": "編號大小",
+    "number": "編號",
     "star_color": "星星顏色",
     "card_background": "卡片背景",
     "active_icon_color": "使用中圖示顏色",
@@ -1120,6 +1124,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "feature_number": "留空即可自動編號：01、02、03。",
     "show_rating": "使用 Shopify 商品評分欄位，由評論應用程式填寫。",
     "category_tabs_heading": "不顯示。螢幕閱讀器用它描述分類分頁。",
     "category_tab_label": "預設為商品系列標題。",

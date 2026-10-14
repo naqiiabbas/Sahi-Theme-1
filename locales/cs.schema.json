@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Přednost",
+    "feature_highlights": "Hlavní přednosti",
     "category_tab": "Kategorie",
     "category_product_tabs": "Záložky produktů podle kategorií",
     "promo_banner": "Propagační banner",
@@ -176,6 +178,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "number_size": "Velikost čísla",
+    "number": "Číslo",
     "star_color": "Barva hvězdiček",
     "card_background": "Pozadí karty",
     "active_icon_color": "Barva aktivní ikony",
@@ -1120,6 +1124,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "feature_number": "Ponechte prázdné pro automatické číslování: 01, 02, 03.",
     "show_rating": "Používá pole hodnocení produktů Shopify, která vyplňují aplikace recenzí.",
     "category_tabs_heading": "Nezobrazuje se. Čtečky obrazovky jím popisují záložky kategorií.",
     "category_tab_label": "Výchozí je název kolekce.",

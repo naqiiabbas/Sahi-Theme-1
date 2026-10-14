@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Cecha",
+    "feature_highlights": "Wyróżnione cechy",
     "category_tab": "Kategoria",
     "category_product_tabs": "Karty produktów według kategorii",
     "promo_banner": "Baner promocyjny",
@@ -176,6 +178,8 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "number_size": "Rozmiar numeru",
+    "number": "Numer",
     "star_color": "Kolor gwiazdek",
     "card_background": "Tło karty",
     "active_icon_color": "Kolor aktywnej ikony",
@@ -1120,6 +1124,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "feature_number": "Pozostaw puste, aby numerować automatycznie: 01, 02, 03.",
     "show_rating": "Używa pól ocen produktów Shopify, które wypełniają aplikacje z recenzjami.",
     "category_tabs_heading": "Niewidoczne. Czytniki ekranu używają go do opisu kart kategorii.",
     "category_tab_label": "Domyślnie tytuł kolekcji.",

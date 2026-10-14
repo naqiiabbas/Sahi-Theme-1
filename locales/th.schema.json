@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "จุดเด่น",
+    "feature_highlights": "จุดเด่น",
     "category_tab": "หมวดหมู่",
     "category_product_tabs": "แท็บสินค้าตามหมวดหมู่",
     "promo_banner": "แบนเนอร์โปรโมชัน",
@@ -176,6 +178,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "number_size": "ขนาดหมายเลข",
+    "number": "หมายเลข",
     "star_color": "สีดาว",
     "card_background": "พื้นหลังการ์ด",
     "active_icon_color": "สีไอคอนที่ใช้งานอยู่",
@@ -1120,6 +1124,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "feature_number": "เว้นว่างไว้เพื่อใส่หมายเลขอัตโนมัติ: 01, 02, 03",
     "show_rating": "ใช้ฟิลด์คะแนนสินค้าของ Shopify ซึ่งแอปรีวิวเป็นผู้กรอก",
     "category_tabs_heading": "ไม่แสดง โปรแกรมอ่านหน้าจอใช้เพื่ออธิบายแท็บหมวดหมู่",
     "category_tab_label": "ค่าเริ่มต้นคือชื่อคอลเลกชัน",

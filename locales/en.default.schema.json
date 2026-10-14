@@ -223,6 +223,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "feature_number": "Leave blank to number features automatically: 01, 02, 03.",
     "show_rating": "Uses Shopify product rating fields, which review apps fill in.",
     "category_tabs_heading": "Not shown. Screen readers use it to describe the category tabs.",
     "category_tab_label": "Defaults to the collection title.",
@@ -258,6 +259,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "feature": "Feature",
+    "feature_highlights": "Feature highlights",
     "category_tab": "Category",
     "category_product_tabs": "Category product tabs",
     "promo_banner": "Promo banner",
@@ -759,6 +762,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "number_size": "Number size",
+    "number": "Number",
     "star_color": "Star color",
     "card_background": "Card background",
     "active_icon_color": "Active icon color",

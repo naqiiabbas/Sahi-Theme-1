@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Høydepunkt",
+    "feature_highlights": "Høydepunkter",
     "category_tab": "Kategori",
     "category_product_tabs": "Produktfaner etter kategori",
     "promo_banner": "Kampanjebanner",
@@ -176,6 +178,8 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "number_size": "Tallstørrelse",
+    "number": "Nummer",
     "star_color": "Stjernefarge",
     "card_background": "Kortbakgrunn",
     "active_icon_color": "Farge på aktivt ikon",
@@ -1120,6 +1124,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "feature_number": "La stå tomt for automatisk nummerering: 01, 02, 03.",
     "show_rating": "Bruker Shopifys produktvurderingsfelt, som anmeldelsesapper fyller ut.",
     "category_tabs_heading": "Vises ikke. Skjermlesere bruker den til å beskrive kategorifanene.",
     "category_tab_label": "Standard er kolleksjonens tittel.",

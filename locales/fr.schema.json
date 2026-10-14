@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Point fort",
+    "feature_highlights": "Points forts",
     "category_tab": "Catégorie",
     "category_product_tabs": "Onglets de produits par catégorie",
     "promo_banner": "Bannière promotionnelle",
@@ -176,6 +178,8 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "number_size": "Taille du numéro",
+    "number": "Numéro",
     "star_color": "Couleur des étoiles",
     "card_background": "Arrière-plan de la carte",
     "active_icon_color": "Couleur de l'icône active",
@@ -1120,6 +1124,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "feature_number": "Laissez vide pour numéroter automatiquement : 01, 02, 03.",
     "show_rating": "Utilise les champs d'évaluation des produits Shopify, remplis par les applications d'avis.",
     "category_tabs_heading": "Non affiché. Les lecteurs d'écran l'utilisent pour décrire les onglets de catégories.",
     "category_tab_label": "Par défaut, le titre de la collection.",

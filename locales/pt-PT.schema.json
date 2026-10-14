@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "feature": "Destaque",
+    "feature_highlights": "Destaques",
     "category_tab": "Categoria",
     "category_product_tabs": "Separadores de produtos por categoria",
     "promo_banner": "Faixa promocional",
@@ -176,6 +178,8 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "number_size": "Tamanho do número",
+    "number": "Número",
     "star_color": "Cor das estrelas",
     "card_background": "Fundo do cartão",
     "active_icon_color": "Cor do ícone ativo",
@@ -1120,6 +1124,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "feature_number": "Deixe em branco para numerar automaticamente: 01, 02, 03.",
     "show_rating": "Usa os campos de classificação de produtos da Shopify, preenchidos por apps de avaliações.",
     "category_tabs_heading": "Não apresentado. Os leitores de ecrã usam-no para descrever os separadores de categorias.",
     "category_tab_label": "Por predefinição, o título da coleção.",

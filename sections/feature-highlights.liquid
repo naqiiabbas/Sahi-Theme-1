@@ -1,0 +1,342 @@
+{% comment %}
+  Section contract.
+  A row of numbered brand highlights (number, title, short text) separated by soft vertical dividers.
+  Numbers default to 01, 02, 03… from block order; a block can set its own.
+  @example
+  <!-- Add "Feature highlights", then add up to 6 Feature blocks -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign item_count = section.blocks.size
+  if item_count < 1
+    assign item_count = 1
+  endif
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+
+  .feature-highlights-{{ section.id }} {
+    --feature-highlights-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --feature-highlights-font-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="feature-highlights feature-highlights-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.show_dividers %} feature-highlights--dividers{% endif %}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --feature-highlights-columns: {{ item_count }};
+    --feature-highlights-number-size: {{ section.settings.number_size }}px;
+    {% if section.settings.accent_color != blank %}--feature-highlights-accent: {{ section.settings.accent_color }};{% endif %}
+    {% if section.settings.divider_color != blank %}--feature-highlights-divider-rgb: {{ section.settings.divider_color.rgb }};{% endif %}
+  "
+>
+  <ul class="feature-highlights__list">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign number = block.settings.number
+        if number == blank
+          assign number = forloop.index | prepend: '0' | slice: -2, 2
+        endif
+      -%}
+      <li
+        class="feature-highlights__item"
+        {{ block.shopify_attributes }}
+      >
+        <span
+          class="feature-highlights__number"
+          aria-hidden="true"
+        >
+          {{- number | escape -}}
+        </span>
+        <div class="feature-highlights__body">
+          {%- if block.settings.title != blank -%}
+            <h3 class="feature-highlights__title">{{ block.settings.title | escape }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="feature-highlights__text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+{% stylesheet %}
+  .feature-highlights {
+    color: var(--color-foreground);
+  }
+
+  .feature-highlights__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--feature-highlights-columns), minmax(0, 1fr));
+    }
+  }
+
+  .feature-highlights__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-lg);
+    min-width: 0;
+    padding-block: var(--padding-md);
+
+    @media screen and (min-width: 750px) {
+      justify-content: center;
+      padding-inline: var(--padding-lg);
+      padding-block: var(--padding-xs);
+    }
+
+    @media screen and (min-width: 990px) {
+      padding-inline: var(--padding-2xl);
+    }
+  }
+
+  /* Soft divider that fades at both ends: vertical between columns, horizontal when stacked. */
+  .feature-highlights--dividers .feature-highlights__item + .feature-highlights__item::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--feature-highlights-divider-rgb, var(--color-foreground-rgb)) / var(--opacity-20)) 20%,
+      rgb(var(--feature-highlights-divider-rgb, var(--color-foreground-rgb)) / var(--opacity-20)) 80%,
+      transparent
+    );
+  }
+
+  @media screen and (min-width: 750px) {
+    .feature-highlights--dividers .feature-highlights__item + .feature-highlights__item::before {
+      inset-block: 0;
+      inset-inline-end: auto;
+      width: 1px;
+      height: auto;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--feature-highlights-divider-rgb, var(--color-foreground-rgb)) / var(--opacity-25)) 15%,
+        rgb(var(--feature-highlights-divider-rgb, var(--color-foreground-rgb)) / var(--opacity-25)) 85%,
+        transparent
+      );
+    }
+  }
+
+  /* !important and the extra class beat the global heading/paragraph font overrides in
+     theme-styles-variables.liquid, so the section's font setting applies. */
+  .feature-highlights .feature-highlights__number,
+  .feature-highlights .feature-highlights__title,
+  .feature-highlights .feature-highlights__text {
+    font-family: var(--feature-highlights-font) !important;
+  }
+
+  .feature-highlights__number {
+    flex: 0 0 auto;
+    font-weight: var(--feature-highlights-font-weight);
+    font-size: calc(var(--feature-highlights-number-size) * 0.8);
+    line-height: 1;
+    /* Equal-width digits keep titles aligned when items stack. */
+    min-width: 1.15em;
+    font-variant-numeric: lining-nums tabular-nums;
+    color: var(--feature-highlights-accent, var(--color-foreground));
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--feature-highlights-number-size);
+    }
+  }
+
+  .feature-highlights__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    min-width: 0;
+    padding-block-start: 0.2em;
+  }
+
+  .feature-highlights__title {
+    margin: 0;
+    font-weight: var(--feature-highlights-font-weight);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+  }
+
+  .feature-highlights__text {
+    margin: 0;
+    max-width: 22rem;
+    font-size: 0.9375rem;
+
+    @media screen and (min-width: 750px) {
+      max-width: 16rem;
+    }
+    line-height: 1.45;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.feature_highlights",
+  "class": "feature-highlights-section",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "t:names.feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "t:settings.number",
+          "info": "t:info.feature_number"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:settings.title",
+          "default": "Feature title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:settings.text",
+          "default": "Share a short detail about this feature."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dividers",
+      "label": "t:settings.dividers",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "t:settings.number_size",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "t:settings.divider_color",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ section.settings.show_dividers }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.feature_highlights",
+      "blocks": {
+        "feature_1": {
+          "type": "feature"
+        },
+        "feature_2": {
+          "type": "feature"
+        },
+        "feature_3": {
+          "type": "feature"
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3"]
+    }
+  ]
+}
+{% endschema %}
