@@ -491,8 +491,9 @@
         fill: var(--pill-text) !important;
       }
 
+      /* Fill switches to the header's hover text color; the dark label keeps its contrast. */
       &:hover {
-        opacity: var(--opacity-85);
+        --pill-background: var(--header-hover-color, var(--cart-bubble-background, var(--color-foreground)));
       }
 
       .header-actions__cart-icon {
