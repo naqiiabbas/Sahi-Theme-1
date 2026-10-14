@@ -368,6 +368,8 @@
   style="
     --color-background-top-row: rgba({{ section.settings.background_color_top.rgba | default: settings.page_background_color.rgba }});
     --color-background-bottom-row: rgba({{ section.settings.background_color_bottom.rgba | default: settings.page_background_color.rgba }});
+    --menu-row-padding-block-start: {{ section.settings['menu-row-padding-block-start'] }}px;
+    --menu-row-padding-block-end: {{ section.settings['menu-row-padding-block-end'] }}px;
     --color-text-top-row: {{ section.settings.text_color_top | default: settings.page_text_color }};
     --color-text-top-row-rgb: {{ section.settings.text_color_top.rgb | default: settings.page_text_color.rgb }};
     {% if transparent and text_color_transparent != blank %}
@@ -1226,9 +1228,15 @@
     }
 
     .header__row--bottom .header__columns {
-      --padding-block-start: 6px;
-      --padding-block-end: 14px;
+      --padding-block-start: var(--menu-row-padding-block-start);
+      --padding-block-end: var(--menu-row-padding-block-end);
     }
+  }
+
+  /* Menu row padding comes from the header's Menu > Padding settings. */
+  .header__row--bottom .header__columns {
+    --padding-block-start: var(--menu-row-padding-block-start, var(--header-padding));
+    --padding-block-end: var(--menu-row-padding-block-end, var(--header-padding));
   }
 
   @media screen and (max-width: 989px) {
@@ -1520,6 +1528,33 @@
         }
       ],
       "default": "top"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding",
+      "visible_if": "{{ section.settings.menu_row == 'bottom' }}"
+    },
+    {
+      "type": "range",
+      "id": "menu-row-padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 5,
+      "visible_if": "{{ section.settings.menu_row == 'bottom' }}"
+    },
+    {
+      "type": "range",
+      "id": "menu-row-padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 5,
+      "visible_if": "{{ section.settings.menu_row == 'bottom' }}"
     },
     {
       "type": "header",
