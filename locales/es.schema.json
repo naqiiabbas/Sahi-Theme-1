@@ -171,6 +171,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "show_account_label": "Mostrar etiqueta de cuenta",
     "show_social_links": "Mostrar enlaces de redes sociales",
     "search_placeholder": "Texto de marcador de posición",
     "alignment": "Alineación",

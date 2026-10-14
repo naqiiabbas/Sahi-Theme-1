@@ -171,6 +171,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_account_label": "Mostra etichetta dell'account",
     "show_social_links": "Mostra link ai social media",
     "search_placeholder": "Testo segnaposto",
     "alignment": "Allineamento",

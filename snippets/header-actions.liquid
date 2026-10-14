@@ -7,16 +7,41 @@
   @param {block} [block] - The block object, used for Shopify editor attributes.
   @param {string} [display_style] - Controls display mode for header actions: 'icon', 'text', or 'button'. Buttons use icons in the drawer layout.
   @param {boolean} [show_cart_total] - Shows the cart total and item count inside the cart button when display_style is 'button'.
+  @param {boolean} [show_account_label] - Shows the "Account" label in the account button when display_style is 'button'. When false, the button is a round icon.
   @param {string} [customer_account_menu] - The menu handle passed to the shopify-account component.
 
   @example
-  {% render 'header-actions', section: section, display_style: 'button', show_cart_total: true %}
+  {% render 'header-actions', section: section, display_style: 'button', show_cart_total: true, show_account_label: false %}
 {% enddoc %}
 
 {% liquid
   assign is_button_style = false
   if display_style == 'button'
     assign is_button_style = true
+  endif
+
+  # The label stays in the markup as the accessible name when the button shows only its icon.
+  case display_style
+    when 'icon'
+      assign account_label_class = 'hidden'
+    when 'button'
+      if show_account_label == false
+        assign account_label_class = 'visually-hidden'
+      else
+        assign account_label_class = 'header-actions__pill-label'
+      endif
+    else
+      assign account_label_class = 'mobile:hidden'
+  endcase
+
+  assign account_button_class = ''
+  if display_style == 'text'
+    assign account_button_class = ' account-button--text'
+  elsif is_button_style
+    assign account_button_class = ' header-actions__action--pill account-button--pill'
+    if show_account_label == false
+      assign account_button_class = account_button_class | append: ' account-button--circle'
+    endif
   endif
 %}
 
@@ -107,7 +132,7 @@
       endif
     %}
     <div
-      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %}{% if is_button_style %} header-actions__action--pill account-button--pill{% endif %} color-custom-popover"
+      class="account-button header-actions__action{{ account_button_class }} color-custom-popover"
     >
       <shopify-account
         menu="{{ customer_account_menu }}"
@@ -128,7 +153,7 @@
 
           <span
             slot="signed-out-avatar"
-            class="account-button__text header-actions__text-style {% case display_style %}{% when 'icon' %}hidden{% when 'button' %}header-actions__pill-label{% else %}mobile:hidden{% endcase %}"
+            class="account-button__text header-actions__text-style {{ account_label_class }}"
           >
             {{ 'content.account_title' | t }}
           </span>
@@ -138,7 +163,7 @@
   {% else %}
     <a
       href="{{ routes.account_login_url | default: '/account/login' }}"
-      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %}{% if is_button_style %} header-actions__action--pill account-button--pill{% endif %}"
+      class="account-button header-actions__action{{ account_button_class }}"
       aria-label="{{ 'content.account_title' | t: default: 'Account' }}"
     >
       <span
@@ -147,7 +172,7 @@
       >
         {{ account_icon }}
       </span>
-      <span class="account-button__text header-actions__text-style {% case display_style %}{% when 'icon' %}hidden{% when 'button' %}header-actions__pill-label{% else %}mobile:hidden{% endcase %}">
+      <span class="account-button__text header-actions__text-style {{ account_label_class }}">
         {{ 'content.account_title' | t: default: 'Account' }}
       </span>
     </a>
@@ -407,12 +432,48 @@
 
     /* The account button carries the popover color scheme for its dialog, so use the row's account color. */
     .account-button--pill {
+      --account-hover-color: var(--header-hover-color, var(--color-account-icon));
+
       border-color: var(--color-account-icon);
+      transition: color var(--animation-speed) var(--animation-easing),
+        border-color var(--animation-speed) var(--animation-easing),
+        background-color var(--animation-speed) var(--animation-easing);
     }
 
+    /* Icon, label, and border all switch to the header's hover text color together. */
     .account-button--pill:hover {
-      color: var(--color-account-icon) !important;
-      background-color: color-mix(in srgb, var(--color-account-icon) 10%, transparent);
+      border-color: var(--account-hover-color);
+      background-color: color-mix(in srgb, var(--account-hover-color) 10%, transparent);
+
+      &,
+      .account-button__icon,
+      .account-button__text,
+      svg {
+        color: var(--account-hover-color) !important;
+        fill: var(--account-hover-color) !important;
+      }
+    }
+
+    .account-button--circle {
+      --header-icon-size: var(--icon-size-lg);
+
+      flex: none;
+      width: var(--minimum-touch-target);
+      height: var(--minimum-touch-target);
+      padding: 0;
+      gap: 0;
+      border-radius: 50%;
+      justify-content: center;
+
+      shopify-account,
+      > [aria-hidden='true'] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+      }
     }
 
     .header-actions__action--cart-pill {

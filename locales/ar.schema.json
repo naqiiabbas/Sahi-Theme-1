@@ -690,6 +690,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "show_account_label": "إظهار تسمية الحساب",
     "show_social_links": "إظهار روابط وسائل التواصل الاجتماعي",
     "search_placeholder": "نص العنصر النائب",
     "accordion": "أكورديون",

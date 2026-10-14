@@ -171,6 +171,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_account_label": "แสดงป้ายกำกับบัญชี",
     "show_social_links": "แสดงลิงก์โซเชียลมีเดีย",
     "search_placeholder": "ข้อความตัวยึดตำแหน่ง",
     "alignment": "การจัดตำแหน่ง",

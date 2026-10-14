@@ -171,6 +171,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "show_account_label": "Pokaż etykietę konta",
     "show_social_links": "Pokaż linki do mediów społecznościowych",
     "search_placeholder": "Tekst zastępczy",
     "autoplay": "Autoodtwarzanie",

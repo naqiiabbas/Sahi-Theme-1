@@ -127,6 +127,7 @@
         "search_style": "bar",
         "search_placeholder": "Search for...",
         "show_cart_total": true,
+        "show_account_label": false,
         "text_hover_color": "#FFFFFF"
       }
     }

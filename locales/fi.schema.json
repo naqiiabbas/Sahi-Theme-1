@@ -171,6 +171,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_account_label": "Näytä tilin nimi",
     "show_social_links": "Näytä sosiaalisen median linkit",
     "search_placeholder": "Paikkamerkkiteksti",
     "alignment": "Tasaus",

@@ -102,7 +102,7 @@
   endif
 
   capture actions
-    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, show_cart_total: section.settings.show_cart_total, section: section
+    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, show_cart_total: section.settings.show_cart_total, show_account_label: section.settings.show_account_label, section: section
   endcapture
 
   # The search trigger only knows icon and text styles; button-style actions keep an icon trigger.
@@ -1869,6 +1869,13 @@
       "type": "checkbox",
       "id": "show_cart_total",
       "label": "t:settings.cart_total",
+      "default": true,
+      "visible_if": "{{ section.settings.actions_display_style == 'button' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account_label",
+      "label": "t:settings.show_account_label",
       "default": true,
       "visible_if": "{{ section.settings.actions_display_style == 'button' }}"
     },

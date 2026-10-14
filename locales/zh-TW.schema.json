@@ -171,6 +171,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_account_label": "顯示帳號標籤",
     "show_social_links": "顯示社群媒體連結",
     "search_placeholder": "預留位置文字",
     "alignment": "對齊",

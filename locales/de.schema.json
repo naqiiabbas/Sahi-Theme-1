@@ -171,6 +171,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_account_label": "Kontobeschriftung anzeigen",
     "show_social_links": "Social-Media-Links anzeigen",
     "search_placeholder": "Platzhaltertext",
     "autoplay": "Autoplay",

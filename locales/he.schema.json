@@ -690,6 +690,7 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "show_account_label": "הצגת תווית החשבון",
     "show_social_links": "הצגת קישורים לרשתות חברתיות",
     "search_placeholder": "טקסט מציין מיקום",
     "accordion": "אקורדיון",

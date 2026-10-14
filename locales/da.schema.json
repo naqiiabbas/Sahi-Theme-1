@@ -171,6 +171,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_account_label": "Vis kontoetiket",
     "show_social_links": "Vis links til sociale medier",
     "search_placeholder": "Pladsholdertekst",
     "alignment": "Justering",

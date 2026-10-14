@@ -171,6 +171,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_account_label": "Hesap etiketini göster",
     "show_social_links": "Sosyal medya bağlantılarını göster",
     "search_placeholder": "Yer tutucu metin",
     "autoplay": "Otomatik oynatma",

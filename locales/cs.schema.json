@@ -171,6 +171,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_account_label": "Zobrazit popisek účtu",
     "show_social_links": "Zobrazit odkazy na sociální sítě",
     "search_placeholder": "Zástupný text",
     "alignment": "Zarovnání",

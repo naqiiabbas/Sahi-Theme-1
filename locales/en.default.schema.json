@@ -748,6 +748,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_account_label": "Show account label",
     "accordion": "Accordion",
     "account": "Account",
     "actions_display_style": "Menu style",
