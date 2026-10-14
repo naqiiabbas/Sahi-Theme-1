@@ -140,7 +140,7 @@
     endif
   endif
   capture search
-    render 'search', style: search_style, class: search_class, display_style: search_display_style, bar: section.settings.search_style, placeholder: section.settings.search_placeholder, bar_width: section.settings.search_bar_width, form_id: section.id
+    render 'search', style: search_style, class: search_class, display_style: search_display_style, bar: section.settings.search_style, placeholder: section.settings.search_placeholder, bar_width: section.settings.search_bar_width, results_limit: section.settings.search_results_limit, form_id: section.id
   endcapture
 
   # Skip drawer search under specific conditions:
@@ -1576,6 +1576,16 @@
       "step": 20,
       "unit": "px",
       "default": 400,
+      "visible_if": "{{ section.settings.show_search and section.settings.search_style == 'bar' }}"
+    },
+    {
+      "type": "range",
+      "id": "search_results_limit",
+      "label": "t:settings.product_count",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 6,
       "visible_if": "{{ section.settings.show_search and section.settings.search_style == 'bar' }}"
     },
     {

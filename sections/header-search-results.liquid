@@ -1,0 +1,87 @@
+{% comment %}
+  Section contract.
+  Renders product suggestions for the header's expandable search field.
+  Row styles are owned by snippets/header-search-results-styles.liquid, which snippets/search.liquid
+  also renders so they are on the page before results load.
+  @example
+  <!-- Fetched by assets/header-search-bar.js from the predictive search URL with section_id=header-search-results -->
+{% endcomment %}
+
+{% render 'header-search-results-styles' %}
+
+{%- if predictive_search.performed -%}
+  {%- assign products = predictive_search.resources.products -%}
+  <div data-header-search-results>
+    <p
+      class="visually-hidden"
+      data-header-search-status
+    >
+      {%- if products.size > 0 -%}
+        {{ 'accessibility.search_results_count' | t: count: products.size, query: predictive_search.terms }}
+      {%- else -%}
+        {{ 'accessibility.search_results_no_results' | t: query: predictive_search.terms }}
+      {%- endif -%}
+    </p>
+
+    {%- if products.size > 0 -%}
+      <ul
+        class="header-search-results__list"
+        aria-label="{{ 'content.search_results_label' | t }}"
+      >
+        {%- for product in products -%}
+          <li class="header-search-results__item">
+            <a
+              href="{{ product.url }}"
+              class="header-search-results__link"
+            >
+              <span class="header-search-results__media">
+                {%- if product.featured_image -%}
+                  {{
+                    product.featured_image
+                    | image_url: width: 120
+                    | image_tag:
+                      widths: '60, 120',
+                      sizes: '60px',
+                      loading: 'lazy',
+                      alt: '',
+                      class: 'header-search-results__image'
+                  }}
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'header-search-results__placeholder' }}
+                {%- endif -%}
+              </span>
+              <span class="header-search-results__details">
+                <span class="header-search-results__title">{{ product.title | escape }}</span>
+                <span class="header-search-results__price">
+                  {%- if product.available -%}
+                    {{ product.price | money }}
+                  {%- else -%}
+                    {{ 'content.product_badge_sold_out' | t }}
+                  {%- endif -%}
+                </span>
+              </span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <a
+        class="header-search-results__view-all"
+        href="{{ routes.search_url }}?q={{ predictive_search.terms | url_encode }}&type=product&options%5Bprefix%5D=last"
+      >
+        {{ 'content.search_results_view_all' | t }}
+      </a>
+    {%- else -%}
+      <p class="header-search-results__empty">
+        {{ 'content.search_results_no_results' | t: terms: predictive_search.terms }}
+      </p>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:names.predictive_search",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,96 @@
+{%- doc -%}
+  Style owner for the header search product suggestions.
+  Rendered by snippets/search.liquid so styles exist before results load, and by
+  sections/header-search-results.liquid, which renders the suggestion markup.
+
+  @example
+  {% render 'header-search-results-styles' %}
+{%- enddoc -%}
+
+{% stylesheet %}
+  .header-search-results__list {
+    display: grid;
+    gap: var(--gap-2xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header-search-results__link {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    padding: var(--padding-xs);
+    border-radius: var(--style-border-radius-inputs);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color var(--animation-speed) var(--animation-easing);
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--color-foreground);
+      outline-offset: -2px;
+    }
+  }
+
+  .header-search-results__media {
+    flex: 0 0 auto;
+    width: 3.75rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--style-border-radius-inputs);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .header-search-results__image,
+  .header-search-results__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .header-search-results__placeholder {
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .header-search-results__details {
+    display: grid;
+    gap: var(--gap-2xs);
+    min-width: 0;
+  }
+
+  .header-search-results__title {
+    overflow-wrap: anywhere;
+  }
+
+  .header-search-results__price {
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+    font-size: 0.875em;
+  }
+
+  .header-search-results__view-all {
+    display: block;
+    margin-block-start: var(--margin-xs);
+    padding: var(--padding-sm);
+    border-block-start: var(--style-border-width-inputs) solid rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    color: inherit;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      color: var(--header-hover-color, var(--color-foreground));
+    }
+  }
+
+  .header-search-results__empty {
+    margin: 0;
+    padding: var(--padding-sm);
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+{% endstylesheet %}

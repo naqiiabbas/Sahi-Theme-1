@@ -4,13 +4,14 @@
   @param {string} [style] - The style of the search action.
   @param {string} [class] - Additional classes for the search action.
   @param {string} [display_style] - The display style ('icon' or 'text').
-  @param {string} [bar] - Set to 'bar' to render a search icon that expands into a product search field on desktop. The modal trigger remains for the drawer layout.
+  @param {string} [bar] - Set to 'bar' to render a search icon that expands into a field with live product suggestions on desktop. The modal trigger remains for the drawer layout.
   @param {string} [placeholder] - Placeholder text for the expandable search field.
   @param {number} [bar_width] - Width of the expanded search field in pixels.
+  @param {number} [results_limit] - Maximum number of product suggestions.
   @param {string} [form_id] - Unique suffix for the expandable search field IDs.
 
   @example
-  {% render 'search', style: 'default', class: 'custom-class', display_style: 'icon', bar: 'bar', placeholder: 'Search for...', bar_width: 400, form_id: section.id %}
+  {% render 'search', style: 'default', class: 'custom-class', display_style: 'icon', bar: 'bar', placeholder: 'Search for...', bar_width: 400, results_limit: 6, form_id: section.id %}
 {%- enddoc -%}
 
 {% unless style == 'none' %}
@@ -21,11 +22,14 @@
       {%- liquid
         assign field_id = 'HeaderSearch-' | append: form_id
         assign panel_id = 'HeaderSearchPanel-' | append: form_id
+        assign results_id = 'HeaderSearchResults-' | append: form_id
+        assign status_id = 'HeaderSearchStatus-' | append: form_id
         assign field_placeholder = placeholder
         if field_placeholder == blank
           assign field_placeholder = 'content.search_input_placeholder' | t
         endif
       -%}
+      {% render 'header-search-results-styles' %}
       <script
         src="{{ 'header-search-bar.js' | asset_url }}"
         type="module"
@@ -34,6 +38,7 @@
       <header-search-bar
         class="search-action__expandable"
         style="--header-search-bar-width: {{ bar_width | default: 400 }}px;"
+        data-results-limit="{{ results_limit | default: 6 }}"
       >
         {% comment %} A link to the search page until the module upgrades it into a toggle. {% endcomment %}
         <a
@@ -69,27 +74,22 @@
           >
             {{- 'content.search_input_label' | t -}}
           </label>
-          <button
-            type="submit"
-            class="button-unstyled search-action__bar-submit"
-            aria-label="{{ 'content.search' | t }}"
+          <span
+            class="svg-wrapper search-action__bar-icon"
+            aria-hidden="true"
           >
-            <span
-              class="svg-wrapper"
-              aria-hidden="true"
-            >
-              {{- 'icon-search.svg' | inline_asset_content -}}
-            </span>
-          </button>
+            {{- 'icon-search.svg' | inline_asset_content -}}
+          </span>
           <input
             id="{{ field_id }}"
             class="search-action__bar-input"
             type="search"
             name="q"
-            value="{{ search.terms | escape }}"
             placeholder="{{ field_placeholder | escape }}"
             autocomplete="off"
+            aria-controls="{{ results_id }}"
             ref="input"
+            on:input="/handleInput"
           >
           <input
             type="hidden"
@@ -115,6 +115,19 @@
             </span>
           </button>
         </form>
+
+        <div
+          id="{{ results_id }}"
+          class="search-action__results"
+          ref="results"
+          hidden
+        ></div>
+        <p
+          id="{{ status_id }}"
+          class="visually-hidden"
+          role="status"
+          ref="status"
+        ></p>
       </header-search-bar>
     {% endif %}
 
@@ -249,7 +262,7 @@
       }
     }
 
-    .search-action__bar-submit,
+    .search-action__bar-icon,
     .search-action__bar-close {
       display: flex;
       flex-shrink: 0;
@@ -297,9 +310,45 @@
     }
   }
 
+  /* Product suggestions dropdown. Results arrive from sections/header-search-results.liquid. */
+  .search-action__results {
+    position: absolute;
+    inset-inline-start: 0;
+    top: calc(50% + var(--minimum-touch-target) / 2 + var(--gap-sm));
+    z-index: var(--layer-raised);
+    width: min(var(--header-search-bar-width), 40vw);
+    max-height: min(60vh, 32rem);
+    overflow-y: auto;
+    padding: var(--padding-xs);
+    border: var(--style-border-width-inputs) solid rgb(var(--color-foreground-rgb) / var(--opacity-30));
+    border-radius: var(--style-border-radius-popover);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-popover);
+    opacity: 0;
+    transform: translateY(calc(var(--gap-xs) * -1));
+    transition: opacity var(--animation-speed) var(--animation-easing),
+      transform var(--animation-speed) var(--animation-easing);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .search-action__expandable[data-results-open] .search-action__results {
+    opacity: 1;
+    transform: none;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(calc(var(--gap-xs) * -1));
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     #header-component .search-action__bar,
-    #header-component .search-action__toggle {
+    #header-component .search-action__toggle,
+    .search-action__results {
       transition: none;
     }
   }
