@@ -215,6 +215,7 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "fallback_image": "جب کوئی تصویر منتخب نہ ہو تو دکھائی جاتی ہے۔ تھیم کے assets فولڈر سے فائل کا نام درج کریں۔",
     "announcement_social_links": "سوشل میڈیا لنکس بلاک میں لنکس شامل کریں",
     "actions_display_style": "موبائل پر ہمیشہ آئیکن استعمال ہوتے ہیں",
     "applies_on_image_only": "صرف تصاویر پر لاگو ہوتا ہے",
@@ -245,6 +246,8 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "category": "زمرہ",
+    "category_showcase": "زمرہ جات کی نمائش",
     "column": "کالم",
     "product_title": "پروڈکٹ کا ٹائٹل",
     "custom_liquid": "کسٹم Liquid",
@@ -691,6 +694,9 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "underline_color": "انڈر لائن کا رنگ",
+    "image_height": "تصویر کی اونچائی",
+    "fallback_image": "متبادل تصویری فائل",
     "show_pause_button": "توقف کا بٹن دکھائیں",
     "show_account_label": "اکاؤنٹ لیبل دکھائیں",
     "show_social_links": "سوشل میڈیا لنکس دکھائیں",
@@ -1111,6 +1117,8 @@
     "customer_account_menu": "کسٹمر اکاؤنٹ مینو"
   },
   "text_defaults": {
+    "explore": "دریافت کریں",
+    "category": "زمرہ",
     "accordion_heading": "ایکارڈین کی سرخی",
     "are_purchases_final_sale": "کیا کوئی بھی خریداری حتمی سیل ہے؟",
     "be_bold": "نڈر بنیں۔",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "카테고리",
+    "category_showcase": "카테고리 쇼케이스",
     "404": "404",
     "custom_section": "사용자 지정 섹션",
     "icon": "아이콘",
@@ -171,6 +173,9 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "underline_color": "밑줄 색상",
+    "image_height": "이미지 높이",
+    "fallback_image": "대체 이미지 파일",
     "show_pause_button": "일시 정지 버튼 표시",
     "show_account_label": "계정 레이블 표시",
     "show_social_links": "소셜 미디어 링크 표시",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>추천 컬렉션</h3>"
   },
   "text_defaults": {
+    "explore": "둘러보기",
+    "category": "카테고리",
     "collapsible_row": "축소 가능 행",
     "button_label": "지금 쇼핑하기",
     "heading": "제목",
@@ -1098,6 +1105,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "fallback_image": "이미지를 선택하지 않으면 표시됩니다. 테마 assets 폴더의 파일 이름을 입력하세요.",
     "announcement_social_links": "소셜 미디어 링크 블록에서 링크를 추가하세요",
     "carousel_layout_on_mobile": "모바일에서는 항상 캐러셀이 사용됩니다.",
     "video_alt_text": "보조 기술 사용자를 위해 비디오를 설명하세요",

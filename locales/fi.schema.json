@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategoria",
+    "category_showcase": "Kategorianäyttö",
     "404": "404",
     "colors": "Väripaletti",
     "custom_section": "Mukautettu osio",
@@ -171,6 +173,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "underline_color": "Alleviivauksen väri",
+    "image_height": "Kuvan korkeus",
+    "fallback_image": "Varakuvatiedosto",
     "show_pause_button": "Näytä taukopainike",
     "show_account_label": "Näytä tilin nimi",
     "show_social_links": "Näytä sosiaalisen median linkit",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Esittelyssä oleva kokoelma</h3>"
   },
   "text_defaults": {
+    "explore": "Tutustu",
+    "category": "Kategoria",
     "button_label": "Osta nyt",
     "collapsible_row": "Kutistettava rivi",
     "heading": "Otsikko",
@@ -1098,6 +1105,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "fallback_image": "Näytetään, kun kuvaa ei ole valittu. Anna tiedostonimi teeman assets-kansiosta.",
     "announcement_social_links": "Lisää linkit Sosiaalisen median linkit -lohkoon",
     "carousel_layout_on_mobile": "Mobiilissa käytetään aina karusellia.",
     "video_alt_text": "Kuvaile video avustavan teknologian käyttäjille",

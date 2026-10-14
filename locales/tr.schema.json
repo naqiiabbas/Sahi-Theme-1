@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategori",
+    "category_showcase": "Kategori vitrini",
     "404": "404",
     "custom_section": "Özel bölüm",
     "icon": "Simge",
@@ -171,6 +173,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "underline_color": "Alt çizgi rengi",
+    "image_height": "Görsel yüksekliği",
+    "fallback_image": "Yedek görsel dosyası",
     "show_pause_button": "Duraklat düğmesini göster",
     "show_account_label": "Hesap etiketini göster",
     "show_social_links": "Sosyal medya bağlantılarını göster",
@@ -1060,6 +1065,8 @@
     "introducing_p": "<p><em>Karşınızda</em></p>"
   },
   "text_defaults": {
+    "explore": "Keşfet",
+    "category": "Kategori",
     "collapsible_row": "Daraltılabilir satır",
     "button_label": "Hemen alışveriş yap",
     "heading": "Başlık",
@@ -1098,6 +1105,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "fallback_image": "Görsel seçilmediğinde gösterilir. Temanın assets klasöründen bir dosya adı girin.",
     "announcement_social_links": "Bağlantıları Sosyal medya bağlantıları bloğuna ekleyin",
     "video_alt_text": "Yardımcı teknoloji kullanıcıları için videoyu açıklayın",
     "video_autoplay": "Videolar varsayılan olarak sessize alınır",

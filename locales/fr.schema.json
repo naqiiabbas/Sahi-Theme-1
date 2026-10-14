@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Catégorie",
+    "category_showcase": "Vitrine de catégories",
     "404": "404",
     "custom_section": "Section personnalisée",
     "icon": "Icône",
@@ -171,6 +173,9 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "underline_color": "Couleur du soulignement",
+    "image_height": "Hauteur de l'image",
+    "fallback_image": "Fichier d'image de secours",
     "show_pause_button": "Afficher le bouton pause",
     "show_account_label": "Afficher le libellé du compte",
     "show_social_links": "Afficher les liens vers les réseaux sociaux",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Collection en vedette</h3>"
   },
   "text_defaults": {
+    "explore": "Découvrir",
+    "category": "Catégorie",
     "collapsible_row": "Rangée réductible",
     "button_label": "Acheter maintenant",
     "heading": "Titre",
@@ -1098,6 +1105,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "fallback_image": "Affiché lorsqu'aucune image n'est sélectionnée. Saisissez un nom de fichier du dossier assets du thème.",
     "announcement_social_links": "Ajoutez des liens dans le bloc Liens vers les réseaux sociaux",
     "carousel_layout_on_mobile": "Le carrousel est toujours utilisé sur mobile",
     "video_alt_text": "Décrivez la vidéo pour les utilisateurs de technologies d’assistance",

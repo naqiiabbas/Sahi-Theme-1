@@ -1,0 +1,128 @@
+{%- doc -%}
+  Renders one category in the category showcase: product image, title, and an underlined link.
+  Settings are read from block.settings. Styles are owned by sections/category-showcase.liquid.
+
+  @example
+  {% content_for 'blocks' %}
+{%- enddoc -%}
+
+{%- liquid
+  assign has_link = false
+  if block.settings.link != blank
+    assign has_link = true
+  endif
+
+  # Matches the layout: one column per category from tablet up, a scrolling row of ~2.4 cards on mobile.
+  assign image_sizes = '(min-width: 750px) 18vw, 42vw'
+-%}
+
+<div
+  class="category-showcase__item"
+  {{ block.shopify_attributes }}
+>
+  {%- capture media -%}
+    <span class="category-showcase__media">
+      {%- if block.settings.image != blank -%}
+        {{
+          block.settings.image
+          | image_url: width: 600
+          | image_tag:
+            widths: '200, 300, 400, 600',
+            sizes: image_sizes,
+            loading: 'lazy',
+            alt: block.settings.image.alt | default: '',
+            class: 'category-showcase__image'
+        }}
+      {%- elsif block.settings.fallback_image != blank -%}
+        <img
+          src="{{ block.settings.fallback_image | asset_url }}"
+          alt=""
+          width="600"
+          height="482"
+          loading="lazy"
+          class="category-showcase__image"
+        >
+      {%- else -%}
+        {{ 'collection-1' | placeholder_svg_tag: 'category-showcase__image category-showcase__placeholder' }}
+      {%- endif -%}
+    </span>
+  {%- endcapture -%}
+
+  {%- if has_link -%}
+    <a
+      href="{{ block.settings.link }}"
+      class="category-showcase__media-link"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      {{- media -}}
+    </a>
+  {%- else -%}
+    {{ media }}
+  {%- endif -%}
+
+  {%- if block.settings.title != blank -%}
+    <h3 class="category-showcase__title">{{ block.settings.title | escape }}</h3>
+  {%- endif -%}
+
+  {%- if has_link -%}
+    <a
+      href="{{ block.settings.link }}"
+      class="category-showcase__link"
+    >
+      {%- if block.settings.link_label != blank -%}
+        <span class="category-showcase__link-label">{{ block.settings.link_label | escape }}</span>
+      {%- endif -%}
+      {%- if block.settings.title != blank -%}
+        <span class="visually-hidden">{{ block.settings.title | escape }}</span>
+      {%- endif -%}
+      <svg
+        class="category-showcase__arrow"
+        aria-hidden="true"
+        focusable="false"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:names.category",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "fallback_image",
+      "label": "t:settings.fallback_image",
+      "info": "t:info.fallback_image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.title",
+      "default": "t:text_defaults.category"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "t:settings.label",
+      "default": "t:text_defaults.explore"
+    }
+  ]
+}
+{% endschema %}

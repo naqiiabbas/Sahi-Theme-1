@@ -215,6 +215,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "fallback_image": "מוצג כשלא נבחרה תמונה. הזינו שם קובץ מתיקיית assets של העיצוב.",
     "announcement_social_links": "הוסיפו קישורים בבלוק קישורים לרשתות חברתיות",
     "actions_display_style": "תמיד נעשה שימוש בסמלים בנייד",
     "applies_on_image_only": "חל על תמונות בלבד",
@@ -245,6 +246,8 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "category": "קטגוריה",
+    "category_showcase": "תצוגת קטגוריות",
     "column": "עמודה",
     "product_title": "כותרת מוצר",
     "custom_liquid": "Custom Liquid",
@@ -691,6 +694,9 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "underline_color": "צבע קו תחתון",
+    "image_height": "גובה תמונה",
+    "fallback_image": "קובץ תמונה חלופי",
     "show_pause_button": "הצגת לחצן השהיה",
     "show_account_label": "הצגת תווית החשבון",
     "show_social_links": "הצגת קישורים לרשתות חברתיות",
@@ -1111,6 +1117,8 @@
     "customer_account_menu": "תפריט חשבון לקוח"
   },
   "text_defaults": {
+    "explore": "גלו",
+    "category": "קטגוריה",
     "accordion_heading": "כותרת אקורדיון",
     "are_purchases_final_sale": "האם יש רכישות שהן מכירה סופית?",
     "be_bold": "להיות נועזים.",

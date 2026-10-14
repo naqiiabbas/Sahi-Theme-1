@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategorie",
+    "category_showcase": "Přehled kategorií",
     "404": "404",
     "colors": "Paleta barev",
     "custom_section": "Vlastní sekce",
@@ -171,6 +173,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "underline_color": "Barva podtržení",
+    "image_height": "Výška obrázku",
+    "fallback_image": "Záložní soubor obrázku",
     "show_pause_button": "Zobrazit tlačítko pozastavení",
     "show_account_label": "Zobrazit popisek účtu",
     "show_social_links": "Zobrazit odkazy na sociální sítě",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Doporučená kolekce</h3>"
   },
   "text_defaults": {
+    "explore": "Prozkoumat",
+    "category": "Kategorie",
     "button_label": "Nakupujte nyní",
     "collapsible_row": "Rozbalovací řádek",
     "heading": "Nadpis",
@@ -1098,6 +1105,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "fallback_image": "Zobrazí se, když není vybrán obrázek. Zadejte název souboru ze složky assets motivu.",
     "announcement_social_links": "Odkazy přidejte v bloku Odkazy na sociální sítě",
     "video_alt_text": "Popište video pro uživatele asistivních technologií",
     "video_autoplay": "Videa budou ve výchozím nastavení ztlumená",

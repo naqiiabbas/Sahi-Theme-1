@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Categoria",
+    "category_showcase": "Vitrine de categorias",
     "404": "404",
     "colors": "Paleta de cores",
     "custom_section": "Seção personalizada",
@@ -171,6 +173,9 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "underline_color": "Cor do sublinhado",
+    "image_height": "Altura da imagem",
+    "fallback_image": "Arquivo de imagem alternativo",
     "show_pause_button": "Mostrar botão de pausa",
     "show_account_label": "Mostrar rótulo da conta",
     "show_social_links": "Mostrar links de redes sociais",
@@ -1060,6 +1065,8 @@
     "introducing_p": "<p><em>Apresentando</em></p>"
   },
   "text_defaults": {
+    "explore": "Explorar",
+    "category": "Categoria",
     "button_label": "Compre agora",
     "collapsible_row": "Linha expansível",
     "heading": "Título",
@@ -1098,6 +1105,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "fallback_image": "Exibida quando nenhuma imagem é selecionada. Insira um nome de arquivo da pasta assets do tema.",
     "announcement_social_links": "Adicione links no bloco Links de redes sociais",
     "video_alt_text": "Descreva o vídeo para usuários de tecnologia assistiva",
     "video_autoplay": "Os vídeos ficarão sem som por padrão",

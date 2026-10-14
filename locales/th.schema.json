@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "หมวดหมู่",
+    "category_showcase": "แสดงหมวดหมู่",
     "404": "404",
     "colors": "จานสี",
     "custom_section": "ส่วนที่กำหนดเอง",
@@ -171,6 +173,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "underline_color": "สีขีดเส้นใต้",
+    "image_height": "ความสูงของรูปภาพ",
+    "fallback_image": "ไฟล์รูปภาพสำรอง",
     "show_pause_button": "แสดงปุ่มหยุดชั่วคราว",
     "show_account_label": "แสดงป้ายกำกับบัญชี",
     "show_social_links": "แสดงลิงก์โซเชียลมีเดีย",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>คอลเลกชันแนะนำ</h3>"
   },
   "text_defaults": {
+    "explore": "สำรวจ",
+    "category": "หมวดหมู่",
     "button_label": "ช้อปเลย",
     "collapsible_row": "แถวที่พับเก็บได้",
     "heading": "หัวเรื่อง",
@@ -1098,6 +1105,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "fallback_image": "แสดงเมื่อไม่ได้เลือกรูปภาพ ป้อนชื่อไฟล์จากโฟลเดอร์ assets ของธีม",
     "announcement_social_links": "เพิ่มลิงก์ในบล็อกลิงก์โซเชียลมีเดีย",
     "video_alt_text": "โปรดอธิบายวิดีโอสำหรับผู้ใช้เทคโนโลยีความช่วยเหลือพิเศษ",
     "video_autoplay": "วิดีโอจะถูกปิดเสียงตามค่าเริ่มต้น",

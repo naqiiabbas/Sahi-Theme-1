@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategori",
+    "category_showcase": "Kategorioversikt",
     "404": "404",
     "colors": "Fargepalett",
     "custom_section": "Egendefinert seksjon",
@@ -171,6 +173,9 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "underline_color": "Understrekingsfarge",
+    "image_height": "Bildehøyde",
+    "fallback_image": "Reservebildefil",
     "show_pause_button": "Vis pauseknapp",
     "show_account_label": "Vis kontoetikett",
     "show_social_links": "Vis lenker til sosiale medier",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Utvalgt samling</h3>"
   },
   "text_defaults": {
+    "explore": "Utforsk",
+    "category": "Kategori",
     "button_label": "Handle nå",
     "collapsible_row": "Sammenleggbar rad",
     "heading": "Overskrift",
@@ -1098,6 +1105,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "fallback_image": "Vises når ingen bilde er valgt. Skriv inn et filnavn fra temaets assets-mappe.",
     "announcement_social_links": "Legg til lenker i blokken Lenker til sosiale medier",
     "carousel_layout_on_mobile": "Karusell brukes alltid på mobil",
     "video_alt_text": "Beskriv videoen for brukere av hjelpeteknologi",

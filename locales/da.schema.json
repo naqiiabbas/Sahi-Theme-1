@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategori",
+    "category_showcase": "Kategorioversigt",
     "404": "404",
     "colors": "Farvepalet",
     "custom_section": "Brugerdefineret sektion",
@@ -171,6 +173,9 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "underline_color": "Understregningsfarve",
+    "image_height": "Billedhøjde",
+    "fallback_image": "Reservebilledfil",
     "show_pause_button": "Vis pauseknap",
     "show_account_label": "Vis kontoetiket",
     "show_social_links": "Vis links til sociale medier",
@@ -1060,6 +1065,8 @@
     "shop_collection": "<p>Opdag vores nøje udvalgte kollektion med håndplukkede favoritter, der forener stil og kvalitet.</p>"
   },
   "text_defaults": {
+    "explore": "Udforsk",
+    "category": "Kategori",
     "button_label": "Køb nu",
     "collapsible_row": "Række, der kan skjules",
     "heading": "Overskrift",
@@ -1098,6 +1105,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "fallback_image": "Vises, når der ikke er valgt et billede. Angiv et filnavn fra temaets assets-mappe.",
     "announcement_social_links": "Tilføj links i blokken Links til sociale medier",
     "carousel_layout_on_mobile": "Karrusellen bruges altid på mobil",
     "video_alt_text": "Beskriv videoen for brugere af hjælpeteknologi",

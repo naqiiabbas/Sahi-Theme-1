@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Categoria",
+    "category_showcase": "Montra de categorias",
     "404": "404",
     "colors": "Paleta de cores",
     "custom_section": "Secção personalizada",
@@ -171,6 +173,9 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "underline_color": "Cor do sublinhado",
+    "image_height": "Altura da imagem",
+    "fallback_image": "Ficheiro de imagem alternativo",
     "show_pause_button": "Mostrar botão de pausa",
     "show_account_label": "Mostrar etiqueta da conta",
     "show_social_links": "Mostrar ligações de redes sociais",
@@ -1060,6 +1065,8 @@
     "shop_collection": "<p>Descubra a nossa coleção selecionada, com favoritos escolhidos a dedo que aliam estilo e qualidade.</p>"
   },
   "text_defaults": {
+    "explore": "Explorar",
+    "category": "Categoria",
     "button_label": "Comprar agora",
     "collapsible_row": "Linha recolhível",
     "heading": "Título",
@@ -1098,6 +1105,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "fallback_image": "Apresentada quando nenhuma imagem é selecionada. Introduza um nome de ficheiro da pasta assets do tema.",
     "announcement_social_links": "Adicione ligações no bloco Ligações de redes sociais",
     "video_alt_text": "Descreva o vídeo para utilizadores de tecnologia de apoio",
     "video_autoplay": "Os vídeos serão silenciados por predefinição",

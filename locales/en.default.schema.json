@@ -223,6 +223,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "fallback_image": "Shown when no image is selected. Enter a file name from the theme's assets folder.",
     "actions_display_style": "Icons are always used on mobile",
     "announcement_social_links": "Add links in the Social media links block",
     "applies_on_image_only": "Applies to images only",
@@ -253,6 +254,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "category": "Category",
+    "category_showcase": "Category showcase",
     "column": "Column",
     "product_title": "Product title",
     "custom_liquid": "Custom Liquid",
@@ -749,6 +752,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "underline_color": "Underline color",
+    "image_height": "Image height",
+    "fallback_image": "Fallback image file",
     "show_pause_button": "Show pause button",
     "show_account_label": "Show account label",
     "accordion": "Accordion",
@@ -1208,6 +1214,8 @@
     "bottom_row_text": "Bottom row text"
   },
   "text_defaults": {
+    "explore": "Explore",
+    "category": "Category",
     "accordion_heading": "Accordion heading",
     "are_purchases_final_sale": "Are any purchases final sale?",
     "be_bold": "Be bold.",

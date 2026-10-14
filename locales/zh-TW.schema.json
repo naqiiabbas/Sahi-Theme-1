@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "類別",
+    "category_showcase": "類別展示",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -171,6 +173,9 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "underline_color": "底線顏色",
+    "image_height": "圖片高度",
+    "fallback_image": "備用圖片檔案",
     "show_pause_button": "顯示暫停按鈕",
     "show_account_label": "顯示帳號標籤",
     "show_social_links": "顯示社群媒體連結",
@@ -1060,6 +1065,8 @@
     "introducing_p": "<p><em>全新推出</em></p>"
   },
   "text_defaults": {
+    "explore": "探索",
+    "category": "類別",
     "button_label": "立即選購",
     "collapsible_row": "可摺疊列",
     "heading": "標題",
@@ -1098,6 +1105,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "fallback_image": "未選取圖片時顯示。請輸入佈景主題 assets 資料夾中的檔案名稱。",
     "announcement_social_links": "在「社群媒體連結」區塊中新增連結",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",
     "video_alt_text": "為使用輔助技術的使用者描述影片",

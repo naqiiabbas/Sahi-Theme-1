@@ -215,6 +215,7 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "fallback_image": "تظهر عند عدم اختيار صورة. أدخل اسم ملف من مجلد أصول السمة.",
     "announcement_social_links": "أضف الروابط في قسم روابط وسائل التواصل الاجتماعي",
     "actions_display_style": "تُستخدم الأيقونات دائماً على الهاتف المحمول",
     "applies_on_image_only": "ينطبق على الصور فقط",
@@ -245,6 +246,8 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "category": "فئة",
+    "category_showcase": "عرض الفئات",
     "column": "عمود",
     "product_title": "عنوان المنتج",
     "custom_liquid": "Liquid مخصص",
@@ -691,6 +694,9 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "underline_color": "لون الخط السفلي",
+    "image_height": "ارتفاع الصورة",
+    "fallback_image": "ملف الصورة البديلة",
     "show_pause_button": "إظهار زر الإيقاف المؤقت",
     "show_account_label": "إظهار تسمية الحساب",
     "show_social_links": "إظهار روابط وسائل التواصل الاجتماعي",
@@ -1111,6 +1117,8 @@
     "customer_account_menu": "قائمة حساب العميل"
   },
   "text_defaults": {
+    "explore": "استكشف",
+    "category": "فئة",
     "accordion_heading": "عنوان القائمة المنسدلة",
     "are_purchases_final_sale": "هل هناك أي مشتريات تعتبر بيعاً نهائياً؟",
     "be_bold": "كن جريئًا.",

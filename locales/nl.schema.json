@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Categorie",
+    "category_showcase": "Categorieoverzicht",
     "404": "404",
     "custom_section": "Aangepaste sectie",
     "icon": "Pictogram",
@@ -171,6 +173,9 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "underline_color": "Onderstreepkleur",
+    "image_height": "Afbeeldingshoogte",
+    "fallback_image": "Reserve-afbeeldingsbestand",
     "show_pause_button": "Pauzeknop weergeven",
     "show_account_label": "Accountlabel weergeven",
     "show_social_links": "Socialemedialinks weergeven",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Uitgelichte collectie</h3>"
   },
   "text_defaults": {
+    "explore": "Ontdekken",
+    "category": "Categorie",
     "collapsible_row": "Inklapbare rij",
     "button_label": "Shop nu",
     "heading": "Kop",
@@ -1098,6 +1105,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "fallback_image": "Wordt getoond als er geen afbeelding is geselecteerd. Voer een bestandsnaam uit de assets-map van het thema in.",
     "announcement_social_links": "Voeg links toe in het blok Socialemedialinks",
     "carousel_layout_on_mobile": "Op mobiel wordt altijd een carrousel gebruikt",
     "video_alt_text": "Beschrijf de video voor gebruikers van ondersteunende technologie",

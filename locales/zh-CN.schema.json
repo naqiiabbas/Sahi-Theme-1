@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "类别",
+    "category_showcase": "类别展示",
     "404": "404",
     "colors": "调色板",
     "custom_section": "自定义分区",
@@ -171,6 +173,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "underline_color": "下划线颜色",
+    "image_height": "图片高度",
+    "fallback_image": "备用图片文件",
     "show_pause_button": "显示暂停按钮",
     "show_account_label": "显示账户标签",
     "show_social_links": "显示社交媒体链接",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>特色系列</h3>"
   },
   "text_defaults": {
+    "explore": "探索",
+    "category": "类别",
     "button_label": "立即购买",
     "collapsible_row": "可折叠行",
     "heading": "标题",
@@ -1098,6 +1105,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "fallback_image": "未选择图片时显示。请输入主题 assets 文件夹中的文件名。",
     "announcement_social_links": "在“社交媒体链接”区块中添加链接",
     "video_alt_text": "为使用辅助技术的用户描述视频",
     "video_autoplay": "视频将默认静音",

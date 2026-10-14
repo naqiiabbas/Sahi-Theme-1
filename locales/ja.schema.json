@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "カテゴリー",
+    "category_showcase": "カテゴリーショーケース",
     "404": "404",
     "colors": "カラーパレット",
     "custom_section": "カスタムセクション",
@@ -171,6 +173,9 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "underline_color": "下線の色",
+    "image_height": "画像の高さ",
+    "fallback_image": "代替画像ファイル",
     "show_pause_button": "一時停止ボタンを表示",
     "show_account_label": "アカウントのラベルを表示",
     "show_social_links": "ソーシャルメディアリンクを表示",
@@ -1060,6 +1065,8 @@
     "introducing_p": "<p><em>新登場</em></p>"
   },
   "text_defaults": {
+    "explore": "見る",
+    "category": "カテゴリー",
     "button_label": "今すぐ購入",
     "collapsible_row": "折りたたみ可能な行",
     "heading": "見出し",
@@ -1098,6 +1105,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "fallback_image": "画像が選択されていない場合に表示されます。テーマのassetsフォルダ内のファイル名を入力してください。",
     "announcement_social_links": "ソーシャルメディアリンクのブロックでリンクを追加します",
     "video_alt_text": "支援技術のユーザーのために動画の説明を記述します",
     "video_autoplay": "動画はデフォルトでミュートになります",

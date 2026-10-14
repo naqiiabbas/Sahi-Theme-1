@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategoria",
+    "category_showcase": "Prezentacja kategorii",
     "404": "404",
     "custom_section": "Sekcja niestandardowa",
     "icon": "Ikona",
@@ -171,6 +173,9 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "underline_color": "Kolor podkreślenia",
+    "image_height": "Wysokość obrazu",
+    "fallback_image": "Zapasowy plik obrazu",
     "show_pause_button": "Pokaż przycisk pauzy",
     "show_account_label": "Pokaż etykietę konta",
     "show_social_links": "Pokaż linki do mediów społecznościowych",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Polecana kolekcja</h3>"
   },
   "text_defaults": {
+    "explore": "Odkryj",
+    "category": "Kategoria",
     "collapsible_row": "Wiersz zwijany",
     "button_label": "Kup teraz",
     "heading": "Nagłówek",
@@ -1098,6 +1105,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "fallback_image": "Wyświetlany, gdy nie wybrano obrazu. Wpisz nazwę pliku z folderu assets motywu.",
     "announcement_social_links": "Dodaj linki w bloku Linki do mediów społecznościowych",
     "video_alt_text": "Opisz wideo dla użytkowników technologii wspomagających",
     "video_autoplay": "Domyślnie filmy będą wyciszone",

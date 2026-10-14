@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "category": "Kategori",
+    "category_showcase": "Kategoriöversikt",
     "404": "404",
     "colors": "Färgpalett",
     "custom_section": "Anpassad sektion",
@@ -171,6 +173,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "underline_color": "Understrykningsfärg",
+    "image_height": "Bildhöjd",
+    "fallback_image": "Reservbildfil",
     "show_pause_button": "Visa pausknapp",
     "show_account_label": "Visa kontoetikett",
     "show_social_links": "Visa länkar till sociala medier",
@@ -1060,6 +1065,8 @@
     "featured_collection_h3": "<h3>Utvald kollektion</h3>"
   },
   "text_defaults": {
+    "explore": "Utforska",
+    "category": "Kategori",
     "button_label": "Handla nu",
     "collapsible_row": "Komprimerbar rad",
     "heading": "Rubrik",
@@ -1098,6 +1105,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "fallback_image": "Visas när ingen bild är vald. Ange ett filnamn från temats assets-mapp.",
     "announcement_social_links": "Lägg till länkar i blocket Länkar till sociala medier",
     "video_alt_text": "Beskriv videon för användare av hjälpmedelsteknik",
     "video_autoplay": "Videor kommer att vara tystade som standard",

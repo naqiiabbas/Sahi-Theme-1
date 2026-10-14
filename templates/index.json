@@ -949,10 +949,81 @@
         "padding-block-start": 48,
         "padding-block-end": 64
       }
+    },
+    "category_showcase_main": {
+      "type": "category-showcase",
+      "blocks": {
+        "nut_butters": {
+          "type": "_category-showcase-item",
+          "settings": {
+            "fallback_image": "category-nut-butters.png",
+            "title": "Nut Butters",
+            "link": "shopify://collections/all",
+            "link_label": "Explore"
+          }
+        },
+        "achaars": {
+          "type": "_category-showcase-item",
+          "settings": {
+            "fallback_image": "category-achaars.png",
+            "title": "Achaars",
+            "link": "shopify://collections/all",
+            "link_label": "Explore"
+          }
+        },
+        "raw_honey": {
+          "type": "_category-showcase-item",
+          "settings": {
+            "fallback_image": "category-raw-honey.png",
+            "title": "Raw Honey",
+            "link": "shopify://collections/all",
+            "link_label": "Explore"
+          }
+        },
+        "olive_oils": {
+          "type": "_category-showcase-item",
+          "settings": {
+            "fallback_image": "category-olive-oils.png",
+            "title": "Olive Oils",
+            "link": "shopify://collections/all",
+            "link_label": "Explore"
+          }
+        },
+        "desi_ghee": {
+          "type": "_category-showcase-item",
+          "settings": {
+            "fallback_image": "category-desi-ghee.png",
+            "title": "Desi Ghee",
+            "link": "shopify://collections/all",
+            "link_label": "Explore"
+          }
+        }
+      },
+      "block_order": [
+        "nut_butters",
+        "achaars",
+        "raw_honey",
+        "olive_oils",
+        "desi_ghee"
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "image_height": 180,
+        "show_dividers": true,
+        "title_font": "instrument_serif_n4",
+        "title_size": 20,
+        "title_case": "uppercase",
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "underline_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
   "order": [
     "hero_iLBwPd",
+    "category_showcase_main",
     "product_list_EDUBdR",
     "media_with_content_LfPdEJ",
     "collection_list_xpBxCm"
