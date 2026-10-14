@@ -171,6 +171,8 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_social_links": "Vis links til sociale medier",
+    "search_placeholder": "Pladsholdertekst",
     "alignment": "Justering",
     "autoplay": "Automatisk afspilning",
     "background": "Baggrund",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "search_bar": "Søgefelt",
     "apple": "Apple",
     "arrow": "Pil",
     "auto": "Auto",
@@ -1092,6 +1095,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "announcement_social_links": "Tilføj links i blokken Links til sociale medier",
     "carousel_layout_on_mobile": "Karrusellen bruges altid på mobil",
     "video_alt_text": "Beskriv videoen for brugere af hjælpeteknologi",
     "video_autoplay": "Videoer vil som standard være uden lyd",

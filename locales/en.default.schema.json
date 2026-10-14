@@ -224,6 +224,7 @@
   },
   "info": {
     "actions_display_style": "Icons are always used on mobile",
+    "announcement_social_links": "Add links in the Social media links block",
     "applies_on_image_only": "Applies to images only",
     "aspect_ratio_adjusted": "Adjusted in some layouts",
     "carousel_hover_behavior_not_supported": "\"Carousel\" hover is not supported when \"Carousel\" type is selected at the section level",
@@ -662,6 +663,7 @@
     "ruler": "Ruler",
     "s": "S",
     "scale": "Scale",
+    "search_bar": "Search bar",
     "secondary": "Secondary",
     "secondary_style": "Secondary style",
     "semibold": "Semibold",
@@ -1068,9 +1070,11 @@
     "scroll_speed": "Time to next announcement",
     "search": "Search",
     "search_icon": "Search icon",
+    "search_placeholder": "Placeholder text",
     // Setting for search bar placement in header
     "search_position": "Position",
     "search_row": "Row",
+    "show_social_links": "Show social media links",
     "row_height": "Row height",
     "secondary_button_background": "Secondary button background",
     "secondary_button_border": "Secondary button border",

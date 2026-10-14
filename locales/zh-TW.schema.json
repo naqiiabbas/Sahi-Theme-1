@@ -171,6 +171,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_social_links": "顯示社群媒體連結",
+    "search_placeholder": "預留位置文字",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",
@@ -587,6 +589,7 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "search_bar": "搜尋列",
     "apple": "Apple",
     "arrow": "箭頭",
     "auto": "自動",
@@ -1092,6 +1095,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "announcement_social_links": "在「社群媒體連結」區塊中新增連結",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",
     "video_alt_text": "為使用輔助技術的使用者描述影片",
     "video_autoplay": "影片預設為靜音播放",

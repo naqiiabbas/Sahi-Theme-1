@@ -171,6 +171,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_social_links": "Näytä sosiaalisen median linkit",
+    "search_placeholder": "Paikkamerkkiteksti",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "search_bar": "Hakupalkki",
     "apple": "Omena",
     "arrow": "Nuoli",
     "auto": "Automaattinen",
@@ -1092,6 +1095,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "announcement_social_links": "Lisää linkit Sosiaalisen median linkit -lohkoon",
     "carousel_layout_on_mobile": "Mobiilissa käytetään aina karusellia.",
     "video_alt_text": "Kuvaile video avustavan teknologian käyttäjille",
     "video_autoplay": "Videot mykistetään oletusarvoisesti",

@@ -5,12 +5,20 @@
 
   @param {object} [section] - The section object providing settings such as actions_font.
   @param {block} [block] - The block object, used for Shopify editor attributes.
-  @param {string} [display_style] - Controls display mode for header actions: 'icon' or 'text'.
+  @param {string} [display_style] - Controls display mode for header actions: 'icon', 'text', or 'button'. Buttons use icons in the drawer layout.
+  @param {boolean} [show_cart_total] - Shows the cart total and item count inside the cart button when display_style is 'button'.
   @param {string} [customer_account_menu] - The menu handle passed to the shopify-account component.
 
   @example
-  {% render 'header-actions', section: section %}
+  {% render 'header-actions', section: section, display_style: 'button', show_cart_total: true %}
 {% enddoc %}
+
+{% liquid
+  assign is_button_style = false
+  if display_style == 'button'
+    assign is_button_style = true
+  endif
+%}
 
 <script
   type="module"
@@ -23,16 +31,36 @@
     class="header-actions__cart-icon{% if display_style == 'text' %} header-actions__cart-icon--text{% endif %}{% unless cart == empty %} header-actions__cart-icon--has-cart{% endunless %}"
     data-testid="cart-icon"
   >
-    <span class="{% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
+    <span class="{% if display_style != 'text' %}hidden{% else %}mobile:hidden{% endif %}">
       {{ 'content.cart_title' | t }}
     </span>
 
     <span
-      class="svg-wrapper {% if display_style != 'icon' %}desktop:hidden{% endif %}"
+      class="svg-wrapper {% if display_style == 'text' %}desktop:hidden{% endif %}"
       aria-hidden="true"
     >
       {{ 'icon-cart.svg' | inline_asset_content }}
     </span>
+
+    {% if is_button_style %}
+      <span class="header-actions__pill-label">
+        {%- if show_cart_total -%}
+          <template ref="moneyFormat">{{ shop.money_format }}</template>
+          <span
+            ref="cartTotal"
+            data-currency="{{ cart.currency.iso_code }}"
+          >
+            {{- cart.total_price | money -}}
+          </span>
+          {{ ' ' }}
+          <span aria-hidden="true">
+            (<span ref="cartCount">{{ cart.item_count }}</span>)
+          </span>
+        {%- else -%}
+          {{ 'content.cart_title' | t }}
+        {%- endif -%}
+      </span>
+    {% endif %}
 
     {% render 'cart-bubble', limit: 100 %}
   </cart-icon>
@@ -54,13 +82,15 @@
 <header-actions
   {% if display_style == 'text' %}
     class="header-actions--text"
+  {% elsif is_button_style %}
+    class="header-actions--button"
   {% endif %}
   {{- block.shopify_attributes -}}
 >
   {% if shop.customer_accounts_enabled %}
     {% liquid
       assign account_actions_style = ''
-      if display_style == 'text' and section
+      if display_style != 'icon' and section
         assign actions_font = section.settings.actions_font | default: 'body'
         assign font_obj = settings.type_heading_font
         case actions_font
@@ -77,7 +107,7 @@
       endif
     %}
     <div
-      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %} color-custom-popover"
+      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %}{% if is_button_style %} header-actions__action--pill account-button--pill{% endif %} color-custom-popover"
     >
       <shopify-account
         menu="{{ customer_account_menu }}"
@@ -90,17 +120,17 @@
         {% else %}
           <span
             slot="signed-out-avatar"
-            class="account-button__text header-actions__text-style {% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}"
+            class="{% if display_style == 'text' %}desktop:hidden{% endif %}"
+            aria-hidden="true"
           >
-            {{ 'content.account_title' | t }}
+            {{ account_icon }}
           </span>
 
           <span
             slot="signed-out-avatar"
-            class="{% if display_style != 'icon' %}desktop:hidden{% endif %}"
-            aria-hidden="true"
+            class="account-button__text header-actions__text-style {% case display_style %}{% when 'icon' %}hidden{% when 'button' %}header-actions__pill-label{% else %}mobile:hidden{% endcase %}"
           >
-            {{ account_icon }}
+            {{ 'content.account_title' | t }}
           </span>
         {% endif %}
       </shopify-account>
@@ -108,16 +138,16 @@
   {% else %}
     <a
       href="{{ routes.account_login_url | default: '/account/login' }}"
-      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %}"
+      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %}{% if is_button_style %} header-actions__action--pill account-button--pill{% endif %}"
       aria-label="{{ 'content.account_title' | t: default: 'Account' }}"
     >
       <span
-        class="{% if display_style != 'icon' %}desktop:hidden{% endif %}"
+        class="{% if display_style == 'text' %}desktop:hidden{% endif %}"
         aria-hidden="true"
       >
         {{ account_icon }}
       </span>
-      <span class="account-button__text header-actions__text-style {% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
+      <span class="account-button__text header-actions__text-style {% case display_style %}{% when 'icon' %}hidden{% when 'button' %}header-actions__pill-label{% else %}mobile:hidden{% endcase %}">
         {{ 'content.account_title' | t: default: 'Account' }}
       </span>
     </a>
@@ -125,7 +155,7 @@
 
   {% if settings.cart_type == 'drawer' and template.name != 'cart' %}
     <button
-      class="header-actions__action button-unstyled{% if display_style == 'text' %} header-actions__text-style{% endif %}"
+      class="header-actions__action button-unstyled{% if display_style != 'icon' %} header-actions__text-style{% endif %}{% if is_button_style %} header-actions__action--pill header-actions__action--cart-pill{% endif %}"
       on:click="#cart-drawer/toggle"
       aria-haspopup="dialog"
       aria-expanded="false"
@@ -139,7 +169,7 @@
   {% else %}
     <a
       href="{{ routes.cart_url }}"
-      class="header-actions__action action__cart{% if display_style == 'text' %} header-actions__text-style{% endif %}"
+      class="header-actions__action action__cart{% if display_style != 'icon' %} header-actions__text-style{% endif %}{% if is_button_style %} header-actions__action--pill header-actions__action--cart-pill{% endif %}"
       aria-label="{{ 'accessibility.cart' | t }}"
       aria-describedby="cart-bubble-text"
     >
@@ -327,6 +357,93 @@
   .header-actions__text {
     display: flex;
     align-items: center;
+  }
+
+  /* Button style: pills with icon and label in the desktop menu layout, plain icons in the drawer layout.
+     The ID scope outranks the header's icon color and hover rules, which use !important. */
+  .header-actions__pill-label {
+    display: none;
+  }
+
+  #header-component[data-menu-style='menu'] {
+    .header-actions--button {
+      align-items: center;
+      gap: var(--gap-sm);
+      margin-inline-start: 0;
+    }
+
+    .header-actions__pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25em;
+      white-space: nowrap;
+    }
+
+    .header-actions__action--pill {
+      --header-icon-size: var(--icon-size-md);
+
+      gap: var(--gap-xs);
+      min-height: var(--minimum-touch-target);
+      padding-inline: var(--padding-lg) var(--padding-xl);
+      border: var(--style-border-width-inputs) solid var(--color-foreground);
+      border-radius: var(--style-border-radius-pills);
+      opacity: 1;
+      transition: background-color var(--animation-speed) var(--animation-easing),
+        color var(--animation-speed) var(--animation-easing), opacity var(--animation-speed) var(--animation-easing);
+
+      .svg-wrapper,
+      .header-actions__cart-icon {
+        width: auto;
+        height: auto;
+      }
+
+      svg,
+      &:hover svg {
+        transform: none;
+        filter: none;
+        mask: none;
+      }
+    }
+
+    /* The account button carries the popover color scheme for its dialog, so use the row's account color. */
+    .account-button--pill {
+      border-color: var(--color-account-icon);
+    }
+
+    .account-button--pill:hover {
+      color: var(--color-account-icon) !important;
+      background-color: color-mix(in srgb, var(--color-account-icon) 10%, transparent);
+    }
+
+    .header-actions__action--cart-pill {
+      --pill-background: var(--cart-bubble-background, var(--color-foreground));
+      --pill-text: var(--cart-bubble-text, var(--color-background));
+
+      border-color: var(--pill-background);
+      background-color: var(--pill-background);
+
+      &,
+      &:hover,
+      svg,
+      &:hover svg {
+        color: var(--pill-text) !important;
+        fill: var(--pill-text) !important;
+      }
+
+      &:hover {
+        opacity: var(--opacity-85);
+      }
+
+      .header-actions__cart-icon {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-xs);
+      }
+
+      .cart-bubble {
+        display: none;
+      }
+    }
   }
 
   @media screen and (min-width: 750px) {

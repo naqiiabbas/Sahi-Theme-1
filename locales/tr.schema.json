@@ -171,6 +171,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_social_links": "Sosyal medya bağlantılarını göster",
+    "search_placeholder": "Yer tutucu metin",
     "autoplay": "Otomatik oynatma",
     "background": "Arka plan",
     "border_radius": "Köşe yarıçapı",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "search_bar": "Arama çubuğu",
     "apple": "Apple",
     "arrow": "Ok",
     "banana": "Muz",
@@ -1092,6 +1095,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "announcement_social_links": "Bağlantıları Sosyal medya bağlantıları bloğuna ekleyin",
     "video_alt_text": "Yardımcı teknoloji kullanıcıları için videoyu açıklayın",
     "video_autoplay": "Videolar varsayılan olarak sessize alınır",
     "video_external": "Bir YouTube veya Vimeo URL'si kullanın",

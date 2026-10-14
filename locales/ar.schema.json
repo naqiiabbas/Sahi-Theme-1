@@ -215,6 +215,7 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "announcement_social_links": "أضف الروابط في قسم روابط وسائل التواصل الاجتماعي",
     "actions_display_style": "تُستخدم الأيقونات دائماً على الهاتف المحمول",
     "applies_on_image_only": "ينطبق على الصور فقط",
     "aspect_ratio_adjusted": "معدل في بعض التخطيطات",
@@ -406,6 +407,7 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "search_bar": "شريط البحث",
     "above_carousel": "أعلى العرض الدائري",
     "accent": "تمييز",
     "all": "الكل",
@@ -688,6 +690,8 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "show_social_links": "إظهار روابط وسائل التواصل الاجتماعي",
+    "search_placeholder": "نص العنصر النائب",
     "accordion": "أكورديون",
     "account": "حساب",
     "actions_display_style": "نمط القائمة",

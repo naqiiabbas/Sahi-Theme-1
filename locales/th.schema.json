@@ -171,6 +171,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_social_links": "แสดงลิงก์โซเชียลมีเดีย",
+    "search_placeholder": "ข้อความตัวยึดตำแหน่ง",
     "alignment": "การจัดตำแหน่ง",
     "autoplay": "เล่นอัตโนมัติ",
     "background": "พื้นหลัง",
@@ -587,6 +589,7 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "search_bar": "แถบค้นหา",
     "apple": "Apple",
     "arrow": "ลูกศร",
     "auto": "อัตโนมัติ",
@@ -1092,6 +1095,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "announcement_social_links": "เพิ่มลิงก์ในบล็อกลิงก์โซเชียลมีเดีย",
     "video_alt_text": "โปรดอธิบายวิดีโอสำหรับผู้ใช้เทคโนโลยีความช่วยเหลือพิเศษ",
     "video_autoplay": "วิดีโอจะถูกปิดเสียงตามค่าเริ่มต้น",
     "video_external": "ใช้ URL ของ YouTube หรือ Vimeo",

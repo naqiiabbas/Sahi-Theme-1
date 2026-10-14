@@ -1,6 +1,11 @@
 
 
-{% if section.blocks.size > 1 %}
+{% liquid
+  # Count only announcements; the static social links block also appears in section.blocks.
+  assign announcement_count = section.blocks | where: 'type', '_announcement' | size
+%}
+
+{% if announcement_count > 1 %}
   <script
     src="{{ 'announcement-bar.js' | asset_url }}"
     type="module"
@@ -18,11 +23,17 @@
   {% liquid
     assign autoplay = false
     assign show_arrows = false
-    if section.blocks.size > 1
+    if announcement_count > 1
       assign autoplay = true
       assign show_arrows = true
     endif
   %}
+
+  {% if section.settings.show_social_links %}
+    <div class="announcement-bar__social">
+      {% content_for 'block', type: 'social-links', id: 'announcement-social-links' %}
+    </div>
+  {% endif %}
 
   <announcement-bar-component
     class="announcement-bar__slider"
@@ -43,6 +54,43 @@
 {% stylesheet %}
   .announcement-bar {
     border-block-end: var(--border-bottom-width) solid var(--color-border);
+  }
+
+  /* Social links sit at the inline start while the slider stays centered across the bar. */
+  .announcement-bar__social {
+    display: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .announcement-bar:has(.announcement-bar__social .social-icons__icon-wrapper) {
+      .announcement-bar__social {
+        display: flex;
+        grid-row: 1;
+        align-items: center;
+        justify-self: start;
+        z-index: 1;
+      }
+
+      .announcement-bar__slider {
+        grid-row: 1;
+      }
+    }
+
+    /* The block's own icon color setting supplies --color-utilities when set. */
+    .announcement-bar__social .social-icons__wrapper {
+      flex-wrap: nowrap;
+      color: var(--color-utilities, var(--color-foreground));
+    }
+
+    .announcement-bar__social .social-icons__icon-wrapper a {
+      display: flex;
+      color: inherit;
+      transition: opacity var(--animation-speed) var(--animation-easing);
+
+      &:hover {
+        opacity: var(--opacity-subdued-text);
+      }
+    }
   }
 
   .announcement-bar__slider {
@@ -165,6 +213,13 @@
         }
       ],
       "default": "page-width"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_links",
+      "label": "t:settings.show_social_links",
+      "info": "t:info.announcement_social_links",
+      "default": false
     },
     {
       "type": "color",

@@ -171,6 +171,8 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_social_links": "Mostra link ai social media",
+    "search_placeholder": "Testo segnaposto",
     "alignment": "Allineamento",
     "autoplay": "Riproduzione automatica",
     "background": "Sfondo",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "search_bar": "Barra di ricerca",
     "apple": "Mela",
     "arrow": "Freccia",
     "auto": "Automatico",
@@ -1092,6 +1095,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "announcement_social_links": "Aggiungi i link nel blocco Link ai social media",
     "carousel_layout_on_mobile": "Sui dispositivi mobili viene sempre utilizzato il carosello.",
     "video_alt_text": "Descrivi il video per gli utenti di tecnologie assistive",
     "video_autoplay": "I video saranno senza audio per impostazione predefinita",

@@ -171,6 +171,8 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "show_social_links": "Visa länkar till sociala medier",
+    "search_placeholder": "Platshållartext",
     "alignment": "Justering",
     "autoplay": "Autouppspelning",
     "background": "Bakgrund",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "search_bar": "Sökfält",
     "apple": "Apple",
     "arrow": "Pil",
     "auto": "Auto",
@@ -1092,6 +1095,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "announcement_social_links": "Lägg till länkar i blocket Länkar till sociala medier",
     "video_alt_text": "Beskriv videon för användare av hjälpmedelsteknik",
     "video_autoplay": "Videor kommer att vara tystade som standard",
     "video_external": "Använd en URL från YouTube eller Vimeo",

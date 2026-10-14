@@ -171,6 +171,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_social_links": "Zobrazit odkazy na sociální sítě",
+    "search_placeholder": "Zástupný text",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "search_bar": "Vyhledávací pole",
     "apple": "Apple",
     "arrow": "Šipka",
     "auto": "Automaticky",
@@ -1092,6 +1095,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "announcement_social_links": "Odkazy přidejte v bloku Odkazy na sociální sítě",
     "video_alt_text": "Popište video pro uživatele asistivních technologií",
     "video_autoplay": "Videa budou ve výchozím nastavení ztlumená",
     "video_external": "Použijte URL z YouTube nebo Vimeo",

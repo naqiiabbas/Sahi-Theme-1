@@ -171,6 +171,8 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "show_social_links": "Mostrar enlaces de redes sociales",
+    "search_placeholder": "Texto de marcador de posición",
     "alignment": "Alineación",
     "autoplay": "Reproducción automática",
     "background": "Fondo",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "search_bar": "Barra de búsqueda",
     "apple": "Apple",
     "arrow": "Flecha",
     "auto": "Auto",
@@ -1092,6 +1095,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "announcement_social_links": "Agrega enlaces en el bloque Enlaces de redes sociales",
     "carousel_layout_on_mobile": "En dispositivos móviles siempre se usa el carrusel",
     "video_alt_text": "Describe el video para personas usuarias de tecnologías de asistencia",
     "video_autoplay": "Los videos estarán silenciados de forma predeterminada",

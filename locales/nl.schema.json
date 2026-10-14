@@ -171,6 +171,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_social_links": "Socialemedialinks weergeven",
+    "search_placeholder": "Tijdelijke tekst",
     "autoplay": "Automatisch afspelen",
     "background": "Achtergrond",
     "border_radius": "Hoekradius",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "search_bar": "Zoekbalk",
     "apple": "Apple",
     "arrow": "Pijl",
     "banana": "Banaan",
@@ -1092,6 +1095,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "announcement_social_links": "Voeg links toe in het blok Socialemedialinks",
     "carousel_layout_on_mobile": "Op mobiel wordt altijd een carrousel gebruikt",
     "video_alt_text": "Beschrijf de video voor gebruikers van ondersteunende technologie",
     "video_autoplay": "Video's worden standaard gedempt",

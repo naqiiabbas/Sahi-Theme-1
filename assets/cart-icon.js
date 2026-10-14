@@ -1,5 +1,6 @@
 import { Component } from '@theme/component';
 import { onAnimationEnd } from '@theme/utilities';
+import { convertMoneyToMinorUnits, formatMoney } from '@theme/money-formatting';
 import { StandardEvents, CartLinesUpdateEvent } from '@shopify/events';
 
 /**
@@ -9,6 +10,9 @@ import { StandardEvents, CartLinesUpdateEvent } from '@shopify/events';
  * @property {HTMLElement} cartBubble - The cart bubble element.
  * @property {HTMLElement} cartBubbleText - The cart bubble text element.
  * @property {HTMLElement} cartBubbleCount - The cart bubble count element.
+ * @property {HTMLElement} [cartTotal] - The cart total shown by the header's button style.
+ * @property {HTMLElement} [cartCount] - The item count shown by the header's button style.
+ * @property {HTMLTemplateElement} [moneyFormat] - The shop money format used to render the cart total.
  *
  * @extends {Component<Refs>}
  */
@@ -70,10 +74,17 @@ class CartIcon extends Component {
     event.promise
       ?.then(({ cart, detail }) => {
         const itemCount = cart?.totalQuantity ?? detail?.itemCount ?? 0;
+        const totalAmount = cart?.cost?.totalAmount;
 
         this.#cartRenderRevision += 1;
         this.#historyCartController?.abort();
         this.renderCartBubble(itemCount);
+
+        if (totalAmount) {
+          const currency = totalAmount.currencyCode;
+          const minorUnits = convertMoneyToMinorUnits(totalAmount.amount, currency);
+          if (minorUnits !== null) this.renderCartTotal(minorUnits, currency);
+        }
       })
       .catch((error) => {
         if (error?.name !== 'AbortError') console.warn('[cart-icon] Event promise rejected:', error);
@@ -92,6 +103,8 @@ class CartIcon extends Component {
     this.currentCartCount = itemCount;
 
     this.classList.toggle('header-actions__cart-icon--has-cart', itemCount > 0);
+
+    if (this.refs.cartCount) this.refs.cartCount.textContent = String(itemCount);
 
     sessionStorage.setItem(
       'cart-count',
@@ -112,6 +125,23 @@ class CartIcon extends Component {
 
     this.refs.cartBubble.classList.remove('cart-bubble--animating');
   };
+
+  /**
+   * Renders the cart total when the button style shows it.
+   * @param {number} minorUnits - The cart total in the currency's minor units.
+   * @param {string} [currency] - The currency code; defaults to the server-rendered currency.
+   */
+  renderCartTotal(minorUnits, currency) {
+    const { cartTotal, moneyFormat } = this.refs;
+    if (!cartTotal || !(moneyFormat instanceof HTMLTemplateElement)) return;
+
+    const currencyCode = currency || cartTotal.dataset.currency;
+    if (!currencyCode) return;
+
+    const format = moneyFormat.content.textContent?.trim() || '{{amount}}';
+    cartTotal.textContent = formatMoney(minorUnits, format, currencyCode);
+    cartTotal.dataset.currency = currencyCode;
+  }
 
   /**
    * Checks if the cart count is correct.
@@ -173,6 +203,7 @@ class CartIcon extends Component {
       if (this.#cartRenderRevision !== cartRenderRevision) return;
 
       await this.renderCartBubble(itemCount, false);
+      if (Number.isInteger(cart?.total_price)) this.renderCartTotal(cart.total_price, cart.currency);
     } catch (error) {
       if (error?.name !== 'AbortError') console.warn('[cart-icon] History reconciliation failed:', error);
     } finally {

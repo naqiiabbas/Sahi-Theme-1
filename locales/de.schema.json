@@ -171,6 +171,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_social_links": "Social-Media-Links anzeigen",
+    "search_placeholder": "Platzhaltertext",
     "autoplay": "Autoplay",
     "background": "Hintergrund",
     "border_radius": "Eckenradius",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "search_bar": "Suchleiste",
     "apple": "Apfel",
     "arrow": "Pfeil",
     "banana": "Banane",
@@ -1092,6 +1095,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "announcement_social_links": "Füge Links im Block „Social-Media-Links“ hinzu",
     "video_alt_text": "Beschreibe das Video für Benutzer von Hilfstechnologien",
     "video_autoplay": "Videos werden standardmäßig stummgeschaltet",
     "video_external": "Verwende eine YouTube- oder Vimeo-URL",

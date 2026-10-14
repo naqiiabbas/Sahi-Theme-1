@@ -171,6 +171,8 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "show_social_links": "Afficher les liens vers les réseaux sociaux",
+    "search_placeholder": "Texte d’espace réservé",
     "autoplay": "Lecture automatique",
     "background": "Arrière-plan",
     "border_radius": "Rayon de la bordure",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "search_bar": "Barre de recherche",
     "apple": "Pomme",
     "arrow": "Flèche",
     "banana": "Banane",
@@ -1092,6 +1095,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "announcement_social_links": "Ajoutez des liens dans le bloc Liens vers les réseaux sociaux",
     "carousel_layout_on_mobile": "Le carrousel est toujours utilisé sur mobile",
     "video_alt_text": "Décrivez la vidéo pour les utilisateurs de technologies d’assistance",
     "video_autoplay": "Les vidéos seront mises en sourdine par défaut",

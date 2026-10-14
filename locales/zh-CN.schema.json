@@ -171,6 +171,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_social_links": "显示社交媒体链接",
+    "search_placeholder": "占位符文本",
     "alignment": "对齐方式",
     "autoplay": "自动播放",
     "background": "背景",
@@ -587,6 +589,7 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "search_bar": "搜索栏",
     "apple": "Apple",
     "arrow": "箭头",
     "auto": "自动",
@@ -1092,6 +1095,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "announcement_social_links": "在“社交媒体链接”区块中添加链接",
     "video_alt_text": "为使用辅助技术的用户描述视频",
     "video_autoplay": "视频将默认静音",
     "video_external": "使用 YouTube 或 Vimeo URL",

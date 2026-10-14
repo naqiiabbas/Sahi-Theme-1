@@ -25,6 +25,12 @@
             "case": "none"
           },
           "blocks": {}
+        },
+        "announcement-social-links": {
+          "type": "social-links",
+          "static": true,
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
@@ -33,11 +39,12 @@
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
-        "section_width": "full-width",
+        "section_width": "page-width",
         "background_color": "#FCEFDF",
         "divider_width": 0,
         "padding-block-start": 12,
-        "padding-block-end": 12
+        "padding-block-end": 12,
+        "show_social_links": true
       }
     },
     "header_section": {
@@ -95,11 +102,12 @@
         "section_width": "page-width",
         "section_height": "standard",
         "enable_sticky_header": "scroll-up",
-        "divider_width": 0,
+        "divider_width": 1,
+        "divider_color": "#D6AA5A4D",
         "divider_size": "page-width",
         "border_width": 0,
-        "actions_display_style": "icon",
-        "actions_font_size": "0.875rem",
+        "actions_display_style": "button",
+        "actions_font_size": "1rem",
         "actions_font": "body",
         "actions_text_case": "none",
         "background_color_top": "#2C130C",
@@ -115,12 +123,16 @@
         "enable_transparent_header_product": false,
         "product_inverse_logo": false,
         "enable_transparent_header_collection": false,
-        "collection_inverse_logo": false
+        "collection_inverse_logo": false,
+        "search_style": "bar",
+        "search_placeholder": "Search for...",
+        "show_cart_total": true,
+        "text_hover_color": "#FFFFFF"
       }
     }
   },
   "order": [
-    "header_section",
-    "header_announcements_WbCTVz"
+    "header_announcements_WbCTVz",
+    "header_section"
   ]
 }

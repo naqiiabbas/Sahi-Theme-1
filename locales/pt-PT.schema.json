@@ -171,6 +171,8 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "show_social_links": "Mostrar ligações de redes sociais",
+    "search_placeholder": "Texto do marcador de posição",
     "alignment": "Alinhamento",
     "autoplay": "Reprodução automática",
     "background": "Fundo",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "search_bar": "Barra de pesquisa",
     "apple": "Maçã",
     "arrow": "Seta",
     "auto": "Automático",
@@ -1092,6 +1095,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "announcement_social_links": "Adicione ligações no bloco Ligações de redes sociais",
     "video_alt_text": "Descreva o vídeo para utilizadores de tecnologia de apoio",
     "video_autoplay": "Os vídeos serão silenciados por predefinição",
     "video_external": "Utilize um URL do YouTube ou do Vimeo",

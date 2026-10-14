@@ -171,6 +171,8 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "show_social_links": "Vis lenker til sosiale medier",
+    "search_placeholder": "Plassholdertekst",
     "alignment": "Justering",
     "autoplay": "Autospill",
     "background": "Bakgrunn",
@@ -587,6 +589,7 @@
     "customer_account_menu": "Kundekontomeny"
   },
   "options": {
+    "search_bar": "Søkefelt",
     "apple": "Eple",
     "arrow": "Pil",
     "auto": "Auto",
@@ -1092,6 +1095,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "announcement_social_links": "Legg til lenker i blokken Lenker til sosiale medier",
     "carousel_layout_on_mobile": "Karusell brukes alltid på mobil",
     "video_alt_text": "Beskriv videoen for brukere av hjelpeteknologi",
     "video_autoplay": "Videoer dempes som standard",
