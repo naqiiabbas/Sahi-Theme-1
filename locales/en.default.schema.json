@@ -223,6 +223,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "smooth_scroll": "Applies to mouse and trackpad scrolling. Off for visitors who prefer reduced motion and on touch screens.",
+    "brand_footer_logo": "Uses the theme logo unless you pick an image here.",
     "feature_number": "Leave blank to number features automatically: 01, 02, 03.",
     "show_rating": "Uses Shopify product rating fields, which review apps fill in.",
     "category_tabs_heading": "Not shown. Screen readers use it to describe the category tabs.",
@@ -259,6 +261,9 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "footer_perk": "Perk",
+    "footer_products": "Product links",
+    "brand_footer": "Brand footer",
     "feature": "Feature",
     "feature_highlights": "Feature highlights",
     "category_tab": "Category",
@@ -435,6 +440,7 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "gift": "Gift",
     "bars": "Bars",
     "above_carousel": "Above carousel",
     "accent": "Accent",
@@ -762,6 +768,14 @@
     "below_media": "Below media"
   },
   "settings": {
+    "smooth_scroll_intensity": "Smoothness",
+    "smooth_scroll_enabled": "Smooth scrolling",
+    "closing_note": "Closing note",
+    "show_newsletter": "Show email sign-up",
+    "show_decoration": "Show leaf illustration",
+    "brand_name": "Brand name",
+    "show_logo_image": "Show logo image",
+    "show_all_products": "Show \"All products\" link",
     "number_size": "Number size",
     "number": "Number",
     "star_color": "Star color",

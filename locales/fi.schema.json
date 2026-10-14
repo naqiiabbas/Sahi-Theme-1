@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Etu",
+    "footer_products": "Tuotelinkit",
+    "brand_footer": "Brändin alatunniste",
     "feature": "Kohokohta",
     "feature_highlights": "Kohokohdat",
     "category_tab": "Kategoria",
@@ -178,6 +181,14 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "smooth_scroll_intensity": "Pehmeys",
+    "smooth_scroll_enabled": "Pehmeä vieritys",
+    "closing_note": "Loppuhuomautus",
+    "show_newsletter": "Näytä sähköpostitilaus",
+    "show_decoration": "Näytä lehtikuvitus",
+    "brand_name": "Brändin nimi",
+    "show_logo_image": "Näytä logokuva",
+    "show_all_products": "Näytä \"Kaikki tuotteet\" -linkki",
     "number_size": "Numeron koko",
     "number": "Numero",
     "star_color": "Tähtien väri",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "gift": "Lahja",
     "bars": "Palkit",
     "search_bar": "Hakupalkki",
     "apple": "Omena",
@@ -1124,6 +1136,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "smooth_scroll": "Koskee hiiri- ja kosketuslevyvieritystä. Pois käytöstä vähennettyä liikettä suosiville kävijöille ja kosketusnäytöillä.",
+    "brand_footer_logo": "Käyttää teeman logoa, ellei tässä valita kuvaa.",
     "feature_number": "Jätä tyhjäksi, niin numerointi tehdään automaattisesti: 01, 02, 03.",
     "show_rating": "Käyttää Shopifyn tuotearviokenttiä, jotka arvostelusovellukset täyttävät.",
     "category_tabs_heading": "Ei näytetä. Näytönlukuohjelmat kuvaavat sillä kategoriavälilehtiä.",

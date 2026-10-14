@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "สิทธิพิเศษ",
+    "footer_products": "ลิงก์สินค้า",
+    "brand_footer": "ส่วนท้ายแบรนด์",
     "feature": "จุดเด่น",
     "feature_highlights": "จุดเด่น",
     "category_tab": "หมวดหมู่",
@@ -178,6 +181,14 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "smooth_scroll_intensity": "ความนุ่มนวล",
+    "smooth_scroll_enabled": "เลื่อนอย่างนุ่มนวล",
+    "closing_note": "ข้อความปิดท้าย",
+    "show_newsletter": "แสดงการสมัครรับอีเมล",
+    "show_decoration": "แสดงภาพประกอบใบไม้",
+    "brand_name": "ชื่อแบรนด์",
+    "show_logo_image": "แสดงรูปโลโก้",
+    "show_all_products": "แสดงลิงก์ \"สินค้าทั้งหมด\"",
     "number_size": "ขนาดหมายเลข",
     "number": "หมายเลข",
     "star_color": "สีดาว",
@@ -615,6 +626,7 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "gift": "ของขวัญ",
     "bars": "แถบ",
     "search_bar": "แถบค้นหา",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "smooth_scroll": "ใช้กับการเลื่อนด้วยเมาส์และทัชแพด ปิดสำหรับผู้เข้าชมที่ต้องการลดการเคลื่อนไหวและบนหน้าจอสัมผัส",
+    "brand_footer_logo": "ใช้โลโก้ของธีม เว้นแต่คุณจะเลือกรูปภาพที่นี่",
     "feature_number": "เว้นว่างไว้เพื่อใส่หมายเลขอัตโนมัติ: 01, 02, 03",
     "show_rating": "ใช้ฟิลด์คะแนนสินค้าของ Shopify ซึ่งแอปรีวิวเป็นผู้กรอก",
     "category_tabs_heading": "ไม่แสดง โปรแกรมอ่านหน้าจอใช้เพื่ออธิบายแท็บหมวดหมู่",

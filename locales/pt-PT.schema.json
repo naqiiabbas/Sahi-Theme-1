@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Vantagem",
+    "footer_products": "Ligações de produtos",
+    "brand_footer": "Rodapé da marca",
     "feature": "Destaque",
     "feature_highlights": "Destaques",
     "category_tab": "Categoria",
@@ -178,6 +181,14 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "smooth_scroll_intensity": "Suavidade",
+    "smooth_scroll_enabled": "Deslocamento suave",
+    "closing_note": "Nota final",
+    "show_newsletter": "Mostrar subscrição por e-mail",
+    "show_decoration": "Mostrar ilustração de folhas",
+    "brand_name": "Nome da marca",
+    "show_logo_image": "Mostrar imagem do logótipo",
+    "show_all_products": "Mostrar ligação \"Todos os produtos\"",
     "number_size": "Tamanho do número",
     "number": "Número",
     "star_color": "Cor das estrelas",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "gift": "Presente",
     "bars": "Barras",
     "search_bar": "Barra de pesquisa",
     "apple": "Maçã",
@@ -1124,6 +1136,8 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "smooth_scroll": "Aplica-se ao deslocamento com rato e trackpad. Desativado para visitantes que preferem menos movimento e em ecrãs táteis.",
+    "brand_footer_logo": "Usa o logótipo do tema, a menos que escolha uma imagem aqui.",
     "feature_number": "Deixe em branco para numerar automaticamente: 01, 02, 03.",
     "show_rating": "Usa os campos de classificação de produtos da Shopify, preenchidos por apps de avaliações.",
     "category_tabs_heading": "Não apresentado. Os leitores de ecrã usam-no para descrever os separadores de categorias.",

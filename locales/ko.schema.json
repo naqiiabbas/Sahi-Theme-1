@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "혜택",
+    "footer_products": "상품 링크",
+    "brand_footer": "브랜드 바닥글",
     "feature": "특징",
     "feature_highlights": "특징 하이라이트",
     "category_tab": "카테고리",
@@ -178,6 +181,14 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "smooth_scroll_intensity": "부드러움",
+    "smooth_scroll_enabled": "부드러운 스크롤",
+    "closing_note": "마무리 문구",
+    "show_newsletter": "이메일 구독 표시",
+    "show_decoration": "잎 일러스트 표시",
+    "brand_name": "브랜드 이름",
+    "show_logo_image": "로고 이미지 표시",
+    "show_all_products": "\"모든 상품\" 링크 표시",
     "number_size": "번호 크기",
     "number": "번호",
     "star_color": "별 색상",
@@ -615,6 +626,7 @@
     "customer_account_menu": "고객 계정 메뉴"
   },
   "options": {
+    "gift": "선물",
     "bars": "막대",
     "search_bar": "검색창",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "smooth_scroll": "마우스와 트랙패드 스크롤에 적용됩니다. 동작 줄이기를 선호하는 방문자와 터치스크린에서는 꺼집니다.",
+    "brand_footer_logo": "여기에서 이미지를 선택하지 않으면 테마 로고를 사용합니다.",
     "feature_number": "비워 두면 자동으로 번호가 매겨집니다: 01, 02, 03.",
     "show_rating": "리뷰 앱이 채우는 Shopify 상품 평점 필드를 사용합니다.",
     "category_tabs_heading": "표시되지 않습니다. 화면 낭독기가 카테고리 탭을 설명하는 데 사용합니다.",

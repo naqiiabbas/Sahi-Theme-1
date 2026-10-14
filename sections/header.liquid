@@ -688,6 +688,42 @@
     opacity: 0;
   }
 
+  /* "On scroll up" sticky: the header stays pinned once scrolled past, slides up out of view while
+     scrolling down, and slides back in when scrolling up. header.js sets data-sticky-hiding only when a
+     visible header is hidden, so the first pass off-screen does not animate. */
+  #header-component[sticky='scroll-up'] {
+    --header-slide-speed: calc(var(--animation-speed-slow) * 2);
+  }
+
+  .header-section:has(> #header-component[sticky='scroll-up'][data-sticky-state='idle']) {
+    position: sticky;
+    top: -1px;
+    z-index: var(--layer-menu-drawer);
+  }
+
+  #header-component[sticky='scroll-up'][data-sticky-state='idle'] {
+    opacity: 1;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+
+  #header-component[sticky='scroll-up'][data-sticky-state='idle'][data-sticky-hiding] {
+    transition: transform var(--header-slide-speed) var(--ease-out-cubic),
+      visibility 0s linear var(--header-slide-speed);
+  }
+
+  #header-component[sticky='scroll-up'][data-sticky-state='active'] {
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform var(--header-slide-speed) var(--ease-out-cubic);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #header-component[sticky='scroll-up'][data-sticky-state] {
+      transition: none;
+    }
+  }
+
   /* ================================
      * Underlays
      * ================================ */

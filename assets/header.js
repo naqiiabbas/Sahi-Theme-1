@@ -199,6 +199,7 @@ class HeaderComponent extends Component {
     }
 
     if (isScrollingUp) {
+      delete this.dataset.stickyHiding;
       if (isAtTop) {
         // reset sticky state when header is scrolled up to natural position
         this.#offscreen = false;
@@ -212,6 +213,8 @@ class HeaderComponent extends Component {
     } else if (this.dataset.stickyState === 'active') {
       this.dataset.scrollDirection = 'none';
 
+      // Marks a visible header being hidden, so CSS slides it out instead of hiding it instantly.
+      this.dataset.stickyHiding = '';
       this.dataset.stickyState = 'idle';
     } else {
       this.dataset.scrollDirection = 'none';

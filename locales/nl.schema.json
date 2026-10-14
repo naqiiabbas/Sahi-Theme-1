@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Voordeel",
+    "footer_products": "Productlinks",
+    "brand_footer": "Merkfooter",
     "feature": "Kenmerk",
     "feature_highlights": "Kenmerken in de kijker",
     "category_tab": "Categorie",
@@ -178,6 +181,14 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "smooth_scroll_intensity": "Vloeiendheid",
+    "smooth_scroll_enabled": "Vloeiend scrollen",
+    "closing_note": "Slotnotitie",
+    "show_newsletter": "E-mailinschrijving weergeven",
+    "show_decoration": "Bladillustratie weergeven",
+    "brand_name": "Merknaam",
+    "show_logo_image": "Logo-afbeelding weergeven",
+    "show_all_products": "Link \"Alle producten\" weergeven",
     "number_size": "Nummergrootte",
     "number": "Nummer",
     "star_color": "Sterkleur",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "gift": "Cadeau",
     "bars": "Balken",
     "search_bar": "Zoekbalk",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "smooth_scroll": "Geldt voor scrollen met muis en trackpad. Uit voor bezoekers die minder beweging willen en op touchscreens.",
+    "brand_footer_logo": "Gebruikt het themalogo, tenzij je hier een afbeelding kiest.",
     "feature_number": "Laat leeg om automatisch te nummeren: 01, 02, 03.",
     "show_rating": "Gebruikt de productbeoordelingsvelden van Shopify, die review-apps invullen.",
     "category_tabs_heading": "Niet zichtbaar. Schermlezers gebruiken dit om de categorietabbladen te beschrijven.",

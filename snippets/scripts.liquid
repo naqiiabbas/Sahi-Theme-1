@@ -35,7 +35,8 @@
       "@theme/sticky-add-to-cart": "{{ 'sticky-add-to-cart.js' | asset_url }}",
       "@theme/fly-to-cart": "{{ 'fly-to-cart.js' | asset_url }}",
       "@theme/scroll-container": "{{ 'scroll-container.js' | asset_url }}",
-      "@theme/theme-drawer": "{{ 'theme-drawer.js' | asset_url }}"
+      "@theme/theme-drawer": "{{ 'theme-drawer.js' | asset_url }}",
+      "@theme/lenis": "{{ 'vendor-lenis.js' | asset_url }}"
     }
   }
 </script>
@@ -56,6 +57,15 @@
   type="module"
   defer
 ></script>
+
+{%- if settings.smooth_scroll_enabled and request.design_mode == false -%}
+  {%- comment -%} Smooth wheel scrolling (Theme settings > Animations). Off in the theme editor so preview scrolling stays native. {%- endcomment -%}
+  <script
+    src="{{ 'smooth-scroll.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+{%- endif -%}
 
 {% if settings.transition_to_main_product or settings.page_transition_enabled %}
   {%- comment -%}

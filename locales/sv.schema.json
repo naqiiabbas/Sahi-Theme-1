@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Förmån",
+    "footer_products": "Produktlänkar",
+    "brand_footer": "Varumärkessidfot",
     "feature": "Höjdpunkt",
     "feature_highlights": "Höjdpunkter",
     "category_tab": "Kategori",
@@ -178,6 +181,14 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "smooth_scroll_intensity": "Mjukhet",
+    "smooth_scroll_enabled": "Mjuk rullning",
+    "closing_note": "Avslutande anteckning",
+    "show_newsletter": "Visa e-postregistrering",
+    "show_decoration": "Visa bladillustration",
+    "brand_name": "Varumärkesnamn",
+    "show_logo_image": "Visa logotypbild",
+    "show_all_products": "Visa länken \"Alla produkter\"",
     "number_size": "Nummerstorlek",
     "number": "Nummer",
     "star_color": "Stjärnfärg",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "gift": "Present",
     "bars": "Staplar",
     "search_bar": "Sökfält",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "smooth_scroll": "Gäller rullning med mus och styrplatta. Av för besökare som föredrar minskad rörelse och på pekskärmar.",
+    "brand_footer_logo": "Använder temats logotyp om du inte väljer en bild här.",
     "feature_number": "Lämna tomt för automatisk numrering: 01, 02, 03.",
     "show_rating": "Använder Shopifys fält för produktbetyg, som recensionsappar fyller i.",
     "category_tabs_heading": "Visas inte. Skärmläsare använder den för att beskriva kategoriflikarna.",

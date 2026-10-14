@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "权益",
+    "footer_products": "商品链接",
+    "brand_footer": "品牌页脚",
     "feature": "特色",
     "feature_highlights": "特色亮点",
     "category_tab": "类别",
@@ -178,6 +181,14 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "smooth_scroll_intensity": "平滑程度",
+    "smooth_scroll_enabled": "平滑滚动",
+    "closing_note": "结尾语",
+    "show_newsletter": "显示邮件订阅",
+    "show_decoration": "显示叶片插画",
+    "brand_name": "品牌名称",
+    "show_logo_image": "显示徽标图片",
+    "show_all_products": "显示\"全部商品\"链接",
     "number_size": "编号大小",
     "number": "编号",
     "star_color": "星级颜色",
@@ -615,6 +626,7 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "gift": "礼物",
     "bars": "条形",
     "search_bar": "搜索栏",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "smooth_scroll": "适用于鼠标和触控板滚动。对偏好减少动态效果的访客和触屏设备关闭。",
+    "brand_footer_logo": "除非在此选择图片，否则使用主题徽标。",
     "feature_number": "留空则自动编号：01、02、03。",
     "show_rating": "使用 Shopify 商品评分字段，由评论应用填写。",
     "category_tabs_heading": "不显示。屏幕阅读器用它描述分类标签页。",

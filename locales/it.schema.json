@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Vantaggio",
+    "footer_products": "Link ai prodotti",
+    "brand_footer": "Footer del brand",
     "feature": "Punto di forza",
     "feature_highlights": "Punti di forza",
     "category_tab": "Categoria",
@@ -178,6 +181,14 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "smooth_scroll_intensity": "Fluidità",
+    "smooth_scroll_enabled": "Scorrimento fluido",
+    "closing_note": "Nota finale",
+    "show_newsletter": "Mostra l'iscrizione via email",
+    "show_decoration": "Mostra l'illustrazione di foglie",
+    "brand_name": "Nome del brand",
+    "show_logo_image": "Mostra l'immagine del logo",
+    "show_all_products": "Mostra il link \"Tutti i prodotti\"",
     "number_size": "Dimensione del numero",
     "number": "Numero",
     "star_color": "Colore delle stelle",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "gift": "Regalo",
     "bars": "Barre",
     "search_bar": "Barra di ricerca",
     "apple": "Mela",
@@ -1124,6 +1136,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "smooth_scroll": "Vale per lo scorrimento con mouse e trackpad. Disattivato per chi preferisce meno movimento e sugli schermi touch.",
+    "brand_footer_logo": "Usa il logo del tema, a meno che tu non scelga un'immagine qui.",
     "feature_number": "Lascia vuoto per numerare automaticamente: 01, 02, 03.",
     "show_rating": "Usa i campi di valutazione dei prodotti di Shopify, compilati dalle app di recensioni.",
     "category_tabs_heading": "Non visibile. Gli screen reader lo usano per descrivere le schede delle categorie.",

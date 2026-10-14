@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Fordel",
+    "footer_products": "Produktlenker",
+    "brand_footer": "Merkevarebunntekst",
     "feature": "Høydepunkt",
     "feature_highlights": "Høydepunkter",
     "category_tab": "Kategori",
@@ -178,6 +181,14 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "smooth_scroll_intensity": "Jevnhet",
+    "smooth_scroll_enabled": "Jevn rulling",
+    "closing_note": "Avsluttende merknad",
+    "show_newsletter": "Vis e-postregistrering",
+    "show_decoration": "Vis bladillustrasjon",
+    "brand_name": "Merkenavn",
+    "show_logo_image": "Vis logobilde",
+    "show_all_products": "Vis lenken «Alle produkter»",
     "number_size": "Tallstørrelse",
     "number": "Nummer",
     "star_color": "Stjernefarge",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Kundekontomeny"
   },
   "options": {
+    "gift": "Gave",
     "bars": "Streker",
     "search_bar": "Søkefelt",
     "apple": "Eple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "smooth_scroll": "Gjelder rulling med mus og styreflate. Av for besøkende som foretrekker redusert bevegelse, og på berøringsskjermer.",
+    "brand_footer_logo": "Bruker temaets logo med mindre du velger et bilde her.",
     "feature_number": "La stå tomt for automatisk nummerering: 01, 02, 03.",
     "show_rating": "Bruker Shopifys produktvurderingsfelt, som anmeldelsesapper fyller ut.",
     "category_tabs_heading": "Vises ikke. Skjermlesere bruker den til å beskrive kategorifanene.",

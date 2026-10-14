@@ -5,6 +5,9 @@
   {% endif %}
   lang="{{ request.locale.iso_code }}"
   dir="{{ request.locale.direction | default: 'ltr' }}"
+  {% if settings.smooth_scroll_enabled %}
+    data-smooth-scroll-intensity="{{ settings.smooth_scroll_intensity }}"
+  {% endif %}
 >
   <head>
     {%- if settings.favicon != blank -%}

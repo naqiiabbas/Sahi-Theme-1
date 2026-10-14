@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Fordel",
+    "footer_products": "Produktlinks",
+    "brand_footer": "Brandfooter",
     "feature": "Fordel",
     "feature_highlights": "Fremhævede fordele",
     "category_tab": "Kategori",
@@ -178,6 +181,14 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "smooth_scroll_intensity": "Blødhed",
+    "smooth_scroll_enabled": "Blød rulning",
+    "closing_note": "Afsluttende note",
+    "show_newsletter": "Vis tilmelding til nyhedsbrev",
+    "show_decoration": "Vis bladillustration",
+    "brand_name": "Brandnavn",
+    "show_logo_image": "Vis logobillede",
+    "show_all_products": "Vis linket \"Alle produkter\"",
     "number_size": "Talstørrelse",
     "number": "Nummer",
     "star_color": "Stjernefarve",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "gift": "Gave",
     "bars": "Bjælker",
     "search_bar": "Søgefelt",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "smooth_scroll": "Gælder rulning med mus og pegefelt. Slået fra for besøgende, der foretrækker reduceret bevægelse, og på touchskærme.",
+    "brand_footer_logo": "Bruger temaets logo, medmindre du vælger et billede her.",
     "feature_number": "Lad feltet være tomt for automatisk nummerering: 01, 02, 03.",
     "show_rating": "Bruger Shopifys produktbedømmelsesfelter, som anmeldelsesapps udfylder.",
     "category_tabs_heading": "Vises ikke. Skærmlæsere bruger den til at beskrive kategorifanerne.",

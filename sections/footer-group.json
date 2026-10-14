@@ -11,193 +11,93 @@
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
-    "footer": {
-      "type": "footer",
+    "brand_footer": {
+      "type": "brand-footer",
       "blocks": {
-        "menu_8tJbUk": {
-          "type": "menu",
+        "shop": {
+          "type": "collections",
           "settings": {
-            "menu": "footer",
             "heading": "Shop",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "heading_preset": "h3",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "show_all_products": true,
+            "all_products_label": "All Products",
+            "collection_list": [
+              "nut-butters",
+              "pickles",
+              "raw-honey",
+              "olive-oils",
+              "desi-ghee"
+            ]
+          }
         },
-        "menu_jRmAQi": {
-          "type": "menu",
+        "best_sellers": {
+          "type": "products",
           "settings": {
-            "menu": "",
-            "heading": "Help",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "heading_preset": "h3",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "heading": "Best Sellers",
+            "collection": "best-sellers",
+            "product_count": 6
+          }
         },
-        "menu_6jWwP4": {
-          "type": "menu",
-          "name": "t:names.menu",
+        "perk_offers": {
+          "type": "perk",
           "settings": {
-            "menu": "",
-            "heading": "About",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "heading_preset": "h3",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "icon": "leaf",
+            "label": "Exclusive Offers"
+          }
         },
-        "group_hAzkCn": {
-          "type": "group",
+        "perk_recipes": {
+          "type": "perk",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 24,
-            "width": "fill",
-            "custom_width": 35,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fill",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "open_in_new_tab": false,
-            "padding-block-start": 0,
-            "padding-block-end": 4,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_jBr8nr": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Stay Connected</p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 10,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "social_links_JBkCiP": {
-              "type": "social-links",
-              "name": "t:names.social_media_links",
-              "settings": {
-                "facebook_url": "https://facebook.com",
-                "instagram_url": "https://instagram.com",
-                "tiktok_url": "https://tiktok.com",
-                "twitter_url": "https://x.com"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_jBr8nr",
-            "social_links_JBkCiP"
-          ]
+            "icon": "gift",
+            "label": "New Recipes"
+          }
+        },
+        "perk_wellness": {
+          "type": "perk",
+          "settings": {
+            "icon": "heart",
+            "label": "Wellness Tips"
+          }
         }
       },
       "block_order": [
-        "menu_8tJbUk",
-        "menu_jRmAQi",
-        "menu_6jWwP4",
-        "group_hAzkCn"
-      ],
-      "name": "t:names.footer",
-      "settings": {
-        "section_width": "page-width",
-        "gap": 12,
-        "background_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 36,
-        "padding-block-end": 18
-      }
-    },
-    "utilities": {
-      "type": "footer-utilities",
-      "blocks": {
-        "copyright": {
-          "type": "footer-copyright",
-          "settings": {
-            "show_powered_by": true,
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "footer_policy_list_rfGrqz": {
-          "type": "footer-policy-list",
-          "name": "t:names.policy_list",
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "copyright",
-        "footer_policy_list_rfGrqz"
+        "shop",
+        "best_sellers",
+        "perk_offers",
+        "perk_recipes",
+        "perk_wellness"
       ],
       "settings": {
+        "show_logo_image": true,
+        "logo_width": 160,
+        "tagline": "<p>Real ingredients. A brighter tomorrow. We create natural, wholesome essentials that bring goodness to everyday life.</p>",
+        "instagram_url": "https://instagram.com/sahifoods.co",
+        "facebook_url": "https://www.facebook.com/share/1Cdyof9Xn5/",
+        "tiktok_url": "https://www.tiktok.com/@sahifoods.co",
+        "youtube_url": "",
+        "pinterest_url": "",
+        "twitter_url": "",
+        "show_decoration": true,
+        "show_newsletter": true,
+        "newsletter_eyebrow": "Stay connected",
+        "newsletter_heading": "Join Our Journey.",
+        "newsletter_text": "Get the latest updates, recipes and exclusive offers straight to your inbox.",
+        "newsletter_placeholder": "Your email address",
+        "copyright_text": "All rights reserved.",
+        "show_payment_icons": true,
+        "closing_note": "Made with goodness.",
+        "title_font": "instrument_serif_n4",
+        "background_color": "{{ settings.color_palette.color1 }}",
+        "text_color": "{{ settings.color_palette.background }}",
+        "accent_color": "{{ settings.color_palette.color3 }}",
+        "button_background": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
         "section_width": "page-width",
-        "gap": 24,
-        "divider_thickness": 1,
-        "background_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 20,
-        "padding-block-end": 18
+        "padding-block-start": 64,
+        "padding-block-end": 24
       }
     }
   },
   "order": [
-    "footer",
-    "utilities"
+    "brand_footer"
   ]
 }

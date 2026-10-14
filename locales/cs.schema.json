@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Výhoda",
+    "footer_products": "Odkazy na produkty",
+    "brand_footer": "Patička značky",
     "feature": "Přednost",
     "feature_highlights": "Hlavní přednosti",
     "category_tab": "Kategorie",
@@ -178,6 +181,14 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "smooth_scroll_intensity": "Plynulost",
+    "smooth_scroll_enabled": "Plynulé posouvání",
+    "closing_note": "Závěrečná poznámka",
+    "show_newsletter": "Zobrazit přihlášení k odběru",
+    "show_decoration": "Zobrazit ilustraci listů",
+    "brand_name": "Název značky",
+    "show_logo_image": "Zobrazit obrázek loga",
+    "show_all_products": "Zobrazit odkaz „Všechny produkty“",
     "number_size": "Velikost čísla",
     "number": "Číslo",
     "star_color": "Barva hvězdiček",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "gift": "Dárek",
     "bars": "Pruhy",
     "search_bar": "Vyhledávací pole",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "smooth_scroll": "Platí pro posouvání myší a touchpadem. Vypnuto pro návštěvníky s omezeným pohybem a na dotykových obrazovkách.",
+    "brand_footer_logo": "Použije logo motivu, pokud zde nevyberete obrázek.",
     "feature_number": "Ponechte prázdné pro automatické číslování: 01, 02, 03.",
     "show_rating": "Používá pole hodnocení produktů Shopify, která vyplňují aplikace recenzí.",
     "category_tabs_heading": "Nezobrazuje se. Čtečky obrazovky jím popisují záložky kategorií.",

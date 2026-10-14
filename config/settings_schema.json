@@ -1137,6 +1137,23 @@
       },
       {
         "type": "checkbox",
+        "id": "smooth_scroll_enabled",
+        "label": "t:settings.smooth_scroll_enabled",
+        "info": "t:info.smooth_scroll",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "smooth_scroll_intensity",
+        "label": "t:settings.smooth_scroll_intensity",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 5,
+        "visible_if": "{{ settings.smooth_scroll_enabled }}"
+      },
+      {
+        "type": "checkbox",
         "id": "transition_to_main_product",
         "label": "t:settings.transition_to_main_product",
         "default": true

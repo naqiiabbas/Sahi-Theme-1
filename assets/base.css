@@ -48,6 +48,12 @@ html[scroll-lock] {
   }
 }
 
+/* Smooth scrolling (assets/smooth-scroll.js) sets the scroll position every frame; native smooth
+   scroll-behavior would animate each step and fight it. Lenis adds these classes to its scroll container. */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
 .page-wrapper {
   display: flex;
   flex-direction: column;

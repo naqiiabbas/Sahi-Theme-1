@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Korzyść",
+    "footer_products": "Linki do produktów",
+    "brand_footer": "Stopka marki",
     "feature": "Cecha",
     "feature_highlights": "Wyróżnione cechy",
     "category_tab": "Kategoria",
@@ -178,6 +181,14 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "smooth_scroll_intensity": "Płynność",
+    "smooth_scroll_enabled": "Płynne przewijanie",
+    "closing_note": "Notka końcowa",
+    "show_newsletter": "Pokaż zapis do newslettera",
+    "show_decoration": "Pokaż ilustrację liści",
+    "brand_name": "Nazwa marki",
+    "show_logo_image": "Pokaż obraz logo",
+    "show_all_products": "Pokaż link „Wszystkie produkty”",
     "number_size": "Rozmiar numeru",
     "number": "Numer",
     "star_color": "Kolor gwiazdek",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "gift": "Prezent",
     "bars": "Paski",
     "search_bar": "Pasek wyszukiwania",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "smooth_scroll": "Dotyczy przewijania myszą i gładzikiem. Wyłączone dla osób preferujących ograniczony ruch i na ekranach dotykowych.",
+    "brand_footer_logo": "Używa logo motywu, chyba że wybierzesz tu obraz.",
     "feature_number": "Pozostaw puste, aby numerować automatycznie: 01, 02, 03.",
     "show_rating": "Używa pól ocen produktów Shopify, które wypełniają aplikacje z recenzjami.",
     "category_tabs_heading": "Niewidoczne. Czytniki ekranu używają go do opisu kart kategorii.",

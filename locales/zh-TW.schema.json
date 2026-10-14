@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "優惠",
+    "footer_products": "商品連結",
+    "brand_footer": "品牌頁尾",
     "feature": "特色",
     "feature_highlights": "特色亮點",
     "category_tab": "類別",
@@ -178,6 +181,14 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "smooth_scroll_intensity": "平滑程度",
+    "smooth_scroll_enabled": "平滑捲動",
+    "closing_note": "結語",
+    "show_newsletter": "顯示電子郵件訂閱",
+    "show_decoration": "顯示葉片插圖",
+    "brand_name": "品牌名稱",
+    "show_logo_image": "顯示標誌圖片",
+    "show_all_products": "顯示「所有商品」連結",
     "number_size": "編號大小",
     "number": "編號",
     "star_color": "星星顏色",
@@ -615,6 +626,7 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "gift": "禮物",
     "bars": "橫條",
     "search_bar": "搜尋列",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "smooth_scroll": "適用於滑鼠與觸控板捲動。對偏好減少動態效果的訪客及觸控螢幕關閉。",
+    "brand_footer_logo": "除非在此選擇圖片，否則使用佈景主題標誌。",
     "feature_number": "留空即可自動編號：01、02、03。",
     "show_rating": "使用 Shopify 商品評分欄位，由評論應用程式填寫。",
     "category_tabs_heading": "不顯示。螢幕閱讀器用它描述分類分頁。",

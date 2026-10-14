@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Vorteil",
+    "footer_products": "Produktlinks",
+    "brand_footer": "Marken-Fußzeile",
     "feature": "Highlight",
     "feature_highlights": "Highlights",
     "category_tab": "Kategorie",
@@ -178,6 +181,14 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "smooth_scroll_intensity": "Sanftheit",
+    "smooth_scroll_enabled": "Sanftes Scrollen",
+    "closing_note": "Abschlusshinweis",
+    "show_newsletter": "E-Mail-Anmeldung anzeigen",
+    "show_decoration": "Blatt-Illustration anzeigen",
+    "brand_name": "Markenname",
+    "show_logo_image": "Logobild anzeigen",
+    "show_all_products": "Link „Alle Produkte“ anzeigen",
     "number_size": "Zahlengröße",
     "number": "Nummer",
     "star_color": "Sternfarbe",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "gift": "Geschenk",
     "bars": "Balken",
     "search_bar": "Suchleiste",
     "apple": "Apfel",
@@ -1124,6 +1136,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "smooth_scroll": "Gilt für Maus und Trackpad. Deaktiviert für Besucher mit reduzierter Bewegung und auf Touchscreens.",
+    "brand_footer_logo": "Verwendet das Theme-Logo, sofern du hier kein Bild auswählst.",
     "feature_number": "Leer lassen, um automatisch zu nummerieren: 01, 02, 03.",
     "show_rating": "Nutzt Shopifys Produktbewertungsfelder, die von Bewertungs-Apps befüllt werden.",
     "category_tabs_heading": "Nicht sichtbar. Screenreader beschreiben damit die Kategorie-Tabs.",

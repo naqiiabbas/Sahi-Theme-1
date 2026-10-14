@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Avantaj",
+    "footer_products": "Ürün bağlantıları",
+    "brand_footer": "Marka alt bilgisi",
     "feature": "Özellik",
     "feature_highlights": "Öne çıkan özellikler",
     "category_tab": "Kategori",
@@ -178,6 +181,14 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "smooth_scroll_intensity": "Yumuşaklık",
+    "smooth_scroll_enabled": "Yumuşak kaydırma",
+    "closing_note": "Kapanış notu",
+    "show_newsletter": "E-posta kaydını göster",
+    "show_decoration": "Yaprak illüstrasyonunu göster",
+    "brand_name": "Marka adı",
+    "show_logo_image": "Logo görselini göster",
+    "show_all_products": "\"Tüm ürünler\" bağlantısını göster",
     "number_size": "Numara boyutu",
     "number": "Numara",
     "star_color": "Yıldız rengi",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "gift": "Hediye",
     "bars": "Çubuklar",
     "search_bar": "Arama çubuğu",
     "apple": "Apple",
@@ -1124,6 +1136,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "smooth_scroll": "Fare ve dokunmatik yüzey kaydırması için geçerlidir. Azaltılmış hareket tercih eden ziyaretçilerde ve dokunmatik ekranlarda kapalıdır.",
+    "brand_footer_logo": "Burada bir görsel seçmezseniz tema logosunu kullanır.",
     "feature_number": "Otomatik numaralandırma için boş bırakın: 01, 02, 03.",
     "show_rating": "Değerlendirme uygulamalarının doldurduğu Shopify ürün puanı alanlarını kullanır.",
     "category_tabs_heading": "Gösterilmez. Ekran okuyucular kategori sekmelerini tanımlamak için kullanır.",

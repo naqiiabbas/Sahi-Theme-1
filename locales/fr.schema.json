@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "footer_perk": "Avantage",
+    "footer_products": "Liens produits",
+    "brand_footer": "Pied de page de marque",
     "feature": "Point fort",
     "feature_highlights": "Points forts",
     "category_tab": "Catégorie",
@@ -178,6 +181,14 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "smooth_scroll_intensity": "Fluidité",
+    "smooth_scroll_enabled": "Défilement fluide",
+    "closing_note": "Note de fin",
+    "show_newsletter": "Afficher l'inscription par e-mail",
+    "show_decoration": "Afficher l'illustration de feuilles",
+    "brand_name": "Nom de la marque",
+    "show_logo_image": "Afficher l'image du logo",
+    "show_all_products": "Afficher le lien « Tous les produits »",
     "number_size": "Taille du numéro",
     "number": "Numéro",
     "star_color": "Couleur des étoiles",
@@ -615,6 +626,7 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "gift": "Cadeau",
     "bars": "Barres",
     "search_bar": "Barre de recherche",
     "apple": "Pomme",
@@ -1124,6 +1136,8 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "smooth_scroll": "S’applique au défilement à la souris et au pavé tactile. Désactivé pour les visiteurs qui préfèrent réduire les animations et sur écrans tactiles.",
+    "brand_footer_logo": "Utilise le logo du thème, sauf si vous choisissez une image ici.",
     "feature_number": "Laissez vide pour numéroter automatiquement : 01, 02, 03.",
     "show_rating": "Utilise les champs d'évaluation des produits Shopify, remplis par les applications d'avis.",
     "category_tabs_heading": "Non affiché. Les lecteurs d'écran l'utilisent pour décrire les onglets de catégories.",

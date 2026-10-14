@@ -215,6 +215,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "smooth_scroll": "חל על גלילה בעכבר ובמשטח מגע. כבוי למבקרים שמעדיפים תנועה מופחתת ובמסכי מגע.",
+    "brand_footer_logo": "משתמש בלוגו של העיצוב אלא אם תבחרו תמונה כאן.",
     "feature_number": "השאירו ריק למספור אוטומטי: 01, 02, 03.",
     "show_rating": "משתמש בשדות דירוג המוצרים של Shopify, שאפליקציות ביקורות ממלאות.",
     "category_tabs_heading": "לא מוצג. קוראי מסך משתמשים בו לתיאור כרטיסיות הקטגוריות.",
@@ -251,6 +253,9 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "footer_perk": "הטבה",
+    "footer_products": "קישורי מוצרים",
+    "brand_footer": "כותרת תחתונה של המותג",
     "feature": "נקודה בולטת",
     "feature_highlights": "נקודות בולטות",
     "category_tab": "קטגוריה",
@@ -420,6 +425,7 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "gift": "מתנה",
     "bars": "פסים",
     "search_bar": "שורת חיפוש",
     "above_carousel": "מעל הקרוסלה",
@@ -704,6 +710,14 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "smooth_scroll_intensity": "רמת חלקות",
+    "smooth_scroll_enabled": "גלילה חלקה",
+    "closing_note": "הערת סיום",
+    "show_newsletter": "הצגת הרשמה לדיוור",
+    "show_decoration": "הצגת איור עלים",
+    "brand_name": "שם המותג",
+    "show_logo_image": "הצגת תמונת הלוגו",
+    "show_all_products": "הצגת הקישור \"כל המוצרים\"",
     "number_size": "גודל המספר",
     "number": "מספר",
     "star_color": "צבע הכוכבים",
