@@ -1102,6 +1102,19 @@
     transform-origin: center center;
   }
 
+  /* The drawer toggle's wrapper defaults to a smaller icon size; match the other header icons
+     so the hamburger is not squeezed, and keep a full touch target. */
+  #header-component .header__icon--menu {
+    min-width: var(--minimum-touch-target);
+    min-height: var(--minimum-touch-target);
+  }
+
+  #header-component .header__icon--menu .header-drawer-icon {
+    width: var(--header-icon-size, 26px);
+    height: var(--header-icon-size, 26px);
+    margin: 0;
+  }
+
   .account-button,
   .header-actions__action,
   .search-action button {
