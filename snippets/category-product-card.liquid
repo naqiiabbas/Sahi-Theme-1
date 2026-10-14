@@ -26,7 +26,13 @@
     assign subtitle = ''
     if show_weight
       if variant.weight > 0
-        assign subtitle = variant.weight_in_unit | append: ' ' | append: variant.weight_unit
+        # Whole weights read "130 g" rather than "130.0 g".
+        assign weight_value = variant.weight_in_unit
+        assign weight_whole = weight_value | floor
+        if weight_value == weight_whole
+          assign weight_value = weight_whole
+        endif
+        assign subtitle = weight_value | append: ' ' | append: variant.weight_unit
       elsif product.has_only_default_variant == false
         assign subtitle = variant.title
       endif

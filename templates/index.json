@@ -632,7 +632,7 @@
           "settings": {
             "fallback_image": "category-nut-butters.png",
             "title": "Nut Butters",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/nut-butters",
             "link_label": "Explore"
           },
           "blocks": {}
@@ -642,7 +642,7 @@
           "settings": {
             "fallback_image": "category-achaars.png",
             "title": "Achaars",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/pickles",
             "link_label": "Explore"
           },
           "blocks": {}
@@ -652,7 +652,7 @@
           "settings": {
             "fallback_image": "category-raw-honey.png",
             "title": "Raw Honey",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/raw-honey",
             "link_label": "Explore"
           },
           "blocks": {}
@@ -662,7 +662,7 @@
           "settings": {
             "fallback_image": "category-olive-oils.png",
             "title": "Olive Oils",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/olive-oils",
             "link_label": "Explore"
           },
           "blocks": {}
@@ -672,7 +672,7 @@
           "settings": {
             "fallback_image": "category-desi-ghee.png",
             "title": "Desi Ghee",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/desi-ghee",
             "link_label": "Explore"
           },
           "blocks": {}
@@ -753,7 +753,7 @@
         "raw_honey": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "raw-honey",
             "label": "Raw Honey",
             "fallback_icon": "category-icon-raw-honey.png"
           }
@@ -761,7 +761,7 @@
         "olive_oils": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "olive-oils",
             "label": "Olive Oils",
             "fallback_icon": "category-icon-olive-oils.png"
           }
@@ -769,7 +769,7 @@
         "desi_ghee": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "desi-ghee",
             "label": "Desi Ghee",
             "fallback_icon": "category-icon-desi-ghee.png"
           }
