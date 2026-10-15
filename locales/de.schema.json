@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Bewertungs-Tab",
+    "product_info_nutrition": "Nährwert-Tab",
+    "product_info_tabs": "Produktinfo-Tabs",
     "product_trust_badge": "Vertrauenssiegel",
     "product_trust_badges": "Vertrauenssiegel",
     "product_features": "Produktmerkmale",
@@ -190,6 +193,13 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "empty_reviews_text": "Text, wenn keine Bewertungen vorhanden sind",
+    "based_on_label": "Text der Bewertungsübersicht",
+    "write_review_label": "Beschriftung „Bewertung schreiben“",
+    "show_reviews_tab": "Bewertungs-Tab anzeigen",
+    "checklist": "Checkliste",
+    "heading_accent": "Überschrift-Akzent (kursiv)",
+    "show_nutrition_tab": "Nährwert-Tab anzeigen",
     "max_words": "Maximale Wörter",
     "heading_tag": "Überschrift-Tag",
     "product_eyebrow_source": "Quelle",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "mortar": "Mörser",
+    "sprout": "Spross",
     "phone": "Telefon",
     "shield": "Schild",
     "product_type": "Produkttyp",
@@ -1159,6 +1171,11 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "empty_reviews_text": "Wird angezeigt, bis ein Bewertungs-App-Block hinzugefügt wird.",
+    "based_on_label": "Verwende [count] für die Anzahl der Bewertungen.",
+    "product_info_image": "Wird verwendet, wenn das Produkt kein Nährwertbild hat; sonst das zweite, dann das erste Produktbild.",
+    "checklist": "Ein Eintrag pro Zeile.",
+    "product_info_metafields": "Jedes Produkt kann diese Werte in seinen Nährwert-Metafeldern überschreiben.",
     "product_summary": "Zeigt das Metafeld custom.short_description, falls vorhanden, sonst den ersten Absatz der Produktbeschreibung.",
     "product_eyebrow_text": "Wird verwendet, wenn die gewählte Quelle leer ist oder die Quelle „Benutzerdefiniert“ ist.",
     "breadcrumb_nav_label": "Nicht sichtbar. Screenreader lesen sie für die Breadcrumb-Navigation vor.",

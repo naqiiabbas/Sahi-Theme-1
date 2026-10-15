@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "評價分頁",
+    "product_info_nutrition": "營養分頁",
+    "product_info_tabs": "商品資訊分頁",
     "product_trust_badge": "信任徽章",
     "product_trust_badges": "信任徽章",
     "product_features": "商品特色",
@@ -190,6 +193,13 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "empty_reviews_text": "沒有評價時的文字",
+    "based_on_label": "評分摘要文字",
+    "write_review_label": "「撰寫評價」標籤",
+    "show_reviews_tab": "顯示評價分頁",
+    "checklist": "清單",
+    "heading_accent": "標題強調（斜體）",
+    "show_nutrition_tab": "顯示營養分頁",
     "max_words": "最多字數",
     "heading_tag": "標題標籤",
     "product_eyebrow_source": "來源",
@@ -644,6 +654,8 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "mortar": "研缽",
+    "sprout": "嫩芽",
     "phone": "電話",
     "shield": "盾牌",
     "product_type": "商品類型",
@@ -1159,6 +1171,11 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "empty_reviews_text": "在此區段新增評價應用程式區塊之前顯示。",
+    "based_on_label": "用 [count] 表示評價數量。",
+    "product_info_image": "商品沒有營養圖片時使用；否則使用商品的第二張、再第一張圖片。",
+    "checklist": "每行一項。",
+    "product_info_metafields": "每個商品都可在其營養中繼欄位中覆寫這些內容。",
     "product_summary": "若已設定 custom.short_description 中繼欄位則顯示該內容，否則顯示商品描述的第一段。",
     "product_eyebrow_text": "在所選來源為空或來源為自訂時使用。",
     "breadcrumb_nav_label": "不顯示。螢幕閱讀器會為麵包屑導覽朗讀。",

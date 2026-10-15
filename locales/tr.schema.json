@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Değerlendirmeler sekmesi",
+    "product_info_nutrition": "Besin değerleri sekmesi",
+    "product_info_tabs": "Ürün bilgi sekmeleri",
     "product_trust_badge": "Güven rozeti",
     "product_trust_badges": "Güven rozetleri",
     "product_features": "Ürün özellikleri",
@@ -190,6 +193,13 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "empty_reviews_text": "Değerlendirme yokken gösterilecek metin",
+    "based_on_label": "Puan özeti metni",
+    "write_review_label": "\"Değerlendirme yaz\" etiketi",
+    "show_reviews_tab": "Değerlendirmeler sekmesini göster",
+    "checklist": "Kontrol listesi",
+    "heading_accent": "Başlık vurgusu (italik)",
+    "show_nutrition_tab": "Besin değerleri sekmesini göster",
     "max_words": "En fazla kelime",
     "heading_tag": "Başlık etiketi",
     "product_eyebrow_source": "Kaynak",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "mortar": "Havan",
+    "sprout": "Filiz",
     "phone": "Telefon",
     "shield": "Kalkan",
     "product_type": "Ürün türü",
@@ -1159,6 +1171,11 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "empty_reviews_text": "Bu bölüme bir değerlendirme uygulaması bloğu eklenene kadar gösterilir.",
+    "based_on_label": "Değerlendirme sayısı yerine [count] kullanın.",
+    "product_info_image": "Üründe besin görseli yoksa kullanılır; aksi halde ürünün ikinci, ardından ilk görseli.",
+    "checklist": "Her satıra bir öğe.",
+    "product_info_metafields": "Her ürün bunları besin değeri meta alanlarında geçersiz kılabilir.",
     "product_summary": "Ayarlıysa custom.short_description meta alanını, değilse ürün açıklamasının ilk paragrafını gösterir.",
     "product_eyebrow_text": "Seçilen kaynak boş olduğunda veya kaynak Özel olduğunda kullanılır.",
     "breadcrumb_nav_label": "Gösterilmez. Ekran okuyucular içerik haritası gezintisi için okur.",

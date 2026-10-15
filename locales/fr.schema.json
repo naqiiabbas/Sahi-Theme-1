@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Onglet avis",
+    "product_info_nutrition": "Onglet nutrition",
+    "product_info_tabs": "Onglets d’informations produit",
     "product_trust_badge": "Badge de confiance",
     "product_trust_badges": "Badges de confiance",
     "product_features": "Atouts du produit",
@@ -190,6 +193,13 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "empty_reviews_text": "Texte en l’absence d’avis",
+    "based_on_label": "Texte du résumé des notes",
+    "write_review_label": "Libellé « Écrire un avis »",
+    "show_reviews_tab": "Afficher l’onglet avis",
+    "checklist": "Liste de points",
+    "heading_accent": "Accent du titre (italique)",
+    "show_nutrition_tab": "Afficher l’onglet nutrition",
     "max_words": "Nombre maximal de mots",
     "heading_tag": "Balise de titre",
     "product_eyebrow_source": "Source",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "mortar": "Mortier et pilon",
+    "sprout": "Pousse",
     "phone": "Téléphone",
     "shield": "Bouclier",
     "product_type": "Type de produit",
@@ -1159,6 +1171,11 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "empty_reviews_text": "Affiché jusqu’à l’ajout d’un bloc d’application d’avis à cette section.",
+    "based_on_label": "Utilisez [count] à la place du nombre d’avis.",
+    "product_info_image": "Utilisée si le produit n’a pas d’image nutrition ; sinon la deuxième, puis la première image du produit.",
+    "checklist": "Un élément par ligne.",
+    "product_info_metafields": "Chaque produit peut les remplacer dans ses métachamps de nutrition.",
     "product_summary": "Affiche le métachamp custom.short_description s’il est défini, sinon le premier paragraphe de la description.",
     "product_eyebrow_text": "Utilisé lorsque la source choisie est vide ou lorsque la source est Personnalisée.",
     "breadcrumb_nav_label": "Non affiché. Les lecteurs d'écran l'annoncent pour le fil d'Ariane.",

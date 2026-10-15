@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Záložka recenzí",
+    "product_info_nutrition": "Záložka výživy",
+    "product_info_tabs": "Záložky informací o produktu",
     "product_trust_badge": "Odznak důvěry",
     "product_trust_badges": "Odznaky důvěry",
     "product_features": "Vlastnosti produktu",
@@ -190,6 +193,13 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "empty_reviews_text": "Text, když nejsou recenze",
+    "based_on_label": "Text souhrnu hodnocení",
+    "write_review_label": "Popisek „Napsat recenzi“",
+    "show_reviews_tab": "Zobrazit záložku recenzí",
+    "checklist": "Kontrolní seznam",
+    "heading_accent": "Zvýraznění nadpisu (kurzíva)",
+    "show_nutrition_tab": "Zobrazit záložku výživy",
     "max_words": "Maximální počet slov",
     "heading_tag": "Značka nadpisu",
     "product_eyebrow_source": "Zdroj",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "mortar": "Hmoždíř",
+    "sprout": "Klíček",
     "phone": "Telefon",
     "shield": "Štít",
     "product_type": "Typ produktu",
@@ -1159,6 +1171,11 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "empty_reviews_text": "Zobrazuje se, dokud do sekce nepřidáte blok aplikace recenzí.",
+    "based_on_label": "Na místo počtu recenzí použijte [count].",
+    "product_info_image": "Použije se, když produkt nemá obrázek výživy; jinak druhý, pak první obrázek produktu.",
+    "checklist": "Jedna položka na řádek.",
+    "product_info_metafields": "Každý produkt je může přepsat ve svých metapolích pro výživu.",
     "product_summary": "Zobrazí metapole custom.short_description, pokud je nastavené, jinak první odstavec popisu produktu.",
     "product_eyebrow_text": "Použije se, když je vybraný zdroj prázdný nebo je zdroj Vlastní.",
     "breadcrumb_nav_label": "Nezobrazuje se. Čtečky obrazovky jej oznamují u drobečkové navigace.",

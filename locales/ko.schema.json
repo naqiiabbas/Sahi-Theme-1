@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "리뷰 탭",
+    "product_info_nutrition": "영양 탭",
+    "product_info_tabs": "상품 정보 탭",
     "product_trust_badge": "신뢰 배지",
     "product_trust_badges": "신뢰 배지",
     "product_features": "상품 특징",
@@ -190,6 +193,13 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "empty_reviews_text": "리뷰가 없을 때 텍스트",
+    "based_on_label": "평점 요약 텍스트",
+    "write_review_label": "\"리뷰 작성\" 레이블",
+    "show_reviews_tab": "리뷰 탭 표시",
+    "checklist": "체크리스트",
+    "heading_accent": "제목 강조(기울임꼴)",
+    "show_nutrition_tab": "영양 탭 표시",
     "max_words": "최대 단어 수",
     "heading_tag": "제목 태그",
     "product_eyebrow_source": "출처",
@@ -644,6 +654,8 @@
     "customer_account_menu": "고객 계정 메뉴"
   },
   "options": {
+    "mortar": "절구",
+    "sprout": "새싹",
     "phone": "전화",
     "shield": "방패",
     "product_type": "상품 유형",
@@ -1159,6 +1171,11 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "empty_reviews_text": "이 섹션에 리뷰 앱 블록을 추가할 때까지 표시됩니다.",
+    "based_on_label": "리뷰 수 자리에 [count]를 사용하세요.",
+    "product_info_image": "상품에 영양 이미지가 없을 때 사용됩니다. 없으면 상품의 두 번째, 그다음 첫 번째 이미지.",
+    "checklist": "한 줄에 한 항목.",
+    "product_info_metafields": "각 상품의 영양 메타필드에서 이 값을 덮어쓸 수 있습니다.",
     "product_summary": "custom.short_description 메타필드가 있으면 표시하고, 없으면 상품 설명의 첫 단락을 표시합니다.",
     "product_eyebrow_text": "선택한 출처가 비어 있거나 출처가 사용자 지정일 때 사용됩니다.",
     "breadcrumb_nav_label": "표시되지 않습니다. 화면 낭독기가 이동 경로 탐색에 대해 읽어 줍니다.",

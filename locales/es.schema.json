@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Pestaña de reseñas",
+    "product_info_nutrition": "Pestaña de nutrición",
+    "product_info_tabs": "Pestañas de información del producto",
     "product_trust_badge": "Insignia de confianza",
     "product_trust_badges": "Insignias de confianza",
     "product_features": "Características del producto",
@@ -190,6 +193,13 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "empty_reviews_text": "Texto cuando no hay reseñas",
+    "based_on_label": "Texto del resumen de valoraciones",
+    "write_review_label": "Etiqueta \"Escribir una reseña\"",
+    "show_reviews_tab": "Mostrar pestaña de reseñas",
+    "checklist": "Lista de verificación",
+    "heading_accent": "Acento del título (cursiva)",
+    "show_nutrition_tab": "Mostrar pestaña de nutrición",
     "max_words": "Máximo de palabras",
     "heading_tag": "Etiqueta de encabezado",
     "product_eyebrow_source": "Origen",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "mortar": "Mortero",
+    "sprout": "Brote",
     "phone": "Teléfono",
     "shield": "Escudo",
     "product_type": "Tipo de producto",
@@ -1159,6 +1171,11 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "empty_reviews_text": "Se muestra hasta que se agregue un bloque de app de reseñas a esta sección.",
+    "based_on_label": "Usa [count] donde va el número de reseñas.",
+    "product_info_image": "Se usa cuando el producto no tiene imagen de nutrición; si no, la segunda y luego la primera imagen del producto.",
+    "checklist": "Un elemento por línea.",
+    "product_info_metafields": "Cada producto puede reemplazarlos en sus metacampos de nutrición.",
     "product_summary": "Muestra el metacampo custom.short_description si está configurado; si no, el primer párrafo de la descripción.",
     "product_eyebrow_text": "Se usa cuando el origen seleccionado está vacío o cuando el origen es Personalizado.",
     "breadcrumb_nav_label": "No se muestra. Los lectores de pantalla la anuncian para la ruta de navegación.",

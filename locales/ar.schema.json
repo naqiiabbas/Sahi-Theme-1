@@ -215,6 +215,11 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "empty_reviews_text": "يظهر حتى تتم إضافة كتلة تطبيق المراجعات إلى هذا القسم.",
+    "based_on_label": "استخدم [count] مكان عدد المراجعات.",
+    "product_info_image": "يُستخدم عندما لا توجد صورة تغذية للمنتج، ثم الصورة الثانية فالأولى للمنتج.",
+    "checklist": "عنصر واحد في كل سطر.",
+    "product_info_metafields": "يمكن لكل منتج تجاوز هذه القيم في حقول التعريف الخاصة بالتغذية.",
     "product_summary": "يعرض حقل التعريف custom.short_description عند تعيينه، وإلا فالفقرة الأولى من وصف المنتج.",
     "product_eyebrow_text": "يُستخدم عندما يكون المصدر المحدد فارغًا أو عندما يكون المصدر مخصصًا.",
     "breadcrumb_nav_label": "غير ظاهر. تعلنه قارئات الشاشة لمسار التنقل.",
@@ -258,6 +263,9 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "product_info_reviews": "تبويب المراجعات",
+    "product_info_nutrition": "تبويب التغذية",
+    "product_info_tabs": "تبويبات معلومات المنتج",
     "product_trust_badge": "شارة ثقة",
     "product_trust_badges": "شارات الثقة",
     "product_features": "مزايا المنتج",
@@ -439,6 +447,8 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "mortar": "هاون ومدقة",
+    "sprout": "برعم",
     "phone": "هاتف",
     "shield": "درع",
     "product_type": "نوع المنتج",
@@ -729,6 +739,13 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "empty_reviews_text": "النص عند عدم وجود مراجعات",
+    "based_on_label": "نص ملخص التقييم",
+    "write_review_label": "تسمية \"اكتب مراجعة\"",
+    "show_reviews_tab": "إظهار تبويب المراجعات",
+    "checklist": "قائمة التحقق",
+    "heading_accent": "تمييز العنوان (مائل)",
+    "show_nutrition_tab": "إظهار تبويب التغذية",
     "max_words": "الحد الأقصى للكلمات",
     "heading_tag": "وسم العنوان",
     "product_eyebrow_source": "المصدر",

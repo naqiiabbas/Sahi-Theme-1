@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Separador de avaliações",
+    "product_info_nutrition": "Separador de nutrição",
+    "product_info_tabs": "Separadores de informação do produto",
     "product_trust_badge": "Selo de confiança",
     "product_trust_badges": "Selos de confiança",
     "product_features": "Características do produto",
@@ -190,6 +193,13 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "empty_reviews_text": "Texto quando não há avaliações",
+    "based_on_label": "Texto do resumo de classificações",
+    "write_review_label": "Etiqueta \"Escrever uma avaliação\"",
+    "show_reviews_tab": "Mostrar separador de avaliações",
+    "checklist": "Lista de verificação",
+    "heading_accent": "Destaque do título (itálico)",
+    "show_nutrition_tab": "Mostrar separador de nutrição",
     "max_words": "Máximo de palavras",
     "heading_tag": "Etiqueta do título",
     "product_eyebrow_source": "Origem",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "mortar": "Almofariz",
+    "sprout": "Rebento",
     "phone": "Telefone",
     "shield": "Escudo",
     "product_type": "Tipo de produto",
@@ -1159,6 +1171,11 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "empty_reviews_text": "Apresentado até que seja adicionado um bloco de app de avaliações a esta secção.",
+    "based_on_label": "Utilize [count] no lugar do número de avaliações.",
+    "product_info_image": "Utilizada quando o produto não tem imagem de nutrição; caso contrário, a segunda e depois a primeira imagem do produto.",
+    "checklist": "Um item por linha.",
+    "product_info_metafields": "Cada produto pode substituí-los nos metacampos de nutrição.",
     "product_summary": "Mostra o metacampo custom.short_description quando definido; caso contrário, o primeiro parágrafo da descrição.",
     "product_eyebrow_text": "Utilizado quando a origem selecionada está vazia ou quando a origem é Personalizada.",
     "breadcrumb_nav_label": "Não apresentado. Os leitores de ecrã anunciam-no para o trilho de navegação.",

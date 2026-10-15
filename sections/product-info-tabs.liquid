@@ -1,0 +1,937 @@
+{% comment %}
+  Section contract.
+  Product info tabs: a Nutrition panel (heading, text, checklist, image, and a row of feature icons) and a
+  Reviews panel that hosts a review app block (for example Judge.me) under a branded header and rating summary.
+  Nutrition content comes from product metafields (custom.nutrition_*) with section settings as the fallback.
+  Tab switching reuses <category-product-tabs> from assets/category-product-tabs.js.
+  @example
+  <!-- On the product template, add "Product info tabs", then add the review app's widget block -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign mf = product.metafields.custom
+
+  assign heading = mf.nutrition_heading.value | default: section.settings.nutrition_heading
+  assign heading_accent = mf.nutrition_heading_accent.value | default: section.settings.nutrition_heading_accent
+  assign nutrition_text = mf.nutrition_text.value | default: section.settings.nutrition_text
+
+  if mf.nutrition_points.value != blank
+    assign points = mf.nutrition_points.value
+  else
+    assign points = section.settings.nutrition_points | newline_to_br | split: '<br />'
+  endif
+
+  assign nutrition_image = mf.nutrition_image.value
+  if nutrition_image == blank
+    assign nutrition_image = section.settings.nutrition_image
+  endif
+  if nutrition_image == blank and product.media.size > 1
+    assign nutrition_image = product.media[1].preview_image
+  endif
+  if nutrition_image == blank
+    assign nutrition_image = product.featured_media.preview_image
+  endif
+
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value | default: 0
+
+  assign app_block_count = 0
+  assign feature_count = 0
+  for block in section.blocks
+    if block.type == '@app'
+      assign app_block_count = app_block_count | plus: 1
+    elsif block.type == 'feature'
+      assign feature_count = feature_count | plus: 1
+    endif
+  endfor
+
+  assign tab_prefix = 'ProductInfoTab-' | append: section.id
+  assign panel_prefix = 'ProductInfoPanel-' | append: section.id
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+<script
+  src="{{ 'category-product-tabs.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
+  src="{{ 'product-info-tabs.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+  {%- assign title_font_italic = title_font | font_modify: 'style', 'italic' -%}
+  {%- if title_font_italic -%}
+    {{ title_font_italic | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
+  .product-info-tabs-{{ section.id }} {
+    --pit-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --pit-font-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<category-product-tabs
+  class="product-info-tabs product-info-tabs-{{ section.id }} spacing-style section section--page-width color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --pit-feature-count: {{ feature_count | at_least: 1 }};
+    {% if section.settings.accent_color != blank %}--pit-accent: {{ section.settings.accent_color }}; --pit-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
+    {% if section.settings.star_color != blank %}--pit-star: {{ section.settings.star_color }};{% endif %}
+  "
+>
+  <div
+    class="product-info-tabs__tablist"
+    role="tablist"
+    aria-label="{{ product.title | escape }}"
+  >
+    {%- if section.settings.show_nutrition -%}
+      <button
+        type="button"
+        id="{{ tab_prefix }}-nutrition"
+        class="product-info-tabs__tab"
+        role="tab"
+        aria-controls="{{ panel_prefix }}-nutrition"
+        aria-selected="true"
+        tabindex="0"
+        ref="tabs[]"
+        on:click="/handleTabClick"
+        on:keydown="/handleTabKeydown"
+      >
+        {{- section.settings.nutrition_tab_label | escape -}}
+      </button>
+    {%- endif -%}
+    {%- if section.settings.show_reviews -%}
+      <button
+        type="button"
+        id="{{ tab_prefix }}-reviews"
+        class="product-info-tabs__tab"
+        role="tab"
+        aria-controls="{{ panel_prefix }}-reviews"
+        aria-selected="{% if section.settings.show_nutrition %}false{% else %}true{% endif %}"
+        tabindex="{% if section.settings.show_nutrition %}-1{% else %}0{% endif %}"
+        ref="tabs[]"
+        on:click="/handleTabClick"
+        on:keydown="/handleTabKeydown"
+      >
+        {{- section.settings.reviews_tab_label | escape -}}
+        {%- if rating_count > 0 %} ({{ rating_count }}){% endif -%}
+      </button>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.show_nutrition -%}
+    <div
+      id="{{ panel_prefix }}-nutrition"
+      class="product-info-tabs__panel"
+      role="tabpanel"
+      aria-labelledby="{{ tab_prefix }}-nutrition"
+      tabindex="0"
+      ref="panels[]"
+    >
+      <div class="product-info-tabs__nutrition">
+        <div class="product-info-tabs__nutrition-text">
+          {%- if heading != blank or heading_accent != blank -%}
+            <h2 class="product-info-tabs__title">
+              {{- heading | escape -}}
+              {%- if heading_accent != blank %}
+                <em>{{ heading_accent | escape }}</em>
+              {%- endif -%}
+            </h2>
+          {%- endif -%}
+          {%- if nutrition_text != blank -%}
+            <p class="product-info-tabs__text">{{ nutrition_text | escape | newline_to_br }}</p>
+          {%- endif -%}
+          {%- liquid
+            assign has_points = false
+            for point in points
+              if point != blank
+                assign has_points = true
+              endif
+            endfor
+          -%}
+          {%- if has_points -%}
+            <ul class="product-info-tabs__checklist">
+              {%- for point in points -%}
+                {%- assign point_text = point | strip -%}
+                {%- if point_text != blank -%}
+                  <li class="product-info-tabs__check">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="12" cy="12" r="12" fill="currentColor"/>
+                      <path d="m7 12.3 3.2 3.2L17 8.7" fill="none" stroke="var(--color-background)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>{{ point_text | escape }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+
+        {%- if nutrition_image != blank -%}
+          <div class="product-info-tabs__media">
+            {{
+              nutrition_image
+              | image_url: width: 1400
+              | image_tag:
+                widths: '500, 750, 1000, 1400',
+                sizes: '(min-width: 990px) 45vw, 100vw',
+                loading: 'lazy',
+                alt: nutrition_image.alt | default: '',
+                class: 'product-info-tabs__image'
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if feature_count > 0 -%}
+        <ul class="product-info-tabs__features">
+          {%- for block in section.blocks -%}
+            {%- if block.type != 'feature' -%}{%- continue -%}{%- endif -%}
+            <li
+              class="product-info-tabs__feature"
+              {{ block.shopify_attributes }}
+            >
+              <span
+                class="product-info-tabs__feature-icon"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  focusable="false"
+                >
+                  <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                    {%- case block.settings.icon -%}
+                      {%- when 'sprout' -%}
+                        <path d="M12 20v-8"/>
+                        <path d="M12 12C12 7.5 15 5 19.5 5c0 4.5-3 7-7.5 7Z"/>
+                        <path d="M12 14.5C12 11 9.6 9 6 9c0 3.5 2.4 5.5 6 5.5Z"/>
+                      {%- when 'mortar' -%}
+                        <path d="M4 11h16a8 8 0 0 1-16 0Z"/>
+                        <path d="M8.5 19.2 8 21h8l-.5-1.8"/>
+                        <path d="m13 11 5.5-7.5"/>
+                        <circle cx="19" cy="3.5" r="1.2"/>
+                      {%- when 'heart' -%}
+                        <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/>
+                      {%- when 'star' -%}
+                        <path d="m12 4 2.4 5 5.4.7-4 3.7 1 5.4L12 16.2 7.2 18.8l1-5.4-4-3.7 5.4-.7Z"/>
+                      {%- when 'shield' -%}
+                        <path d="M12 3 4.5 6v5.5c0 4.4 3.1 8.1 7.5 9.5 4.4-1.4 7.5-5.1 7.5-9.5V6Z"/>
+                        <path d="m8.8 12 2.2 2.2 4.3-4.4"/>
+                      {%- else -%}
+                        <path d="M6 18C6 10 11 5 19 5c0 8-5 13-13 13Z"/>
+                        <path d="M6 18 14 10"/>
+                    {%- endcase -%}
+                  </g>
+                </svg>
+              </span>
+              <span class="product-info-tabs__feature-label">{{ block.settings.label | escape }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_reviews -%}
+    <div
+      id="{{ panel_prefix }}-reviews"
+      class="product-info-tabs__panel product-info-tabs__reviews"
+      role="tabpanel"
+      aria-labelledby="{{ tab_prefix }}-reviews"
+      tabindex="0"
+      ref="panels[]"
+      {% if section.settings.show_nutrition %}
+        hidden
+      {% endif %}
+    >
+      <div class="product-info-tabs__reviews-header">
+        <div>
+          {%- if section.settings.reviews_heading != blank -%}
+            <h2 class="product-info-tabs__title product-info-tabs__title--small">{{ section.settings.reviews_heading | escape }}</h2>
+          {%- endif -%}
+          {%- if section.settings.reviews_text != blank -%}
+            <p class="product-info-tabs__text">{{ section.settings.reviews_text | escape }}</p>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.write_review_label != blank and app_block_count > 0 -%}
+          <button
+            type="button"
+            class="product-info-tabs__write-review"
+            data-write-review
+          >
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M4 20h4L19 9l-4-4L4 16Z M13.5 6.5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ section.settings.write_review_label | escape }}</span>
+          </button>
+        {%- endif -%}
+      </div>
+
+      {%- if rating != blank and rating_count > 0 -%}
+        {%- liquid
+          assign rating_value = rating.rating | times: 1.0
+          assign rating_max = rating.scale_max | default: 5 | times: 1.0
+          assign rating_percent = rating_value | divided_by: rating_max | times: 100 | round: 1
+        -%}
+        <div class="product-info-tabs__summary">
+          <span class="product-info-tabs__average">{{ rating_value | round: 1 }}</span>
+          <span
+            class="product-info-tabs__stars"
+            style="--rating-percent: {{ rating_percent }}%;"
+            role="img"
+            aria-label="{{ 'accessibility.rating' | t: rating: rating_value }}"
+          ></span>
+          <span class="product-info-tabs__count">{{ section.settings.based_on_label | replace: '[count]', rating_count | escape }}</span>
+        </div>
+      {%- endif -%}
+
+      <div class="product-info-tabs__app">
+        {%- for block in section.blocks -%}
+          {%- if block.type == '@app' -%}
+            {% render block %}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if app_block_count == 0 -%}
+          {%- if section.settings.empty_reviews_text != blank -%}
+            <p class="product-info-tabs__empty">{{ section.settings.empty_reviews_text | escape }}</p>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</category-product-tabs>
+
+{% stylesheet %}
+  .product-info-tabs {
+    --pit-accent-color: var(--pit-accent, var(--color-foreground));
+    --pit-accent-color-rgb: var(--pit-accent-rgb, var(--color-foreground-rgb));
+    --pit-star-color: var(--pit-star, #d4a12a);
+    --pit-line: rgb(var(--color-foreground-rgb) / var(--opacity-15));
+
+    color: var(--color-foreground);
+  }
+
+  /* Tabs */
+  .product-info-tabs__tablist {
+    display: flex;
+    gap: var(--gap-xl);
+    margin-block-end: var(--margin-2xl);
+    border-block-end: 1px solid var(--pit-line);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .product-info-tabs .product-info-tabs__tab {
+    position: relative;
+    flex: 0 0 auto;
+    padding: var(--padding-md) var(--padding-sm);
+    border: 0;
+    background: transparent;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+    font-family: var(--pit-font) !important;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: color var(--animation-speed) var(--animation-easing);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      inset-block-end: -1px;
+      height: 2px;
+      background-color: var(--pit-accent-color);
+      transform: scaleX(0);
+      transition: transform var(--animation-speed) var(--animation-easing);
+    }
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+
+    &[aria-selected='true'] {
+      color: var(--pit-accent-color);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--pit-accent-color);
+      outline-offset: -2px;
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .product-info-tabs__panel:focus-visible {
+    outline: var(--focus-outline-width) solid var(--pit-accent-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  /* !important and the extra class beat the global heading/paragraph font overrides in
+     theme-styles-variables.liquid, so the section's font setting applies. */
+  .product-info-tabs .product-info-tabs__title,
+  .product-info-tabs .product-info-tabs__title em,
+  .product-info-tabs .product-info-tabs__text,
+  .product-info-tabs .product-info-tabs__check span,
+  .product-info-tabs .product-info-tabs__feature-label,
+  .product-info-tabs .product-info-tabs__average {
+    font-family: var(--pit-font) !important;
+  }
+
+  /* Nutrition */
+  .product-info-tabs__nutrition {
+    display: grid;
+    gap: var(--gap-2xl);
+    align-items: center;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--gap-3xl, 4rem);
+    }
+  }
+
+  .product-info-tabs__nutrition-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    min-width: 0;
+  }
+
+  .product-info-tabs__title {
+    margin: 0;
+    font-weight: var(--pit-font-weight);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.02;
+    color: var(--color-foreground);
+
+    em {
+      display: block;
+      font-style: italic;
+      color: var(--pit-accent-color);
+    }
+  }
+
+  .product-info-tabs__title--small {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+  }
+
+  .product-info-tabs__text {
+    margin: 0;
+    max-width: 36rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+
+    @media screen and (min-width: 990px) {
+      font-size: 1.3125rem;
+    }
+  }
+
+  .product-info-tabs__checklist {
+    display: grid;
+    gap: var(--gap-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .product-info-tabs__check {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    font-size: 1.125rem;
+    line-height: 1.3;
+
+    @media screen and (min-width: 990px) {
+      font-size: 1.3125rem;
+    }
+
+    svg {
+      flex: 0 0 auto;
+      width: 1.75rem;
+      height: 1.75rem;
+      color: var(--pit-accent-color);
+    }
+  }
+
+  .product-info-tabs__media {
+    overflow: hidden;
+    border-radius: var(--style-border-radius-popover);
+    aspect-ratio: 1;
+  }
+
+  .product-info-tabs__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-info-tabs__features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-xl) 0;
+    margin: var(--margin-3xl, 3rem) 0 0;
+    padding: var(--padding-2xl) 0;
+    list-style: none;
+    border-block-start: 1px solid var(--pit-line);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--pit-feature-count), minmax(0, 1fr));
+    }
+  }
+
+  .product-info-tabs__feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-md);
+    padding-inline: var(--padding-md);
+    text-align: center;
+
+    @media screen and (min-width: 750px) {
+      & + & {
+        border-inline-start: 1px solid var(--pit-line);
+      }
+    }
+  }
+
+  .product-info-tabs__feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .product-info-tabs__feature-label {
+    font-size: 1.25rem;
+
+    @media screen and (min-width: 990px) {
+      font-size: 1.5rem;
+    }
+
+    line-height: 1.25;
+  }
+
+  /* Reviews */
+  .product-info-tabs__reviews-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--gap-lg);
+    margin-block-end: var(--margin-xl);
+
+    > div {
+      display: grid;
+      gap: var(--gap-xs);
+    }
+  }
+
+  .product-info-tabs__write-review {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    min-height: var(--minimum-touch-target);
+    padding: 0.75rem 1.5rem;
+    border: 0;
+    border-radius: var(--style-border-radius-inputs);
+    background-color: var(--pit-accent-color);
+    color: var(--color-background);
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    &:hover {
+      opacity: var(--opacity-85);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--pit-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  .product-info-tabs__summary {
+    display: inline-grid;
+    justify-items: center;
+    gap: var(--gap-xs);
+    margin-block-end: var(--margin-xl);
+    padding: var(--padding-lg) var(--padding-2xl);
+    border: 1px solid var(--pit-line);
+    border-radius: var(--style-border-radius-inputs);
+    background-color: color-mix(in srgb, var(--color-background) 60%, white);
+  }
+
+  .product-info-tabs__average {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .product-info-tabs__stars {
+    --star-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z'/%3E%3C/svg%3E");
+
+    display: inline-block;
+    width: 8.75rem;
+    height: 1.5rem;
+    background: linear-gradient(
+      90deg,
+      var(--pit-star-color) var(--rating-percent),
+      rgb(var(--color-foreground-rgb) / var(--opacity-20)) var(--rating-percent)
+    );
+    -webkit-mask: var(--star-mask) left center / 1.75rem 1.5rem repeat-x;
+    mask: var(--star-mask) left center / 1.75rem 1.5rem repeat-x;
+  }
+
+  .product-info-tabs__count {
+    font-size: 0.9375rem;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+
+  .product-info-tabs__empty {
+    margin: 0;
+    padding: var(--padding-xl);
+    border: 1px dashed var(--pit-line);
+    border-radius: var(--style-border-radius-inputs);
+    text-align: center;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+
+  /* Review app (Judge.me) styled to the brand. The app's own colors can also be set in its admin. */
+  .product-info-tabs__app {
+    --jdgm-primary-color: var(--pit-accent-color);
+    --jdgm-secondary-color: rgb(var(--pit-accent-color-rgb) / var(--opacity-10));
+    --jdgm-star-color: var(--pit-star-color);
+    --jdgm-paginate-color: var(--pit-accent-color);
+
+    .jdgm-widget,
+    .jdgm-rev-widg {
+      font-family: var(--font-body--family);
+      color: var(--color-foreground);
+    }
+
+    .jdgm-rev-widg__title {
+      display: none;
+    }
+
+    .jdgm-star,
+    .jdgm-star::before {
+      color: var(--pit-star-color) !important;
+    }
+
+    .jdgm-write-rev-link,
+    .jdgm-btn--solid,
+    .jdgm-submit-rev {
+      border-color: var(--pit-accent-color) !important;
+      background-color: var(--pit-accent-color) !important;
+      color: var(--color-background) !important;
+      border-radius: var(--style-border-radius-inputs) !important;
+    }
+
+    .jdgm-rev {
+      padding: var(--padding-lg) !important;
+      margin-block-end: var(--margin-md);
+      border: 1px solid var(--pit-line) !important;
+      border-radius: var(--style-border-radius-inputs);
+      background-color: color-mix(in srgb, var(--color-background) 60%, white);
+    }
+
+    .jdgm-rev__author,
+    .jdgm-rev__title {
+      color: var(--color-foreground);
+    }
+
+    .jdgm-histogram__bar-content {
+      background-color: var(--pit-star-color) !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-info-tabs .product-info-tabs__tab,
+    .product-info-tabs .product-info-tabs__tab::after,
+    .product-info-tabs__write-review {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_info_tabs",
+  "class": "product-info-tabs-section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "feature",
+      "name": "t:names.feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:settings.icon",
+          "options": [
+            {
+              "value": "leaf",
+              "label": "t:options.leaf"
+            },
+            {
+              "value": "sprout",
+              "label": "t:options.sprout"
+            },
+            {
+              "value": "mortar",
+              "label": "t:options.mortar"
+            },
+            {
+              "value": "heart",
+              "label": "t:options.heart"
+            },
+            {
+              "value": "star",
+              "label": "t:options.star"
+            },
+            {
+              "value": "shield",
+              "label": "t:options.shield"
+            }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:settings.label",
+          "default": "Clean Ingredients"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:names.product_info_nutrition"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:info.product_info_metafields"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_nutrition",
+      "label": "t:settings.show_nutrition_tab",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "nutrition_tab_label",
+      "label": "t:settings.label",
+      "default": "Nutrition Facts"
+    },
+    {
+      "type": "text",
+      "id": "nutrition_heading",
+      "label": "t:settings.heading",
+      "default": "Pure Nutrition"
+    },
+    {
+      "type": "text",
+      "id": "nutrition_heading_accent",
+      "label": "t:settings.heading_accent",
+      "default": "from Nature"
+    },
+    {
+      "type": "textarea",
+      "id": "nutrition_text",
+      "label": "t:settings.text",
+      "default": "Our products are sourced from nature's finest ingredients, minimally processed and free from unnecessary artificial additives. They bring you wholesome, everyday nutrition, the way nature intended."
+    },
+    {
+      "type": "textarea",
+      "id": "nutrition_points",
+      "label": "t:settings.checklist",
+      "info": "t:info.checklist",
+      "default": "Carefully sourced ingredients\nNaturally occurring nutrients\nNo artificial additives\nMinimally processed for quality\nSupports a balanced lifestyle"
+    },
+    {
+      "type": "image_picker",
+      "id": "nutrition_image",
+      "label": "t:settings.image",
+      "info": "t:info.product_info_image"
+    },
+    {
+      "type": "header",
+      "content": "t:names.product_info_reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "t:settings.show_reviews_tab",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "reviews_tab_label",
+      "label": "t:settings.label",
+      "default": "Reviews"
+    },
+    {
+      "type": "text",
+      "id": "reviews_heading",
+      "label": "t:settings.heading",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "text",
+      "id": "reviews_text",
+      "label": "t:settings.text",
+      "default": "Real stories from our happy customers who love Sahi's natural goodness."
+    },
+    {
+      "type": "text",
+      "id": "write_review_label",
+      "label": "t:settings.write_review_label",
+      "default": "Write a Review"
+    },
+    {
+      "type": "text",
+      "id": "based_on_label",
+      "label": "t:settings.based_on_label",
+      "info": "t:info.based_on_label",
+      "default": "Based on [count] reviews"
+    },
+    {
+      "type": "text",
+      "id": "empty_reviews_text",
+      "label": "t:settings.empty_reviews_text",
+      "info": "t:info.empty_reviews_text",
+      "default": "Reviews are coming soon."
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "t:settings.star_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_info_tabs",
+      "blocks": {
+        "clean": { "type": "feature", "settings": { "icon": "leaf", "label": "Clean Ingredients" } },
+        "sourced": { "type": "feature", "settings": { "icon": "sprout", "label": "Naturally Sourced" } },
+        "processed": { "type": "feature", "settings": { "icon": "mortar", "label": "Minimally Processed" } },
+        "wellness": { "type": "feature", "settings": { "icon": "heart", "label": "Everyday Wellness" } }
+      },
+      "block_order": ["clean", "sourced", "processed", "wellness"]
+    }
+  ]
+}
+{% endschema %}

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "แท็บรีวิว",
+    "product_info_nutrition": "แท็บโภชนาการ",
+    "product_info_tabs": "แท็บข้อมูลสินค้า",
     "product_trust_badge": "ตราความน่าเชื่อถือ",
     "product_trust_badges": "ตราความน่าเชื่อถือ",
     "product_features": "คุณสมบัติสินค้า",
@@ -190,6 +193,13 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "empty_reviews_text": "ข้อความเมื่อยังไม่มีรีวิว",
+    "based_on_label": "ข้อความสรุปคะแนน",
+    "write_review_label": "ป้ายกำกับ \"เขียนรีวิว\"",
+    "show_reviews_tab": "แสดงแท็บรีวิว",
+    "checklist": "รายการตรวจสอบ",
+    "heading_accent": "ส่วนเน้นของหัวข้อ (ตัวเอียง)",
+    "show_nutrition_tab": "แสดงแท็บโภชนาการ",
     "max_words": "จำนวนคำสูงสุด",
     "heading_tag": "แท็กหัวข้อ",
     "product_eyebrow_source": "แหล่งที่มา",
@@ -644,6 +654,8 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "mortar": "ครกและสาก",
+    "sprout": "ต้นอ่อน",
     "phone": "โทรศัพท์",
     "shield": "โล่",
     "product_type": "ประเภทสินค้า",
@@ -1159,6 +1171,11 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "empty_reviews_text": "แสดงจนกว่าจะเพิ่มบล็อกแอปรีวิวในส่วนนี้",
+    "based_on_label": "ใช้ [count] แทนจำนวนรีวิว",
+    "product_info_image": "ใช้เมื่อสินค้าไม่มีรูปภาพโภชนาการ หากไม่มีจะใช้รูปที่สองแล้วรูปแรกของสินค้า",
+    "checklist": "หนึ่งรายการต่อบรรทัด",
+    "product_info_metafields": "แต่ละสินค้าสามารถแทนที่ค่าเหล่านี้ได้ในเมตาฟิลด์โภชนาการของสินค้า",
     "product_summary": "แสดงเมตาฟิลด์ custom.short_description หากตั้งค่าไว้ หากไม่มีจะแสดงย่อหน้าแรกของคำอธิบายสินค้า",
     "product_eyebrow_text": "ใช้เมื่อแหล่งที่มาที่เลือกว่างหรือเป็นแบบกำหนดเอง",
     "breadcrumb_nav_label": "ไม่แสดง โปรแกรมอ่านหน้าจอจะอ่านสำหรับเส้นทางนำทาง",

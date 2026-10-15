@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Arvosteluvälilehti",
+    "product_info_nutrition": "Ravintovälilehti",
+    "product_info_tabs": "Tuotetietovälilehdet",
     "product_trust_badge": "Luottamusmerkki",
     "product_trust_badges": "Luottamusmerkit",
     "product_features": "Tuotteen ominaisuudet",
@@ -190,6 +193,13 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "empty_reviews_text": "Teksti, kun arvosteluja ei ole",
+    "based_on_label": "Arvosteluyhteenvedon teksti",
+    "write_review_label": "\"Kirjoita arvostelu\" -teksti",
+    "show_reviews_tab": "Näytä arvosteluvälilehti",
+    "checklist": "Tarkistuslista",
+    "heading_accent": "Otsikon korostus (kursiivi)",
+    "show_nutrition_tab": "Näytä ravintovälilehti",
     "max_words": "Sanojen enimmäismäärä",
     "heading_tag": "Otsikkotunniste",
     "product_eyebrow_source": "Lähde",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "mortar": "Huhmar",
+    "sprout": "Verso",
     "phone": "Puhelin",
     "shield": "Kilpi",
     "product_type": "Tuotetyyppi",
@@ -1159,6 +1171,11 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "empty_reviews_text": "Näytetään, kunnes osioon lisätään arvostelusovelluksen lohko.",
+    "based_on_label": "Käytä [count] arvostelujen määrän paikalla.",
+    "product_info_image": "Käytetään, jos tuotteella ei ole ravintokuvaa; muuten tuotteen toinen ja sitten ensimmäinen kuva.",
+    "checklist": "Yksi kohta riviä kohden.",
+    "product_info_metafields": "Jokainen tuote voi korvata nämä ravinto-metakentissään.",
     "product_summary": "Näyttää metakentän custom.short_description, jos se on asetettu, muuten tuotekuvauksen ensimmäisen kappaleen.",
     "product_eyebrow_text": "Käytetään, kun valittu lähde on tyhjä tai lähde on Mukautettu.",
     "breadcrumb_nav_label": "Ei näytetä. Näytönlukijat kertovat sen murupolkunavigoinnille.",

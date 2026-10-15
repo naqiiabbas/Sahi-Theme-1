@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Reviewtabblad",
+    "product_info_nutrition": "Voedingstabblad",
+    "product_info_tabs": "Productinfo-tabbladen",
     "product_trust_badge": "Vertrouwensbadge",
     "product_trust_badges": "Vertrouwensbadges",
     "product_features": "Productkenmerken",
@@ -190,6 +193,13 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "empty_reviews_text": "Tekst als er geen reviews zijn",
+    "based_on_label": "Tekst beoordelingsoverzicht",
+    "write_review_label": "Label \"Schrijf een review\"",
+    "show_reviews_tab": "Reviewtabblad weergeven",
+    "checklist": "Checklist",
+    "heading_accent": "Accent in kop (cursief)",
+    "show_nutrition_tab": "Voedingstabblad weergeven",
     "max_words": "Maximaal aantal woorden",
     "heading_tag": "Koptag",
     "product_eyebrow_source": "Bron",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "mortar": "Vijzel",
+    "sprout": "Kiem",
     "phone": "Telefoon",
     "shield": "Schild",
     "product_type": "Producttype",
@@ -1159,6 +1171,11 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "empty_reviews_text": "Wordt getoond tot er een blok van een review-app aan deze sectie is toegevoegd.",
+    "based_on_label": "Gebruik [count] voor het aantal reviews.",
+    "product_info_image": "Gebruikt als het product geen voedingsafbeelding heeft; anders de tweede en dan de eerste productafbeelding.",
+    "checklist": "Eén item per regel.",
+    "product_info_metafields": "Elk product kan deze overschrijven in zijn voedingsmetavelden.",
     "product_summary": "Toont het metaveld custom.short_description als dat is ingesteld, anders de eerste alinea van de productbeschrijving.",
     "product_eyebrow_text": "Wordt gebruikt als de gekozen bron leeg is of als de bron Aangepast is.",
     "breadcrumb_nav_label": "Niet zichtbaar. Schermlezers lezen het voor bij de kruimelpadnavigatie.",

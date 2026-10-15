@@ -223,6 +223,11 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "empty_reviews_text": "Shown until a review app block is added to this section.",
+    "based_on_label": "Use [count] where the number of reviews goes.",
+    "product_info_image": "Used when the product has no nutrition image. Falls back to the product's second, then first image.",
+    "checklist": "One item per line.",
+    "product_info_metafields": "Each product can override these in its Nutrition metafields (heading, accent, text, checklist, image).",
     "product_summary": "Shows the custom.short_description metafield when set, otherwise the first paragraph of the product description.",
     "product_eyebrow_text": "Used when the selected source is empty, or when the source is Custom.",
     "breadcrumb_nav_label": "Not shown. Screen readers announce it for the breadcrumb navigation.",
@@ -266,6 +271,9 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "product_info_reviews": "Reviews tab",
+    "product_info_nutrition": "Nutrition tab",
+    "product_info_tabs": "Product info tabs",
     "product_trust_badge": "Trust badge",
     "product_trust_badges": "Trust badges",
     "product_features": "Product features",
@@ -454,6 +462,8 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "mortar": "Mortar and pestle",
+    "sprout": "Sprout",
     "phone": "Phone",
     "shield": "Shield",
     "product_type": "Product type",
@@ -787,6 +797,13 @@
     "below_media": "Below media"
   },
   "settings": {
+    "empty_reviews_text": "Text when there are no reviews",
+    "based_on_label": "Rating summary text",
+    "write_review_label": "\"Write a review\" label",
+    "show_reviews_tab": "Show reviews tab",
+    "checklist": "Checklist",
+    "heading_accent": "Heading accent (italic)",
+    "show_nutrition_tab": "Show nutrition tab",
     "max_words": "Maximum words",
     "heading_tag": "Heading tag",
     "product_eyebrow_source": "Source",

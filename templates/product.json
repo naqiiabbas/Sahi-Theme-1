@@ -717,11 +717,73 @@
         "padding-block-start": 20,
         "padding-block-end": 16
       }
+    },
+    "product_info_tabs": {
+      "type": "product-info-tabs",
+      "blocks": {
+        "clean": {
+          "type": "feature",
+          "settings": {
+            "icon": "leaf",
+            "label": "Clean Ingredients"
+          }
+        },
+        "sourced": {
+          "type": "feature",
+          "settings": {
+            "icon": "sprout",
+            "label": "Naturally Sourced"
+          }
+        },
+        "processed": {
+          "type": "feature",
+          "settings": {
+            "icon": "mortar",
+            "label": "Minimally Processed"
+          }
+        },
+        "wellness": {
+          "type": "feature",
+          "settings": {
+            "icon": "heart",
+            "label": "Everyday Wellness"
+          }
+        }
+      },
+      "block_order": [
+        "clean",
+        "sourced",
+        "processed",
+        "wellness"
+      ],
+      "settings": {
+        "show_nutrition": true,
+        "nutrition_tab_label": "Nutrition Facts",
+        "nutrition_heading": "Pure Nutrition",
+        "nutrition_heading_accent": "from Nature",
+        "nutrition_text": "Our products are sourced from nature’s finest ingredients, minimally processed and free from unnecessary artificial additives. They bring you wholesome, everyday nutrition, the way nature intended.",
+        "nutrition_points": "Carefully sourced ingredients\nNaturally occurring nutrients\nNo artificial additives\nMinimally processed for quality\nSupports a balanced lifestyle",
+        "show_reviews": true,
+        "reviews_tab_label": "Reviews",
+        "reviews_heading": "Customer Reviews",
+        "reviews_text": "Real stories from our happy customers who love Sahi’s natural goodness.",
+        "write_review_label": "Write a Review",
+        "based_on_label": "Based on [count] reviews",
+        "empty_reviews_text": "Reviews are coming soon.",
+        "title_font": "instrument_serif_n4",
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "star_color": "#D4A12A",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "breadcrumbs",
     "main",
+    "product_info_tabs",
     "section_NaqU9X",
     "product_list_zR9Cym"
   ]

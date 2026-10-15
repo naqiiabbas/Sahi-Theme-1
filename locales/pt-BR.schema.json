@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Aba de avaliações",
+    "product_info_nutrition": "Aba de nutrição",
+    "product_info_tabs": "Abas de informações do produto",
     "product_trust_badge": "Selo de confiança",
     "product_trust_badges": "Selos de confiança",
     "product_features": "Características do produto",
@@ -190,6 +193,13 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "empty_reviews_text": "Texto quando não há avaliações",
+    "based_on_label": "Texto do resumo de avaliações",
+    "write_review_label": "Rótulo \"Escrever uma avaliação\"",
+    "show_reviews_tab": "Mostrar aba de avaliações",
+    "checklist": "Lista de verificação",
+    "heading_accent": "Destaque do título (itálico)",
+    "show_nutrition_tab": "Mostrar aba de nutrição",
     "max_words": "Máximo de palavras",
     "heading_tag": "Tag do título",
     "product_eyebrow_source": "Origem",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "mortar": "Pilão",
+    "sprout": "Broto",
     "phone": "Telefone",
     "shield": "Escudo",
     "product_type": "Tipo de produto",
@@ -1159,6 +1171,11 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "empty_reviews_text": "Exibido até que um bloco de app de avaliações seja adicionado a esta seção.",
+    "based_on_label": "Use [count] no lugar do número de avaliações.",
+    "product_info_image": "Usada quando o produto não tem imagem de nutrição; caso contrário, a segunda e depois a primeira imagem do produto.",
+    "checklist": "Um item por linha.",
+    "product_info_metafields": "Cada produto pode substituí-los nos metacampos de nutrição.",
     "product_summary": "Mostra o metacampo custom.short_description quando definido; caso contrário, o primeiro parágrafo da descrição.",
     "product_eyebrow_text": "Usado quando a origem selecionada está vazia ou quando a origem é Personalizada.",
     "breadcrumb_nav_label": "Não exibido. Leitores de tela o anunciam para a trilha de navegação.",

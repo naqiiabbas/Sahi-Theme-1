@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "レビュータブ",
+    "product_info_nutrition": "栄養タブ",
+    "product_info_tabs": "商品情報タブ",
     "product_trust_badge": "信頼バッジ",
     "product_trust_badges": "信頼バッジ",
     "product_features": "商品の特長",
@@ -190,6 +193,13 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "empty_reviews_text": "レビューがない場合のテキスト",
+    "based_on_label": "評価概要のテキスト",
+    "write_review_label": "「レビューを書く」ラベル",
+    "show_reviews_tab": "レビュータブを表示",
+    "checklist": "チェックリスト",
+    "heading_accent": "見出しのアクセント（斜体）",
+    "show_nutrition_tab": "栄養タブを表示",
     "max_words": "最大単語数",
     "heading_tag": "見出しタグ",
     "product_eyebrow_source": "ソース",
@@ -644,6 +654,8 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "mortar": "乳鉢",
+    "sprout": "新芽",
     "phone": "電話",
     "shield": "盾",
     "product_type": "商品タイプ",
@@ -1159,6 +1171,11 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "empty_reviews_text": "このセクションにレビューアプリのブロックを追加するまで表示されます。",
+    "based_on_label": "レビュー数の位置に[count]を使用してください。",
+    "product_info_image": "商品に栄養画像がない場合に使用されます。それ以外は商品の2枚目、次に1枚目の画像。",
+    "checklist": "1行に1項目。",
+    "product_info_metafields": "各商品の栄養メタフィールドでこれらを上書きできます。",
     "product_summary": "custom.short_description メタフィールドが設定されている場合はそれを、なければ商品説明の最初の段落を表示します。",
     "product_eyebrow_text": "選択したソースが空の場合、またはソースがカスタムの場合に使用されます。",
     "breadcrumb_nav_label": "表示されません。パンくずナビゲーションとしてスクリーンリーダーが読み上げます。",

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "评价标签页",
+    "product_info_nutrition": "营养标签页",
+    "product_info_tabs": "商品信息标签页",
     "product_trust_badge": "信任徽章",
     "product_trust_badges": "信任徽章",
     "product_features": "商品特色",
@@ -190,6 +193,13 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "empty_reviews_text": "无评价时的文字",
+    "based_on_label": "评分摘要文字",
+    "write_review_label": "\"撰写评价\"标签",
+    "show_reviews_tab": "显示评价标签页",
+    "checklist": "清单",
+    "heading_accent": "标题强调（斜体）",
+    "show_nutrition_tab": "显示营养标签页",
     "max_words": "最多字数",
     "heading_tag": "标题标签",
     "product_eyebrow_source": "来源",
@@ -644,6 +654,8 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "mortar": "研钵",
+    "sprout": "嫩芽",
     "phone": "电话",
     "shield": "盾牌",
     "product_type": "商品类型",
@@ -1159,6 +1171,11 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "empty_reviews_text": "在此分区添加评价应用区块之前显示。",
+    "based_on_label": "用 [count] 表示评价数量。",
+    "product_info_image": "商品没有营养图片时使用；否则使用商品的第二张、再第一张图片。",
+    "checklist": "每行一项。",
+    "product_info_metafields": "每个商品都可在其营养元字段中覆盖这些内容。",
     "product_summary": "如已设置 custom.short_description 元字段则显示该内容，否则显示商品描述的第一段。",
     "product_eyebrow_text": "当所选来源为空或来源为自定义时使用。",
     "breadcrumb_nav_label": "不显示。屏幕阅读器会为面包屑导航朗读。",

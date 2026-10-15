@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Recensionsflik",
+    "product_info_nutrition": "Näringsflik",
+    "product_info_tabs": "Produktinfoflikar",
     "product_trust_badge": "Förtroendemärke",
     "product_trust_badges": "Förtroendemärken",
     "product_features": "Produktfördelar",
@@ -190,6 +193,13 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "empty_reviews_text": "Text när det inte finns recensioner",
+    "based_on_label": "Text för betygssammanfattning",
+    "write_review_label": "Etikett för \"Skriv en recension\"",
+    "show_reviews_tab": "Visa recensionsflik",
+    "checklist": "Checklista",
+    "heading_accent": "Rubrikaccent (kursiv)",
+    "show_nutrition_tab": "Visa näringsflik",
     "max_words": "Max antal ord",
     "heading_tag": "Rubriktagg",
     "product_eyebrow_source": "Källa",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "mortar": "Mortel",
+    "sprout": "Grodd",
     "phone": "Telefon",
     "shield": "Sköld",
     "product_type": "Produkttyp",
@@ -1159,6 +1171,11 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "empty_reviews_text": "Visas tills ett recensionsapp-block läggs till i sektionen.",
+    "based_on_label": "Använd [count] där antalet recensioner ska stå.",
+    "product_info_image": "Används när produkten saknar näringsbild; annars produktens andra och sedan första bild.",
+    "checklist": "En punkt per rad.",
+    "product_info_metafields": "Varje produkt kan åsidosätta dessa i sina näringsmetafält.",
     "product_summary": "Visar metafältet custom.short_description när det är angivet, annars första stycket i produktbeskrivningen.",
     "product_eyebrow_text": "Används när den valda källan är tom eller när källan är Anpassad.",
     "breadcrumb_nav_label": "Visas inte. Skärmläsare läser upp den för brödsmulenavigeringen.",

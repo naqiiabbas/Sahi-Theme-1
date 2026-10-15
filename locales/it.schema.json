@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Scheda recensioni",
+    "product_info_nutrition": "Scheda nutrizione",
+    "product_info_tabs": "Schede informazioni prodotto",
     "product_trust_badge": "Badge di fiducia",
     "product_trust_badges": "Badge di fiducia",
     "product_features": "Caratteristiche del prodotto",
@@ -190,6 +193,13 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "empty_reviews_text": "Testo quando non ci sono recensioni",
+    "based_on_label": "Testo del riepilogo valutazioni",
+    "write_review_label": "Etichetta \"Scrivi una recensione\"",
+    "show_reviews_tab": "Mostra scheda recensioni",
+    "checklist": "Elenco puntato",
+    "heading_accent": "Accento del titolo (corsivo)",
+    "show_nutrition_tab": "Mostra scheda nutrizione",
     "max_words": "Numero massimo di parole",
     "heading_tag": "Tag del titolo",
     "product_eyebrow_source": "Origine",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "mortar": "Mortaio e pestello",
+    "sprout": "Germoglio",
     "phone": "Telefono",
     "shield": "Scudo",
     "product_type": "Tipo di prodotto",
@@ -1159,6 +1171,11 @@
     "disclosures": "Informative"
   },
   "info": {
+    "empty_reviews_text": "Mostrato finché non aggiungi un blocco app recensioni alla sezione.",
+    "based_on_label": "Usa [count] al posto del numero di recensioni.",
+    "product_info_image": "Usata se il prodotto non ha un’immagine nutrizionale; altrimenti la seconda, poi la prima immagine del prodotto.",
+    "checklist": "Una voce per riga.",
+    "product_info_metafields": "Ogni prodotto può sostituirli nei propri metacampi nutrizionali.",
     "product_summary": "Mostra il metacampo custom.short_description se impostato, altrimenti il primo paragrafo della descrizione.",
     "product_eyebrow_text": "Usato quando l'origine scelta è vuota o quando l'origine è Personalizzata.",
     "breadcrumb_nav_label": "Non visibile. Gli screen reader lo annunciano per la navigazione breadcrumb.",

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Anmeldelsesfane",
+    "product_info_nutrition": "Ernæringsfane",
+    "product_info_tabs": "Produktinfo-faner",
     "product_trust_badge": "Tillidsmærke",
     "product_trust_badges": "Tillidsmærker",
     "product_features": "Produktfordele",
@@ -190,6 +193,13 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "empty_reviews_text": "Tekst når der ikke er anmeldelser",
+    "based_on_label": "Tekst til bedømmelsesoversigt",
+    "write_review_label": "Etiket for \"Skriv en anmeldelse\"",
+    "show_reviews_tab": "Vis anmeldelsesfane",
+    "checklist": "Tjekliste",
+    "heading_accent": "Fremhævet overskrift (kursiv)",
+    "show_nutrition_tab": "Vis ernæringsfane",
     "max_words": "Maks. antal ord",
     "heading_tag": "Overskriftstag",
     "product_eyebrow_source": "Kilde",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "mortar": "Morter",
+    "sprout": "Spire",
     "phone": "Telefon",
     "shield": "Skjold",
     "product_type": "Produkttype",
@@ -1159,6 +1171,11 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "empty_reviews_text": "Vises indtil der tilføjes en anmeldelsesapp-blok til sektionen.",
+    "based_on_label": "Brug [count] hvor antallet af anmeldelser skal stå.",
+    "product_info_image": "Bruges når produktet ikke har et ernæringsbillede; ellers produktets andet og derefter første billede.",
+    "checklist": "Ét punkt pr. linje.",
+    "product_info_metafields": "Hvert produkt kan tilsidesætte disse i sine ernæringsmetafelter.",
     "product_summary": "Viser metafeltet custom.short_description, når det er udfyldt, ellers første afsnit af produktbeskrivelsen.",
     "product_eyebrow_text": "Bruges, når den valgte kilde er tom, eller når kilden er Brugerdefineret.",
     "breadcrumb_nav_label": "Vises ikke. Skærmlæsere læser den op for brødkrummenavigationen.",

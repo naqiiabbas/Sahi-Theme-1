@@ -215,6 +215,11 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "empty_reviews_text": "מוצג עד להוספת בלוק של אפליקציית ביקורות למקטע.",
+    "based_on_label": "השתמשו ב-[count] במקום מספר הביקורות.",
+    "product_info_image": "משמשת כשאין למוצר תמונת תזונה; אחרת התמונה השנייה ואז הראשונה של המוצר.",
+    "checklist": "פריט אחד בכל שורה.",
+    "product_info_metafields": "כל מוצר יכול לעקוף אותם בשדות המטא של התזונה.",
     "product_summary": "מציג את שדה המטא custom.short_description אם הוגדר, אחרת את הפסקה הראשונה בתיאור המוצר.",
     "product_eyebrow_text": "משמש כשהמקור שנבחר ריק או כשהמקור מותאם אישית.",
     "breadcrumb_nav_label": "לא מוצג. קוראי מסך מקריאים אותו עבור ניווט פירורי הלחם.",
@@ -258,6 +263,9 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "product_info_reviews": "כרטיסיית ביקורות",
+    "product_info_nutrition": "כרטיסיית תזונה",
+    "product_info_tabs": "כרטיסיות מידע על המוצר",
     "product_trust_badge": "תג אמון",
     "product_trust_badges": "תגי אמון",
     "product_features": "מאפייני המוצר",
@@ -439,6 +447,8 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "mortar": "מכתש ועלי",
+    "sprout": "נבט",
     "phone": "טלפון",
     "shield": "מגן",
     "product_type": "סוג מוצר",
@@ -729,6 +739,13 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "empty_reviews_text": "טקסט כשאין ביקורות",
+    "based_on_label": "טקסט סיכום הדירוג",
+    "write_review_label": "תווית \"כתבו ביקורת\"",
+    "show_reviews_tab": "הצגת כרטיסיית ביקורות",
+    "checklist": "רשימת פריטים",
+    "heading_accent": "הדגשת כותרת (נטוי)",
+    "show_nutrition_tab": "הצגת כרטיסיית תזונה",
     "max_words": "מספר מילים מרבי",
     "heading_tag": "תג כותרת",
     "product_eyebrow_source": "מקור",

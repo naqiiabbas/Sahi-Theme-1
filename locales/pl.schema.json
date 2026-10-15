@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "product_info_reviews": "Karta opinii",
+    "product_info_nutrition": "Karta wartości odżywczych",
+    "product_info_tabs": "Karty informacji o produkcie",
     "product_trust_badge": "Odznaka zaufania",
     "product_trust_badges": "Odznaki zaufania",
     "product_features": "Cechy produktu",
@@ -190,6 +193,13 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "empty_reviews_text": "Tekst, gdy brak opinii",
+    "based_on_label": "Tekst podsumowania ocen",
+    "write_review_label": "Etykieta „Napisz opinię”",
+    "show_reviews_tab": "Pokaż kartę opinii",
+    "checklist": "Lista kontrolna",
+    "heading_accent": "Akcent nagłówka (kursywa)",
+    "show_nutrition_tab": "Pokaż kartę wartości odżywczych",
     "max_words": "Maksymalna liczba słów",
     "heading_tag": "Znacznik nagłówka",
     "product_eyebrow_source": "Źródło",
@@ -644,6 +654,8 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "mortar": "Moździerz",
+    "sprout": "Kiełek",
     "phone": "Telefon",
     "shield": "Tarcza",
     "product_type": "Typ produktu",
@@ -1159,6 +1171,11 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "empty_reviews_text": "Wyświetlany do czasu dodania bloku aplikacji z opiniami do tej sekcji.",
+    "based_on_label": "Użyj [count] w miejscu liczby opinii.",
+    "product_info_image": "Używany, gdy produkt nie ma obrazu wartości odżywczych; w przeciwnym razie drugi, potem pierwszy obraz produktu.",
+    "checklist": "Jeden element w wierszu.",
+    "product_info_metafields": "Każdy produkt może je nadpisać w swoich metapolach wartości odżywczych.",
     "product_summary": "Pokazuje metapole custom.short_description, jeśli jest ustawione, w przeciwnym razie pierwszy akapit opisu produktu.",
     "product_eyebrow_text": "Używane, gdy wybrane źródło jest puste lub gdy źródłem jest Niestandardowe.",
     "breadcrumb_nav_label": "Niewidoczne. Czytniki ekranu odczytują je dla nawigacji okruszkowej.",
