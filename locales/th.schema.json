@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "สินค้าที่เกี่ยวข้อง",
     "product_info_reviews": "แท็บรีวิว",
     "product_info_nutrition": "แท็บโภชนาการ",
     "product_info_tabs": "แท็บข้อมูลสินค้า",
@@ -193,6 +194,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "skip_collections": "คอลเลกชันที่ข้าม",
     "empty_reviews_text": "ข้อความเมื่อยังไม่มีรีวิว",
     "based_on_label": "ข้อความสรุปคะแนน",
     "write_review_label": "ป้ายกำกับ \"เขียนรีวิว\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "related_product_collection": "คอลเลกชันของสินค้า",
     "mortar": "ครกและสาก",
     "sprout": "ต้นอ่อน",
     "phone": "โทรศัพท์",
@@ -1171,6 +1174,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "skip_collections": "แฮนเดิลคอลเลกชันคั่นด้วยจุลภาค ซึ่งจะไม่ถูกใช้เป็นคอลเลกชันของสินค้า",
+    "related_link_label": "ใช้ [collection] แทนชื่อคอลเลกชัน เว้นว่างไว้เพื่อซ่อนลิงก์",
+    "related_collection": "ใช้เมื่อแหล่งที่มาเป็นคอลเลกชัน หรือเมื่อสินค้าไม่อยู่ในคอลเลกชันใด",
     "empty_reviews_text": "แสดงจนกว่าจะเพิ่มบล็อกแอปรีวิวในส่วนนี้",
     "based_on_label": "ใช้ [count] แทนจำนวนรีวิว",
     "product_info_image": "ใช้เมื่อสินค้าไม่มีรูปภาพโภชนาการ หากไม่มีจะใช้รูปที่สองแล้วรูปแรกของสินค้า",

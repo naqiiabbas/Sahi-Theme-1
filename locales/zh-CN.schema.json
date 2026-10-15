@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "相关商品",
     "product_info_reviews": "评价标签页",
     "product_info_nutrition": "营养标签页",
     "product_info_tabs": "商品信息标签页",
@@ -193,6 +194,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "skip_collections": "要跳过的商品系列",
     "empty_reviews_text": "无评价时的文字",
     "based_on_label": "评分摘要文字",
     "write_review_label": "\"撰写评价\"标签",
@@ -654,6 +656,7 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "related_product_collection": "商品所在系列",
     "mortar": "研钵",
     "sprout": "嫩芽",
     "phone": "电话",
@@ -1171,6 +1174,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "skip_collections": "用逗号分隔的商品系列句柄，这些系列不会被用作商品所属系列。",
+    "related_link_label": "用 [collection] 表示系列名称。留空则隐藏链接。",
+    "related_collection": "当来源为商品系列，或商品不在任何系列中时使用。",
     "empty_reviews_text": "在此分区添加评价应用区块之前显示。",
     "based_on_label": "用 [count] 表示评价数量。",
     "product_info_image": "商品没有营养图片时使用；否则使用商品的第二张、再第一张图片。",

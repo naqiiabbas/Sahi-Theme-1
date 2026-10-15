@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Související produkty",
     "product_info_reviews": "Záložka recenzí",
     "product_info_nutrition": "Záložka výživy",
     "product_info_tabs": "Záložky informací o produktu",
@@ -193,6 +194,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "skip_collections": "Kolekce k přeskočení",
     "empty_reviews_text": "Text, když nejsou recenze",
     "based_on_label": "Text souhrnu hodnocení",
     "write_review_label": "Popisek „Napsat recenzi“",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "related_product_collection": "Kolekce produktu",
     "mortar": "Hmoždíř",
     "sprout": "Klíček",
     "phone": "Telefon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "skip_collections": "Popisovače kolekcí oddělené čárkami, které se nikdy nepoužijí jako kolekce produktu.",
+    "related_link_label": "Pro název kolekce použijte [collection]. Ponechte prázdné pro skrytí odkazu.",
+    "related_collection": "Použije se, když je zdrojem Kolekce nebo když produkt není v žádné kolekci.",
     "empty_reviews_text": "Zobrazuje se, dokud do sekce nepřidáte blok aplikace recenzí.",
     "based_on_label": "Na místo počtu recenzí použijte [count].",
     "product_info_image": "Použije se, když produkt nemá obrázek výživy; jinak druhý, pak první obrázek produktu.",

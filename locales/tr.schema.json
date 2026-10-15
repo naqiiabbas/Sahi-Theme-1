@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "İlgili ürünler",
     "product_info_reviews": "Değerlendirmeler sekmesi",
     "product_info_nutrition": "Besin değerleri sekmesi",
     "product_info_tabs": "Ürün bilgi sekmeleri",
@@ -193,6 +194,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "skip_collections": "Atlanacak koleksiyonlar",
     "empty_reviews_text": "Değerlendirme yokken gösterilecek metin",
     "based_on_label": "Puan özeti metni",
     "write_review_label": "\"Değerlendirme yaz\" etiketi",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "related_product_collection": "Ürünün koleksiyonu",
     "mortar": "Havan",
     "sprout": "Filiz",
     "phone": "Telefon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "skip_collections": "Ürünün koleksiyonu olarak hiç kullanılmayacak, virgülle ayrılmış koleksiyon tanıtıcıları.",
+    "related_link_label": "Koleksiyon adı için [collection] kullanın. Bağlantıyı gizlemek için boş bırakın.",
+    "related_collection": "Kaynak Koleksiyon olduğunda veya ürün hiçbir koleksiyonda değilse kullanılır.",
     "empty_reviews_text": "Bu bölüme bir değerlendirme uygulaması bloğu eklenene kadar gösterilir.",
     "based_on_label": "Değerlendirme sayısı yerine [count] kullanın.",
     "product_info_image": "Üründe besin görseli yoksa kullanılır; aksi halde ürünün ikinci, ardından ilk görseli.",

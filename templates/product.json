@@ -497,11 +497,33 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You May Also Like",
+        "source": "product_collection",
+        "collection": "",
+        "product_count": 4,
+        "link_label": "View All [collection] Products",
+        "image_ratio": "4 / 3",
+        "show_weight": true,
+        "show_rating": true,
+        "card_corner_radius": 4,
+        "title_font": "instrument_serif_n4",
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "section_width": "page-width",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      }
     }
   },
   "order": [
     "breadcrumbs",
     "main",
-    "product_info_tabs"
+    "product_info_tabs",
+    "related_products"
   ]
 }

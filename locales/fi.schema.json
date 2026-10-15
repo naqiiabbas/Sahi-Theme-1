@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Liittyvät tuotteet",
     "product_info_reviews": "Arvosteluvälilehti",
     "product_info_nutrition": "Ravintovälilehti",
     "product_info_tabs": "Tuotetietovälilehdet",
@@ -193,6 +194,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "skip_collections": "Ohitettavat kokoelmat",
     "empty_reviews_text": "Teksti, kun arvosteluja ei ole",
     "based_on_label": "Arvosteluyhteenvedon teksti",
     "write_review_label": "\"Kirjoita arvostelu\" -teksti",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "related_product_collection": "Tuotteen kokoelma",
     "mortar": "Huhmar",
     "sprout": "Verso",
     "phone": "Puhelin",
@@ -1171,6 +1174,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "skip_collections": "Pilkuilla erotetut kokoelmien tunnisteet, joita ei koskaan käytetä tuotteen kokoelmana.",
+    "related_link_label": "Käytä [collection] kokoelman nimelle. Jätä tyhjäksi piilottaaksesi linkin.",
+    "related_collection": "Käytetään, kun lähde on Kokoelma tai kun tuote ei ole missään kokoelmassa.",
     "empty_reviews_text": "Näytetään, kunnes osioon lisätään arvostelusovelluksen lohko.",
     "based_on_label": "Käytä [count] arvostelujen määrän paikalla.",
     "product_info_image": "Käytetään, jos tuotteella ei ole ravintokuvaa; muuten tuotteen toinen ja sitten ensimmäinen kuva.",

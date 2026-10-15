@@ -223,6 +223,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "skip_collections": "Collection handles, separated by commas, that are never used as the product's collection.",
+    "related_link_label": "Use [collection] for the collection name. Leave blank to hide the link.",
+    "related_collection": "Used when the source is Collection, or when the product isn't in any collection.",
     "empty_reviews_text": "Shown until a review app block is added to this section.",
     "based_on_label": "Use [count] where the number of reviews goes.",
     "product_info_image": "Used when the product has no nutrition image. Falls back to the product's second, then first image.",
@@ -271,6 +274,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "related_products": "Related products",
     "product_info_reviews": "Reviews tab",
     "product_info_nutrition": "Nutrition tab",
     "product_info_tabs": "Product info tabs",
@@ -462,6 +466,7 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "related_product_collection": "Product's collection",
     "mortar": "Mortar and pestle",
     "sprout": "Sprout",
     "phone": "Phone",
@@ -797,6 +802,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "skip_collections": "Collections to skip",
     "empty_reviews_text": "Text when there are no reviews",
     "based_on_label": "Rating summary text",
     "write_review_label": "\"Write a review\" label",

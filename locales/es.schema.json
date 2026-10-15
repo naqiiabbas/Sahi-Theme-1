@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Productos relacionados",
     "product_info_reviews": "Pestaña de reseñas",
     "product_info_nutrition": "Pestaña de nutrición",
     "product_info_tabs": "Pestañas de información del producto",
@@ -193,6 +194,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "skip_collections": "Colecciones que omitir",
     "empty_reviews_text": "Texto cuando no hay reseñas",
     "based_on_label": "Texto del resumen de valoraciones",
     "write_review_label": "Etiqueta \"Escribir una reseña\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "related_product_collection": "Colección del producto",
     "mortar": "Mortero",
     "sprout": "Brote",
     "phone": "Teléfono",
@@ -1171,6 +1174,9 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "skip_collections": "Identificadores de colección separados por comas que nunca se usan como colección del producto.",
+    "related_link_label": "Usa [collection] para el nombre de la colección. Déjalo en blanco para ocultar el enlace.",
+    "related_collection": "Se usa cuando el origen es Colección o cuando el producto no está en ninguna colección.",
     "empty_reviews_text": "Se muestra hasta que se agregue un bloque de app de reseñas a esta sección.",
     "based_on_label": "Usa [count] donde va el número de reseñas.",
     "product_info_image": "Se usa cuando el producto no tiene imagen de nutrición; si no, la segunda y luego la primera imagen del producto.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Prodotti correlati",
     "product_info_reviews": "Scheda recensioni",
     "product_info_nutrition": "Scheda nutrizione",
     "product_info_tabs": "Schede informazioni prodotto",
@@ -193,6 +194,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "skip_collections": "Collezioni da saltare",
     "empty_reviews_text": "Testo quando non ci sono recensioni",
     "based_on_label": "Testo del riepilogo valutazioni",
     "write_review_label": "Etichetta \"Scrivi una recensione\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "related_product_collection": "Collezione del prodotto",
     "mortar": "Mortaio e pestello",
     "sprout": "Germoglio",
     "phone": "Telefono",
@@ -1171,6 +1174,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "skip_collections": "Handle delle collezioni separati da virgole, mai usati come collezione del prodotto.",
+    "related_link_label": "Usa [collection] per il nome della collezione. Lascia vuoto per nascondere il link.",
+    "related_collection": "Usata quando l’origine è Collezione o quando il prodotto non è in nessuna collezione.",
     "empty_reviews_text": "Mostrato finché non aggiungi un blocco app recensioni alla sezione.",
     "based_on_label": "Usa [count] al posto del numero di recensioni.",
     "product_info_image": "Usata se il prodotto non ha un’immagine nutrizionale; altrimenti la seconda, poi la prima immagine del prodotto.",

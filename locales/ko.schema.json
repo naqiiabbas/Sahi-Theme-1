@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "관련 상품",
     "product_info_reviews": "리뷰 탭",
     "product_info_nutrition": "영양 탭",
     "product_info_tabs": "상품 정보 탭",
@@ -193,6 +194,7 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "skip_collections": "건너뛸 컬렉션",
     "empty_reviews_text": "리뷰가 없을 때 텍스트",
     "based_on_label": "평점 요약 텍스트",
     "write_review_label": "\"리뷰 작성\" 레이블",
@@ -654,6 +656,7 @@
     "customer_account_menu": "고객 계정 메뉴"
   },
   "options": {
+    "related_product_collection": "상품의 컬렉션",
     "mortar": "절구",
     "sprout": "새싹",
     "phone": "전화",
@@ -1171,6 +1174,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "skip_collections": "상품의 컬렉션으로 사용하지 않을 컬렉션 핸들(쉼표로 구분).",
+    "related_link_label": "컬렉션 이름에는 [collection]을 사용하세요. 비워 두면 링크가 숨겨집니다.",
+    "related_collection": "출처가 컬렉션이거나 상품이 어느 컬렉션에도 없을 때 사용됩니다.",
     "empty_reviews_text": "이 섹션에 리뷰 앱 블록을 추가할 때까지 표시됩니다.",
     "based_on_label": "리뷰 수 자리에 [count]를 사용하세요.",
     "product_info_image": "상품에 영양 이미지가 없을 때 사용됩니다. 없으면 상품의 두 번째, 그다음 첫 번째 이미지.",

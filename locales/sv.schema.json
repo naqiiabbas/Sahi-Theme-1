@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Relaterade produkter",
     "product_info_reviews": "Recensionsflik",
     "product_info_nutrition": "Näringsflik",
     "product_info_tabs": "Produktinfoflikar",
@@ -193,6 +194,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "skip_collections": "Kollektioner att hoppa över",
     "empty_reviews_text": "Text när det inte finns recensioner",
     "based_on_label": "Text för betygssammanfattning",
     "write_review_label": "Etikett för \"Skriv en recension\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "related_product_collection": "Produktens kollektion",
     "mortar": "Mortel",
     "sprout": "Grodd",
     "phone": "Telefon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "skip_collections": "Kollektionshandtag, separerade med kommatecken, som aldrig används som produktens kollektion.",
+    "related_link_label": "Använd [collection] för kollektionens namn. Lämna tomt för att dölja länken.",
+    "related_collection": "Används när källan är Kollektion eller när produkten inte finns i någon kollektion.",
     "empty_reviews_text": "Visas tills ett recensionsapp-block läggs till i sektionen.",
     "based_on_label": "Använd [count] där antalet recensioner ska stå.",
     "product_info_image": "Används när produkten saknar näringsbild; annars produktens andra och sedan första bild.",

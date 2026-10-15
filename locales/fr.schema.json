@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Produits associés",
     "product_info_reviews": "Onglet avis",
     "product_info_nutrition": "Onglet nutrition",
     "product_info_tabs": "Onglets d’informations produit",
@@ -193,6 +194,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "skip_collections": "Collections à ignorer",
     "empty_reviews_text": "Texte en l’absence d’avis",
     "based_on_label": "Texte du résumé des notes",
     "write_review_label": "Libellé « Écrire un avis »",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "related_product_collection": "Collection du produit",
     "mortar": "Mortier et pilon",
     "sprout": "Pousse",
     "phone": "Téléphone",
@@ -1171,6 +1174,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "skip_collections": "Identifiants de collection séparés par des virgules, jamais utilisés comme collection du produit.",
+    "related_link_label": "Utilisez [collection] pour le nom de la collection. Laissez vide pour masquer le lien.",
+    "related_collection": "Utilisée lorsque la source est Collection ou que le produit n'est dans aucune collection.",
     "empty_reviews_text": "Affiché jusqu’à l’ajout d’un bloc d’application d’avis à cette section.",
     "based_on_label": "Utilisez [count] à la place du nombre d’avis.",
     "product_info_image": "Utilisée si le produit n’a pas d’image nutrition ; sinon la deuxième, puis la première image du produit.",

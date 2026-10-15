@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "関連商品",
     "product_info_reviews": "レビュータブ",
     "product_info_nutrition": "栄養タブ",
     "product_info_tabs": "商品情報タブ",
@@ -193,6 +194,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "skip_collections": "スキップするコレクション",
     "empty_reviews_text": "レビューがない場合のテキスト",
     "based_on_label": "評価概要のテキスト",
     "write_review_label": "「レビューを書く」ラベル",
@@ -654,6 +656,7 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "related_product_collection": "商品のコレクション",
     "mortar": "乳鉢",
     "sprout": "新芽",
     "phone": "電話",
@@ -1171,6 +1174,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "skip_collections": "商品のコレクションとして使用しないコレクションのハンドル（カンマ区切り）。",
+    "related_link_label": "コレクション名には[collection]を使用します。空欄にするとリンクを非表示にします。",
+    "related_collection": "ソースがコレクションの場合、または商品がどのコレクションにも含まれていない場合に使用されます。",
     "empty_reviews_text": "このセクションにレビューアプリのブロックを追加するまで表示されます。",
     "based_on_label": "レビュー数の位置に[count]を使用してください。",
     "product_info_image": "商品に栄養画像がない場合に使用されます。それ以外は商品の2枚目、次に1枚目の画像。",

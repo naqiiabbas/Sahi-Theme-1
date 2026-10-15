@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Produtos relacionados",
     "product_info_reviews": "Aba de avaliações",
     "product_info_nutrition": "Aba de nutrição",
     "product_info_tabs": "Abas de informações do produto",
@@ -193,6 +194,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "skip_collections": "Coleções a ignorar",
     "empty_reviews_text": "Texto quando não há avaliações",
     "based_on_label": "Texto do resumo de avaliações",
     "write_review_label": "Rótulo \"Escrever uma avaliação\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "related_product_collection": "Coleção do produto",
     "mortar": "Pilão",
     "sprout": "Broto",
     "phone": "Telefone",
@@ -1171,6 +1174,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "skip_collections": "Identificadores de coleção separados por vírgulas que nunca são usados como coleção do produto.",
+    "related_link_label": "Use [collection] para o nome da coleção. Deixe em branco para ocultar o link.",
+    "related_collection": "Usada quando a origem é Coleção ou quando o produto não está em nenhuma coleção.",
     "empty_reviews_text": "Exibido até que um bloco de app de avaliações seja adicionado a esta seção.",
     "based_on_label": "Use [count] no lugar do número de avaliações.",
     "product_info_image": "Usada quando o produto não tem imagem de nutrição; caso contrário, a segunda e depois a primeira imagem do produto.",

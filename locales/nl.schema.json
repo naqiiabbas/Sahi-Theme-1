@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Gerelateerde producten",
     "product_info_reviews": "Reviewtabblad",
     "product_info_nutrition": "Voedingstabblad",
     "product_info_tabs": "Productinfo-tabbladen",
@@ -193,6 +194,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "skip_collections": "Over te slaan collecties",
     "empty_reviews_text": "Tekst als er geen reviews zijn",
     "based_on_label": "Tekst beoordelingsoverzicht",
     "write_review_label": "Label \"Schrijf een review\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "related_product_collection": "Collectie van het product",
     "mortar": "Vijzel",
     "sprout": "Kiem",
     "phone": "Telefoon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "skip_collections": "Collectiehandles, gescheiden door komma’s, die nooit als collectie van het product worden gebruikt.",
+    "related_link_label": "Gebruik [collection] voor de collectienaam. Laat leeg om de link te verbergen.",
+    "related_collection": "Wordt gebruikt als de bron Collectie is of als het product in geen enkele collectie zit.",
     "empty_reviews_text": "Wordt getoond tot er een blok van een review-app aan deze sectie is toegevoegd.",
     "based_on_label": "Gebruik [count] voor het aantal reviews.",
     "product_info_image": "Gebruikt als het product geen voedingsafbeelding heeft; anders de tweede en dan de eerste productafbeelding.",

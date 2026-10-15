@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Ähnliche Produkte",
     "product_info_reviews": "Bewertungs-Tab",
     "product_info_nutrition": "Nährwert-Tab",
     "product_info_tabs": "Produktinfo-Tabs",
@@ -193,6 +194,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "skip_collections": "Zu überspringende Kollektionen",
     "empty_reviews_text": "Text, wenn keine Bewertungen vorhanden sind",
     "based_on_label": "Text der Bewertungsübersicht",
     "write_review_label": "Beschriftung „Bewertung schreiben“",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "related_product_collection": "Kollektion des Produkts",
     "mortar": "Mörser",
     "sprout": "Spross",
     "phone": "Telefon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "skip_collections": "Kollektions-Handles, durch Kommas getrennt, die nie als Kollektion des Produkts verwendet werden.",
+    "related_link_label": "Verwende [collection] für den Kollektionsnamen. Leer lassen, um den Link auszublenden.",
+    "related_collection": "Wird verwendet, wenn die Quelle „Kollektion“ ist oder das Produkt in keiner Kollektion ist.",
     "empty_reviews_text": "Wird angezeigt, bis ein Bewertungs-App-Block hinzugefügt wird.",
     "based_on_label": "Verwende [count] für die Anzahl der Bewertungen.",
     "product_info_image": "Wird verwendet, wenn das Produkt kein Nährwertbild hat; sonst das zweite, dann das erste Produktbild.",

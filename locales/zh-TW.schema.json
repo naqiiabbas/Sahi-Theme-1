@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "相關商品",
     "product_info_reviews": "評價分頁",
     "product_info_nutrition": "營養分頁",
     "product_info_tabs": "商品資訊分頁",
@@ -193,6 +194,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "skip_collections": "要略過的商品系列",
     "empty_reviews_text": "沒有評價時的文字",
     "based_on_label": "評分摘要文字",
     "write_review_label": "「撰寫評價」標籤",
@@ -654,6 +656,7 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "related_product_collection": "商品所屬系列",
     "mortar": "研缽",
     "sprout": "嫩芽",
     "phone": "電話",
@@ -1171,6 +1174,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "skip_collections": "以逗號分隔的商品系列控點，這些系列不會被用作商品所屬系列。",
+    "related_link_label": "用 [collection] 表示系列名稱。留空則隱藏連結。",
+    "related_collection": "當來源為商品系列，或商品不在任何系列中時使用。",
     "empty_reviews_text": "在此區段新增評價應用程式區塊之前顯示。",
     "based_on_label": "用 [count] 表示評價數量。",
     "product_info_image": "商品沒有營養圖片時使用；否則使用商品的第二張、再第一張圖片。",

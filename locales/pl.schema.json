@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Powiązane produkty",
     "product_info_reviews": "Karta opinii",
     "product_info_nutrition": "Karta wartości odżywczych",
     "product_info_tabs": "Karty informacji o produkcie",
@@ -193,6 +194,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "skip_collections": "Pomijane kolekcje",
     "empty_reviews_text": "Tekst, gdy brak opinii",
     "based_on_label": "Tekst podsumowania ocen",
     "write_review_label": "Etykieta „Napisz opinię”",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "related_product_collection": "Kolekcja produktu",
     "mortar": "Moździerz",
     "sprout": "Kiełek",
     "phone": "Telefon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "skip_collections": "Uchwyty kolekcji oddzielone przecinkami, które nigdy nie są używane jako kolekcja produktu.",
+    "related_link_label": "Użyj [collection] dla nazwy kolekcji. Pozostaw puste, aby ukryć link.",
+    "related_collection": "Używana, gdy źródłem jest Kolekcja lub gdy produkt nie należy do żadnej kolekcji.",
     "empty_reviews_text": "Wyświetlany do czasu dodania bloku aplikacji z opiniami do tej sekcji.",
     "based_on_label": "Użyj [count] w miejscu liczby opinii.",
     "product_info_image": "Używany, gdy produkt nie ma obrazu wartości odżywczych; w przeciwnym razie drugi, potem pierwszy obraz produktu.",

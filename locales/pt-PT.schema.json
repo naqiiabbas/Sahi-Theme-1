@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Produtos relacionados",
     "product_info_reviews": "Separador de avaliações",
     "product_info_nutrition": "Separador de nutrição",
     "product_info_tabs": "Separadores de informação do produto",
@@ -193,6 +194,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "skip_collections": "Coleções a ignorar",
     "empty_reviews_text": "Texto quando não há avaliações",
     "based_on_label": "Texto do resumo de classificações",
     "write_review_label": "Etiqueta \"Escrever uma avaliação\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "related_product_collection": "Coleção do produto",
     "mortar": "Almofariz",
     "sprout": "Rebento",
     "phone": "Telefone",
@@ -1171,6 +1174,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "skip_collections": "Identificadores de coleção separados por vírgulas que nunca são utilizados como coleção do produto.",
+    "related_link_label": "Utilize [collection] para o nome da coleção. Deixe em branco para ocultar a ligação.",
+    "related_collection": "Utilizada quando a origem é Coleção ou quando o produto não está em nenhuma coleção.",
     "empty_reviews_text": "Apresentado até que seja adicionado um bloco de app de avaliações a esta secção.",
     "based_on_label": "Utilize [count] no lugar do número de avaliações.",
     "product_info_image": "Utilizada quando o produto não tem imagem de nutrição; caso contrário, a segunda e depois a primeira imagem do produto.",

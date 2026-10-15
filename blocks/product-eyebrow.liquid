@@ -13,8 +13,14 @@
     when 'type'
       assign text = product_resource.type
     when 'collection'
-      assign first_collection = product_resource.collections | where: 'handle', '!=', 'frontpage' | first
-      assign text = first_collection.title
+      # First collection whose handle isn't in the skip list (for example the home page or best sellers).
+      assign skip_handles = block.settings.skip_collections | remove: ' ' | split: ','
+      for candidate in product_resource.collections
+        unless skip_handles contains candidate.handle
+          assign text = candidate.title
+          break
+        endunless
+      endfor
     else
       assign text = block.settings.custom_text
   endcase
@@ -80,6 +86,14 @@
         }
       ],
       "default": "type"
+    },
+    {
+      "type": "text",
+      "id": "skip_collections",
+      "label": "t:settings.skip_collections",
+      "info": "t:info.skip_collections",
+      "default": "frontpage, best-sellers",
+      "visible_if": "{{ block.settings.source == 'collection' }}"
     },
     {
       "type": "text",

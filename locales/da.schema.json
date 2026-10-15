@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Relaterede produkter",
     "product_info_reviews": "Anmeldelsesfane",
     "product_info_nutrition": "Ernæringsfane",
     "product_info_tabs": "Produktinfo-faner",
@@ -193,6 +194,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "skip_collections": "Kollektioner der springes over",
     "empty_reviews_text": "Tekst når der ikke er anmeldelser",
     "based_on_label": "Tekst til bedømmelsesoversigt",
     "write_review_label": "Etiket for \"Skriv en anmeldelse\"",
@@ -654,6 +656,7 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "related_product_collection": "Produktets kollektion",
     "mortar": "Morter",
     "sprout": "Spire",
     "phone": "Telefon",
@@ -1171,6 +1174,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "skip_collections": "Kollektionshandles adskilt af kommaer, som aldrig bruges som produktets kollektion.",
+    "related_link_label": "Brug [collection] til kollektionens navn. Lad feltet være tomt for at skjule linket.",
+    "related_collection": "Bruges, når kilden er Kollektion, eller når produktet ikke er i nogen kollektion.",
     "empty_reviews_text": "Vises indtil der tilføjes en anmeldelsesapp-blok til sektionen.",
     "based_on_label": "Brug [count] hvor antallet af anmeldelser skal stå.",
     "product_info_image": "Bruges når produktet ikke har et ernæringsbillede; ellers produktets andet og derefter første billede.",

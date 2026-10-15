@@ -14,7 +14,15 @@
   case request.page_type
     when 'product'
       assign current_title = product.title
-      assign first_collection = product.collections | where: 'handle', '!=', 'frontpage' | first
+      # First collection whose handle isn't in the skip list (for example the home page or best sellers).
+      assign first_collection = blank
+      assign skip_handles = section.settings.skip_collections | remove: ' ' | split: ','
+      for candidate in product.collections
+        unless skip_handles contains candidate.handle
+          assign first_collection = candidate
+          break
+        endunless
+      endfor
       if section.settings.product_parent == 'collection' and first_collection != blank
         assign parent_title = first_collection.title
         assign parent_url = first_collection.url
@@ -177,6 +185,13 @@
         }
       ],
       "default": "type"
+    },
+    {
+      "type": "text",
+      "id": "skip_collections",
+      "label": "t:settings.skip_collections",
+      "info": "t:info.skip_collections",
+      "default": "frontpage, best-sellers"
     },
     {
       "type": "select",
