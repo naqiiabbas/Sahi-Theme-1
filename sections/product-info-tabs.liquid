@@ -655,8 +655,17 @@
       color: var(--color-foreground);
     }
 
-    .jdgm-rev-widg__title {
+    /* The section header already shows the title. */
+    .jdgm-rev-widg__title,
+    .jm-review-widget-minimal-header__title {
       display: none;
+    }
+
+    .jm-button--primary {
+      border-color: var(--pit-accent-color) !important;
+      background-color: var(--pit-accent-color) !important;
+      color: var(--color-background) !important;
+      border-radius: var(--style-border-radius-inputs) !important;
     }
 
     .jdgm-star,
@@ -689,6 +698,17 @@
     .jdgm-histogram__bar-content {
       background-color: var(--pit-star-color) !important;
     }
+  }
+
+  /* With the section's own "Write a Review" button shown, hide the app's duplicate buttons from view.
+     They stay in the DOM so assets/product-info-tabs.js can click them to open the app's form. */
+  .product-info-tabs__reviews:has([data-write-review]) :is(.jm-action-buttons__button, .jdgm-write-rev-link) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
   }
 
   @media (prefers-reduced-motion: reduce) {
