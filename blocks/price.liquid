@@ -59,6 +59,55 @@
     show_sale_price_first: block_settings.show_sale_price_first
   %}
 
+  {%- comment -%}
+    Variant prices, pre-formatted by Shopify, so assets/product-price.js can switch the price the moment a
+    variant is picked. The section re-render that follows still replaces it with the server's markup.
+    Variants with volume or unit pricing are left out and keep the server-rendered update.
+  {%- endcomment -%}
+  {%- if template.name == 'product' and product_resource.variants.size > 1 -%}
+    {%- liquid
+      assign use_currency = false
+      if product.handle == product_resource.handle and settings.currency_code_enabled_product_pages
+        assign use_currency = true
+      endif
+    -%}
+    <script
+      type="application/json"
+      ref="variantPrices"
+    >
+      {
+        "saleFirst": {{ block_settings.show_sale_price_first | json }},
+        "labels": {
+          "sale": {{ 'content.price_sale' | t | json }},
+          "regular": {{ 'content.price_regular' | t | json }}
+        },
+        "variants": {
+          {%- for variant in product_resource.variants -%}
+            {%- liquid
+              if use_currency
+                assign variant_price = variant.price | money_with_currency
+                assign variant_compare = variant.compare_at_price | money_with_currency
+              else
+                assign variant_price = variant.price | money
+                assign variant_compare = variant.compare_at_price | money
+              endif
+              assign instant = true
+              if variant.quantity_price_breaks.size > 0 or variant.unit_price
+                assign instant = false
+              endif
+            -%}
+            "{{ variant.id }}": {
+              "instant": {{ instant | json }},
+              "price": {{ variant_price | json }},
+              "compare": {{ variant_compare | json }},
+              "onSale": {% if variant.compare_at_price > variant.price %}true{% else %}false{% endif %}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        }
+      }
+    </script>
+  {%- endif -%}
+
   {% if block_settings.show_tax_info %}
     <div class="tax-note">
       {%- if cart.duties_included and cart.taxes_included -%}

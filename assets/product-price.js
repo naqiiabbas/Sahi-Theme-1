@@ -6,6 +6,15 @@ import { StandardEvents, ProductSelectEvent } from '@shopify/events';
  * @typedef {Object} ProductPriceRefs
  * @property {HTMLElement} priceContainer
  * @property {HTMLElement} [volumePricingNote]
+ * @property {HTMLScriptElement} [variantPrices] - Pre-formatted variant prices for instant updates (product page).
+ */
+
+/**
+ * @typedef {Object} VariantPriceData
+ * @property {boolean} instant - False for variants with volume or unit pricing.
+ * @property {string} price - Formatted price.
+ * @property {string} compare - Formatted compare-at price.
+ * @property {boolean} onSale - Whether the compare-at price is higher than the price.
  */
 
 /**
@@ -23,6 +32,7 @@ class ProductPrice extends Component {
     const closestSection = this.closest('.shopify-section, dialog');
     if (!closestSection) return;
     closestSection.addEventListener(StandardEvents.productSelect, this.#handleProductSelect);
+    closestSection.addEventListener('change', this.#handleVariantInputChange);
   }
 
   disconnectedCallback() {
@@ -30,6 +40,77 @@ class ProductPrice extends Component {
     const closestSection = this.closest('.shopify-section, dialog');
     if (!closestSection) return;
     closestSection.removeEventListener(StandardEvents.productSelect, this.#handleProductSelect);
+    closestSection.removeEventListener('change', this.#handleVariantInputChange);
+  }
+
+  /**
+   * Shows the picked variant's price immediately, from the pre-formatted prices in the page, without waiting
+   * for the section re-render. The re-render then replaces it with the same server-rendered markup.
+   * @param {Event} event - The change event from a variant picker input or select.
+   */
+  #handleVariantInputChange = (event) => {
+    const { target } = event;
+    if (!(target instanceof HTMLInputElement || target instanceof HTMLSelectElement)) return;
+    if (!target.closest('variant-picker') || target.closest('product-card')) return;
+
+    const option = target instanceof HTMLSelectElement ? target.selectedOptions[0] : target;
+    const variantId = option?.dataset.variantId;
+    if (!variantId) return;
+
+    const data = this.#readVariantPrices();
+    const variant = data?.variants?.[variantId];
+    if (!data || !variant?.instant || !variant.price) return;
+
+    this.#renderPrice(variant, data);
+  };
+
+  /** @returns {{ saleFirst: boolean, labels: { sale: string, regular: string }, variants: Record<string, VariantPriceData> } | null} */
+  #readVariantPrices() {
+    const script = this.refs.variantPrices;
+    if (!script?.textContent) return null;
+    try {
+      return JSON.parse(script.textContent);
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Rebuilds the price container with the same structure as snippets/price.liquid's standard branch.
+   * @param {VariantPriceData} variant
+   * @param {{ saleFirst: boolean, labels: { sale: string, regular: string } }} data
+   */
+  #renderPrice(variant, { saleFirst, labels }) {
+    const { priceContainer } = this.refs;
+    if (!priceContainer) return;
+
+    /**
+     * @param {string} className
+     * @param {string} value
+     * @param {string} [label]
+     */
+    const group = (className, value, label) => {
+      const span = document.createElement('span');
+      span.className = className;
+      if (label) {
+        const hidden = document.createElement('span');
+        hidden.className = 'visually-hidden';
+        hidden.textContent = `${label} `;
+        span.append(hidden);
+      }
+      const bdi = document.createElement('bdi');
+      bdi.textContent = value;
+      span.append(bdi);
+      return span;
+    };
+
+    if (variant.onSale) {
+      const sale = group('price-item__group price', variant.price, labels.sale);
+      const regular = group('price-item__group price-item--regular compare-at-price', variant.compare, labels.regular);
+      priceContainer.replaceChildren(...(saleFirst ? [sale, regular] : [regular, sale]));
+    } else {
+      priceContainer.replaceChildren(group('price', variant.price));
+    }
   }
 
   /**

@@ -31,6 +31,19 @@
   {{ block.shopify_attributes }}
 >
   <span ref="label">{{ label | escape }}</span>
+  {%- unless product_resource.has_only_default_variant -%}
+    {%- comment -%} Variant names by ID, so the label can switch the moment a variant is picked. {%- endcomment -%}
+    <script
+      type="application/json"
+      ref="titles"
+    >
+      {
+        {%- for variant in product_resource.variants -%}
+          "{{ variant.id }}": {{ variant.title | json }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      }
+    </script>
+  {%- endunless -%}
 </product-variant-label>
 
 {% stylesheet %}
