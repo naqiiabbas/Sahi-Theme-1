@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Plovoucí tlačítka",
     "contact_details": "Kontaktní formulář s údaji",
     "contact_detail": "Kontaktní údaj",
     "contact_details_column": "Kontaktní údaje",
@@ -202,6 +203,14 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_whatsapp_button": "Zobrazit tlačítko WhatsApp",
+    "whatsapp_number": "Číslo WhatsApp",
+    "whatsapp_message": "Předvyplněná zpráva",
+    "accessible_label": "Popisek pro čtečku obrazovky",
+    "show_floating_cart": "Zobrazit plovoucí košík",
+    "button_size_desktop": "Velikost tlačítka na počítači",
+    "button_size_mobile": "Velikost tlačítka na mobilu",
+    "edge_distance": "Vzdálenost od okraje",
     "custom_icon": "Vlastní ikona",
     "contact_value": "Kontaktní hodnota",
     "contact_value_type": "Propojit hodnotu jako",
@@ -1219,6 +1228,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "whatsapp_number": "Uveďte předvolbu země, např. +923001234567.",
+    "whatsapp_message": "Text, kterým začne chat. Ponechte prázdné, pokud žádný.",
+    "show_floating_cart": "Zobrazí se, když je záhlaví mimo zobrazení. Animace přidání do košíku letí k němu.",
     "custom_icon": "Nahradí ikonu. Použijte malý čtvercový obrázek.",
     "contact_value": "Zobrazí se pod textem, např. e-mailová adresa nebo telefonní číslo.",
     "subject_options": "Jeden předmět na řádek.",

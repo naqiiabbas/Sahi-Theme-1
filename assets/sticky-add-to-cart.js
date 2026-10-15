@@ -1,7 +1,7 @@
 import { Component } from '@theme/component';
 import { ThemeEvents, QuantitySelectorUpdateEvent } from '@theme/events';
 import { morph } from '@theme/morph';
-import { onAnimationEnd } from '@theme/utilities';
+import { onAnimationEnd, getFlyToCartDestination } from '@theme/utilities';
 import { StandardEvents, ProductSelectEvent, CartLinesUpdateEvent, CartErrorEvent } from '@shopify/events';
 
 /**
@@ -177,7 +177,7 @@ class StickyAddToCartComponent extends Component {
     if (!this.#targetAddToCartButton) return;
     this.#targetAddToCartButton.dataset.puppet = 'true';
     this.#targetAddToCartButton.click();
-    const cartIcon = document.querySelector('.header-actions__cart-icon');
+    const cartIcon = getFlyToCartDestination();
 
     if (this.refs.addToCartButton.dataset.added !== 'true') {
       this.refs.addToCartButton.dataset.added = 'true';

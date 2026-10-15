@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "懸浮按鈕",
     "contact_details": "附詳細資訊的聯絡表單",
     "contact_detail": "聯絡資訊",
     "contact_details_column": "聯絡資訊",
@@ -202,6 +203,14 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_whatsapp_button": "顯示 WhatsApp 按鈕",
+    "whatsapp_number": "WhatsApp 號碼",
+    "whatsapp_message": "預填訊息",
+    "accessible_label": "螢幕閱讀器標籤",
+    "show_floating_cart": "顯示懸浮購物車",
+    "button_size_desktop": "桌面版按鈕大小",
+    "button_size_mobile": "行動版按鈕大小",
+    "edge_distance": "與邊緣的距離",
     "custom_icon": "自訂圖示",
     "contact_value": "聯絡資料",
     "contact_value_type": "將資料連結為",
@@ -1219,6 +1228,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "whatsapp_number": "請包含國碼，例如 +923001234567。",
+    "whatsapp_message": "開始聊天時的文字。留空即不使用。",
+    "show_floating_cart": "頁首捲出畫面時顯示。加入購物車的動畫會飛向它。",
     "custom_icon": "取代圖示。請使用小型正方形圖片。",
     "contact_value": "顯示於文字下方，例如電子郵件地址或電話號碼。",
     "subject_options": "每行一個主旨。",

@@ -224,6 +224,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "whatsapp_number": "Include the country code, e.g. +923001234567.",
+    "whatsapp_message": "Text that starts the chat. Leave blank for none.",
+    "show_floating_cart": "Shows while the header is scrolled out of view. Add to cart animations fly to it.",
     "custom_icon": "Replaces the icon. Use a small square image.",
     "contact_value": "Shown under the text, e.g. an email address or phone number.",
     "subject_options": "One subject per line.",
@@ -282,6 +285,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "floating_actions": "Floating buttons",
     "contact_details": "Contact form with details",
     "contact_detail": "Contact detail",
     "contact_details_column": "Contact details",
@@ -824,6 +828,14 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_whatsapp_button": "Show WhatsApp button",
+    "whatsapp_number": "WhatsApp number",
+    "whatsapp_message": "Prefilled message",
+    "accessible_label": "Screen reader label",
+    "show_floating_cart": "Show floating cart",
+    "button_size_desktop": "Button size on desktop",
+    "button_size_mobile": "Button size on mobile",
+    "edge_distance": "Distance from edge",
     "custom_icon": "Custom icon",
     "contact_value": "Contact value",
     "contact_value_type": "Link value as",

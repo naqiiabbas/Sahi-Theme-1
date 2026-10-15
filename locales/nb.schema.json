@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Flytende knapper",
     "contact_details": "Kontaktskjema med detaljer",
     "contact_detail": "Kontaktdetalj",
     "contact_details_column": "Kontaktdetaljer",
@@ -202,6 +203,14 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "show_whatsapp_button": "Vis WhatsApp-knapp",
+    "whatsapp_number": "WhatsApp-nummer",
+    "whatsapp_message": "Forhåndsutfylt melding",
+    "accessible_label": "Etikett for skjermleser",
+    "show_floating_cart": "Vis flytende handlekurv",
+    "button_size_desktop": "Knappestørrelse på datamaskin",
+    "button_size_mobile": "Knappestørrelse på mobil",
+    "edge_distance": "Avstand fra kanten",
     "custom_icon": "Egendefinert ikon",
     "contact_value": "Kontaktverdi",
     "contact_value_type": "Lenk verdien som",
@@ -1219,6 +1228,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "whatsapp_number": "Ta med landskoden, f.eks. +923001234567.",
+    "whatsapp_message": "Tekst som starter chatten. La feltet stå tomt for ingen.",
+    "show_floating_cart": "Vises når toppteksten er rullet ut av syne. Legg i handlekurv-animasjoner flyr dit.",
     "custom_icon": "Erstatter ikonet. Bruk et lite kvadratisk bilde.",
     "contact_value": "Vises under teksten, f.eks. en e-postadresse eller et telefonnummer.",
     "subject_options": "Ett emne per linje.",

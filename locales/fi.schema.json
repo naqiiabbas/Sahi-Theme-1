@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Kelluvat painikkeet",
     "contact_details": "Yhteydenottolomake ja tiedot",
     "contact_detail": "Yhteystieto",
     "contact_details_column": "Yhteystiedot",
@@ -202,6 +203,14 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_whatsapp_button": "Näytä WhatsApp-painike",
+    "whatsapp_number": "WhatsApp-numero",
+    "whatsapp_message": "Valmiiksi täytetty viesti",
+    "accessible_label": "Näytönlukuohjelman nimike",
+    "show_floating_cart": "Näytä kelluva ostoskori",
+    "button_size_desktop": "Painikkeen koko tietokoneella",
+    "button_size_mobile": "Painikkeen koko mobiilissa",
+    "edge_distance": "Etäisyys reunasta",
     "custom_icon": "Mukautettu kuvake",
     "contact_value": "Yhteystiedon arvo",
     "contact_value_type": "Linkitä arvo muodossa",
@@ -1219,6 +1228,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "whatsapp_number": "Sisällytä maatunnus, esim. +923001234567.",
+    "whatsapp_message": "Teksti, jolla keskustelu alkaa. Jätä tyhjäksi, jos ei tekstiä.",
+    "show_floating_cart": "Näytetään, kun ylätunniste on vieritetty pois näkyvistä. Lisää ostoskoriin -animaatiot lentävät siihen.",
     "custom_icon": "Korvaa kuvakkeen. Käytä pientä neliökuvaa.",
     "contact_value": "Näytetään tekstin alla, esim. sähköpostiosoite tai puhelinnumero.",
     "subject_options": "Yksi aihe riviä kohden.",

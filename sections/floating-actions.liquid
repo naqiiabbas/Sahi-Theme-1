@@ -1,0 +1,384 @@
+{% comment %}
+  Section contract.
+  Floating buttons in a bottom corner of every page: a WhatsApp chat link and a cart button. The cart
+  button only shows while the header is scrolled out of view (assets/floating-actions.js); while shown
+  it is also where add-to-cart animations land (getFlyToCartDestination in assets/utilities.js).
+  The cart button opens the cart drawer when the theme uses one, otherwise it links to the cart page.
+  @example
+  <!-- Lives in the footer group; set the WhatsApp number in its settings -->
+{% endcomment %}
+
+{%- liquid
+  assign whatsapp_digits = section.settings.whatsapp_number | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '+'
+  assign show_whatsapp = false
+  if section.settings.show_whatsapp and whatsapp_digits != blank
+    assign show_whatsapp = true
+  endif
+
+  assign whatsapp_url = 'https://wa.me/' | append: whatsapp_digits
+  if section.settings.whatsapp_message != blank
+    # url_encode writes spaces as "+", which WhatsApp can show literally; real plus signs are already %2B.
+    assign encoded_message = section.settings.whatsapp_message | url_encode | replace: '+', '%20'
+    assign whatsapp_url = whatsapp_url | append: '?text=' | append: encoded_message
+  endif
+
+  assign show_cart = false
+  if section.settings.show_cart and template.name != 'cart'
+    assign show_cart = true
+  endif
+-%}
+
+{%- if show_whatsapp or show_cart -%}
+  <script
+    src="{{ 'floating-actions.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+  <script
+    src="{{ 'cart-icon.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <floating-actions
+    class="floating-actions floating-actions--{{ section.settings.position }}"
+    style="
+      --fa-size: {{ section.settings.size_desktop }}px;
+      --fa-size-mobile: {{ section.settings.size_mobile }}px;
+      --fa-offset: {{ section.settings.offset }}px;
+      {% if section.settings.whatsapp_background != blank %}--fa-whatsapp-bg: {{ section.settings.whatsapp_background }};{% endif %}
+      {% if section.settings.whatsapp_icon_color != blank %}--fa-whatsapp-icon: {{ section.settings.whatsapp_icon_color }};{% endif %}
+      {% if section.settings.cart_background != blank %}--fa-cart-bg: {{ section.settings.cart_background }};{% endif %}
+      {% if section.settings.cart_icon_color != blank %}--fa-cart-icon: {{ section.settings.cart_icon_color }};{% endif %}
+    "
+  >
+    {%- if show_cart -%}
+      {%- capture cart_icon -%}
+        <cart-icon class="floating-actions__cart-icon">
+          <span class="svg-wrapper">
+            {{- 'icon-cart.svg' | inline_asset_content -}}
+          </span>
+          {% render 'cart-bubble', limit: 100, text_id: 'floating-cart-bubble-text' %}
+        </cart-icon>
+      {%- endcapture -%}
+
+      {%- if settings.cart_type == 'drawer' -%}
+        <button
+          type="button"
+          class="floating-actions__button floating-actions__button--cart"
+          aria-label="{{ 'accessibility.cart' | t }}"
+          aria-describedby="floating-cart-bubble-text"
+          aria-haspopup="dialog"
+          aria-controls="cart-drawer"
+          data-fly-to-cart-target
+          data-visible="false"
+          ref="cart"
+          inert
+          on:click="#cart-drawer/toggle"
+        >
+          {{ cart_icon }}
+        </button>
+      {%- else -%}
+        <a
+          href="{{ routes.cart_url }}"
+          class="floating-actions__button floating-actions__button--cart"
+          aria-label="{{ 'accessibility.cart' | t }}"
+          aria-describedby="floating-cart-bubble-text"
+          data-fly-to-cart-target
+          data-visible="false"
+          ref="cart"
+          inert
+        >
+          {{ cart_icon }}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_whatsapp -%}
+      <a
+        href="{{ whatsapp_url }}"
+        class="floating-actions__button floating-actions__button--whatsapp"
+        target="_blank"
+        rel="noopener"
+        aria-label="{{ section.settings.whatsapp_label | escape }}"
+      >
+        <svg
+          class="floating-actions__whatsapp-icon"
+          aria-hidden="true"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          {%- render 'icon', icon: 'whatsapp' -%}
+        </svg>
+      </a>
+    {%- endif -%}
+  </floating-actions>
+{%- endif -%}
+
+{% stylesheet %}
+  .floating-actions {
+    --fa-button-size: var(--fa-size-mobile);
+    --fa-gap: 0.625rem;
+
+    position: fixed;
+    inset-block-end: calc(var(--fa-offset) + env(safe-area-inset-bottom, 0px));
+    z-index: var(--layer-sticky, 10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--fa-gap);
+    pointer-events: none;
+    transition: transform var(--animation-speed) var(--animation-easing);
+
+    @media screen and (min-width: 750px) {
+      --fa-button-size: var(--fa-size);
+      --fa-gap: 0.75rem;
+    }
+  }
+
+  .floating-actions--right {
+    inset-inline-end: var(--fa-offset);
+  }
+
+  .floating-actions--left {
+    inset-inline-start: var(--fa-offset);
+  }
+
+  /* Keep clear of the product page's sticky add to cart bar on phones. */
+  @media screen and (max-width: 749px) {
+    body:has(.sticky-add-to-cart__bar[data-stuck='true']) .floating-actions {
+      transform: translateY(calc(-1 * var(--fa-sticky-bar-offset, 5.5rem)));
+    }
+  }
+
+  .floating-actions__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--fa-button-size);
+    height: var(--fa-button-size);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgb(0 0 0 / var(--opacity-20, 0.2));
+    cursor: pointer;
+    text-decoration: none;
+    pointer-events: auto;
+    transition: transform var(--animation-speed) var(--animation-easing),
+      opacity var(--animation-speed) var(--animation-easing), box-shadow var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / var(--opacity-25, 0.25));
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid currentColor;
+      outline-offset: 3px;
+    }
+  }
+
+  .floating-actions__button--whatsapp {
+    background-color: var(--fa-whatsapp-bg, #25d366);
+    color: var(--fa-whatsapp-icon, #fff);
+  }
+
+  .floating-actions__whatsapp-icon {
+    width: 55%;
+    height: 55%;
+  }
+
+  .floating-actions__button--cart {
+    background-color: var(--fa-cart-bg, var(--color-foreground));
+    color: var(--fa-cart-icon, var(--color-background));
+
+    /* Hidden until the header scrolls away; inert while hidden so it can't take focus. */
+    &[data-visible='false'] {
+      opacity: 0;
+      transform: translateY(0.75rem) scale(0.8);
+      pointer-events: none;
+    }
+  }
+
+  .floating-actions__cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .svg-wrapper {
+      display: flex;
+      width: 46%;
+      height: 46%;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .cart-bubble {
+      --cart-bubble-background: var(--fa-cart-icon, var(--color-background));
+      --cart-bubble-text: var(--fa-cart-bg, var(--color-foreground));
+
+      position: absolute;
+      inset-block-start: -0.15rem;
+      inset-inline-end: -0.15rem;
+      width: 1.15rem;
+      font-size: 0.6875rem;
+      box-shadow: 0 0 0 2px var(--fa-cart-bg, var(--color-foreground));
+      border-radius: 50%;
+
+      @media screen and (min-width: 750px) {
+        width: 1.35rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-actions,
+    .floating-actions__button {
+      transition: none;
+    }
+
+    .floating-actions__button:hover,
+    .floating-actions__button--cart[data-visible='false'] {
+      transform: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.floating_actions",
+  "class": "floating-actions-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:options.whatsapp"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_whatsapp",
+      "label": "t:settings.show_whatsapp_button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "t:settings.whatsapp_number",
+      "info": "t:info.whatsapp_number",
+      "default": "+923178434399",
+      "visible_if": "{{ section.settings.show_whatsapp }}"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_message",
+      "label": "t:settings.whatsapp_message",
+      "info": "t:info.whatsapp_message",
+      "default": "Hi! I have a question about your products.",
+      "visible_if": "{{ section.settings.show_whatsapp }}"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_label",
+      "label": "t:settings.accessible_label",
+      "default": "Chat with us on WhatsApp",
+      "visible_if": "{{ section.settings.show_whatsapp }}"
+    },
+    {
+      "type": "color",
+      "id": "whatsapp_background",
+      "label": "t:settings.background_color",
+      "default": "#25D366",
+      "visible_if": "{{ section.settings.show_whatsapp }}"
+    },
+    {
+      "type": "color",
+      "id": "whatsapp_icon_color",
+      "label": "t:settings.icon_color",
+      "default": "#FFFFFF",
+      "visible_if": "{{ section.settings.show_whatsapp }}"
+    },
+    {
+      "type": "header",
+      "content": "t:names.cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "t:settings.show_floating_cart",
+      "info": "t:info.show_floating_cart",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "cart_background",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ section.settings.show_cart }}"
+    },
+    {
+      "type": "color",
+      "id": "cart_icon_color",
+      "label": "t:settings.icon_color",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ section.settings.show_cart }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "t:settings.position",
+      "options": [
+        { "value": "right", "label": "t:options.right" },
+        { "value": "left", "label": "t:options.left" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "size_desktop",
+      "label": "t:settings.button_size_desktop",
+      "min": 44,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "size_mobile",
+      "label": "t:settings.button_size_mobile",
+      "min": 36,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "offset",
+      "label": "t:settings.edge_distance",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.floating_actions"
+    }
+  ]
+}
+{% endschema %}

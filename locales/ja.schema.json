@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "フローティングボタン",
     "contact_details": "詳細付きお問い合わせフォーム",
     "contact_detail": "連絡先の詳細",
     "contact_details_column": "連絡先の詳細",
@@ -202,6 +203,14 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "show_whatsapp_button": "WhatsAppボタンを表示",
+    "whatsapp_number": "WhatsApp番号",
+    "whatsapp_message": "入力済みメッセージ",
+    "accessible_label": "スクリーンリーダー用ラベル",
+    "show_floating_cart": "フローティングカートを表示",
+    "button_size_desktop": "デスクトップでのボタンサイズ",
+    "button_size_mobile": "モバイルでのボタンサイズ",
+    "edge_distance": "端からの距離",
     "custom_icon": "カスタムアイコン",
     "contact_value": "連絡先の値",
     "contact_value_type": "値のリンク形式",
@@ -1219,6 +1228,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "whatsapp_number": "国番号を含めてください（例: +923001234567）。",
+    "whatsapp_message": "チャットの最初に入るテキスト。不要な場合は空欄にします。",
+    "show_floating_cart": "ヘッダーが画面外にあるときに表示されます。カートに追加するアニメーションはここに向かいます。",
     "custom_icon": "アイコンを置き換えます。小さな正方形の画像を使用してください。",
     "contact_value": "テキストの下に表示されます（例: メールアドレスや電話番号）。",
     "subject_options": "1行に1件名。",

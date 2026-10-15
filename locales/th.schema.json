@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "ปุ่มลอย",
     "contact_details": "แบบฟอร์มติดต่อพร้อมรายละเอียด",
     "contact_detail": "รายละเอียดการติดต่อ",
     "contact_details_column": "รายละเอียดการติดต่อ",
@@ -202,6 +203,14 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_whatsapp_button": "แสดงปุ่ม WhatsApp",
+    "whatsapp_number": "หมายเลข WhatsApp",
+    "whatsapp_message": "ข้อความที่กรอกไว้ล่วงหน้า",
+    "accessible_label": "ป้ายกำกับสำหรับโปรแกรมอ่านหน้าจอ",
+    "show_floating_cart": "แสดงตะกร้าลอย",
+    "button_size_desktop": "ขนาดปุ่มบนเดสก์ท็อป",
+    "button_size_mobile": "ขนาดปุ่มบนมือถือ",
+    "edge_distance": "ระยะห่างจากขอบ",
     "custom_icon": "ไอคอนที่กำหนดเอง",
     "contact_value": "ข้อมูลติดต่อ",
     "contact_value_type": "ลิงก์ข้อมูลเป็น",
@@ -1219,6 +1228,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "whatsapp_number": "ใส่รหัสประเทศ เช่น +923001234567",
+    "whatsapp_message": "ข้อความเริ่มต้นแชท เว้นว่างไว้หากไม่ต้องการ",
+    "show_floating_cart": "แสดงเมื่อส่วนหัวเลื่อนพ้นจากหน้าจอ แอนิเมชันเพิ่มลงตะกร้าจะบินไปที่นี่",
     "custom_icon": "ใช้แทนไอคอน ใช้รูปภาพสี่เหลี่ยมจัตุรัสขนาดเล็ก",
     "contact_value": "แสดงใต้ข้อความ เช่น อีเมลหรือหมายเลขโทรศัพท์",
     "subject_options": "หนึ่งหัวข้อต่อบรรทัด",

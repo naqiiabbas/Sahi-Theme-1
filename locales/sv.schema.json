@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Flytande knappar",
     "contact_details": "Kontaktformulär med uppgifter",
     "contact_detail": "Kontaktuppgift",
     "contact_details_column": "Kontaktuppgifter",
@@ -202,6 +203,14 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "show_whatsapp_button": "Visa WhatsApp-knapp",
+    "whatsapp_number": "WhatsApp-nummer",
+    "whatsapp_message": "Förifyllt meddelande",
+    "accessible_label": "Etikett för skärmläsare",
+    "show_floating_cart": "Visa flytande varukorg",
+    "button_size_desktop": "Knappstorlek på dator",
+    "button_size_mobile": "Knappstorlek på mobil",
+    "edge_distance": "Avstånd från kanten",
     "custom_icon": "Anpassad ikon",
     "contact_value": "Kontaktvärde",
     "contact_value_type": "Länka värdet som",
@@ -1219,6 +1228,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "whatsapp_number": "Ange landsnumret, t.ex. +923001234567.",
+    "whatsapp_message": "Text som startar chatten. Lämna tomt för ingen.",
+    "show_floating_cart": "Visas när sidhuvudet är utanför vyn. Lägg i varukorg-animationer flyger dit.",
     "custom_icon": "Ersätter ikonen. Använd en liten kvadratisk bild.",
     "contact_value": "Visas under texten, t.ex. en e-postadress eller ett telefonnummer.",
     "subject_options": "Ett ämne per rad.",

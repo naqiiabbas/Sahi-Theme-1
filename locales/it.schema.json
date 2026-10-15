@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Pulsanti flottanti",
     "contact_details": "Modulo di contatto con dettagli",
     "contact_detail": "Dettaglio di contatto",
     "contact_details_column": "Dettagli di contatto",
@@ -202,6 +203,14 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_whatsapp_button": "Mostra pulsante WhatsApp",
+    "whatsapp_number": "Numero WhatsApp",
+    "whatsapp_message": "Messaggio precompilato",
+    "accessible_label": "Etichetta per screen reader",
+    "show_floating_cart": "Mostra carrello flottante",
+    "button_size_desktop": "Dimensione pulsante su desktop",
+    "button_size_mobile": "Dimensione pulsante su mobile",
+    "edge_distance": "Distanza dal bordo",
     "custom_icon": "Icona personalizzata",
     "contact_value": "Valore di contatto",
     "contact_value_type": "Collega il valore come",
@@ -1219,6 +1228,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "whatsapp_number": "Includi il prefisso internazionale, ad es. +923001234567.",
+    "whatsapp_message": "Testo con cui inizia la chat. Lascia vuoto per nessuno.",
+    "show_floating_cart": "Compare quando l’header non è visibile. Le animazioni di aggiunta al carrello volano verso di esso.",
     "custom_icon": "Sostituisce l’icona. Usa una piccola immagine quadrata.",
     "contact_value": "Mostrato sotto il testo, ad es. un indirizzo email o un numero di telefono.",
     "subject_options": "Un oggetto per riga.",

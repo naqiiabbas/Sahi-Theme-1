@@ -1,5 +1,6 @@
 {%- doc -%}
   @param [limit] - {number}
+  @param [text_id] - {string} ID for the count text, for when a second bubble shares the page. Defaults to cart-bubble-text.
 
   The maximum number of items to display. Anything above shows as "99+".
 
@@ -24,7 +25,7 @@
   <span class="cart-bubble__background"></span>
   <span
     ref="cartBubbleText"
-    id="cart-bubble-text"
+    id="{{ text_id | default: 'cart-bubble-text' }}"
     class="cart-bubble__text"
   >
     <span

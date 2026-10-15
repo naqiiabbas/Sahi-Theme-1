@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Schwebende Schaltflächen",
     "contact_details": "Kontaktformular mit Details",
     "contact_detail": "Kontaktdetail",
     "contact_details_column": "Kontaktdetails",
@@ -202,6 +203,14 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_whatsapp_button": "WhatsApp-Schaltfläche anzeigen",
+    "whatsapp_number": "WhatsApp-Nummer",
+    "whatsapp_message": "Vorausgefüllte Nachricht",
+    "accessible_label": "Bezeichnung für Screenreader",
+    "show_floating_cart": "Schwebenden Warenkorb anzeigen",
+    "button_size_desktop": "Schaltflächengröße auf dem Desktop",
+    "button_size_mobile": "Schaltflächengröße auf Mobilgeräten",
+    "edge_distance": "Abstand zum Rand",
     "custom_icon": "Eigenes Symbol",
     "contact_value": "Kontaktwert",
     "contact_value_type": "Wert verlinken als",
@@ -1219,6 +1228,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "whatsapp_number": "Mit Ländervorwahl, z. B. +923001234567.",
+    "whatsapp_message": "Text, mit dem der Chat beginnt. Leer lassen für keinen.",
+    "show_floating_cart": "Wird angezeigt, solange der Header nicht sichtbar ist. „In den Warenkorb“-Animationen fliegen dorthin.",
     "custom_icon": "Ersetzt das Symbol. Verwende ein kleines quadratisches Bild.",
     "contact_value": "Wird unter dem Text angezeigt, z. B. eine E-Mail-Adresse oder Telefonnummer.",
     "subject_options": "Ein Betreff pro Zeile.",

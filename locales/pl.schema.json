@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Pływające przyciski",
     "contact_details": "Formularz kontaktowy z danymi",
     "contact_detail": "Dane kontaktowe",
     "contact_details_column": "Dane kontaktowe",
@@ -202,6 +203,14 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "show_whatsapp_button": "Pokaż przycisk WhatsApp",
+    "whatsapp_number": "Numer WhatsApp",
+    "whatsapp_message": "Wstępnie wypełniona wiadomość",
+    "accessible_label": "Etykieta dla czytnika ekranu",
+    "show_floating_cart": "Pokaż pływający koszyk",
+    "button_size_desktop": "Rozmiar przycisku na komputerze",
+    "button_size_mobile": "Rozmiar przycisku na telefonie",
+    "edge_distance": "Odległość od krawędzi",
     "custom_icon": "Własna ikona",
     "contact_value": "Wartość kontaktowa",
     "contact_value_type": "Połącz wartość jako",
@@ -1219,6 +1228,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "whatsapp_number": "Dodaj numer kierunkowy kraju, np. +923001234567.",
+    "whatsapp_message": "Tekst rozpoczynający czat. Pozostaw puste, aby go nie było.",
+    "show_floating_cart": "Wyświetla się, gdy nagłówek jest poza widokiem. Animacje dodania do koszyka lecą do niego.",
     "custom_icon": "Zastępuje ikonę. Użyj małego kwadratowego obrazu.",
     "contact_value": "Wyświetlane pod tekstem, np. adres e-mail lub numer telefonu.",
     "subject_options": "Jeden temat w wierszu.",

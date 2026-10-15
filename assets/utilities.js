@@ -888,6 +888,18 @@ function updateHeaderHeights() {
   }
 }
 
+/**
+ * The cart icon that fly-to-cart animations should land on: the floating cart button while it is shown
+ * (sections/floating-actions.liquid marks it data-visible="true"), otherwise the header cart icon.
+ * @returns {Element | null}
+ */
+export function getFlyToCartDestination() {
+  return (
+    document.querySelector('[data-fly-to-cart-target][data-visible="true"]') ??
+    document.querySelector('.header-actions__cart-icon')
+  );
+}
+
 export function updateAllHeaderCustomProperties() {
   updateHeaderHeights();
   updateTransparentHeaderOffset();

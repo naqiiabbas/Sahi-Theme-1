@@ -211,6 +211,12 @@
     cursor: not-allowed;
   }
 
+  /* quick-add-styles.liquid draws the "added" tick in the page foreground; on the accent button it must
+     match the cart icon instead, or it disappears. */
+  .category-product-card button.quick-add__button[data-added='true'] .add-to-cart__added {
+    color: var(--cpt-active-icon-color);
+  }
+
   .category-product-card button.quick-add__button > .add-to-cart-icon {
     width: 1.25rem;
     height: 1.25rem;

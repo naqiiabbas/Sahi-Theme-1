@@ -216,6 +216,9 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "whatsapp_number": "כללו את קידומת המדינה, למשל ‎+923001234567.",
+    "whatsapp_message": "טקסט שפותח את הצ׳אט. השאירו ריק ללא טקסט.",
+    "show_floating_cart": "מוצגת כשהכותרת מחוץ לתצוגה. אנימציות ההוספה לעגלה עפות אליה.",
     "custom_icon": "מחליף את הסמל. השתמשו בתמונה ריבועית קטנה.",
     "contact_value": "מוצג מתחת לטקסט, למשל כתובת אימייל או מספר טלפון.",
     "subject_options": "נושא אחד בכל שורה.",
@@ -274,6 +277,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "floating_actions": "כפתורים צפים",
     "contact_details": "טופס יצירת קשר עם פרטים",
     "contact_detail": "פרט קשר",
     "contact_details_column": "פרטי קשר",
@@ -766,6 +770,14 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "show_whatsapp_button": "הצגת כפתור WhatsApp",
+    "whatsapp_number": "מספר WhatsApp",
+    "whatsapp_message": "הודעה ממולאת מראש",
+    "accessible_label": "תווית לקורא מסך",
+    "show_floating_cart": "הצגת עגלה צפה",
+    "button_size_desktop": "גודל הכפתור במחשב",
+    "button_size_mobile": "גודל הכפתור בנייד",
+    "edge_distance": "מרחק מהקצה",
     "custom_icon": "סמל מותאם אישית",
     "contact_value": "ערך ליצירת קשר",
     "contact_value_type": "קישור הערך כ",

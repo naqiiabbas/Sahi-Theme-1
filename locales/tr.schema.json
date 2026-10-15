@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Kayan düğmeler",
     "contact_details": "Ayrıntılı iletişim formu",
     "contact_detail": "İletişim bilgisi",
     "contact_details_column": "İletişim bilgileri",
@@ -202,6 +203,14 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_whatsapp_button": "WhatsApp düğmesini göster",
+    "whatsapp_number": "WhatsApp numarası",
+    "whatsapp_message": "Önceden doldurulmuş mesaj",
+    "accessible_label": "Ekran okuyucu etiketi",
+    "show_floating_cart": "Kayan sepeti göster",
+    "button_size_desktop": "Masaüstünde düğme boyutu",
+    "button_size_mobile": "Mobilde düğme boyutu",
+    "edge_distance": "Kenardan uzaklık",
     "custom_icon": "Özel simge",
     "contact_value": "İletişim değeri",
     "contact_value_type": "Değeri şu şekilde bağla",
@@ -1219,6 +1228,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "whatsapp_number": "Ülke kodunu ekleyin, ör. +923001234567.",
+    "whatsapp_message": "Sohbeti başlatan metin. Yoksa boş bırakın.",
+    "show_floating_cart": "Üst bilgi görünümden çıktığında gösterilir. Sepete ekleme animasyonları ona uçar.",
     "custom_icon": "Simgenin yerini alır. Küçük kare bir görsel kullanın.",
     "contact_value": "Metnin altında gösterilir, ör. e-posta adresi veya telefon numarası.",
     "subject_options": "Her satıra bir konu.",

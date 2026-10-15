@@ -1,5 +1,12 @@
 import { Component } from '@theme/component';
-import { fetchConfig, preloadImage, onAnimationEnd, yieldToMainThread, parseIntOrDefault } from '@theme/utilities';
+import {
+  fetchConfig,
+  preloadImage,
+  onAnimationEnd,
+  yieldToMainThread,
+  parseIntOrDefault,
+  getFlyToCartDestination,
+} from '@theme/utilities';
 import { cartPerformance } from '@theme/performance';
 import { morph } from '@theme/morph';
 import { CartLinesUpdateEvent, CartErrorEvent, ProductSelectEvent, StandardEvents } from '@shopify/events';
@@ -104,7 +111,7 @@ export class AddToCartComponent extends Component {
    */
   #animateFlyToCart() {
     const { addToCartButton } = this.refs;
-    const cartIcon = document.querySelector('.header-actions__cart-icon');
+    const cartIcon = getFlyToCartDestination();
 
     const image = this.dataset.productVariantMedia;
 

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Boutons flottants",
     "contact_details": "Formulaire de contact avec coordonnées",
     "contact_detail": "Coordonnée",
     "contact_details_column": "Coordonnées",
@@ -202,6 +203,14 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "show_whatsapp_button": "Afficher le bouton WhatsApp",
+    "whatsapp_number": "Numéro WhatsApp",
+    "whatsapp_message": "Message prérempli",
+    "accessible_label": "Libellé pour lecteur d’écran",
+    "show_floating_cart": "Afficher le panier flottant",
+    "button_size_desktop": "Taille du bouton sur ordinateur",
+    "button_size_mobile": "Taille du bouton sur mobile",
+    "edge_distance": "Distance du bord",
     "custom_icon": "Icône personnalisée",
     "contact_value": "Valeur de contact",
     "contact_value_type": "Lier la valeur comme",
@@ -1219,6 +1228,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "whatsapp_number": "Incluez l’indicatif du pays, par ex. +923001234567.",
+    "whatsapp_message": "Texte qui démarre la discussion. Laissez vide pour aucun.",
+    "show_floating_cart": "S’affiche quand l’en-tête n’est plus visible. Les animations d’ajout au panier s’y dirigent.",
     "custom_icon": "Remplace l’icône. Utilisez une petite image carrée.",
     "contact_value": "Affiché sous le texte, par ex. une adresse e-mail ou un numéro de téléphone.",
     "subject_options": "Un objet par ligne.",

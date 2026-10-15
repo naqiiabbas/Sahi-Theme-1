@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Zwevende knoppen",
     "contact_details": "Contactformulier met gegevens",
     "contact_detail": "Contactgegeven",
     "contact_details_column": "Contactgegevens",
@@ -202,6 +203,14 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_whatsapp_button": "WhatsApp-knop weergeven",
+    "whatsapp_number": "WhatsApp-nummer",
+    "whatsapp_message": "Vooraf ingevuld bericht",
+    "accessible_label": "Label voor schermlezers",
+    "show_floating_cart": "Zwevende winkelwagen weergeven",
+    "button_size_desktop": "Knopgrootte op desktop",
+    "button_size_mobile": "Knopgrootte op mobiel",
+    "edge_distance": "Afstand tot de rand",
     "custom_icon": "Aangepast pictogram",
     "contact_value": "Contactwaarde",
     "contact_value_type": "Waarde koppelen als",
@@ -1219,6 +1228,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "whatsapp_number": "Voeg de landcode toe, bijv. +923001234567.",
+    "whatsapp_message": "Tekst waarmee de chat begint. Laat leeg voor geen.",
+    "show_floating_cart": "Wordt getoond als de header niet in beeld is. Toevoegen aan winkelwagen-animaties vliegen ernaartoe.",
     "custom_icon": "Vervangt het pictogram. Gebruik een kleine vierkante afbeelding.",
     "contact_value": "Wordt onder de tekst weergegeven, bijv. een e-mailadres of telefoonnummer.",
     "subject_options": "Eén onderwerp per regel.",

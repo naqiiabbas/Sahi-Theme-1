@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "悬浮按钮",
     "contact_details": "带详情的联系表单",
     "contact_detail": "联系方式",
     "contact_details_column": "联系方式",
@@ -202,6 +203,14 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_whatsapp_button": "显示 WhatsApp 按钮",
+    "whatsapp_number": "WhatsApp 号码",
+    "whatsapp_message": "预填消息",
+    "accessible_label": "屏幕阅读器标签",
+    "show_floating_cart": "显示悬浮购物车",
+    "button_size_desktop": "桌面端按钮尺寸",
+    "button_size_mobile": "移动端按钮尺寸",
+    "edge_distance": "与边缘的距离",
     "custom_icon": "自定义图标",
     "contact_value": "联系信息",
     "contact_value_type": "将信息链接为",
@@ -1219,6 +1228,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "whatsapp_number": "请包含国家/地区代码，例如 +923001234567。",
+    "whatsapp_message": "开始聊天时的文字。留空则不使用。",
+    "show_floating_cart": "页眉滚出视图时显示。加入购物车的动画会飞向它。",
     "custom_icon": "替换图标。请使用小尺寸方形图片。",
     "contact_value": "显示在文字下方，例如电子邮件地址或电话号码。",
     "subject_options": "每行一个主题。",

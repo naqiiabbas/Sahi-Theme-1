@@ -95,9 +95,28 @@
         "padding-block-start": 64,
         "padding-block-end": 24
       }
+    },
+    "floating_actions": {
+      "type": "floating-actions",
+      "settings": {
+        "show_whatsapp": true,
+        "whatsapp_number": "+923178434399",
+        "whatsapp_message": "Hi! I have a question about your products.",
+        "whatsapp_label": "Chat with us on WhatsApp",
+        "whatsapp_background": "#25D366",
+        "whatsapp_icon_color": "#FFFFFF",
+        "show_cart": true,
+        "cart_background": "{{ settings.color_palette.color2 }}",
+        "cart_icon_color": "{{ settings.color_palette.background }}",
+        "position": "right",
+        "size_desktop": 56,
+        "size_mobile": 44,
+        "offset": 16
+      }
     }
   },
   "order": [
-    "brand_footer"
+    "brand_footer",
+    "floating_actions"
   ]
 }

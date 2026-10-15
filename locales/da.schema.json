@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "floating_actions": "Flydende knapper",
     "contact_details": "Kontaktformular med oplysninger",
     "contact_detail": "Kontaktoplysning",
     "contact_details_column": "Kontaktoplysninger",
@@ -202,6 +203,14 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_whatsapp_button": "Vis WhatsApp-knap",
+    "whatsapp_number": "WhatsApp-nummer",
+    "whatsapp_message": "Forudfyldt besked",
+    "accessible_label": "Etiket til skærmlæser",
+    "show_floating_cart": "Vis flydende kurv",
+    "button_size_desktop": "Knapstørrelse på computer",
+    "button_size_mobile": "Knapstørrelse på mobil",
+    "edge_distance": "Afstand fra kanten",
     "custom_icon": "Brugerdefineret ikon",
     "contact_value": "Kontaktværdi",
     "contact_value_type": "Link værdien som",
@@ -1219,6 +1228,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "whatsapp_number": "Medtag landekoden, f.eks. +923001234567.",
+    "whatsapp_message": "Tekst, der starter chatten. Lad feltet være tomt for ingen.",
+    "show_floating_cart": "Vises, når headeren er rullet ud af syne. Læg i kurv-animationer flyver hen til den.",
     "custom_icon": "Erstatter ikonet. Brug et lille kvadratisk billede.",
     "contact_value": "Vises under teksten, f.eks. en e-mailadresse eller et telefonnummer.",
     "subject_options": "Ét emne pr. linje.",
