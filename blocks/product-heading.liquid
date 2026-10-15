@@ -1,0 +1,106 @@
+{%- doc -%}
+  Renders the product title as the page heading (h1) with its own font, size, and color.
+  Settings are read from block.settings.
+
+  @example
+  {% content_for 'block', type: 'product-heading', id: 'product-heading', closest.product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign product_resource = closest.product
+  assign heading_font = block.settings.font
+  assign tag = block.settings.tag | default: 'h1'
+-%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ heading_font | font_face: font_display: 'swap' }}
+
+  .product-heading-{{ block.id }} {
+    --product-heading-font: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+    --product-heading-weight: {{ heading_font.weight }};
+  }
+{% endstyle %}
+
+<{{ tag }}
+  class="product-heading product-heading-{{ block.id }}"
+  style="--product-heading-size: {{ block.settings.size }}px;{% if block.settings.color != blank %} --product-heading-color: {{ block.settings.color }};{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {{- product_resource.title | escape -}}
+</{{ tag }}>
+
+{% stylesheet %}
+  /* !important and the extra class beat the global heading font override in theme-styles-variables.liquid,
+     so the block's font setting applies. */
+  .product-heading.product-heading {
+    font-family: var(--product-heading-font) !important;
+  }
+
+  .product-heading {
+    margin: 0;
+    font-weight: var(--product-heading-weight);
+    font-size: calc(var(--product-heading-size) * 0.75);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--product-heading-color, var(--color-foreground));
+    overflow-wrap: break-word;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--product-heading-size);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_heading",
+  "tag": null,
+  "settings": [
+    {
+      "type": "font_picker",
+      "id": "font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "range",
+      "id": "size",
+      "label": "t:settings.size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "tag",
+      "label": "t:settings.heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings.color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_heading",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

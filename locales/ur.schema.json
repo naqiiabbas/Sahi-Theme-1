@@ -215,6 +215,9 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "product_summary": "اگر custom.short_description میٹا فیلڈ موجود ہو تو وہ دکھاتا ہے، ورنہ پروڈکٹ کی تفصیل کا پہلا پیراگراف۔",
+    "product_eyebrow_text": "جب منتخب ماخذ خالی ہو یا ماخذ حسب ضرورت ہو تب استعمال ہوتا ہے۔",
+    "breadcrumb_nav_label": "نظر نہیں آتا۔ اسکرین ریڈرز اسے بریڈکرمب نیویگیشن کے لیے پڑھتے ہیں۔",
     "spotlight_icon_image": "بلٹ اِن آئیکن کی جگہ لیتا ہے۔ شفاف PNG یا SVG استعمال کریں؛ یہ سیکشن کے متن کا رنگ لیتا ہے۔",
     "spotlight_products_link": "منتخب کلیکشن سے لنک کرنے کے لیے خالی چھوڑ دیں۔",
     "smooth_scroll": "ماؤس اور ٹریک پیڈ اسکرولنگ پر لاگو ہوتا ہے۔ کم حرکت پسند کرنے والے وزٹرز اور ٹچ اسکرینز پر بند رہتا ہے۔",
@@ -255,6 +258,14 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "product_trust_badge": "اعتماد کا بیج",
+    "product_trust_badges": "اعتماد کے بیجز",
+    "product_features": "پروڈکٹ کی خصوصیات",
+    "product_summary": "پروڈکٹ کا خلاصہ",
+    "product_variant_label": "منتخب ویریئنٹ",
+    "product_heading": "پروڈکٹ کا عنوان",
+    "product_eyebrow": "پروڈکٹ کا تمہیدی متن",
+    "breadcrumbs": "بریڈکرمبز",
     "collection_spotlight": "نمایاں کلیکشن",
     "footer_perk": "سہولت",
     "footer_products": "پروڈکٹ لنکس",
@@ -428,6 +439,9 @@
     "comparison_slider": "موازنہ کرنے والا سلائیڈر"
   },
   "options": {
+    "phone": "فون",
+    "shield": "ڈھال",
+    "product_type": "پروڈکٹ کی قسم",
     "molecule": "مالیکیول",
     "flask": "فلاسک",
     "gift": "تحفہ",
@@ -715,6 +729,12 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "max_words": "زیادہ سے زیادہ الفاظ",
+    "heading_tag": "عنوان ٹیگ",
+    "product_eyebrow_source": "ماخذ",
+    "breadcrumb_nav_label": "اسکرین ریڈر لیبل",
+    "breadcrumb_collections_label": "کلیکشنز کا لیبل",
+    "breadcrumb_product_parent": "پروڈکٹ کا پیرنٹ لنک",
     "title_accent_color": "عنوان کا نمایاں رنگ",
     "show_products": "پروڈکٹس دکھائیں",
     "accent_new_line": "ترچھا متن نئی سطر پر رکھیں",

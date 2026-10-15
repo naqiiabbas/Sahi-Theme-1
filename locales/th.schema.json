@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "ตราความน่าเชื่อถือ",
+    "product_trust_badges": "ตราความน่าเชื่อถือ",
+    "product_features": "คุณสมบัติสินค้า",
+    "product_summary": "สรุปสินค้า",
+    "product_variant_label": "ตัวเลือกที่เลือก",
+    "product_heading": "หัวข้อสินค้า",
+    "product_eyebrow": "ข้อความนำของสินค้า",
+    "breadcrumbs": "เส้นทางนำทาง",
     "collection_spotlight": "คอลเลกชันเด่น",
     "footer_perk": "สิทธิพิเศษ",
     "footer_products": "ลิงก์สินค้า",
@@ -182,6 +190,12 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "max_words": "จำนวนคำสูงสุด",
+    "heading_tag": "แท็กหัวข้อ",
+    "product_eyebrow_source": "แหล่งที่มา",
+    "breadcrumb_nav_label": "ป้ายกำกับสำหรับโปรแกรมอ่านหน้าจอ",
+    "breadcrumb_collections_label": "ป้ายกำกับคอลเลกชัน",
+    "breadcrumb_product_parent": "ลิงก์หลักของสินค้า",
     "title_accent_color": "สีเน้นของหัวข้อ",
     "show_products": "แสดงสินค้า",
     "accent_new_line": "ขึ้นบรรทัดใหม่สำหรับข้อความตัวเอียง",
@@ -630,6 +644,9 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "phone": "โทรศัพท์",
+    "shield": "โล่",
+    "product_type": "ประเภทสินค้า",
     "molecule": "โมเลกุล",
     "flask": "ขวดทดลอง",
     "gift": "ของขวัญ",
@@ -1142,6 +1159,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "product_summary": "แสดงเมตาฟิลด์ custom.short_description หากตั้งค่าไว้ หากไม่มีจะแสดงย่อหน้าแรกของคำอธิบายสินค้า",
+    "product_eyebrow_text": "ใช้เมื่อแหล่งที่มาที่เลือกว่างหรือเป็นแบบกำหนดเอง",
+    "breadcrumb_nav_label": "ไม่แสดง โปรแกรมอ่านหน้าจอจะอ่านสำหรับเส้นทางนำทาง",
     "spotlight_icon_image": "แทนที่ไอคอนในตัว ใช้ไฟล์ PNG หรือ SVG แบบโปร่งใส ไอคอนจะใช้สีข้อความของส่วน",
     "spotlight_products_link": "เว้นว่างไว้เพื่อลิงก์ไปยังคอลเลกชันที่เลือก",
     "smooth_scroll": "ใช้กับการเลื่อนด้วยเมาส์และทัชแพด ปิดสำหรับผู้เข้าชมที่ต้องการลดการเคลื่อนไหวและบนหน้าจอสัมผัส",

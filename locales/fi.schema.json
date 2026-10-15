@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Luottamusmerkki",
+    "product_trust_badges": "Luottamusmerkit",
+    "product_features": "Tuotteen ominaisuudet",
+    "product_summary": "Tuotteen tiivistelmä",
+    "product_variant_label": "Valittu versio",
+    "product_heading": "Tuotteen otsikko",
+    "product_eyebrow": "Tuotteen yläotsikko",
+    "breadcrumbs": "Murupolku",
     "collection_spotlight": "Kokoelma esittelyssä",
     "footer_perk": "Etu",
     "footer_products": "Tuotelinkit",
@@ -182,6 +190,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "max_words": "Sanojen enimmäismäärä",
+    "heading_tag": "Otsikkotunniste",
+    "product_eyebrow_source": "Lähde",
+    "breadcrumb_nav_label": "Näytönlukijan nimi",
+    "breadcrumb_collections_label": "Kokoelmien nimi",
+    "breadcrumb_product_parent": "Tuotteen ylätason linkki",
     "title_accent_color": "Otsikon korostusväri",
     "show_products": "Näytä tuotteet",
     "accent_new_line": "Kursiivi omalle rivilleen",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "phone": "Puhelin",
+    "shield": "Kilpi",
+    "product_type": "Tuotetyyppi",
     "molecule": "Molekyyli",
     "flask": "Kolvi",
     "gift": "Lahja",
@@ -1142,6 +1159,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "product_summary": "Näyttää metakentän custom.short_description, jos se on asetettu, muuten tuotekuvauksen ensimmäisen kappaleen.",
+    "product_eyebrow_text": "Käytetään, kun valittu lähde on tyhjä tai lähde on Mukautettu.",
+    "breadcrumb_nav_label": "Ei näytetä. Näytönlukijat kertovat sen murupolkunavigoinnille.",
     "spotlight_icon_image": "Korvaa sisäänrakennetun kuvakkeen. Käytä läpinäkyvää PNG- tai SVG-tiedostoa; se saa osion tekstin värin.",
     "spotlight_products_link": "Jätä tyhjäksi, niin linkki vie valittuun kokoelmaan.",
     "smooth_scroll": "Koskee hiiri- ja kosketuslevyvieritystä. Pois käytöstä vähennettyä liikettä suosiville kävijöille ja kosketusnäytöillä.",

@@ -1,0 +1,73 @@
+{%- doc -%}
+  Renders a short product summary: the custom.short_description metafield when it is set, otherwise the
+  first paragraph of the product description as plain text. Settings are read from block.settings.
+
+  @example
+  {% content_for 'block', type: 'product-summary', id: 'product-summary', closest.product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign product_resource = closest.product
+  assign summary = product_resource.metafields.custom.short_description.value
+  if summary == blank
+    assign summary = product_resource.description | split: '</p>' | first | strip_html | strip
+  endif
+  if summary == blank
+    assign summary = product_resource.description | strip_html | strip
+  endif
+  assign summary = summary | truncatewords: block.settings.max_words
+-%}
+
+{%- if summary != blank -%}
+  <p
+    class="product-summary"
+    style="{% if block.settings.color != blank %}--product-summary-color: {{ block.settings.color }};{% endif %}"
+    {{ block.shopify_attributes }}
+  >
+    {{ summary | escape }}
+  </p>
+{%- endif -%}
+
+{% stylesheet %}
+  .product-summary {
+    margin: 0;
+    max-width: 36rem;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--product-summary-color, rgb(var(--color-foreground-rgb) / var(--opacity-85)));
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_summary",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.product_summary"
+    },
+    {
+      "type": "range",
+      "id": "max_words",
+      "label": "t:settings.max_words",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings.color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_summary",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

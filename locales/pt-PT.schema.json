@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Selo de confiança",
+    "product_trust_badges": "Selos de confiança",
+    "product_features": "Características do produto",
+    "product_summary": "Resumo do produto",
+    "product_variant_label": "Variante selecionada",
+    "product_heading": "Título do produto",
+    "product_eyebrow": "Texto de apoio do produto",
+    "breadcrumbs": "Trilho de navegação",
     "collection_spotlight": "Coleção em destaque",
     "footer_perk": "Vantagem",
     "footer_products": "Ligações de produtos",
@@ -182,6 +190,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "max_words": "Máximo de palavras",
+    "heading_tag": "Etiqueta do título",
+    "product_eyebrow_source": "Origem",
+    "breadcrumb_nav_label": "Etiqueta para leitores de ecrã",
+    "breadcrumb_collections_label": "Etiqueta das coleções",
+    "breadcrumb_product_parent": "Ligação principal do produto",
     "title_accent_color": "Cor de destaque do título",
     "show_products": "Mostrar produtos",
     "accent_new_line": "Colocar o texto em itálico numa nova linha",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "phone": "Telefone",
+    "shield": "Escudo",
+    "product_type": "Tipo de produto",
     "molecule": "Molécula",
     "flask": "Frasco",
     "gift": "Presente",
@@ -1142,6 +1159,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "product_summary": "Mostra o metacampo custom.short_description quando definido; caso contrário, o primeiro parágrafo da descrição.",
+    "product_eyebrow_text": "Utilizado quando a origem selecionada está vazia ou quando a origem é Personalizada.",
+    "breadcrumb_nav_label": "Não apresentado. Os leitores de ecrã anunciam-no para o trilho de navegação.",
     "spotlight_icon_image": "Substitui o ícone integrado. Utilize um PNG ou SVG transparente; assume a cor do texto da secção.",
     "spotlight_products_link": "Deixe em branco para ligar à coleção selecionada.",
     "smooth_scroll": "Aplica-se ao deslocamento com rato e trackpad. Desativado para visitantes que preferem menos movimento e em ecrãs táteis.",

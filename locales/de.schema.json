@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Vertrauenssiegel",
+    "product_trust_badges": "Vertrauenssiegel",
+    "product_features": "Produktmerkmale",
+    "product_summary": "Produktzusammenfassung",
+    "product_variant_label": "Ausgewählte Variante",
+    "product_heading": "Produktüberschrift",
+    "product_eyebrow": "Produkt-Überzeile",
+    "breadcrumbs": "Breadcrumbs",
     "collection_spotlight": "Kollektion im Fokus",
     "footer_perk": "Vorteil",
     "footer_products": "Produktlinks",
@@ -182,6 +190,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "max_words": "Maximale Wörter",
+    "heading_tag": "Überschrift-Tag",
+    "product_eyebrow_source": "Quelle",
+    "breadcrumb_nav_label": "Bezeichnung für Screenreader",
+    "breadcrumb_collections_label": "Bezeichnung für Kollektionen",
+    "breadcrumb_product_parent": "Übergeordneter Produktlink",
     "title_accent_color": "Akzentfarbe der Überschrift",
     "show_products": "Produkte anzeigen",
     "accent_new_line": "Kursiven Text in neue Zeile setzen",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Schild",
+    "product_type": "Produkttyp",
     "molecule": "Molekül",
     "flask": "Kolben",
     "gift": "Geschenk",
@@ -1142,6 +1159,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "product_summary": "Zeigt das Metafeld custom.short_description, falls vorhanden, sonst den ersten Absatz der Produktbeschreibung.",
+    "product_eyebrow_text": "Wird verwendet, wenn die gewählte Quelle leer ist oder die Quelle „Benutzerdefiniert“ ist.",
+    "breadcrumb_nav_label": "Nicht sichtbar. Screenreader lesen sie für die Breadcrumb-Navigation vor.",
     "spotlight_icon_image": "Ersetzt das integrierte Symbol. Verwende ein transparentes PNG oder SVG; es übernimmt die Textfarbe des Abschnitts.",
     "spotlight_products_link": "Leer lassen, um auf die ausgewählte Kollektion zu verlinken.",
     "smooth_scroll": "Gilt für Maus und Trackpad. Deaktiviert für Besucher mit reduzierter Bewegung und auf Touchscreens.",

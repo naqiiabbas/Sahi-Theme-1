@@ -1,0 +1,140 @@
+{%- doc -%}
+  One trust badge: a line icon with a title and a subtitle. Settings are read from block.settings.
+
+  @example
+  {% content_for 'blocks' %}
+{%- enddoc -%}
+
+<li
+  class="product-trust-badge"
+  {{ block.shopify_attributes }}
+>
+  <svg
+    class="product-trust-badge__icon"
+    aria-hidden="true"
+    focusable="false"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      {%- case block.settings.icon -%}
+        {%- when 'shield' -%}
+          <path d="M12 3 4.5 6v5.5c0 4.4 3.1 8.1 7.5 9.5 4.4-1.4 7.5-5.1 7.5-9.5V6Z"/>
+          <path d="m8.8 12 2.2 2.2 4.3-4.4"/>
+        {%- when 'box' -%}
+          <path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5Z"/>
+          <path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/>
+          <path d="m7.7 5.3 8.6 4.5"/>
+        {%- when 'lock' -%}
+          <rect x="5" y="10.5" width="14" height="10" rx="2"/>
+          <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2"/>
+        {%- when 'leaf' -%}
+          <path d="M6 18C6 10 11 5 19 5c0 8-5 13-13 13Z"/>
+          <path d="M6 18 14 10"/>
+        {%- when 'phone' -%}
+          <path d="M7.5 3.5h3l1.5 4-2 1.3a10 10 0 0 0 5.2 5.2l1.3-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3.5 5.5a2 2 0 0 1 2-2Z"/>
+        {%- else -%}
+          <path d="M2.5 6.5h11v9.5h-11zM13.5 9.5h4l3 3.2V16h-7"/>
+          <circle cx="6.5" cy="17.5" r="1.7"/>
+          <circle cx="16.5" cy="17.5" r="1.7"/>
+      {%- endcase -%}
+    </g>
+  </svg>
+  <span class="product-trust-badge__text">
+    {%- if block.settings.title != blank -%}
+      <span class="product-trust-badge__title">{{ block.settings.title | escape }}</span>
+    {%- endif -%}
+    {%- if block.settings.subtitle != blank -%}
+      <span class="product-trust-badge__subtitle">{{ block.settings.subtitle | escape }}</span>
+    {%- endif -%}
+  </span>
+</li>
+
+{% stylesheet %}
+  .product-trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    min-width: 0;
+  }
+
+  .product-trust-badge__icon {
+    flex: 0 0 auto;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: var(--product-trust-icon, var(--color-foreground));
+  }
+
+  .product-trust-badge__text {
+    display: grid;
+    gap: 0.15rem;
+    min-width: 0;
+    font-family: var(--font-body--family);
+    line-height: 1.25;
+  }
+
+  .product-trust-badge__title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+
+  .product-trust-badge__subtitle {
+    font-size: 0.75rem;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_trust_badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "truck",
+          "label": "t:options.truck"
+        },
+        {
+          "value": "shield",
+          "label": "t:options.shield"
+        },
+        {
+          "value": "box",
+          "label": "t:options.box"
+        },
+        {
+          "value": "lock",
+          "label": "t:options.lock"
+        },
+        {
+          "value": "leaf",
+          "label": "t:options.leaf"
+        },
+        {
+          "value": "phone",
+          "label": "t:options.phone"
+        }
+      ],
+      "default": "truck"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.title",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:settings.text",
+      "default": "On eligible orders"
+    }
+  ]
+}
+{% endschema %}

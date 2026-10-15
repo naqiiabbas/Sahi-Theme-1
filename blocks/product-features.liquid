@@ -1,0 +1,83 @@
+{%- doc -%}
+  Renders a row of feature icons with short labels, separated by thin dividers. Each item is a
+  _product-feature child block. Settings are read from block.settings.
+
+  @example
+  {% content_for 'block', type: 'product-features', id: 'product-features', closest.product: product %}
+{%- enddoc -%}
+
+<ul
+  class="product-features"
+  style="{% if block.settings.color != blank %}--product-features-color: {{ block.settings.color }}; --product-features-color-rgb: {{ block.settings.color.rgb }};{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</ul>
+
+{% stylesheet %}
+  .product-features {
+    --product-features-ink: var(--product-features-color, var(--color-foreground));
+    --product-features-ink-rgb: var(--product-features-color-rgb, var(--color-foreground-rgb));
+
+    /* One row of equal items; wraps only when the column is too narrow for them. */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-md) 0;
+
+    @media screen and (max-width: 749px) {
+      flex-wrap: nowrap;
+    }
+    width: 100%;
+    margin: 0;
+    padding: var(--padding-xs) 0;
+    list-style: none;
+    color: var(--product-features-ink);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_features",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-feature"
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings.color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_features",
+      "category": "t:categories.product",
+      "blocks": {
+        "feature_1": {
+          "type": "_product-feature",
+          "settings": {
+            "label": "100%\nPure & Natural"
+          }
+        },
+        "feature_2": {
+          "type": "_product-feature",
+          "settings": {
+            "label": "No Added\nPreservatives"
+          }
+        },
+        "feature_3": {
+          "type": "_product-feature",
+          "settings": {
+            "label": "Rich in\nNatural Nutrients"
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3"]
+    }
+  ]
+}
+{% endschema %}

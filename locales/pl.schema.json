@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Odznaka zaufania",
+    "product_trust_badges": "Odznaki zaufania",
+    "product_features": "Cechy produktu",
+    "product_summary": "Podsumowanie produktu",
+    "product_variant_label": "Wybrany wariant",
+    "product_heading": "Tytuł produktu",
+    "product_eyebrow": "Nadtytuł produktu",
+    "breadcrumbs": "Nawigacja okruszkowa",
     "collection_spotlight": "Wyróżniona kolekcja",
     "footer_perk": "Korzyść",
     "footer_products": "Linki do produktów",
@@ -182,6 +190,12 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "max_words": "Maksymalna liczba słów",
+    "heading_tag": "Znacznik nagłówka",
+    "product_eyebrow_source": "Źródło",
+    "breadcrumb_nav_label": "Etykieta dla czytników ekranu",
+    "breadcrumb_collections_label": "Etykieta kolekcji",
+    "breadcrumb_product_parent": "Link nadrzędny produktu",
     "title_accent_color": "Kolor akcentu nagłówka",
     "show_products": "Pokaż produkty",
     "accent_new_line": "Umieść kursywę w nowym wierszu",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Tarcza",
+    "product_type": "Typ produktu",
     "molecule": "Cząsteczka",
     "flask": "Kolba",
     "gift": "Prezent",
@@ -1142,6 +1159,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "product_summary": "Pokazuje metapole custom.short_description, jeśli jest ustawione, w przeciwnym razie pierwszy akapit opisu produktu.",
+    "product_eyebrow_text": "Używane, gdy wybrane źródło jest puste lub gdy źródłem jest Niestandardowe.",
+    "breadcrumb_nav_label": "Niewidoczne. Czytniki ekranu odczytują je dla nawigacji okruszkowej.",
     "spotlight_icon_image": "Zastępuje wbudowaną ikonę. Użyj przezroczystego PNG lub SVG; przyjmie kolor tekstu sekcji.",
     "spotlight_products_link": "Pozostaw puste, aby linkować do wybranej kolekcji.",
     "smooth_scroll": "Dotyczy przewijania myszą i gładzikiem. Wyłączone dla osób preferujących ograniczony ruch i na ekranach dotykowych.",

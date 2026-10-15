@@ -1,0 +1,240 @@
+{% comment %}
+  Section contract.
+  Breadcrumb trail: Home › parent › current page. On product pages the parent is the product's type
+  or first collection; on collection pages it links to all collections.
+  @example
+  <!-- Add "Breadcrumbs" at the top of the product or collection template -->
+{% endcomment %}
+
+{%- liquid
+  assign parent_title = ''
+  assign parent_url = ''
+  assign current_title = page_title
+
+  case request.page_type
+    when 'product'
+      assign current_title = product.title
+      assign first_collection = product.collections | where: 'handle', '!=', 'frontpage' | first
+      if section.settings.product_parent == 'collection' and first_collection != blank
+        assign parent_title = first_collection.title
+        assign parent_url = first_collection.url
+      elsif product.type != blank
+        assign parent_title = product.type
+        assign parent_url = product.type | url_for_type
+      elsif first_collection != blank
+        assign parent_title = first_collection.title
+        assign parent_url = first_collection.url
+      endif
+    when 'collection'
+      assign current_title = collection.title
+      assign parent_title = section.settings.collections_label
+      assign parent_url = routes.collections_url
+    when 'page'
+      assign current_title = page.title
+    when 'article'
+      assign current_title = article.title
+      assign parent_title = blog.title
+      assign parent_url = blog.url
+    when 'blog'
+      assign current_title = blog.title
+  endcase
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<nav
+  class="breadcrumbs spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  style="{% render 'spacing-padding', settings: section.settings %}"
+  aria-label="{{ section.settings.nav_label | escape }}"
+>
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a
+        href="{{ routes.root_url }}"
+        class="breadcrumbs__link"
+      >
+        {{- section.settings.home_label | escape -}}
+      </a>
+    </li>
+    {%- if parent_title != blank -%}
+      <li class="breadcrumbs__item">
+        <a
+          href="{{ parent_url }}"
+          class="breadcrumbs__link"
+        >
+          {{- parent_title | escape -}}
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if current_title != blank -%}
+      <li class="breadcrumbs__item">
+        <span aria-current="page">{{ current_title | escape }}</span>
+      </li>
+    {%- endif -%}
+  </ol>
+</nav>
+
+{% stylesheet %}
+  .breadcrumbs {
+    color: var(--color-foreground);
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  .breadcrumbs__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    min-width: 0;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+    overflow-wrap: anywhere;
+
+    & + &::before {
+      content: '';
+      flex: 0 0 auto;
+      width: 0.4em;
+      height: 0.4em;
+      margin-inline-end: 0.35em;
+      border-block-start: 1px solid currentColor;
+      border-inline-end: 1px solid currentColor;
+      transform: rotate(45deg);
+      opacity: var(--opacity-60);
+    }
+
+    &:last-child {
+      color: var(--color-foreground);
+    }
+  }
+
+  [dir='rtl'] .breadcrumbs__item + .breadcrumbs__item::before {
+    transform: rotate(-135deg);
+  }
+
+  .breadcrumbs__link {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      color: var(--color-foreground);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.breadcrumbs",
+  "class": "breadcrumbs-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "home_label",
+      "label": "t:settings.label",
+      "default": "Home"
+    },
+    {
+      "type": "text",
+      "id": "collections_label",
+      "label": "t:settings.breadcrumb_collections_label",
+      "default": "Collections"
+    },
+    {
+      "type": "text",
+      "id": "nav_label",
+      "label": "t:settings.breadcrumb_nav_label",
+      "info": "t:info.breadcrumb_nav_label",
+      "default": "Breadcrumb"
+    },
+    {
+      "type": "select",
+      "id": "product_parent",
+      "label": "t:settings.breadcrumb_product_parent",
+      "options": [
+        {
+          "value": "type",
+          "label": "t:options.product_type"
+        },
+        {
+          "value": "collection",
+          "label": "t:settings.collection"
+        }
+      ],
+      "default": "type"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.breadcrumbs"
+    }
+  ]
+}
+{% endschema %}

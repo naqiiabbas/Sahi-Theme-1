@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "信任徽章",
+    "product_trust_badges": "信任徽章",
+    "product_features": "商品特色",
+    "product_summary": "商品摘要",
+    "product_variant_label": "所选多属性",
+    "product_heading": "商品标题",
+    "product_eyebrow": "商品引导文字",
+    "breadcrumbs": "面包屑导航",
     "collection_spotlight": "精选系列",
     "footer_perk": "权益",
     "footer_products": "商品链接",
@@ -182,6 +190,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "max_words": "最多字数",
+    "heading_tag": "标题标签",
+    "product_eyebrow_source": "来源",
+    "breadcrumb_nav_label": "屏幕阅读器标签",
+    "breadcrumb_collections_label": "商品系列标签",
+    "breadcrumb_product_parent": "商品上级链接",
     "title_accent_color": "标题强调色",
     "show_products": "显示商品",
     "accent_new_line": "将斜体文字放在新的一行",
@@ -630,6 +644,9 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "phone": "电话",
+    "shield": "盾牌",
+    "product_type": "商品类型",
     "molecule": "分子",
     "flask": "烧瓶",
     "gift": "礼物",
@@ -1142,6 +1159,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "product_summary": "如已设置 custom.short_description 元字段则显示该内容，否则显示商品描述的第一段。",
+    "product_eyebrow_text": "当所选来源为空或来源为自定义时使用。",
+    "breadcrumb_nav_label": "不显示。屏幕阅读器会为面包屑导航朗读。",
     "spotlight_icon_image": "替换内置图标。请使用透明的 PNG 或 SVG；图标会使用分区文字颜色。",
     "spotlight_products_link": "留空则链接到所选商品系列。",
     "smooth_scroll": "适用于鼠标和触控板滚动。对偏好减少动态效果的访客和触屏设备关闭。",

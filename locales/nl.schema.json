@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Vertrouwensbadge",
+    "product_trust_badges": "Vertrouwensbadges",
+    "product_features": "Productkenmerken",
+    "product_summary": "Productsamenvatting",
+    "product_variant_label": "Geselecteerde variant",
+    "product_heading": "Producttitel",
+    "product_eyebrow": "Bovenregel product",
+    "breadcrumbs": "Kruimelpad",
     "collection_spotlight": "Collectie in de kijker",
     "footer_perk": "Voordeel",
     "footer_products": "Productlinks",
@@ -182,6 +190,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "max_words": "Maximaal aantal woorden",
+    "heading_tag": "Koptag",
+    "product_eyebrow_source": "Bron",
+    "breadcrumb_nav_label": "Label voor schermlezers",
+    "breadcrumb_collections_label": "Label collecties",
+    "breadcrumb_product_parent": "Bovenliggende productlink",
     "title_accent_color": "Accentkleur kop",
     "show_products": "Producten weergeven",
     "accent_new_line": "Cursieve tekst op een nieuwe regel",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "phone": "Telefoon",
+    "shield": "Schild",
+    "product_type": "Producttype",
     "molecule": "Molecuul",
     "flask": "Kolf",
     "gift": "Cadeau",
@@ -1142,6 +1159,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "product_summary": "Toont het metaveld custom.short_description als dat is ingesteld, anders de eerste alinea van de productbeschrijving.",
+    "product_eyebrow_text": "Wordt gebruikt als de gekozen bron leeg is of als de bron Aangepast is.",
+    "breadcrumb_nav_label": "Niet zichtbaar. Schermlezers lezen het voor bij de kruimelpadnavigatie.",
     "spotlight_icon_image": "Vervangt het ingebouwde pictogram. Gebruik een transparante PNG of SVG; deze krijgt de tekstkleur van de sectie.",
     "spotlight_products_link": "Laat leeg om naar de gekozen collectie te linken.",
     "smooth_scroll": "Geldt voor scrollen met muis en trackpad. Uit voor bezoekers die minder beweging willen en op touchscreens.",

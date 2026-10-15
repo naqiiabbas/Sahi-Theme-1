@@ -1,0 +1,110 @@
+{%- doc -%}
+  Renders a small uppercase label above the product title, followed by a short line. The text comes from
+  the product type, the product's first collection, or custom text. Settings are read from block.settings.
+
+  @example
+  {% content_for 'block', type: 'product-eyebrow', id: 'product-eyebrow', closest.product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign product_resource = closest.product
+  assign text = ''
+  case block.settings.source
+    when 'type'
+      assign text = product_resource.type
+    when 'collection'
+      assign first_collection = product_resource.collections | where: 'handle', '!=', 'frontpage' | first
+      assign text = first_collection.title
+    else
+      assign text = block.settings.custom_text
+  endcase
+  if text == blank and block.settings.source != 'custom'
+    assign text = block.settings.custom_text
+  endif
+-%}
+
+{%- if text != blank -%}
+  <p
+    class="product-eyebrow{% if block.settings.show_line %} product-eyebrow--line{% endif %}"
+    style="{% if block.settings.color != blank %}--product-eyebrow-color: {{ block.settings.color }};{% endif %}"
+    {{ block.shopify_attributes }}
+  >
+    {{ text | escape }}
+  </p>
+{%- endif -%}
+
+{% stylesheet %}
+  .product-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--product-eyebrow-color, rgb(var(--color-foreground-rgb) / var(--opacity-70)));
+  }
+
+  .product-eyebrow--line::after {
+    content: '';
+    width: 2.75rem;
+    height: 1px;
+    background-color: currentColor;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_eyebrow",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "source",
+      "label": "t:settings.product_eyebrow_source",
+      "options": [
+        {
+          "value": "type",
+          "label": "t:options.product_type"
+        },
+        {
+          "value": "collection",
+          "label": "t:settings.collection"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "type"
+    },
+    {
+      "type": "text",
+      "id": "custom_text",
+      "label": "t:settings.text",
+      "info": "t:info.product_eyebrow_text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line",
+      "label": "t:settings.dividers",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings.color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_eyebrow",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

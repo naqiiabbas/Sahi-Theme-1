@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "信頼バッジ",
+    "product_trust_badges": "信頼バッジ",
+    "product_features": "商品の特長",
+    "product_summary": "商品の概要",
+    "product_variant_label": "選択中のバリエーション",
+    "product_heading": "商品の見出し",
+    "product_eyebrow": "商品のリード",
+    "breadcrumbs": "パンくずリスト",
     "collection_spotlight": "コレクション特集",
     "footer_perk": "特典",
     "footer_products": "商品リンク",
@@ -182,6 +190,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "max_words": "最大単語数",
+    "heading_tag": "見出しタグ",
+    "product_eyebrow_source": "ソース",
+    "breadcrumb_nav_label": "スクリーンリーダー用ラベル",
+    "breadcrumb_collections_label": "コレクションのラベル",
+    "breadcrumb_product_parent": "商品の親リンク",
     "title_accent_color": "見出しのアクセントカラー",
     "show_products": "商品を表示",
     "accent_new_line": "斜体テキストを改行して表示",
@@ -630,6 +644,9 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "phone": "電話",
+    "shield": "盾",
+    "product_type": "商品タイプ",
     "molecule": "分子",
     "flask": "フラスコ",
     "gift": "ギフト",
@@ -1142,6 +1159,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "product_summary": "custom.short_description メタフィールドが設定されている場合はそれを、なければ商品説明の最初の段落を表示します。",
+    "product_eyebrow_text": "選択したソースが空の場合、またはソースがカスタムの場合に使用されます。",
+    "breadcrumb_nav_label": "表示されません。パンくずナビゲーションとしてスクリーンリーダーが読み上げます。",
     "spotlight_icon_image": "内蔵アイコンを置き換えます。透明なPNGまたはSVGを使用してください。セクションのテキストカラーが適用されます。",
     "spotlight_products_link": "空欄の場合は選択したコレクションにリンクします。",
     "smooth_scroll": "マウスとトラックパッドのスクロールに適用されます。動きを減らす設定の訪問者とタッチスクリーンでは無効です。",

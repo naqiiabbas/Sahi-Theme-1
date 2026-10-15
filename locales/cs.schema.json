@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Odznak důvěry",
+    "product_trust_badges": "Odznaky důvěry",
+    "product_features": "Vlastnosti produktu",
+    "product_summary": "Shrnutí produktu",
+    "product_variant_label": "Vybraná varianta",
+    "product_heading": "Nadpis produktu",
+    "product_eyebrow": "Úvodní text produktu",
+    "breadcrumbs": "Drobečková navigace",
     "collection_spotlight": "Představení kolekce",
     "footer_perk": "Výhoda",
     "footer_products": "Odkazy na produkty",
@@ -182,6 +190,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "max_words": "Maximální počet slov",
+    "heading_tag": "Značka nadpisu",
+    "product_eyebrow_source": "Zdroj",
+    "breadcrumb_nav_label": "Popisek pro čtečky obrazovky",
+    "breadcrumb_collections_label": "Popisek kolekcí",
+    "breadcrumb_product_parent": "Nadřazený odkaz produktu",
     "title_accent_color": "Barva zvýraznění nadpisu",
     "show_products": "Zobrazit produkty",
     "accent_new_line": "Kurzívu umístit na nový řádek",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Štít",
+    "product_type": "Typ produktu",
     "molecule": "Molekula",
     "flask": "Baňka",
     "gift": "Dárek",
@@ -1142,6 +1159,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "product_summary": "Zobrazí metapole custom.short_description, pokud je nastavené, jinak první odstavec popisu produktu.",
+    "product_eyebrow_text": "Použije se, když je vybraný zdroj prázdný nebo je zdroj Vlastní.",
+    "breadcrumb_nav_label": "Nezobrazuje se. Čtečky obrazovky jej oznamují u drobečkové navigace.",
     "spotlight_icon_image": "Nahradí vestavěnou ikonu. Použijte průhledný PNG nebo SVG; převezme barvu textu sekce.",
     "spotlight_products_link": "Ponechte prázdné pro odkaz na vybranou kolekci.",
     "smooth_scroll": "Platí pro posouvání myší a touchpadem. Vypnuto pro návštěvníky s omezeným pohybem a na dotykových obrazovkách.",

@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Badge de confiance",
+    "product_trust_badges": "Badges de confiance",
+    "product_features": "Atouts du produit",
+    "product_summary": "Résumé du produit",
+    "product_variant_label": "Variante sélectionnée",
+    "product_heading": "Titre du produit",
+    "product_eyebrow": "Surtitre du produit",
+    "breadcrumbs": "Fil d'Ariane",
     "collection_spotlight": "Collection à la une",
     "footer_perk": "Avantage",
     "footer_products": "Liens produits",
@@ -182,6 +190,12 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "max_words": "Nombre maximal de mots",
+    "heading_tag": "Balise de titre",
+    "product_eyebrow_source": "Source",
+    "breadcrumb_nav_label": "Libellé pour lecteurs d’écran",
+    "breadcrumb_collections_label": "Libellé des collections",
+    "breadcrumb_product_parent": "Lien parent du produit",
     "title_accent_color": "Couleur d'accent du titre",
     "show_products": "Afficher les produits",
     "accent_new_line": "Placer le texte en italique sur une nouvelle ligne",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "phone": "Téléphone",
+    "shield": "Bouclier",
+    "product_type": "Type de produit",
     "molecule": "Molécule",
     "flask": "Flacon",
     "gift": "Cadeau",
@@ -1142,6 +1159,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "product_summary": "Affiche le métachamp custom.short_description s’il est défini, sinon le premier paragraphe de la description.",
+    "product_eyebrow_text": "Utilisé lorsque la source choisie est vide ou lorsque la source est Personnalisée.",
+    "breadcrumb_nav_label": "Non affiché. Les lecteurs d'écran l'annoncent pour le fil d'Ariane.",
     "spotlight_icon_image": "Remplace l'icône intégrée. Utilisez un PNG ou SVG transparent ; il prend la couleur du texte de la section.",
     "spotlight_products_link": "Laissez vide pour lier la collection sélectionnée.",
     "smooth_scroll": "S’applique au défilement à la souris et au pavé tactile. Désactivé pour les visiteurs qui préfèrent réduire les animations et sur écrans tactiles.",

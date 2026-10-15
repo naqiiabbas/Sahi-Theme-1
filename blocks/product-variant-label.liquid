@@ -1,0 +1,71 @@
+{%- doc -%}
+  Shows the selected variant's name (for example "500g") under the price, and updates it when the shopper
+  picks another variant. Hidden for products without variants. Settings are read from block.settings.
+
+  @example
+  {% content_for 'block', type: 'product-variant-label', id: 'variant-label', closest.product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign product_resource = closest.product
+  assign variant = product_resource.selected_or_first_available_variant
+  assign label = ''
+  unless product_resource.has_only_default_variant
+    assign label = variant.title
+  endunless
+-%}
+
+<script
+  src="{{ 'product-variant-label.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<product-variant-label
+  class="product-variant-label"
+  data-product-id="{{ product_resource.id }}"
+  {% if label == blank %}
+    hidden
+  {% endif %}
+  style="{% if block.settings.color != blank %}--product-variant-label-color: {{ block.settings.color }};{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <span ref="label">{{ label | escape }}</span>
+</product-variant-label>
+
+{% stylesheet %}
+  /* Sits tight under the price, as a caption for it. */
+  .product-variant-label {
+    display: block;
+    margin-block-start: calc(var(--gap-sm) * -1);
+    font-family: var(--font-body--family);
+    font-size: 1rem;
+    line-height: 1.3;
+    color: var(--product-variant-label-color, rgb(var(--color-foreground-rgb) / var(--opacity-80)));
+
+    &[hidden] {
+      display: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_variant_label",
+  "tag": null,
+  "settings": [
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings.color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_variant_label",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

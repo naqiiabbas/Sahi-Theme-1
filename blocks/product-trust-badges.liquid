@@ -1,0 +1,104 @@
+{%- doc -%}
+  Renders a bordered box of trust badges (for example shipping, secure payments, and returns). Each badge is
+  a _product-trust-badge child block. Settings are read from block.settings.
+
+  @example
+  {% content_for 'block', type: 'product-trust-badges', id: 'trust-badges', closest.product: product %}
+{%- enddoc -%}
+
+<ul
+  class="product-trust-badges"
+  style="--product-trust-radius: {{ block.settings.corner_radius }}px;{% if block.settings.background_color != blank %} --product-trust-bg: {{ block.settings.background_color }};{% endif %}{% if block.settings.icon_color != blank %} --product-trust-icon: {{ block.settings.icon_color }};{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</ul>
+
+{% stylesheet %}
+  .product-trust-badges {
+    /* One badge per line on narrow screens; side by side when there is room. */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-md);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    }
+    width: 100%;
+    margin: 0;
+    padding: var(--padding-md) var(--padding-lg);
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+    border-radius: var(--product-trust-radius);
+    background-color: var(--product-trust-bg, color-mix(in srgb, var(--color-background) 60%, white));
+    list-style: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_trust_badges",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-trust-badge"
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.icon",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_trust_badges",
+      "category": "t:categories.product",
+      "blocks": {
+        "shipping": {
+          "type": "_product-trust-badge",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "subtitle": "On eligible orders"
+          }
+        },
+        "payments": {
+          "type": "_product-trust-badge",
+          "settings": {
+            "icon": "shield",
+            "title": "Secure Payments",
+            "subtitle": "100% safe checkout"
+          }
+        },
+        "returns": {
+          "type": "_product-trust-badge",
+          "settings": {
+            "icon": "box",
+            "title": "Easy Returns",
+            "subtitle": "Hassle-free returns"
+          }
+        }
+      },
+      "block_order": ["shipping", "payments", "returns"]
+    }
+  ]
+}
+{% endschema %}

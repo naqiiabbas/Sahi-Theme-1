@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Badge di fiducia",
+    "product_trust_badges": "Badge di fiducia",
+    "product_features": "Caratteristiche del prodotto",
+    "product_summary": "Riepilogo del prodotto",
+    "product_variant_label": "Variante selezionata",
+    "product_heading": "Titolo del prodotto",
+    "product_eyebrow": "Occhiello del prodotto",
+    "breadcrumbs": "Breadcrumb",
     "collection_spotlight": "Collezione in evidenza",
     "footer_perk": "Vantaggio",
     "footer_products": "Link ai prodotti",
@@ -182,6 +190,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "max_words": "Numero massimo di parole",
+    "heading_tag": "Tag del titolo",
+    "product_eyebrow_source": "Origine",
+    "breadcrumb_nav_label": "Etichetta per screen reader",
+    "breadcrumb_collections_label": "Etichetta delle collezioni",
+    "breadcrumb_product_parent": "Link principale del prodotto",
     "title_accent_color": "Colore di accento del titolo",
     "show_products": "Mostra prodotti",
     "accent_new_line": "Metti il testo in corsivo su una nuova riga",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "phone": "Telefono",
+    "shield": "Scudo",
+    "product_type": "Tipo di prodotto",
     "molecule": "Molecola",
     "flask": "Ampolla",
     "gift": "Regalo",
@@ -1142,6 +1159,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "product_summary": "Mostra il metacampo custom.short_description se impostato, altrimenti il primo paragrafo della descrizione.",
+    "product_eyebrow_text": "Usato quando l'origine scelta è vuota o quando l'origine è Personalizzata.",
+    "breadcrumb_nav_label": "Non visibile. Gli screen reader lo annunciano per la navigazione breadcrumb.",
     "spotlight_icon_image": "Sostituisce l'icona integrata. Usa un PNG o SVG trasparente; assume il colore del testo della sezione.",
     "spotlight_products_link": "Lascia vuoto per collegare la collezione selezionata.",
     "smooth_scroll": "Vale per lo scorrimento con mouse e trackpad. Disattivato per chi preferisce meno movimento e sugli schermi touch.",

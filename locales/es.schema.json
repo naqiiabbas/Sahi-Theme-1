@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Insignia de confianza",
+    "product_trust_badges": "Insignias de confianza",
+    "product_features": "Características del producto",
+    "product_summary": "Resumen del producto",
+    "product_variant_label": "Variante seleccionada",
+    "product_heading": "Título del producto",
+    "product_eyebrow": "Texto superior del producto",
+    "breadcrumbs": "Ruta de navegación",
     "collection_spotlight": "Colección destacada",
     "footer_perk": "Ventaja",
     "footer_products": "Enlaces de productos",
@@ -182,6 +190,12 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "max_words": "Máximo de palabras",
+    "heading_tag": "Etiqueta de encabezado",
+    "product_eyebrow_source": "Origen",
+    "breadcrumb_nav_label": "Etiqueta para lectores de pantalla",
+    "breadcrumb_collections_label": "Etiqueta de colecciones",
+    "breadcrumb_product_parent": "Enlace principal del producto",
     "title_accent_color": "Color de acento del título",
     "show_products": "Mostrar productos",
     "accent_new_line": "Poner el texto en cursiva en una línea nueva",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "phone": "Teléfono",
+    "shield": "Escudo",
+    "product_type": "Tipo de producto",
     "molecule": "Molécula",
     "flask": "Matraz",
     "gift": "Regalo",
@@ -1142,6 +1159,9 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "product_summary": "Muestra el metacampo custom.short_description si está configurado; si no, el primer párrafo de la descripción.",
+    "product_eyebrow_text": "Se usa cuando el origen seleccionado está vacío o cuando el origen es Personalizado.",
+    "breadcrumb_nav_label": "No se muestra. Los lectores de pantalla la anuncian para la ruta de navegación.",
     "spotlight_icon_image": "Reemplaza el ícono integrado. Usa un PNG o SVG transparente; toma el color del texto de la sección.",
     "spotlight_products_link": "Déjalo en blanco para enlazar a la colección seleccionada.",
     "smooth_scroll": "Se aplica al desplazamiento con mouse y trackpad. Desactivado para visitantes que prefieren menos movimiento y en pantallas táctiles.",

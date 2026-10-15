@@ -215,6 +215,9 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "product_summary": "يعرض حقل التعريف custom.short_description عند تعيينه، وإلا فالفقرة الأولى من وصف المنتج.",
+    "product_eyebrow_text": "يُستخدم عندما يكون المصدر المحدد فارغًا أو عندما يكون المصدر مخصصًا.",
+    "breadcrumb_nav_label": "غير ظاهر. تعلنه قارئات الشاشة لمسار التنقل.",
     "spotlight_icon_image": "يحل محل الأيقونة المدمجة. استخدم ملف PNG أو SVG شفافًا؛ ويأخذ لون نص القسم.",
     "spotlight_products_link": "اتركه فارغًا للربط بالمجموعة المحددة.",
     "smooth_scroll": "ينطبق على التمرير بالماوس ولوحة اللمس. متوقف للزوار الذين يفضلون تقليل الحركة وعلى الشاشات اللمسية.",
@@ -255,6 +258,14 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "product_trust_badge": "شارة ثقة",
+    "product_trust_badges": "شارات الثقة",
+    "product_features": "مزايا المنتج",
+    "product_summary": "ملخص المنتج",
+    "product_variant_label": "الخيار المحدد",
+    "product_heading": "عنوان المنتج",
+    "product_eyebrow": "عنوان تمهيدي للمنتج",
+    "breadcrumbs": "مسار التنقل",
     "collection_spotlight": "تسليط الضوء على مجموعة",
     "footer_perk": "ميزة",
     "footer_products": "روابط المنتجات",
@@ -428,6 +439,9 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "phone": "هاتف",
+    "shield": "درع",
+    "product_type": "نوع المنتج",
     "molecule": "جزيء",
     "flask": "قارورة",
     "gift": "هدية",
@@ -715,6 +729,12 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "max_words": "الحد الأقصى للكلمات",
+    "heading_tag": "وسم العنوان",
+    "product_eyebrow_source": "المصدر",
+    "breadcrumb_nav_label": "تسمية قارئ الشاشة",
+    "breadcrumb_collections_label": "تسمية المجموعات",
+    "breadcrumb_product_parent": "رابط أصل المنتج",
     "title_accent_color": "لون تمييز العنوان",
     "show_products": "إظهار المنتجات",
     "accent_new_line": "وضع النص المائل في سطر جديد",

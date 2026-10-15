@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Tillidsmærke",
+    "product_trust_badges": "Tillidsmærker",
+    "product_features": "Produktfordele",
+    "product_summary": "Produktresumé",
+    "product_variant_label": "Valgt variant",
+    "product_heading": "Produktoverskrift",
+    "product_eyebrow": "Produktets overtekst",
+    "breadcrumbs": "Brødkrummer",
     "collection_spotlight": "Kollektion i fokus",
     "footer_perk": "Fordel",
     "footer_products": "Produktlinks",
@@ -182,6 +190,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "max_words": "Maks. antal ord",
+    "heading_tag": "Overskriftstag",
+    "product_eyebrow_source": "Kilde",
+    "breadcrumb_nav_label": "Etiket til skærmlæsere",
+    "breadcrumb_collections_label": "Etiket for kollektioner",
+    "breadcrumb_product_parent": "Overordnet produktlink",
     "title_accent_color": "Accentfarve for overskrift",
     "show_products": "Vis produkter",
     "accent_new_line": "Placer kursiv tekst på en ny linje",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Skjold",
+    "product_type": "Produkttype",
     "molecule": "Molekyle",
     "flask": "Kolbe",
     "gift": "Gave",
@@ -1142,6 +1159,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "product_summary": "Viser metafeltet custom.short_description, når det er udfyldt, ellers første afsnit af produktbeskrivelsen.",
+    "product_eyebrow_text": "Bruges, når den valgte kilde er tom, eller når kilden er Brugerdefineret.",
+    "breadcrumb_nav_label": "Vises ikke. Skærmlæsere læser den op for brødkrummenavigationen.",
     "spotlight_icon_image": "Erstatter det indbyggede ikon. Brug en gennemsigtig PNG eller SVG; den får sektionens tekstfarve.",
     "spotlight_products_link": "Lad feltet være tomt for at linke til den valgte kollektion.",
     "smooth_scroll": "Gælder rulning med mus og pegefelt. Slået fra for besøgende, der foretrækker reduceret bevægelse, og på touchskærme.",

@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Förtroendemärke",
+    "product_trust_badges": "Förtroendemärken",
+    "product_features": "Produktfördelar",
+    "product_summary": "Produktsammanfattning",
+    "product_variant_label": "Vald variant",
+    "product_heading": "Produktrubrik",
+    "product_eyebrow": "Produktens överrubrik",
+    "breadcrumbs": "Brödsmulor",
     "collection_spotlight": "Kollektion i fokus",
     "footer_perk": "Förmån",
     "footer_products": "Produktlänkar",
@@ -182,6 +190,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "max_words": "Max antal ord",
+    "heading_tag": "Rubriktagg",
+    "product_eyebrow_source": "Källa",
+    "breadcrumb_nav_label": "Etikett för skärmläsare",
+    "breadcrumb_collections_label": "Etikett för kollektioner",
+    "breadcrumb_product_parent": "Överordnad produktlänk",
     "title_accent_color": "Rubrikens accentfärg",
     "show_products": "Visa produkter",
     "accent_new_line": "Lägg kursiv text på en ny rad",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Sköld",
+    "product_type": "Produkttyp",
     "molecule": "Molekyl",
     "flask": "Kolv",
     "gift": "Present",
@@ -1142,6 +1159,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "product_summary": "Visar metafältet custom.short_description när det är angivet, annars första stycket i produktbeskrivningen.",
+    "product_eyebrow_text": "Används när den valda källan är tom eller när källan är Anpassad.",
+    "breadcrumb_nav_label": "Visas inte. Skärmläsare läser upp den för brödsmulenavigeringen.",
     "spotlight_icon_image": "Ersätter den inbyggda ikonen. Använd en transparent PNG eller SVG; den får sektionens textfärg.",
     "spotlight_products_link": "Lämna tomt för att länka till vald kollektion.",
     "smooth_scroll": "Gäller rullning med mus och styrplatta. Av för besökare som föredrar minskad rörelse och på pekskärmar.",

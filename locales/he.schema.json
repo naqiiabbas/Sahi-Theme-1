@@ -215,6 +215,9 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "product_summary": "מציג את שדה המטא custom.short_description אם הוגדר, אחרת את הפסקה הראשונה בתיאור המוצר.",
+    "product_eyebrow_text": "משמש כשהמקור שנבחר ריק או כשהמקור מותאם אישית.",
+    "breadcrumb_nav_label": "לא מוצג. קוראי מסך מקריאים אותו עבור ניווט פירורי הלחם.",
     "spotlight_icon_image": "מחליף את הסמל המובנה. השתמשו ב-PNG או SVG שקופים; הם יקבלו את צבע הטקסט של המקטע.",
     "spotlight_products_link": "השאירו ריק כדי לקשר לקולקציה שנבחרה.",
     "smooth_scroll": "חל על גלילה בעכבר ובמשטח מגע. כבוי למבקרים שמעדיפים תנועה מופחתת ובמסכי מגע.",
@@ -255,6 +258,14 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "product_trust_badge": "תג אמון",
+    "product_trust_badges": "תגי אמון",
+    "product_features": "מאפייני המוצר",
+    "product_summary": "תקציר המוצר",
+    "product_variant_label": "הווריאציה שנבחרה",
+    "product_heading": "כותרת המוצר",
+    "product_eyebrow": "טקסט עליון למוצר",
+    "breadcrumbs": "פירורי לחם",
     "collection_spotlight": "קולקציה בזרקור",
     "footer_perk": "הטבה",
     "footer_products": "קישורי מוצרים",
@@ -428,6 +439,9 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "phone": "טלפון",
+    "shield": "מגן",
+    "product_type": "סוג מוצר",
     "molecule": "מולקולה",
     "flask": "מבחנה",
     "gift": "מתנה",
@@ -715,6 +729,12 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "max_words": "מספר מילים מרבי",
+    "heading_tag": "תג כותרת",
+    "product_eyebrow_source": "מקור",
+    "breadcrumb_nav_label": "תווית לקורא מסך",
+    "breadcrumb_collections_label": "תווית קולקציות",
+    "breadcrumb_product_parent": "קישור הורה של המוצר",
     "title_accent_color": "צבע הדגשה לכותרת",
     "show_products": "הצגת מוצרים",
     "accent_new_line": "הצבת הטקסט הנטוי בשורה חדשה",

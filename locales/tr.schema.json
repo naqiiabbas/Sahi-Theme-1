@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Güven rozeti",
+    "product_trust_badges": "Güven rozetleri",
+    "product_features": "Ürün özellikleri",
+    "product_summary": "Ürün özeti",
+    "product_variant_label": "Seçili varyant",
+    "product_heading": "Ürün başlığı",
+    "product_eyebrow": "Ürün üst metni",
+    "breadcrumbs": "İçerik haritası",
     "collection_spotlight": "Öne çıkan koleksiyon",
     "footer_perk": "Avantaj",
     "footer_products": "Ürün bağlantıları",
@@ -182,6 +190,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "max_words": "En fazla kelime",
+    "heading_tag": "Başlık etiketi",
+    "product_eyebrow_source": "Kaynak",
+    "breadcrumb_nav_label": "Ekran okuyucu etiketi",
+    "breadcrumb_collections_label": "Koleksiyonlar etiketi",
+    "breadcrumb_product_parent": "Ürün üst bağlantısı",
     "title_accent_color": "Başlık vurgu rengi",
     "show_products": "Ürünleri göster",
     "accent_new_line": "İtalik metni yeni satıra al",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Kalkan",
+    "product_type": "Ürün türü",
     "molecule": "Molekül",
     "flask": "Şişe",
     "gift": "Hediye",
@@ -1142,6 +1159,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "product_summary": "Ayarlıysa custom.short_description meta alanını, değilse ürün açıklamasının ilk paragrafını gösterir.",
+    "product_eyebrow_text": "Seçilen kaynak boş olduğunda veya kaynak Özel olduğunda kullanılır.",
+    "breadcrumb_nav_label": "Gösterilmez. Ekran okuyucular içerik haritası gezintisi için okur.",
     "spotlight_icon_image": "Yerleşik simgenin yerini alır. Saydam bir PNG veya SVG kullanın; bölümün metin rengini alır.",
     "spotlight_products_link": "Seçilen koleksiyona bağlantı vermek için boş bırakın.",
     "smooth_scroll": "Fare ve dokunmatik yüzey kaydırması için geçerlidir. Azaltılmış hareket tercih eden ziyaretçilerde ve dokunmatik ekranlarda kapalıdır.",

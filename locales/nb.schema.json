@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "Tillitsmerke",
+    "product_trust_badges": "Tillitsmerker",
+    "product_features": "Produktfordeler",
+    "product_summary": "Produktsammendrag",
+    "product_variant_label": "Valgt variant",
+    "product_heading": "Produktoverskrift",
+    "product_eyebrow": "Produktets overtekst",
+    "breadcrumbs": "Brødsmulesti",
     "collection_spotlight": "Kolleksjon i fokus",
     "footer_perk": "Fordel",
     "footer_products": "Produktlenker",
@@ -182,6 +190,12 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "max_words": "Maks antall ord",
+    "heading_tag": "Overskriftstagg",
+    "product_eyebrow_source": "Kilde",
+    "breadcrumb_nav_label": "Etikett for skjermlesere",
+    "breadcrumb_collections_label": "Etikett for kolleksjoner",
+    "breadcrumb_product_parent": "Overordnet produktlenke",
     "title_accent_color": "Aksentfarge for overskrift",
     "show_products": "Vis produkter",
     "accent_new_line": "Sett kursiv tekst på en ny linje",
@@ -630,6 +644,9 @@
     "customer_account_menu": "Kundekontomeny"
   },
   "options": {
+    "phone": "Telefon",
+    "shield": "Skjold",
+    "product_type": "Produkttype",
     "molecule": "Molekyl",
     "flask": "Kolbe",
     "gift": "Gave",
@@ -1142,6 +1159,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "product_summary": "Viser metafeltet custom.short_description når det er angitt, ellers første avsnitt i produktbeskrivelsen.",
+    "product_eyebrow_text": "Brukes når den valgte kilden er tom, eller når kilden er Egendefinert.",
+    "breadcrumb_nav_label": "Vises ikke. Skjermlesere leser den opp for brødsmulenavigasjonen.",
     "spotlight_icon_image": "Erstatter det innebygde ikonet. Bruk en gjennomsiktig PNG eller SVG; den får seksjonens tekstfarge.",
     "spotlight_products_link": "La stå tomt for å lenke til valgt kolleksjon.",
     "smooth_scroll": "Gjelder rulling med mus og styreflate. Av for besøkende som foretrekker redusert bevegelse, og på berøringsskjermer.",

@@ -9,6 +9,14 @@
  */
 {
   "names": {
+    "product_trust_badge": "信任徽章",
+    "product_trust_badges": "信任徽章",
+    "product_features": "商品特色",
+    "product_summary": "商品摘要",
+    "product_variant_label": "所選子類",
+    "product_heading": "商品標題",
+    "product_eyebrow": "商品引導文字",
+    "breadcrumbs": "麵包屑導覽",
     "collection_spotlight": "精選系列",
     "footer_perk": "優惠",
     "footer_products": "商品連結",
@@ -182,6 +190,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "max_words": "最多字數",
+    "heading_tag": "標題標籤",
+    "product_eyebrow_source": "來源",
+    "breadcrumb_nav_label": "螢幕閱讀器標籤",
+    "breadcrumb_collections_label": "商品系列標籤",
+    "breadcrumb_product_parent": "商品上層連結",
     "title_accent_color": "標題強調色",
     "show_products": "顯示商品",
     "accent_new_line": "將斜體文字放在新的一行",
@@ -630,6 +644,9 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "phone": "電話",
+    "shield": "盾牌",
+    "product_type": "商品類型",
     "molecule": "分子",
     "flask": "燒瓶",
     "gift": "禮物",
@@ -1142,6 +1159,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "product_summary": "若已設定 custom.short_description 中繼欄位則顯示該內容，否則顯示商品描述的第一段。",
+    "product_eyebrow_text": "在所選來源為空或來源為自訂時使用。",
+    "breadcrumb_nav_label": "不顯示。螢幕閱讀器會為麵包屑導覽朗讀。",
     "spotlight_icon_image": "取代內建圖示。請使用透明的 PNG 或 SVG；圖示會套用區段文字顏色。",
     "spotlight_products_link": "留空則連結到所選商品系列。",
     "smooth_scroll": "適用於滑鼠與觸控板捲動。對偏好減少動態效果的訪客及觸控螢幕關閉。",
