@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Catégories de collection",
+    "all_products_link": "Lien Tous les produits",
+    "collection_sidebar": "Collection avec barre latérale",
     "related_products": "Produits associés",
     "product_info_reviews": "Onglet avis",
     "product_info_nutrition": "Onglet nutrition",
@@ -194,6 +197,14 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "show_all_link": "Afficher le lien Tous les produits",
+    "icon_size": "Taille de l’icône",
+    "show_divider": "Afficher le séparateur",
+    "clear_button_label": "Libellé du bouton d’effacement",
+    "sidebar_width": "Largeur de la barre latérale",
+    "count_text": "Texte du nombre de produits",
+    "sidebar_background": "Arrière-plan de la barre latérale",
+    "show_price_slider": "Afficher le curseur de prix",
     "skip_collections": "Collections à ignorer",
     "empty_reviews_text": "Texte en l’absence d’avis",
     "based_on_label": "Texte du résumé des notes",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "script": "Manuscrite",
+    "small_caps": "Petites capitales",
     "related_product_collection": "Collection du produit",
     "mortar": "Mortier et pilon",
     "sprout": "Pousse",
@@ -949,6 +962,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "sidebar": "Barre latérale",
     "background_video": "Vidéo de fond",
     "describe_the_video_for": "Décrivez la vidéo pour les clients utilisant des lecteurs d’écran. [En savoir plus](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "La largeur est automatiquement optimisée pour les appareils mobiles.",
@@ -1174,6 +1188,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "collection_categories_label": "Non affiché. Les lecteurs d’écran l’utilisent pour décrire les liens de catégories.",
+    "clear_button_label": "Laissez vide pour masquer le bouton.",
+    "count_text": "Utilisez [shown] pour le nombre de produits affichés et [count] pour le total. Laissez vide pour masquer.",
     "skip_collections": "Identifiants de collection séparés par des virgules, jamais utilisés comme collection du produit.",
     "related_link_label": "Utilisez [collection] pour le nom de la collection. Laissez vide pour masquer le lien.",
     "related_collection": "Utilisée lorsque la source est Collection ou que le produit n'est dans aucune collection.",

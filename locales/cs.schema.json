@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kategorie kolekcí",
+    "all_products_link": "Odkaz Všechny produkty",
+    "collection_sidebar": "Kolekce s postranním panelem",
     "related_products": "Související produkty",
     "product_info_reviews": "Záložka recenzí",
     "product_info_nutrition": "Záložka výživy",
@@ -194,6 +197,14 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_all_link": "Zobrazit odkaz Všechny produkty",
+    "icon_size": "Velikost ikony",
+    "show_divider": "Zobrazit oddělovač",
+    "clear_button_label": "Popisek tlačítka vymazání",
+    "sidebar_width": "Šířka postranního panelu",
+    "count_text": "Text počtu produktů",
+    "sidebar_background": "Pozadí postranního panelu",
+    "show_price_slider": "Zobrazit cenový posuvník",
     "skip_collections": "Kolekce k přeskočení",
     "empty_reviews_text": "Text, když nejsou recenze",
     "based_on_label": "Text souhrnu hodnocení",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "script": "Psací písmo",
+    "small_caps": "Malé kapitálky",
     "related_product_collection": "Kolekce produktu",
     "mortar": "Hmoždíř",
     "sprout": "Klíček",
@@ -949,6 +962,7 @@
     "direction_top_start": "Vlevo nahoře"
   },
   "content": {
+    "sidebar": "Postranní panel",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
     "background_video": "Video na pozadí",
@@ -1174,6 +1188,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "collection_categories_label": "Nezobrazuje se. Čtečky obrazovky jej používají k popisu odkazů na kategorie.",
+    "clear_button_label": "Ponechte prázdné, chcete-li tlačítko skrýt.",
+    "count_text": "Použijte [shown] pro počet zobrazených produktů a [count] pro celkový počet. Ponechte prázdné pro skrytí.",
     "skip_collections": "Popisovače kolekcí oddělené čárkami, které se nikdy nepoužijí jako kolekce produktu.",
     "related_link_label": "Pro název kolekce použijte [collection]. Ponechte prázdné pro skrytí odkazu.",
     "related_collection": "Použije se, když je zdrojem Kolekce nebo když produkt není v žádné kolekci.",

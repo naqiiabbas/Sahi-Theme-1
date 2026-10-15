@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kolleksjonskategorier",
+    "all_products_link": "Lenke til alle produkter",
+    "collection_sidebar": "Kolleksjon med sidefelt",
     "related_products": "Relaterte produkter",
     "product_info_reviews": "Anmeldelsesfane",
     "product_info_nutrition": "Ernæringsfane",
@@ -194,6 +197,14 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "show_all_link": "Vis lenke til alle produkter",
+    "icon_size": "Ikonstørrelse",
+    "show_divider": "Vis skillelinje",
+    "clear_button_label": "Etikett for tøm-knapp",
+    "sidebar_width": "Sidefeltets bredde",
+    "count_text": "Tekst for antall produkter",
+    "sidebar_background": "Sidefeltets bakgrunn",
+    "show_price_slider": "Vis prisglidebryter",
     "skip_collections": "Kolleksjoner som hoppes over",
     "empty_reviews_text": "Tekst når det ikke finnes anmeldelser",
     "based_on_label": "Tekst for vurderingssammendrag",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Kundekontomeny"
   },
   "options": {
+    "script": "Skråskrift",
+    "small_caps": "Kapitéler",
     "related_product_collection": "Produktets kolleksjon",
     "mortar": "Morter",
     "sprout": "Spire",
@@ -949,6 +962,7 @@
     "direction_top_start": "Oppe til venstre"
   },
   "content": {
+    "sidebar": "Sidefelt",
     "advanced": "Avansert",
     "background_image": "Bakgrunnsbilde",
     "background_video": "Bakgrunnsvideo",
@@ -1174,6 +1188,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "collection_categories_label": "Vises ikke. Skjermlesere bruker den til å beskrive kategorilenkene.",
+    "clear_button_label": "La feltet stå tomt for å skjule knappen.",
+    "count_text": "Bruk [shown] for antall viste produkter og [count] for totalen. La feltet stå tomt for å skjule.",
     "skip_collections": "Kolleksjonshåndtak, adskilt med komma, som aldri brukes som produktets kolleksjon.",
     "related_link_label": "Bruk [collection] for kolleksjonsnavnet. La stå tomt for å skjule lenken.",
     "related_collection": "Brukes når kilden er Kolleksjon, eller når produktet ikke er i noen kolleksjon.",

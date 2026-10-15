@@ -30,6 +30,7 @@
     "text": "טקסט"
   },
   "content": {
+    "sidebar": "סרגל צד",
     "visible_if_collection_has_more_products": "גלוי אם באוסף יש יותר מוצרים ממה שמוצג",
     "advanced": "מתקדם",
     "appearance": "מראה",
@@ -215,6 +216,9 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "collection_categories_label": "לא מוצג. קוראי מסך משתמשים בו לתיאור קישורי הקטגוריות.",
+    "clear_button_label": "השאירו ריק כדי להסתיר את הכפתור.",
+    "count_text": "השתמשו ב-[shown] למספר המוצרים המוצגים וב-[count] לסך הכול. השאירו ריק כדי להסתיר.",
     "skip_collections": "מזהי קולקציות מופרדים בפסיקים שלעולם לא ישמשו כקולקציית המוצר.",
     "related_link_label": "השתמשו ב-[collection] לשם הקולקציה. השאירו ריק כדי להסתיר את הקישור.",
     "related_collection": "משמשת כשהמקור הוא קולקציה, או כשהמוצר לא נמצא בשום קולקציה.",
@@ -266,6 +270,9 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "collection_categories": "קטגוריות קולקציה",
+    "all_products_link": "קישור לכל המוצרים",
+    "collection_sidebar": "קולקציה עם סרגל צד",
     "related_products": "מוצרים קשורים",
     "product_info_reviews": "כרטיסיית ביקורות",
     "product_info_nutrition": "כרטיסיית תזונה",
@@ -451,6 +458,8 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "script": "כתב יד",
+    "small_caps": "אותיות רישיות קטנות",
     "related_product_collection": "הקולקציה של המוצר",
     "mortar": "מכתש ועלי",
     "sprout": "נבט",
@@ -744,6 +753,14 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "show_all_link": "הצגת קישור לכל המוצרים",
+    "icon_size": "גודל סמל",
+    "show_divider": "הצגת קו מפריד",
+    "clear_button_label": "תווית כפתור הניקוי",
+    "sidebar_width": "רוחב סרגל הצד",
+    "count_text": "טקסט מספר המוצרים",
+    "sidebar_background": "רקע סרגל הצד",
+    "show_price_slider": "הצגת מחוון מחיר",
     "skip_collections": "קולקציות לדילוג",
     "empty_reviews_text": "טקסט כשאין ביקורות",
     "based_on_label": "טקסט סיכום הדירוג",

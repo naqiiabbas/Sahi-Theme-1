@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Categorias da coleção",
+    "all_products_link": "Ligação Todos os produtos",
+    "collection_sidebar": "Coleção com barra lateral",
     "related_products": "Produtos relacionados",
     "product_info_reviews": "Separador de avaliações",
     "product_info_nutrition": "Separador de nutrição",
@@ -194,6 +197,14 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "show_all_link": "Mostrar ligação Todos os produtos",
+    "icon_size": "Tamanho do ícone",
+    "show_divider": "Mostrar divisor",
+    "clear_button_label": "Etiqueta do botão de limpar",
+    "sidebar_width": "Largura da barra lateral",
+    "count_text": "Texto da contagem de produtos",
+    "sidebar_background": "Fundo da barra lateral",
+    "show_price_slider": "Mostrar controlo deslizante de preço",
     "skip_collections": "Coleções a ignorar",
     "empty_reviews_text": "Texto quando não há avaliações",
     "based_on_label": "Texto do resumo de classificações",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "script": "Manuscrita",
+    "small_caps": "Versaletes",
     "related_product_collection": "Coleção do produto",
     "mortar": "Almofariz",
     "sprout": "Rebento",
@@ -949,6 +962,7 @@
     "direction_top_start": "Superior esquerdo"
   },
   "content": {
+    "sidebar": "Barra lateral",
     "advanced": "Avançado",
     "background_image": "Imagem de fundo",
     "background_video": "Vídeo de fundo",
@@ -1174,6 +1188,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "collection_categories_label": "Não apresentado. Os leitores de ecrã utilizam-no para descrever as ligações das categorias.",
+    "clear_button_label": "Deixe em branco para ocultar o botão.",
+    "count_text": "Utilize [shown] para o número de produtos apresentados e [count] para o total. Deixe em branco para ocultar.",
     "skip_collections": "Identificadores de coleção separados por vírgulas que nunca são utilizados como coleção do produto.",
     "related_link_label": "Utilize [collection] para o nome da coleção. Deixe em branco para ocultar a ligação.",
     "related_collection": "Utilizada quando a origem é Coleção ou quando o produto não está em nenhuma coleção.",

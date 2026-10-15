@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "หมวดหมู่คอลเลกชัน",
+    "all_products_link": "ลิงก์สินค้าทั้งหมด",
+    "collection_sidebar": "คอลเลกชันพร้อมแถบด้านข้าง",
     "related_products": "สินค้าที่เกี่ยวข้อง",
     "product_info_reviews": "แท็บรีวิว",
     "product_info_nutrition": "แท็บโภชนาการ",
@@ -194,6 +197,14 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_all_link": "แสดงลิงก์สินค้าทั้งหมด",
+    "icon_size": "ขนาดไอคอน",
+    "show_divider": "แสดงเส้นคั่น",
+    "clear_button_label": "ป้ายกำกับปุ่มล้าง",
+    "sidebar_width": "ความกว้างแถบด้านข้าง",
+    "count_text": "ข้อความจำนวนสินค้า",
+    "sidebar_background": "พื้นหลังแถบด้านข้าง",
+    "show_price_slider": "แสดงแถบเลื่อนราคา",
     "skip_collections": "คอลเลกชันที่ข้าม",
     "empty_reviews_text": "ข้อความเมื่อยังไม่มีรีวิว",
     "based_on_label": "ข้อความสรุปคะแนน",
@@ -656,6 +667,8 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "script": "ตัวเขียน",
+    "small_caps": "ตัวพิมพ์ใหญ่ขนาดเล็ก",
     "related_product_collection": "คอลเลกชันของสินค้า",
     "mortar": "ครกและสาก",
     "sprout": "ต้นอ่อน",
@@ -949,6 +962,7 @@
     "direction_top_start": "บนซ้าย"
   },
   "content": {
+    "sidebar": "แถบด้านข้าง",
     "advanced": "ขั้นสูง",
     "background_image": "รูปภาพพื้นหลัง",
     "background_video": "วิดีโอพื้นหลัง",
@@ -1174,6 +1188,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "collection_categories_label": "ไม่แสดง โปรแกรมอ่านหน้าจอใช้เพื่ออธิบายลิงก์หมวดหมู่",
+    "clear_button_label": "เว้นว่างไว้เพื่อซ่อนปุ่ม",
+    "count_text": "ใช้ [shown] สำหรับจำนวนสินค้าที่แสดง และ [count] สำหรับทั้งหมด เว้นว่างไว้เพื่อซ่อน",
     "skip_collections": "แฮนเดิลคอลเลกชันคั่นด้วยจุลภาค ซึ่งจะไม่ถูกใช้เป็นคอลเลกชันของสินค้า",
     "related_link_label": "ใช้ [collection] แทนชื่อคอลเลกชัน เว้นว่างไว้เพื่อซ่อนลิงก์",
     "related_collection": "ใช้เมื่อแหล่งที่มาเป็นคอลเลกชัน หรือเมื่อสินค้าไม่อยู่ในคอลเลกชันใด",

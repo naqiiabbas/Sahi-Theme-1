@@ -30,6 +30,7 @@
     "text": "نص"
   },
   "content": {
+    "sidebar": "الشريط الجانبي",
     "visible_if_collection_has_more_products": "مرئي إذا كانت المجموعة تحتوي على منتجات أكثر من المعروضة",
     "advanced": "متقدم",
     "appearance": "المظهر",
@@ -215,6 +216,9 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "collection_categories_label": "غير ظاهر. تستخدمه برامج قراءة الشاشة لوصف روابط الفئات.",
+    "clear_button_label": "اتركه فارغًا لإخفاء الزر.",
+    "count_text": "استخدم [shown] لعدد المنتجات المعروضة و[count] للإجمالي. اتركه فارغًا للإخفاء.",
     "skip_collections": "معرّفات المجموعات مفصولة بفواصل، ولا تُستخدم أبدًا كمجموعة للمنتج.",
     "related_link_label": "استخدم [collection] لاسم المجموعة. اتركه فارغًا لإخفاء الرابط.",
     "related_collection": "تُستخدم عندما يكون المصدر مجموعة، أو عندما لا يكون المنتج في أي مجموعة.",
@@ -266,6 +270,9 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "collection_categories": "فئات المجموعة",
+    "all_products_link": "رابط كل المنتجات",
+    "collection_sidebar": "مجموعة مع شريط جانبي",
     "related_products": "منتجات ذات صلة",
     "product_info_reviews": "تبويب المراجعات",
     "product_info_nutrition": "تبويب التغذية",
@@ -451,6 +458,8 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "script": "خط يدوي",
+    "small_caps": "أحرف كبيرة صغيرة",
     "related_product_collection": "مجموعة المنتج",
     "mortar": "هاون ومدقة",
     "sprout": "برعم",
@@ -744,6 +753,14 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "show_all_link": "إظهار رابط كل المنتجات",
+    "icon_size": "حجم الأيقونة",
+    "show_divider": "إظهار الفاصل",
+    "clear_button_label": "نص زر المسح",
+    "sidebar_width": "عرض الشريط الجانبي",
+    "count_text": "نص عدد المنتجات",
+    "sidebar_background": "خلفية الشريط الجانبي",
+    "show_price_slider": "إظهار شريط تمرير السعر",
     "skip_collections": "المجموعات المراد تخطيها",
     "empty_reviews_text": "النص عند عدم وجود مراجعات",
     "based_on_label": "نص ملخص التقييم",

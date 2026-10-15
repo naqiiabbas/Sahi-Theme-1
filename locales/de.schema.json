@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kollektionskategorien",
+    "all_products_link": "Link „Alle Produkte“",
+    "collection_sidebar": "Kollektion mit Seitenleiste",
     "related_products": "Ähnliche Produkte",
     "product_info_reviews": "Bewertungs-Tab",
     "product_info_nutrition": "Nährwert-Tab",
@@ -194,6 +197,14 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_all_link": "Link „Alle Produkte“ anzeigen",
+    "icon_size": "Symbolgröße",
+    "show_divider": "Trennlinie anzeigen",
+    "clear_button_label": "Beschriftung der Zurücksetzen-Schaltfläche",
+    "sidebar_width": "Breite der Seitenleiste",
+    "count_text": "Text der Produktanzahl",
+    "sidebar_background": "Hintergrund der Seitenleiste",
+    "show_price_slider": "Preisschieberegler anzeigen",
     "skip_collections": "Zu überspringende Kollektionen",
     "empty_reviews_text": "Text, wenn keine Bewertungen vorhanden sind",
     "based_on_label": "Text der Bewertungsübersicht",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "script": "Schreibschrift",
+    "small_caps": "Kapitälchen",
     "related_product_collection": "Kollektion des Produkts",
     "mortar": "Mörser",
     "sprout": "Spross",
@@ -949,6 +962,7 @@
     "direction_top_start": "Oben links"
   },
   "content": {
+    "sidebar": "Seitenleiste",
     "background_video": "Hintergrundvideo",
     "describe_the_video_for": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Die Breite wird für Mobilgeräte automatisch optimiert.",
@@ -1174,6 +1188,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "collection_categories_label": "Wird nicht angezeigt. Screenreader beschreiben damit die Kategorie-Links.",
+    "clear_button_label": "Leer lassen, um die Schaltfläche auszublenden.",
+    "count_text": "Verwende [shown] für die Anzahl angezeigter Produkte und [count] für die Gesamtzahl. Leer lassen zum Ausblenden.",
     "skip_collections": "Kollektions-Handles, durch Kommas getrennt, die nie als Kollektion des Produkts verwendet werden.",
     "related_link_label": "Verwende [collection] für den Kollektionsnamen. Leer lassen, um den Link auszublenden.",
     "related_collection": "Wird verwendet, wenn die Quelle „Kollektion“ ist oder das Produkt in keiner Kollektion ist.",

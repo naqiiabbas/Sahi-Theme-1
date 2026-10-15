@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Categorie della collezione",
+    "all_products_link": "Link Tutti i prodotti",
+    "collection_sidebar": "Collezione con barra laterale",
     "related_products": "Prodotti correlati",
     "product_info_reviews": "Scheda recensioni",
     "product_info_nutrition": "Scheda nutrizione",
@@ -194,6 +197,14 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_all_link": "Mostra link Tutti i prodotti",
+    "icon_size": "Dimensione icona",
+    "show_divider": "Mostra divisore",
+    "clear_button_label": "Etichetta pulsante Cancella",
+    "sidebar_width": "Larghezza barra laterale",
+    "count_text": "Testo conteggio prodotti",
+    "sidebar_background": "Sfondo barra laterale",
+    "show_price_slider": "Mostra cursore prezzo",
     "skip_collections": "Collezioni da saltare",
     "empty_reviews_text": "Testo quando non ci sono recensioni",
     "based_on_label": "Testo del riepilogo valutazioni",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "script": "Corsivo",
+    "small_caps": "Maiuscoletto",
     "related_product_collection": "Collezione del prodotto",
     "mortar": "Mortaio e pestello",
     "sprout": "Germoglio",
@@ -949,6 +962,7 @@
     "direction_top_start": "In alto a sinistra"
   },
   "content": {
+    "sidebar": "Barra laterale",
     "advanced": "Avanzate",
     "background_image": "Immagine di sfondo",
     "background_video": "Video di sfondo",
@@ -1174,6 +1188,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "collection_categories_label": "Non visibile. Gli screen reader lo usano per descrivere i link delle categorie.",
+    "clear_button_label": "Lascia vuoto per nascondere il pulsante.",
+    "count_text": "Usa [shown] per i prodotti mostrati e [count] per il totale. Lascia vuoto per nascondere.",
     "skip_collections": "Handle delle collezioni separati da virgole, mai usati come collezione del prodotto.",
     "related_link_label": "Usa [collection] per il nome della collezione. Lascia vuoto per nascondere il link.",
     "related_collection": "Usata quando l’origine è Collezione o quando il prodotto non è in nessuna collezione.",

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Collectiecategorieën",
+    "all_products_link": "Link Alle producten",
+    "collection_sidebar": "Collectie met zijbalk",
     "related_products": "Gerelateerde producten",
     "product_info_reviews": "Reviewtabblad",
     "product_info_nutrition": "Voedingstabblad",
@@ -194,6 +197,14 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_all_link": "Link Alle producten weergeven",
+    "icon_size": "Pictogramgrootte",
+    "show_divider": "Scheidingslijn weergeven",
+    "clear_button_label": "Label van wisknop",
+    "sidebar_width": "Breedte zijbalk",
+    "count_text": "Tekst productaantal",
+    "sidebar_background": "Achtergrond zijbalk",
+    "show_price_slider": "Prijsschuifregelaar weergeven",
     "skip_collections": "Over te slaan collecties",
     "empty_reviews_text": "Tekst als er geen reviews zijn",
     "based_on_label": "Tekst beoordelingsoverzicht",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "script": "Handschrift",
+    "small_caps": "Kleinkapitalen",
     "related_product_collection": "Collectie van het product",
     "mortar": "Vijzel",
     "sprout": "Kiem",
@@ -949,6 +962,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "sidebar": "Zijbalk",
     "background_video": "Achtergrondvideo",
     "describe_the_video_for": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Breedte wordt automatisch geoptimaliseerd voor mobiel.",
@@ -1174,6 +1188,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "collection_categories_label": "Niet zichtbaar. Schermlezers gebruiken dit om de categorielinks te beschrijven.",
+    "clear_button_label": "Laat leeg om de knop te verbergen.",
+    "count_text": "Gebruik [shown] voor het aantal getoonde producten en [count] voor het totaal. Laat leeg om te verbergen.",
     "skip_collections": "Collectiehandles, gescheiden door komma’s, die nooit als collectie van het product worden gebruikt.",
     "related_link_label": "Gebruik [collection] voor de collectienaam. Laat leeg om de link te verbergen.",
     "related_collection": "Wordt gebruikt als de bron Collectie is of als het product in geen enkele collectie zit.",

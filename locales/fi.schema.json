@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kokoelmaluokat",
+    "all_products_link": "Kaikki tuotteet -linkki",
+    "collection_sidebar": "Kokoelma sivupalkilla",
     "related_products": "Liittyvät tuotteet",
     "product_info_reviews": "Arvosteluvälilehti",
     "product_info_nutrition": "Ravintovälilehti",
@@ -194,6 +197,14 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_all_link": "Näytä Kaikki tuotteet -linkki",
+    "icon_size": "Kuvakkeen koko",
+    "show_divider": "Näytä erotin",
+    "clear_button_label": "Tyhjennä-painikkeen teksti",
+    "sidebar_width": "Sivupalkin leveys",
+    "count_text": "Tuotemäärän teksti",
+    "sidebar_background": "Sivupalkin tausta",
+    "show_price_slider": "Näytä hintaliukusäädin",
     "skip_collections": "Ohitettavat kokoelmat",
     "empty_reviews_text": "Teksti, kun arvosteluja ei ole",
     "based_on_label": "Arvosteluyhteenvedon teksti",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "script": "Käsialafontti",
+    "small_caps": "Kapiteelit",
     "related_product_collection": "Tuotteen kokoelma",
     "mortar": "Huhmar",
     "sprout": "Verso",
@@ -949,6 +962,7 @@
     "direction_top_start": "Ylhäällä vasemmalla"
   },
   "content": {
+    "sidebar": "Sivupalkki",
     "advanced": "Lisäasetukset",
     "background_image": "Taustakuva",
     "background_video": "Taustavideo",
@@ -1174,6 +1188,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "collection_categories_label": "Ei näytetä. Näytönlukuohjelmat kuvaavat sillä luokkalinkkejä.",
+    "clear_button_label": "Jätä tyhjäksi piilottaaksesi painikkeen.",
+    "count_text": "Käytä [shown] näytettyjen tuotteiden määrälle ja [count] kokonaismäärälle. Jätä tyhjäksi piilottaaksesi.",
     "skip_collections": "Pilkuilla erotetut kokoelmien tunnisteet, joita ei koskaan käytetä tuotteen kokoelmana.",
     "related_link_label": "Käytä [collection] kokoelman nimelle. Jätä tyhjäksi piilottaaksesi linkin.",
     "related_collection": "Käytetään, kun lähde on Kokoelma tai kun tuote ei ole missään kokoelmassa.",

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "コレクションカテゴリー",
+    "all_products_link": "すべての商品リンク",
+    "collection_sidebar": "サイドバー付きコレクション",
     "related_products": "関連商品",
     "product_info_reviews": "レビュータブ",
     "product_info_nutrition": "栄養タブ",
@@ -194,6 +197,14 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "show_all_link": "すべての商品リンクを表示",
+    "icon_size": "アイコンサイズ",
+    "show_divider": "区切り線を表示",
+    "clear_button_label": "クリアボタンのラベル",
+    "sidebar_width": "サイドバーの幅",
+    "count_text": "商品数のテキスト",
+    "sidebar_background": "サイドバーの背景",
+    "show_price_slider": "価格スライダーを表示",
     "skip_collections": "スキップするコレクション",
     "empty_reviews_text": "レビューがない場合のテキスト",
     "based_on_label": "評価概要のテキスト",
@@ -656,6 +667,8 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "script": "筆記体",
+    "small_caps": "スモールキャップ",
     "related_product_collection": "商品のコレクション",
     "mortar": "乳鉢",
     "sprout": "新芽",
@@ -949,6 +962,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "sidebar": "サイドバー",
     "advanced": "高度な設定",
     "background_image": "背景画像",
     "background_video": "背景動画",
@@ -1174,6 +1188,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "collection_categories_label": "表示されません。スクリーンリーダーがカテゴリーリンクの説明に使用します。",
+    "clear_button_label": "ボタンを非表示にするには空欄のままにします。",
+    "count_text": "表示中の商品数には[shown]、合計には[count]を使用します。非表示にするには空欄のままにします。",
     "skip_collections": "商品のコレクションとして使用しないコレクションのハンドル（カンマ区切り）。",
     "related_link_label": "コレクション名には[collection]を使用します。空欄にするとリンクを非表示にします。",
     "related_collection": "ソースがコレクションの場合、または商品がどのコレクションにも含まれていない場合に使用されます。",

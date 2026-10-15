@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "컬렉션 카테고리",
+    "all_products_link": "모든 제품 링크",
+    "collection_sidebar": "사이드바가 있는 컬렉션",
     "related_products": "관련 상품",
     "product_info_reviews": "리뷰 탭",
     "product_info_nutrition": "영양 탭",
@@ -194,6 +197,14 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "show_all_link": "모든 제품 링크 표시",
+    "icon_size": "아이콘 크기",
+    "show_divider": "구분선 표시",
+    "clear_button_label": "지우기 버튼 레이블",
+    "sidebar_width": "사이드바 너비",
+    "count_text": "제품 수 텍스트",
+    "sidebar_background": "사이드바 배경",
+    "show_price_slider": "가격 슬라이더 표시",
     "skip_collections": "건너뛸 컬렉션",
     "empty_reviews_text": "리뷰가 없을 때 텍스트",
     "based_on_label": "평점 요약 텍스트",
@@ -656,6 +667,8 @@
     "customer_account_menu": "고객 계정 메뉴"
   },
   "options": {
+    "script": "필기체",
+    "small_caps": "작은 대문자",
     "related_product_collection": "상품의 컬렉션",
     "mortar": "절구",
     "sprout": "새싹",
@@ -949,6 +962,7 @@
     "direction_top_start": "왼쪽 상단"
   },
   "content": {
+    "sidebar": "사이드바",
     "background_video": "배경 비디오",
     "describe_the_video_for": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "너비는 모바일에 맞게 자동으로 최적화됩니다.",
@@ -1174,6 +1188,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "collection_categories_label": "표시되지 않습니다. 화면 판독기가 카테고리 링크를 설명하는 데 사용합니다.",
+    "clear_button_label": "버튼을 숨기려면 비워 두세요.",
+    "count_text": "표시된 제품 수에는 [shown], 전체에는 [count]를 사용하세요. 숨기려면 비워 두세요.",
     "skip_collections": "상품의 컬렉션으로 사용하지 않을 컬렉션 핸들(쉼표로 구분).",
     "related_link_label": "컬렉션 이름에는 [collection]을 사용하세요. 비워 두면 링크가 숨겨집니다.",
     "related_collection": "출처가 컬렉션이거나 상품이 어느 컬렉션에도 없을 때 사용됩니다.",

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kollektionskategorier",
+    "all_products_link": "Link til alle produkter",
+    "collection_sidebar": "Kollektion med sidepanel",
     "related_products": "Relaterede produkter",
     "product_info_reviews": "Anmeldelsesfane",
     "product_info_nutrition": "Ernæringsfane",
@@ -194,6 +197,14 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_all_link": "Vis link til alle produkter",
+    "icon_size": "Ikonstørrelse",
+    "show_divider": "Vis skillelinje",
+    "clear_button_label": "Etiket for ryd-knap",
+    "sidebar_width": "Sidepanelets bredde",
+    "count_text": "Tekst for antal produkter",
+    "sidebar_background": "Sidepanelets baggrund",
+    "show_price_slider": "Vis prisskyder",
     "skip_collections": "Kollektioner der springes over",
     "empty_reviews_text": "Tekst når der ikke er anmeldelser",
     "based_on_label": "Tekst til bedømmelsesoversigt",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "script": "Skråskrift",
+    "small_caps": "Små kapitæler",
     "related_product_collection": "Produktets kollektion",
     "mortar": "Morter",
     "sprout": "Spire",
@@ -949,6 +962,7 @@
     "direction_top_start": "Øverst til venstre"
   },
   "content": {
+    "sidebar": "Sidepanel",
     "advanced": "Avanceret",
     "background_image": "Baggrundsbillede",
     "background_video": "Baggrundsvideo",
@@ -1174,6 +1188,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "collection_categories_label": "Vises ikke. Skærmlæsere bruger den til at beskrive kategorilinks.",
+    "clear_button_label": "Lad feltet være tomt for at skjule knappen.",
+    "count_text": "Brug [shown] for antallet af viste produkter og [count] for det samlede antal. Lad feltet være tomt for at skjule.",
     "skip_collections": "Kollektionshandles adskilt af kommaer, som aldrig bruges som produktets kollektion.",
     "related_link_label": "Brug [collection] til kollektionens navn. Lad feltet være tomt for at skjule linket.",
     "related_collection": "Bruges, når kilden er Kollektion, eller når produktet ikke er i nogen kollektion.",

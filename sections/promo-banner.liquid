@@ -26,6 +26,8 @@
   if section.index <= 2
     assign image_loading = 'eager'
   endif
+
+  assign heading_tag = section.settings.heading_tag | default: 'h2'
 -%}
 
 {% render 'contrast-override',
@@ -52,7 +54,7 @@
 
 <div class="section-background color-custom-{{ section.id }}"></div>
 <div
-  class="promo-banner promo-banner-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  class="promo-banner promo-banner-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.accent_new_line %} promo-banner--accent-break{% endif %}{% if section.settings.tagline_style == 'caps' %} promo-banner--tagline-caps{% endif %}"
   style="
     {% render 'spacing-padding', settings: section.settings %}
     --promo-banner-min-height: {{ section.settings.min_height }}px;
@@ -124,7 +126,7 @@
       {%- endif -%}
 
       {%- if section.settings.title != blank -%}
-        <h2 class="promo-banner__title">{{ section.settings.title }}</h2>
+        <{{ heading_tag }} class="promo-banner__title">{{ section.settings.title }}</{{ heading_tag }}>
       {%- endif -%}
 
       {%- if section.settings.text != blank -%}
@@ -292,6 +294,10 @@
     }
   }
 
+  .promo-banner--accent-break .promo-banner__title em {
+    display: block;
+  }
+
   .promo-banner__text {
     margin: 0;
     max-width: 30rem;
@@ -393,6 +399,30 @@
     }
   }
 
+  /* Caps tagline: small, letter-spaced, upright text instead of a tilted script. */
+  .promo-banner--tagline-caps .promo-banner__tagline {
+    inset-block-start: var(--padding-xl);
+    align-items: flex-start;
+    transform: none;
+  }
+
+  .promo-banner.promo-banner--tagline-caps .promo-banner__tagline-text {
+    max-width: 14ch;
+    font-size: calc(var(--promo-banner-tagline-size) * 0.3);
+    line-height: 1.6;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-shadow: none;
+
+    @media screen and (min-width: 750px) {
+      font-size: calc(var(--promo-banner-tagline-size) * 0.36);
+    }
+  }
+
+  .promo-banner--tagline-caps .promo-banner__flourish {
+    display: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .promo-banner__button,
     .promo-banner__button-arrow {
@@ -491,6 +521,28 @@
       "default": "Pure Ingredients for <em>a Better You.</em>"
     },
     {
+      "type": "checkbox",
+      "id": "accent_new_line",
+      "label": "t:settings.accent_new_line",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "t:settings.heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:options.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:options.h2"
+        }
+      ],
+      "default": "h2"
+    },
+    {
       "type": "inline_richtext",
       "id": "text",
       "label": "t:settings.text",
@@ -548,6 +600,22 @@
       "default": "Real\nGoodness.\nEveryday."
     },
     {
+      "type": "select",
+      "id": "tagline_style",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "script",
+          "label": "t:options.script"
+        },
+        {
+          "value": "caps",
+          "label": "t:options.small_caps"
+        }
+      ],
+      "default": "script"
+    },
+    {
       "type": "font_picker",
       "id": "tagline_font",
       "label": "t:settings.font",
@@ -567,7 +635,8 @@
       "type": "checkbox",
       "id": "show_tagline_flourish",
       "label": "t:settings.tagline_flourish",
-      "default": true
+      "default": true,
+      "visible_if": "{{ section.settings.tagline_style != 'caps' }}"
     },
     {
       "type": "header",

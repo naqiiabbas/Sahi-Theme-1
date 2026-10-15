@@ -1,0 +1,606 @@
+{% comment %}
+  Section contract.
+  Collection page with a filter sidebar: the stock Filters block (set to vertical) on the left, a product
+  count and sorting above a grid of brand product cards (snippets/category-product-card.liquid) on the right.
+  Filtering, sorting, pagination and the mobile filter drawer stay owned by the Filters block, facets.js and
+  results-list.js; facets.js re-renders this whole section after each change, so the count stays current.
+  With horizontal or disabled filtering the layout falls back to a single column.
+  @example
+  <!-- Use as the main section of a collection template; turn on filtering in its Filters block -->
+{% endcomment %}
+
+<script
+  src="{{ 'results-list.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign columns = section.settings.columns | plus: 0
+  assign image_vw = 75 | divided_by: columns
+  assign image_sizes = '(min-width: 990px) ' | append: image_vw | append: 'vw, (min-width: 750px) 40vw, 50vw'
+
+  assign products_per_page = 24
+  if section.settings.enable_infinite_scroll == false
+    assign products_per_page = section.settings.products_per_page
+  endif
+
+  assign has_active_filters = false
+  for filter in collection.filters
+    if filter.type == 'price_range'
+      if filter.min_value.value != null or filter.max_value.value != null
+        assign has_active_filters = true
+      endif
+    elsif filter.active_values.size > 0
+      assign has_active_filters = true
+    endif
+  endfor
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% render 'quick-add-modal-styles' %}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+
+  .collection-sidebar-{{ section.id }} {
+    --cpt-title-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --cpt-title-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<collection-component view-event-payload="{{ collection | standard_event_data: 'view' | escape }}">
+  <results-list
+    class="collection-sidebar collection-sidebar-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.mobile_columns == '1' %} collection-sidebar--mobile-single{% endif %}"
+    style="
+      {% render 'spacing-padding', settings: section.settings %}
+      --cs-sidebar-width: {{ section.settings.sidebar_width }}px;
+      --cs-columns: {{ columns }};
+      --cs-gap-row: {{ section.settings.columns_gap_vertical }}px;
+      --cs-gap-column: {{ section.settings.columns_gap_horizontal }}px;
+      --cpt-image-ratio: {{ section.settings.image_ratio }};
+      --cpt-card-radius: {{ section.settings.card_corner_radius }}px;
+      {% if section.settings.sidebar_background != blank %}--cs-sidebar-bg: {{ section.settings.sidebar_background }};{% endif %}
+      {% if section.settings.accent_color != blank %}--cpt-accent: {{ section.settings.accent_color }}; --cpt-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
+      {% if section.settings.button_text_color != blank %}--cpt-active-icon: {{ section.settings.button_text_color }};{% endif %}
+      {% if section.settings.card_background != blank %}--cpt-card-bg: {{ section.settings.card_background }};{% endif %}
+      {% if section.settings.star_color != blank %}--cpt-star: {{ section.settings.star_color }};{% endif %}
+    "
+    section-id="{{ section.id }}"
+    infinite-scroll="{{ section.settings.enable_infinite_scroll }}"
+  >
+    {% render 'skip-to-content-link', href: '#ResultsList', text: 'accessibility.skip_to_results_list' %}
+
+    {% paginate collection.products by products_per_page %}
+      {%- liquid
+        assign shown_count = paginate.current_offset | plus: collection.products.size
+        assign count_text = section.settings.count_text | replace: '[shown]', shown_count | replace: '[count]', collection.products_count
+      -%}
+      <div class="collection-sidebar__layout">
+        {%- if section.settings.filters_heading != blank -%}
+          <h2 class="collection-sidebar__heading">{{ section.settings.filters_heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if count_text != blank -%}
+          <p
+            class="collection-sidebar__count"
+            role="status"
+          >
+            {{ count_text | escape }}
+          </p>
+        {%- endif -%}
+
+        {% content_for 'block',
+          type: 'filters',
+          id: 'filters',
+          results: collection,
+          results_size: collection.products_count
+        %}
+
+        {%- if section.settings.clear_button_label != blank -%}
+          <facet-remove-component
+            class="collection-sidebar__clear"
+            data-url="{{ collection.url }}"
+            active-class="collection-sidebar__clear-button--active"
+          >
+            <button
+              type="button"
+              class="collection-sidebar__clear-button{% if has_active_filters %} collection-sidebar__clear-button--active{% endif %}"
+              ref="clearButton"
+              on:click="/removeFilter?form=FacetFiltersFormComponent--{{ section.id }}-desktop"
+              on:keydown="/removeFilter?form=FacetFiltersFormComponent--{{ section.id }}-desktop"
+            >
+              {{- section.settings.clear_button_label | escape -}}
+            </button>
+          </facet-remove-component>
+        {%- endif -%}
+
+        {% capture children %}
+          {% for product in collection.products %}
+            <li
+              id="{{ section.id }}-{{ product.id }}"
+              class="product-grid__item product-grid__item--{{ forloop.index0 }}"
+              data-page="{{ paginate.current_page }}"
+              data-product-id="{{ product.id }}"
+              ref="cards[]"
+            >
+              {% render 'category-product-card',
+                product: product,
+                section_id: section.id,
+                index: forloop.index,
+                show_weight: section.settings.show_weight,
+                show_rating: section.settings.show_rating,
+                image_sizes: image_sizes
+              %}
+            </li>
+          {% endfor %}
+        {% endcapture %}
+
+        {% render 'product-grid',
+          section: section,
+          children: children,
+          products: collection.products,
+          paginate: paginate,
+          enable_infinite_scroll: section.settings.enable_infinite_scroll
+        %}
+      </div>
+    {% endpaginate %}
+  </results-list>
+</collection-component>
+
+{% stylesheet %}
+  .collection-sidebar {
+    --cpt-accent-color: var(--cpt-accent, var(--color-foreground));
+    --cpt-accent-color-rgb: var(--cpt-accent-rgb, var(--color-foreground-rgb));
+    --cpt-active-icon-color: var(--cpt-active-icon, var(--color-background));
+    --cpt-card-bg-color: var(--cpt-card-bg, color-mix(in srgb, var(--color-background) 55%, white));
+    --cpt-star-color: var(--cpt-star, var(--cpt-accent-color));
+    --cs-sidebar-bg-color: var(--cs-sidebar-bg, color-mix(in srgb, var(--color-background) 55%, white));
+    --cs-sidebar-padding: var(--padding-lg);
+    --price-range-accent: var(--cpt-accent-color);
+
+    color: var(--color-foreground);
+  }
+
+  .collection-sidebar__layout {
+    min-width: 0;
+  }
+
+  /* The heading and clear button belong to the sidebar, which only shows on larger screens. */
+  .collection-sidebar__heading,
+  .collection-sidebar__clear {
+    display: none;
+  }
+
+  .collection-sidebar__count {
+    margin: 0 0 var(--margin-sm);
+    font-size: 0.875rem;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+
+  /* The product grid snippet's own width and padding settings don't apply inside this layout. */
+  .collection-sidebar .main-collection-grid {
+    padding: 0;
+  }
+
+  .collection-sidebar .product-grid {
+    --product-grid-gap: var(--cs-gap-row) min(var(--cs-gap-column), 12px);
+
+    @media screen and (min-width: 750px) {
+      --product-grid-gap: var(--cs-gap-row) var(--cs-gap-column);
+      --product-grid-columns-desktop: repeat(min(var(--cs-columns), 2), minmax(0, 1fr));
+    }
+
+    /* Next to the sidebar, medium screens fit at most three cards per row. */
+    @media screen and (min-width: 990px) {
+      --product-grid-columns-desktop: repeat(min(var(--cs-columns), 3), minmax(0, 1fr));
+    }
+
+    @media screen and (min-width: 1200px) {
+      --product-grid-columns-desktop: repeat(var(--cs-columns), minmax(0, 1fr));
+    }
+  }
+
+  .collection-sidebar--mobile-single .product-grid {
+    @media screen and (max-width: 749px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .collection-sidebar .product-grid__item {
+    display: flex;
+    min-width: 0;
+  }
+
+  /* Sidebar layout: only when the Filters block shows a vertical filter pane. */
+  @media screen and (min-width: 750px) {
+    .collection-sidebar__layout:has(> div.facets-block-wrapper--vertical:not(.hidden)) {
+      display: grid;
+      grid-template-columns: var(--cs-sidebar-width) minmax(0, 1fr);
+      grid-template-rows: auto auto auto 1fr;
+      column-gap: var(--gap-2xl);
+      align-items: start;
+
+      .collection-sidebar__heading {
+        display: block;
+        grid-area: 1 / 1;
+        margin: 0;
+        padding: var(--cs-sidebar-padding) var(--cs-sidebar-padding) var(--padding-sm);
+        border-start-start-radius: var(--cpt-card-radius);
+        border-start-end-radius: var(--cpt-card-radius);
+        background-color: var(--cs-sidebar-bg-color);
+        font-family: var(--cpt-title-font);
+        font-weight: var(--cpt-title-weight);
+        font-size: 1.5rem;
+        line-height: 1.2;
+        color: var(--color-foreground);
+        align-self: stretch;
+      }
+
+      /* Count on the left, the Filters block's sort control on the right, both above the grid. */
+      .collection-sidebar__count {
+        grid-area: 1 / 2;
+        align-self: center;
+        margin: 0;
+      }
+
+      > .facets-controls-wrapper {
+        grid-area: 1 / 2;
+        align-self: center;
+        justify-self: end;
+        padding: 0;
+
+        .facets--filters-title,
+        .products-count-wrapper {
+          display: none;
+        }
+      }
+
+      > div.facets-block-wrapper--vertical {
+        grid-area: 2 / 1;
+        margin: 0;
+        padding: 0 var(--cs-sidebar-padding) var(--padding-sm);
+        background-color: var(--cs-sidebar-bg-color);
+        align-self: stretch;
+      }
+
+      .collection-sidebar__clear {
+        display: block;
+        grid-area: 3 / 1;
+        padding: var(--padding-sm) var(--cs-sidebar-padding) var(--cs-sidebar-padding);
+        border-end-start-radius: var(--cpt-card-radius);
+        border-end-end-radius: var(--cpt-card-radius);
+        background-color: var(--cs-sidebar-bg-color);
+      }
+
+      > .main-collection-grid {
+        grid-column: 2;
+        grid-row: 2 / -1;
+        margin-block-start: var(--margin-md);
+      }
+    }
+
+    /* Without a clear button the filter pane carries the sidebar's bottom corners. */
+    .collection-sidebar__layout:not(:has(> .collection-sidebar__clear)) > div.facets-block-wrapper--vertical {
+      padding-block-end: var(--cs-sidebar-padding);
+      border-end-start-radius: var(--cpt-card-radius);
+      border-end-end-radius: var(--cpt-card-radius);
+    }
+
+    /* The count repeats the Filters block's own count outside the sidebar layout. */
+    .collection-sidebar__layout:not(:has(> div.facets-block-wrapper--vertical:not(.hidden))) .collection-sidebar__count {
+      display: none;
+    }
+  }
+
+  .collection-sidebar__clear-button {
+    width: 100%;
+    min-height: var(--minimum-touch-target);
+    padding: var(--padding-sm) var(--padding-md);
+    border: 0;
+    border-radius: var(--style-border-radius-inputs);
+    background-color: var(--cpt-accent-color);
+    color: var(--cpt-active-icon-color);
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      opacity: var(--opacity-85);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cpt-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  /* Brand styling for the stock filter pane inside this section. */
+  .collection-sidebar .facets--vertical {
+    .facets__summary {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-foreground);
+    }
+
+    .facets__item::before {
+      border-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    }
+
+    .checkbox__label-text {
+      font-size: 0.875rem;
+    }
+
+    .checkbox__input:checked + .checkbox__label .icon-checkmark {
+      background-color: var(--cpt-accent-color);
+      border-color: var(--cpt-accent-color);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collection-sidebar__clear-button {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.collection_sidebar",
+  "class": "collection-sidebar-section",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.sidebar"
+    },
+    {
+      "type": "text",
+      "id": "filters_heading",
+      "label": "t:settings.heading",
+      "default": "Filter by"
+    },
+    {
+      "type": "text",
+      "id": "clear_button_label",
+      "label": "t:settings.clear_button_label",
+      "info": "t:info.clear_button_label",
+      "default": "Clear filters"
+    },
+    {
+      "type": "range",
+      "id": "sidebar_width",
+      "label": "t:settings.sidebar_width",
+      "min": 200,
+      "max": 360,
+      "step": 10,
+      "unit": "px",
+      "default": 260
+    },
+    {
+      "type": "header",
+      "content": "t:content.grid"
+    },
+    {
+      "type": "text",
+      "id": "count_text",
+      "label": "t:settings.count_text",
+      "info": "t:info.count_text",
+      "default": "Showing [shown] of [count] products"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "t:settings.mobile_columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:options.one_number"
+        },
+        {
+          "value": "2",
+          "label": "t:options.two_number"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_infinite_scroll",
+      "label": "t:settings.auto_load_products",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "t:settings.products_per_page",
+      "min": 6,
+      "max": 36,
+      "step": 3,
+      "default": 12,
+      "visible_if": "{{ section.settings.enable_infinite_scroll == false }}"
+    },
+    {
+      "type": "range",
+      "id": "columns_gap_horizontal",
+      "label": "t:settings.horizontal_gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "columns_gap_vertical",
+      "label": "t:settings.vertical_gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "t:names.product_card"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "t:settings.image_ratio",
+      "options": [
+        {
+          "value": "4 / 3",
+          "label": "t:options.landscape"
+        },
+        {
+          "value": "1 / 1",
+          "label": "t:options.square"
+        },
+        {
+          "value": "4 / 5",
+          "label": "t:options.portrait"
+        }
+      ],
+      "default": "4 / 3"
+    },
+    {
+      "type": "range",
+      "id": "card_corner_radius",
+      "label": "t:settings.card_corner_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_weight",
+      "label": "t:settings.show_weight",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "t:settings.show_rating",
+      "info": "t:info.show_rating",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "t:settings.button_text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "sidebar_background",
+      "label": "t:settings.sidebar_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "t:settings.card_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "t:settings.star_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": []
+}
+{% endschema %}

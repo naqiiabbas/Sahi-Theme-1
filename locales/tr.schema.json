@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Koleksiyon kategorileri",
+    "all_products_link": "Tüm ürünler bağlantısı",
+    "collection_sidebar": "Kenar çubuklu koleksiyon",
     "related_products": "İlgili ürünler",
     "product_info_reviews": "Değerlendirmeler sekmesi",
     "product_info_nutrition": "Besin değerleri sekmesi",
@@ -194,6 +197,14 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_all_link": "Tüm ürünler bağlantısını göster",
+    "icon_size": "Simge boyutu",
+    "show_divider": "Ayırıcıyı göster",
+    "clear_button_label": "Temizle düğmesi etiketi",
+    "sidebar_width": "Kenar çubuğu genişliği",
+    "count_text": "Ürün sayısı metni",
+    "sidebar_background": "Kenar çubuğu arka planı",
+    "show_price_slider": "Fiyat kaydırıcısını göster",
     "skip_collections": "Atlanacak koleksiyonlar",
     "empty_reviews_text": "Değerlendirme yokken gösterilecek metin",
     "based_on_label": "Puan özeti metni",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "script": "El yazısı",
+    "small_caps": "Küçük büyük harfler",
     "related_product_collection": "Ürünün koleksiyonu",
     "mortar": "Havan",
     "sprout": "Filiz",
@@ -949,6 +962,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "sidebar": "Kenar çubuğu",
     "background_video": "Arka plan videosu",
     "describe_the_video_for": "Ekran okuyucu kullanan müşteriler için videoyu açıklayın. [Daha fazla bilgi edinin](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Genişlik, mobil cihazlar için otomatik olarak optimize edilir.",
@@ -1174,6 +1188,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "collection_categories_label": "Gösterilmez. Ekran okuyucular kategori bağlantılarını tanımlamak için kullanır.",
+    "clear_button_label": "Düğmeyi gizlemek için boş bırakın.",
+    "count_text": "Gösterilen ürün sayısı için [shown], toplam için [count] kullanın. Gizlemek için boş bırakın.",
     "skip_collections": "Ürünün koleksiyonu olarak hiç kullanılmayacak, virgülle ayrılmış koleksiyon tanıtıcıları.",
     "related_link_label": "Koleksiyon adı için [collection] kullanın. Bağlantıyı gizlemek için boş bırakın.",
     "related_collection": "Kaynak Koleksiyon olduğunda veya ürün hiçbir koleksiyonda değilse kullanılır.",

@@ -177,6 +177,7 @@
     >
       <facets-form-component
         class="facets__form-wrapper"
+        id="FacetFiltersFormComponent--{{ section.id }}-desktop"
         section-id="{{ section.id }}"
         form-style="{{ block_settings.filter_style }}"
         {{ collection_id_attribute }}
@@ -217,7 +218,7 @@
                           assign should_render_clear = false
                         endif
 
-                        render 'price-filter', filter: filter, filter_style: block_settings.filter_style, should_render_clear: should_render_clear, id_prefix: 'horizontal'
+                        render 'price-filter', filter: filter, filter_style: block_settings.filter_style, should_render_clear: should_render_clear, id_prefix: 'horizontal', show_slider: block_settings.show_price_slider
                       -%}
                     {% else %}
                       {% liquid
@@ -232,7 +233,7 @@
                         else
                           assign should_render_clear = false
                         endif
-                        render 'list-filter', filter: filter, filter_style: block_settings.filter_style, active_value_count: active_value_count, should_render_clear: should_render_clear, show_swatch_label: block_settings.show_swatch_label, sectionId: section.id
+                        render 'list-filter', filter: filter, filter_style: block_settings.filter_style, active_value_count: active_value_count, should_render_clear: should_render_clear, show_swatch_label: block_settings.show_swatch_label, sectionId: section.id, show_count: block_settings.show_value_counts
                       %}
                   {% endcase %}
                 {%- endfor -%}
@@ -481,7 +482,7 @@
                           assign is_active = true
                         endif
 
-                        render 'price-filter', filter: filter, filter_style: 'vertical', should_render_clear: false, id_prefix: 'dialog'
+                        render 'price-filter', filter: filter, filter_style: 'vertical', should_render_clear: false, id_prefix: 'dialog', show_slider: block_settings.show_price_slider
                       -%}
                     {% else %}
                       {% liquid
@@ -491,7 +492,7 @@
 
                         assign active_value_count = filter.active_values | size
                         assign total_active_values = total_active_values | plus: active_value_count
-                        render 'list-filter', filter: filter, filter_style: 'vertical', active_value_count: active_value_count, should_render_clear: false, in_drawer: true, sectionId: section.id
+                        render 'list-filter', filter: filter, filter_style: 'vertical', active_value_count: active_value_count, should_render_clear: false, in_drawer: true, sectionId: section.id, show_count: block_settings.show_value_counts
                       %}
                   {% endcase %}
                 {%- endfor -%}
@@ -1375,6 +1376,20 @@
       "type": "checkbox",
       "id": "show_filter_label",
       "label": "t:settings.show_filter_label",
+      "default": false,
+      "visible_if": "{{ block.settings.enable_filtering == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_value_counts",
+      "label": "t:settings.show_count",
+      "default": false,
+      "visible_if": "{{ block.settings.enable_filtering == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price_slider",
+      "label": "t:settings.show_price_slider",
       "default": false,
       "visible_if": "{{ block.settings.enable_filtering == true }}"
     },

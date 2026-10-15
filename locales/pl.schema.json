@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kategorie kolekcji",
+    "all_products_link": "Link Wszystkie produkty",
+    "collection_sidebar": "Kolekcja z panelem bocznym",
     "related_products": "Powiązane produkty",
     "product_info_reviews": "Karta opinii",
     "product_info_nutrition": "Karta wartości odżywczych",
@@ -194,6 +197,14 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "show_all_link": "Pokaż link Wszystkie produkty",
+    "icon_size": "Rozmiar ikony",
+    "show_divider": "Pokaż separator",
+    "clear_button_label": "Etykieta przycisku czyszczenia",
+    "sidebar_width": "Szerokość panelu bocznego",
+    "count_text": "Tekst liczby produktów",
+    "sidebar_background": "Tło panelu bocznego",
+    "show_price_slider": "Pokaż suwak ceny",
     "skip_collections": "Pomijane kolekcje",
     "empty_reviews_text": "Tekst, gdy brak opinii",
     "based_on_label": "Tekst podsumowania ocen",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "script": "Pismo odręczne",
+    "small_caps": "Kapitaliki",
     "related_product_collection": "Kolekcja produktu",
     "mortar": "Moździerz",
     "sprout": "Kiełek",
@@ -949,6 +962,7 @@
     "direction_top_start": "Góra po lewej"
   },
   "content": {
+    "sidebar": "Panel boczny",
     "background_video": "Wideo w tle",
     "describe_the_video_for": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Szerokość jest automatycznie optymalizowana pod kątem urządzeń mobilnych.",
@@ -1174,6 +1188,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "collection_categories_label": "Niewidoczne. Czytniki ekranu używają tego do opisu linków kategorii.",
+    "clear_button_label": "Pozostaw puste, aby ukryć przycisk.",
+    "count_text": "Użyj [shown] dla liczby wyświetlanych produktów i [count] dla sumy. Pozostaw puste, aby ukryć.",
     "skip_collections": "Uchwyty kolekcji oddzielone przecinkami, które nigdy nie są używane jako kolekcja produktu.",
     "related_link_label": "Użyj [collection] dla nazwy kolekcji. Pozostaw puste, aby ukryć link.",
     "related_collection": "Używana, gdy źródłem jest Kolekcja lub gdy produkt nie należy do żadnej kolekcji.",

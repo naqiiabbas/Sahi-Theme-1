@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "产品系列类别",
+    "all_products_link": "所有产品链接",
+    "collection_sidebar": "带侧边栏的产品系列",
     "related_products": "相关商品",
     "product_info_reviews": "评价标签页",
     "product_info_nutrition": "营养标签页",
@@ -194,6 +197,14 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_all_link": "显示所有产品链接",
+    "icon_size": "图标大小",
+    "show_divider": "显示分隔线",
+    "clear_button_label": "清除按钮标签",
+    "sidebar_width": "侧边栏宽度",
+    "count_text": "产品数量文本",
+    "sidebar_background": "侧边栏背景",
+    "show_price_slider": "显示价格滑块",
     "skip_collections": "要跳过的商品系列",
     "empty_reviews_text": "无评价时的文字",
     "based_on_label": "评分摘要文字",
@@ -656,6 +667,8 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "script": "手写体",
+    "small_caps": "小型大写字母",
     "related_product_collection": "商品所在系列",
     "mortar": "研钵",
     "sprout": "嫩芽",
@@ -949,6 +962,7 @@
     "direction_top_start": "左上方"
   },
   "content": {
+    "sidebar": "侧边栏",
     "advanced": "高级",
     "background_image": "背景图片",
     "background_video": "背景视频",
@@ -1174,6 +1188,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "collection_categories_label": "不显示。屏幕阅读器用它来描述类别链接。",
+    "clear_button_label": "留空可隐藏按钮。",
+    "count_text": "使用 [shown] 表示显示的产品数量，使用 [count] 表示总数。留空可隐藏。",
     "skip_collections": "用逗号分隔的商品系列句柄，这些系列不会被用作商品所属系列。",
     "related_link_label": "用 [collection] 表示系列名称。留空则隐藏链接。",
     "related_collection": "当来源为商品系列，或商品不在任何系列中时使用。",

@@ -9,6 +9,9 @@
  */
 {
   "names": {
+    "collection_categories": "Kollektionskategorier",
+    "all_products_link": "Länk till alla produkter",
+    "collection_sidebar": "Kollektion med sidofält",
     "related_products": "Relaterade produkter",
     "product_info_reviews": "Recensionsflik",
     "product_info_nutrition": "Näringsflik",
@@ -194,6 +197,14 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "show_all_link": "Visa länk till alla produkter",
+    "icon_size": "Ikonstorlek",
+    "show_divider": "Visa avdelare",
+    "clear_button_label": "Etikett för rensa-knapp",
+    "sidebar_width": "Sidofältets bredd",
+    "count_text": "Text för antal produkter",
+    "sidebar_background": "Sidofältets bakgrund",
+    "show_price_slider": "Visa prisreglage",
     "skip_collections": "Kollektioner att hoppa över",
     "empty_reviews_text": "Text när det inte finns recensioner",
     "based_on_label": "Text för betygssammanfattning",
@@ -656,6 +667,8 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "script": "Skrivstil",
+    "small_caps": "Kapitäler",
     "related_product_collection": "Produktens kollektion",
     "mortar": "Mortel",
     "sprout": "Grodd",
@@ -949,6 +962,7 @@
     "direction_top_start": "Uppe till vänster"
   },
   "content": {
+    "sidebar": "Sidofält",
     "advanced": "Avancerat",
     "background_image": "Bakgrundsbild",
     "background_video": "Bakgrundsvideo",
@@ -1174,6 +1188,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "collection_categories_label": "Visas inte. Skärmläsare använder den för att beskriva kategorilänkarna.",
+    "clear_button_label": "Lämna tomt för att dölja knappen.",
+    "count_text": "Använd [shown] för antal visade produkter och [count] för totalen. Lämna tomt för att dölja.",
     "skip_collections": "Kollektionshandtag, separerade med kommatecken, som aldrig används som produktens kollektion.",
     "related_link_label": "Använd [collection] för kollektionens namn. Lämna tomt för att dölja länken.",
     "related_collection": "Används när källan är Kollektion eller när produkten inte finns i någon kollektion.",

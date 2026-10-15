@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "sidebar": "Sidebar",
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
     "advanced": "Advanced",
     "appearance": "Appearance",
@@ -223,6 +224,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "collection_categories_label": "Not shown. Screen readers use it to describe the category links.",
+    "clear_button_label": "Leave blank to hide the button.",
+    "count_text": "Use [shown] for the number of products shown and [count] for the total. Leave blank to hide.",
     "skip_collections": "Collection handles, separated by commas, that are never used as the product's collection.",
     "related_link_label": "Use [collection] for the collection name. Leave blank to hide the link.",
     "related_collection": "Used when the source is Collection, or when the product isn't in any collection.",
@@ -274,6 +278,9 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "collection_categories": "Collection categories",
+    "all_products_link": "All products link",
+    "collection_sidebar": "Collection with sidebar",
     "related_products": "Related products",
     "product_info_reviews": "Reviews tab",
     "product_info_nutrition": "Nutrition tab",
@@ -466,6 +473,8 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "script": "Script",
+    "small_caps": "Small caps",
     "related_product_collection": "Product's collection",
     "mortar": "Mortar and pestle",
     "sprout": "Sprout",
@@ -802,6 +811,14 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_all_link": "Show All products link",
+    "icon_size": "Icon size",
+    "show_divider": "Show divider",
+    "clear_button_label": "Clear button label",
+    "sidebar_width": "Sidebar width",
+    "count_text": "Product count text",
+    "sidebar_background": "Sidebar background",
+    "show_price_slider": "Show price slider",
     "skip_collections": "Collections to skip",
     "empty_reviews_text": "Text when there are no reviews",
     "based_on_label": "Rating summary text",

@@ -5,9 +5,10 @@
   @param {string} filter_style - The filter style, can be 'horizontal' or 'vertical'.
   @param {boolean} [should_render_clear] - Whether to render the clear button.
   @param {string} [id_prefix] - Unique prefix to avoid duplicate IDs when rendered multiple times.
+  @param {boolean} [show_slider] - Replaces the min and max fields with a two-handle slider that writes to them.
 
   @example
-  {% render 'price-filter', filter: filter, filter_style: 'vertical', id_prefix: 'dialog' %}
+  {% render 'price-filter', filter: filter, filter_style: 'vertical', id_prefix: 'dialog', show_slider: true %}
 {%- enddoc -%}
 
 {%- liquid
@@ -18,7 +19,24 @@
   elsif filter_style == 'vertical'
     assign is_vertical = true
   endif
+
+  # The slider needs a price range to span.
+  assign has_slider = false
+  if show_slider and filter.range_max > 0
+    assign has_slider = true
+    assign slider_min = filter.min_value.value | default: 0 | at_most: filter.range_max
+    assign slider_max = filter.max_value.value | default: filter.range_max | at_most: filter.range_max
+    assign slider_start = slider_min | times: 100.0 | divided_by: filter.range_max
+    assign slider_end = slider_max | times: 100.0 | divided_by: filter.range_max
+  endif
 -%}
+{%- if has_slider -%}
+  <script
+    src="{{ 'price-range-slider.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+{%- endif -%}
 {% capture accordion_children %}
   <details
     class="facets__panel"
@@ -73,6 +91,9 @@
           price-facet
           {%- if filter_style == 'horizontal' %}
             price-facet--horizontal
+          {%- endif %}
+          {%- if has_slider %}
+            price-facet--slider
           {%- endif %}
         "
         id="facet-inputs-{{ filter.param_name | escape | replace: '.', '-' }}"
@@ -138,6 +159,57 @@
             </div>
           </div>
         </div>
+
+        {%- if has_slider -%}
+          {% comment %}
+            The range inputs have no name, so only the text fields above are submitted. The slider writes to
+            them, and its bubbling change event runs this component's updatePriceFilterAndResults.
+          {% endcomment %}
+          <price-range-slider
+            class="price-range"
+            style="--price-range-start: {{ slider_start }}%; --price-range-end: {{ slider_end }}%;"
+            data-range-max="{{ filter.range_max }}"
+          >
+            <div class="price-range__track">
+              <span
+                class="price-range__fill"
+                aria-hidden="true"
+              ></span>
+              <input
+                type="range"
+                class="price-range__input"
+                min="0"
+                max="{{ filter.range_max }}"
+                step="1"
+                value="{{ slider_min }}"
+                aria-label="{{ 'accessibility.price_filter_low' | t }}"
+                aria-valuetext="{{ slider_min | money_without_trailing_zeros | strip_html }}"
+                ref="minRange"
+                on:input="/handleInput"
+              >
+              <input
+                type="range"
+                class="price-range__input"
+                min="0"
+                max="{{ filter.range_max }}"
+                step="1"
+                value="{{ slider_max }}"
+                aria-label="{{ 'accessibility.price_filter_high' | t }}"
+                aria-valuetext="{{ slider_max | money_without_trailing_zeros | strip_html }}"
+                ref="maxRange"
+                on:input="/handleInput"
+              >
+            </div>
+            <p
+              class="price-range__values"
+              aria-hidden="true"
+            >
+              <bdi ref="minLabel">{{ slider_min | money_without_trailing_zeros | strip_html }}</bdi>
+              <span>{{ 'fields.separator' | t }}</span>
+              <bdi ref="maxLabel">{{ slider_max | money_without_trailing_zeros | strip_html }}</bdi>
+            </p>
+          </price-range-slider>
+        {%- endif -%}
 
         <div
           class="
@@ -240,5 +312,116 @@
     color: var(--facets-input-label-color);
     padding: var(--input-padding-y) var(--input-padding-x);
     transform: none;
+  }
+
+  /* Slider mode: the text fields stay in the form but the slider replaces them visually. */
+  .price-facet--slider > .facets__inputs-wrapper,
+  .price-facet--slider > .price-facet__highest-price {
+    display: none;
+  }
+
+  .price-range {
+    --price-range-thumb-size: 1rem;
+    --price-range-track-height: 3px;
+    --price-range-color: var(--price-range-accent, var(--color-foreground));
+
+    display: block;
+    padding-block: var(--padding-sm) var(--padding-xs);
+  }
+
+  .price-range__track {
+    position: relative;
+    height: var(--price-range-thumb-size);
+    margin-inline: calc(var(--price-range-thumb-size) / 2);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset-inline: calc(var(--price-range-thumb-size) / -2);
+      inset-block-start: 50%;
+      height: var(--price-range-track-height);
+      border-radius: var(--price-range-track-height);
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-15));
+      transform: translateY(-50%);
+    }
+  }
+
+  .price-range__fill {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: var(--price-range-start);
+    inset-inline-end: calc(100% - var(--price-range-end));
+    height: var(--price-range-track-height);
+    background-color: var(--price-range-color);
+    transform: translateY(-50%);
+  }
+
+  /* Both inputs overlap the track; only their thumbs take pointer events. */
+  .price-range__input {
+    position: absolute;
+    inset: 0;
+    inset-inline: calc(var(--price-range-thumb-size) / -2);
+    width: calc(100% + var(--price-range-thumb-size));
+    height: 100%;
+    margin: 0;
+    background: none;
+    pointer-events: none;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &::-webkit-slider-runnable-track {
+      background: none;
+    }
+
+    &::-webkit-slider-thumb {
+      width: var(--price-range-thumb-size);
+      height: var(--price-range-thumb-size);
+      border: 2px solid var(--color-background);
+      border-radius: 50%;
+      background-color: var(--price-range-color);
+      box-shadow: 0 1px 3px rgb(var(--color-foreground-rgb) / var(--opacity-20));
+      cursor: grab;
+      pointer-events: auto;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    &::-moz-range-track {
+      background: none;
+    }
+
+    &::-moz-range-thumb {
+      width: var(--price-range-thumb-size);
+      height: var(--price-range-thumb-size);
+      border: 2px solid var(--color-background);
+      border-radius: 50%;
+      background-color: var(--price-range-color);
+      box-shadow: 0 1px 3px rgb(var(--color-foreground-rgb) / var(--opacity-20));
+      cursor: grab;
+      pointer-events: auto;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible::-webkit-slider-thumb {
+      outline: var(--focus-outline-width) solid var(--price-range-color);
+      outline-offset: 2px;
+    }
+
+    &:focus-visible::-moz-range-thumb {
+      outline: var(--focus-outline-width) solid var(--price-range-color);
+      outline-offset: 2px;
+    }
+  }
+
+  .price-range__values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-xs);
+    margin: var(--margin-sm) 0 0;
+    font-size: var(--font-paragraph--size);
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
   }
 {% endstylesheet %}

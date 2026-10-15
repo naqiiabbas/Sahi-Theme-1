@@ -1,0 +1,492 @@
+{% comment %}
+  Section contract.
+  A row of round category icons that link to collections, with an optional "All products" link first.
+  The link for the collection being viewed is highlighted and marked aria-current. Icons are image masks,
+  so they follow the section's colors. Scrolls sideways when the links don't fit.
+  @example
+  <!-- Add "Collection categories" to a collection template, then add a Category block per collection -->
+{% endcomment %}
+
+{%- liquid
+  assign label_font = section.settings.label_font
+
+  assign all_url = section.settings.all_link
+  assign all_active = false
+  if collection != blank and all_url != blank
+    assign all_handle = all_url | split: '?' | first | split: '/' | last
+    if collection.handle == all_handle
+      assign all_active = true
+    endif
+  endif
+
+  assign all_icon_url = ''
+  if section.settings.all_icon != blank
+    assign all_icon_url = section.settings.all_icon | image_url: width: 160
+  elsif section.settings.all_fallback_icon != blank
+    assign all_icon_url = section.settings.all_fallback_icon | asset_url
+  endif
+
+  assign show_all = false
+  if section.settings.show_all_link and all_url != blank
+    assign show_all = true
+  endif
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ label_font | font_face: font_display: 'swap' }}
+
+  .collection-categories-{{ section.id }} {
+    --cc-label-font: {{ label_font.family }}, {{ label_font.fallback_families }};
+    --cc-label-weight: {{ label_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="collection-categories collection-categories-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.show_divider %} collection-categories--divider{% endif %}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --cc-icon-size: {{ section.settings.icon_size }}px;
+    {% if section.settings.accent_color != blank %}--cc-accent: {{ section.settings.accent_color }};{% endif %}
+    {% if section.settings.icon_background != blank %}--cc-icon-bg: {{ section.settings.icon_background }};{% endif %}
+    {% if section.settings.active_icon_color != blank %}--cc-active-icon: {{ section.settings.active_icon_color }};{% endif %}
+  "
+>
+  {%- if show_all or section.blocks.size > 0 -%}
+    <nav
+      class="collection-categories__nav"
+      aria-label="{{ section.settings.nav_label | escape }}"
+    >
+      <ul class="collection-categories__list">
+        {%- if show_all -%}
+          <li class="collection-categories__item">
+            <a
+              href="{{ all_url }}"
+              class="collection-categories__link"
+              {% if all_active %}
+                aria-current="page"
+              {% endif %}
+            >
+              <span
+                class="collection-categories__icon"
+                aria-hidden="true"
+                {% if all_icon_url != blank %}
+                  style="--cc-icon: url('{{ all_icon_url }}');"
+                {% endif %}
+              ></span>
+              <span class="collection-categories__label">{{ section.settings.all_label | escape }}</span>
+            </a>
+          </li>
+        {%- endif -%}
+
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign category = block.settings.collection
+            assign label = block.settings.label | default: category.title
+            assign is_active = false
+            if category != blank and collection != blank and category.handle == collection.handle
+              assign is_active = true
+            endif
+
+            assign icon_url = ''
+            if block.settings.icon != blank
+              assign icon_url = block.settings.icon | image_url: width: 160
+            elsif block.settings.fallback_icon != blank
+              assign icon_url = block.settings.fallback_icon | asset_url
+            endif
+          -%}
+          <li
+            class="collection-categories__item"
+            {{ block.shopify_attributes }}
+          >
+            {%- if category != blank -%}
+              <a
+                href="{{ category.url }}"
+                class="collection-categories__link"
+                {% if is_active %}
+                  aria-current="page"
+                {% endif %}
+              >
+            {%- else -%}
+              <span class="collection-categories__link">
+            {%- endif -%}
+            <span
+              class="collection-categories__icon"
+              aria-hidden="true"
+              {% if icon_url != blank %}
+                style="--cc-icon: url('{{ icon_url }}');"
+              {% endif %}
+            ></span>
+            <span class="collection-categories__label">
+              {{- label | escape -}}
+            </span>
+            {%- if category != blank -%}
+              </a>
+            {%- else -%}
+              </span>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .collection-categories {
+    --cc-accent-color: var(--cc-accent, var(--color-foreground));
+    --cc-icon-bg-color: var(--cc-icon-bg, color-mix(in srgb, var(--cc-accent-color) 8%, var(--color-background)));
+    --cc-active-icon-color: var(--cc-active-icon, var(--color-background));
+
+    color: var(--color-foreground);
+  }
+
+  .collection-categories--divider {
+    border-block-end: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-10));
+  }
+
+  .collection-categories__nav {
+    min-width: 0;
+  }
+
+  .collection-categories__list {
+    display: flex;
+    gap: var(--gap-sm);
+    margin: 0;
+    padding: var(--padding-2xs) 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      justify-content: center;
+      gap: var(--gap-2xl);
+    }
+  }
+
+  .collection-categories__item {
+    flex: 0 0 auto;
+  }
+
+  .collection-categories__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-xs);
+    min-width: 5.5rem;
+    padding: 0 var(--padding-xs);
+    color: var(--color-foreground);
+    text-decoration: none;
+
+    @media screen and (min-width: 750px) {
+      min-width: 7rem;
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cc-accent-color);
+      outline-offset: var(--focus-outline-offset);
+      border-radius: var(--style-border-radius-inputs);
+    }
+  }
+
+  .collection-categories__icon {
+    position: relative;
+    display: block;
+    width: calc(var(--cc-icon-size) * 0.85);
+    height: calc(var(--cc-icon-size) * 0.85);
+    border-radius: 50%;
+    background-color: var(--cc-icon-bg-color);
+    transition: background-color var(--animation-speed) var(--animation-easing);
+
+    @media screen and (min-width: 750px) {
+      width: var(--cc-icon-size);
+      height: var(--cc-icon-size);
+    }
+
+    /* The icon image is a mask, so its color follows the section colors and link state. */
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 24%;
+      background-color: var(--cc-accent-color);
+      -webkit-mask: var(--cc-icon) center / contain no-repeat;
+      mask: var(--cc-icon) center / contain no-repeat;
+      transition: background-color var(--animation-speed) var(--animation-easing);
+    }
+  }
+
+  /* !important and the extra class beat the global font overrides in theme-styles-variables.liquid,
+     so the section's font setting applies. */
+  .collection-categories .collection-categories__label {
+    font-family: var(--cc-label-font) !important;
+  }
+
+  .collection-categories__label {
+    position: relative;
+    padding-block-end: var(--padding-xs);
+    font-weight: var(--cc-label-weight);
+    font-size: 0.875rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+
+    @media screen and (min-width: 750px) {
+      font-size: 1rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      inset-block-end: 0;
+      height: 2px;
+      background-color: var(--cc-accent-color);
+      transform: scaleX(0);
+      transition: transform var(--animation-speed) var(--animation-easing);
+    }
+  }
+
+  a.collection-categories__link:hover .collection-categories__icon {
+    background-color: color-mix(in srgb, var(--cc-accent-color) 16%, var(--color-background));
+  }
+
+  .collection-categories__link[aria-current='page'] {
+    .collection-categories__icon {
+      background-color: var(--cc-accent-color);
+
+      &::after {
+        background-color: var(--cc-active-icon-color);
+      }
+    }
+
+    .collection-categories__label {
+      color: var(--cc-accent-color);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collection-categories__icon,
+    .collection-categories__icon::after,
+    .collection-categories__label::after {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.collection_categories",
+  "class": "collection-categories-section",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "category",
+      "name": "t:names.category_tab",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:settings.collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:settings.label",
+          "info": "t:info.category_tab_label"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "t:settings.icon"
+        },
+        {
+          "type": "text",
+          "id": "fallback_icon",
+          "label": "t:settings.fallback_image",
+          "info": "t:info.fallback_image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "nav_label",
+      "label": "t:settings.heading",
+      "info": "t:info.collection_categories_label",
+      "default": "Shop by category"
+    },
+    {
+      "type": "header",
+      "content": "t:names.all_products_link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_all_link",
+      "label": "t:settings.show_all_link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "all_label",
+      "label": "t:settings.label",
+      "default": "All Products",
+      "visible_if": "{{ section.settings.show_all_link }}"
+    },
+    {
+      "type": "url",
+      "id": "all_link",
+      "label": "t:settings.link",
+      "default": "/collections/all",
+      "visible_if": "{{ section.settings.show_all_link }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "all_icon",
+      "label": "t:settings.icon",
+      "visible_if": "{{ section.settings.show_all_link }}"
+    },
+    {
+      "type": "text",
+      "id": "all_fallback_icon",
+      "label": "t:settings.fallback_image",
+      "info": "t:info.fallback_image",
+      "default": "category-icon-all.svg",
+      "visible_if": "{{ section.settings.show_all_link }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "t:settings.icon_size",
+      "min": 40,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "font_picker",
+      "id": "label_font",
+      "label": "t:settings.font",
+      "default": "instrument_sans_n4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "t:settings.show_divider",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "t:settings.icon_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "active_icon_color",
+      "label": "t:settings.active_icon_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.collection_categories",
+      "category": "t:categories.collection",
+      "blocks": {
+        "category_1": {
+          "type": "category"
+        },
+        "category_2": {
+          "type": "category"
+        },
+        "category_3": {
+          "type": "category"
+        }
+      },
+      "block_order": ["category_1", "category_2", "category_3"]
+    }
+  ]
+}
+{% endschema %}
