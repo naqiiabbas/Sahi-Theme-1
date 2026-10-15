@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Kontaktformular med oplysninger",
+    "contact_detail": "Kontaktoplysning",
+    "contact_details_column": "Kontaktoplysninger",
+    "icon_highlights": "Ikonfremhævninger",
+    "highlight": "Fremhævning",
     "collection_categories": "Kollektionskategorier",
     "all_products_link": "Link til alle produkter",
     "collection_sidebar": "Kollektion med sidepanel",
@@ -197,6 +202,28 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "custom_icon": "Brugerdefineret ikon",
+    "contact_value": "Kontaktværdi",
+    "contact_value_type": "Link værdien som",
+    "name_label": "Etiket for navn",
+    "name_placeholder": "Pladsholder for navn",
+    "email_label": "Etiket for e-mail",
+    "email_placeholder": "Pladsholder for e-mail",
+    "show_phone": "Vis telefonfelt",
+    "phone_label": "Etiket for telefon",
+    "phone_placeholder": "Pladsholder for telefon",
+    "subject_label": "Etiket for emne",
+    "subject_placeholder": "Pladsholder for emne",
+    "subject_options": "Emnemuligheder",
+    "message_label": "Etiket for besked",
+    "message_placeholder": "Pladsholder for besked",
+    "message_max_length": "Tegngrænse for besked",
+    "button_label": "Knaptekst",
+    "success_message": "Bekræftelsesbesked",
+    "field_background": "Feltbaggrund",
+    "icon_color": "Ikonfarve",
+    "banner_note": "Note",
+    "show_breadcrumbs": "Vis brødkrummer",
     "show_all_link": "Vis link til alle produkter",
     "icon_size": "Ikonstørrelse",
     "show_divider": "Vis skillelinje",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Ur",
+    "headset": "Headset",
     "script": "Skråskrift",
     "small_caps": "Små kapitæler",
     "related_product_collection": "Produktets kollektion",
@@ -1188,6 +1219,10 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "custom_icon": "Erstatter ikonet. Brug et lille kvadratisk billede.",
+    "contact_value": "Vises under teksten, f.eks. en e-mailadresse eller et telefonnummer.",
+    "subject_options": "Ét emne pr. linje.",
+    "banner_note": "Lille tekst med store bogstaver under bannerteksten.",
     "collection_categories_label": "Vises ikke. Skærmlæsere bruger den til at beskrive kategorilinks.",
     "clear_button_label": "Lad feltet være tomt for at skjule knappen.",
     "count_text": "Brug [shown] for antallet af viste produkter og [count] for det samlede antal. Lad feltet være tomt for at skjule.",

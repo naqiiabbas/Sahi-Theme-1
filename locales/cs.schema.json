@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Kontaktní formulář s údaji",
+    "contact_detail": "Kontaktní údaj",
+    "contact_details_column": "Kontaktní údaje",
+    "icon_highlights": "Zvýraznění s ikonami",
+    "highlight": "Zvýraznění",
     "collection_categories": "Kategorie kolekcí",
     "all_products_link": "Odkaz Všechny produkty",
     "collection_sidebar": "Kolekce s postranním panelem",
@@ -197,6 +202,28 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "custom_icon": "Vlastní ikona",
+    "contact_value": "Kontaktní hodnota",
+    "contact_value_type": "Propojit hodnotu jako",
+    "name_label": "Popisek jména",
+    "name_placeholder": "Zástupný text jména",
+    "email_label": "Popisek e-mailu",
+    "email_placeholder": "Zástupný text e-mailu",
+    "show_phone": "Zobrazit pole telefonu",
+    "phone_label": "Popisek telefonu",
+    "phone_placeholder": "Zástupný text telefonu",
+    "subject_label": "Popisek předmětu",
+    "subject_placeholder": "Zástupný text předmětu",
+    "subject_options": "Možnosti předmětu",
+    "message_label": "Popisek zprávy",
+    "message_placeholder": "Zástupný text zprávy",
+    "message_max_length": "Limit znaků zprávy",
+    "button_label": "Popisek tlačítka",
+    "success_message": "Zpráva o úspěchu",
+    "field_background": "Pozadí polí",
+    "icon_color": "Barva ikony",
+    "banner_note": "Poznámka",
+    "show_breadcrumbs": "Zobrazit drobečkovou navigaci",
     "show_all_link": "Zobrazit odkaz Všechny produkty",
     "icon_size": "Velikost ikony",
     "show_divider": "Zobrazit oddělovač",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Hodiny",
+    "headset": "Sluchátka",
     "script": "Psací písmo",
     "small_caps": "Malé kapitálky",
     "related_product_collection": "Kolekce produktu",
@@ -1188,6 +1219,10 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "custom_icon": "Nahradí ikonu. Použijte malý čtvercový obrázek.",
+    "contact_value": "Zobrazí se pod textem, např. e-mailová adresa nebo telefonní číslo.",
+    "subject_options": "Jeden předmět na řádek.",
+    "banner_note": "Malý text velkými písmeny pod textem banneru.",
     "collection_categories_label": "Nezobrazuje se. Čtečky obrazovky jej používají k popisu odkazů na kategorie.",
     "clear_button_label": "Ponechte prázdné, chcete-li tlačítko skrýt.",
     "count_text": "Použijte [shown] pro počet zobrazených produktů a [count] pro celkový počet. Ponechte prázdné pro skrytí.",

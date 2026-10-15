@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Yhteydenottolomake ja tiedot",
+    "contact_detail": "Yhteystieto",
+    "contact_details_column": "Yhteystiedot",
+    "icon_highlights": "Kuvakenostot",
+    "highlight": "Nosto",
     "collection_categories": "Kokoelmaluokat",
     "all_products_link": "Kaikki tuotteet -linkki",
     "collection_sidebar": "Kokoelma sivupalkilla",
@@ -197,6 +202,28 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "custom_icon": "Mukautettu kuvake",
+    "contact_value": "Yhteystiedon arvo",
+    "contact_value_type": "Linkitä arvo muodossa",
+    "name_label": "Nimen nimike",
+    "name_placeholder": "Nimen paikkamerkki",
+    "email_label": "Sähköpostin nimike",
+    "email_placeholder": "Sähköpostin paikkamerkki",
+    "show_phone": "Näytä puhelinkenttä",
+    "phone_label": "Puhelimen nimike",
+    "phone_placeholder": "Puhelimen paikkamerkki",
+    "subject_label": "Aiheen nimike",
+    "subject_placeholder": "Aiheen paikkamerkki",
+    "subject_options": "Aihevaihtoehdot",
+    "message_label": "Viestin nimike",
+    "message_placeholder": "Viestin paikkamerkki",
+    "message_max_length": "Viestin merkkiraja",
+    "button_label": "Painikkeen teksti",
+    "success_message": "Onnistumisviesti",
+    "field_background": "Kenttien tausta",
+    "icon_color": "Kuvakkeen väri",
+    "banner_note": "Huomautus",
+    "show_breadcrumbs": "Näytä murupolku",
     "show_all_link": "Näytä Kaikki tuotteet -linkki",
     "icon_size": "Kuvakkeen koko",
     "show_divider": "Näytä erotin",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "email": "Sähköposti",
+    "whatsapp": "WhatsApp",
+    "clock": "Kello",
+    "headset": "Kuulokkeet",
     "script": "Käsialafontti",
     "small_caps": "Kapiteelit",
     "related_product_collection": "Tuotteen kokoelma",
@@ -1188,6 +1219,10 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "custom_icon": "Korvaa kuvakkeen. Käytä pientä neliökuvaa.",
+    "contact_value": "Näytetään tekstin alla, esim. sähköpostiosoite tai puhelinnumero.",
+    "subject_options": "Yksi aihe riviä kohden.",
+    "banner_note": "Pieni isoilla kirjaimilla kirjoitettu teksti bannerin tekstin alla.",
     "collection_categories_label": "Ei näytetä. Näytönlukuohjelmat kuvaavat sillä luokkalinkkejä.",
     "clear_button_label": "Jätä tyhjäksi piilottaaksesi painikkeen.",
     "count_text": "Käytä [shown] näytettyjen tuotteiden määrälle ja [count] kokonaismäärälle. Jätä tyhjäksi piilottaaksesi.",

@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Kontaktformular mit Details",
+    "contact_detail": "Kontaktdetail",
+    "contact_details_column": "Kontaktdetails",
+    "icon_highlights": "Symbol-Highlights",
+    "highlight": "Highlight",
     "collection_categories": "Kollektionskategorien",
     "all_products_link": "Link „Alle Produkte“",
     "collection_sidebar": "Kollektion mit Seitenleiste",
@@ -197,6 +202,28 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "custom_icon": "Eigenes Symbol",
+    "contact_value": "Kontaktwert",
+    "contact_value_type": "Wert verlinken als",
+    "name_label": "Beschriftung Name",
+    "name_placeholder": "Platzhalter Name",
+    "email_label": "Beschriftung E-Mail",
+    "email_placeholder": "Platzhalter E-Mail",
+    "show_phone": "Telefonfeld anzeigen",
+    "phone_label": "Beschriftung Telefon",
+    "phone_placeholder": "Platzhalter Telefon",
+    "subject_label": "Beschriftung Betreff",
+    "subject_placeholder": "Platzhalter Betreff",
+    "subject_options": "Betreffoptionen",
+    "message_label": "Beschriftung Nachricht",
+    "message_placeholder": "Platzhalter Nachricht",
+    "message_max_length": "Zeichenlimit der Nachricht",
+    "button_label": "Beschriftung der Schaltfläche",
+    "success_message": "Erfolgsmeldung",
+    "field_background": "Feldhintergrund",
+    "icon_color": "Symbolfarbe",
+    "banner_note": "Hinweis",
+    "show_breadcrumbs": "Breadcrumbs anzeigen",
     "show_all_link": "Link „Alle Produkte“ anzeigen",
     "icon_size": "Symbolgröße",
     "show_divider": "Trennlinie anzeigen",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "email": "E-Mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Uhr",
+    "headset": "Headset",
     "script": "Schreibschrift",
     "small_caps": "Kapitälchen",
     "related_product_collection": "Kollektion des Produkts",
@@ -1188,6 +1219,10 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "custom_icon": "Ersetzt das Symbol. Verwende ein kleines quadratisches Bild.",
+    "contact_value": "Wird unter dem Text angezeigt, z. B. eine E-Mail-Adresse oder Telefonnummer.",
+    "subject_options": "Ein Betreff pro Zeile.",
+    "banner_note": "Kleiner Text in Großbuchstaben unter dem Bannertext.",
     "collection_categories_label": "Wird nicht angezeigt. Screenreader beschreiben damit die Kategorie-Links.",
     "clear_button_label": "Leer lassen, um die Schaltfläche auszublenden.",
     "count_text": "Verwende [shown] für die Anzahl angezeigter Produkte und [count] für die Gesamtzahl. Leer lassen zum Ausblenden.",

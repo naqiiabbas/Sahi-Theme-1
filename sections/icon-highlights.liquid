@@ -1,0 +1,312 @@
+{% comment %}
+  Section contract.
+  A row of short brand promises: a round outline icon, a title and a line of text per block, with soft
+  vertical dividers between them. Two per row on mobile.
+  @example
+  <!-- Add "Icon highlights", then add up to 6 Highlight blocks -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign item_count = section.blocks.size | at_least: 1
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+
+  .icon-highlights-{{ section.id }} {
+    --ih-title-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --ih-title-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="icon-highlights icon-highlights-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.show_dividers %} icon-highlights--dividers{% endif %}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --ih-columns: {{ item_count }};
+    {% if section.settings.icon_color != blank %}--ih-icon-color: {{ section.settings.icon_color }};{% endif %}
+  "
+>
+  {%- if section.blocks.size > 0 -%}
+    <ul class="icon-highlights__list">
+      {%- for block in section.blocks -%}
+        <li
+          class="icon-highlights__item"
+          {{ block.shopify_attributes }}
+        >
+          <span
+            class="icon-highlights__icon"
+            aria-hidden="true"
+          >
+            {%- if block.settings.icon_image != blank -%}
+              {{
+                block.settings.icon_image
+                | image_url: width: 96
+                | image_tag: width: 24, height: 24, alt: '', loading: 'lazy', class: 'icon-highlights__icon-image'
+              }}
+            {%- else -%}
+              {% render 'line-icon', icon: block.settings.icon, class_name: 'icon-highlights__icon-svg' %}
+            {%- endif -%}
+          </span>
+          <div class="icon-highlights__content">
+            {%- if block.settings.title != blank -%}
+              <h3 class="icon-highlights__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="icon-highlights__text">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .icon-highlights {
+    color: var(--color-foreground);
+  }
+
+  .icon-highlights__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-xl) var(--gap-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: repeat(var(--ih-columns), minmax(0, 1fr));
+      gap: 0;
+    }
+  }
+
+  .icon-highlights__item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    min-width: 0;
+
+    @media screen and (min-width: 990px) {
+      justify-content: center;
+      padding-inline: var(--padding-lg);
+    }
+  }
+
+  .icon-highlights--dividers .icon-highlights__item + .icon-highlights__item {
+    @media screen and (min-width: 990px) {
+      border-inline-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+    }
+  }
+
+  .icon-highlights__icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    color: var(--ih-icon-color, var(--color-foreground));
+
+    @media screen and (min-width: 750px) {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+
+  .icon-highlights__icon-svg,
+  .icon-highlights__icon-image {
+    width: 1.375rem;
+    height: 1.375rem;
+    object-fit: contain;
+  }
+
+  .icon-highlights__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+    min-width: 0;
+  }
+
+  /* !important and the extra class beat the global heading font overrides in theme-styles-variables.liquid,
+     so the section's font setting applies. */
+  .icon-highlights .icon-highlights__title {
+    font-family: var(--ih-title-font) !important;
+  }
+
+  .icon-highlights__title {
+    margin: 0;
+    font-weight: var(--ih-title-weight);
+    font-size: 1rem;
+    line-height: 1.25;
+    color: var(--color-foreground);
+
+    @media screen and (min-width: 750px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .icon-highlights__text {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.icon_highlights",
+  "class": "icon-highlights-section",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "t:names.highlight",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:settings.icon",
+          "options": [
+            { "value": "clock", "label": "t:options.clock" },
+            { "value": "leaf", "label": "t:options.leaf" },
+            { "value": "heart", "label": "t:options.heart" },
+            { "value": "truck", "label": "t:options.truck" },
+            { "value": "shield", "label": "t:options.shield" },
+            { "value": "star", "label": "t:options.star" },
+            { "value": "chat", "label": "t:options.chat_bubble" },
+            { "value": "email", "label": "t:options.email" },
+            { "value": "phone", "label": "t:options.phone" },
+            { "value": "map_pin", "label": "t:options.map_pin" }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "t:settings.custom_icon",
+          "info": "t:info.custom_icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:settings.title",
+          "default": "Pure Ingredients"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:settings.text",
+          "default": "Real food. Real support."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dividers",
+      "label": "t:settings.show_divider",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.icon_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.icon_highlights",
+      "blocks": {
+        "fast": {
+          "type": "highlight",
+          "settings": { "icon": "clock", "title": "Fast Response", "text": "We reply within 24 hours" }
+        },
+        "pure": {
+          "type": "highlight",
+          "settings": { "icon": "leaf", "title": "Pure Ingredients", "text": "Real food. Real support." }
+        },
+        "support": {
+          "type": "highlight",
+          "settings": { "icon": "heart", "title": "Friendly Support", "text": "A team that cares" }
+        },
+        "delivery": {
+          "type": "highlight",
+          "settings": { "icon": "truck", "title": "Nationwide Delivery", "text": "To your doorstep" }
+        }
+      },
+      "block_order": ["fast", "pure", "support", "delivery"]
+    }
+  ]
+}
+{% endschema %}

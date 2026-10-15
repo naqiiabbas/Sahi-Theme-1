@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "附詳細資訊的聯絡表單",
+    "contact_detail": "聯絡資訊",
+    "contact_details_column": "聯絡資訊",
+    "icon_highlights": "圖示亮點",
+    "highlight": "亮點",
     "collection_categories": "商品系列類別",
     "all_products_link": "所有商品連結",
     "collection_sidebar": "附側邊欄的商品系列",
@@ -197,6 +202,28 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "custom_icon": "自訂圖示",
+    "contact_value": "聯絡資料",
+    "contact_value_type": "將資料連結為",
+    "name_label": "姓名標籤",
+    "name_placeholder": "姓名預留位置",
+    "email_label": "電子郵件標籤",
+    "email_placeholder": "電子郵件預留位置",
+    "show_phone": "顯示電話欄位",
+    "phone_label": "電話標籤",
+    "phone_placeholder": "電話預留位置",
+    "subject_label": "主旨標籤",
+    "subject_placeholder": "主旨預留位置",
+    "subject_options": "主旨選項",
+    "message_label": "訊息標籤",
+    "message_placeholder": "訊息預留位置",
+    "message_max_length": "訊息字數上限",
+    "button_label": "按鈕標籤",
+    "success_message": "送出成功訊息",
+    "field_background": "欄位背景",
+    "icon_color": "圖示顏色",
+    "banner_note": "備註",
+    "show_breadcrumbs": "顯示階層導覽",
     "show_all_link": "顯示所有商品連結",
     "icon_size": "圖示大小",
     "show_divider": "顯示分隔線",
@@ -667,6 +694,10 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "email": "電子郵件",
+    "whatsapp": "WhatsApp",
+    "clock": "時鐘",
+    "headset": "耳機",
     "script": "手寫體",
     "small_caps": "小型大寫字母",
     "related_product_collection": "商品所屬系列",
@@ -1188,6 +1219,10 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "custom_icon": "取代圖示。請使用小型正方形圖片。",
+    "contact_value": "顯示於文字下方，例如電子郵件地址或電話號碼。",
+    "subject_options": "每行一個主旨。",
+    "banner_note": "橫幅文字下方的小型大寫文字。",
     "collection_categories_label": "不會顯示。螢幕閱讀器會用來描述類別連結。",
     "clear_button_label": "留空即可隱藏按鈕。",
     "count_text": "使用 [shown] 表示顯示的商品數量，使用 [count] 表示總數。留空即可隱藏。",

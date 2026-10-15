@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Kontaktskjema med detaljer",
+    "contact_detail": "Kontaktdetalj",
+    "contact_details_column": "Kontaktdetaljer",
+    "icon_highlights": "Ikonhøydepunkter",
+    "highlight": "Høydepunkt",
     "collection_categories": "Kolleksjonskategorier",
     "all_products_link": "Lenke til alle produkter",
     "collection_sidebar": "Kolleksjon med sidefelt",
@@ -197,6 +202,28 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "custom_icon": "Egendefinert ikon",
+    "contact_value": "Kontaktverdi",
+    "contact_value_type": "Lenk verdien som",
+    "name_label": "Etikett for navn",
+    "name_placeholder": "Plassholder for navn",
+    "email_label": "Etikett for e-post",
+    "email_placeholder": "Plassholder for e-post",
+    "show_phone": "Vis telefonfelt",
+    "phone_label": "Etikett for telefon",
+    "phone_placeholder": "Plassholder for telefon",
+    "subject_label": "Etikett for emne",
+    "subject_placeholder": "Plassholder for emne",
+    "subject_options": "Emnealternativer",
+    "message_label": "Etikett for melding",
+    "message_placeholder": "Plassholder for melding",
+    "message_max_length": "Tegngrense for melding",
+    "button_label": "Knappetikett",
+    "success_message": "Bekreftelsesmelding",
+    "field_background": "Feltbakgrunn",
+    "icon_color": "Ikonfarge",
+    "banner_note": "Merknad",
+    "show_breadcrumbs": "Vis brødsmulesti",
     "show_all_link": "Vis lenke til alle produkter",
     "icon_size": "Ikonstørrelse",
     "show_divider": "Vis skillelinje",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Kundekontomeny"
   },
   "options": {
+    "email": "E-post",
+    "whatsapp": "WhatsApp",
+    "clock": "Klokke",
+    "headset": "Hodesett",
     "script": "Skråskrift",
     "small_caps": "Kapitéler",
     "related_product_collection": "Produktets kolleksjon",
@@ -1188,6 +1219,10 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "custom_icon": "Erstatter ikonet. Bruk et lite kvadratisk bilde.",
+    "contact_value": "Vises under teksten, f.eks. en e-postadresse eller et telefonnummer.",
+    "subject_options": "Ett emne per linje.",
+    "banner_note": "Liten tekst med store bokstaver under bannerteksten.",
     "collection_categories_label": "Vises ikke. Skjermlesere bruker den til å beskrive kategorilenkene.",
     "clear_button_label": "La feltet stå tomt for å skjule knappen.",
     "count_text": "Bruk [shown] for antall viste produkter og [count] for totalen. La feltet stå tomt for å skjule.",

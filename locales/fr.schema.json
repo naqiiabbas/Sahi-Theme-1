@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Formulaire de contact avec coordonnées",
+    "contact_detail": "Coordonnée",
+    "contact_details_column": "Coordonnées",
+    "icon_highlights": "Points forts avec icônes",
+    "highlight": "Point fort",
     "collection_categories": "Catégories de collection",
     "all_products_link": "Lien Tous les produits",
     "collection_sidebar": "Collection avec barre latérale",
@@ -197,6 +202,28 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "custom_icon": "Icône personnalisée",
+    "contact_value": "Valeur de contact",
+    "contact_value_type": "Lier la valeur comme",
+    "name_label": "Libellé du nom",
+    "name_placeholder": "Texte indicatif du nom",
+    "email_label": "Libellé de l’e-mail",
+    "email_placeholder": "Texte indicatif de l’e-mail",
+    "show_phone": "Afficher le champ téléphone",
+    "phone_label": "Libellé du téléphone",
+    "phone_placeholder": "Texte indicatif du téléphone",
+    "subject_label": "Libellé de l’objet",
+    "subject_placeholder": "Texte indicatif de l’objet",
+    "subject_options": "Options d’objet",
+    "message_label": "Libellé du message",
+    "message_placeholder": "Texte indicatif du message",
+    "message_max_length": "Limite de caractères du message",
+    "button_label": "Libellé du bouton",
+    "success_message": "Message de confirmation",
+    "field_background": "Arrière-plan des champs",
+    "icon_color": "Couleur de l’icône",
+    "banner_note": "Note",
+    "show_breadcrumbs": "Afficher le fil d’Ariane",
     "show_all_link": "Afficher le lien Tous les produits",
     "icon_size": "Taille de l’icône",
     "show_divider": "Afficher le séparateur",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Horloge",
+    "headset": "Casque",
     "script": "Manuscrite",
     "small_caps": "Petites capitales",
     "related_product_collection": "Collection du produit",
@@ -1188,6 +1219,10 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "custom_icon": "Remplace l’icône. Utilisez une petite image carrée.",
+    "contact_value": "Affiché sous le texte, par ex. une adresse e-mail ou un numéro de téléphone.",
+    "subject_options": "Un objet par ligne.",
+    "banner_note": "Petit texte en majuscules sous le texte de la bannière.",
     "collection_categories_label": "Non affiché. Les lecteurs d’écran l’utilisent pour décrire les liens de catégories.",
     "clear_button_label": "Laissez vide pour masquer le bouton.",
     "count_text": "Utilisez [shown] pour le nombre de produits affichés et [count] pour le total. Laissez vide pour masquer.",

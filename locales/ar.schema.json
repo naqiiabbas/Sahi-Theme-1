@@ -216,6 +216,10 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "custom_icon": "تحل محل الأيقونة. استخدم صورة مربعة صغيرة.",
+    "contact_value": "تظهر أسفل النص، مثل عنوان بريد إلكتروني أو رقم هاتف.",
+    "subject_options": "موضوع واحد في كل سطر.",
+    "banner_note": "نص صغير بأحرف كبيرة أسفل نص البانر.",
     "collection_categories_label": "غير ظاهر. تستخدمه برامج قراءة الشاشة لوصف روابط الفئات.",
     "clear_button_label": "اتركه فارغًا لإخفاء الزر.",
     "count_text": "استخدم [shown] لعدد المنتجات المعروضة و[count] للإجمالي. اتركه فارغًا للإخفاء.",
@@ -270,6 +274,11 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "contact_details": "نموذج اتصال مع التفاصيل",
+    "contact_detail": "تفصيل الاتصال",
+    "contact_details_column": "تفاصيل الاتصال",
+    "icon_highlights": "أبرز النقاط بالأيقونات",
+    "highlight": "نقطة بارزة",
     "collection_categories": "فئات المجموعة",
     "all_products_link": "رابط كل المنتجات",
     "collection_sidebar": "مجموعة مع شريط جانبي",
@@ -458,6 +467,10 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "email": "البريد الإلكتروني",
+    "whatsapp": "واتساب",
+    "clock": "ساعة",
+    "headset": "سماعة",
     "script": "خط يدوي",
     "small_caps": "أحرف كبيرة صغيرة",
     "related_product_collection": "مجموعة المنتج",
@@ -753,6 +766,28 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "custom_icon": "أيقونة مخصصة",
+    "contact_value": "قيمة الاتصال",
+    "contact_value_type": "ربط القيمة كـ",
+    "name_label": "تسمية الاسم",
+    "name_placeholder": "نص الاسم الإرشادي",
+    "email_label": "تسمية البريد الإلكتروني",
+    "email_placeholder": "نص البريد الإلكتروني الإرشادي",
+    "show_phone": "إظهار حقل الهاتف",
+    "phone_label": "تسمية الهاتف",
+    "phone_placeholder": "نص الهاتف الإرشادي",
+    "subject_label": "تسمية الموضوع",
+    "subject_placeholder": "نص الموضوع الإرشادي",
+    "subject_options": "خيارات الموضوع",
+    "message_label": "تسمية الرسالة",
+    "message_placeholder": "نص الرسالة الإرشادي",
+    "message_max_length": "الحد الأقصى لأحرف الرسالة",
+    "button_label": "تسمية الزر",
+    "success_message": "رسالة النجاح",
+    "field_background": "خلفية الحقول",
+    "icon_color": "لون الأيقونة",
+    "banner_note": "ملاحظة",
+    "show_breadcrumbs": "إظهار مسار التنقل",
     "show_all_link": "إظهار رابط كل المنتجات",
     "icon_size": "حجم الأيقونة",
     "show_divider": "إظهار الفاصل",

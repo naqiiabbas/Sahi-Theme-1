@@ -71,6 +71,20 @@
   "
 >
   <div class="promo-banner__inner">
+    {%- if section.settings.show_breadcrumbs -%}
+      <nav
+        class="promo-banner__breadcrumbs"
+        aria-label="{{ section.settings.breadcrumb_nav_label | escape }}"
+      >
+        <ol class="promo-banner__breadcrumb-list">
+          <li>
+            <a href="{{ routes.root_url }}">{{ section.settings.breadcrumb_home_label | escape }}</a>
+          </li>
+          <li aria-current="page">{{ page_title | escape }}</li>
+        </ol>
+      </nav>
+    {%- endif -%}
+
     <div class="promo-banner__media">
       {%- if section.settings.image != blank -%}
         {{
@@ -150,6 +164,10 @@
             <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+      {%- endif -%}
+
+      {%- if section.settings.note != blank -%}
+        <p class="promo-banner__note">{{ section.settings.note | escape | newline_to_br }}</p>
       {%- endif -%}
     </div>
   </div>
@@ -399,6 +417,71 @@
     }
   }
 
+  /* Breadcrumbs: above the image on mobile, in the top corner of the text side on larger screens. */
+  .promo-banner__breadcrumbs {
+    position: relative;
+    z-index: 2;
+    padding: var(--padding-md) var(--promo-banner-padding-inline) 0;
+    font-size: 0.8125rem;
+
+    @media screen and (min-width: 750px) {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      padding-block-start: var(--padding-lg);
+    }
+  }
+
+  .promo-banner__breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-foreground);
+
+    li + li::before {
+      content: '›';
+      margin-inline-end: var(--gap-xs);
+      opacity: var(--opacity-70);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  [dir='rtl'] .promo-banner__breadcrumb-list li + li::before {
+    content: '‹';
+  }
+
+  /* Small letter-spaced note under the text, led by a short rule in the button color. */
+  .promo-banner__note {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    margin: var(--margin-sm) 0 0;
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+
+    &::before {
+      content: '';
+      flex: 0 0 2.5rem;
+      height: 1px;
+      background-color: var(--promo-banner-button-bg, var(--promo-banner-accent, currentColor));
+    }
+  }
+
   /* Caps tagline: small, letter-spaced, upright text instead of a tilted script. */
   .promo-banner--tagline-caps .promo-banner__tagline {
     inset-block-start: var(--padding-xl);
@@ -549,6 +632,12 @@
       "default": "Explore our carefully crafted range of organic essentials made from real, natural ingredients."
     },
     {
+      "type": "textarea",
+      "id": "note",
+      "label": "t:settings.banner_note",
+      "info": "t:info.banner_note"
+    },
+    {
       "type": "font_picker",
       "id": "title_font",
       "label": "t:settings.font",
@@ -588,6 +677,31 @@
       "step": 1,
       "unit": "px",
       "default": 2
+    },
+    {
+      "type": "header",
+      "content": "t:names.breadcrumbs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:settings.show_breadcrumbs",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_home_label",
+      "label": "t:settings.label",
+      "default": "Home",
+      "visible_if": "{{ section.settings.show_breadcrumbs }}"
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_nav_label",
+      "label": "t:settings.breadcrumb_nav_label",
+      "info": "t:info.breadcrumb_nav_label",
+      "default": "Breadcrumb",
+      "visible_if": "{{ section.settings.show_breadcrumbs }}"
     },
     {
       "type": "header",

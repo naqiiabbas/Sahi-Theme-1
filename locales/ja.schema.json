@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "詳細付きお問い合わせフォーム",
+    "contact_detail": "連絡先の詳細",
+    "contact_details_column": "連絡先の詳細",
+    "icon_highlights": "アイコンハイライト",
+    "highlight": "ハイライト",
     "collection_categories": "コレクションカテゴリー",
     "all_products_link": "すべての商品リンク",
     "collection_sidebar": "サイドバー付きコレクション",
@@ -197,6 +202,28 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "custom_icon": "カスタムアイコン",
+    "contact_value": "連絡先の値",
+    "contact_value_type": "値のリンク形式",
+    "name_label": "名前のラベル",
+    "name_placeholder": "名前のプレースホルダー",
+    "email_label": "メールのラベル",
+    "email_placeholder": "メールのプレースホルダー",
+    "show_phone": "電話番号欄を表示",
+    "phone_label": "電話番号のラベル",
+    "phone_placeholder": "電話番号のプレースホルダー",
+    "subject_label": "件名のラベル",
+    "subject_placeholder": "件名のプレースホルダー",
+    "subject_options": "件名の選択肢",
+    "message_label": "メッセージのラベル",
+    "message_placeholder": "メッセージのプレースホルダー",
+    "message_max_length": "メッセージの文字数制限",
+    "button_label": "ボタンのラベル",
+    "success_message": "送信完了メッセージ",
+    "field_background": "入力欄の背景",
+    "icon_color": "アイコンの色",
+    "banner_note": "注記",
+    "show_breadcrumbs": "パンくずリストを表示",
     "show_all_link": "すべての商品リンクを表示",
     "icon_size": "アイコンサイズ",
     "show_divider": "区切り線を表示",
@@ -667,6 +694,10 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "email": "メール",
+    "whatsapp": "WhatsApp",
+    "clock": "時計",
+    "headset": "ヘッドセット",
     "script": "筆記体",
     "small_caps": "スモールキャップ",
     "related_product_collection": "商品のコレクション",
@@ -1188,6 +1219,10 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "custom_icon": "アイコンを置き換えます。小さな正方形の画像を使用してください。",
+    "contact_value": "テキストの下に表示されます（例: メールアドレスや電話番号）。",
+    "subject_options": "1行に1件名。",
+    "banner_note": "バナーのテキストの下に表示される小さな大文字のテキスト。",
     "collection_categories_label": "表示されません。スクリーンリーダーがカテゴリーリンクの説明に使用します。",
     "clear_button_label": "ボタンを非表示にするには空欄のままにします。",
     "count_text": "表示中の商品数には[shown]、合計には[count]を使用します。非表示にするには空欄のままにします。",

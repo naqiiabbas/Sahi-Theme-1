@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Kontaktformulär med uppgifter",
+    "contact_detail": "Kontaktuppgift",
+    "contact_details_column": "Kontaktuppgifter",
+    "icon_highlights": "Ikonhöjdpunkter",
+    "highlight": "Höjdpunkt",
     "collection_categories": "Kollektionskategorier",
     "all_products_link": "Länk till alla produkter",
     "collection_sidebar": "Kollektion med sidofält",
@@ -197,6 +202,28 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "custom_icon": "Anpassad ikon",
+    "contact_value": "Kontaktvärde",
+    "contact_value_type": "Länka värdet som",
+    "name_label": "Etikett för namn",
+    "name_placeholder": "Platshållare för namn",
+    "email_label": "Etikett för e-post",
+    "email_placeholder": "Platshållare för e-post",
+    "show_phone": "Visa telefonfält",
+    "phone_label": "Etikett för telefon",
+    "phone_placeholder": "Platshållare för telefon",
+    "subject_label": "Etikett för ämne",
+    "subject_placeholder": "Platshållare för ämne",
+    "subject_options": "Ämnesalternativ",
+    "message_label": "Etikett för meddelande",
+    "message_placeholder": "Platshållare för meddelande",
+    "message_max_length": "Teckengräns för meddelande",
+    "button_label": "Knappetikett",
+    "success_message": "Bekräftelsemeddelande",
+    "field_background": "Fältbakgrund",
+    "icon_color": "Ikonfärg",
+    "banner_note": "Anteckning",
+    "show_breadcrumbs": "Visa brödsmulor",
     "show_all_link": "Visa länk till alla produkter",
     "icon_size": "Ikonstorlek",
     "show_divider": "Visa avdelare",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "email": "E-post",
+    "whatsapp": "WhatsApp",
+    "clock": "Klocka",
+    "headset": "Headset",
     "script": "Skrivstil",
     "small_caps": "Kapitäler",
     "related_product_collection": "Produktens kollektion",
@@ -1188,6 +1219,10 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "custom_icon": "Ersätter ikonen. Använd en liten kvadratisk bild.",
+    "contact_value": "Visas under texten, t.ex. en e-postadress eller ett telefonnummer.",
+    "subject_options": "Ett ämne per rad.",
+    "banner_note": "Liten text med versaler under bannertexten.",
     "collection_categories_label": "Visas inte. Skärmläsare använder den för att beskriva kategorilänkarna.",
     "clear_button_label": "Lämna tomt för att dölja knappen.",
     "count_text": "Använd [shown] för antal visade produkter och [count] för totalen. Lämna tomt för att dölja.",

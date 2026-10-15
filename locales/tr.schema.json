@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Ayrıntılı iletişim formu",
+    "contact_detail": "İletişim bilgisi",
+    "contact_details_column": "İletişim bilgileri",
+    "icon_highlights": "Simgeli öne çıkanlar",
+    "highlight": "Öne çıkan",
     "collection_categories": "Koleksiyon kategorileri",
     "all_products_link": "Tüm ürünler bağlantısı",
     "collection_sidebar": "Kenar çubuklu koleksiyon",
@@ -197,6 +202,28 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "custom_icon": "Özel simge",
+    "contact_value": "İletişim değeri",
+    "contact_value_type": "Değeri şu şekilde bağla",
+    "name_label": "Ad etiketi",
+    "name_placeholder": "Ad yer tutucusu",
+    "email_label": "E-posta etiketi",
+    "email_placeholder": "E-posta yer tutucusu",
+    "show_phone": "Telefon alanını göster",
+    "phone_label": "Telefon etiketi",
+    "phone_placeholder": "Telefon yer tutucusu",
+    "subject_label": "Konu etiketi",
+    "subject_placeholder": "Konu yer tutucusu",
+    "subject_options": "Konu seçenekleri",
+    "message_label": "Mesaj etiketi",
+    "message_placeholder": "Mesaj yer tutucusu",
+    "message_max_length": "Mesaj karakter sınırı",
+    "button_label": "Düğme etiketi",
+    "success_message": "Başarı mesajı",
+    "field_background": "Alan arka planı",
+    "icon_color": "Simge rengi",
+    "banner_note": "Not",
+    "show_breadcrumbs": "İçerik haritasını göster",
     "show_all_link": "Tüm ürünler bağlantısını göster",
     "icon_size": "Simge boyutu",
     "show_divider": "Ayırıcıyı göster",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "email": "E-posta",
+    "whatsapp": "WhatsApp",
+    "clock": "Saat",
+    "headset": "Kulaklık",
     "script": "El yazısı",
     "small_caps": "Küçük büyük harfler",
     "related_product_collection": "Ürünün koleksiyonu",
@@ -1188,6 +1219,10 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "custom_icon": "Simgenin yerini alır. Küçük kare bir görsel kullanın.",
+    "contact_value": "Metnin altında gösterilir, ör. e-posta adresi veya telefon numarası.",
+    "subject_options": "Her satıra bir konu.",
+    "banner_note": "Banner metninin altında küçük büyük harfli metin.",
     "collection_categories_label": "Gösterilmez. Ekran okuyucular kategori bağlantılarını tanımlamak için kullanır.",
     "clear_button_label": "Düğmeyi gizlemek için boş bırakın.",
     "count_text": "Gösterilen ürün sayısı için [shown], toplam için [count] kullanın. Gizlemek için boş bırakın.",

@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Formulario de contacto con datos",
+    "contact_detail": "Dato de contacto",
+    "contact_details_column": "Datos de contacto",
+    "icon_highlights": "Destacados con iconos",
+    "highlight": "Destacado",
     "collection_categories": "Categorías de colección",
     "all_products_link": "Enlace a todos los productos",
     "collection_sidebar": "Colección con barra lateral",
@@ -197,6 +202,28 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "custom_icon": "Icono personalizado",
+    "contact_value": "Valor de contacto",
+    "contact_value_type": "Enlazar el valor como",
+    "name_label": "Etiqueta del nombre",
+    "name_placeholder": "Marcador del nombre",
+    "email_label": "Etiqueta del correo",
+    "email_placeholder": "Marcador del correo",
+    "show_phone": "Mostrar campo de teléfono",
+    "phone_label": "Etiqueta del teléfono",
+    "phone_placeholder": "Marcador del teléfono",
+    "subject_label": "Etiqueta del asunto",
+    "subject_placeholder": "Marcador del asunto",
+    "subject_options": "Opciones de asunto",
+    "message_label": "Etiqueta del mensaje",
+    "message_placeholder": "Marcador del mensaje",
+    "message_max_length": "Límite de caracteres del mensaje",
+    "button_label": "Etiqueta del botón",
+    "success_message": "Mensaje de éxito",
+    "field_background": "Fondo de los campos",
+    "icon_color": "Color del icono",
+    "banner_note": "Nota",
+    "show_breadcrumbs": "Mostrar ruta de navegación",
     "show_all_link": "Mostrar enlace a todos los productos",
     "icon_size": "Tamaño del icono",
     "show_divider": "Mostrar divisor",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "email": "Correo electrónico",
+    "whatsapp": "WhatsApp",
+    "clock": "Reloj",
+    "headset": "Auriculares",
     "script": "Manuscrita",
     "small_caps": "Versalitas",
     "related_product_collection": "Colección del producto",
@@ -1188,6 +1219,10 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "custom_icon": "Reemplaza el icono. Usa una imagen cuadrada pequeña.",
+    "contact_value": "Se muestra bajo el texto, p. ej., un correo electrónico o un teléfono.",
+    "subject_options": "Un asunto por línea.",
+    "banner_note": "Texto pequeño en mayúsculas bajo el texto del banner.",
     "collection_categories_label": "No se muestra. Los lectores de pantalla lo usan para describir los enlaces de categorías.",
     "clear_button_label": "Déjalo en blanco para ocultar el botón.",
     "count_text": "Usa [shown] para los productos mostrados y [count] para el total. Déjalo en blanco para ocultarlo.",

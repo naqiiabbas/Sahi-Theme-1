@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Formularz kontaktowy z danymi",
+    "contact_detail": "Dane kontaktowe",
+    "contact_details_column": "Dane kontaktowe",
+    "icon_highlights": "Wyróżnienia z ikonami",
+    "highlight": "Wyróżnienie",
     "collection_categories": "Kategorie kolekcji",
     "all_products_link": "Link Wszystkie produkty",
     "collection_sidebar": "Kolekcja z panelem bocznym",
@@ -197,6 +202,28 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "custom_icon": "Własna ikona",
+    "contact_value": "Wartość kontaktowa",
+    "contact_value_type": "Połącz wartość jako",
+    "name_label": "Etykieta imienia",
+    "name_placeholder": "Tekst zastępczy imienia",
+    "email_label": "Etykieta e-maila",
+    "email_placeholder": "Tekst zastępczy e-maila",
+    "show_phone": "Pokaż pole telefonu",
+    "phone_label": "Etykieta telefonu",
+    "phone_placeholder": "Tekst zastępczy telefonu",
+    "subject_label": "Etykieta tematu",
+    "subject_placeholder": "Tekst zastępczy tematu",
+    "subject_options": "Opcje tematu",
+    "message_label": "Etykieta wiadomości",
+    "message_placeholder": "Tekst zastępczy wiadomości",
+    "message_max_length": "Limit znaków wiadomości",
+    "button_label": "Etykieta przycisku",
+    "success_message": "Komunikat o powodzeniu",
+    "field_background": "Tło pól",
+    "icon_color": "Kolor ikony",
+    "banner_note": "Notatka",
+    "show_breadcrumbs": "Pokaż ścieżkę nawigacji",
     "show_all_link": "Pokaż link Wszystkie produkty",
     "icon_size": "Rozmiar ikony",
     "show_divider": "Pokaż separator",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Zegar",
+    "headset": "Słuchawki",
     "script": "Pismo odręczne",
     "small_caps": "Kapitaliki",
     "related_product_collection": "Kolekcja produktu",
@@ -1188,6 +1219,10 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "custom_icon": "Zastępuje ikonę. Użyj małego kwadratowego obrazu.",
+    "contact_value": "Wyświetlane pod tekstem, np. adres e-mail lub numer telefonu.",
+    "subject_options": "Jeden temat w wierszu.",
+    "banner_note": "Mały tekst wielkimi literami pod tekstem banera.",
     "collection_categories_label": "Niewidoczne. Czytniki ekranu używają tego do opisu linków kategorii.",
     "clear_button_label": "Pozostaw puste, aby ukryć przycisk.",
     "count_text": "Użyj [shown] dla liczby wyświetlanych produktów i [count] dla sumy. Pozostaw puste, aby ukryć.",

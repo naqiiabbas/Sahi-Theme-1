@@ -224,6 +224,10 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "custom_icon": "Replaces the icon. Use a small square image.",
+    "contact_value": "Shown under the text, e.g. an email address or phone number.",
+    "subject_options": "One subject per line.",
+    "banner_note": "Small uppercase text under the banner text.",
     "collection_categories_label": "Not shown. Screen readers use it to describe the category links.",
     "clear_button_label": "Leave blank to hide the button.",
     "count_text": "Use [shown] for the number of products shown and [count] for the total. Leave blank to hide.",
@@ -278,6 +282,11 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "contact_details": "Contact form with details",
+    "contact_detail": "Contact detail",
+    "contact_details_column": "Contact details",
+    "icon_highlights": "Icon highlights",
+    "highlight": "Highlight",
     "collection_categories": "Collection categories",
     "all_products_link": "All products link",
     "collection_sidebar": "Collection with sidebar",
@@ -473,6 +482,10 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "clock": "Clock",
+    "headset": "Headset",
     "script": "Script",
     "small_caps": "Small caps",
     "related_product_collection": "Product's collection",
@@ -811,6 +824,28 @@
     "below_media": "Below media"
   },
   "settings": {
+    "custom_icon": "Custom icon",
+    "contact_value": "Contact value",
+    "contact_value_type": "Link value as",
+    "name_label": "Name label",
+    "name_placeholder": "Name placeholder",
+    "email_label": "Email label",
+    "email_placeholder": "Email placeholder",
+    "show_phone": "Show phone field",
+    "phone_label": "Phone label",
+    "phone_placeholder": "Phone placeholder",
+    "subject_label": "Subject label",
+    "subject_placeholder": "Subject placeholder",
+    "subject_options": "Subject options",
+    "message_label": "Message label",
+    "message_placeholder": "Message placeholder",
+    "message_max_length": "Message character limit",
+    "button_label": "Button label",
+    "success_message": "Success message",
+    "field_background": "Field background",
+    "icon_color": "Icon color",
+    "banner_note": "Note",
+    "show_breadcrumbs": "Show breadcrumbs",
     "show_all_link": "Show All products link",
     "icon_size": "Icon size",
     "show_divider": "Show divider",

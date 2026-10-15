@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Contactformulier met gegevens",
+    "contact_detail": "Contactgegeven",
+    "contact_details_column": "Contactgegevens",
+    "icon_highlights": "Pictogramhighlights",
+    "highlight": "Highlight",
     "collection_categories": "Collectiecategorieën",
     "all_products_link": "Link Alle producten",
     "collection_sidebar": "Collectie met zijbalk",
@@ -197,6 +202,28 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "custom_icon": "Aangepast pictogram",
+    "contact_value": "Contactwaarde",
+    "contact_value_type": "Waarde koppelen als",
+    "name_label": "Label naam",
+    "name_placeholder": "Placeholder naam",
+    "email_label": "Label e-mail",
+    "email_placeholder": "Placeholder e-mail",
+    "show_phone": "Telefoonveld weergeven",
+    "phone_label": "Label telefoon",
+    "phone_placeholder": "Placeholder telefoon",
+    "subject_label": "Label onderwerp",
+    "subject_placeholder": "Placeholder onderwerp",
+    "subject_options": "Onderwerpopties",
+    "message_label": "Label bericht",
+    "message_placeholder": "Placeholder bericht",
+    "message_max_length": "Tekenlimiet bericht",
+    "button_label": "Knoplabel",
+    "success_message": "Succesbericht",
+    "field_background": "Achtergrond velden",
+    "icon_color": "Pictogramkleur",
+    "banner_note": "Notitie",
+    "show_breadcrumbs": "Kruimelpad weergeven",
     "show_all_link": "Link Alle producten weergeven",
     "icon_size": "Pictogramgrootte",
     "show_divider": "Scheidingslijn weergeven",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Klok",
+    "headset": "Headset",
     "script": "Handschrift",
     "small_caps": "Kleinkapitalen",
     "related_product_collection": "Collectie van het product",
@@ -1188,6 +1219,10 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "custom_icon": "Vervangt het pictogram. Gebruik een kleine vierkante afbeelding.",
+    "contact_value": "Wordt onder de tekst weergegeven, bijv. een e-mailadres of telefoonnummer.",
+    "subject_options": "Eén onderwerp per regel.",
+    "banner_note": "Kleine tekst in hoofdletters onder de bannertekst.",
     "collection_categories_label": "Niet zichtbaar. Schermlezers gebruiken dit om de categorielinks te beschrijven.",
     "clear_button_label": "Laat leeg om de knop te verbergen.",
     "count_text": "Gebruik [shown] voor het aantal getoonde producten en [count] voor het totaal. Laat leeg om te verbergen.",

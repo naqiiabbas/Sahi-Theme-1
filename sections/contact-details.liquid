@@ -1,0 +1,1203 @@
+{% comment %}
+  Section contract.
+  Two columns: a Shopify contact form (name, email, phone, subject, message with a character counter)
+  and a list of contact details. The form posts to Shopify's contact endpoint, which emails the store's
+  sender address; success and error messages render after the post. Contact details are blocks: an
+  icon, title, text, and an optional value linked as an email, phone, WhatsApp, or plain link.
+  @example
+  <!-- Add "Contact form with details" to the contact page template, then add Contact detail blocks -->
+{% endcomment %}
+
+<script
+  src="{{ 'character-counter.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
+  src="{{ 'custom-select.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign title_font_italic = title_font | font_modify: 'style', 'italic'
+  assign form_id = 'ContactForm-' | append: section.id
+  assign max_length = section.settings.message_max_length
+  assign subject_options = section.settings.subject_options | newline_to_br | split: '<br />'
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+  {%- if title_font_italic -%}
+    {{ title_font_italic | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
+  .contact-details-{{ section.id }} {
+    --cd-title-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --cd-title-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="contact-details contact-details-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --cd-title-size: {{ section.settings.title_size }}px;
+    {% if section.settings.accent_color != blank %}--cd-accent: {{ section.settings.accent_color }}; --cd-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
+    {% if section.settings.button_text_color != blank %}--cd-button-text: {{ section.settings.button_text_color }};{% endif %}
+    {% if section.settings.icon_background != blank %}--cd-icon-bg: {{ section.settings.icon_background }};{% endif %}
+    {% if section.settings.field_background != blank %}--cd-field-bg: {{ section.settings.field_background }};{% endif %}
+  "
+>
+  <div class="contact-details__inner">
+    <div class="contact-details__form-column">
+      {%- if section.settings.form_title != blank -%}
+        <h2 class="contact-details__title">{{ section.settings.form_title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.form_text != blank -%}
+        <p class="contact-details__intro">{{ section.settings.form_text }}</p>
+      {%- endif -%}
+
+      {%- form 'contact', id: form_id, class: 'contact-details__form' -%}
+        <input
+          type="hidden"
+          name="contact[id]"
+          value="{{ form_id }}"
+        >
+
+        {%- liquid
+          assign form_matches = false
+          if form.id == form_id or form.id == blank
+            assign form_matches = true
+          endif
+        -%}
+
+        {%- if form.posted_successfully? and form_matches -%}
+          <div
+            class="contact-details__status contact-details__status--success"
+            role="status"
+            tabindex="-1"
+            autofocus
+          >
+            {{ section.settings.success_message | escape }}
+          </div>
+        {%- elsif form.errors and form_matches -%}
+          <div
+            class="contact-details__status contact-details__status--error"
+            role="alert"
+            tabindex="-1"
+            autofocus
+          >
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <div class="contact-details__fields">
+          <div class="contact-details__field">
+            <label
+              class="contact-details__label"
+              for="{{ form_id }}-name"
+            >
+              {{- section.settings.name_label | escape -}}
+              <span
+                class="contact-details__required"
+                aria-hidden="true"
+              >*</span>
+            </label>
+            <input
+              class="contact-details__input"
+              type="text"
+              id="{{ form_id }}-name"
+              name="contact[name]"
+              autocomplete="name"
+              placeholder="{{ section.settings.name_placeholder | escape }}"
+              required
+            >
+          </div>
+
+          <div class="contact-details__field">
+            <label
+              class="contact-details__label"
+              for="{{ form_id }}-email"
+            >
+              {{- section.settings.email_label | escape -}}
+              <span
+                class="contact-details__required"
+                aria-hidden="true"
+              >*</span>
+            </label>
+            <input
+              class="contact-details__input"
+              type="email"
+              id="{{ form_id }}-email"
+              name="contact[email]"
+              autocomplete="email"
+              autocapitalize="off"
+              spellcheck="false"
+              placeholder="{{ section.settings.email_placeholder | escape }}"
+              required
+              {% if form.errors contains 'email' and form_matches %}
+                aria-invalid="true"
+              {% endif %}
+            >
+          </div>
+
+          {%- if section.settings.show_phone -%}
+            <div class="contact-details__field">
+              <label
+                class="contact-details__label"
+                for="{{ form_id }}-phone"
+              >
+                {{- section.settings.phone_label | escape -}}
+              </label>
+              <input
+                class="contact-details__input"
+                type="tel"
+                id="{{ form_id }}-phone"
+                name="contact[phone]"
+                autocomplete="tel"
+                pattern="[0-9\-\+ \(\)]*"
+                placeholder="{{ section.settings.phone_placeholder | escape }}"
+              >
+            </div>
+          {%- endif -%}
+
+          {%- if subject_options.size > 0 -%}
+            <div class="contact-details__field">
+              <label
+                class="contact-details__label"
+                id="{{ form_id }}-subject-label"
+                for="{{ form_id }}-subject"
+              >
+                {{- section.settings.subject_label | escape -}}
+                <span
+                  class="contact-details__required"
+                  aria-hidden="true"
+                >*</span>
+              </label>
+              {% comment %}
+                The native select is the form field and the no-JavaScript fallback. Once custom-select.js
+                defines the element, the select is visually hidden and the button and listbox below drive it.
+              {% endcomment %}
+              <custom-select class="custom-select">
+                <div class="contact-details__select-wrapper custom-select__native">
+                  <select
+                    class="contact-details__input contact-details__select"
+                    id="{{ form_id }}-subject"
+                    name="contact[subject]"
+                    required
+                    ref="select"
+                  >
+                    <option
+                      value=""
+                      disabled
+                      selected
+                    >
+                      {{- section.settings.subject_placeholder | escape -}}
+                    </option>
+                    {%- for option in subject_options -%}
+                      {%- assign option_label = option | strip -%}
+                      {%- if option_label != blank -%}
+                        <option value="{{ option_label | escape }}">{{ option_label | escape }}</option>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </select>
+                  {% render 'line-icon', icon: 'chevron', class_name: 'contact-details__select-icon' %}
+                </div>
+
+                <button
+                  type="button"
+                  class="contact-details__input custom-select__button"
+                  id="{{ form_id }}-subject-button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-controls="{{ form_id }}-subject-listbox"
+                  aria-labelledby="{{ form_id }}-subject-label {{ form_id }}-subject-button"
+                  aria-describedby="{{ form_id }}-subject-error"
+                  ref="button"
+                  on:click="/toggle"
+                  on:keydown="/handleButtonKeydown"
+                >
+                  <span
+                    class="custom-select__value custom-select__value--placeholder"
+                    ref="value"
+                  >
+                    {{- section.settings.subject_placeholder | escape -}}
+                  </span>
+                  {% render 'line-icon', icon: 'chevron', class_name: 'custom-select__icon' %}
+                </button>
+
+                <ul
+                  class="custom-select__list"
+                  id="{{ form_id }}-subject-listbox"
+                  role="listbox"
+                  tabindex="-1"
+                  aria-labelledby="{{ form_id }}-subject-label"
+                  ref="listbox"
+                  hidden
+                  on:keydown="/handleListKeydown"
+                  on:click="/handleOptionClick"
+                >
+                  {%- for option in subject_options -%}
+                    {%- assign option_label = option | strip -%}
+                    {%- if option_label != blank -%}
+                      <li
+                        class="custom-select__option"
+                        id="{{ form_id }}-subject-option-{{ forloop.index }}"
+                        role="option"
+                        aria-selected="false"
+                        data-value="{{ option_label | escape }}"
+                        ref="options[]"
+                      >
+                        <span>{{ option_label | escape }}</span>
+                        {% render 'line-icon', icon: 'check', class_name: 'custom-select__check' %}
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+
+                <p
+                  class="custom-select__error"
+                  id="{{ form_id }}-subject-error"
+                  ref="error"
+                  hidden
+                ></p>
+              </custom-select>
+            </div>
+          {%- endif -%}
+
+          <div class="contact-details__field contact-details__field--full">
+            <label
+              class="contact-details__label"
+              for="{{ form_id }}-body"
+            >
+              {{- section.settings.message_label | escape -}}
+              <span
+                class="contact-details__required"
+                aria-hidden="true"
+              >*</span>
+            </label>
+            <character-counter class="contact-details__message">
+              <textarea
+                class="contact-details__input contact-details__textarea"
+                id="{{ form_id }}-body"
+                name="contact[body]"
+                rows="6"
+                maxlength="{{ max_length }}"
+                placeholder="{{ section.settings.message_placeholder | escape }}"
+                required
+                ref="input"
+                on:input="/update"
+              ></textarea>
+              <p
+                class="contact-details__counter"
+                aria-hidden="true"
+              >
+                <span ref="count">0</span>/{{ max_length }}
+              </p>
+            </character-counter>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="contact-details__submit"
+        >
+          {% render 'line-icon', icon: 'send', class_name: 'contact-details__submit-icon' %}
+          <span>{{ section.settings.button_label | escape }}</span>
+        </button>
+      {%- endform -%}
+    </div>
+
+    <div class="contact-details__info-column">
+      {%- if section.settings.details_title != blank -%}
+        <h2 class="contact-details__title">{{ section.settings.details_title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.details_text != blank -%}
+        <p class="contact-details__intro contact-details__intro--small">{{ section.settings.details_text }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="contact-details__list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign value = block.settings.value | strip
+              assign href = ''
+              case block.settings.value_type
+                when 'email'
+                  assign href = 'mailto:' | append: value
+                when 'phone'
+                  assign digits = value | remove: ' ' | remove: '-' | remove: '(' | remove: ')'
+                  assign href = 'tel:' | append: digits
+                when 'whatsapp'
+                  assign digits = value | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '+'
+                  assign href = 'https://wa.me/' | append: digits
+                when 'link'
+                  assign href = block.settings.link
+              endcase
+            -%}
+            <li
+              class="contact-details__item"
+              {{ block.shopify_attributes }}
+            >
+              <span
+                class="contact-details__icon"
+                aria-hidden="true"
+              >
+                {%- if block.settings.icon_image != blank -%}
+                  {{
+                    block.settings.icon_image
+                    | image_url: width: 96
+                    | image_tag: width: 24, height: 24, alt: '', loading: 'lazy', class: 'contact-details__icon-image'
+                  }}
+                {%- else -%}
+                  {% render 'line-icon', icon: block.settings.icon, class_name: 'contact-details__icon-svg' %}
+                {%- endif -%}
+              </span>
+              <div class="contact-details__item-content">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="contact-details__item-title">{{ block.settings.title | escape }}</h3>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <p class="contact-details__item-text">{{ block.settings.text }}</p>
+                {%- endif -%}
+                {%- if value != blank -%}
+                  {%- if href != blank -%}
+                    <a
+                      class="contact-details__item-value"
+                      href="{{ href }}"
+                      {% if block.settings.value_type == 'whatsapp' or block.settings.value_type == 'link' %}
+                        target="_blank" rel="noopener"
+                      {% endif %}
+                    >
+                      {{- value | escape -}}
+                    </a>
+                  {%- else -%}
+                    <p class="contact-details__item-value contact-details__item-value--plain">{{ value | escape }}</p>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .contact-details {
+    --cd-accent-color: var(--cd-accent, var(--color-foreground));
+    --cd-button-text-color: var(--cd-button-text, var(--color-background));
+    --cd-icon-bg-color: var(--cd-icon-bg, color-mix(in srgb, var(--color-foreground) 8%, var(--color-background)));
+    --cd-field-bg-color: var(--cd-field-bg, color-mix(in srgb, var(--color-background) 55%, white));
+    --cd-field-border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+
+    color: var(--color-foreground);
+  }
+
+  .contact-details__inner {
+    display: grid;
+    gap: var(--gap-3xl);
+    min-width: 0;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 0;
+    }
+  }
+
+  .contact-details__form-column,
+  .contact-details__info-column {
+    min-width: 0;
+  }
+
+  @media screen and (min-width: 990px) {
+    .contact-details__form-column {
+      padding-inline-end: var(--padding-4xl);
+    }
+
+    .contact-details__info-column {
+      padding-inline-start: var(--padding-4xl);
+      border-inline-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    }
+  }
+
+  /* !important and the extra class beat the global heading font overrides in theme-styles-variables.liquid,
+     so the section's font setting applies. */
+  .contact-details .contact-details__title,
+  .contact-details .contact-details__title em,
+  .contact-details .contact-details__item-title {
+    font-family: var(--cd-title-font) !important;
+  }
+
+  .contact-details__title {
+    margin: 0;
+    font-weight: var(--cd-title-weight);
+    font-size: calc(var(--cd-title-size) * 0.75);
+    line-height: 1.1;
+    color: var(--color-foreground);
+    overflow-wrap: break-word;
+
+    em {
+      font-style: italic;
+      color: var(--cd-accent-color);
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--cd-title-size);
+    }
+  }
+
+  .contact-details__intro {
+    max-width: 32rem;
+    margin: var(--margin-sm) 0 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+  }
+
+  .contact-details__intro--small {
+    font-size: 0.875rem;
+  }
+
+  /* Form */
+  .contact-details__form {
+    margin-block-start: var(--margin-xl);
+  }
+
+  .contact-details__status {
+    margin-block-end: var(--margin-lg);
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--style-border-radius-inputs);
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    ul {
+      margin: 0;
+      padding-inline-start: 1.2em;
+    }
+  }
+
+  .contact-details__status--success {
+    background-color: color-mix(in srgb, var(--color-success, #2e7d32) 12%, var(--color-background));
+    color: var(--color-foreground);
+  }
+
+  .contact-details__status--error {
+    background-color: color-mix(in srgb, var(--color-error, #b3261e) 12%, var(--color-background));
+    color: var(--color-foreground);
+  }
+
+  .contact-details__fields {
+    display: grid;
+    gap: var(--gap-lg);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--gap-xl);
+    }
+  }
+
+  .contact-details__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    min-width: 0;
+  }
+
+  .contact-details__field--full {
+    grid-column: 1 / -1;
+  }
+
+  .contact-details__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+
+  .contact-details__required {
+    margin-inline-start: 0.2em;
+    color: var(--cd-accent-color);
+  }
+
+  /* The section class outranks the global input:not([type=…]) rule, so every field shares one background. */
+  .contact-details .contact-details__input {
+    width: 100%;
+    min-height: var(--minimum-touch-target);
+    padding: 0.7rem 0.9rem;
+    border: var(--cd-field-border);
+    border-radius: var(--style-border-radius-inputs);
+    background-color: var(--cd-field-bg-color);
+    color: var(--color-foreground);
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    transition: border-color var(--animation-speed) var(--animation-easing);
+
+    &::placeholder {
+      color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cd-accent-color);
+      outline-offset: 1px;
+      border-color: var(--cd-accent-color);
+    }
+
+    &[aria-invalid='true'] {
+      border-color: var(--color-error, #b3261e);
+    }
+  }
+
+  .contact-details__select-wrapper {
+    position: relative;
+  }
+
+  .contact-details__select {
+    appearance: none;
+    padding-inline-end: 2.5rem;
+    cursor: pointer;
+
+    &:invalid {
+      color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+    }
+
+    option {
+      color: var(--color-foreground);
+    }
+  }
+
+  .contact-details__select-icon {
+    position: absolute;
+    inset-inline-end: 0.9rem;
+    inset-block-start: 50%;
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* Custom subject dropdown. Until custom-select.js runs, the native select shows instead. */
+  .custom-select {
+    position: relative;
+    display: block;
+  }
+
+  .custom-select:not(:defined) :is(.custom-select__button, .custom-select__list) {
+    display: none;
+  }
+
+  /* Kept in the form (and in its validation) but out of sight once the custom control takes over. */
+  .custom-select:defined .custom-select__native {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contact-details .custom-select__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    text-align: start;
+    cursor: pointer;
+
+    &[aria-expanded='true'] {
+      border-color: var(--cd-accent-color);
+    }
+
+    &[aria-expanded='true'] .custom-select__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .custom-select__value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .custom-select__value--placeholder {
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+  }
+
+  .custom-select__icon {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    transition: transform var(--animation-speed) var(--animation-easing);
+  }
+
+  .custom-select__list {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: calc(100% + 0.375rem);
+    z-index: var(--layer-raised, 2);
+    max-height: 16rem;
+    margin: 0;
+    padding: var(--padding-2xs);
+    overflow-y: auto;
+    list-style: none;
+    border: var(--cd-field-border);
+    border-radius: var(--style-border-radius-inputs);
+    background-color: var(--cd-field-bg-color);
+    box-shadow: 0 12px 28px rgb(var(--color-foreground-rgb) / var(--opacity-10));
+
+    &[hidden] {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cd-accent-color);
+      outline-offset: 1px;
+    }
+  }
+
+  .custom-select__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    padding: 0.65rem 0.75rem;
+    border-radius: calc(var(--style-border-radius-inputs) * 0.75);
+    font-size: 0.9375rem;
+    color: var(--color-foreground);
+    cursor: pointer;
+
+    &:hover,
+    &.is-active {
+      background-color: rgb(var(--cd-accent-rgb, var(--color-foreground-rgb)) / var(--opacity-8));
+    }
+
+    &[aria-selected='true'] {
+      color: var(--cd-accent-color);
+      font-weight: 600;
+    }
+  }
+
+  .custom-select__check {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    visibility: hidden;
+  }
+
+  .custom-select__option[aria-selected='true'] .custom-select__check {
+    visibility: visible;
+  }
+
+  .custom-select.is-invalid .custom-select__button {
+    border-color: var(--color-error, #b3261e);
+  }
+
+  .custom-select__error {
+    margin: var(--margin-2xs) 0 0;
+    font-size: 0.8125rem;
+    color: var(--color-error, #b3261e);
+  }
+
+  .contact-details__message {
+    display: block;
+  }
+
+  .contact-details__textarea {
+    min-height: 9rem;
+    resize: vertical;
+  }
+
+  .contact-details__counter {
+    margin: var(--margin-2xs) 0 0;
+    font-size: 0.75rem;
+    text-align: end;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-60));
+  }
+
+  .contact-details__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-sm);
+    width: 100%;
+    min-height: 3.25rem;
+    margin-block-start: var(--margin-lg);
+    padding: 0.9rem 1.75rem;
+    border: 0;
+    border-radius: var(--style-border-radius-inputs);
+    background-color: var(--cd-accent-color);
+    color: var(--cd-button-text-color);
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      opacity: var(--opacity-85);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cd-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  .contact-details__submit-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  [dir='rtl'] .contact-details__submit-icon {
+    scale: -1 1;
+  }
+
+  /* Contact details */
+  .contact-details__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xl);
+    margin: var(--margin-xl) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .contact-details__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-lg);
+  }
+
+  .contact-details__icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--cd-icon-bg-color);
+    color: var(--color-foreground);
+  }
+
+  .contact-details__icon-svg,
+  .contact-details__icon-image {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+  }
+
+  .contact-details__item-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+    min-width: 0;
+    padding-block-start: var(--padding-2xs);
+  }
+
+  .contact-details__item-title {
+    margin: 0;
+    font-weight: var(--cd-title-weight);
+    font-size: 1.125rem;
+    line-height: 1.25;
+    color: var(--color-foreground);
+  }
+
+  .contact-details__item-text {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-75));
+  }
+
+  .contact-details__item-value {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cd-accent-color);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  a.contact-details__item-value:hover {
+    text-decoration: underline;
+  }
+
+  .contact-details__item-value--plain {
+    font-weight: 400;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-75));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-details__input,
+    .custom-select__icon,
+    .contact-details__submit {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.contact_details",
+  "class": "contact-details-section",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "contact_item",
+      "name": "t:names.contact_detail",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:settings.icon",
+          "options": [
+            { "value": "email", "label": "t:options.email" },
+            { "value": "phone", "label": "t:options.phone" },
+            { "value": "whatsapp", "label": "t:options.whatsapp" },
+            { "value": "clock", "label": "t:options.clock" },
+            { "value": "map_pin", "label": "t:options.map_pin" },
+            { "value": "chat", "label": "t:options.chat_bubble" },
+            { "value": "headset", "label": "t:options.headset" }
+          ],
+          "default": "email"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "t:settings.custom_icon",
+          "info": "t:info.custom_icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:settings.title",
+          "default": "Email us"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:settings.text"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "t:settings.contact_value",
+          "info": "t:info.contact_value"
+        },
+        {
+          "type": "select",
+          "id": "value_type",
+          "label": "t:settings.contact_value_type",
+          "options": [
+            { "value": "none", "label": "t:options.none" },
+            { "value": "email", "label": "t:options.email" },
+            { "value": "phone", "label": "t:options.phone" },
+            { "value": "whatsapp", "label": "t:options.whatsapp" },
+            { "value": "link", "label": "t:options.link" }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings.link",
+          "visible_if": "{{ block.settings.value_type == 'link' }}"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:names.contact_form"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "form_title",
+      "label": "t:settings.heading",
+      "info": "t:info.heading_accent",
+      "default": "Send Us a <em>Message</em>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "form_text",
+      "label": "t:settings.text",
+      "default": "Fill out the form below and our team will get back to you as soon as possible, usually within 24 hours."
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "t:settings.name_label",
+      "default": "Your Name"
+    },
+    {
+      "type": "text",
+      "id": "name_placeholder",
+      "label": "t:settings.name_placeholder",
+      "default": "John Doe"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "t:settings.email_label",
+      "default": "Your Email"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "t:settings.email_placeholder",
+      "default": "john@example.com"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "t:settings.show_phone",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "phone_label",
+      "label": "t:settings.phone_label",
+      "default": "Phone Number",
+      "visible_if": "{{ section.settings.show_phone }}"
+    },
+    {
+      "type": "text",
+      "id": "phone_placeholder",
+      "label": "t:settings.phone_placeholder",
+      "default": "+92 300 1234567",
+      "visible_if": "{{ section.settings.show_phone }}"
+    },
+    {
+      "type": "text",
+      "id": "subject_label",
+      "label": "t:settings.subject_label",
+      "default": "Subject"
+    },
+    {
+      "type": "text",
+      "id": "subject_placeholder",
+      "label": "t:settings.subject_placeholder",
+      "default": "Select a subject"
+    },
+    {
+      "type": "textarea",
+      "id": "subject_options",
+      "label": "t:settings.subject_options",
+      "info": "t:info.subject_options",
+      "default": "General question\nOrder inquiry\nWholesale request\nFeedback"
+    },
+    {
+      "type": "text",
+      "id": "message_label",
+      "label": "t:settings.message_label",
+      "default": "Your Message"
+    },
+    {
+      "type": "text",
+      "id": "message_placeholder",
+      "label": "t:settings.message_placeholder",
+      "default": "Tell us how we can help you..."
+    },
+    {
+      "type": "range",
+      "id": "message_max_length",
+      "label": "t:settings.message_max_length",
+      "min": 200,
+      "max": 2000,
+      "step": 50,
+      "default": 500
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "default": "Send message"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "t:settings.success_message",
+      "default": "Thanks for reaching out! We'll get back to you within 24 hours."
+    },
+    {
+      "type": "header",
+      "content": "t:names.contact_details_column"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "details_title",
+      "label": "t:settings.heading",
+      "info": "t:info.heading_accent",
+      "default": "Get <em>in Touch</em>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "details_text",
+      "label": "t:settings.text",
+      "default": "You can also reach us through any of the following channels. We're here to help!"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "t:settings.size",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "t:settings.button_text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "field_background",
+      "label": "t:settings.field_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "t:settings.icon_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.contact_details",
+      "blocks": {
+        "email": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "email",
+            "title": "Email Us",
+            "text": "We usually respond within 24 hours.",
+            "value": "hello@example.com",
+            "value_type": "email"
+          }
+        },
+        "call": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "phone",
+            "title": "Call Us",
+            "text": "Mon – Sat, 9:00 AM – 6:00 PM",
+            "value": "+92 300 123 4567",
+            "value_type": "phone"
+          }
+        },
+        "whatsapp": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "whatsapp",
+            "title": "WhatsApp",
+            "text": "Get quick support on WhatsApp.",
+            "value": "+92 300 123 4567",
+            "value_type": "whatsapp"
+          }
+        },
+        "hours": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "clock",
+            "title": "Office Hours",
+            "text": "Monday – Saturday, 9:00 AM – 6:00 PM"
+          }
+        },
+        "address": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "map_pin",
+            "title": "Our Address",
+            "text": "123 Green Valley Road, Lahore, Pakistan"
+          }
+        }
+      },
+      "block_order": ["email", "call", "whatsapp", "hours", "address"]
+    }
+  ]
+}
+{% endschema %}

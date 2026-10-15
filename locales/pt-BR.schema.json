@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Formulário de contato com informações",
+    "contact_detail": "Informação de contato",
+    "contact_details_column": "Informações de contato",
+    "icon_highlights": "Destaques com ícones",
+    "highlight": "Destaque",
     "collection_categories": "Categorias da coleção",
     "all_products_link": "Link Todos os produtos",
     "collection_sidebar": "Coleção com barra lateral",
@@ -197,6 +202,28 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "custom_icon": "Ícone personalizado",
+    "contact_value": "Valor de contato",
+    "contact_value_type": "Vincular valor como",
+    "name_label": "Rótulo do nome",
+    "name_placeholder": "Placeholder do nome",
+    "email_label": "Rótulo do e-mail",
+    "email_placeholder": "Placeholder do e-mail",
+    "show_phone": "Mostrar campo de telefone",
+    "phone_label": "Rótulo do telefone",
+    "phone_placeholder": "Placeholder do telefone",
+    "subject_label": "Rótulo do assunto",
+    "subject_placeholder": "Placeholder do assunto",
+    "subject_options": "Opções de assunto",
+    "message_label": "Rótulo da mensagem",
+    "message_placeholder": "Placeholder da mensagem",
+    "message_max_length": "Limite de caracteres da mensagem",
+    "button_label": "Rótulo do botão",
+    "success_message": "Mensagem de sucesso",
+    "field_background": "Fundo dos campos",
+    "icon_color": "Cor do ícone",
+    "banner_note": "Observação",
+    "show_breadcrumbs": "Mostrar trilha de navegação",
     "show_all_link": "Mostrar link Todos os produtos",
     "icon_size": "Tamanho do ícone",
     "show_divider": "Mostrar divisor",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "clock": "Relógio",
+    "headset": "Headset",
     "script": "Manuscrita",
     "small_caps": "Versaletes",
     "related_product_collection": "Coleção do produto",
@@ -1188,6 +1219,10 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "custom_icon": "Substitui o ícone. Use uma imagem quadrada pequena.",
+    "contact_value": "Exibido abaixo do texto, por exemplo, um e-mail ou telefone.",
+    "subject_options": "Um assunto por linha.",
+    "banner_note": "Texto pequeno em maiúsculas abaixo do texto do banner.",
     "collection_categories_label": "Não exibido. Leitores de tela usam isso para descrever os links das categorias.",
     "clear_button_label": "Deixe em branco para ocultar o botão.",
     "count_text": "Use [shown] para o número de produtos exibidos e [count] para o total. Deixe em branco para ocultar.",

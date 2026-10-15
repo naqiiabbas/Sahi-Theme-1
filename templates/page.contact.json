@@ -9,161 +9,195 @@
  */
 {
   "sections": {
-    "section": {
-      "type": "section",
-      "blocks": {
-        "text_dWXrnm": {
-          "type": "text",
-          "settings": {
-            "text": "{{ closest.page.content }}",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "contact_form_jWxXkm": {
-          "type": "contact-form",
-          "settings": {
-            "width": "custom",
-            "custom_width": 60,
-            "width_mobile": "custom",
-            "custom_width_mobile": 100,
-            "input_style": "default",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "submit-button": {
-              "type": "contact-form-submit-button",
-              "static": true,
-              "settings": {
-                "label": "Send",
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "block_order": [
-        "text_dWXrnm",
-        "contact_form_jWxXkm"
-      ],
+    "contact_hero": {
+      "type": "promo-banner",
       "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "{{ settings.color_palette.background }}",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "fallback_image": "collection-spotlight-honey.jpg",
+        "image_position": 80,
+        "section_width": "full-width",
+        "min_height": 420,
+        "overlay_color": "{{ settings.color_palette.color1 }}",
+        "overlay_opacity": 100,
+        "eyebrow": "",
+        "title": "Let’s Stay <em>in Touch.</em>",
+        "accent_new_line": true,
+        "heading_tag": "h1",
+        "text": "Have a question, an order inquiry, wholesale request or just want to say hello? We’d love to hear from you.",
+        "note": "Real ingredients.\nA brighter tomorrow.",
+        "title_font": "instrument_serif_n4",
+        "title_size": 76,
+        "button_label": "",
+        "button_link": "",
+        "button_radius": 2,
+        "show_breadcrumbs": true,
+        "breadcrumb_home_label": "Home",
+        "breadcrumb_nav_label": "Breadcrumb",
+        "tagline": "",
+        "tagline_style": "script",
+        "tagline_font": "pinyon_script_n4",
+        "tagline_size": 36,
+        "show_tagline_flourish": false,
+        "background_color": "{{ settings.color_palette.color1 }}",
+        "text_color": "{{ settings.color_palette.background }}",
+        "accent_color": "{{ settings.color_palette.color3 }}",
+        "button_background": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "tagline_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
-    "main": {
-      "type": "main-page",
+    "contact_details": {
+      "type": "contact-details",
       "blocks": {
-        "title": {
-          "type": "text",
-          "name": "t:names.title",
+        "email": {
+          "type": "contact_item",
           "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "icon": "email",
+            "title": "Email Us",
+            "text": "We usually respond within 24 hours.",
+            "value": "business@sahifoods.co",
+            "value_type": "email"
+          }
         },
-        "content": {
-          "type": "text",
-          "name": "t:names.content",
+        "call": {
+          "type": "contact_item",
           "settings": {
-            "text": "{{ closest.page.content }}",
-            "width": "100%",
-            "max_width": "narrow",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "icon": "phone",
+            "title": "Call Us",
+            "text": "Mon – Sat, 9:00 AM – 6:00 PM (PKT)",
+            "value": "+92 317 8434399",
+            "value_type": "phone"
+          }
+        },
+        "whatsapp": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "whatsapp",
+            "title": "WhatsApp",
+            "text": "Get quick support on WhatsApp.",
+            "value": "+92 317 8434399",
+            "value_type": "whatsapp"
+          }
+        },
+        "hours": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "clock",
+            "title": "Office Hours",
+            "text": "Monday – Saturday, 9:00 AM – 6:00 PM (PKT)",
+            "value": "",
+            "value_type": "none"
+          }
+        },
+        "address": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "map_pin",
+            "title": "Our Address",
+            "text": "Lahore, Pakistan",
+            "value": "",
+            "value_type": "none"
+          }
         }
       },
       "block_order": [
-        "title",
-        "content"
+        "email",
+        "call",
+        "whatsapp",
+        "hours",
+        "address"
       ],
       "settings": {
-        "content_direction": "column",
-        "gap": 32,
-        "padding-block-start": 40,
-        "padding-block-end": 0
+        "form_title": "Send Us a <em>Message</em>",
+        "form_text": "Fill out the form below and our team will get back to you as soon as possible, usually within 24 hours.",
+        "name_label": "Your Name",
+        "name_placeholder": "John Doe",
+        "email_label": "Your Email",
+        "email_placeholder": "john@example.com",
+        "show_phone": true,
+        "phone_label": "Phone Number",
+        "phone_placeholder": "+92 300 1234567",
+        "subject_label": "Subject",
+        "subject_placeholder": "Select a subject",
+        "subject_options": "General question\nOrder inquiry\nWholesale request\nFeedback",
+        "message_label": "Your Message",
+        "message_placeholder": "Tell us how we can help you...",
+        "message_max_length": 500,
+        "button_label": "Send message",
+        "success_message": "Thanks for reaching out! We'll get back to you within 24 hours.",
+        "details_title": "Get <em>in Touch</em>",
+        "details_text": "You can also reach us through any of the following channels. We're here to help!",
+        "title_font": "instrument_serif_n4",
+        "title_size": 40,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "field_background": "",
+        "icon_background": "",
+        "section_width": "page-width",
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
+    },
+    "contact_highlights": {
+      "type": "icon-highlights",
+      "blocks": {
+        "fast": {
+          "type": "highlight",
+          "settings": {
+            "icon": "clock",
+            "title": "Fast Response",
+            "text": "We reply within 24 hours"
+          }
+        },
+        "pure": {
+          "type": "highlight",
+          "settings": {
+            "icon": "leaf",
+            "title": "Pure Ingredients",
+            "text": "Real food. Real support."
+          }
+        },
+        "support": {
+          "type": "highlight",
+          "settings": {
+            "icon": "heart",
+            "title": "Friendly Support",
+            "text": "A team that cares"
+          }
+        },
+        "delivery": {
+          "type": "highlight",
+          "settings": {
+            "icon": "truck",
+            "title": "Nationwide Delivery",
+            "text": "To your doorstep"
+          }
+        }
+      },
+      "block_order": [
+        "fast",
+        "pure",
+        "support",
+        "delivery"
+      ],
+      "settings": {
+        "title_font": "instrument_serif_n4",
+        "show_dividers": true,
+        "background_color": "{{ settings.color_palette.color4 }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "icon_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 32,
+        "padding-block-end": 32
       }
     }
   },
   "order": [
-    "main",
-    "section"
+    "contact_hero",
+    "contact_details",
+    "contact_highlights"
   ]
 }

@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "带详情的联系表单",
+    "contact_detail": "联系方式",
+    "contact_details_column": "联系方式",
+    "icon_highlights": "图标亮点",
+    "highlight": "亮点",
     "collection_categories": "产品系列类别",
     "all_products_link": "所有产品链接",
     "collection_sidebar": "带侧边栏的产品系列",
@@ -197,6 +202,28 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "custom_icon": "自定义图标",
+    "contact_value": "联系信息",
+    "contact_value_type": "将信息链接为",
+    "name_label": "姓名标签",
+    "name_placeholder": "姓名占位符",
+    "email_label": "电子邮件标签",
+    "email_placeholder": "电子邮件占位符",
+    "show_phone": "显示电话字段",
+    "phone_label": "电话标签",
+    "phone_placeholder": "电话占位符",
+    "subject_label": "主题标签",
+    "subject_placeholder": "主题占位符",
+    "subject_options": "主题选项",
+    "message_label": "留言标签",
+    "message_placeholder": "留言占位符",
+    "message_max_length": "留言字数上限",
+    "button_label": "按钮标签",
+    "success_message": "提交成功消息",
+    "field_background": "字段背景",
+    "icon_color": "图标颜色",
+    "banner_note": "备注",
+    "show_breadcrumbs": "显示面包屑导航",
     "show_all_link": "显示所有产品链接",
     "icon_size": "图标大小",
     "show_divider": "显示分隔线",
@@ -667,6 +694,10 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "email": "电子邮件",
+    "whatsapp": "WhatsApp",
+    "clock": "时钟",
+    "headset": "耳机",
     "script": "手写体",
     "small_caps": "小型大写字母",
     "related_product_collection": "商品所在系列",
@@ -1188,6 +1219,10 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "custom_icon": "替换图标。请使用小尺寸方形图片。",
+    "contact_value": "显示在文字下方，例如电子邮件地址或电话号码。",
+    "subject_options": "每行一个主题。",
+    "banner_note": "横幅文字下方的小号大写文字。",
     "collection_categories_label": "不显示。屏幕阅读器用它来描述类别链接。",
     "clear_button_label": "留空可隐藏按钮。",
     "count_text": "使用 [shown] 表示显示的产品数量，使用 [count] 表示总数。留空可隐藏。",

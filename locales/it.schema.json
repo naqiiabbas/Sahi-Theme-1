@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "Modulo di contatto con dettagli",
+    "contact_detail": "Dettaglio di contatto",
+    "contact_details_column": "Dettagli di contatto",
+    "icon_highlights": "Punti salienti con icone",
+    "highlight": "Punto saliente",
     "collection_categories": "Categorie della collezione",
     "all_products_link": "Link Tutti i prodotti",
     "collection_sidebar": "Collezione con barra laterale",
@@ -197,6 +202,28 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "custom_icon": "Icona personalizzata",
+    "contact_value": "Valore di contatto",
+    "contact_value_type": "Collega il valore come",
+    "name_label": "Etichetta nome",
+    "name_placeholder": "Segnaposto nome",
+    "email_label": "Etichetta email",
+    "email_placeholder": "Segnaposto email",
+    "show_phone": "Mostra campo telefono",
+    "phone_label": "Etichetta telefono",
+    "phone_placeholder": "Segnaposto telefono",
+    "subject_label": "Etichetta oggetto",
+    "subject_placeholder": "Segnaposto oggetto",
+    "subject_options": "Opzioni oggetto",
+    "message_label": "Etichetta messaggio",
+    "message_placeholder": "Segnaposto messaggio",
+    "message_max_length": "Limite di caratteri del messaggio",
+    "button_label": "Etichetta pulsante",
+    "success_message": "Messaggio di conferma",
+    "field_background": "Sfondo dei campi",
+    "icon_color": "Colore icona",
+    "banner_note": "Nota",
+    "show_breadcrumbs": "Mostra breadcrumb",
     "show_all_link": "Mostra link Tutti i prodotti",
     "icon_size": "Dimensione icona",
     "show_divider": "Mostra divisore",
@@ -667,6 +694,10 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "clock": "Orologio",
+    "headset": "Cuffie",
     "script": "Corsivo",
     "small_caps": "Maiuscoletto",
     "related_product_collection": "Collezione del prodotto",
@@ -1188,6 +1219,10 @@
     "disclosures": "Informative"
   },
   "info": {
+    "custom_icon": "Sostituisce l’icona. Usa una piccola immagine quadrata.",
+    "contact_value": "Mostrato sotto il testo, ad es. un indirizzo email o un numero di telefono.",
+    "subject_options": "Un oggetto per riga.",
+    "banner_note": "Piccolo testo in maiuscolo sotto il testo del banner.",
     "collection_categories_label": "Non visibile. Gli screen reader lo usano per descrivere i link delle categorie.",
     "clear_button_label": "Lascia vuoto per nascondere il pulsante.",
     "count_text": "Usa [shown] per i prodotti mostrati e [count] per il totale. Lascia vuoto per nascondere.",

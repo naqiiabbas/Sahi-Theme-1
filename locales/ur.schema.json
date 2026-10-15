@@ -216,6 +216,10 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "custom_icon": "آئیکن کی جگہ لیتا ہے۔ چھوٹی مربع تصویر استعمال کریں۔",
+    "contact_value": "متن کے نیچے دکھایا جاتا ہے، مثلاً ای میل ایڈریس یا فون نمبر۔",
+    "subject_options": "ہر لائن میں ایک موضوع۔",
+    "banner_note": "بینر کے متن کے نیچے چھوٹا بڑے حروف والا متن۔",
     "collection_categories_label": "نظر نہیں آتا۔ اسکرین ریڈرز اسے کیٹیگری لنکس کی وضاحت کے لیے استعمال کرتے ہیں۔",
     "clear_button_label": "بٹن چھپانے کے لیے خالی چھوڑ دیں۔",
     "count_text": "دکھائی گئی پروڈکٹس کی تعداد کے لیے [shown] اور کل کے لیے [count] استعمال کریں۔ چھپانے کے لیے خالی چھوڑ دیں۔",
@@ -270,6 +274,11 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "contact_details": "تفصیلات کے ساتھ رابطہ فارم",
+    "contact_detail": "رابطے کی تفصیل",
+    "contact_details_column": "رابطے کی تفصیلات",
+    "icon_highlights": "آئیکن کے ساتھ نمایاں نکات",
+    "highlight": "نمایاں نکتہ",
     "collection_categories": "کلیکشن کیٹیگریز",
     "all_products_link": "تمام پروڈکٹس لنک",
     "collection_sidebar": "سائیڈ بار کے ساتھ کلیکشن",
@@ -458,6 +467,10 @@
     "comparison_slider": "موازنہ کرنے والا سلائیڈر"
   },
   "options": {
+    "email": "ای میل",
+    "whatsapp": "WhatsApp",
+    "clock": "گھڑی",
+    "headset": "ہیڈسیٹ",
     "script": "تحریری",
     "small_caps": "چھوٹے بڑے حروف",
     "related_product_collection": "پروڈکٹ کا کلیکشن",
@@ -753,6 +766,28 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "custom_icon": "حسب ضرورت آئیکن",
+    "contact_value": "رابطے کی قدر",
+    "contact_value_type": "قدر کو بطور لنک کریں",
+    "name_label": "نام کا لیبل",
+    "name_placeholder": "نام کا پلیس ہولڈر",
+    "email_label": "ای میل کا لیبل",
+    "email_placeholder": "ای میل کا پلیس ہولڈر",
+    "show_phone": "فون فیلڈ دکھائیں",
+    "phone_label": "فون کا لیبل",
+    "phone_placeholder": "فون کا پلیس ہولڈر",
+    "subject_label": "موضوع کا لیبل",
+    "subject_placeholder": "موضوع کا پلیس ہولڈر",
+    "subject_options": "موضوع کے اختیارات",
+    "message_label": "پیغام کا لیبل",
+    "message_placeholder": "پیغام کا پلیس ہولڈر",
+    "message_max_length": "پیغام میں حروف کی حد",
+    "button_label": "بٹن کا لیبل",
+    "success_message": "کامیابی کا پیغام",
+    "field_background": "فیلڈز کا پس منظر",
+    "icon_color": "آئیکن کا رنگ",
+    "banner_note": "نوٹ",
+    "show_breadcrumbs": "بریڈکرمبز دکھائیں",
     "show_all_link": "تمام پروڈکٹس لنک دکھائیں",
     "icon_size": "آئیکن کا سائز",
     "show_divider": "ڈیوائیڈر دکھائیں",

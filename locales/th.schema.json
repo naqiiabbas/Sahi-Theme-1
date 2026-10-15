@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "แบบฟอร์มติดต่อพร้อมรายละเอียด",
+    "contact_detail": "รายละเอียดการติดต่อ",
+    "contact_details_column": "รายละเอียดการติดต่อ",
+    "icon_highlights": "ไฮไลต์พร้อมไอคอน",
+    "highlight": "ไฮไลต์",
     "collection_categories": "หมวดหมู่คอลเลกชัน",
     "all_products_link": "ลิงก์สินค้าทั้งหมด",
     "collection_sidebar": "คอลเลกชันพร้อมแถบด้านข้าง",
@@ -197,6 +202,28 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "custom_icon": "ไอคอนที่กำหนดเอง",
+    "contact_value": "ข้อมูลติดต่อ",
+    "contact_value_type": "ลิงก์ข้อมูลเป็น",
+    "name_label": "ป้ายกำกับชื่อ",
+    "name_placeholder": "ข้อความตัวอย่างชื่อ",
+    "email_label": "ป้ายกำกับอีเมล",
+    "email_placeholder": "ข้อความตัวอย่างอีเมล",
+    "show_phone": "แสดงช่องโทรศัพท์",
+    "phone_label": "ป้ายกำกับโทรศัพท์",
+    "phone_placeholder": "ข้อความตัวอย่างโทรศัพท์",
+    "subject_label": "ป้ายกำกับหัวข้อ",
+    "subject_placeholder": "ข้อความตัวอย่างหัวข้อ",
+    "subject_options": "ตัวเลือกหัวข้อ",
+    "message_label": "ป้ายกำกับข้อความ",
+    "message_placeholder": "ข้อความตัวอย่างของข้อความ",
+    "message_max_length": "จำนวนอักขระสูงสุดของข้อความ",
+    "button_label": "ป้ายกำกับปุ่ม",
+    "success_message": "ข้อความเมื่อส่งสำเร็จ",
+    "field_background": "พื้นหลังช่องกรอก",
+    "icon_color": "สีไอคอน",
+    "banner_note": "หมายเหตุ",
+    "show_breadcrumbs": "แสดงเส้นทางนำทาง",
     "show_all_link": "แสดงลิงก์สินค้าทั้งหมด",
     "icon_size": "ขนาดไอคอน",
     "show_divider": "แสดงเส้นคั่น",
@@ -667,6 +694,10 @@
     "customer_account_menu": "เมนูบัญชีผู้ใช้ของลูกค้า"
   },
   "options": {
+    "email": "อีเมล",
+    "whatsapp": "WhatsApp",
+    "clock": "นาฬิกา",
+    "headset": "หูฟัง",
     "script": "ตัวเขียน",
     "small_caps": "ตัวพิมพ์ใหญ่ขนาดเล็ก",
     "related_product_collection": "คอลเลกชันของสินค้า",
@@ -1188,6 +1219,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "custom_icon": "ใช้แทนไอคอน ใช้รูปภาพสี่เหลี่ยมจัตุรัสขนาดเล็ก",
+    "contact_value": "แสดงใต้ข้อความ เช่น อีเมลหรือหมายเลขโทรศัพท์",
+    "subject_options": "หนึ่งหัวข้อต่อบรรทัด",
+    "banner_note": "ข้อความตัวพิมพ์ใหญ่ขนาดเล็กใต้ข้อความแบนเนอร์",
     "collection_categories_label": "ไม่แสดง โปรแกรมอ่านหน้าจอใช้เพื่ออธิบายลิงก์หมวดหมู่",
     "clear_button_label": "เว้นว่างไว้เพื่อซ่อนปุ่ม",
     "count_text": "ใช้ [shown] สำหรับจำนวนสินค้าที่แสดง และ [count] สำหรับทั้งหมด เว้นว่างไว้เพื่อซ่อน",

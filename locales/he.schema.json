@@ -216,6 +216,10 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "custom_icon": "מחליף את הסמל. השתמשו בתמונה ריבועית קטנה.",
+    "contact_value": "מוצג מתחת לטקסט, למשל כתובת אימייל או מספר טלפון.",
+    "subject_options": "נושא אחד בכל שורה.",
+    "banner_note": "טקסט קטן באותיות רישיות מתחת לטקסט הבאנר.",
     "collection_categories_label": "לא מוצג. קוראי מסך משתמשים בו לתיאור קישורי הקטגוריות.",
     "clear_button_label": "השאירו ריק כדי להסתיר את הכפתור.",
     "count_text": "השתמשו ב-[shown] למספר המוצרים המוצגים וב-[count] לסך הכול. השאירו ריק כדי להסתיר.",
@@ -270,6 +274,11 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "contact_details": "טופס יצירת קשר עם פרטים",
+    "contact_detail": "פרט קשר",
+    "contact_details_column": "פרטי קשר",
+    "icon_highlights": "הדגשות עם סמלים",
+    "highlight": "הדגשה",
     "collection_categories": "קטגוריות קולקציה",
     "all_products_link": "קישור לכל המוצרים",
     "collection_sidebar": "קולקציה עם סרגל צד",
@@ -458,6 +467,10 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "email": "אימייל",
+    "whatsapp": "WhatsApp",
+    "clock": "שעון",
+    "headset": "אוזניות",
     "script": "כתב יד",
     "small_caps": "אותיות רישיות קטנות",
     "related_product_collection": "הקולקציה של המוצר",
@@ -753,6 +766,28 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "custom_icon": "סמל מותאם אישית",
+    "contact_value": "ערך ליצירת קשר",
+    "contact_value_type": "קישור הערך כ",
+    "name_label": "תווית שם",
+    "name_placeholder": "טקסט מציין מיקום לשם",
+    "email_label": "תווית אימייל",
+    "email_placeholder": "טקסט מציין מיקום לאימייל",
+    "show_phone": "הצגת שדה טלפון",
+    "phone_label": "תווית טלפון",
+    "phone_placeholder": "טקסט מציין מיקום לטלפון",
+    "subject_label": "תווית נושא",
+    "subject_placeholder": "טקסט מציין מיקום לנושא",
+    "subject_options": "אפשרויות נושא",
+    "message_label": "תווית הודעה",
+    "message_placeholder": "טקסט מציין מיקום להודעה",
+    "message_max_length": "מגבלת תווים להודעה",
+    "button_label": "תווית הכפתור",
+    "success_message": "הודעת הצלחה",
+    "field_background": "רקע השדות",
+    "icon_color": "צבע הסמל",
+    "banner_note": "הערה",
+    "show_breadcrumbs": "הצגת פירורי לחם",
     "show_all_link": "הצגת קישור לכל המוצרים",
     "icon_size": "גודל סמל",
     "show_divider": "הצגת קו מפריד",

@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "contact_details": "세부 정보가 있는 문의 양식",
+    "contact_detail": "연락처 정보",
+    "contact_details_column": "연락처 정보",
+    "icon_highlights": "아이콘 하이라이트",
+    "highlight": "하이라이트",
     "collection_categories": "컬렉션 카테고리",
     "all_products_link": "모든 제품 링크",
     "collection_sidebar": "사이드바가 있는 컬렉션",
@@ -197,6 +202,28 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "custom_icon": "사용자 지정 아이콘",
+    "contact_value": "연락처 값",
+    "contact_value_type": "값 연결 방식",
+    "name_label": "이름 레이블",
+    "name_placeholder": "이름 자리 표시자",
+    "email_label": "이메일 레이블",
+    "email_placeholder": "이메일 자리 표시자",
+    "show_phone": "전화번호 필드 표시",
+    "phone_label": "전화번호 레이블",
+    "phone_placeholder": "전화번호 자리 표시자",
+    "subject_label": "제목 레이블",
+    "subject_placeholder": "제목 자리 표시자",
+    "subject_options": "제목 옵션",
+    "message_label": "메시지 레이블",
+    "message_placeholder": "메시지 자리 표시자",
+    "message_max_length": "메시지 글자 수 제한",
+    "button_label": "버튼 레이블",
+    "success_message": "전송 완료 메시지",
+    "field_background": "필드 배경",
+    "icon_color": "아이콘 색상",
+    "banner_note": "메모",
+    "show_breadcrumbs": "탐색 경로 표시",
     "show_all_link": "모든 제품 링크 표시",
     "icon_size": "아이콘 크기",
     "show_divider": "구분선 표시",
@@ -667,6 +694,10 @@
     "customer_account_menu": "고객 계정 메뉴"
   },
   "options": {
+    "email": "이메일",
+    "whatsapp": "WhatsApp",
+    "clock": "시계",
+    "headset": "헤드셋",
     "script": "필기체",
     "small_caps": "작은 대문자",
     "related_product_collection": "상품의 컬렉션",
@@ -1188,6 +1219,10 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "custom_icon": "아이콘을 대체합니다. 작은 정사각형 이미지를 사용하세요.",
+    "contact_value": "텍스트 아래에 표시됩니다(예: 이메일 주소 또는 전화번호).",
+    "subject_options": "한 줄에 제목 하나.",
+    "banner_note": "배너 텍스트 아래의 작은 대문자 텍스트.",
     "collection_categories_label": "표시되지 않습니다. 화면 판독기가 카테고리 링크를 설명하는 데 사용합니다.",
     "clear_button_label": "버튼을 숨기려면 비워 두세요.",
     "count_text": "표시된 제품 수에는 [shown], 전체에는 [count]를 사용하세요. 숨기려면 비워 두세요.",
