@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "悬浮按钮",
     "contact_details": "带详情的联系表单",
     "contact_detail": "联系方式",
@@ -203,6 +204,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "seo_default_description": "默认描述",
+    "seo_home_heading": "首页标题",
+    "seo_share_image": "首页的主标题（H1）。不在页面上显示，供搜索引擎和屏幕阅读器读取。",
+    "seo_social_profiles": "社交分享图片",
+    "seo_title_pattern": "页面没有自己的图片时使用。建议 1200 × 630 像素。",
+    "seo_description_pattern": "社交媒体主页",
     "show_whatsapp_button": "显示 WhatsApp 按钮",
     "whatsapp_number": "WhatsApp 号码",
     "whatsapp_message": "预填消息",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "左上方"
   },
   "content": {
+    "seo_intro": "产品和产品系列的搜索标题与描述按这些模式生成。在 Shopify 后台设置了自己 SEO 标题或描述的产品或产品系列，始终使用其自身设置。",
+    "seo_products": "产品",
+    "seo_collections": "产品系列",
     "sidebar": "侧边栏",
     "advanced": "高级",
     "background_image": "背景图片",
@@ -1228,6 +1238,12 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "seo_default_description": "当偏好设置中的商店描述为空时，用于没有自己描述的页面。",
+    "seo_home_heading": "社交媒体页面的完整链接，每行一个。帮助搜索引擎将其与您的商店关联。",
+    "seo_share_image": "标题模式",
+    "seo_social_profiles": "描述模式",
+    "seo_product_placeholders": "占位符：[title], [shop], [description], [price], [type], [vendor], [collection]。",
+    "seo_collection_placeholders": "占位符：[title], [shop], [description], [count]。",
     "whatsapp_number": "请包含国家/地区代码，例如 +923001234567。",
     "whatsapp_message": "开始聊天时的文字。留空则不使用。",
     "show_floating_cart": "页眉滚出视图时显示。加入购物车的动画会飞向它。",

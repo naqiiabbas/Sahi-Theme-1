@@ -1,7 +1,12 @@
 {% doc %}
   Renders all meta tags for the page including Open Graph, Twitter Cards, and SEO tags.
 
-  @param {object} [product] - The product object, available on product pages for price meta tags.
+  Products and collections without their own SEO title or description (set in the Shopify admin) get one
+  from the patterns in Theme settings > SEO. Placeholders: [title], [shop], [description], and for
+  products [price], [type], [vendor], [collection]; for collections [count].
+
+  @param {object} [product] - The product object, available on product pages.
+  @param {object} [collection] - The collection object, available on collection pages.
 {% enddoc %}
 
 <meta charset="utf-8">
@@ -19,10 +24,81 @@
 >
 
 {%- liquid
-  assign og_title = page_title | default: shop.name
+  assign seo_title = page_title
+  assign seo_description = page_description
+
+  # Dynamic SEO for products and collections; a title or description set in the admin always wins.
+  assign title_pattern = ''
+  assign description_pattern = ''
+  assign resource_title = ''
+  assign resource_description = ''
+
+  case request.page_type
+    when 'product'
+      if product.metafields.global.title_tag == blank
+        assign title_pattern = settings.seo_product_title
+      endif
+      if product.metafields.global.description_tag == blank
+        assign description_pattern = settings.seo_product_description
+      endif
+      assign resource_title = product.title
+      assign resource_description = product.description
+      assign product_collection = collection.title | default: product.collections.first.title
+      assign product_price = product.price | money_without_trailing_zeros | strip_html
+    when 'collection'
+      if collection.metafields.global.title_tag == blank
+        assign title_pattern = settings.seo_collection_title
+      endif
+      if collection.metafields.global.description_tag == blank
+        assign description_pattern = settings.seo_collection_description
+      endif
+      assign resource_title = collection.title
+      assign resource_description = collection.description
+  endcase
+
+  # Plain text on one line.
+  assign resource_plain = resource_description | strip_html | split: ' ' | join: ' '
+
+  if title_pattern != blank
+    assign pattern_title = title_pattern | replace: '[title]', resource_title | replace: '[shop]', shop.name
+    assign pattern_title = pattern_title | replace: '[price]', product_price | replace: '[type]', product.type | replace: '[vendor]', product.vendor
+    assign pattern_title = pattern_title | replace: '[collection]', product_collection | replace: '[count]', collection.all_products_count
+    assign pattern_title = pattern_title | split: ' ' | join: ' '
+    if pattern_title != blank
+      assign seo_title = pattern_title
+    endif
+  endif
+
+  if description_pattern != blank
+    # Fill everything except [description] first, then size the excerpt to the room left, so the
+    # pattern's own words (price, store name) survive the ~155-character limit.
+    assign pattern_description = description_pattern | replace: '[title]', resource_title | replace: '[shop]', shop.name
+    assign pattern_description = pattern_description | replace: '[price]', product_price | replace: '[type]', product.type | replace: '[vendor]', product.vendor
+    assign pattern_description = pattern_description | replace: '[collection]', product_collection | replace: '[count]', collection.all_products_count
+    assign pattern_rest_length = pattern_description | remove: '[description]' | size
+    assign excerpt_length = 155 | minus: pattern_rest_length | at_least: 40
+    assign resource_excerpt = resource_plain | truncate: excerpt_length
+    assign pattern_description = pattern_description | replace: '[description]', resource_excerpt | split: ' ' | join: ' '
+    if pattern_description != blank
+      assign seo_description = pattern_description
+    endif
+  endif
+
+  # Every page gets a description: its own, else the store description from Preferences, else the theme default.
+  assign seo_description = seo_description | default: shop.description | default: settings.seo_default_description
+  assign seo_description = seo_description | strip_html | split: ' ' | join: ' ' | truncate: 160
+
+  assign og_title = seo_title | default: shop.name
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'
-  assign og_description = page_description | default: shop.description | default: shop.name
+  assign og_description = seo_description | default: shop.name
+  assign og_image = page_image | default: settings.seo_share_image | default: settings.logo
+
+  # Internal results and account pages stay out of search results; links on them are still followed.
+  assign noindex = false
+  if request.page_type == 'search' or request.page_type == 'cart' or request.page_type contains 'customers/'
+    assign noindex = true
+  endif
 
   if request.page_type == 'product'
     assign og_type = 'product'
@@ -54,22 +130,30 @@
   content="{{ og_description | escape }}"
 >
 
-{%- if page_image -%}
+{%- if og_image -%}
   <meta
     property="og:image"
-    content="http:{{ page_image | image_url }}"
+    content="http:{{ og_image | image_url: width: 1200 }}"
   >
   <meta
     property="og:image:secure_url"
-    content="https:{{ page_image | image_url }}"
+    content="https:{{ og_image | image_url: width: 1200 }}"
   >
   <meta
     property="og:image:width"
-    content="{{ page_image.width }}"
+    content="1200"
   >
   <meta
     property="og:image:height"
-    content="{{ page_image.height }}"
+    content="{{ 1200 | divided_by: og_image.aspect_ratio | round }}"
+  >
+  <meta
+    property="og:image:alt"
+    content="{{ og_image.alt | default: og_title | escape }}"
+  >
+  <meta
+    name="twitter:image"
+    content="https:{{ og_image | image_url: width: 1200 }}"
   >
 {%- endif -%}
 
@@ -104,10 +188,10 @@
 >
 
 <title>
-  {{ page_title }}
+  {{ seo_title }}
   {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
   {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- unless seo_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
 </title>
 
 <link
@@ -115,9 +199,16 @@
   href="{{ canonical_url }}"
 >
 
-{% if page_description %}
+{% if seo_description != blank %}
   <meta
     name="description"
-    content="{{ page_description | escape }}"
+    content="{{ seo_description | escape }}"
+  >
+{% endif %}
+
+{% if noindex %}
+  <meta
+    name="robots"
+    content="noindex, follow"
   >
 {% endif %}

@@ -104,7 +104,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>Authentic Sahi Pickles</h1>",
+                    "text": "<h2>Authentic Sahi Pickles</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -299,7 +299,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>Pure Pakistani Raw Honey</h1>",
+                    "text": "<h2>Pure Pakistani Raw Honey</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -494,7 +494,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>Artisanal Almond Butter</h1>",
+                    "text": "<h2>Artisanal Almond Butter</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",

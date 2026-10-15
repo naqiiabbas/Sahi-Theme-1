@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Pulsanti flottanti",
     "contact_details": "Modulo di contatto con dettagli",
     "contact_detail": "Dettaglio di contatto",
@@ -203,6 +204,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "seo_default_description": "Descrizione predefinita",
+    "seo_home_heading": "Titolo della home page",
+    "seo_share_image": "Titolo principale della home page (H1). Non visibile; letto da motori di ricerca e screen reader.",
+    "seo_social_profiles": "Immagine per la condivisione",
+    "seo_title_pattern": "Usata quando una pagina non ha un’immagine propria. Ideale 1200 × 630 px.",
+    "seo_description_pattern": "Profili social",
     "show_whatsapp_button": "Mostra pulsante WhatsApp",
     "whatsapp_number": "Numero WhatsApp",
     "whatsapp_message": "Messaggio precompilato",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "In alto a sinistra"
   },
   "content": {
+    "seo_intro": "Titoli e descrizioni di ricerca di prodotti e collezioni sono creati da questi modelli. Un prodotto o una collezione con titolo o descrizione SEO propri nell’admin di Shopify usa sempre quelli.",
+    "seo_products": "Prodotti",
+    "seo_collections": "Collezioni",
     "sidebar": "Barra laterale",
     "advanced": "Avanzate",
     "background_image": "Immagine di sfondo",
@@ -1228,6 +1238,12 @@
     "disclosures": "Informative"
   },
   "info": {
+    "seo_default_description": "Usata per le pagine senza descrizione propria quando la descrizione del negozio in Preferenze è vuota.",
+    "seo_home_heading": "Link completi alle tue pagine social, uno per riga. Aiuta i motori di ricerca a collegarli al negozio.",
+    "seo_share_image": "Modello del titolo",
+    "seo_social_profiles": "Modello della descrizione",
+    "seo_product_placeholders": "Segnaposto: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Segnaposto: [title], [shop], [description], [count].",
     "whatsapp_number": "Includi il prefisso internazionale, ad es. +923001234567.",
     "whatsapp_message": "Testo con cui inizia la chat. Lascia vuoto per nessuno.",
     "show_floating_cart": "Compare quando l’header non è visibile. Le animazioni di aggiunta al carrello volano verso di esso.",

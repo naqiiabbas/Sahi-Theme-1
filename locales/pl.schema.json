@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Pływające przyciski",
     "contact_details": "Formularz kontaktowy z danymi",
     "contact_detail": "Dane kontaktowe",
@@ -203,6 +204,12 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "seo_default_description": "Domyślny opis",
+    "seo_home_heading": "Nagłówek strony głównej",
+    "seo_share_image": "Główny nagłówek strony głównej (H1). Niewidoczny na stronie; czytają go wyszukiwarki i czytniki ekranu.",
+    "seo_social_profiles": "Obraz do udostępniania",
+    "seo_title_pattern": "Używany, gdy strona nie ma własnego obrazu. Najlepiej 1200 × 630 px.",
+    "seo_description_pattern": "Profile społecznościowe",
     "show_whatsapp_button": "Pokaż przycisk WhatsApp",
     "whatsapp_number": "Numer WhatsApp",
     "whatsapp_message": "Wstępnie wypełniona wiadomość",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Góra po lewej"
   },
   "content": {
+    "seo_intro": "Tytuły i opisy wyszukiwania produktów i kolekcji powstają z tych wzorów. Produkt lub kolekcja z własnym tytułem albo opisem SEO w panelu Shopify zawsze używa właśnie ich.",
+    "seo_products": "Produkty",
+    "seo_collections": "Kolekcje",
     "sidebar": "Panel boczny",
     "background_video": "Wideo w tle",
     "describe_the_video_for": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1228,6 +1238,12 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "seo_default_description": "Używany na stronach bez własnego opisu, gdy opis sklepu w Preferencjach jest pusty.",
+    "seo_home_heading": "Pełne linki do profili społecznościowych, jeden w wierszu. Pomaga wyszukiwarkom powiązać je ze sklepem.",
+    "seo_share_image": "Wzór tytułu",
+    "seo_social_profiles": "Wzór opisu",
+    "seo_product_placeholders": "Symbole zastępcze: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Symbole zastępcze: [title], [shop], [description], [count].",
     "whatsapp_number": "Dodaj numer kierunkowy kraju, np. +923001234567.",
     "whatsapp_message": "Tekst rozpoczynający czat. Pozostaw puste, aby go nie było.",
     "show_floating_cart": "Wyświetla się, gdy nagłówek jest poza widokiem. Animacje dodania do koszyka lecą do niego.",

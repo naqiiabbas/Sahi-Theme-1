@@ -1,0 +1,109 @@
+{%- doc -%}
+  Renders JSON-LD structured data that complements the per-section data (Product in
+  sections/product-information.liquid, Article in sections/main-blog-post.liquid, Organization in
+  sections/header.liquid):
+  - WebSite with a sitelinks search box on the home page.
+  - BreadcrumbList on product, collection, page, blog, and article pages.
+  - ItemList of the products shown on a collection page.
+
+  @param {object} [product] - The product object, available on product pages.
+  @param {object} [collection] - The collection object, available on collection pages.
+  @param {object} [blog] - The blog object, available on blog and article pages.
+  @param {object} [article] - The article object, available on article pages.
+
+  @example
+  {% render 'seo-structured-data', product: product, collection: collection, blog: blog, article: article %}
+{%- enddoc -%}
+
+{%- liquid
+  # shop.url is the primary domain, matching canonical_url.
+  assign home_url = shop.url | append: routes.root_url
+  assign current_url = canonical_url | default: home_url
+  assign home_name = shop.name
+  # Built here because the braces in {search_term_string} would end an output tag early.
+  assign search_url_template = shop.url | append: routes.search_url | append: '?q={search_term_string}'
+
+  # Breadcrumb trail as "name~>url" pairs joined by "~~~" (separators titles won't contain); the last is the current page.
+  assign crumbs = ''
+  case request.page_type
+    when 'product'
+      assign crumb_collection = collection | default: product.collections.first
+      if crumb_collection != blank
+        assign crumb_url = shop.url | append: crumb_collection.url
+        assign crumbs = crumb_collection.title | append: '~>' | append: crumb_url | append: '~~~'
+      endif
+      assign crumbs = crumbs | append: product.title | append: '~>' | append: current_url
+    when 'collection', 'page', 'blog'
+      assign crumbs = page_title | append: '~>' | append: current_url
+    when 'article'
+      assign blog_url = shop.url | append: blog.url
+      assign crumbs = blog.title | append: '~>' | append: blog_url | append: '~~~' | append: article.title | append: '~>' | append: current_url
+  endcase
+-%}
+
+{%- if request.page_type == 'index' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "url": {{ home_url | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ search_url_template | json }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+{%- endif -%}
+
+{%- if crumbs != blank -%}
+  {%- assign crumb_list = crumbs | split: '~~~' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": {{ home_name | json }},
+          "item": {{ home_url | json }}
+        }
+        {%- for crumb in crumb_list -%}
+          {%- assign crumb_parts = crumb | split: '~>' -%}
+          ,{
+            "@type": "ListItem",
+            "position": {{ forloop.index | plus: 1 }},
+            "name": {{ crumb_parts.first | strip | json }},
+            "item": {{ crumb_parts.last | strip | json }}
+          }
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{%- if request.page_type == 'collection' and collection.products.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": {{ collection.title | json }},
+      "numberOfItems": {{ collection.products_count }},
+      "itemListElement": [
+        {%- for item in collection.products limit: 24 -%}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "url": {{ shop.url | append: item.url | json }},
+            "name": {{ item.title | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}

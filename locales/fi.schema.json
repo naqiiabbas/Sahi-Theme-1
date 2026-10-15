@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "Hakukoneoptimointi",
     "floating_actions": "Kelluvat painikkeet",
     "contact_details": "Yhteydenottolomake ja tiedot",
     "contact_detail": "Yhteystieto",
@@ -203,6 +204,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "seo_default_description": "Oletuskuvaus",
+    "seo_home_heading": "Etusivun otsikko",
+    "seo_share_image": "Etusivun pääotsikko (H1). Ei näy sivulla; hakukoneet ja näytönlukuohjelmat lukevat sen.",
+    "seo_social_profiles": "Jakokuva",
+    "seo_title_pattern": "Käytetään, kun sivulla ei ole omaa kuvaa. 1200 × 630 px toimii parhaiten.",
+    "seo_description_pattern": "Sosiaalisen median profiilit",
     "show_whatsapp_button": "Näytä WhatsApp-painike",
     "whatsapp_number": "WhatsApp-numero",
     "whatsapp_message": "Valmiiksi täytetty viesti",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Ylhäällä vasemmalla"
   },
   "content": {
+    "seo_intro": "Tuotteiden ja kokoelmien hakuotsikot ja -kuvaukset muodostetaan näistä malleista. Tuote tai kokoelma, jolla on oma SEO-otsikko tai -kuvaus Shopifyn hallinnassa, käyttää aina sitä.",
+    "seo_products": "Tuotteet",
+    "seo_collections": "Kokoelmat",
     "sidebar": "Sivupalkki",
     "advanced": "Lisäasetukset",
     "background_image": "Taustakuva",
@@ -1228,6 +1238,12 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "seo_default_description": "Käytetään sivuilla, joilla ei ole omaa kuvausta, kun kaupan kuvaus Asetuksissa on tyhjä.",
+    "seo_home_heading": "Täydet linkit sosiaalisen median sivuillesi, yksi riviä kohden. Auttaa hakukoneita yhdistämään ne kauppaasi.",
+    "seo_share_image": "Otsikkomalli",
+    "seo_social_profiles": "Kuvausmalli",
+    "seo_product_placeholders": "Paikkamerkit: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Paikkamerkit: [title], [shop], [description], [count].",
     "whatsapp_number": "Sisällytä maatunnus, esim. +923001234567.",
     "whatsapp_message": "Teksti, jolla keskustelu alkaa. Jätä tyhjäksi, jos ei tekstiä.",
     "show_floating_cart": "Näytetään, kun ylätunniste on vieritetty pois näkyvistä. Lisää ostoskoriin -animaatiot lentävät siihen.",

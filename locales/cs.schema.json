@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Plovoucí tlačítka",
     "contact_details": "Kontaktní formulář s údaji",
     "contact_detail": "Kontaktní údaj",
@@ -203,6 +204,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "seo_default_description": "Výchozí popis",
+    "seo_home_heading": "Nadpis domovské stránky",
+    "seo_share_image": "Hlavní nadpis domovské stránky (H1). Na stránce se nezobrazuje; čtou ho vyhledávače a čtečky obrazovky.",
+    "seo_social_profiles": "Obrázek pro sdílení",
+    "seo_title_pattern": "Použije se, když stránka nemá vlastní obrázek. Nejlépe 1200 × 630 px.",
+    "seo_description_pattern": "Sociální profily",
     "show_whatsapp_button": "Zobrazit tlačítko WhatsApp",
     "whatsapp_number": "Číslo WhatsApp",
     "whatsapp_message": "Předvyplněná zpráva",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Vlevo nahoře"
   },
   "content": {
+    "seo_intro": "Titulky a popisy pro vyhledávání u produktů a kolekcí se tvoří z těchto vzorů. Produkt nebo kolekce s vlastním SEO titulkem či popisem v administraci Shopify vždy použije ten.",
+    "seo_products": "Produkty",
+    "seo_collections": "Kolekce",
     "sidebar": "Postranní panel",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
@@ -1228,6 +1238,12 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "seo_default_description": "Použije se pro stránky bez vlastního popisu, když je popis obchodu v Předvolbách prázdný.",
+    "seo_home_heading": "Úplné odkazy na vaše sociální sítě, jeden na řádek. Pomáhají vyhledávačům propojit je s obchodem.",
+    "seo_share_image": "Vzor titulku",
+    "seo_social_profiles": "Vzor popisu",
+    "seo_product_placeholders": "Zástupné symboly: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Zástupné symboly: [title], [shop], [description], [count].",
     "whatsapp_number": "Uveďte předvolbu země, např. +923001234567.",
     "whatsapp_message": "Text, kterým začne chat. Ponechte prázdné, pokud žádný.",
     "show_floating_cart": "Zobrazí se, když je záhlaví mimo zobrazení. Animace přidání do košíku letí k němu.",

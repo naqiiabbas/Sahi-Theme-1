@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Boutons flottants",
     "contact_details": "Formulaire de contact avec coordonnées",
     "contact_detail": "Coordonnée",
@@ -203,6 +204,12 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "seo_default_description": "Description par défaut",
+    "seo_home_heading": "Titre de la page d’accueil",
+    "seo_share_image": "Titre principal de la page d’accueil (H1). Non affiché ; lu par les moteurs de recherche et les lecteurs d’écran.",
+    "seo_social_profiles": "Image de partage social",
+    "seo_title_pattern": "Utilisée quand une page n’a pas d’image propre. Idéalement 1200 × 630 px.",
+    "seo_description_pattern": "Profils sociaux",
     "show_whatsapp_button": "Afficher le bouton WhatsApp",
     "whatsapp_number": "Numéro WhatsApp",
     "whatsapp_message": "Message prérempli",
@@ -1002,6 +1009,9 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "seo_intro": "Les titres et descriptions de recherche des produits et collections sont créés à partir de ces modèles. Un produit ou une collection avec son propre titre ou sa propre description SEO dans l’administration Shopify utilise toujours ceux-ci.",
+    "seo_products": "Produits",
+    "seo_collections": "Collections",
     "sidebar": "Barre latérale",
     "background_video": "Vidéo de fond",
     "describe_the_video_for": "Décrivez la vidéo pour les clients utilisant des lecteurs d’écran. [En savoir plus](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1228,6 +1238,12 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "seo_default_description": "Utilisée pour les pages sans description propre lorsque la description de la boutique dans Préférences est vide.",
+    "seo_home_heading": "Liens complets vers vos réseaux sociaux, un par ligne. Aide les moteurs de recherche à les associer à votre boutique.",
+    "seo_share_image": "Modèle de titre",
+    "seo_social_profiles": "Modèle de description",
+    "seo_product_placeholders": "Variables : [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Variables : [title], [shop], [description], [count].",
     "whatsapp_number": "Incluez l’indicatif du pays, par ex. +923001234567.",
     "whatsapp_message": "Texte qui démarre la discussion. Laissez vide pour aucun.",
     "show_floating_cart": "S’affiche quand l’en-tête n’est plus visible. Les animations d’ajout au panier s’y dirigent.",

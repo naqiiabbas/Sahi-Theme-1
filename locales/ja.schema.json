@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "フローティングボタン",
     "contact_details": "詳細付きお問い合わせフォーム",
     "contact_detail": "連絡先の詳細",
@@ -203,6 +204,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "seo_default_description": "デフォルトの説明",
+    "seo_home_heading": "ホームページの見出し",
+    "seo_share_image": "ホームページのメイン見出し（H1）。ページには表示されず、検索エンジンとスクリーンリーダーが読み取ります。",
+    "seo_social_profiles": "SNS共有画像",
+    "seo_title_pattern": "ページに独自の画像がない場合に使用されます。1200 × 630 pxが最適です。",
+    "seo_description_pattern": "ソーシャルプロフィール",
     "show_whatsapp_button": "WhatsAppボタンを表示",
     "whatsapp_number": "WhatsApp番号",
     "whatsapp_message": "入力済みメッセージ",
@@ -1002,6 +1009,9 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "seo_intro": "商品とコレクションの検索用タイトルと説明は、これらのパターンから作成されます。Shopify管理画面で独自のSEOタイトルや説明が設定されている商品・コレクションでは、常にそちらが使われます。",
+    "seo_products": "商品",
+    "seo_collections": "コレクション",
     "sidebar": "サイドバー",
     "advanced": "高度な設定",
     "background_image": "背景画像",
@@ -1228,6 +1238,12 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "seo_default_description": "独自の説明がないページで、環境設定のストアの説明が空の場合に使用されます。",
+    "seo_home_heading": "SNSページの完全なリンクを1行に1つずつ入力します。検索エンジンがストアと結び付けやすくなります。",
+    "seo_share_image": "タイトルのパターン",
+    "seo_social_profiles": "説明のパターン",
+    "seo_product_placeholders": "プレースホルダー: [title], [shop], [description], [price], [type], [vendor], [collection]。",
+    "seo_collection_placeholders": "プレースホルダー: [title], [shop], [description], [count]。",
     "whatsapp_number": "国番号を含めてください（例: +923001234567）。",
     "whatsapp_message": "チャットの最初に入るテキスト。不要な場合は空欄にします。",
     "show_floating_cart": "ヘッダーが画面外にあるときに表示されます。カートに追加するアニメーションはここに向かいます。",

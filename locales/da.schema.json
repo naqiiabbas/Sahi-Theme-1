@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Flydende knapper",
     "contact_details": "Kontaktformular med oplysninger",
     "contact_detail": "Kontaktoplysning",
@@ -203,6 +204,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "seo_default_description": "Standardbeskrivelse",
+    "seo_home_heading": "Forsidens overskrift",
+    "seo_share_image": "Forsidens hovedoverskrift (H1). Vises ikke på siden; læses af søgemaskiner og skærmlæsere.",
+    "seo_social_profiles": "Billede til deling på sociale medier",
+    "seo_title_pattern": "Bruges, når en side ikke har sit eget billede. 1200 × 630 px fungerer bedst.",
+    "seo_description_pattern": "Sociale profiler",
     "show_whatsapp_button": "Vis WhatsApp-knap",
     "whatsapp_number": "WhatsApp-nummer",
     "whatsapp_message": "Forudfyldt besked",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Øverst til venstre"
   },
   "content": {
+    "seo_intro": "Søgetitler og -beskrivelser for produkter og kollektioner opbygges ud fra disse mønstre. Et produkt eller en kollektion med egen SEO-titel eller -beskrivelse i Shopify-administratoren bruger altid den i stedet.",
+    "seo_products": "Produkter",
+    "seo_collections": "Kollektioner",
     "sidebar": "Sidepanel",
     "advanced": "Avanceret",
     "background_image": "Baggrundsbillede",
@@ -1228,6 +1238,12 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "seo_default_description": "Bruges til sider uden egen beskrivelse, når butiksbeskrivelsen under Præferencer er tom.",
+    "seo_home_heading": "Fulde links til dine sociale medier, ét pr. linje. Hjælper søgemaskiner med at knytte dem til din butik.",
+    "seo_share_image": "Titelmønster",
+    "seo_social_profiles": "Beskrivelsesmønster",
+    "seo_product_placeholders": "Pladsholdere: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Pladsholdere: [title], [shop], [description], [count].",
     "whatsapp_number": "Medtag landekoden, f.eks. +923001234567.",
     "whatsapp_message": "Tekst, der starter chatten. Lad feltet være tomt for ingen.",
     "show_floating_cart": "Vises, når headeren er rullet ud af syne. Læg i kurv-animationer flyver hen til den.",

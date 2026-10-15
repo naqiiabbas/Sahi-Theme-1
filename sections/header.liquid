@@ -331,15 +331,35 @@
   {% endif %}
 {% endcapture %}
 
+{%- liquid
+  # Social profile URLs from Theme settings > SEO, one per line, for the Organization's sameAs.
+  assign social_profiles = settings.seo_social_profiles | newline_to_br | split: '<br />'
+-%}
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
-    "url": {{ request.origin | append: page.url | json }}
+    {%- liquid
+      assign same_as = ''
+      for profile in social_profiles
+        assign profile_url = profile | strip
+        if profile_url contains 'http'
+          if same_as != blank
+            assign same_as = same_as | append: ','
+          endif
+          assign profile_json = profile_url | json
+          assign same_as = same_as | append: profile_json
+        endif
+      endfor
+    -%}
+    {%- if same_as != blank -%}
+      "sameAs": [{{ same_as }}],
+    {%- endif -%}
+    "url": {{ shop.url | append: routes.root_url | json }}
   }
 </script>
 
@@ -397,7 +417,8 @@
     class="header__underlay header__underlay-open"
   ></div>
   {%- if request.page_type == 'index' -%}
-    <h1 class="visually-hidden">{{ shop.name }}</h1>
+    {% comment %} The home page's only h1; its text is set in Theme settings > SEO. {% endcomment %}
+    <h1 class="visually-hidden">{{ settings.seo_home_heading | default: shop.name | escape }}</h1>
   {%- endif -%}
   {% for row in rows %}
     {% liquid

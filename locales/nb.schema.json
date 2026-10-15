@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Flytende knapper",
     "contact_details": "Kontaktskjema med detaljer",
     "contact_detail": "Kontaktdetalj",
@@ -203,6 +204,12 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "seo_default_description": "Standardbeskrivelse",
+    "seo_home_heading": "Overskrift på forsiden",
+    "seo_share_image": "Forsidens hovedoverskrift (H1). Vises ikke på siden; leses av søkemotorer og skjermlesere.",
+    "seo_social_profiles": "Bilde for deling",
+    "seo_title_pattern": "Brukes når en side ikke har et eget bilde. 1200 × 630 px fungerer best.",
+    "seo_description_pattern": "Sosiale profiler",
     "show_whatsapp_button": "Vis WhatsApp-knapp",
     "whatsapp_number": "WhatsApp-nummer",
     "whatsapp_message": "Forhåndsutfylt melding",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Oppe til venstre"
   },
   "content": {
+    "seo_intro": "Søketitler og -beskrivelser for produkter og kolleksjoner bygges fra disse mønstrene. Et produkt eller en kolleksjon med egen SEO-tittel eller -beskrivelse i Shopify-administratoren bruker alltid den.",
+    "seo_products": "Produkter",
+    "seo_collections": "Kolleksjoner",
     "sidebar": "Sidefelt",
     "advanced": "Avansert",
     "background_image": "Bakgrunnsbilde",
@@ -1228,6 +1238,12 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "seo_default_description": "Brukes for sider uten egen beskrivelse når butikkbeskrivelsen under Innstillinger er tom.",
+    "seo_home_heading": "Fullstendige lenker til sosiale medier, én per linje. Hjelper søkemotorer å knytte dem til butikken.",
+    "seo_share_image": "Tittelmønster",
+    "seo_social_profiles": "Beskrivelsesmønster",
+    "seo_product_placeholders": "Plassholdere: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Plassholdere: [title], [shop], [description], [count].",
     "whatsapp_number": "Ta med landskoden, f.eks. +923001234567.",
     "whatsapp_message": "Tekst som starter chatten. La feltet stå tomt for ingen.",
     "show_floating_cart": "Vises når toppteksten er rullet ut av syne. Legg i handlekurv-animasjoner flyr dit.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Zwevende knoppen",
     "contact_details": "Contactformulier met gegevens",
     "contact_detail": "Contactgegeven",
@@ -203,6 +204,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "seo_default_description": "Standaardbeschrijving",
+    "seo_home_heading": "Kop van de homepage",
+    "seo_share_image": "De hoofdkop van de homepage (H1). Niet zichtbaar; wordt gelezen door zoekmachines en schermlezers.",
+    "seo_social_profiles": "Afbeelding voor delen",
+    "seo_title_pattern": "Wordt gebruikt als een pagina geen eigen afbeelding heeft. 1200 × 630 px werkt het best.",
+    "seo_description_pattern": "Socialemediaprofielen",
     "show_whatsapp_button": "WhatsApp-knop weergeven",
     "whatsapp_number": "WhatsApp-nummer",
     "whatsapp_message": "Vooraf ingevuld bericht",
@@ -1002,6 +1009,9 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "seo_intro": "Zoektitels en -beschrijvingen voor producten en collecties worden met deze patronen gemaakt. Een product of collectie met een eigen SEO-titel of -beschrijving in de Shopify-beheeromgeving gebruikt altijd die.",
+    "seo_products": "Producten",
+    "seo_collections": "Collecties",
     "sidebar": "Zijbalk",
     "background_video": "Achtergrondvideo",
     "describe_the_video_for": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1228,6 +1238,12 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "seo_default_description": "Wordt gebruikt voor pagina’s zonder eigen beschrijving als de winkelbeschrijving bij Voorkeuren leeg is.",
+    "seo_home_heading": "Volledige links naar je socialemediapagina’s, één per regel. Helpt zoekmachines ze aan je winkel te koppelen.",
+    "seo_share_image": "Titelpatroon",
+    "seo_social_profiles": "Beschrijvingspatroon",
+    "seo_product_placeholders": "Placeholders: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Placeholders: [title], [shop], [description], [count].",
     "whatsapp_number": "Voeg de landcode toe, bijv. +923001234567.",
     "whatsapp_message": "Tekst waarmee de chat begint. Laat leeg voor geen.",
     "show_floating_cart": "Wordt getoond als de header niet in beeld is. Toevoegen aan winkelwagen-animaties vliegen ernaartoe.",

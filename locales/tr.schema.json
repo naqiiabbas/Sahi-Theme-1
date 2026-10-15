@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Kayan düğmeler",
     "contact_details": "Ayrıntılı iletişim formu",
     "contact_detail": "İletişim bilgisi",
@@ -203,6 +204,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "seo_default_description": "Varsayılan açıklama",
+    "seo_home_heading": "Ana sayfa başlığı",
+    "seo_share_image": "Ana sayfanın ana başlığı (H1). Sayfada gösterilmez; arama motorları ve ekran okuyucular okur.",
+    "seo_social_profiles": "Paylaşım görseli",
+    "seo_title_pattern": "Sayfanın kendi görseli olmadığında kullanılır. En iyi boyut 1200 × 630 px.",
+    "seo_description_pattern": "Sosyal profiller",
     "show_whatsapp_button": "WhatsApp düğmesini göster",
     "whatsapp_number": "WhatsApp numarası",
     "whatsapp_message": "Önceden doldurulmuş mesaj",
@@ -1002,6 +1009,9 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "seo_intro": "Ürün ve koleksiyonların arama başlıkları ve açıklamaları bu kalıplardan oluşturulur. Shopify yöneticisinde kendi SEO başlığı veya açıklaması olan ürün ya da koleksiyon her zaman onu kullanır.",
+    "seo_products": "Ürünler",
+    "seo_collections": "Koleksiyonlar",
     "sidebar": "Kenar çubuğu",
     "background_video": "Arka plan videosu",
     "describe_the_video_for": "Ekran okuyucu kullanan müşteriler için videoyu açıklayın. [Daha fazla bilgi edinin](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1228,6 +1238,12 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "seo_default_description": "Tercihler’deki mağaza açıklaması boş olduğunda kendi açıklaması olmayan sayfalar için kullanılır.",
+    "seo_home_heading": "Sosyal medya sayfalarınızın tam bağlantıları, her satıra bir tane. Arama motorlarının bunları mağazanızla ilişkilendirmesine yardımcı olur.",
+    "seo_share_image": "Başlık kalıbı",
+    "seo_social_profiles": "Açıklama kalıbı",
+    "seo_product_placeholders": "Yer tutucular: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Yer tutucular: [title], [shop], [description], [count].",
     "whatsapp_number": "Ülke kodunu ekleyin, ör. +923001234567.",
     "whatsapp_message": "Sohbeti başlatan metin. Yoksa boş bırakın.",
     "show_floating_cart": "Üst bilgi görünümden çıktığında gösterilir. Sepete ekleme animasyonları ona uçar.",

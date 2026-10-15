@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Botões flutuantes",
     "contact_details": "Formulário de contato com informações",
     "contact_detail": "Informação de contato",
@@ -203,6 +204,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "seo_default_description": "Descrição padrão",
+    "seo_home_heading": "Título da página inicial",
+    "seo_share_image": "Título principal da página inicial (H1). Não aparece na página; é lido por mecanismos de busca e leitores de tela.",
+    "seo_social_profiles": "Imagem de compartilhamento",
+    "seo_title_pattern": "Usada quando a página não tem imagem própria. O ideal é 1200 × 630 px.",
+    "seo_description_pattern": "Perfis sociais",
     "show_whatsapp_button": "Mostrar botão do WhatsApp",
     "whatsapp_number": "Número do WhatsApp",
     "whatsapp_message": "Mensagem pré-preenchida",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Superior à esquerda"
   },
   "content": {
+    "seo_intro": "Os títulos e descrições de pesquisa de produtos e coleções são criados a partir destes padrões. Um produto ou coleção com título ou descrição de SEO próprios no admin da Shopify sempre usa esses.",
+    "seo_products": "Produtos",
+    "seo_collections": "Coleções",
     "sidebar": "Barra lateral",
     "advanced": "Avançado",
     "background_image": "Imagem de fundo",
@@ -1228,6 +1238,12 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "seo_default_description": "Usada em páginas sem descrição própria quando a descrição da loja em Preferências está vazia.",
+    "seo_home_heading": "Links completos para suas redes sociais, um por linha. Ajuda os mecanismos de busca a associá-los à loja.",
+    "seo_share_image": "Padrão de título",
+    "seo_social_profiles": "Padrão de descrição",
+    "seo_product_placeholders": "Marcadores: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Marcadores: [title], [shop], [description], [count].",
     "whatsapp_number": "Inclua o código do país, por exemplo, +923001234567.",
     "whatsapp_message": "Texto que inicia a conversa. Deixe em branco para nenhum.",
     "show_floating_cart": "Aparece quando o cabeçalho está fora da tela. As animações de adicionar ao carrinho voam até ele.",

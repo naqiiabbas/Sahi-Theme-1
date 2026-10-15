@@ -20,7 +20,8 @@
 
     {%- render 'view-transition-opt-in' -%}
 
-    {%- render 'meta-tags' -%}
+    {%- render 'meta-tags', product: product, collection: collection -%}
+    {%- render 'seo-structured-data', product: product, collection: collection, blog: blog, article: article -%}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

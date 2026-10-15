@@ -2131,5 +2131,76 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "t:names.seo",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:content.seo_intro"
+      },
+      {
+        "type": "text",
+        "id": "seo_home_heading",
+        "label": "t:settings.seo_home_heading",
+        "info": "t:info.seo_home_heading",
+        "default": "SAHI – Pure Raw Honey, Nut Butters, Achaars, Olive Oils & Desi Ghee"
+      },
+      {
+        "type": "textarea",
+        "id": "seo_default_description",
+        "label": "t:settings.seo_default_description",
+        "info": "t:info.seo_default_description",
+        "default": "Pure, natural foods from SAHI: raw honey, nut butters, achaars, olive oils and desi ghee, made with real ingredients. Order online across Pakistan."
+      },
+      {
+        "type": "image_picker",
+        "id": "seo_share_image",
+        "label": "t:settings.seo_share_image",
+        "info": "t:info.seo_share_image"
+      },
+      {
+        "type": "textarea",
+        "id": "seo_social_profiles",
+        "label": "t:settings.seo_social_profiles",
+        "info": "t:info.seo_social_profiles"
+      },
+      {
+        "type": "header",
+        "content": "t:content.seo_products"
+      },
+      {
+        "type": "text",
+        "id": "seo_product_title",
+        "label": "t:settings.seo_title_pattern",
+        "info": "t:info.seo_product_placeholders",
+        "default": "[title] | Buy Online | [shop]"
+      },
+      {
+        "type": "textarea",
+        "id": "seo_product_description",
+        "label": "t:settings.seo_description_pattern",
+        "info": "t:info.seo_product_placeholders",
+        "default": "[description] Order [title] online from [shop], starting at [price]."
+      },
+      {
+        "type": "header",
+        "content": "t:content.seo_collections"
+      },
+      {
+        "type": "text",
+        "id": "seo_collection_title",
+        "label": "t:settings.seo_title_pattern",
+        "info": "t:info.seo_collection_placeholders",
+        "default": "[title] – Shop Online | [shop]"
+      },
+      {
+        "type": "textarea",
+        "id": "seo_collection_description",
+        "label": "t:settings.seo_description_pattern",
+        "info": "t:info.seo_collection_placeholders",
+        "default": "[description] Shop [title] online at [shop] – [count] natural products available."
+      }
+    ]
   }
 ]

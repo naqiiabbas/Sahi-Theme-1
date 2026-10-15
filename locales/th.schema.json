@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "ปุ่มลอย",
     "contact_details": "แบบฟอร์มติดต่อพร้อมรายละเอียด",
     "contact_detail": "รายละเอียดการติดต่อ",
@@ -203,6 +204,12 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "seo_default_description": "คำอธิบายเริ่มต้น",
+    "seo_home_heading": "หัวเรื่องหน้าแรก",
+    "seo_share_image": "หัวเรื่องหลักของหน้าแรก (H1) ไม่แสดงบนหน้า แต่เครื่องมือค้นหาและโปรแกรมอ่านหน้าจออ่านได้",
+    "seo_social_profiles": "รูปภาพสำหรับแชร์",
+    "seo_title_pattern": "ใช้เมื่อหน้าไม่มีรูปภาพของตัวเอง ขนาด 1200 × 630 พิกเซลเหมาะที่สุด",
+    "seo_description_pattern": "โปรไฟล์โซเชียล",
     "show_whatsapp_button": "แสดงปุ่ม WhatsApp",
     "whatsapp_number": "หมายเลข WhatsApp",
     "whatsapp_message": "ข้อความที่กรอกไว้ล่วงหน้า",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "บนซ้าย"
   },
   "content": {
+    "seo_intro": "ชื่อและคำอธิบายสำหรับการค้นหาของสินค้าและคอลเลกชันสร้างจากรูปแบบเหล่านี้ สินค้าหรือคอลเลกชันที่มีชื่อหรือคำอธิบาย SEO ของตัวเองในส่วนผู้ดูแล Shopify จะใช้ค่านั้นเสมอ",
+    "seo_products": "สินค้า",
+    "seo_collections": "คอลเลกชัน",
     "sidebar": "แถบด้านข้าง",
     "advanced": "ขั้นสูง",
     "background_image": "รูปภาพพื้นหลัง",
@@ -1228,6 +1238,12 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "seo_default_description": "ใช้กับหน้าที่ไม่มีคำอธิบายของตัวเองเมื่อคำอธิบายร้านค้าในการตั้งค่าว่างอยู่",
+    "seo_home_heading": "ลิงก์เต็มไปยังหน้าโซเชียลมีเดีย หนึ่งลิงก์ต่อบรรทัด ช่วยให้เครื่องมือค้นหาเชื่อมโยงกับร้านค้า",
+    "seo_share_image": "รูปแบบชื่อ",
+    "seo_social_profiles": "รูปแบบคำอธิบาย",
+    "seo_product_placeholders": "ตัวยึดตำแหน่ง: [title], [shop], [description], [price], [type], [vendor], [collection]",
+    "seo_collection_placeholders": "ตัวยึดตำแหน่ง: [title], [shop], [description], [count]",
     "whatsapp_number": "ใส่รหัสประเทศ เช่น +923001234567",
     "whatsapp_message": "ข้อความเริ่มต้นแชท เว้นว่างไว้หากไม่ต้องการ",
     "show_floating_cart": "แสดงเมื่อส่วนหัวเลื่อนพ้นจากหน้าจอ แอนิเมชันเพิ่มลงตะกร้าจะบินไปที่นี่",

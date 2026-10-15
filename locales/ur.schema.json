@@ -30,6 +30,9 @@
     "text": "ٹیکسٹ"
   },
   "content": {
+    "seo_intro": "پروڈکٹس اور کلیکشنز کے سرچ ٹائٹل اور تفصیل انہی پیٹرنز سے بنتے ہیں۔ جس پروڈکٹ یا کلیکشن کا Shopify ایڈمن میں اپنا SEO ٹائٹل یا تفصیل ہو، وہ ہمیشہ وہی استعمال کرتا ہے۔",
+    "seo_products": "پروڈکٹس",
+    "seo_collections": "کلیکشنز",
     "sidebar": "سائیڈ بار",
     "visible_if_collection_has_more_products": "اگر کلیکشن میں دکھائے گئے پروڈکٹ سے زیادہ پروڈکٹ ہوں تو ظاہر ہوتا ہے",
     "advanced": "ایڈوانسڈ",
@@ -216,6 +219,12 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "seo_default_description": "جن صفحات کی اپنی تفصیل نہ ہو، ان کے لیے استعمال ہوتی ہے جب Preferences میں اسٹور کی تفصیل خالی ہو۔",
+    "seo_home_heading": "اپنے سوشل میڈیا صفحات کے مکمل لنکس، ہر لائن میں ایک۔ سرچ انجنز کو انہیں آپ کے اسٹور سے جوڑنے میں مدد دیتا ہے۔",
+    "seo_share_image": "ٹائٹل پیٹرن",
+    "seo_social_profiles": "تفصیل پیٹرن",
+    "seo_product_placeholders": "پلیس ہولڈرز: [title], [shop], [description], [price], [type], [vendor], [collection]۔",
+    "seo_collection_placeholders": "پلیس ہولڈرز: [title], [shop], [description], [count]۔",
     "whatsapp_number": "ملک کا کوڈ شامل کریں، مثلاً +923001234567۔",
     "whatsapp_message": "چیٹ شروع کرنے والا متن۔ نہ ہو تو خالی چھوڑ دیں۔",
     "show_floating_cart": "ہیڈر نظر سے باہر ہونے پر دکھائی دیتا ہے۔ کارٹ میں شامل کرنے کی اینیمیشن اسی کی طرف جاتی ہے۔",
@@ -277,6 +286,7 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "seo": "SEO",
     "floating_actions": "فلوٹنگ بٹن",
     "contact_details": "تفصیلات کے ساتھ رابطہ فارم",
     "contact_detail": "رابطے کی تفصیل",
@@ -770,6 +780,12 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "seo_default_description": "ڈیفالٹ تفصیل",
+    "seo_home_heading": "ہوم پیج کی سرخی",
+    "seo_share_image": "ہوم پیج کی مرکزی سرخی (H1)۔ صفحے پر نظر نہیں آتی؛ سرچ انجن اور اسکرین ریڈرز اسے پڑھتے ہیں۔",
+    "seo_social_profiles": "سوشل شیئرنگ تصویر",
+    "seo_title_pattern": "جب صفحے کی اپنی تصویر نہ ہو تو استعمال ہوتی ہے۔ 1200 × 630 پکسل بہترین ہے۔",
+    "seo_description_pattern": "سوشل پروفائلز",
     "show_whatsapp_button": "WhatsApp بٹن دکھائیں",
     "whatsapp_number": "WhatsApp نمبر",
     "whatsapp_message": "پہلے سے بھرا ہوا پیغام",

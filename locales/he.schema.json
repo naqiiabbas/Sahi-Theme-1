@@ -30,6 +30,9 @@
     "text": "טקסט"
   },
   "content": {
+    "seo_intro": "כותרות ותיאורי חיפוש למוצרים ולקולקציות נבנים מהתבניות האלה. מוצר או קולקציה עם כותרת או תיאור SEO משלהם בניהול Shopify תמיד ישתמשו בהם.",
+    "seo_products": "מוצרים",
+    "seo_collections": "קולקציות",
     "sidebar": "סרגל צד",
     "visible_if_collection_has_more_products": "גלוי אם באוסף יש יותר מוצרים ממה שמוצג",
     "advanced": "מתקדם",
@@ -216,6 +219,12 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "seo_default_description": "משמש לדפים ללא תיאור משלהם כשתיאור החנות בהעדפות ריק.",
+    "seo_home_heading": "קישורים מלאים לדפים ברשתות החברתיות, אחד בכל שורה. עוזר למנועי חיפוש לקשר אותם לחנות.",
+    "seo_share_image": "תבנית כותרת",
+    "seo_social_profiles": "תבנית תיאור",
+    "seo_product_placeholders": "מצייני מקום: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "מצייני מקום: [title], [shop], [description], [count].",
     "whatsapp_number": "כללו את קידומת המדינה, למשל ‎+923001234567.",
     "whatsapp_message": "טקסט שפותח את הצ׳אט. השאירו ריק ללא טקסט.",
     "show_floating_cart": "מוצגת כשהכותרת מחוץ לתצוגה. אנימציות ההוספה לעגלה עפות אליה.",
@@ -277,6 +286,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "seo": "SEO",
     "floating_actions": "כפתורים צפים",
     "contact_details": "טופס יצירת קשר עם פרטים",
     "contact_detail": "פרט קשר",
@@ -770,6 +780,12 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "seo_default_description": "תיאור ברירת מחדל",
+    "seo_home_heading": "כותרת דף הבית",
+    "seo_share_image": "הכותרת הראשית של דף הבית (H1). לא מוצגת בדף; מנועי חיפוש וקוראי מסך קוראים אותה.",
+    "seo_social_profiles": "תמונה לשיתוף ברשתות",
+    "seo_title_pattern": "משמשת כשלדף אין תמונה משלו. מומלץ 1200 × 630 פיקסלים.",
+    "seo_description_pattern": "פרופילים ברשתות חברתיות",
     "show_whatsapp_button": "הצגת כפתור WhatsApp",
     "whatsapp_number": "מספר WhatsApp",
     "whatsapp_message": "הודעה ממולאת מראש",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Flytande knappar",
     "contact_details": "Kontaktformulär med uppgifter",
     "contact_detail": "Kontaktuppgift",
@@ -203,6 +204,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "seo_default_description": "Standardbeskrivning",
+    "seo_home_heading": "Startsidans rubrik",
+    "seo_share_image": "Startsidans huvudrubrik (H1). Visas inte på sidan; läses av sökmotorer och skärmläsare.",
+    "seo_social_profiles": "Bild för delning",
+    "seo_title_pattern": "Används när en sida saknar egen bild. 1200 × 630 px fungerar bäst.",
+    "seo_description_pattern": "Sociala profiler",
     "show_whatsapp_button": "Visa WhatsApp-knapp",
     "whatsapp_number": "WhatsApp-nummer",
     "whatsapp_message": "Förifyllt meddelande",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Uppe till vänster"
   },
   "content": {
+    "seo_intro": "Söktitlar och sökbeskrivningar för produkter och kollektioner skapas från de här mönstren. En produkt eller kollektion med egen SEO-titel eller -beskrivning i Shopify-administratören använder alltid den.",
+    "seo_products": "Produkter",
+    "seo_collections": "Kollektioner",
     "sidebar": "Sidofält",
     "advanced": "Avancerat",
     "background_image": "Bakgrundsbild",
@@ -1228,6 +1238,12 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "seo_default_description": "Används för sidor utan egen beskrivning när butiksbeskrivningen under Inställningar är tom.",
+    "seo_home_heading": "Fullständiga länkar till dina sociala medier, en per rad. Hjälper sökmotorer att koppla dem till butiken.",
+    "seo_share_image": "Titelmönster",
+    "seo_social_profiles": "Beskrivningsmönster",
+    "seo_product_placeholders": "Platshållare: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Platshållare: [title], [shop], [description], [count].",
     "whatsapp_number": "Ange landsnumret, t.ex. +923001234567.",
     "whatsapp_message": "Text som startar chatten. Lämna tomt för ingen.",
     "show_floating_cart": "Visas när sidhuvudet är utanför vyn. Lägg i varukorg-animationer flyger dit.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "懸浮按鈕",
     "contact_details": "附詳細資訊的聯絡表單",
     "contact_detail": "聯絡資訊",
@@ -203,6 +204,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "seo_default_description": "預設說明",
+    "seo_home_heading": "首頁標題",
+    "seo_share_image": "首頁的主標題（H1）。不會顯示在頁面上，供搜尋引擎和螢幕閱讀器讀取。",
+    "seo_social_profiles": "社群分享圖片",
+    "seo_title_pattern": "頁面沒有自己的圖片時使用。建議 1200 × 630 像素。",
+    "seo_description_pattern": "社群檔案",
     "show_whatsapp_button": "顯示 WhatsApp 按鈕",
     "whatsapp_number": "WhatsApp 號碼",
     "whatsapp_message": "預填訊息",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "左上"
   },
   "content": {
+    "seo_intro": "商品與商品系列的搜尋標題和說明會依這些模式產生。在 Shopify 管理介面設有自己 SEO 標題或說明的商品或商品系列，一律使用其自身設定。",
+    "seo_products": "商品",
+    "seo_collections": "商品系列",
     "sidebar": "側邊欄",
     "advanced": "進階",
     "background_image": "背景圖片",
@@ -1228,6 +1238,12 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "seo_default_description": "當偏好設定中的商店說明為空白時，用於沒有自己說明的頁面。",
+    "seo_home_heading": "社群媒體頁面的完整連結，每行一個。協助搜尋引擎將其與你的商店連結。",
+    "seo_share_image": "標題模式",
+    "seo_social_profiles": "說明模式",
+    "seo_product_placeholders": "預留位置：[title], [shop], [description], [price], [type], [vendor], [collection]。",
+    "seo_collection_placeholders": "預留位置：[title], [shop], [description], [count]。",
     "whatsapp_number": "請包含國碼，例如 +923001234567。",
     "whatsapp_message": "開始聊天時的文字。留空即不使用。",
     "show_floating_cart": "頁首捲出畫面時顯示。加入購物車的動畫會飛向它。",

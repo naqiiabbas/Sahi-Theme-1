@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "seo": "SEO",
     "floating_actions": "Schwebende Schaltflächen",
     "contact_details": "Kontaktformular mit Details",
     "contact_detail": "Kontaktdetail",
@@ -203,6 +204,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "seo_default_description": "Standardbeschreibung",
+    "seo_home_heading": "Überschrift der Startseite",
+    "seo_share_image": "Hauptüberschrift der Startseite (H1). Wird nicht angezeigt; Suchmaschinen und Screenreader lesen sie.",
+    "seo_social_profiles": "Bild für Social Sharing",
+    "seo_title_pattern": "Wird verwendet, wenn eine Seite kein eigenes Bild hat. Am besten 1200 × 630 px.",
+    "seo_description_pattern": "Social-Media-Profile",
     "show_whatsapp_button": "WhatsApp-Schaltfläche anzeigen",
     "whatsapp_number": "WhatsApp-Nummer",
     "whatsapp_message": "Vorausgefüllte Nachricht",
@@ -1002,6 +1009,9 @@
     "direction_top_start": "Oben links"
   },
   "content": {
+    "seo_intro": "Suchtitel und -beschreibungen für Produkte und Kollektionen werden aus diesen Mustern erstellt. Produkte oder Kollektionen mit eigenem SEO-Titel bzw. eigener SEO-Beschreibung im Shopify-Adminbereich verwenden stattdessen immer diese.",
+    "seo_products": "Produkte",
+    "seo_collections": "Kollektionen",
     "sidebar": "Seitenleiste",
     "background_video": "Hintergrundvideo",
     "describe_the_video_for": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1228,6 +1238,12 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "seo_default_description": "Wird für Seiten ohne eigene Beschreibung verwendet, wenn die Shop-Beschreibung in den Einstellungen leer ist.",
+    "seo_home_heading": "Vollständige Links zu deinen Social-Media-Seiten, einer pro Zeile. Hilft Suchmaschinen, sie deinem Shop zuzuordnen.",
+    "seo_share_image": "Titelmuster",
+    "seo_social_profiles": "Beschreibungsmuster",
+    "seo_product_placeholders": "Platzhalter: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Platzhalter: [title], [shop], [description], [count].",
     "whatsapp_number": "Mit Ländervorwahl, z. B. +923001234567.",
     "whatsapp_message": "Text, mit dem der Chat beginnt. Leer lassen für keinen.",
     "show_floating_cart": "Wird angezeigt, solange der Header nicht sichtbar ist. „In den Warenkorb“-Animationen fliegen dorthin.",

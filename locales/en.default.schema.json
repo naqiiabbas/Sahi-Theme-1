@@ -33,6 +33,9 @@
     "text": "Text"
   },
   "content": {
+    "seo_intro": "Search titles and descriptions for products and collections are built from these patterns. A product or collection with its own SEO title or description in the Shopify admin always uses that instead.",
+    "seo_products": "Products",
+    "seo_collections": "Collections",
     "sidebar": "Sidebar",
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
     "advanced": "Advanced",
@@ -224,6 +227,12 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "seo_default_description": "Used for pages without a description of their own when the store description in Preferences is empty.",
+    "seo_home_heading": "Full links to your social media pages, one per line. Helps search engines link them to your store.",
+    "seo_share_image": "Title pattern",
+    "seo_social_profiles": "Description pattern",
+    "seo_product_placeholders": "Placeholders: [title], [shop], [description], [price], [type], [vendor], [collection].",
+    "seo_collection_placeholders": "Placeholders: [title], [shop], [description], [count].",
     "whatsapp_number": "Include the country code, e.g. +923001234567.",
     "whatsapp_message": "Text that starts the chat. Leave blank for none.",
     "show_floating_cart": "Shows while the header is scrolled out of view. Add to cart animations fly to it.",
@@ -285,6 +294,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "seo": "SEO",
     "floating_actions": "Floating buttons",
     "contact_details": "Contact form with details",
     "contact_detail": "Contact detail",
@@ -828,6 +838,12 @@
     "below_media": "Below media"
   },
   "settings": {
+    "seo_default_description": "Default description",
+    "seo_home_heading": "Home page heading",
+    "seo_share_image": "The home page's main heading (H1). Not shown on the page; read by search engines and screen readers.",
+    "seo_social_profiles": "Social sharing image",
+    "seo_title_pattern": "Used when a page has no image of its own. 1200 × 630 px works best.",
+    "seo_description_pattern": "Social profiles",
     "show_whatsapp_button": "Show WhatsApp button",
     "whatsapp_number": "WhatsApp number",
     "whatsapp_message": "Prefilled message",
