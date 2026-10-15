@@ -1,0 +1,172 @@
+{%- doc -%}
+  Slide-up variant picker for product cards. Replaces the quick-add "Choose" pop-up: the cart button opens
+  a small panel over the bottom of the card listing every variant with its price; choosing one adds it to
+  the cart through the theme's product-form-component (assets/product-form.js), so cart drawer, cart
+  count and errors behave like any other add to cart. assets/card-variant-picker.js opens and closes the
+  panel, writes the chosen variant to the form, and plays the fly-to-cart animation.
+  The panel is positioned against the nearest positioned ancestor, so the card must be position: relative.
+  Styles live in snippets/category-product-card-styles.liquid.
+
+  @param {product} product - A product with more than one variant.
+  @param {string} section_id - The section ID, used for unique IDs and the product form.
+
+  @example
+  {% render 'card-variant-picker', product: product, section_id: section.id %}
+{%- enddoc -%}
+
+{%- liquid
+  assign picker_id = 'CardVariantPicker-' | append: section_id | append: '-' | append: product.id
+  assign form_id = 'CardVariantForm-' | append: section_id | append: '-' | append: product.id
+  assign first_variant = product.selected_or_first_available_variant
+  assign option_names = product.options | join: ' / '
+  assign heading = 'actions.choose' | t | append: ' ' | append: option_names
+-%}
+
+<script
+  src="{{ 'card-variant-picker.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+{% render 'fly-to-cart-styles' %}
+
+<card-variant-picker
+  class="card-variant-picker"
+  data-add-to-cart-animation="{{ settings.add_to_cart_animation }}"
+>
+  <button
+    type="button"
+    class="card-variant-picker__toggle"
+    aria-label="{{ heading | escape }}: {{ product.title | escape }}"
+    aria-expanded="false"
+    aria-controls="{{ picker_id }}"
+    ref="toggle"
+    on:click="/open"
+    {% unless product.available %}
+      disabled
+    {% endunless %}
+  >
+    <span
+      aria-hidden="true"
+      class="svg-wrapper add-to-cart-icon"
+    >
+      {{- 'icon-add-to-cart.svg' | inline_asset_content -}}
+    </span>
+  </button>
+
+  <div
+    class="card-variant-picker__panel"
+    id="{{ picker_id }}"
+    role="group"
+    aria-labelledby="{{ picker_id }}-heading"
+    ref="panel"
+    hidden
+    on:keydown="/handleKeydown"
+  >
+    <div class="card-variant-picker__header">
+      <p
+        class="card-variant-picker__heading"
+        id="{{ picker_id }}-heading"
+      >
+        {{ heading | escape }}
+      </p>
+      <button
+        type="button"
+        class="card-variant-picker__close"
+        aria-label="{{ 'actions.close' | t }}"
+        on:click="/close"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+        >
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <product-form-component
+      data-section-id="{{ section_id }}"
+      data-product-id="{{ product.id }}"
+      on:submit="/handleSubmit"
+      class="card-variant-picker__form-component"
+    >
+      <div
+        class="visually-hidden"
+        aria-live="assertive"
+        role="status"
+        aria-atomic="true"
+        ref="liveRegion"
+      ></div>
+      {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input
+          type="hidden"
+          name="id"
+          ref="variantId"
+          value="{{ first_variant.id }}"
+        >
+        <input
+          type="hidden"
+          name="quantity"
+          value="1"
+        >
+        <ul
+          class="card-variant-picker__options"
+          role="list"
+        >
+          {%- for variant in product.variants -%}
+            {%- liquid
+              assign variant_image = variant.featured_media.preview_image | default: product.featured_media.preview_image
+              assign variant_image_url = ''
+              if variant_image != blank
+                assign variant_image_url = variant_image | image_url: width: 100
+              endif
+            -%}
+            <li>
+              <button
+                type="submit"
+                name="add"
+                class="card-variant-picker__option"
+                data-variant-id="{{ variant.id }}"
+                data-variant-media="{{ variant_image_url }}"
+                on:click="card-variant-picker/choose"
+                {% unless variant.available %}
+                  disabled
+                {% endunless %}
+              >
+                <span class="card-variant-picker__option-title">{{ variant.title | escape }}</span>
+                <span class="card-variant-picker__option-price">
+                  {%- if variant.available -%}
+                    {{ variant.price | money }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+                <span
+                  class="card-variant-picker__option-added"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m5 12.5 4.5 4.5L19 7.5"/>
+                  </svg>
+                  {{ 'actions.added' | t }}
+                </span>
+              </button>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endform -%}
+    </product-form-component>
+  </div>
+</card-variant-picker>

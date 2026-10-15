@@ -1,6 +1,8 @@
 {%- doc -%}
   Renders a product card for the category product tabs: image, title, weight or variant, rating,
-  price, and a quick add button. Renders a placeholder card when no product is passed.
+  price, and a cart button. Single-variant products add straight to the cart (quick add); products with
+  variants open a slide-up size picker (snippets/card-variant-picker.liquid). Renders a placeholder card
+  when no product is passed.
   Styles are owned by snippets/category-product-card-styles.liquid, which this snippet renders.
 
   @param {product} [product] - The product to render. Omit to render a placeholder card.
@@ -115,8 +117,23 @@
           {%- endif -%}
         </p>
 
-        <div class="category-product-card__quick-add">
-          {% render 'quick-add', product: product, section_id: section_id %}
+        {%- liquid
+          # Products with sizes or other options use the slide-up picker instead of the quick-add pop-up.
+          # Subscriptions keep the quick-add flow, which sends them to the product page.
+          assign use_variant_picker = false
+          if product.has_only_default_variant == false and product.variants.size > 1
+            assign use_variant_picker = true
+          endif
+          if product.requires_selling_plan or product.selling_plan_groups.size > 0
+            assign use_variant_picker = false
+          endif
+        -%}
+        <div class="category-product-card__quick-add{% if use_variant_picker %} category-product-card__quick-add--picker{% endif %}">
+          {%- if use_variant_picker -%}
+            {% render 'card-variant-picker', product: product, section_id: section_id %}
+          {%- else -%}
+            {% render 'quick-add', product: product, section_id: section_id %}
+          {%- endif -%}
         </div>
       </div>
     </div>

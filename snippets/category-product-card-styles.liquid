@@ -222,6 +222,225 @@
     height: 1.25rem;
   }
 
+  /* Slide-up variant picker (snippets/card-variant-picker.liquid). The wrapper drops its positioning so
+     the panel covers the bottom of the whole card; the cart button keeps its place above the card link. */
+  .category-product-card__quick-add--picker {
+    position: static;
+  }
+
+  .card-variant-picker__toggle {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: var(--style-border-radius-inputs);
+    background: var(--cpt-accent-color);
+    color: var(--cpt-active-icon-color);
+    cursor: pointer;
+    transition: background-color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      background: rgb(var(--cpt-accent-color-rgb) / var(--opacity-85));
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cpt-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+
+    &:disabled {
+      opacity: var(--opacity-50);
+      cursor: not-allowed;
+    }
+
+    .add-to-cart-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .card-variant-picker__panel {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    max-height: 100%;
+    padding: var(--padding-md);
+    overflow-y: auto;
+    border-block-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    background-color: var(--cpt-card-bg-color);
+    box-shadow: 0 -10px 24px rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    translate: 0 0;
+    opacity: 1;
+    transition: translate var(--animation-speed) var(--animation-easing),
+      opacity var(--animation-speed) var(--animation-easing);
+
+    @starting-style {
+      translate: 0 100%;
+      opacity: 0;
+    }
+
+    &[hidden] {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-lg);
+    }
+  }
+
+  /* The card lifts on hover; keep it still while a size is being chosen. */
+  .category-product-card--picking:hover {
+    transform: none;
+  }
+
+  .card-variant-picker__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+  }
+
+  .category-product-card .card-variant-picker__heading {
+    margin: 0;
+    font-family: var(--cpt-title-font, inherit) !important;
+    font-weight: var(--cpt-title-weight);
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--color-foreground);
+
+    @media screen and (min-width: 750px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .card-variant-picker__close {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-inline-end: calc(var(--padding-2xs) * -1);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-foreground);
+    cursor: pointer;
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    &:hover {
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-8));
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cpt-accent-color);
+      outline-offset: 1px;
+    }
+  }
+
+  .card-variant-picker__options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .card-variant-picker__option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+    border-radius: var(--style-border-radius-inputs);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    text-align: start;
+    cursor: pointer;
+    transition: border-color var(--animation-speed) var(--animation-easing),
+      background-color var(--animation-speed) var(--animation-easing);
+
+    &:hover:not(:disabled) {
+      border-color: var(--cpt-accent-color);
+      background-color: rgb(var(--cpt-accent-color-rgb) / var(--opacity-5));
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cpt-accent-color);
+      outline-offset: 1px;
+    }
+
+    &:disabled {
+      opacity: var(--opacity-50);
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+  }
+
+  .card-variant-picker__option-title {
+    min-width: 0;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+
+  .card-variant-picker__option-price {
+    flex: 0 0 auto;
+    font-weight: 600;
+    color: var(--cpt-accent-color);
+  }
+
+  /* Confirmation after the cart accepts the option. */
+  .card-variant-picker__option-added {
+    position: absolute;
+    inset: -1px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-xs);
+    border-radius: inherit;
+    background-color: var(--cpt-accent-color);
+    color: var(--cpt-active-icon-color);
+    font-weight: 600;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .card-variant-picker__option[data-added='true'] .card-variant-picker__option-added {
+    display: flex;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-variant-picker__panel,
+    .card-variant-picker__toggle,
+    .card-variant-picker__option {
+      transition: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .category-product-card,
     .category-product-card__image {
