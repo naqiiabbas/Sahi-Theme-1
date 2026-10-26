@@ -145,7 +145,7 @@
         "enable_sticky_header": "scroll-up",
         "divider_width": 1,
         "divider_size": "page-width",
-        "divider_color": "{{ settings.color_palette.color3 }}",
+        "divider_color": "#505439",
         "border_width": 0,
         "bottom_border_color": "",
         "actions_display_style": "button",

@@ -299,7 +299,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Pure Pakistani Raw Honey</h2>",
+                    "text": "<h2>Sahi Honey</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -651,7 +651,7 @@
           "type": "_category-showcase-item",
           "settings": {
             "fallback_image": "category-raw-honey.png",
-            "title": "Raw Honey",
+            "title": "Honey",
             "link": "shopify://collections/raw-honey",
             "link_label": "Explore"
           },
@@ -710,14 +710,21 @@
         "overlay_color": "{{ settings.color_palette.background }}",
         "overlay_opacity": 85,
         "eyebrow": "Our products",
-        "title": "Pure Ingredients for <em>a Better You.</em>",
+        "title": "Ingredients Sahi tuh Product Sahi",
+        "accent_new_line": false,
+        "heading_tag": "h2",
         "text": "Explore our carefully crafted range of organic essentials made from real, natural ingredients.",
+        "note": "",
         "title_font": "instrument_serif_n4",
         "title_size": 64,
         "button_label": "Shop all products",
         "button_link": "shopify://collections/all",
         "button_radius": 2,
+        "show_breadcrumbs": false,
+        "breadcrumb_home_label": "Home",
+        "breadcrumb_nav_label": "Breadcrumb",
         "tagline": "Real\nGoodness.\nEveryday.",
+        "tagline_style": "script",
         "tagline_font": "pinyon_script_n4",
         "tagline_size": 32,
         "show_tagline_flourish": true,
@@ -746,7 +753,7 @@
           "type": "category",
           "settings": {
             "collection": "pickles",
-            "label": "Achaars",
+            "label": "Pickles",
             "fallback_icon": "category-icon-achaars.png"
           }
         },
@@ -754,7 +761,7 @@
           "type": "category",
           "settings": {
             "collection": "raw-honey",
-            "label": "Raw Honey",
+            "label": "Honey",
             "fallback_icon": "category-icon-raw-honey.png"
           }
         },
@@ -846,6 +853,7 @@
         "background_color": "{{ settings.color_palette.background }}",
         "text_color": "{{ settings.color_palette.color1 }}",
         "accent_color": "{{ settings.color_palette.color2 }}",
+        "divider_color": "",
         "padding-block-start": 40,
         "padding-block-end": 40
       }
@@ -857,24 +865,24 @@
           "type": "feature",
           "settings": {
             "icon": "leaf",
-            "label": "100%\nPure & Natural",
-            "fallback_icon": "feature-icon-pure-natural.png"
+            "fallback_icon": "feature-icon-pure-natural.png",
+            "label": "100%\nPure & Natural"
           }
         },
         "no_preservatives": {
           "type": "feature",
           "settings": {
             "icon": "flask",
-            "label": "No Added\nPreservatives",
-            "fallback_icon": "feature-icon-no-preservatives.png"
+            "fallback_icon": "feature-icon-no-preservatives.png",
+            "label": "No Added\nPreservatives"
           }
         },
         "nutrients": {
           "type": "feature",
           "settings": {
             "icon": "molecule",
-            "label": "Rich in\nNatural Nutrients",
-            "fallback_icon": "feature-icon-nutrients.png"
+            "fallback_icon": "feature-icon-nutrients.png",
+            "label": "Rich in\nNatural Nutrients"
           }
         }
       },
@@ -891,7 +899,7 @@
         "overlay_opacity": 85,
         "show_decoration": true,
         "eyebrow": "Pure & natural",
-        "title": "Organic <em>Raw Honey</em>",
+        "title": "Sahi <em>Honey</em>",
         "accent_new_line": true,
         "text": "Nature’s sweetness in its purest form. Unprocessed, nutrient-rich and full of natural goodness.",
         "button_label": "Explore honey collection",
@@ -913,6 +921,9 @@
         "background_color": "{{ settings.color_palette.background }}",
         "text_color": "{{ settings.color_palette.color1 }}",
         "accent_color": "{{ settings.color_palette.color2 }}",
+        "title_accent_color": "",
+        "card_background": "",
+        "star_color": "",
         "padding-block-start": 0,
         "padding-block-end": 64
       }
