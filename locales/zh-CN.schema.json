@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "认证",
     "seo": "SEO",
     "floating_actions": "悬浮按钮",
     "contact_details": "带详情的联系表单",
@@ -204,6 +205,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "alt_text": "替代文字",
     "seo_default_description": "默认描述",
     "seo_home_heading": "首页标题",
     "seo_share_image": "首页的主标题（H1）。不在页面上显示，供搜索引擎和屏幕阅读器读取。",
@@ -1238,6 +1240,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "certification_alt": "为屏幕阅读器描述徽章，例如\"GITCHA 有机认证，P26-92-1040\"。",
     "seo_default_description": "当偏好设置中的商店描述为空时，用于没有自己描述的页面。",
     "seo_home_heading": "社交媒体页面的完整链接，每行一个。帮助搜索引擎将其与您的商店关联。",
     "seo_share_image": "标题模式",

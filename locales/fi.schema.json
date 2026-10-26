@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Sertifikaatti",
     "seo": "Hakukoneoptimointi",
     "floating_actions": "Kelluvat painikkeet",
     "contact_details": "Yhteydenottolomake ja tiedot",
@@ -204,6 +205,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "alt_text": "Vaihtoehtoinen teksti",
     "seo_default_description": "Oletuskuvaus",
     "seo_home_heading": "Etusivun otsikko",
     "seo_share_image": "Etusivun pääotsikko (H1). Ei näy sivulla; hakukoneet ja näytönlukuohjelmat lukevat sen.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "certification_alt": "Kuvaa merkin näytönlukijoille, esim. \"GITCHA sertifioitu luomu, P26-92-1040\".",
     "seo_default_description": "Käytetään sivuilla, joilla ei ole omaa kuvausta, kun kaupan kuvaus Asetuksissa on tyhjä.",
     "seo_home_heading": "Täydet linkit sosiaalisen median sivuillesi, yksi riviä kohden. Auttaa hakukoneita yhdistämään ne kauppaasi.",
     "seo_share_image": "Otsikkomalli",

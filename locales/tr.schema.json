@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Sertifika",
     "seo": "SEO",
     "floating_actions": "Kayan düğmeler",
     "contact_details": "Ayrıntılı iletişim formu",
@@ -204,6 +205,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "alt_text": "Alternatif metin",
     "seo_default_description": "Varsayılan açıklama",
     "seo_home_heading": "Ana sayfa başlığı",
     "seo_share_image": "Ana sayfanın ana başlığı (H1). Sayfada gösterilmez; arama motorları ve ekran okuyucular okur.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "certification_alt": "Rozeti ekran okuyucular için açıklar, ör. \"GITCHA sertifikalı organik, P26-92-1040\".",
     "seo_default_description": "Tercihler’deki mağaza açıklaması boş olduğunda kendi açıklaması olmayan sayfalar için kullanılır.",
     "seo_home_heading": "Sosyal medya sayfalarınızın tam bağlantıları, her satıra bir tane. Arama motorlarının bunları mağazanızla ilişkilendirmesine yardımcı olur.",
     "seo_share_image": "Başlık kalıbı",

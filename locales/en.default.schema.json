@@ -227,6 +227,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "certification_alt": "Describes the badge for screen readers, e.g. \"GITCHA certified organic, P26-92-1040\".",
     "seo_default_description": "Used for pages without a description of their own when the store description in Preferences is empty.",
     "seo_home_heading": "Full links to your social media pages, one per line. Helps search engines link them to your store.",
     "seo_share_image": "Title pattern",
@@ -294,6 +295,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "footer_certification": "Certification",
     "seo": "SEO",
     "floating_actions": "Floating buttons",
     "contact_details": "Contact form with details",
@@ -838,6 +840,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "alt_text": "Alt text",
     "seo_default_description": "Default description",
     "seo_home_heading": "Home page heading",
     "seo_share_image": "The home page's main heading (H1). Not shown on the page; read by search engines and screen readers.",

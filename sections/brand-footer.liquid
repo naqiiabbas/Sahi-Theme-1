@@ -1,7 +1,8 @@
 {% comment %}
   Section contract.
   Brand footer: logo, tagline, and social links; link columns (collections, products from a collection,
-  or a menu); a newsletter sign-up with perks; and a bottom bar with copyright, payment icons, and a note.
+  or a menu); a newsletter sign-up with perks; and a bottom bar with copyright, certification badges,
+  payment icons, and a note. Perk and certification blocks are not link columns.
   @example
   <!-- Added to the footer group. Link columns and perks are blocks. -->
 {% endcomment %}
@@ -9,10 +10,16 @@
 {%- liquid
   assign title_font = section.settings.title_font
   assign link_column_count = 0
+  assign certification_count = 0
   for block in section.blocks
-    if block.type != 'perk'
-      assign link_column_count = link_column_count | plus: 1
-    endif
+    case block.type
+      when 'perk'
+        continue
+      when 'certification'
+        assign certification_count = certification_count | plus: 1
+      else
+        assign link_column_count = link_column_count | plus: 1
+    endcase
   endfor
   if link_column_count < 1
     assign link_column_count = 1
@@ -161,7 +168,7 @@
 
       {%- comment -%} Link columns {%- endcomment -%}
       {%- for block in section.blocks -%}
-        {%- if block.type == 'perk' -%}
+        {%- if block.type == 'perk' or block.type == 'certification' -%}
           {%- continue -%}
         {%- endif -%}
         <nav
@@ -336,9 +343,65 @@
     </div>
 
     <div class="brand-footer__bottom">
-      <p class="brand-footer__copyright">
-        &copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ section.settings.copyright_text | escape }}
-      </p>
+      <div class="brand-footer__bottom-start">
+        <p class="brand-footer__copyright">
+          &copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ section.settings.copyright_text | escape }}
+        </p>
+
+        {%- if certification_count > 0 -%}
+          <ul
+            class="brand-footer__certifications"
+            role="list"
+          >
+            {%- for block in section.blocks -%}
+              {%- if block.type != 'certification' -%}{%- continue -%}{%- endif -%}
+              {%- liquid
+                assign cert_alt = block.settings.alt | default: block.settings.image.alt
+              -%}
+              <li
+                class="brand-footer__certification"
+                {{ block.shopify_attributes }}
+              >
+                {%- capture cert_image -%}
+                  {%- if block.settings.image != blank -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 320
+                      | image_tag:
+                        widths: '160, 240, 320',
+                        sizes: '7rem',
+                        loading: 'lazy',
+                        alt: cert_alt,
+                        class: 'brand-footer__certification-image'
+                    }}
+                  {%- elsif block.settings.fallback_image != blank -%}
+                    <img
+                      src="{{ block.settings.fallback_image | asset_url }}"
+                      alt="{{ cert_alt | escape }}"
+                      width="320"
+                      height="174"
+                      loading="lazy"
+                      class="brand-footer__certification-image"
+                    >
+                  {%- endif -%}
+                {%- endcapture -%}
+                {%- if block.settings.link != blank -%}
+                  <a
+                    href="{{ block.settings.link }}"
+                    class="brand-footer__certification-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{- cert_image -}}
+                  </a>
+                {%- else -%}
+                  {{ cert_image }}
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
 
       <div class="brand-footer__bottom-end">
         {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
@@ -739,6 +802,50 @@
     color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
   }
 
+  /* Copyright with certification badges beside it; stacked and centered on mobile. */
+  .brand-footer__bottom-start {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-md) var(--gap-lg);
+
+    @media screen and (min-width: 750px) {
+      justify-content: flex-start;
+    }
+  }
+
+  .brand-footer__certifications {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .brand-footer__certification {
+    display: flex;
+  }
+
+  .brand-footer__certification-link {
+    display: flex;
+    border-radius: 2px;
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--brand-footer-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  .brand-footer__certification-image {
+    display: block;
+    width: auto;
+    height: var(--brand-footer-cert-height, 2.5rem);
+    border-radius: 2px;
+  }
+
   .brand-footer__bottom-end {
     display: flex;
     flex-wrap: wrap;
@@ -911,6 +1018,35 @@
           "id": "label",
           "label": "t:settings.label",
           "default": "Exclusive Offers"
+        }
+      ]
+    },
+    {
+      "type": "certification",
+      "name": "t:names.footer_certification",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "t:settings.fallback_image",
+          "info": "t:info.fallback_image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "t:settings.alt_text",
+          "info": "t:info.certification_alt"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings.link"
         }
       ]
     }

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certificação",
     "seo": "SEO",
     "floating_actions": "Botões flutuantes",
     "contact_details": "Formulário de contato com informações",
@@ -204,6 +205,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "alt_text": "Texto alternativo",
     "seo_default_description": "Descrição padrão",
     "seo_home_heading": "Título da página inicial",
     "seo_share_image": "Título principal da página inicial (H1). Não aparece na página; é lido por mecanismos de busca e leitores de tela.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "certification_alt": "Descreve o selo para leitores de tela, ex.: \"GITCHA orgânico certificado, P26-92-1040\".",
     "seo_default_description": "Usada em páginas sem descrição própria quando a descrição da loja em Preferências está vazia.",
     "seo_home_heading": "Links completos para suas redes sociais, um por linha. Ajuda os mecanismos de busca a associá-los à loja.",
     "seo_share_image": "Padrão de título",

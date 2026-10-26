@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certificación",
     "seo": "SEO",
     "floating_actions": "Botones flotantes",
     "contact_details": "Formulario de contacto con datos",
@@ -204,6 +205,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "alt_text": "Texto alternativo",
     "seo_default_description": "Descripción predeterminada",
     "seo_home_heading": "Encabezado de la página de inicio",
     "seo_share_image": "Encabezado principal de la página de inicio (H1). No se muestra; lo leen los buscadores y los lectores de pantalla.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "certification_alt": "Describe la insignia para lectores de pantalla, p. ej. \"GITCHA orgánico certificado, P26-92-1040\".",
     "seo_default_description": "Se usa en páginas sin descripción propia cuando la descripción de la tienda en Preferencias está vacía.",
     "seo_home_heading": "Enlaces completos a tus redes sociales, uno por línea. Ayudan a los buscadores a vincularlos con tu tienda.",
     "seo_share_image": "Patrón de título",

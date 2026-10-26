@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Zertifizierung",
     "seo": "SEO",
     "floating_actions": "Schwebende Schaltflächen",
     "contact_details": "Kontaktformular mit Details",
@@ -204,6 +205,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "alt_text": "Alt-Text",
     "seo_default_description": "Standardbeschreibung",
     "seo_home_heading": "Überschrift der Startseite",
     "seo_share_image": "Hauptüberschrift der Startseite (H1). Wird nicht angezeigt; Suchmaschinen und Screenreader lesen sie.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "certification_alt": "Beschreibt das Siegel für Screenreader, z. B. „GITCHA zertifiziert biologisch, P26-92-1040“.",
     "seo_default_description": "Wird für Seiten ohne eigene Beschreibung verwendet, wenn die Shop-Beschreibung in den Einstellungen leer ist.",
     "seo_home_heading": "Vollständige Links zu deinen Social-Media-Seiten, einer pro Zeile. Hilft Suchmaschinen, sie deinem Shop zuzuordnen.",
     "seo_share_image": "Titelmuster",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certifiering",
     "seo": "SEO",
     "floating_actions": "Flytande knappar",
     "contact_details": "Kontaktformulär med uppgifter",
@@ -204,6 +205,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "alt_text": "Alternativtext",
     "seo_default_description": "Standardbeskrivning",
     "seo_home_heading": "Startsidans rubrik",
     "seo_share_image": "Startsidans huvudrubrik (H1). Visas inte på sidan; läses av sökmotorer och skärmläsare.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "certification_alt": "Beskriver märket för skärmläsare, t.ex. \"GITCHA certifierad ekologisk, P26-92-1040\".",
     "seo_default_description": "Används för sidor utan egen beskrivning när butiksbeskrivningen under Inställningar är tom.",
     "seo_home_heading": "Fullständiga länkar till dina sociala medier, en per rad. Hjälper sökmotorer att koppla dem till butiken.",
     "seo_share_image": "Titelmönster",

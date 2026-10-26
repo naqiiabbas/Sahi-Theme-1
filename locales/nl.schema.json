@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certificering",
     "seo": "SEO",
     "floating_actions": "Zwevende knoppen",
     "contact_details": "Contactformulier met gegevens",
@@ -204,6 +205,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "alt_text": "Alt-tekst",
     "seo_default_description": "Standaardbeschrijving",
     "seo_home_heading": "Kop van de homepage",
     "seo_share_image": "De hoofdkop van de homepage (H1). Niet zichtbaar; wordt gelezen door zoekmachines en schermlezers.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "certification_alt": "Beschrijft de badge voor schermlezers, bijv. \"GITCHA gecertificeerd biologisch, P26-92-1040\".",
     "seo_default_description": "Wordt gebruikt voor pagina’s zonder eigen beschrijving als de winkelbeschrijving bij Voorkeuren leeg is.",
     "seo_home_heading": "Volledige links naar je socialemediapagina’s, één per regel. Helpt zoekmachines ze aan je winkel te koppelen.",
     "seo_share_image": "Titelpatroon",

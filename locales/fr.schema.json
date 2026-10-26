@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certification",
     "seo": "SEO",
     "floating_actions": "Boutons flottants",
     "contact_details": "Formulaire de contact avec coordonnées",
@@ -204,6 +205,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "alt_text": "Texte alternatif",
     "seo_default_description": "Description par défaut",
     "seo_home_heading": "Titre de la page d’accueil",
     "seo_share_image": "Titre principal de la page d’accueil (H1). Non affiché ; lu par les moteurs de recherche et les lecteurs d’écran.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "certification_alt": "Décrit le badge pour les lecteurs d’écran, p. ex. « GITCHA certifié biologique, P26-92-1040 ».",
     "seo_default_description": "Utilisée pour les pages sans description propre lorsque la description de la boutique dans Préférences est vide.",
     "seo_home_heading": "Liens complets vers vos réseaux sociaux, un par ligne. Aide les moteurs de recherche à les associer à votre boutique.",
     "seo_share_image": "Modèle de titre",

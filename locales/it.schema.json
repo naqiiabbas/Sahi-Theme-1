@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certificazione",
     "seo": "SEO",
     "floating_actions": "Pulsanti flottanti",
     "contact_details": "Modulo di contatto con dettagli",
@@ -204,6 +205,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "alt_text": "Testo alternativo",
     "seo_default_description": "Descrizione predefinita",
     "seo_home_heading": "Titolo della home page",
     "seo_share_image": "Titolo principale della home page (H1). Non visibile; letto da motori di ricerca e screen reader.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "certification_alt": "Descrive il badge per gli screen reader, ad es. \"GITCHA biologico certificato, P26-92-1040\".",
     "seo_default_description": "Usata per le pagine senza descrizione propria quando la descrizione del negozio in Preferenze è vuota.",
     "seo_home_heading": "Link completi alle tue pagine social, uno per riga. Aiuta i motori di ricerca a collegarli al negozio.",
     "seo_share_image": "Modello del titolo",

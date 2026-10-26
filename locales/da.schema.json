@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "Certificering",
     "seo": "SEO",
     "floating_actions": "Flydende knapper",
     "contact_details": "Kontaktformular med oplysninger",
@@ -204,6 +205,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "alt_text": "Alternativ tekst",
     "seo_default_description": "Standardbeskrivelse",
     "seo_home_heading": "Forsidens overskrift",
     "seo_share_image": "Forsidens hovedoverskrift (H1). Vises ikke på siden; læses af søgemaskiner og skærmlæsere.",
@@ -1238,6 +1240,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "certification_alt": "Beskriver mærket for skærmlæsere, fx \"GITCHA certificeret økologisk, P26-92-1040\".",
     "seo_default_description": "Bruges til sider uden egen beskrivelse, når butiksbeskrivelsen under Præferencer er tom.",
     "seo_home_heading": "Fulde links til dine sociale medier, ét pr. linje. Hjælper søgemaskiner med at knytte dem til din butik.",
     "seo_share_image": "Titelmønster",

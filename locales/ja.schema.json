@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "認証",
     "seo": "SEO",
     "floating_actions": "フローティングボタン",
     "contact_details": "詳細付きお問い合わせフォーム",
@@ -204,6 +205,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "alt_text": "代替テキスト",
     "seo_default_description": "デフォルトの説明",
     "seo_home_heading": "ホームページの見出し",
     "seo_share_image": "ホームページのメイン見出し（H1）。ページには表示されず、検索エンジンとスクリーンリーダーが読み取ります。",
@@ -1238,6 +1240,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "certification_alt": "スクリーンリーダー向けにバッジを説明します（例：「GITCHA 有機認証、P26-92-1040」）。",
     "seo_default_description": "独自の説明がないページで、環境設定のストアの説明が空の場合に使用されます。",
     "seo_home_heading": "SNSページの完全なリンクを1行に1つずつ入力します。検索エンジンがストアと結び付けやすくなります。",
     "seo_share_image": "タイトルのパターン",

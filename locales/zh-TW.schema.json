@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_certification": "認證",
     "seo": "SEO",
     "floating_actions": "懸浮按鈕",
     "contact_details": "附詳細資訊的聯絡表單",
@@ -204,6 +205,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "alt_text": "替代文字",
     "seo_default_description": "預設說明",
     "seo_home_heading": "首頁標題",
     "seo_share_image": "首頁的主標題（H1）。不會顯示在頁面上，供搜尋引擎和螢幕閱讀器讀取。",
@@ -1238,6 +1240,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "certification_alt": "為螢幕閱讀器描述徽章，例如「GITCHA 有機認證，P26-92-1040」。",
     "seo_default_description": "當偏好設定中的商店說明為空白時，用於沒有自己說明的頁面。",
     "seo_home_heading": "社群媒體頁面的完整連結，每行一個。協助搜尋引擎將其與你的商店連結。",
     "seo_share_image": "標題模式",
