@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Certificeringer",
     "footer_certification": "Certificering",
     "seo": "SEO",
     "floating_actions": "Flydende knapper",
@@ -205,6 +206,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "certifications_link": "Certificeringslink",
+    "certifications_link_label": "Tekst til certificeringslink",
+    "show_page_content": "Vis sideindhold",
+    "certificate_anchor": "Anker",
+    "certificate_number": "Certifikatnummer",
+    "certificate_issuer": "Udstedt af",
     "alt_text": "Alternativ tekst",
     "seo_default_description": "Standardbeskrivelse",
     "seo_home_heading": "Forsidens overskrift",
@@ -1240,6 +1247,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "certificate_document": "Link til certifikatdokumentet eller udstederens verificeringsside.",
+    "certificate_anchor": "Lader andre sider linke direkte til dette certifikat, fx /pages/certifications#organic.",
     "certification_alt": "Beskriver mærket for skærmlæsere, fx \"GITCHA certificeret økologisk, P26-92-1040\".",
     "seo_default_description": "Bruges til sider uden egen beskrivelse, når butiksbeskrivelsen under Præferencer er tom.",
     "seo_home_heading": "Fulde links til dine sociale medier, ét pr. linje. Hjælper søgemaskiner med at knytte dem til din butik.",

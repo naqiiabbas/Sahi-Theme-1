@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "認證",
     "footer_certification": "認證",
     "seo": "SEO",
     "floating_actions": "懸浮按鈕",
@@ -205,6 +206,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "certifications_link": "認證連結",
+    "certifications_link_label": "認證連結文字",
+    "show_page_content": "顯示頁面內容",
+    "certificate_anchor": "錨點",
+    "certificate_number": "證書編號",
+    "certificate_issuer": "核發機構",
     "alt_text": "替代文字",
     "seo_default_description": "預設說明",
     "seo_home_heading": "首頁標題",
@@ -1240,6 +1247,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "certificate_document": "連結到證書文件或核發機構的驗證頁面。",
+    "certificate_anchor": "讓其他頁面直接連結到此證書，例如 /pages/certifications#organic。",
     "certification_alt": "為螢幕閱讀器描述徽章，例如「GITCHA 有機認證，P26-92-1040」。",
     "seo_default_description": "當偏好設定中的商店說明為空白時，用於沒有自己說明的頁面。",
     "seo_home_heading": "社群媒體頁面的完整連結，每行一個。協助搜尋引擎將其與你的商店連結。",

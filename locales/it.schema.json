@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Certificazioni",
     "footer_certification": "Certificazione",
     "seo": "SEO",
     "floating_actions": "Pulsanti flottanti",
@@ -205,6 +206,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "certifications_link": "Link alle certificazioni",
+    "certifications_link_label": "Testo del link alle certificazioni",
+    "show_page_content": "Mostra contenuto della pagina",
+    "certificate_anchor": "Ancora",
+    "certificate_number": "Numero del certificato",
+    "certificate_issuer": "Rilasciato da",
     "alt_text": "Testo alternativo",
     "seo_default_description": "Descrizione predefinita",
     "seo_home_heading": "Titolo della home page",
@@ -1240,6 +1247,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "certificate_document": "Link al documento del certificato o alla pagina di verifica dell’ente.",
+    "certificate_anchor": "Consente ad altre pagine di collegarsi direttamente a questo certificato, ad es. /pages/certifications#organic.",
     "certification_alt": "Descrive il badge per gli screen reader, ad es. \"GITCHA biologico certificato, P26-92-1040\".",
     "seo_default_description": "Usata per le pagine senza descrizione propria quando la descrizione del negozio in Preferenze è vuota.",
     "seo_home_heading": "Link completi alle tue pagine social, uno per riga. Aiuta i motori di ricerca a collegarli al negozio.",

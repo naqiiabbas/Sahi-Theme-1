@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "认证",
     "footer_certification": "认证",
     "seo": "SEO",
     "floating_actions": "悬浮按钮",
@@ -205,6 +206,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "certifications_link": "认证链接",
+    "certifications_link_label": "认证链接文字",
+    "show_page_content": "显示页面内容",
+    "certificate_anchor": "锚点",
+    "certificate_number": "证书编号",
+    "certificate_issuer": "颁发机构",
     "alt_text": "替代文字",
     "seo_default_description": "默认描述",
     "seo_home_heading": "首页标题",
@@ -1240,6 +1247,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "certificate_document": "链接到证书文件或颁发机构的验证页面。",
+    "certificate_anchor": "让其他页面直接链接到此证书，例如 /pages/certifications#organic。",
     "certification_alt": "为屏幕阅读器描述徽章，例如\"GITCHA 有机认证，P26-92-1040\"。",
     "seo_default_description": "当偏好设置中的商店描述为空时，用于没有自己描述的页面。",
     "seo_home_heading": "社交媒体页面的完整链接，每行一个。帮助搜索引擎将其与您的商店关联。",

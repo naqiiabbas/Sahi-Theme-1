@@ -219,6 +219,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "certificate_document": "קישור למסמך התעודה או לדף האימות של הגוף המנפיק.",
+    "certificate_anchor": "מאפשר לדפים אחרים לקשר ישירות לתעודה זו, למשל /pages/certifications#organic.",
     "certification_alt": "מתאר את התג לקוראי מסך, למשל \"GITCHA אורגני מאושר, P26-92-1040\".",
     "seo_default_description": "משמש לדפים ללא תיאור משלהם כשתיאור החנות בהעדפות ריק.",
     "seo_home_heading": "קישורים מלאים לדפים ברשתות החברתיות, אחד בכל שורה. עוזר למנועי חיפוש לקשר אותם לחנות.",
@@ -287,6 +289,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "certifications": "תעודות",
     "footer_certification": "תעודה",
     "seo": "SEO",
     "floating_actions": "כפתורים צפים",
@@ -782,6 +785,12 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "certifications_link": "קישור התעודות",
+    "certifications_link_label": "תווית קישור התעודות",
+    "show_page_content": "הצגת תוכן הדף",
+    "certificate_anchor": "עוגן",
+    "certificate_number": "מספר תעודה",
+    "certificate_issuer": "הונפק על ידי",
     "alt_text": "טקסט חלופי",
     "seo_default_description": "תיאור ברירת מחדל",
     "seo_home_heading": "כותרת דף הבית",

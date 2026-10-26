@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Certificaciones",
     "footer_certification": "Certificación",
     "seo": "SEO",
     "floating_actions": "Botones flotantes",
@@ -205,6 +206,12 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "certifications_link": "Enlace de certificaciones",
+    "certifications_link_label": "Texto del enlace de certificaciones",
+    "show_page_content": "Mostrar contenido de la página",
+    "certificate_anchor": "Ancla",
+    "certificate_number": "Número de certificado",
+    "certificate_issuer": "Emitido por",
     "alt_text": "Texto alternativo",
     "seo_default_description": "Descripción predeterminada",
     "seo_home_heading": "Encabezado de la página de inicio",
@@ -1240,6 +1247,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "certificate_document": "Enlace al documento del certificado o a la página de verificación del emisor.",
+    "certificate_anchor": "Permite que otras páginas enlacen directamente a este certificado, p. ej. /pages/certifications#organic.",
     "certification_alt": "Describe la insignia para lectores de pantalla, p. ej. \"GITCHA orgánico certificado, P26-92-1040\".",
     "seo_default_description": "Se usa en páginas sin descripción propia cuando la descripción de la tienda en Preferencias está vacía.",
     "seo_home_heading": "Enlaces completos a tus redes sociales, uno por línea. Ayudan a los buscadores a vincularlos con tu tienda.",

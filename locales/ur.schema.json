@@ -219,6 +219,8 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "certificate_document": "سرٹیفکیٹ دستاویز یا جاری کنندہ کے تصدیقی صفحے کا لنک۔",
+    "certificate_anchor": "دوسرے صفحات کو براہ راست اس سرٹیفکیٹ سے لنک کرنے دیتا ہے، مثلاً /pages/certifications#organic۔",
     "certification_alt": "اسکرین ریڈرز کے لیے بیج کی وضاحت کرتا ہے، مثلاً \"GITCHA سرٹیفائیڈ آرگینک، P26-92-1040\"۔",
     "seo_default_description": "جن صفحات کی اپنی تفصیل نہ ہو، ان کے لیے استعمال ہوتی ہے جب Preferences میں اسٹور کی تفصیل خالی ہو۔",
     "seo_home_heading": "اپنے سوشل میڈیا صفحات کے مکمل لنکس، ہر لائن میں ایک۔ سرچ انجنز کو انہیں آپ کے اسٹور سے جوڑنے میں مدد دیتا ہے۔",
@@ -287,6 +289,7 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "certifications": "سرٹیفیکیشنز",
     "footer_certification": "سرٹیفیکیشن",
     "seo": "SEO",
     "floating_actions": "فلوٹنگ بٹن",
@@ -782,6 +785,12 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "certifications_link": "سرٹیفیکیشن لنک",
+    "certifications_link_label": "سرٹیفیکیشن لنک کا لیبل",
+    "show_page_content": "صفحے کا مواد دکھائیں",
+    "certificate_anchor": "اینکر",
+    "certificate_number": "سرٹیفکیٹ نمبر",
+    "certificate_issuer": "جاری کنندہ",
     "alt_text": "متبادل متن",
     "seo_default_description": "ڈیفالٹ تفصیل",
     "seo_home_heading": "ہوم پیج کی سرخی",

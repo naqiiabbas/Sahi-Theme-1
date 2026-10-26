@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Certifieringar",
     "footer_certification": "Certifiering",
     "seo": "SEO",
     "floating_actions": "Flytande knappar",
@@ -205,6 +206,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "certifications_link": "Certifieringslänk",
+    "certifications_link_label": "Text för certifieringslänk",
+    "show_page_content": "Visa sidinnehåll",
+    "certificate_anchor": "Ankare",
+    "certificate_number": "Certifikatnummer",
+    "certificate_issuer": "Utfärdat av",
     "alt_text": "Alternativtext",
     "seo_default_description": "Standardbeskrivning",
     "seo_home_heading": "Startsidans rubrik",
@@ -1240,6 +1247,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "certificate_document": "Länk till certifikatdokumentet eller utfärdarens verifieringssida.",
+    "certificate_anchor": "Låter andra sidor länka direkt till detta certifikat, t.ex. /pages/certifications#organic.",
     "certification_alt": "Beskriver märket för skärmläsare, t.ex. \"GITCHA certifierad ekologisk, P26-92-1040\".",
     "seo_default_description": "Används för sidor utan egen beskrivning när butiksbeskrivningen under Inställningar är tom.",
     "seo_home_heading": "Fullständiga länkar till dina sociala medier, en per rad. Hjälper sökmotorer att koppla dem till butiken.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Sertifikalar",
     "footer_certification": "Sertifika",
     "seo": "SEO",
     "floating_actions": "Kayan düğmeler",
@@ -205,6 +206,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "certifications_link": "Sertifika bağlantısı",
+    "certifications_link_label": "Sertifika bağlantısı etiketi",
+    "show_page_content": "Sayfa içeriğini göster",
+    "certificate_anchor": "Bağlantı noktası",
+    "certificate_number": "Sertifika numarası",
+    "certificate_issuer": "Veren kuruluş",
     "alt_text": "Alternatif metin",
     "seo_default_description": "Varsayılan açıklama",
     "seo_home_heading": "Ana sayfa başlığı",
@@ -1240,6 +1247,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "certificate_document": "Sertifika belgesine veya veren kuruluşun doğrulama sayfasına bağlantı.",
+    "certificate_anchor": "Diğer sayfaların doğrudan bu sertifikaya bağlantı vermesini sağlar, ör. /pages/certifications#organic.",
     "certification_alt": "Rozeti ekran okuyucular için açıklar, ör. \"GITCHA sertifikalı organik, P26-92-1040\".",
     "seo_default_description": "Tercihler’deki mağaza açıklaması boş olduğunda kendi açıklaması olmayan sayfalar için kullanılır.",
     "seo_home_heading": "Sosyal medya sayfalarınızın tam bağlantıları, her satıra bir tane. Arama motorlarının bunları mağazanızla ilişkilendirmesine yardımcı olur.",

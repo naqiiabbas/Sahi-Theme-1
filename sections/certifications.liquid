@@ -1,0 +1,505 @@
+{% comment %}
+  Section contract.
+  Certifications page: an intro (eyebrow, heading, text) and a card per certificate with its badge, name,
+  issuing body, certificate number, description, and an optional link to the certificate document.
+  Each card has an anchor (#<anchor>), so other pages can link to a specific certificate.
+  @example
+  <!-- Used by templates/page.certifications.json; add a Certificate block per certification -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+  assign heading = section.settings.heading | default: page.title
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+  {%- assign title_font_italic = title_font | font_modify: 'style', 'italic' -%}
+  {%- if title_font_italic -%}
+    {{ title_font_italic | font_face: font_display: 'swap' }}
+  {%- endif -%}
+
+  .certifications-{{ section.id }} {
+    --cert-font: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --cert-font-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="certifications certifications-{{ section.id }} spacing-style section section--page-width color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    {% if section.settings.accent_color != blank %}--cert-accent: {{ section.settings.accent_color }}; --cert-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
+    {% if section.settings.card_background != blank %}--cert-card-bg: {{ section.settings.card_background }};{% endif %}
+  "
+>
+  <div class="certifications__intro">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="certifications__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if heading != blank -%}
+      <h1 class="certifications__heading">{{ heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="certifications__text">{{ section.settings.text }}</div>
+    {%- endif -%}
+    {%- if section.settings.show_page_content and page.content != blank -%}
+      <div class="certifications__text rte">{{ page.content }}</div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <ul class="certifications__list">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign anchor = block.settings.anchor | handleize
+          assign alt = block.settings.title | append: ', ' | append: block.settings.issuer
+        -%}
+        <li
+          {% if anchor != blank %}
+            id="{{ anchor }}"
+          {% endif %}
+          class="certifications__card"
+          {{ block.shopify_attributes }}
+        >
+          <div class="certifications__badge">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 480
+                | image_tag:
+                  widths: '240, 360, 480',
+                  sizes: '(min-width: 750px) 12rem, 10rem',
+                  loading: 'lazy',
+                  alt: block.settings.image.alt | default: alt,
+                  class: 'certifications__image'
+              }}
+            {%- elsif block.settings.fallback_image != blank -%}
+              <img
+                src="{{ block.settings.fallback_image | asset_url }}"
+                alt="{{ alt | escape }}"
+                width="320"
+                height="320"
+                loading="lazy"
+                class="certifications__image"
+              >
+            {%- endif -%}
+          </div>
+
+          <div class="certifications__body">
+            {%- if block.settings.title != blank -%}
+              <h2 class="certifications__title">{{ block.settings.title | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.issuer != blank -%}
+              <p class="certifications__issuer">{{ block.settings.issuer | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.number != blank -%}
+              <p class="certifications__number">
+                <span>{{ block.settings.number_label | escape }}</span>
+                <strong>{{ block.settings.number | escape }}</strong>
+              </p>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <div class="certifications__description rte">{{ block.settings.description }}</div>
+            {%- endif -%}
+            {%- if block.settings.document_link != blank and block.settings.document_label != blank -%}
+              <a
+                href="{{ block.settings.document_link }}"
+                class="certifications__document"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{{ block.settings.document_label | escape }}</span>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="0 0 24 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .certifications {
+    --cert-accent-color: var(--cert-accent, var(--color-foreground));
+    --cert-accent-color-rgb: var(--cert-accent-rgb, var(--color-foreground-rgb));
+    --cert-line: rgb(var(--color-foreground-rgb) / var(--opacity-15));
+
+    color: var(--color-foreground);
+  }
+
+  .certifications__intro {
+    display: grid;
+    gap: var(--gap-md);
+    max-width: 46rem;
+    margin-block-end: var(--margin-2xl);
+  }
+
+  .certifications__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cert-accent-color);
+
+    &::after {
+      content: '';
+      width: 2.75rem;
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+  /* !important and the extra class beat the global heading/paragraph font overrides in
+     theme-styles-variables.liquid, so the section's font setting applies. */
+  .certifications .certifications__heading,
+  .certifications .certifications__heading em,
+  .certifications .certifications__title {
+    font-family: var(--cert-font) !important;
+  }
+
+  .certifications__heading {
+    margin: 0;
+    font-weight: var(--cert-font-weight);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+
+    em {
+      font-style: italic;
+      color: var(--cert-accent-color);
+    }
+  }
+
+  .certifications__text {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .certifications__list {
+    display: grid;
+    gap: var(--gap-lg);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .certifications__card {
+    display: grid;
+    gap: var(--gap-lg);
+    align-items: center;
+    padding: var(--padding-xl);
+    border: 1px solid var(--cert-line);
+    border-radius: var(--style-border-radius-popover);
+    background-color: var(--cert-card-bg, color-mix(in srgb, var(--color-background) 55%, white));
+    scroll-margin-top: calc(var(--header-height, 0px) + var(--padding-lg));
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: 12rem minmax(0, 1fr);
+      gap: var(--gap-2xl);
+      padding: var(--padding-2xl);
+    }
+
+    &:target {
+      border-color: var(--cert-accent-color);
+      box-shadow: 0 0 0 1px var(--cert-accent-color);
+    }
+  }
+
+  .certifications__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    max-width: 100%;
+
+    @media screen and (min-width: 750px) {
+      width: 12rem;
+    }
+  }
+
+  .certifications__image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 8rem;
+    border-radius: 4px;
+  }
+
+  .certifications__body {
+    display: grid;
+    gap: var(--gap-sm);
+    min-width: 0;
+  }
+
+  .certifications__title {
+    margin: 0;
+    font-weight: var(--cert-font-weight);
+    font-size: clamp(1.625rem, 3vw, 2.125rem);
+    line-height: 1.15;
+  }
+
+  .certifications__issuer {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+  }
+
+  .certifications__number {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--gap-xs);
+    justify-self: start;
+    margin: var(--margin-2xs) 0 0;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--style-border-radius-inputs);
+    background-color: rgb(var(--cert-accent-color-rgb) / var(--opacity-10));
+    font-size: 0.875rem;
+
+    strong {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--cert-accent-color);
+    }
+  }
+
+  .certifications__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .certifications__document {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    justify-self: start;
+    margin-block-start: var(--margin-xs);
+    padding-block-end: 0.3em;
+    border-block-end: 1px solid currentColor;
+    color: var(--cert-accent-color);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    svg {
+      width: 1.25rem;
+      height: 1rem;
+      transition: transform var(--animation-speed) var(--animation-easing);
+    }
+
+    &:hover svg {
+      transform: translateX(0.2rem);
+    }
+  }
+
+  [dir='rtl'] .certifications__document svg {
+    scale: -1 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .certifications__document svg {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.certifications",
+  "class": "certifications-section",
+  "blocks": [
+    {
+      "type": "certificate",
+      "name": "t:names.footer_certification",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "t:settings.fallback_image",
+          "info": "t:info.fallback_image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:settings.title",
+          "default": "Certification"
+        },
+        {
+          "type": "text",
+          "id": "issuer",
+          "label": "t:settings.certificate_issuer"
+        },
+        {
+          "type": "text",
+          "id": "number_label",
+          "label": "t:settings.label",
+          "default": "Certificate no."
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "t:settings.certificate_number"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:settings.text"
+        },
+        {
+          "type": "text",
+          "id": "anchor",
+          "label": "t:settings.certificate_anchor",
+          "info": "t:info.certificate_anchor"
+        },
+        {
+          "type": "url",
+          "id": "document_link",
+          "label": "t:settings.link",
+          "info": "t:info.certificate_document"
+        },
+        {
+          "type": "text",
+          "id": "document_label",
+          "label": "t:settings.label",
+          "default": "View certificate"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "default": "Quality you can trust"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:info.heading_accent",
+      "default": "Our <em>Certifications</em>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_page_content",
+      "label": "t:settings.show_page_content",
+      "default": false
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "t:settings.card_background",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.certifications",
+      "blocks": {
+        "certificate_1": {
+          "type": "certificate"
+        }
+      },
+      "block_order": ["certificate_1"]
+    }
+  ]
+}
+{% endschema %}

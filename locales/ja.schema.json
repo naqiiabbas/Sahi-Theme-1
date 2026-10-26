@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "認証",
     "footer_certification": "認証",
     "seo": "SEO",
     "floating_actions": "フローティングボタン",
@@ -205,6 +206,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "certifications_link": "認証リンク",
+    "certifications_link_label": "認証リンクのラベル",
+    "show_page_content": "ページコンテンツを表示",
+    "certificate_anchor": "アンカー",
+    "certificate_number": "認証番号",
+    "certificate_issuer": "発行元",
     "alt_text": "代替テキスト",
     "seo_default_description": "デフォルトの説明",
     "seo_home_heading": "ホームページの見出し",
@@ -1240,6 +1247,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "certificate_document": "認証書類または発行元の確認ページへのリンク。",
+    "certificate_anchor": "他のページからこの認証へ直接リンクできます（例：/pages/certifications#organic）。",
     "certification_alt": "スクリーンリーダー向けにバッジを説明します（例：「GITCHA 有機認証、P26-92-1040」）。",
     "seo_default_description": "独自の説明がないページで、環境設定のストアの説明が空の場合に使用されます。",
     "seo_home_heading": "SNSページの完全なリンクを1行に1つずつ入力します。検索エンジンがストアと結び付けやすくなります。",

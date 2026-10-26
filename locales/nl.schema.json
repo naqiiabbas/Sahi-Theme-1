@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Certificeringen",
     "footer_certification": "Certificering",
     "seo": "SEO",
     "floating_actions": "Zwevende knoppen",
@@ -205,6 +206,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "certifications_link": "Certificeringslink",
+    "certifications_link_label": "Label certificeringslink",
+    "show_page_content": "Pagina-inhoud weergeven",
+    "certificate_anchor": "Anker",
+    "certificate_number": "Certificaatnummer",
+    "certificate_issuer": "Uitgegeven door",
     "alt_text": "Alt-tekst",
     "seo_default_description": "Standaardbeschrijving",
     "seo_home_heading": "Kop van de homepage",
@@ -1240,6 +1247,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "certificate_document": "Link naar het certificaatdocument of de verificatiepagina van de uitgever.",
+    "certificate_anchor": "Laat andere pagina’s rechtstreeks naar dit certificaat linken, bijv. /pages/certifications#organic.",
     "certification_alt": "Beschrijft de badge voor schermlezers, bijv. \"GITCHA gecertificeerd biologisch, P26-92-1040\".",
     "seo_default_description": "Wordt gebruikt voor pagina’s zonder eigen beschrijving als de winkelbeschrijving bij Voorkeuren leeg is.",
     "seo_home_heading": "Volledige links naar je socialemediapagina’s, één per regel. Helpt zoekmachines ze aan je winkel te koppelen.",

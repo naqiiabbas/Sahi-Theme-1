@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "การรับรอง",
     "footer_certification": "การรับรอง",
     "seo": "SEO",
     "floating_actions": "ปุ่มลอย",
@@ -205,6 +206,12 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "certifications_link": "ลิงก์การรับรอง",
+    "certifications_link_label": "ป้ายลิงก์การรับรอง",
+    "show_page_content": "แสดงเนื้อหาของหน้า",
+    "certificate_anchor": "จุดยึด",
+    "certificate_number": "หมายเลขใบรับรอง",
+    "certificate_issuer": "ออกโดย",
     "alt_text": "ข้อความแทนภาพ",
     "seo_default_description": "คำอธิบายเริ่มต้น",
     "seo_home_heading": "หัวเรื่องหน้าแรก",
@@ -1240,6 +1247,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "certificate_document": "ลิงก์ไปยังเอกสารใบรับรองหรือหน้าตรวจสอบของผู้ออก",
+    "certificate_anchor": "ให้หน้าอื่นลิงก์ตรงมายังใบรับรองนี้ได้ เช่น /pages/certifications#organic",
     "certification_alt": "อธิบายตราสำหรับโปรแกรมอ่านหน้าจอ เช่น \"GITCHA รับรองออร์แกนิก, P26-92-1040\"",
     "seo_default_description": "ใช้กับหน้าที่ไม่มีคำอธิบายของตัวเองเมื่อคำอธิบายร้านค้าในการตั้งค่าว่างอยู่",
     "seo_home_heading": "ลิงก์เต็มไปยังหน้าโซเชียลมีเดีย หนึ่งลิงก์ต่อบรรทัด ช่วยให้เครื่องมือค้นหาเชื่อมโยงกับร้านค้า",

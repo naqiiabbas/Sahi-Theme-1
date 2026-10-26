@@ -63,7 +63,7 @@
           "settings": {
             "fallback_image": "cert-gitcha-organic.jpg",
             "alt": "GITCHA Product Certification, Organic, P26-92-1040",
-            "link": ""
+            "link": "/pages/certifications#organic"
           }
         },
         "cert_iso": {
@@ -71,7 +71,7 @@
           "settings": {
             "fallback_image": "cert-gitcha-iso-22000.jpg",
             "alt": "GITCHA System Certification, ISO 22000, H26-92-1039",
-            "link": ""
+            "link": "/pages/certifications#iso-22000"
           }
         },
         "cert_halal": {
@@ -79,7 +79,7 @@
           "settings": {
             "fallback_image": "cert-gitcha-halal.png",
             "alt": "GITCHA Institute of Global Certification, Halal",
-            "link": ""
+            "link": "/pages/certifications#halal"
           }
         }
       },
@@ -110,6 +110,8 @@
         "newsletter_text": "Get the latest updates, recipes and exclusive offers straight to your inbox.",
         "newsletter_placeholder": "Your email address",
         "copyright_text": "All rights reserved.",
+        "certifications_label": "Our certifications",
+        "certifications_link": "/pages/certifications",
         "show_payment_icons": true,
         "closing_note": "Made with goodness.",
         "title_font": "instrument_serif_n4",

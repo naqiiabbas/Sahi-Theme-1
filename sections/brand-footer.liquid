@@ -386,11 +386,13 @@
                   {%- endif -%}
                 {%- endcapture -%}
                 {%- if block.settings.link != blank -%}
+                  {%- assign cert_link_start = block.settings.link | slice: 0 -%}
                   <a
                     href="{{ block.settings.link }}"
                     class="brand-footer__certification-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {% if cert_link_start != '/' and cert_link_start != '#' %}
+                      target="_blank" rel="noopener noreferrer"
+                    {% endif %}
                   >
                     {{- cert_image -}}
                   </a>
@@ -400,6 +402,15 @@
               </li>
             {%- endfor -%}
           </ul>
+        {%- endif -%}
+
+        {%- if section.settings.certifications_link != blank and section.settings.certifications_label != blank -%}
+          <a
+            href="{{ section.settings.certifications_link }}"
+            class="brand-footer__certifications-more"
+          >
+            {{- section.settings.certifications_label | escape -}}
+          </a>
         {%- endif -%}
       </div>
 
@@ -839,6 +850,19 @@
     }
   }
 
+  .brand-footer__certifications-more {
+    font-size: 0.875rem;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    text-decoration-color: rgb(var(--color-foreground-rgb) / var(--opacity-40));
+    transition: text-decoration-color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+
   .brand-footer__certification-image {
     display: block;
     width: auto;
@@ -1183,6 +1207,17 @@
       "id": "copyright_text",
       "label": "t:settings.text",
       "default": "All rights reserved."
+    },
+    {
+      "type": "text",
+      "id": "certifications_label",
+      "label": "t:settings.certifications_link_label",
+      "default": "Our certifications"
+    },
+    {
+      "type": "url",
+      "id": "certifications_link",
+      "label": "t:settings.certifications_link"
     },
     {
       "type": "checkbox",

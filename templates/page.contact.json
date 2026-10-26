@@ -56,7 +56,7 @@
             "icon": "email",
             "title": "Email Us",
             "text": "We usually respond within 24 hours.",
-            "value": "business@sahifoods.co",
+            "value": "info@sahifoods.co",
             "value_type": "email"
           }
         },

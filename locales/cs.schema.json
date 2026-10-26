@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "certifications": "Certifikace",
     "footer_certification": "Certifikace",
     "seo": "SEO",
     "floating_actions": "Plovoucí tlačítka",
@@ -205,6 +206,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "certifications_link": "Odkaz na certifikace",
+    "certifications_link_label": "Text odkazu na certifikace",
+    "show_page_content": "Zobrazit obsah stránky",
+    "certificate_anchor": "Kotva",
+    "certificate_number": "Číslo certifikátu",
+    "certificate_issuer": "Vydal",
     "alt_text": "Alternativní text",
     "seo_default_description": "Výchozí popis",
     "seo_home_heading": "Nadpis domovské stránky",
@@ -1240,6 +1247,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "certificate_document": "Odkaz na dokument certifikátu nebo ověřovací stránku vydavatele.",
+    "certificate_anchor": "Umožní jiným stránkám odkazovat přímo na tento certifikát, např. /pages/certifications#organic.",
     "certification_alt": "Popisuje odznak pro čtečky obrazovky, např. „GITCHA certifikované bio, P26-92-1040“.",
     "seo_default_description": "Použije se pro stránky bez vlastního popisu, když je popis obchodu v Předvolbách prázdný.",
     "seo_home_heading": "Úplné odkazy na vaše sociální sítě, jeden na řádek. Pomáhají vyhledávačům propojit je s obchodem.",

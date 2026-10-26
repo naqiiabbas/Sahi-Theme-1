@@ -227,6 +227,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "certificate_document": "Link to the certificate document or the issuer’s verification page.",
+    "certificate_anchor": "Lets other pages link straight to this certificate, e.g. /pages/certifications#organic.",
     "certification_alt": "Describes the badge for screen readers, e.g. \"GITCHA certified organic, P26-92-1040\".",
     "seo_default_description": "Used for pages without a description of their own when the store description in Preferences is empty.",
     "seo_home_heading": "Full links to your social media pages, one per line. Helps search engines link them to your store.",
@@ -295,6 +297,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "certifications": "Certifications",
     "footer_certification": "Certification",
     "seo": "SEO",
     "floating_actions": "Floating buttons",
@@ -840,6 +843,12 @@
     "below_media": "Below media"
   },
   "settings": {
+    "certifications_link": "Certifications link",
+    "certifications_link_label": "Certifications link label",
+    "show_page_content": "Show page content",
+    "certificate_anchor": "Anchor",
+    "certificate_number": "Certificate number",
+    "certificate_issuer": "Issued by",
     "alt_text": "Alt text",
     "seo_default_description": "Default description",
     "seo_home_heading": "Home page heading",
