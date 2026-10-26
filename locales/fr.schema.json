@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Lien vers le document du certificat ou la page de vérification de l’organisme.",
     "certificate_anchor": "Permet aux autres pages de renvoyer directement à ce certificat, p. ex. /pages/certifications#organic.",
-    "certification_alt": "Décrit le badge pour les lecteurs d’écran, p. ex. « GITCHA certifié biologique, P26-92-1040 ».",
+    "certification_alt": "Décrit le badge pour les lecteurs d’écran, p. ex. « GITCHIA certifié biologique, P26-92-1040 ».",
     "seo_default_description": "Utilisée pour les pages sans description propre lorsque la description de la boutique dans Préférences est vide.",
     "seo_home_heading": "Liens complets vers vos réseaux sociaux, un par ligne. Aide les moteurs de recherche à les associer à votre boutique.",
     "seo_share_image": "Modèle de titre",

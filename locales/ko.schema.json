@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "인증서 문서 또는 발급 기관의 확인 페이지 링크입니다.",
     "certificate_anchor": "다른 페이지에서 이 인증서로 바로 연결할 수 있습니다. 예: /pages/certifications#organic.",
-    "certification_alt": "화면 낭독기를 위해 배지를 설명합니다. 예: \"GITCHA 유기농 인증, P26-92-1040\".",
+    "certification_alt": "화면 낭독기를 위해 배지를 설명합니다. 예: \"GITCHIA 유기농 인증, P26-92-1040\".",
     "seo_default_description": "자체 설명이 없는 페이지에서 환경설정의 스토어 설명이 비어 있을 때 사용됩니다.",
     "seo_home_heading": "소셜 미디어 페이지의 전체 링크를 한 줄에 하나씩 입력하세요. 검색 엔진이 스토어와 연결하는 데 도움이 됩니다.",
     "seo_share_image": "제목 패턴",

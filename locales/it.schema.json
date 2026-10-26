@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Link al documento del certificato o alla pagina di verifica dell’ente.",
     "certificate_anchor": "Consente ad altre pagine di collegarsi direttamente a questo certificato, ad es. /pages/certifications#organic.",
-    "certification_alt": "Descrive il badge per gli screen reader, ad es. \"GITCHA biologico certificato, P26-92-1040\".",
+    "certification_alt": "Descrive il badge per gli screen reader, ad es. \"GITCHIA biologico certificato, P26-92-1040\".",
     "seo_default_description": "Usata per le pagine senza descrizione propria quando la descrizione del negozio in Preferenze è vuota.",
     "seo_home_heading": "Link completi alle tue pagine social, uno per riga. Aiuta i motori di ricerca a collegarli al negozio.",
     "seo_share_image": "Modello del titolo",

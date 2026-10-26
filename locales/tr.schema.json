@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Sertifika belgesine veya veren kuruluşun doğrulama sayfasına bağlantı.",
     "certificate_anchor": "Diğer sayfaların doğrudan bu sertifikaya bağlantı vermesini sağlar, ör. /pages/certifications#organic.",
-    "certification_alt": "Rozeti ekran okuyucular için açıklar, ör. \"GITCHA sertifikalı organik, P26-92-1040\".",
+    "certification_alt": "Rozeti ekran okuyucular için açıklar, ör. \"GITCHIA sertifikalı organik, P26-92-1040\".",
     "seo_default_description": "Tercihler’deki mağaza açıklaması boş olduğunda kendi açıklaması olmayan sayfalar için kullanılır.",
     "seo_home_heading": "Sosyal medya sayfalarınızın tam bağlantıları, her satıra bir tane. Arama motorlarının bunları mağazanızla ilişkilendirmesine yardımcı olur.",
     "seo_share_image": "Başlık kalıbı",

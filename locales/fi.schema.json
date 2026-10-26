@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Linkki sertifikaattiasiakirjaan tai myöntäjän vahvistussivulle.",
     "certificate_anchor": "Antaa muiden sivujen linkittää suoraan tähän sertifikaattiin, esim. /pages/certifications#organic.",
-    "certification_alt": "Kuvaa merkin näytönlukijoille, esim. \"GITCHA sertifioitu luomu, P26-92-1040\".",
+    "certification_alt": "Kuvaa merkin näytönlukijoille, esim. \"GITCHIA sertifioitu luomu, P26-92-1040\".",
     "seo_default_description": "Käytetään sivuilla, joilla ei ole omaa kuvausta, kun kaupan kuvaus Asetuksissa on tyhjä.",
     "seo_home_heading": "Täydet linkit sosiaalisen median sivuillesi, yksi riviä kohden. Auttaa hakukoneita yhdistämään ne kauppaasi.",
     "seo_share_image": "Otsikkomalli",

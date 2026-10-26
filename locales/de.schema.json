@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Link zum Zertifikatsdokument oder zur Prüfseite des Ausstellers.",
     "certificate_anchor": "Ermöglicht anderen Seiten, direkt auf dieses Zertifikat zu verlinken, z. B. /pages/certifications#organic.",
-    "certification_alt": "Beschreibt das Siegel für Screenreader, z. B. „GITCHA zertifiziert biologisch, P26-92-1040“.",
+    "certification_alt": "Beschreibt das Siegel für Screenreader, z. B. „GITCHIA zertifiziert biologisch, P26-92-1040“.",
     "seo_default_description": "Wird für Seiten ohne eigene Beschreibung verwendet, wenn die Shop-Beschreibung in den Einstellungen leer ist.",
     "seo_home_heading": "Vollständige Links zu deinen Social-Media-Seiten, einer pro Zeile. Hilft Suchmaschinen, sie deinem Shop zuzuordnen.",
     "seo_share_image": "Titelmuster",

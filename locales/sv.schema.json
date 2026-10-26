@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Länk till certifikatdokumentet eller utfärdarens verifieringssida.",
     "certificate_anchor": "Låter andra sidor länka direkt till detta certifikat, t.ex. /pages/certifications#organic.",
-    "certification_alt": "Beskriver märket för skärmläsare, t.ex. \"GITCHA certifierad ekologisk, P26-92-1040\".",
+    "certification_alt": "Beskriver märket för skärmläsare, t.ex. \"GITCHIA certifierad ekologisk, P26-92-1040\".",
     "seo_default_description": "Används för sidor utan egen beskrivning när butiksbeskrivningen under Inställningar är tom.",
     "seo_home_heading": "Fullständiga länkar till dina sociala medier, en per rad. Hjälper sökmotorer att koppla dem till butiken.",
     "seo_share_image": "Titelmönster",

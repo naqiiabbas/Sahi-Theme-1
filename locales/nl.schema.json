@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Link naar het certificaatdocument of de verificatiepagina van de uitgever.",
     "certificate_anchor": "Laat andere pagina’s rechtstreeks naar dit certificaat linken, bijv. /pages/certifications#organic.",
-    "certification_alt": "Beschrijft de badge voor schermlezers, bijv. \"GITCHA gecertificeerd biologisch, P26-92-1040\".",
+    "certification_alt": "Beschrijft de badge voor schermlezers, bijv. \"GITCHIA gecertificeerd biologisch, P26-92-1040\".",
     "seo_default_description": "Wordt gebruikt voor pagina’s zonder eigen beschrijving als de winkelbeschrijving bij Voorkeuren leeg is.",
     "seo_home_heading": "Volledige links naar je socialemediapagina’s, één per regel. Helpt zoekmachines ze aan je winkel te koppelen.",
     "seo_share_image": "Titelpatroon",

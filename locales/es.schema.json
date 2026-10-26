@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Enlace al documento del certificado o a la página de verificación del emisor.",
     "certificate_anchor": "Permite que otras páginas enlacen directamente a este certificado, p. ej. /pages/certifications#organic.",
-    "certification_alt": "Describe la insignia para lectores de pantalla, p. ej. \"GITCHA orgánico certificado, P26-92-1040\".",
+    "certification_alt": "Describe la insignia para lectores de pantalla, p. ej. \"GITCHIA orgánico certificado, P26-92-1040\".",
     "seo_default_description": "Se usa en páginas sin descripción propia cuando la descripción de la tienda en Preferencias está vacía.",
     "seo_home_heading": "Enlaces completos a tus redes sociales, uno por línea. Ayudan a los buscadores a vincularlos con tu tienda.",
     "seo_share_image": "Patrón de título",

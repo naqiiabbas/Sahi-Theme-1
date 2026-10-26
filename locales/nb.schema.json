@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Lenke til sertifikatdokumentet eller utstederens verifiseringsside.",
     "certificate_anchor": "Lar andre sider lenke direkte til dette sertifikatet, f.eks. /pages/certifications#organic.",
-    "certification_alt": "Beskriver merket for skjermlesere, f.eks. «GITCHA sertifisert økologisk, P26-92-1040».",
+    "certification_alt": "Beskriver merket for skjermlesere, f.eks. «GITCHIA sertifisert økologisk, P26-92-1040».",
     "seo_default_description": "Brukes for sider uten egen beskrivelse når butikkbeskrivelsen under Innstillinger er tom.",
     "seo_home_heading": "Fullstendige lenker til sosiale medier, én per linje. Hjelper søkemotorer å knytte dem til butikken.",
     "seo_share_image": "Tittelmønster",

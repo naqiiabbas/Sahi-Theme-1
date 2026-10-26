@@ -229,7 +229,7 @@
   "info": {
     "certificate_document": "Link to the certificate document or the issuer’s verification page.",
     "certificate_anchor": "Lets other pages link straight to this certificate, e.g. /pages/certifications#organic.",
-    "certification_alt": "Describes the badge for screen readers, e.g. \"GITCHA certified organic, P26-92-1040\".",
+    "certification_alt": "Describes the badge for screen readers, e.g. \"GITCHIA certified organic, P26-92-1040\".",
     "seo_default_description": "Used for pages without a description of their own when the store description in Preferences is empty.",
     "seo_home_heading": "Full links to your social media pages, one per line. Helps search engines link them to your store.",
     "seo_share_image": "Title pattern",

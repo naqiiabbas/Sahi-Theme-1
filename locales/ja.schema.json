@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "認証書類または発行元の確認ページへのリンク。",
     "certificate_anchor": "他のページからこの認証へ直接リンクできます（例：/pages/certifications#organic）。",
-    "certification_alt": "スクリーンリーダー向けにバッジを説明します（例：「GITCHA 有機認証、P26-92-1040」）。",
+    "certification_alt": "スクリーンリーダー向けにバッジを説明します（例：「GITCHIA 有機認証、P26-92-1040」）。",
     "seo_default_description": "独自の説明がないページで、環境設定のストアの説明が空の場合に使用されます。",
     "seo_home_heading": "SNSページの完全なリンクを1行に1つずつ入力します。検索エンジンがストアと結び付けやすくなります。",
     "seo_share_image": "タイトルのパターン",

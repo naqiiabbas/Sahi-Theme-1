@@ -8,10 +8,10 @@
           "settings": {
             "fallback_image": "cert-gitcha-halal.png",
             "title": "Halal",
-            "issuer": "GITCHA Institute of Global Certification",
+            "issuer": "GITCHIA Institute of Global Certification",
             "number_label": "Certificate no.",
             "number": "",
-            "description": "<p>Our products are certified Halal by GITCHA Institute of Global Certification.</p>",
+            "description": "<p>Our products are certified Halal by GITCHIA Institute of Global Certification.</p>",
             "anchor": "halal",
             "document_link": "",
             "document_label": "View certificate"
@@ -22,10 +22,10 @@
           "settings": {
             "fallback_image": "cert-gitcha-organic.jpg",
             "title": "Organic",
-            "issuer": "GITCHA Product Certification",
+            "issuer": "GITCHIA Product Certification",
             "number_label": "Certificate no.",
             "number": "P26-92-1040",
-            "description": "<p>Our products are certified Organic under GITCHA Product Certification.</p>",
+            "description": "<p>Our products are certified Organic under GITCHIA Product Certification.</p>",
             "anchor": "organic",
             "document_link": "",
             "document_label": "View certificate"
@@ -36,10 +36,10 @@
           "settings": {
             "fallback_image": "cert-gitcha-iso-22000.jpg",
             "title": "ISO 22000",
-            "issuer": "GITCHA System Certification",
+            "issuer": "GITCHIA System Certification",
             "number_label": "Certificate no.",
             "number": "H26-92-1039",
-            "description": "<p>Our food safety management system is certified to ISO 22000 by GITCHA System Certification.</p>",
+            "description": "<p>Our food safety management system is certified to ISO 22000 by GITCHIA System Certification.</p>",
             "anchor": "iso-22000",
             "document_link": "",
             "document_label": "View certificate"
@@ -50,7 +50,7 @@
       "settings": {
         "eyebrow": "Quality you can trust",
         "heading": "Our <em>Certifications</em>",
-        "text": "<p>Our products and processes are independently certified by GITCHA for Halal, Organic and food safety standards.</p>",
+        "text": "<p>Our products and processes are independently certified by GITCHIA for Halal, Organic and food safety standards.</p>",
         "show_page_content": false,
         "title_font": "instrument_serif_n4",
         "background_color": "{{ settings.color_palette.background }}",

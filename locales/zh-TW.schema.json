@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "連結到證書文件或核發機構的驗證頁面。",
     "certificate_anchor": "讓其他頁面直接連結到此證書，例如 /pages/certifications#organic。",
-    "certification_alt": "為螢幕閱讀器描述徽章，例如「GITCHA 有機認證，P26-92-1040」。",
+    "certification_alt": "為螢幕閱讀器描述徽章，例如「GITCHIA 有機認證，P26-92-1040」。",
     "seo_default_description": "當偏好設定中的商店說明為空白時，用於沒有自己說明的頁面。",
     "seo_home_heading": "社群媒體頁面的完整連結，每行一個。協助搜尋引擎將其與你的商店連結。",
     "seo_share_image": "標題模式",

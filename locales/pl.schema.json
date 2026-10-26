@@ -1249,7 +1249,7 @@
   "info": {
     "certificate_document": "Link do dokumentu certyfikatu lub strony weryfikacji wystawcy.",
     "certificate_anchor": "Pozwala innym stronom linkować bezpośrednio do tego certyfikatu, np. /pages/certifications#organic.",
-    "certification_alt": "Opisuje odznakę dla czytników ekranu, np. „GITCHA certyfikat ekologiczny, P26-92-1040”.",
+    "certification_alt": "Opisuje odznakę dla czytników ekranu, np. „GITCHIA certyfikat ekologiczny, P26-92-1040”.",
     "seo_default_description": "Używany na stronach bez własnego opisu, gdy opis sklepu w Preferencjach jest pusty.",
     "seo_home_heading": "Pełne linki do profili społecznościowych, jeden w wierszu. Pomaga wyszukiwarkom powiązać je ze sklepem.",
     "seo_share_image": "Wzór tytułu",
