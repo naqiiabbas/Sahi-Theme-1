@@ -58,9 +58,19 @@
             "label": "Wellness Tips"
           }
         },
+        "cert_halal": {
+          "type": "certification",
+          "settings": {
+            "image": "shopify://shop_images/Sahi_2_2d378538-5bf3-43fc-9c9a-b9e5269176e5.png",
+            "fallback_image": "cert-gitcha-halal.png",
+            "alt": "GITCHIA Institute of Global Certification, Halal",
+            "link": "/pages/certifications#halal"
+          }
+        },
         "cert_organic": {
           "type": "certification",
           "settings": {
+            "image": "shopify://shop_images/Sahi_4_48537a5c-963d-45d5-97b3-12ff15157416.png",
             "fallback_image": "cert-gitcha-organic.jpg",
             "alt": "GITCHIA Product Certification, Organic, P26-92-1040",
             "link": "/pages/certifications#organic"
@@ -69,17 +79,10 @@
         "cert_iso": {
           "type": "certification",
           "settings": {
+            "image": "shopify://shop_images/Sahi_3_2720af19-2300-47f0-8b08-1cbed365836b.png",
             "fallback_image": "cert-gitcha-iso-22000.jpg",
             "alt": "GITCHIA System Certification, ISO 22000, H26-92-1039",
             "link": "/pages/certifications#iso-22000"
-          }
-        },
-        "cert_halal": {
-          "type": "certification",
-          "settings": {
-            "fallback_image": "cert-gitcha-halal.png",
-            "alt": "GITCHIA Institute of Global Certification, Halal",
-            "link": "/pages/certifications#halal"
           }
         }
       },
@@ -96,6 +99,7 @@
       "settings": {
         "show_logo_image": true,
         "logo_width": 160,
+        "brand_name": "",
         "tagline": "<p>Real ingredients. A brighter tomorrow. We create natural, wholesome essentials that bring goodness to everyday life.</p>",
         "instagram_url": "https://instagram.com/sahifoods.co",
         "facebook_url": "https://www.facebook.com/share/1Cdyof9Xn5/",
@@ -132,8 +136,8 @@
         "whatsapp_number": "+923178434399",
         "whatsapp_message": "Hi! I have a question about your products.",
         "whatsapp_label": "Chat with us on WhatsApp",
-        "whatsapp_background": "#25D366",
-        "whatsapp_icon_color": "#FFFFFF",
+        "whatsapp_background": "#25d366",
+        "whatsapp_icon_color": "#ffffff",
         "show_cart": true,
         "cart_background": "{{ settings.color_palette.color2 }}",
         "cart_icon_color": "{{ settings.color_palette.background }}",
