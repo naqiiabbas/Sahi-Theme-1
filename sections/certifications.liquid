@@ -83,14 +83,16 @@
                   class: 'certifications__image'
               }}
             {%- elsif block.settings.fallback_image != blank -%}
-              <img
-                src="{{ block.settings.fallback_image | asset_url }}"
-                alt="{{ alt | escape }}"
-                width="320"
-                height="320"
-                loading="lazy"
-                class="certifications__image"
-              >
+              {% render 'asset-image',
+                file: block.settings.fallback_image,
+                alt: alt,
+                width: 320,
+                height: 320,
+                max_width: 320,
+                widths: '240, 320',
+                sizes: '(min-width: 750px) 12rem, 10rem',
+                class: 'certifications__image'
+              %}
             {%- endif -%}
           </div>
 

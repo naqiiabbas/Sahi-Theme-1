@@ -68,6 +68,8 @@
     endif
 
     assign logo_style = '--header-logo-image-width: ' | append: logo_width | append: 'px;' | append: '--header-logo-image-width-mobile: ' | append: logo_width_mobile | append: 'px; --header-logo-image-height: ' | append: default_logo_height | append: 'px; --header-logo-image-height-mobile: ' | append: default_logo_height_mobile | append: 'px;'
+    assign logo_alt = shop.name | default: 'Sahi'
+    assign logo_sizes = '(min-width: 750px) ' | append: brand_logo_width | append: 'px, ' | append: brand_logo_width_mobile | append: 'px'
     assign inverse_logo_style = '--header-logo-image-width: ' | append: inverse_logo_width | append: 'px;' | append: '--header-logo-image-width-mobile: ' | append: inverse_logo_width_mobile | append: 'px; --header-logo-image-height: ' | append: default_logo_height | append: 'px; --header-logo-image-height-mobile: ' | append: default_logo_height_mobile | append: 'px;'
   %}
 
@@ -87,16 +89,18 @@
         style: logo_style
       %}
     {% else %}
-      <img
-        src="{{ 'Sahi_Brand_Logo.png' | asset_url }}"
-        alt="{{ shop.name | default: 'Sahi' }}"
-        class="header-logo__image"
-        width="{{ logo_width }}"
-        height="{{ default_logo_height }}"
-        loading="eager"
-        fetchpriority="high"
-        style="{{ logo_style }}"
-      >
+      {% render 'asset-image',
+        file: 'Sahi_Brand_Logo.png',
+        alt: logo_alt,
+        class: 'header-logo__image',
+        width: logo_width,
+        height: default_logo_height,
+        max_width: 1672,
+        widths: '120, 180, 240, 320, 480, 640',
+        sizes: logo_sizes,
+        loading: 'eager',
+        style: logo_style
+      %}
     {% endif %}
   </span>
 
@@ -115,16 +119,18 @@
           style: inverse_logo_style
         %}
       {% else %}
-        <img
-          src="{{ 'Sahi_Brand_Logo.png' | asset_url }}"
-          alt="{{ shop.name | default: 'Sahi' }}"
-          class="header-logo__image"
-          width="{{ inverse_logo_width }}"
-          height="{{ default_logo_height }}"
-          loading="eager"
-          fetchpriority="high"
-          style="{{ inverse_logo_style }}"
-        >
+        {% render 'asset-image',
+          file: 'Sahi_Brand_Logo.png',
+          alt: logo_alt,
+          class: 'header-logo__image',
+          width: inverse_logo_width,
+          height: default_logo_height,
+          max_width: 1672,
+          widths: '120, 180, 240, 320, 480, 640',
+          sizes: logo_sizes,
+          loading: 'eager',
+          style: inverse_logo_style
+        %}
       {% endif %}
     </span>
   {% endif %}

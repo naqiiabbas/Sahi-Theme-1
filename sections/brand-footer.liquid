@@ -107,14 +107,16 @@
             }}
           {%- elsif section.settings.show_logo_image -%}
             {% comment %} Same fallback logo file as blocks/_header-logo.liquid when no logo is set. {% endcomment %}
-            <img
-              src="{{ 'Sahi_Brand_Logo.png' | asset_url }}"
-              alt="{{ shop.name | escape }}"
-              width="1672"
-              height="941"
-              class="brand-footer__logo-image"
-              loading="lazy"
-            >
+            {% render 'asset-image',
+              file: 'Sahi_Brand_Logo.png',
+              alt: shop.name,
+              width: 1672,
+              height: 941,
+              max_width: 1672,
+              widths: '200, 300, 400, 600',
+              sizes: '(min-width: 750px) 200px, 160px',
+              class: 'brand-footer__logo-image'
+            %}
           {%- else -%}
             <span class="brand-footer__logo-text">{{ section.settings.brand_name | default: shop.name | escape }}</span>
           {%- endif -%}
@@ -375,14 +377,16 @@
                         class: 'brand-footer__certification-image'
                     }}
                   {%- elsif block.settings.fallback_image != blank -%}
-                    <img
-                      src="{{ block.settings.fallback_image | asset_url }}"
-                      alt="{{ cert_alt | escape }}"
-                      width="320"
-                      height="174"
-                      loading="lazy"
-                      class="brand-footer__certification-image"
-                    >
+                    {% render 'asset-image',
+                      file: block.settings.fallback_image,
+                      alt: cert_alt,
+                      width: 320,
+                      height: 174,
+                      max_width: 320,
+                      widths: '160, 240, 320',
+                      sizes: '7rem',
+                      class: 'brand-footer__certification-image'
+                    %}
                   {%- endif -%}
                 {%- endcapture -%}
                 {%- if block.settings.link != blank -%}

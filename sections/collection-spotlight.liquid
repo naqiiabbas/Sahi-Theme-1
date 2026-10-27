@@ -75,14 +75,15 @@
             class: 'collection-spotlight__image'
         }}
       {%- elsif section.settings.fallback_image != blank -%}
-        <img
-          src="{{ section.settings.fallback_image | asset_url }}"
-          alt=""
-          width="2000"
-          height="766"
-          loading="lazy"
-          class="collection-spotlight__image"
-        >
+        {% render 'asset-image',
+          file: section.settings.fallback_image,
+          width: 2000,
+          height: 766,
+          max_width: 2000,
+          widths: '750, 1100, 1500, 2000',
+          sizes: '100vw',
+          class: 'collection-spotlight__image'
+        %}
       {%- else -%}
         {{ 'hero-apparel-2' | placeholder_svg_tag: 'collection-spotlight__image collection-spotlight__placeholder' }}
       {%- endif -%}
@@ -156,7 +157,7 @@
               if block.settings.icon_image != blank
                 assign icon_url = block.settings.icon_image | image_url: width: 160
               elsif block.settings.fallback_icon != blank
-                assign icon_url = block.settings.fallback_icon | asset_url
+                assign icon_url = block.settings.fallback_icon | asset_url | append: '&width=160'
               endif
             -%}
             <li

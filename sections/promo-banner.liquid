@@ -98,14 +98,16 @@
             class: 'promo-banner__image'
         }}
       {%- elsif section.settings.fallback_image != blank -%}
-        <img
-          src="{{ section.settings.fallback_image | asset_url }}"
-          alt=""
-          width="2000"
-          height="667"
-          loading="{{ image_loading }}"
-          class="promo-banner__image"
-        >
+        {% render 'asset-image',
+          file: section.settings.fallback_image,
+          width: 2000,
+          height: 667,
+          max_width: 2000,
+          widths: '750, 1100, 1500, 2000',
+          sizes: '100vw',
+          loading: image_loading,
+          class: 'promo-banner__image'
+        %}
       {%- else -%}
         {{ 'hero-apparel-1' | placeholder_svg_tag: 'promo-banner__image promo-banner__placeholder' }}
       {%- endif -%}

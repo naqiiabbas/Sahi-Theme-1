@@ -1,0 +1,64 @@
+{%- doc -%}
+  Renders a theme asset image with a responsive srcset. Shopify's CDN resizes asset images with a
+  `width` query parameter and serves WebP/AVIF where supported, so small screens get small files.
+  Used for the fallback images shown when a merchant hasn't picked an image in the editor.
+
+  @param {string} file - Asset file name, e.g. 'hero-slide-1.jpg'
+  @param {number} width - Width attribute (intrinsic width, or rendered width for fixed-size images)
+  @param {number} height - Height attribute matching `width`'s aspect ratio
+  @param {string} widths - Comma-separated candidate widths for the srcset
+  @param {string} sizes - The `sizes` attribute for the rendered layout
+  @param {number} [max_width] - The file's real width; larger candidates are dropped and the original is used instead
+  @param {string} [alt] - Alt text, empty for decorative images
+  @param {string} [class] - Class attribute
+  @param {string} [loading] - 'lazy' (default) or 'eager'
+  @param {string} [fetchpriority] - 'high', 'low' or 'auto'
+  @param {string} [style] - Inline style attribute
+
+  @example
+  {% render 'asset-image', file: 'promo-banner-pickles.jpg', width: 2000, height: 667, max_width: 2000, widths: '750, 1100, 1500, 2000', sizes: '100vw' %}
+{%- enddoc -%}
+
+{%- liquid
+  assign url = file | asset_url
+  assign srcset = ''
+  assign src = url
+  assign has_original = false
+  assign candidates = widths | split: ','
+
+  for candidate in candidates
+    assign w = candidate | strip | plus: 0
+    if max_width and w >= max_width
+      assign has_original = true
+      continue
+    endif
+    assign src = url | append: '&width=' | append: w
+    assign srcset = srcset | append: src | append: ' ' | append: w | append: 'w, '
+  endfor
+
+  if has_original
+    assign src = url
+    assign srcset = srcset | append: url | append: ' ' | append: max_width | append: 'w'
+  else
+    assign srcset = srcset | remove_last: ', '
+  endif
+-%}
+
+<img
+  src="{{ src }}"
+  srcset="{{ srcset }}"
+  sizes="{{ sizes }}"
+  alt="{{ alt | escape }}"
+  width="{{ width }}"
+  height="{{ height }}"
+  loading="{{ loading | default: 'lazy' }}"
+  {% if fetchpriority != blank %}
+    fetchpriority="{{ fetchpriority }}"
+  {% endif %}
+  {% if class != blank %}
+    class="{{ class }}"
+  {% endif %}
+  {% if style != blank %}
+    style="{{ style }}"
+  {% endif %}
+>

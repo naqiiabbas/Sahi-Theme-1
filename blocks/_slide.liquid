@@ -95,15 +95,27 @@
         }}
       {%- endif -%}
     {%- elsif slide_asset != blank -%}
-      <img
-        src="{{ slide_asset | asset_url }}"
-        alt="{{ shop.name | default: 'Sahi' }}"
-        class="slide__image"
-        loading="{% if block_index == 0 %}eager{% else %}lazy{% endif %}"
-        fetchpriority="{% if block_index == 0 %}high{% else %}low{% endif %}"
-        width="3168"
-        height="1344"
-      >
+      {%- liquid
+        assign slide_alt = shop.name | default: 'Sahi'
+        assign slide_loading = 'lazy'
+        assign slide_priority = 'low'
+        if block_index == 0
+          assign slide_loading = 'eager'
+          assign slide_priority = 'high'
+        endif
+      -%}
+      {% render 'asset-image',
+        file: slide_asset,
+        alt: slide_alt,
+        class: 'slide__image',
+        width: 3168,
+        height: 1344,
+        max_width: 3168,
+        widths: '750, 1100, 1500, 1920, 2560',
+        sizes: '100vw',
+        loading: slide_loading,
+        fetchpriority: slide_priority
+      %}
     {%- else -%}
       {%- liquid
         assign modulo_result = block_index | modulo: 2

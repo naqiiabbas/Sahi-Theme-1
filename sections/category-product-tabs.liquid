@@ -75,7 +75,7 @@
             if block.settings.icon != blank
               assign icon_url = block.settings.icon | image_url: width: 160
             elsif block.settings.fallback_icon != blank
-              assign icon_url = block.settings.fallback_icon | asset_url
+              assign icon_url = block.settings.fallback_icon | asset_url | append: '&width=160'
             endif
           -%}
           <button

@@ -34,14 +34,15 @@
             class: 'category-showcase__image'
         }}
       {%- elsif block.settings.fallback_image != blank -%}
-        <img
-          src="{{ block.settings.fallback_image | asset_url }}"
-          alt=""
-          width="600"
-          height="482"
-          loading="lazy"
-          class="category-showcase__image"
-        >
+        {% render 'asset-image',
+          file: block.settings.fallback_image,
+          width: 600,
+          height: 482,
+          max_width: 600,
+          widths: '200, 300, 400, 600',
+          sizes: image_sizes,
+          class: 'category-showcase__image'
+        %}
       {%- else -%}
         {{ 'collection-1' | placeholder_svg_tag: 'category-showcase__image category-showcase__placeholder' }}
       {%- endif -%}

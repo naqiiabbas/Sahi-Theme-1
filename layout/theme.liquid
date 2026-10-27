@@ -25,7 +25,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+    {%- comment -%}
+      Loaded without blocking the first paint: text shows in the fallback font, then swaps when the
+      web fonts arrive (display=swap).
+    {%- endcomment -%}
+    {%- assign google_fonts_url = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Tenor+Sans&display=swap' -%}
+    <link
+      rel="preload"
+      as="style"
+      href="{{ google_fonts_url }}"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript><link href="{{ google_fonts_url }}" rel="stylesheet"></noscript>
 
     {%- render 'stylesheets' -%}
     {%- render 'card-hover-effect-styles' -%}
