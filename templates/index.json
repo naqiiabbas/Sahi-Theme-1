@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/WhatsApp_Image_2026-10-27_at_6.16.35_PM.jpg",
+            "image_1": "shopify://shop_images/Sahi_Achaar_Premium_Jar_Collection.png",
             "image_asset": "hero-slide-1.jpg",
             "content_direction": "row",
             "vertical_on_mobile": true,
@@ -407,6 +407,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
+            "image_1": "shopify://shop_images/Sahi_Nut_Butter_Rustic_Still_Life.png",
             "image_asset": "hero-slide-3.jpg",
             "content_direction": "row",
             "vertical_on_mobile": true,
