@@ -206,6 +206,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "card_show_smallest_variant": "Kleinste maat op kaarten tonen",
+    "card_show_price_from": "\"Vanaf\" vóór de prijs tonen",
     "certifications_link": "Certificeringslink",
     "certifications_link_label": "Label certificeringslink",
     "show_page_content": "Pagina-inhoud weergeven",
@@ -1247,6 +1249,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "card_show_smallest_variant": "Producten met meerdere maten tonen de goedkoopste maat op productkaarten. De productpagina opent nog steeds op de standaardmaat.",
     "certificate_document": "Link naar het certificaatdocument of de verificatiepagina van de uitgever.",
     "certificate_anchor": "Laat andere pagina’s rechtstreeks naar dit certificaat linken, bijv. /pages/certifications#organic.",
     "certification_alt": "Beschrijft de badge voor schermlezers, bijv. \"GITCHIA gecertificeerd biologisch, P26-92-1040\".",

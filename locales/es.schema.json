@@ -206,6 +206,8 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "card_show_smallest_variant": "Mostrar el tamaño más pequeño en las tarjetas",
+    "card_show_price_from": "Mostrar \"Desde\" antes del precio",
     "certifications_link": "Enlace de certificaciones",
     "certifications_link_label": "Texto del enlace de certificaciones",
     "show_page_content": "Mostrar contenido de la página",
@@ -1247,6 +1249,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "card_show_smallest_variant": "Los productos con varios tamaños muestran el tamaño más barato en las tarjetas de producto. La página del producto sigue abriéndose con el tamaño predeterminado.",
     "certificate_document": "Enlace al documento del certificado o a la página de verificación del emisor.",
     "certificate_anchor": "Permite que otras páginas enlacen directamente a este certificado, p. ej. /pages/certifications#organic.",
     "certification_alt": "Describe la insignia para lectores de pantalla, p. ej. \"GITCHIA orgánico certificado, P26-92-1040\".",

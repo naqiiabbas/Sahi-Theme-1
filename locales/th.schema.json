@@ -206,6 +206,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "card_show_smallest_variant": "แสดงขนาดเล็กที่สุดบนการ์ด",
+    "card_show_price_from": "แสดง \"เริ่มต้น\" หน้าราคา",
     "certifications_link": "ลิงก์การรับรอง",
     "certifications_link_label": "ป้ายลิงก์การรับรอง",
     "show_page_content": "แสดงเนื้อหาของหน้า",
@@ -1247,6 +1249,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "card_show_smallest_variant": "สินค้าที่มีหลายขนาดจะแสดงขนาดที่ราคาถูกที่สุดบนการ์ดสินค้า หน้าสินค้ายังคงเปิดที่ขนาดเริ่มต้น",
     "certificate_document": "ลิงก์ไปยังเอกสารใบรับรองหรือหน้าตรวจสอบของผู้ออก",
     "certificate_anchor": "ให้หน้าอื่นลิงก์ตรงมายังใบรับรองนี้ได้ เช่น /pages/certifications#organic",
     "certification_alt": "อธิบายตราสำหรับโปรแกรมอ่านหน้าจอ เช่น \"GITCHIA รับรองออร์แกนิก, P26-92-1040\"",

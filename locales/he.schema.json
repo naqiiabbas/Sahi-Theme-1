@@ -219,6 +219,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "card_show_smallest_variant": "מוצרים עם כמה גדלים מציגים את הגודל הזול ביותר בכרטיסי המוצר. דף המוצר עדיין נפתח בגודל ברירת המחדל.",
     "certificate_document": "קישור למסמך התעודה או לדף האימות של הגוף המנפיק.",
     "certificate_anchor": "מאפשר לדפים אחרים לקשר ישירות לתעודה זו, למשל /pages/certifications#organic.",
     "certification_alt": "מתאר את התג לקוראי מסך, למשל \"GITCHIA אורגני מאושר, P26-92-1040\".",
@@ -785,6 +786,8 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "card_show_smallest_variant": "הצגת הגודל הקטן ביותר בכרטיסים",
+    "card_show_price_from": "הצגת \"החל מ-\" לפני המחיר",
     "certifications_link": "קישור התעודות",
     "certifications_link_label": "תווית קישור התעודות",
     "show_page_content": "הצגת תוכן הדף",

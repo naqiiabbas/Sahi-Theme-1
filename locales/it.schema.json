@@ -206,6 +206,8 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "card_show_smallest_variant": "Mostra la taglia più piccola sulle schede",
+    "card_show_price_from": "Mostra \"Da\" prima del prezzo",
     "certifications_link": "Link alle certificazioni",
     "certifications_link_label": "Testo del link alle certificazioni",
     "show_page_content": "Mostra contenuto della pagina",
@@ -1247,6 +1249,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "card_show_smallest_variant": "I prodotti con più formati mostrano il formato più economico sulle schede prodotto. La pagina del prodotto si apre comunque sul formato predefinito.",
     "certificate_document": "Link al documento del certificato o alla pagina di verifica dell’ente.",
     "certificate_anchor": "Consente ad altre pagine di collegarsi direttamente a questo certificato, ad es. /pages/certifications#organic.",
     "certification_alt": "Descrive il badge per gli screen reader, ad es. \"GITCHIA biologico certificato, P26-92-1040\".",

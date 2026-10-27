@@ -206,6 +206,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "card_show_smallest_variant": "Zobrazit na kartách nejmenší velikost",
+    "card_show_price_from": "Zobrazit „Od“ před cenou",
     "certifications_link": "Odkaz na certifikace",
     "certifications_link_label": "Text odkazu na certifikace",
     "show_page_content": "Zobrazit obsah stránky",
@@ -1247,6 +1249,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "card_show_smallest_variant": "Produkty s více velikostmi zobrazí na kartách produktů nejlevnější velikost. Stránka produktu se stále otevře ve výchozí velikosti.",
     "certificate_document": "Odkaz na dokument certifikátu nebo ověřovací stránku vydavatele.",
     "certificate_anchor": "Umožní jiným stránkám odkazovat přímo na tento certifikát, např. /pages/certifications#organic.",
     "certification_alt": "Popisuje odznak pro čtečky obrazovky, např. „GITCHIA certifikované bio, P26-92-1040“.",

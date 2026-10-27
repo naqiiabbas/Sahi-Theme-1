@@ -1890,6 +1890,19 @@
         "visible_if": "{{ settings.quick_add == true }}"
       },
       {
+        "type": "checkbox",
+        "id": "card_show_smallest_variant",
+        "label": "t:settings.card_show_smallest_variant",
+        "info": "t:info.card_show_smallest_variant",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_price_from",
+        "label": "t:settings.card_show_price_from",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "t:settings.media"
       },

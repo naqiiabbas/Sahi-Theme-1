@@ -206,6 +206,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "card_show_smallest_variant": "在卡片上显示最小规格",
+    "card_show_price_from": "在价格前显示\"起\"",
     "certifications_link": "认证链接",
     "certifications_link_label": "认证链接文字",
     "show_page_content": "显示页面内容",
@@ -1247,6 +1249,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "card_show_smallest_variant": "有多个规格的产品会在产品卡片上显示价格最低的规格。产品页面仍会以默认规格打开。",
     "certificate_document": "链接到证书文件或颁发机构的验证页面。",
     "certificate_anchor": "让其他页面直接链接到此证书，例如 /pages/certifications#organic。",
     "certification_alt": "为屏幕阅读器描述徽章，例如\"GITCHIA 有机认证，P26-92-1040\"。",

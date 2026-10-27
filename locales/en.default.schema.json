@@ -227,6 +227,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "card_show_smallest_variant": "Products with several sizes show the lowest-priced size on product cards. The product page still opens on the default size.",
     "certificate_document": "Link to the certificate document or the issuer’s verification page.",
     "certificate_anchor": "Lets other pages link straight to this certificate, e.g. /pages/certifications#organic.",
     "certification_alt": "Describes the badge for screen readers, e.g. \"GITCHIA certified organic, P26-92-1040\".",
@@ -843,6 +844,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "card_show_smallest_variant": "Show smallest size on cards",
+    "card_show_price_from": "Show \"From\" before price",
     "certifications_link": "Certifications link",
     "certifications_link_label": "Certifications link label",
     "show_page_content": "Show page content",

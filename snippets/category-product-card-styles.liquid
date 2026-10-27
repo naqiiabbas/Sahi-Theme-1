@@ -58,6 +58,24 @@
     transform: scale(1.03);
   }
 
+  .category-product-card__media--has-hover {
+    position: relative;
+  }
+
+  .category-product-card__image--hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--animation-speed) var(--animation-easing),
+      transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  @media (hover: hover) {
+    .category-product-card:hover .category-product-card__image--hover {
+      opacity: 1;
+    }
+  }
+
   .category-product-card__placeholder {
     fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
   }

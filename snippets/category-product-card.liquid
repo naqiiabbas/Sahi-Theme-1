@@ -8,7 +8,12 @@
   @param {product} [product] - The product to render. Omit to render a placeholder card.
   @param {string} section_id - The section ID, used for unique IDs and the quick add form.
   @param {number} [index] - Position in the grid; used to pick a placeholder image.
-  @param {boolean} [show_weight] - Shows the first variant's weight, or its title when it has no weight.
+  With Theme settings > Product cards > "Show smallest size on cards", products with several sizes show
+  their lowest-priced variant (image, size, price); the card still links to the product page, which opens
+  on the default variant. "Show second image on hover" swaps in the highest-priced variant's image, or the
+  product's second image. "Show From before price" prefixes the price when other variants cost more.
+
+  @param {boolean} [show_weight] - Shows the shown variant's weight, or its title when it has no weight.
   @param {boolean} [show_rating] - Shows the product rating from the standard reviews metafields.
   @param {string} [image_sizes] - The sizes attribute for the product image.
 
@@ -25,6 +30,40 @@
 {%- if product != blank -%}
   {%- liquid
     assign variant = product.selected_or_first_available_variant
+    assign hover_variant = variant
+
+    # Rank sizes by price: the cheapest is shown on the card, the dearest is the hover image.
+    if product.has_only_default_variant == false
+      assign variants_by_price = product.variants | where: 'available' | sort: 'price'
+      if variants_by_price.size == 0
+        assign variants_by_price = product.variants | sort: 'price'
+      endif
+      if settings.card_show_smallest_variant
+        assign variant = variants_by_price.first
+      endif
+      assign hover_variant = variants_by_price.last
+    endif
+
+    assign card_media = variant.featured_media | default: product.featured_media
+    assign hover_media = nil
+    if settings.show_second_image_on_hover and card_media
+      if hover_variant.featured_media and hover_variant.featured_media.id != card_media.id
+        assign hover_media = hover_variant.featured_media
+      else
+        for media in product.media
+          if media.id != card_media.id
+            assign hover_media = media
+            break
+          endif
+        endfor
+      endif
+    endif
+
+    assign show_price_from = false
+    if settings.card_show_price_from and variant.price < product.price_max
+      assign show_price_from = true
+    endif
+
     assign card_link_id = 'CategoryProductLink-' | append: section_id | append: '-' | append: product.id
 
     assign subtitle = ''
@@ -62,18 +101,30 @@
       aria-label="{{ product.title | escape }}"
     ></a>
 
-    <div class="category-product-card__media">
-      {%- if product.featured_media -%}
+    <div class="category-product-card__media{% if hover_media %} category-product-card__media--has-hover{% endif %}">
+      {%- if card_media -%}
         {{
-          product.featured_media.preview_image
+          card_media.preview_image
           | image_url: width: 900
           | image_tag:
             widths: '300, 450, 600, 900',
             sizes: sizes,
             loading: 'lazy',
-            alt: product.featured_media.alt | default: product.title,
+            alt: card_media.alt | default: product.title,
             class: 'category-product-card__image'
         }}
+        {%- if hover_media -%}
+          {{
+            hover_media.preview_image
+            | image_url: width: 900
+            | image_tag:
+              widths: '300, 450, 600, 900',
+              sizes: sizes,
+              loading: 'lazy',
+              alt: '',
+              class: 'category-product-card__image category-product-card__image--hover'
+          }}
+        {%- endif -%}
       {%- else -%}
         {{ 'product-1' | placeholder_svg_tag: 'category-product-card__image category-product-card__placeholder' }}
       {%- endif -%}
@@ -106,14 +157,22 @@
       {%- endif -%}
 
       <div class="category-product-card__footer">
+        {%- liquid
+          # The money filter can return markup, so it is swapped in after translating rather than interpolated.
+          assign display_price = variant.price | money
+          if show_price_from
+            assign price_from_text = 'content.price_from' | t: price: '__PRICE__'
+            assign display_price = price_from_text | replace: '__PRICE__', display_price
+          endif
+        -%}
         <p class="category-product-card__price">
-          {%- if product.compare_at_price > product.price -%}
+          {%- if variant.compare_at_price > variant.price -%}
             <span class="visually-hidden">{{ 'content.price_sale' | t }}</span>
-            <span>{{ product.price | money }}</span>
+            <span>{{ display_price }}</span>
             <span class="visually-hidden">{{ 'content.price_regular' | t }}</span>
-            <s class="category-product-card__compare">{{ product.compare_at_price | money }}</s>
+            <s class="category-product-card__compare">{{ variant.compare_at_price | money }}</s>
           {%- else -%}
-            <span>{{ product.price | money }}</span>
+            <span>{{ display_price }}</span>
           {%- endif -%}
         </p>
 

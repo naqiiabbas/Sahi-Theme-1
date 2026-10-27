@@ -206,6 +206,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "card_show_smallest_variant": "Kleinste Größe auf Karten anzeigen",
+    "card_show_price_from": "„Ab“ vor dem Preis anzeigen",
     "certifications_link": "Zertifizierungslink",
     "certifications_link_label": "Text des Zertifizierungslinks",
     "show_page_content": "Seiteninhalt anzeigen",
@@ -1247,6 +1249,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "card_show_smallest_variant": "Produkte mit mehreren Größen zeigen auf Produktkarten die günstigste Größe. Die Produktseite öffnet weiterhin mit der Standardgröße.",
     "certificate_document": "Link zum Zertifikatsdokument oder zur Prüfseite des Ausstellers.",
     "certificate_anchor": "Ermöglicht anderen Seiten, direkt auf dieses Zertifikat zu verlinken, z. B. /pages/certifications#organic.",
     "certification_alt": "Beschreibt das Siegel für Screenreader, z. B. „GITCHIA zertifiziert biologisch, P26-92-1040“.",

@@ -206,6 +206,8 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "card_show_smallest_variant": "Visa minsta storlek på kort",
+    "card_show_price_from": "Visa \"Från\" före priset",
     "certifications_link": "Certifieringslänk",
     "certifications_link_label": "Text för certifieringslänk",
     "show_page_content": "Visa sidinnehåll",
@@ -1247,6 +1249,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "card_show_smallest_variant": "Produkter med flera storlekar visar den billigaste storleken på produktkort. Produktsidan öppnas fortfarande med standardstorleken.",
     "certificate_document": "Länk till certifikatdokumentet eller utfärdarens verifieringssida.",
     "certificate_anchor": "Låter andra sidor länka direkt till detta certifikat, t.ex. /pages/certifications#organic.",
     "certification_alt": "Beskriver märket för skärmläsare, t.ex. \"GITCHIA certifierad ekologisk, P26-92-1040\".",

@@ -206,6 +206,8 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "card_show_smallest_variant": "Vis minste størrelse på kort",
+    "card_show_price_from": "Vis «Fra» før prisen",
     "certifications_link": "Sertifiseringslenke",
     "certifications_link_label": "Tekst for sertifiseringslenke",
     "show_page_content": "Vis sideinnhold",
@@ -1247,6 +1249,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "card_show_smallest_variant": "Produkter med flere størrelser viser den billigste størrelsen på produktkort. Produktsiden åpnes fortsatt med standardstørrelsen.",
     "certificate_document": "Lenke til sertifikatdokumentet eller utstederens verifiseringsside.",
     "certificate_anchor": "Lar andre sider lenke direkte til dette sertifikatet, f.eks. /pages/certifications#organic.",
     "certification_alt": "Beskriver merket for skjermlesere, f.eks. «GITCHIA sertifisert økologisk, P26-92-1040».",

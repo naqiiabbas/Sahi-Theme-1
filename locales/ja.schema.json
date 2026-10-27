@@ -206,6 +206,8 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "card_show_smallest_variant": "カードに最小サイズを表示",
+    "card_show_price_from": "価格の前に「から」を表示",
     "certifications_link": "認証リンク",
     "certifications_link_label": "認証リンクのラベル",
     "show_page_content": "ページコンテンツを表示",
@@ -1247,6 +1249,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "card_show_smallest_variant": "複数サイズがある商品は、商品カードに最も安いサイズを表示します。商品ページは引き続きデフォルトのサイズで開きます。",
     "certificate_document": "認証書類または発行元の確認ページへのリンク。",
     "certificate_anchor": "他のページからこの認証へ直接リンクできます（例：/pages/certifications#organic）。",
     "certification_alt": "スクリーンリーダー向けにバッジを説明します（例：「GITCHIA 有機認証、P26-92-1040」）。",

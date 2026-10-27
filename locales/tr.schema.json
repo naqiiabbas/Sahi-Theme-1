@@ -206,6 +206,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "card_show_smallest_variant": "Kartlarda en küçük boyutu göster",
+    "card_show_price_from": "Fiyattan önce \"Başlangıç\" göster",
     "certifications_link": "Sertifika bağlantısı",
     "certifications_link_label": "Sertifika bağlantısı etiketi",
     "show_page_content": "Sayfa içeriğini göster",
@@ -1247,6 +1249,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "card_show_smallest_variant": "Birden fazla boyutu olan ürünler, ürün kartlarında en ucuz boyutu gösterir. Ürün sayfası yine varsayılan boyutta açılır.",
     "certificate_document": "Sertifika belgesine veya veren kuruluşun doğrulama sayfasına bağlantı.",
     "certificate_anchor": "Diğer sayfaların doğrudan bu sertifikaya bağlantı vermesini sağlar, ör. /pages/certifications#organic.",
     "certification_alt": "Rozeti ekran okuyucular için açıklar, ör. \"GITCHIA sertifikalı organik, P26-92-1040\".",

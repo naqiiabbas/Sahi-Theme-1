@@ -206,6 +206,8 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "card_show_smallest_variant": "Pokaż najmniejszy rozmiar na kartach",
+    "card_show_price_from": "Pokaż „Od” przed ceną",
     "certifications_link": "Link do certyfikatów",
     "certifications_link_label": "Etykieta linku do certyfikatów",
     "show_page_content": "Pokaż treść strony",
@@ -1247,6 +1249,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "card_show_smallest_variant": "Produkty w kilku rozmiarach pokazują na kartach produktów najtańszy rozmiar. Strona produktu nadal otwiera się w rozmiarze domyślnym.",
     "certificate_document": "Link do dokumentu certyfikatu lub strony weryfikacji wystawcy.",
     "certificate_anchor": "Pozwala innym stronom linkować bezpośrednio do tego certyfikatu, np. /pages/certifications#organic.",
     "certification_alt": "Opisuje odznakę dla czytników ekranu, np. „GITCHIA certyfikat ekologiczny, P26-92-1040”.",

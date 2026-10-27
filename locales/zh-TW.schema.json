@@ -206,6 +206,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "card_show_smallest_variant": "在卡片上顯示最小規格",
+    "card_show_price_from": "在價格前顯示「起」",
     "certifications_link": "認證連結",
     "certifications_link_label": "認證連結文字",
     "show_page_content": "顯示頁面內容",
@@ -1247,6 +1249,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "card_show_smallest_variant": "有多個規格的商品會在商品卡片上顯示價格最低的規格。商品頁面仍會以預設規格開啟。",
     "certificate_document": "連結到證書文件或核發機構的驗證頁面。",
     "certificate_anchor": "讓其他頁面直接連結到此證書，例如 /pages/certifications#organic。",
     "certification_alt": "為螢幕閱讀器描述徽章，例如「GITCHIA 有機認證，P26-92-1040」。",

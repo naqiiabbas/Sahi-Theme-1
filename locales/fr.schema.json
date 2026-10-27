@@ -206,6 +206,8 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "card_show_smallest_variant": "Afficher la plus petite taille sur les cartes",
+    "card_show_price_from": "Afficher « À partir de » avant le prix",
     "certifications_link": "Lien des certifications",
     "certifications_link_label": "Texte du lien des certifications",
     "show_page_content": "Afficher le contenu de la page",
@@ -1247,6 +1249,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "card_show_smallest_variant": "Les produits proposés en plusieurs tailles affichent la taille la moins chère sur les cartes produit. La page produit s’ouvre toujours sur la taille par défaut.",
     "certificate_document": "Lien vers le document du certificat ou la page de vérification de l’organisme.",
     "certificate_anchor": "Permet aux autres pages de renvoyer directement à ce certificat, p. ex. /pages/certifications#organic.",
     "certification_alt": "Décrit le badge pour les lecteurs d’écran, p. ex. « GITCHIA certifié biologique, P26-92-1040 ».",

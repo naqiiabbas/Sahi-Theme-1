@@ -206,6 +206,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "card_show_smallest_variant": "Näytä pienin koko korteissa",
+    "card_show_price_from": "Näytä \"Alkaen\" ennen hintaa",
     "certifications_link": "Sertifikaattilinkki",
     "certifications_link_label": "Sertifikaattilinkin teksti",
     "show_page_content": "Näytä sivun sisältö",
@@ -1247,6 +1249,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "card_show_smallest_variant": "Useita kokoja sisältävät tuotteet näyttävät tuotekorteissa edullisimman koon. Tuotesivu avautuu edelleen oletuskoossa.",
     "certificate_document": "Linkki sertifikaattiasiakirjaan tai myöntäjän vahvistussivulle.",
     "certificate_anchor": "Antaa muiden sivujen linkittää suoraan tähän sertifikaattiin, esim. /pages/certifications#organic.",
     "certification_alt": "Kuvaa merkin näytönlukijoille, esim. \"GITCHIA sertifioitu luomu, P26-92-1040\".",
