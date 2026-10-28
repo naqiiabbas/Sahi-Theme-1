@@ -206,6 +206,8 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "badge_size_mobile": "Mærkestørrelse på mobil",
+    "certifications_text_mobile": "Vis titler og tekst på mobil",
     "illustration": "Illustration",
     "illustration_end": "Højre illustration",
     "illustration_start": "Venstre illustration",

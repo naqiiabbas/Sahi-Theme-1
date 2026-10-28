@@ -794,6 +794,8 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "badge_size_mobile": "גודל התג בנייד",
+    "certifications_text_mobile": "הצגת כותרות וטקסט בנייד",
     "illustration": "איור",
     "illustration_end": "איור ימני",
     "illustration_start": "איור שמאלי",

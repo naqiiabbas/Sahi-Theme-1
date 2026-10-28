@@ -206,6 +206,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "badge_size_mobile": "移动端徽章尺寸",
+    "certifications_text_mobile": "在移动端显示标题和文字",
     "illustration": "插图",
     "illustration_end": "右侧插图",
     "illustration_start": "左侧插图",

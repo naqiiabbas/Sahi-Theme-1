@@ -206,6 +206,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "badge_size_mobile": "Siegelgröße auf Mobilgeräten",
+    "certifications_text_mobile": "Titel und Text auf Mobilgeräten anzeigen",
     "illustration": "Illustration",
     "illustration_end": "Rechte Illustration",
     "illustration_start": "Linke Illustration",

@@ -206,6 +206,8 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "badge_size_mobile": "Taille du badge sur mobile",
+    "certifications_text_mobile": "Afficher les titres et le texte sur mobile",
     "illustration": "Illustration",
     "illustration_end": "Illustration de droite",
     "illustration_start": "Illustration de gauche",

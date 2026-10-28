@@ -206,6 +206,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "badge_size_mobile": "ขนาดตราบนมือถือ",
+    "certifications_text_mobile": "แสดงชื่อและข้อความบนมือถือ",
     "illustration": "ภาพประกอบ",
     "illustration_end": "ภาพประกอบด้านขวา",
     "illustration_start": "ภาพประกอบด้านซ้าย",

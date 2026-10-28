@@ -206,6 +206,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "badge_size_mobile": "Badgegrootte op mobiel",
+    "certifications_text_mobile": "Titels en tekst tonen op mobiel",
     "illustration": "Illustratie",
     "illustration_end": "Rechterillustratie",
     "illustration_start": "Linkerillustratie",

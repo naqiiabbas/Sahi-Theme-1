@@ -206,6 +206,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "badge_size_mobile": "Merkin koko mobiilissa",
+    "certifications_text_mobile": "Näytä otsikot ja teksti mobiilissa",
     "illustration": "Kuvitus",
     "illustration_end": "Oikea kuvitus",
     "illustration_start": "Vasen kuvitus",

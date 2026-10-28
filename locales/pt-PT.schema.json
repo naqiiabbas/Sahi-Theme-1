@@ -206,6 +206,8 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "badge_size_mobile": "Tamanho do selo no telemóvel",
+    "certifications_text_mobile": "Mostrar títulos e texto no telemóvel",
     "illustration": "Ilustração",
     "illustration_end": "Ilustração da direita",
     "illustration_start": "Ilustração da esquerda",

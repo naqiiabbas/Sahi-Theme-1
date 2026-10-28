@@ -206,6 +206,8 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "badge_size_mobile": "Rozmiar odznaki na telefonie",
+    "certifications_text_mobile": "Pokaż tytuły i tekst na telefonie",
     "illustration": "Ilustracja",
     "illustration_end": "Prawa ilustracja",
     "illustration_start": "Lewa ilustracja",

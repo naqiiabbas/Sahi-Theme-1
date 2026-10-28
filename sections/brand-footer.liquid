@@ -66,6 +66,7 @@
     {% render 'spacing-padding', settings: section.settings %}
     --brand-footer-logo-width: {{ section.settings.logo_width }}px;
     --brand-footer-badge-size: {{ section.settings.certification_badge_size }}px;
+    --brand-footer-badge-size-mobile: {{ section.settings.certification_badge_size_mobile }}px;
     --brand-footer-overlay: {{ section.settings.brand_overlay_opacity | divided_by: 100.0 }};
     {% if section.settings.accent_color != blank %}--brand-footer-accent: {{ section.settings.accent_color }}; --brand-footer-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
     {% if section.settings.button_background != blank %}--brand-footer-button-bg: {{ section.settings.button_background }};{% endif %}
@@ -225,7 +226,7 @@
 
   {%- comment -%} Certifications band {%- endcomment -%}
   {%- if certification_count > 0 -%}
-    <div class="brand-footer__certs section section--{{ section.settings.section_width }} color-custom-{{ certs_color_id }}">
+    <div class="brand-footer__certs section section--{{ section.settings.section_width }} color-custom-{{ certs_color_id }}{% unless section.settings.certifications_text_mobile %} brand-footer__certs--compact-mobile{% endunless %}">
       {% comment %} Outside the inner wrapper so the drawings reach the band's outer edges. {% endcomment %}
       {%- for side in sides -%}
         {%- liquid
@@ -859,21 +860,16 @@
     }
   }
 
+  /* One row at every width; phones get smaller badges (and optionally no titles or text). */
   .brand-footer__cert-list {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--gap-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     max-width: 60rem;
     margin: 0 auto;
     padding: 0;
     list-style: none;
-
-    @media screen and (min-width: 750px) {
-      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      gap: 0;
-    }
   }
 
   .brand-footer__cert {
@@ -887,6 +883,21 @@
       & + & {
         border-inline-start: 1px solid var(--brand-footer-line);
       }
+    }
+
+    @media screen and (max-width: 749px) {
+      padding-inline: var(--padding-xs);
+
+      .brand-footer__cert-image {
+        width: var(--brand-footer-badge-size-mobile);
+        height: var(--brand-footer-badge-size-mobile);
+      }
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .brand-footer__certs--compact-mobile :is(.brand-footer__cert-title, .brand-footer__cert-text) {
+      display: none;
     }
   }
 
@@ -1596,6 +1607,22 @@
       "step": 4,
       "unit": "px",
       "default": 140
+    },
+    {
+      "type": "range",
+      "id": "certification_badge_size_mobile",
+      "label": "t:settings.badge_size_mobile",
+      "min": 48,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 76
+    },
+    {
+      "type": "checkbox",
+      "id": "certifications_text_mobile",
+      "label": "t:settings.certifications_text_mobile",
+      "default": false
     },
     {
       "type": "color",

@@ -852,6 +852,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "badge_size_mobile": "Badge size on mobile",
+    "certifications_text_mobile": "Show titles and text on mobile",
     "illustration": "Illustration",
     "illustration_end": "Right illustration",
     "illustration_start": "Left illustration",

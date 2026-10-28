@@ -206,6 +206,8 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "badge_size_mobile": "모바일 배지 크기",
+    "certifications_text_mobile": "모바일에서 제목과 텍스트 표시",
     "illustration": "일러스트",
     "illustration_end": "오른쪽 일러스트",
     "illustration_start": "왼쪽 일러스트",

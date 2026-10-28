@@ -206,6 +206,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "badge_size_mobile": "行動裝置徽章尺寸",
+    "certifications_text_mobile": "在行動裝置顯示標題和文字",
     "illustration": "插圖",
     "illustration_end": "右側插圖",
     "illustration_start": "左側插圖",

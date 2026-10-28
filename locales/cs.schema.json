@@ -206,6 +206,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "badge_size_mobile": "Velikost odznaku na mobilu",
+    "certifications_text_mobile": "Zobrazit nadpisy a text na mobilu",
     "illustration": "Ilustrace",
     "illustration_end": "Pravá ilustrace",
     "illustration_start": "Levá ilustrace",
