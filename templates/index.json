@@ -644,6 +644,12 @@
         "slide_height": "large",
         "content_position": "on-media",
         "background_color": "",
+        "mobile_content_position": "below-media",
+        "mobile_image_ratio": "4 / 3",
+        "mobile_heading_size": 50,
+        "mobile_content_background": "{{ settings.color_palette.color1 }}",
+        "mobile_content_text": "{{ settings.color_palette.background }}",
+        "mobile_accent_color": "{{ settings.color_palette.color3 }}",
         "icons_style": "none",
         "icons_shape": "none",
         "slideshow_controls_style": "bars",
@@ -652,13 +658,7 @@
         "autoplay_speed": 5,
         "show_pause_button": false,
         "padding-block-start": 0,
-        "padding-block-end": 0,
-        "mobile_content_position": "below-media",
-        "mobile_image_ratio": "4 / 3",
-        "mobile_heading_size": 50,
-        "mobile_content_background": "{{ settings.color_palette.color1 }}",
-        "mobile_content_text": "{{ settings.color_palette.background }}",
-        "mobile_accent_color": "{{ settings.color_palette.color3 }}"
+        "padding-block-end": 0
       }
     },
     "category_showcase_main": {
@@ -740,8 +740,8 @@
     "promo_banner_products": {
       "type": "promo-banner",
       "settings": {
-        "image": "shopify://shop_images/Sahi_Achar_Collection_in_Golden_Sunlight.png",
-        "image_mobile": "shopify://shop_images/Sahi_-_website_3.png",
+        "image": "shopify://shop_images/Resize_and_enhance_image_quality_0882044a_2K.jpg",
+        "image_mobile": "shopify://shop_images/Resize_and_enhance_image_quality_e3ca3bd5_2K.jpg",
         "fallback_image": "promo-banner-pickles.jpg",
         "image_position": 75,
         "section_width": "full-width",
@@ -752,12 +752,12 @@
         "title": "Ingredients Sahi. Product Sahi.&nbsp;",
         "accent_new_line": false,
         "heading_tag": "h2",
-        "text": "",
+        "text": "&nbsp;High-quality everyday essentials for your pantry. No unnecessary intervention, and absolutely no interest in ‘good enough’.&nbsp;",
         "note": "",
         "title_font": "instrument_serif_n4",
         "title_size": 64,
         "button_label": "EXPLORE PRODUCTS",
-        "button_link": "shopify://collections/all",
+        "button_link": "",
         "button_radius": 2,
         "show_breadcrumbs": false,
         "breadcrumb_home_label": "Home",
@@ -858,27 +858,27 @@
           "type": "feature",
           "settings": {
             "number": "",
+            "image": "shopify://shop_images/Sahi_Feature_Carefully_Sourced.png",
             "title": "Carefully Sourced",
-            "text": "We choose the finest organic ingredients from trusted growers.",
-            "image": "shopify://shop_images/Sahi_Feature_Carefully_Sourced.png"
+            "text": "We choose the finest organic ingredients from trusted growers."
           }
         },
         "traditional_methods": {
           "type": "feature",
           "settings": {
             "number": "",
+            "image": "shopify://shop_images/Sahi_Feature_Thoughtfully_Made.png",
             "title": "Thoughtfully Made",
-            "text": "Traditional methods and time-honoured processes for authentic flavour.",
-            "image": "shopify://shop_images/Sahi_Feature_Thoughtfully_Made.png"
+            "text": "Traditional methods and time-honoured processes for authentic flavour."
           }
         },
         "real_ingredients": {
           "type": "feature",
           "settings": {
             "number": "",
+            "image": "shopify://shop_images/Sahi_Feature_Real_Ingredients_Jar.png",
             "title": "Real Ingredients",
-            "text": "Nothing artificial. Nothing unnecessary. Just Sahi.",
-            "image": "shopify://shop_images/Sahi_Feature_Real_Ingredients_Jar.png"
+            "text": "Nothing artificial. Nothing unnecessary. Just Sahi."
           }
         }
       },
@@ -889,6 +889,9 @@
       ],
       "settings": {
         "section_width": "page-width",
+        "layout": "vertical",
+        "show_numbers": false,
+        "image_height": 148,
         "show_dividers": true,
         "title_font": "instrument_serif_n4",
         "number_size": 52,
@@ -897,10 +900,7 @@
         "accent_color": "{{ settings.color_palette.color2 }}",
         "divider_color": "",
         "padding-block-start": 56,
-        "padding-block-end": 56,
-        "layout": "vertical",
-        "show_numbers": false,
-        "image_height": 148
+        "padding-block-end": 56
       }
     },
     "collection_spotlight_honey": {
