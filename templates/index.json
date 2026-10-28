@@ -175,7 +175,7 @@
                 "slide_1_statement": {
                   "type": "text",
                   "settings": {
-                    "text": "<h3>You Have Standards.<br/>So Do We!</h3>",
+                    "text": "<h3>You Have Standards.<br/>So Do We!<br/>We’re Certified Organic.</h3>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "right",
@@ -200,7 +200,7 @@
                 "slide_1_desc": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Certified Organic- No unnecessary intervention, and absolutely no interest in “good enough.”<br/></p>",
+                    "text": "",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "right",
