@@ -1,9 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "collection_hero": {
       "type": "promo-banner",
       "settings": {
-        "image": "{{ collection.image }}",
+        "image": "shopify://shop_images/Sahi_Nut_Butter_Trio_in_Golden_Light.png",
+        "image_mobile": "shopify://shop_images/Sahi_-_website_1.png",
         "fallback_image": "promo-banner-pickles.jpg",
         "image_position": 70,
         "section_width": "full-width",
@@ -11,7 +21,7 @@
         "overlay_color": "{{ settings.color_palette.color1 }}",
         "overlay_opacity": 100,
         "eyebrow": "",
-        "title": "Our <em>{{ collection.title }}</em>",
+        "title": "Sahi <em>{{ collection.title }}</em>",
         "accent_new_line": true,
         "heading_tag": "h1",
         "text": "Pure, honest and carefully crafted essentials for a more natural, wholesome life.",
@@ -24,7 +34,7 @@
         "show_breadcrumbs": false,
         "breadcrumb_home_label": "Home",
         "breadcrumb_nav_label": "Breadcrumb",
-        "tagline": "Real ingredients.\nA brighter tomorrow.",
+        "tagline": "",
         "tagline_style": "caps",
         "tagline_font": "instrument_sans_n4",
         "tagline_size": 30,
