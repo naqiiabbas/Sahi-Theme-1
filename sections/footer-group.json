@@ -27,7 +27,8 @@
               "olive-oils",
               "desi-ghee"
             ]
-          }
+          },
+          "disabled": true
         },
         "best_sellers": {
           "type": "products",
@@ -35,7 +36,8 @@
             "heading": "Best Sellers",
             "collection": "best-sellers",
             "product_count": 6
-          }
+          },
+          "disabled": true
         },
         "perk_offers": {
           "type": "perk",
@@ -108,7 +110,7 @@
         "pinterest_url": "",
         "twitter_url": "",
         "show_decoration": true,
-        "show_newsletter": true,
+        "show_newsletter": false,
         "newsletter_eyebrow": "Stay connected",
         "newsletter_heading": "Join Our Journey.",
         "newsletter_text": "Get the latest updates, recipes and exclusive offers straight to your inbox.",

@@ -21,6 +21,11 @@
         assign link_column_count = link_column_count | plus: 1
     endcase
   endfor
+  # With no link columns and no newsletter, the brand column is centered on its own.
+  assign brand_only = false
+  if link_column_count == 0 and section.settings.show_newsletter == false
+    assign brand_only = true
+  endif
   if link_column_count < 1
     assign link_column_count = 1
   endif
@@ -87,7 +92,7 @@
       </svg>
     {%- endif -%}
 
-    <div class="brand-footer__columns">
+    <div class="brand-footer__columns{% if brand_only %} brand-footer__columns--brand-only{% endif %}">
       {%- comment -%} Brand column {%- endcomment -%}
       <div class="brand-footer__brand">
         <a
@@ -520,6 +525,25 @@
     }
   }
 
+  .brand-footer__columns--brand-only {
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .brand-footer__brand {
+      align-items: center;
+      text-align: center;
+    }
+
+    .brand-footer__tagline {
+      max-width: 32rem;
+    }
+
+    .brand-footer__brand .brand-footer__social {
+      justify-content: center;
+    }
+  }
+
   .brand-footer__newsletter {
     @media screen and (max-width: 989px) {
       padding-block-start: var(--padding-xl);
@@ -543,11 +567,26 @@
     font-family: var(--brand-footer-font) !important;
   }
 
+  /* Centered on phones; start-aligned beside the other columns from 750px. */
   .brand-footer__brand {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--gap-lg);
+    text-align: center;
+
+    .brand-footer__social {
+      justify-content: center;
+    }
+
+    @media screen and (min-width: 750px) {
+      align-items: flex-start;
+      text-align: start;
+
+      .brand-footer__social {
+        justify-content: flex-start;
+      }
+    }
   }
 
   .brand-footer__logo {
@@ -817,16 +856,27 @@
     color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
   }
 
-  /* Copyright with certification badges beside it; stacked and centered on mobile. */
+  /* Copyright with certification badges beside it; on phones the badges stack above the copyright, centered. */
   .brand-footer__bottom-start {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: var(--gap-md) var(--gap-lg);
+    gap: var(--gap-md);
+
+    .brand-footer__certifications {
+      order: -1;
+      justify-content: center;
+    }
 
     @media screen and (min-width: 750px) {
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: flex-start;
+      gap: var(--gap-md) var(--gap-lg);
+
+      .brand-footer__certifications {
+        order: 0;
+      }
     }
   }
 
@@ -903,11 +953,17 @@
     align-items: center;
     gap: var(--gap-md);
 
+    /* The leading rule only shows from 750px, so the note stays truly centered on phones. */
     &::before {
       content: '';
+      display: none;
       width: 2.5rem;
       height: 1px;
       background-color: var(--brand-footer-line);
+
+      @media screen and (min-width: 750px) {
+        display: block;
+      }
     }
   }
 
