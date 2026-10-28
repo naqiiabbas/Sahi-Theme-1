@@ -17,6 +17,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/Sahi_Gourmet_Collection_in_Burgundy_Glow.png",
+            "image_mobile": "shopify://shop_images/sahi_collection_mobile_430x400_75b19d50-3b58-4068-ab68-ff742477cb4a.png",
             "image_asset": "hero-slide-1.jpg",
             "content_direction": "row",
             "vertical_on_mobile": true,
@@ -733,11 +734,13 @@
     "promo_banner_products": {
       "type": "promo-banner",
       "settings": {
+        "image": "shopify://shop_images/Sahi_Achar_Collection_in_Golden_Sunlight.png",
+        "image_mobile": "shopify://shop_images/Sahi_-_website_3.png",
         "fallback_image": "promo-banner-pickles.jpg",
         "image_position": 75,
         "section_width": "full-width",
         "min_height": 460,
-        "overlay_color": "{{ settings.color_palette.background }}",
+        "overlay_color": "{{ settings.color_palette.color3 }}",
         "overlay_opacity": 85,
         "eyebrow": "THE SAHI COLLECTION",
         "title": "Ingredients Sahi. Product Sahi.&nbsp;",
