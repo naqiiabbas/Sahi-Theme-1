@@ -1,10 +1,11 @@
 {% comment %}
   Section contract.
-  Brand footer: logo, tagline, and social links; link columns (collections, products from a collection,
-  or a menu); a newsletter sign-up with perks; and a bottom bar with copyright, certification badges,
-  payment icons, and a note. Perk and certification blocks are not link columns.
+  Brand footer in three bands: a brand band (background image, logo, heading, tagline, social links),
+  a certifications band (certification blocks with badge, title and text), and a closing band with link
+  columns, an optional newsletter with perks, a slogan, and a bottom bar with copyright, payment icons
+  and a note. Perk and certification blocks are not link columns.
   @example
-  <!-- Added to the footer group. Link columns and perks are blocks. -->
+  <!-- Added to the footer group. Link columns, perks and certifications are blocks. -->
 {% endcomment %}
 
 {%- liquid
@@ -21,19 +22,17 @@
         assign link_column_count = link_column_count | plus: 1
     endcase
   endfor
-  # With no link columns and no newsletter, the brand column is centered on its own.
-  assign brand_only = false
-  if link_column_count == 0 and section.settings.show_newsletter == false
-    assign brand_only = true
-  endif
-  if link_column_count < 1
-    assign link_column_count = 1
-  endif
 
   assign logo_image = section.settings.logo | default: settings.logo
+  assign hero_image = section.settings.brand_background_image
+  assign hero_image_mobile = section.settings.brand_background_image_mobile | default: hero_image
   assign form_id = 'BrandFooterNewsletter-' | append: section.id
   assign email_id = 'BrandFooterEmail-' | append: section.id
   assign message_id = 'BrandFooterMessage-' | append: section.id
+  assign certs_color_id = section.id | append: '-certs'
+  assign leaf_id = 'BrandFooterLeaf-' | append: section.id
+  assign sprig_id = 'BrandFooterSprig-' | append: section.id
+  assign sides = 'start,end' | split: ','
 -%}
 
 {% render 'contrast-override',
@@ -41,6 +40,14 @@
   text_color: section.settings.text_color,
   section_id: section.id
 %}
+
+{%- if certification_count > 0 -%}
+  {% render 'contrast-override',
+    background_color: section.settings.certifications_background,
+    text_color: section.settings.certifications_text_color,
+    section_id: certs_color_id
+  %}
+{%- endif -%}
 
 {% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
 {% style %}
@@ -54,392 +61,507 @@
 
 <div class="section-background color-custom-{{ section.id }}"></div>
 <div
-  class="brand-footer brand-footer-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  class="brand-footer brand-footer-{{ section.id }} color-custom-{{ section.id }}"
   style="
     {% render 'spacing-padding', settings: section.settings %}
-    --brand-footer-link-columns: {{ link_column_count }};
     --brand-footer-logo-width: {{ section.settings.logo_width }}px;
+    --brand-footer-badge-size: {{ section.settings.certification_badge_size }}px;
+    --brand-footer-overlay: {{ section.settings.brand_overlay_opacity | divided_by: 100.0 }};
     {% if section.settings.accent_color != blank %}--brand-footer-accent: {{ section.settings.accent_color }}; --brand-footer-accent-rgb: {{ section.settings.accent_color.rgb }};{% endif %}
     {% if section.settings.button_background != blank %}--brand-footer-button-bg: {{ section.settings.button_background }};{% endif %}
     {% if section.settings.button_text_color != blank %}--brand-footer-button-text: {{ section.settings.button_text_color }};{% endif %}
+    {% if section.settings.certifications_title_color != blank %}--brand-footer-cert-title: {{ section.settings.certifications_title_color }};{% endif %}
   "
 >
-  <div class="brand-footer__inner">
-    {%- if section.settings.show_decoration -%}
-      <svg
-        class="brand-footer__decoration"
-        aria-hidden="true"
-        focusable="false"
-        viewBox="0 0 160 220"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+  {%- if section.settings.show_decoration -%}
+    {% comment %} One leaf drawing, reused by every illustration in the footer. {% endcomment %}
+    <svg
+      class="brand-footer__defs"
+      aria-hidden="true"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <symbol
+        id="{{ leaf_id }}"
+        viewBox="0 0 64 24"
       >
-        <g stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 216C40 170 62 120 96 78C112 58 128 42 150 30"/>
-          <path d="M44 162C20 150 10 124 14 98C38 106 52 130 44 162Z"/>
-          <path d="M44 162C34 140 24 120 14 98"/>
-          <path d="M36 150L22 140M30 132L18 126M26 116L16 112"/>
-          <path d="M64 128C64 100 80 78 104 68C108 94 92 118 64 128Z"/>
-          <path d="M64 128C78 108 90 88 104 68"/>
-          <path d="M74 112L66 100M84 98L78 86M94 84L90 74"/>
-          <path d="M70 118C46 118 28 104 22 82"/>
-          <path d="M96 78C88 54 96 30 116 14C126 38 118 62 96 78Z"/>
-          <path d="M96 78C104 58 110 36 116 14"/>
-          <path d="M100 62L94 54M106 46L100 38"/>
-          <path d="M120 50C140 36 156 36 158 38C150 54 134 60 120 50Z"/>
-          <path d="M120 50C132 46 144 42 158 38"/>
+        <g fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 12C14 2 38-1 62 10 40 22 16 22 2 12Z"/>
+          <path d="M2 12C22 11 42 10 62 10"/>
+          <path d="M14 11.6 20 6M24 11.2 31 4.6M34 10.8 41 4.8M44 10.4 50 6.4M14 11.7 21 17M24 11.3 31 18.2M34 10.9 41 16.8M44 10.5 50 14.8"/>
         </g>
-      </svg>
+      </symbol>
+      <symbol
+        id="{{ sprig_id }}"
+        viewBox="0 0 260 260"
+      >
+        <path d="M14 254C64 196 118 132 240 18" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        <use href="#{{ leaf_id }}" width="80" height="30" x="-2" y="-15" transform="translate(44 220) rotate(-92)"/>
+        <use href="#{{ leaf_id }}" width="80" height="30" x="-2" y="-15" transform="translate(58 204) rotate(-4)"/>
+        <use href="#{{ leaf_id }}" width="74" height="28" x="-2" y="-14" transform="translate(92 164) rotate(-96)"/>
+        <use href="#{{ leaf_id }}" width="74" height="28" x="-2" y="-14" transform="translate(108 146) rotate(-8)"/>
+        <use href="#{{ leaf_id }}" width="66" height="25" x="-2" y="-12" transform="translate(142 112) rotate(-100)"/>
+        <use href="#{{ leaf_id }}" width="66" height="25" x="-2" y="-12" transform="translate(160 94) rotate(-12)"/>
+        <use href="#{{ leaf_id }}" width="58" height="22" x="-2" y="-11" transform="translate(192 64) rotate(-104)"/>
+        <use href="#{{ leaf_id }}" width="58" height="22" x="-2" y="-11" transform="translate(206 52) rotate(-18)"/>
+        <use href="#{{ leaf_id }}" width="52" height="20" x="-2" y="-10" transform="translate(236 22) rotate(-48)"/>
+      </symbol>
+    </svg>
+  {%- endif -%}
+
+  {%- comment -%} Brand band {%- endcomment -%}
+  <div class="brand-footer__hero section section--{{ section.settings.section_width }}">
+    {%- if hero_image != blank -%}
+      <div
+        class="brand-footer__hero-media"
+        aria-hidden="true"
+      >
+        {{
+          hero_image
+          | image_url: width: 3000
+          | image_tag:
+            widths: '750, 1100, 1500, 2000, 2500, 3000',
+            sizes: '100vw',
+            loading: 'lazy',
+            alt: '',
+            class: 'brand-footer__hero-image brand-footer__hero-image--desktop'
+        }}
+        {{
+          hero_image_mobile
+          | image_url: width: 1500
+          | image_tag:
+            widths: '450, 750, 1100, 1500',
+            sizes: '100vw',
+            loading: 'lazy',
+            alt: '',
+            class: 'brand-footer__hero-image brand-footer__hero-image--mobile'
+        }}
+      </div>
     {%- endif -%}
 
-    <div class="brand-footer__columns{% if brand_only %} brand-footer__columns--brand-only{% endif %}">
-      {%- comment -%} Brand column {%- endcomment -%}
-      <div class="brand-footer__brand">
-        <a
-          href="{{ routes.root_url }}"
-          class="brand-footer__logo"
-        >
-          {%- if section.settings.show_logo_image and logo_image != blank -%}
-            {{
-              logo_image
-              | image_url: width: 600
-              | image_tag:
-                widths: '200, 300, 400, 600',
-                sizes: '(min-width: 750px) 200px, 160px',
-                loading: 'lazy',
-                alt: shop.name,
-                class: 'brand-footer__logo-image'
-            }}
-          {%- elsif section.settings.show_logo_image -%}
-            {% comment %} Same fallback logo file as blocks/_header-logo.liquid when no logo is set. {% endcomment %}
-            {% render 'asset-image',
-              file: 'Sahi_Brand_Logo.png',
-              alt: shop.name,
-              width: 1672,
-              height: 941,
-              max_width: 1672,
+    <div class="brand-footer__brand">
+      <a
+        href="{{ routes.root_url }}"
+        class="brand-footer__logo"
+      >
+        {%- if section.settings.show_logo_image and logo_image != blank -%}
+          {{
+            logo_image
+            | image_url: width: 600
+            | image_tag:
               widths: '200, 300, 400, 600',
-              sizes: '(min-width: 750px) 200px, 160px',
+              sizes: '(min-width: 750px) 300px, 200px',
+              loading: 'lazy',
+              alt: shop.name,
               class: 'brand-footer__logo-image'
-            %}
-          {%- else -%}
-            <span class="brand-footer__logo-text">{{ section.settings.brand_name | default: shop.name | escape }}</span>
-          {%- endif -%}
-        </a>
-
-        {%- if section.settings.tagline != blank -%}
-          <div class="brand-footer__tagline">{{ section.settings.tagline }}</div>
+          }}
+        {%- elsif section.settings.show_logo_image -%}
+          {% comment %} Same fallback logo file as blocks/_header-logo.liquid when no logo is set. {% endcomment %}
+          {% render 'asset-image',
+            file: 'Sahi_Brand_Logo.png',
+            alt: shop.name,
+            width: 1672,
+            height: 941,
+            max_width: 1672,
+            widths: '200, 300, 400, 600',
+            sizes: '(min-width: 750px) 300px, 200px',
+            class: 'brand-footer__logo-image'
+          %}
+        {%- else -%}
+          <span class="brand-footer__logo-text">{{ section.settings.brand_name | default: shop.name | escape }}</span>
         {%- endif -%}
+      </a>
 
-        {%- liquid
-          assign social_platforms = 'instagram,facebook,tiktok,youtube,pinterest,twitter' | split: ','
-          assign has_social = false
-          for platform in social_platforms
-            assign url_key = platform | append: '_url'
-            if section.settings[url_key] != blank
-              assign has_social = true
-            endif
-          endfor
-        -%}
-        {%- if has_social -%}
-          <ul
-            class="brand-footer__social"
-            role="list"
-          >
-            {%- for platform in social_platforms -%}
-              {%- assign url_key = platform | append: '_url' -%}
-              {%- if section.settings[url_key] != blank -%}
-                <li>
-                  <a
-                    href="{{ section.settings[url_key] }}"
-                    class="brand-footer__social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="{{ platform | capitalize }}"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      focusable="false"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      {%- render 'icon', icon: platform -%}
-                    </svg>
-                  </a>
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-      </div>
+      {%- if section.settings.brand_heading != blank -%}
+        <p class="brand-footer__headline">{{ section.settings.brand_heading | escape }}</p>
+      {%- endif -%}
 
-      {%- comment -%} Link columns {%- endcomment -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'perk' or block.type == 'certification' -%}
-          {%- continue -%}
-        {%- endif -%}
-        <nav
-          class="brand-footer__links"
-          aria-label="{{ block.settings.heading | escape }}"
-          {{ block.shopify_attributes }}
+      {%- if section.settings.tagline != blank -%}
+        <div class="brand-footer__tagline">{{ section.settings.tagline }}</div>
+      {%- endif -%}
+
+      {%- liquid
+        assign social_platforms = 'instagram,facebook,tiktok,youtube,pinterest,twitter' | split: ','
+        assign has_social = false
+        for platform in social_platforms
+          assign url_key = platform | append: '_url'
+          if section.settings[url_key] != blank
+            assign has_social = true
+          endif
+        endfor
+      -%}
+      {%- if has_social -%}
+        <ul
+          class="brand-footer__social"
+          role="list"
         >
-          {%- if block.settings.heading != blank -%}
-            <h2 class="brand-footer__col-title">{{ block.settings.heading | escape }}</h2>
-          {%- endif -%}
-          <ul class="brand-footer__list">
-            {%- case block.type -%}
-              {%- when 'collections' -%}
-                {%- if block.settings.show_all_products -%}
-                  <li><a href="{{ routes.all_products_collection_url }}">{{ block.settings.all_products_label | escape }}</a></li>
-                {%- endif -%}
-                {%- for collection in block.settings.collection_list -%}
-                  <li><a href="{{ collection.url }}">{{ collection.title | escape }}</a></li>
-                {%- endfor -%}
-              {%- when 'products' -%}
-                {%- for product in block.settings.collection.products limit: block.settings.product_count -%}
-                  <li><a href="{{ product.url }}">{{ product.title | escape }}</a></li>
-                {%- endfor -%}
-              {%- when 'menu' -%}
-                {%- for link in block.settings.menu.links -%}
-                  <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-                {%- endfor -%}
-            {%- endcase -%}
-          </ul>
-        </nav>
-      {%- endfor -%}
-
-      {%- comment -%} Newsletter column {%- endcomment -%}
-      {%- if section.settings.show_newsletter -%}
-        <div class="brand-footer__newsletter">
-          {%- if section.settings.newsletter_eyebrow != blank -%}
-            <p class="brand-footer__eyebrow">{{ section.settings.newsletter_eyebrow | escape }}</p>
-          {%- endif -%}
-          {%- if section.settings.newsletter_heading != blank -%}
-            <h2 class="brand-footer__news-title">{{ section.settings.newsletter_heading | escape }}</h2>
-          {%- endif -%}
-          {%- if section.settings.newsletter_text != blank -%}
-            <p class="brand-footer__newsletter-text">{{ section.settings.newsletter_text }}</p>
-          {%- endif -%}
-
-          {%- form 'customer', id: form_id, class: 'brand-footer__form' -%}
-            <input
-              type="hidden"
-              name="contact[tags]"
-              value="newsletter"
-            >
-            <div class="brand-footer__field">
-              <label
-                for="{{ email_id }}"
-                class="visually-hidden"
-              >
-                {{- 'blocks.email_signup.label' | t -}}
-              </label>
-              <input
-                id="{{ email_id }}"
-                class="brand-footer__input"
-                type="email"
-                name="contact[email]"
-                autocorrect="off"
-                autocapitalize="off"
-                autocomplete="email"
-                {% if section.settings.newsletter_placeholder != blank %}
-                  placeholder="{{ section.settings.newsletter_placeholder | escape }}"
-                {% else %}
-                  placeholder="{{ 'blocks.email_signup.placeholder' | t }}"
-                {% endif %}
-                required
-                {% if form.errors or form.posted_successfully? %}
-                  aria-describedby="{{ message_id }}"
-                {% endif %}
-                {% if form.errors %}
-                  aria-invalid="true"
-                {% endif %}
-              >
-              <button
-                type="submit"
-                class="brand-footer__submit"
-                aria-label="{{ 'actions.sign_up' | t }}"
-              >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  viewBox="0 0 24 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          {%- for platform in social_platforms -%}
+            {%- assign url_key = platform | append: '_url' -%}
+            {%- if section.settings[url_key] != blank -%}
+              <li>
+                <a
+                  href="{{ section.settings[url_key] }}"
+                  class="brand-footer__social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="{{ platform | capitalize }}"
                 >
-                  <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </div>
-
-            {%- if form.errors -%}
-              <p
-                id="{{ message_id }}"
-                class="brand-footer__message brand-footer__message--error"
-                role="alert"
-              >
-                {{ form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email }}
-              </p>
-            {%- elsif form.posted_successfully? -%}
-              <p
-                id="{{ message_id }}"
-                class="brand-footer__message"
-                role="status"
-              >
-                {{ 'blocks.email_signup.success' | t }}
-              </p>
-            {%- endif -%}
-          {%- endform -%}
-
-          {%- liquid
-            assign perk_count = 0
-            for block in section.blocks
-              if block.type == 'perk'
-                assign perk_count = perk_count | plus: 1
-              endif
-            endfor
-          -%}
-          {%- if perk_count > 0 -%}
-            <ul class="brand-footer__perks">
-              {%- for block in section.blocks -%}
-                {%- if block.type != 'perk' -%}
-                  {%- continue -%}
-                {%- endif -%}
-                <li
-                  class="brand-footer__perk"
-                  {{ block.shopify_attributes }}
-                >
-                  <span
-                    class="brand-footer__perk-icon"
+                  <svg
                     aria-hidden="true"
+                    focusable="false"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      focusable="false"
-                    >
-                      <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                        {%- case block.settings.icon -%}
-                          {%- when 'gift' -%}
-                            <path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13"/>
-                            <path d="M12 7C10 3 6 3.5 6.5 6 7 7 9 7 12 7ZM12 7c2-4 6-3.5 5.5-1-.5 1-2.5 1-5.5 1Z"/>
-                          {%- when 'heart' -%}
-                            <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/>
-                          {%- when 'truck' -%}
-                            <path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/>
-                            <circle cx="7" cy="17.5" r="1.8"/>
-                            <circle cx="17" cy="17.5" r="1.8"/>
-                          {%- when 'star' -%}
-                            <path d="m12 4 2.4 5 5.4.7-4 3.7 1 5.4L12 16.2 7.2 18.8l1-5.4-4-3.7 5.4-.7Z"/>
-                          {%- else -%}
-                            <path d="M6 18C6 10 11 5 19 5c0 8-5 13-13 13Z"/>
-                            <path d="M6 18 14 10"/>
-                        {%- endcase -%}
-                      </g>
-                    </svg>
-                  </span>
-                  <span class="brand-footer__perk-label">{{ block.settings.label | escape }}</span>
-                </li>
-              {%- endfor -%}
-            </ul>
-          {%- endif -%}
-        </div>
+                    {%- render 'icon', icon: platform -%}
+                  </svg>
+                </a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
       {%- endif -%}
     </div>
+  </div>
 
-    <div class="brand-footer__bottom">
-      <div class="brand-footer__bottom-start">
-        <p class="brand-footer__copyright">
-          &copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ section.settings.copyright_text | escape }}
-        </p>
-
-        {%- if certification_count > 0 -%}
-          <ul
-            class="brand-footer__certifications"
-            role="list"
+  {%- comment -%} Certifications band {%- endcomment -%}
+  {%- if certification_count > 0 -%}
+    <div class="brand-footer__certs section section--{{ section.settings.section_width }} color-custom-{{ certs_color_id }}">
+      {% comment %} Outside the inner wrapper so the drawings reach the band's outer edges. {% endcomment %}
+      {%- for side in sides -%}
+        {%- liquid
+          assign art_key = 'certifications_illustration_' | append: side
+          assign art_class = 'brand-footer__certs-art brand-footer__certs-art--' | append: side
+        -%}
+        {%- if section.settings[art_key] != blank -%}
+          {{
+            section.settings[art_key]
+            | image_url: width: 600
+            | image_tag:
+              widths: '300, 450, 600',
+              sizes: '15rem',
+              loading: 'lazy',
+              alt: '',
+              class: art_class
+          }}
+        {%- elsif section.settings.show_decoration -%}
+          <svg
+            class="brand-footer__certs-leaf brand-footer__certs-leaf--{{ side }}"
+            aria-hidden="true"
+            focusable="false"
           >
-            {%- for block in section.blocks -%}
-              {%- if block.type != 'certification' -%}{%- continue -%}{%- endif -%}
-              {%- liquid
-                assign cert_alt = block.settings.alt | default: block.settings.image.alt
-              -%}
-              <li
-                class="brand-footer__certification"
-                {{ block.shopify_attributes }}
-              >
-                {%- capture cert_image -%}
-                  {%- if block.settings.image != blank -%}
-                    {{
-                      block.settings.image
-                      | image_url: width: 320
-                      | image_tag:
-                        widths: '160, 240, 320',
-                        sizes: '7rem',
-                        loading: 'lazy',
-                        alt: cert_alt,
-                        class: 'brand-footer__certification-image'
-                    }}
-                  {%- elsif block.settings.fallback_image != blank -%}
-                    {% render 'asset-image',
-                      file: block.settings.fallback_image,
-                      alt: cert_alt,
-                      width: 320,
-                      height: 174,
-                      max_width: 320,
-                      widths: '160, 240, 320',
-                      sizes: '7rem',
-                      class: 'brand-footer__certification-image'
-                    %}
-                  {%- endif -%}
-                {%- endcapture -%}
-                {%- if block.settings.link != blank -%}
-                  {%- assign cert_link_start = block.settings.link | slice: 0 -%}
-                  <a
-                    href="{{ block.settings.link }}"
-                    class="brand-footer__certification-link"
-                    {% if cert_link_start != '/' and cert_link_start != '#' %}
-                      target="_blank" rel="noopener noreferrer"
-                    {% endif %}
-                  >
-                    {{- cert_image -}}
-                  </a>
-                {%- else -%}
-                  {{ cert_image }}
-                {%- endif -%}
-              </li>
-            {%- endfor -%}
-          </ul>
+            <use href="#{{ sprig_id }}"/>
+          </svg>
         {%- endif -%}
+      {%- endfor -%}
+
+      <div class="brand-footer__certs-inner">
+        {%- if section.settings.certifications_heading != blank -%}
+          <h2 class="brand-footer__certs-heading">{{ section.settings.certifications_heading | escape }}</h2>
+        {%- endif -%}
+
+        <ul
+          class="brand-footer__cert-list"
+          role="list"
+        >
+          {%- for block in section.blocks -%}
+            {%- if block.type != 'certification' -%}{%- continue -%}{%- endif -%}
+            {%- liquid
+              assign cert_alt = block.settings.alt | default: block.settings.image.alt | default: block.settings.title
+            -%}
+            <li
+              class="brand-footer__cert"
+              {{ block.shopify_attributes }}
+            >
+              {%- capture cert_image -%}
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 400
+                    | image_tag:
+                      widths: '160, 240, 320, 400',
+                      sizes: '200px',
+                      loading: 'lazy',
+                      alt: cert_alt,
+                      class: 'brand-footer__cert-image'
+                  }}
+                {%- elsif block.settings.fallback_image != blank -%}
+                  {% render 'asset-image',
+                    file: block.settings.fallback_image,
+                    alt: cert_alt,
+                    width: 320,
+                    height: 320,
+                    max_width: 320,
+                    widths: '160, 240, 320',
+                    sizes: '10rem',
+                    class: 'brand-footer__cert-image'
+                  %}
+                {%- endif -%}
+              {%- endcapture -%}
+              {%- if block.settings.link != blank -%}
+                {%- assign cert_link_start = block.settings.link | slice: 0 -%}
+                <a
+                  href="{{ block.settings.link }}"
+                  class="brand-footer__cert-link"
+                  {% if cert_link_start != '/' and cert_link_start != '#' %}
+                    target="_blank" rel="noopener noreferrer"
+                  {% endif %}
+                >
+                  {{- cert_image -}}
+                </a>
+              {%- else -%}
+                {{ cert_image }}
+              {%- endif -%}
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="brand-footer__cert-title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p class="brand-footer__cert-text">{{ block.settings.text | escape }}</p>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
 
         {%- if section.settings.certifications_link != blank and section.settings.certifications_label != blank -%}
           <a
             href="{{ section.settings.certifications_link }}"
-            class="brand-footer__certifications-more"
+            class="brand-footer__certs-more"
           >
             {{- section.settings.certifications_label | escape -}}
           </a>
         {%- endif -%}
       </div>
+    </div>
+  {%- endif -%}
 
-      <div class="brand-footer__bottom-end">
-        {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
-          <div class="brand-footer__payments">
-            <span class="visually-hidden">{{ 'blocks.payment_methods' | t }}</span>
-            <ul
-              class="brand-footer__payment-list"
-              role="list"
-            >
-              {%- for type in shop.enabled_payment_types -%}
-                <li>{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>
-              {%- endfor -%}
+  {%- comment -%} Closing band: link columns, newsletter, slogan, bottom bar {%- endcomment -%}
+  <div class="brand-footer__main section section--{{ section.settings.section_width }}">
+    <div class="brand-footer__main-inner">
+      <div class="brand-footer__columns">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'perk' or block.type == 'certification' -%}
+            {%- continue -%}
+          {%- endif -%}
+          <nav
+            class="brand-footer__links"
+            aria-label="{{ block.settings.heading | escape }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.heading != blank -%}
+              <h2 class="brand-footer__col-title">{{ block.settings.heading | escape }}</h2>
+            {%- endif -%}
+            <ul class="brand-footer__list">
+              {%- case block.type -%}
+                {%- when 'collections' -%}
+                  {%- if block.settings.show_all_products -%}
+                    <li><a href="{{ routes.all_products_collection_url }}">{{ block.settings.all_products_label | escape }}</a></li>
+                  {%- endif -%}
+                  {%- for collection in block.settings.collection_list -%}
+                    <li><a href="{{ collection.url }}">{{ collection.title | escape }}</a></li>
+                  {%- endfor -%}
+                {%- when 'products' -%}
+                  {%- for product in block.settings.collection.products limit: block.settings.product_count -%}
+                    <li><a href="{{ product.url }}">{{ product.title | escape }}</a></li>
+                  {%- endfor -%}
+                {%- when 'menu' -%}
+                  {%- for link in block.settings.menu.links -%}
+                    <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                  {%- endfor -%}
+              {%- endcase -%}
             </ul>
+          </nav>
+        {%- endfor -%}
+
+        {%- if section.settings.show_newsletter -%}
+          <div class="brand-footer__newsletter">
+            {%- if section.settings.newsletter_eyebrow != blank -%}
+              <p class="brand-footer__eyebrow">{{ section.settings.newsletter_eyebrow | escape }}</p>
+            {%- endif -%}
+            {%- if section.settings.newsletter_heading != blank -%}
+              <h2 class="brand-footer__news-title">{{ section.settings.newsletter_heading | escape }}</h2>
+            {%- endif -%}
+            {%- if section.settings.newsletter_text != blank -%}
+              <p class="brand-footer__newsletter-text">{{ section.settings.newsletter_text }}</p>
+            {%- endif -%}
+
+            {%- form 'customer', id: form_id, class: 'brand-footer__form' -%}
+              <input
+                type="hidden"
+                name="contact[tags]"
+                value="newsletter"
+              >
+              <div class="brand-footer__field">
+                <label
+                  for="{{ email_id }}"
+                  class="visually-hidden"
+                >
+                  {{- 'blocks.email_signup.label' | t -}}
+                </label>
+                <input
+                  id="{{ email_id }}"
+                  class="brand-footer__input"
+                  type="email"
+                  name="contact[email]"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if section.settings.newsletter_placeholder != blank %}
+                    placeholder="{{ section.settings.newsletter_placeholder | escape }}"
+                  {% else %}
+                    placeholder="{{ 'blocks.email_signup.placeholder' | t }}"
+                  {% endif %}
+                  required
+                  {% if form.errors or form.posted_successfully? %}
+                    aria-describedby="{{ message_id }}"
+                  {% endif %}
+                  {% if form.errors %}
+                    aria-invalid="true"
+                  {% endif %}
+                >
+                <button
+                  type="submit"
+                  class="brand-footer__submit"
+                  aria-label="{{ 'actions.sign_up' | t }}"
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    viewBox="0 0 24 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M1 8h21M15 2l7 6-7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+
+              {%- if form.errors -%}
+                <p
+                  id="{{ message_id }}"
+                  class="brand-footer__message brand-footer__message--error"
+                  role="alert"
+                >
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}
+                </p>
+              {%- elsif form.posted_successfully? -%}
+                <p
+                  id="{{ message_id }}"
+                  class="brand-footer__message"
+                  role="status"
+                >
+                  {{ 'blocks.email_signup.success' | t }}
+                </p>
+              {%- endif -%}
+            {%- endform -%}
+
+            {%- liquid
+              assign perk_count = 0
+              for block in section.blocks
+                if block.type == 'perk'
+                  assign perk_count = perk_count | plus: 1
+                endif
+              endfor
+            -%}
+            {%- if perk_count > 0 -%}
+              <ul class="brand-footer__perks">
+                {%- for block in section.blocks -%}
+                  {%- if block.type != 'perk' -%}
+                    {%- continue -%}
+                  {%- endif -%}
+                  <li
+                    class="brand-footer__perk"
+                    {{ block.shopify_attributes }}
+                  >
+                    <span
+                      class="brand-footer__perk-icon"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        focusable="false"
+                      >
+                        <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                          {%- case block.settings.icon -%}
+                            {%- when 'gift' -%}
+                              <path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13"/>
+                              <path d="M12 7C10 3 6 3.5 6.5 6 7 7 9 7 12 7ZM12 7c2-4 6-3.5 5.5-1-.5 1-2.5 1-5.5 1Z"/>
+                            {%- when 'heart' -%}
+                              <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/>
+                            {%- when 'truck' -%}
+                              <path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/>
+                              <circle cx="7" cy="17.5" r="1.8"/>
+                              <circle cx="17" cy="17.5" r="1.8"/>
+                            {%- when 'star' -%}
+                              <path d="m12 4 2.4 5 5.4.7-4 3.7 1 5.4L12 16.2 7.2 18.8l1-5.4-4-3.7 5.4-.7Z"/>
+                            {%- else -%}
+                              <path d="M6 18C6 10 11 5 19 5c0 8-5 13-13 13Z"/>
+                              <path d="M6 18 14 10"/>
+                          {%- endcase -%}
+                        </g>
+                      </svg>
+                    </span>
+                    <span class="brand-footer__perk-label">{{ block.settings.label | escape }}</span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
           </div>
         {%- endif -%}
 
-        {%- if section.settings.closing_note != blank -%}
-          <p class="brand-footer__note">{{ section.settings.closing_note | escape }}</p>
+        {%- if section.settings.links_illustration != blank -%}
+          {{
+            section.settings.links_illustration
+            | image_url: width: 600
+            | image_tag:
+              widths: '300, 450, 600',
+              sizes: '15rem',
+              loading: 'lazy',
+              alt: '',
+              class: 'brand-footer__main-art'
+          }}
+        {%- elsif section.settings.show_decoration -%}
+          <svg
+            class="brand-footer__main-leaf"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <use href="#{{ sprig_id }}"/>
+          </svg>
+        {%- endif -%}
+
+        {%- if section.settings.slogan != blank -%}
+          <p class="brand-footer__slogan">{{ section.settings.slogan | escape | newline_to_br }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="brand-footer__bottom">
+        <p class="brand-footer__copyright">
+          &copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ section.settings.copyright_text | escape }}
+        </p>
+
+        {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 or section.settings.closing_note != blank -%}
+          <div class="brand-footer__bottom-end">
+            {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+              <div class="brand-footer__payments">
+                <span class="visually-hidden">{{ 'blocks.payment_methods' | t }}</span>
+                <ul
+                  class="brand-footer__payment-list"
+                  role="list"
+                >
+                  {%- for type in shop.enabled_payment_types -%}
+                    <li>{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.closing_note != blank -%}
+              <p class="brand-footer__note">{{ section.settings.closing_note | escape }}</p>
+            {%- endif -%}
+          </div>
         {%- endif -%}
       </div>
     </div>
@@ -450,114 +572,29 @@
   .brand-footer {
     --brand-footer-accent-color: var(--brand-footer-accent, var(--color-foreground));
     --brand-footer-accent-color-rgb: var(--brand-footer-accent-rgb, var(--color-foreground-rgb));
-    --brand-footer-line: rgb(var(--brand-footer-accent-color-rgb) / var(--opacity-20));
+    --brand-footer-line: rgb(var(--brand-footer-accent-color-rgb) / var(--opacity-40));
 
+    position: relative;
     color: var(--color-foreground);
   }
 
-  /* The footer is the positioning context so the leaf can sit in its very bottom-left corner. */
-  .brand-footer {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .brand-footer__inner {
-    min-width: 0;
-  }
-
-  .brand-footer__decoration {
+  .brand-footer__defs {
     position: absolute;
-    inset-inline-start: 0;
-    inset-block-end: 0;
-    width: 7rem;
-    height: auto;
-    color: var(--brand-footer-accent-color);
-    opacity: var(--opacity-40);
-    pointer-events: none;
-
-    @media screen and (max-width: 989px) {
-      display: none;
-    }
-  }
-
-  [dir='rtl'] .brand-footer__decoration {
-    scale: -1 1;
-  }
-
-  /* Columns: brand, link columns, newsletter. Stacked on mobile and tablet. */
-  .brand-footer__columns,
-  .brand-footer__bottom {
-    position: relative;
-    z-index: 1;
-  }
-
-  .brand-footer__columns {
-    display: grid;
-    grid-template-columns: repeat(var(--brand-footer-link-columns), minmax(0, 1fr));
-    gap: var(--gap-2xl) var(--gap-xl);
-    padding-block-end: var(--padding-2xl);
-
-    > .brand-footer__brand,
-    > .brand-footer__newsletter {
-      grid-column: 1 / -1;
-    }
-
-    @media screen and (min-width: 990px) {
-      grid-template-columns:
-        minmax(0, 1.35fr)
-        repeat(var(--brand-footer-link-columns), minmax(0, 0.75fr))
-        minmax(0, 1.6fr);
-      gap: 0;
-
-      > .brand-footer__brand,
-      > .brand-footer__newsletter {
-        grid-column: auto;
-      }
-
-      > * + * {
-        padding-inline-start: var(--padding-3xl);
-        border-inline-start: 1px solid var(--brand-footer-line);
-      }
-
-      > *:not(:last-child) {
-        padding-inline-end: var(--padding-2xl);
-      }
-    }
-  }
-
-  .brand-footer__columns--brand-only {
-    @media screen and (min-width: 990px) {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .brand-footer__brand {
-      align-items: center;
-      text-align: center;
-    }
-
-    .brand-footer__tagline {
-      max-width: 32rem;
-    }
-
-    .brand-footer__brand .brand-footer__social {
-      justify-content: center;
-    }
-  }
-
-  .brand-footer__newsletter {
-    @media screen and (max-width: 989px) {
-      padding-block-start: var(--padding-xl);
-      border-block-start: 1px solid var(--brand-footer-line);
-    }
+    width: 0;
+    height: 0;
+    overflow: hidden;
   }
 
   /* !important and the extra class beat the global heading/paragraph/button font overrides in
      theme-styles-variables.liquid, so the section's font setting applies. */
   .brand-footer .brand-footer__logo-text,
+  .brand-footer .brand-footer__headline,
   .brand-footer .brand-footer__tagline,
   .brand-footer .brand-footer__tagline *,
-  .brand-footer .brand-footer__col-title,
+  .brand-footer .brand-footer__certs-heading,
+  .brand-footer .brand-footer__cert-title,
   .brand-footer .brand-footer__list a,
+  .brand-footer .brand-footer__slogan,
   .brand-footer .brand-footer__news-title,
   .brand-footer .brand-footer__newsletter-text,
   .brand-footer .brand-footer__input,
@@ -567,26 +604,55 @@
     font-family: var(--brand-footer-font) !important;
   }
 
-  /* Centered on phones; start-aligned beside the other columns from 750px. */
+  /* ---------- Brand band ---------- */
+  .brand-footer__hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: max(var(--padding-block-start), 2.5rem) var(--padding-3xl);
+  }
+
+  .brand-footer__hero-media {
+    grid-column: 1 / -1;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgb(0 0 0 / var(--brand-footer-overlay, 0));
+    }
+  }
+
+  .brand-footer__hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .brand-footer__hero-image--desktop {
+    @media screen and (max-width: 749px) {
+      display: none;
+    }
+  }
+
+  .brand-footer__hero-image--mobile {
+    @media screen and (min-width: 750px) {
+      display: none;
+    }
+  }
+
   .brand-footer__brand {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-lg);
+    min-width: 0;
     text-align: center;
-
-    .brand-footer__social {
-      justify-content: center;
-    }
-
-    @media screen and (min-width: 750px) {
-      align-items: flex-start;
-      text-align: start;
-
-      .brand-footer__social {
-        justify-content: flex-start;
-      }
-    }
   }
 
   .brand-footer__logo {
@@ -600,19 +666,34 @@
     width: var(--brand-footer-logo-width);
     max-width: 100%;
     height: auto;
+
+    @media screen and (max-width: 749px) {
+      width: min(var(--brand-footer-logo-width), 11rem);
+    }
   }
 
   .brand-footer__logo-text {
     font-weight: var(--brand-footer-font-weight);
-    font-size: clamp(2.75rem, 4vw, 3.75rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     line-height: 1;
   }
 
+  /* Not "__heading": the theme's global heading-font rule matches class names containing "heading". */
+  .brand-footer__headline {
+    margin: var(--margin-md) 0 0;
+    font-weight: var(--brand-footer-font-weight);
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
   .brand-footer__tagline {
-    max-width: 20rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    margin-block-start: var(--margin-xs);
+    font-size: clamp(1.0625rem, 1.6vw, 1.375rem);
+    line-height: 1.4;
+    letter-spacing: 0.06em;
     color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+    overflow-wrap: anywhere;
 
     p {
       margin: 0;
@@ -623,8 +704,9 @@
   .brand-footer__social {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-sm);
-    margin: 0;
+    justify-content: center;
+    gap: var(--gap-md);
+    margin: var(--margin-xl) 0 0;
     padding: 0;
     list-style: none;
   }
@@ -633,17 +715,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid rgb(var(--brand-footer-accent-color-rgb) / var(--opacity-60));
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--brand-footer-accent-color);
     border-radius: 50%;
     color: var(--brand-footer-accent-color);
     transition: background-color var(--animation-speed) var(--animation-easing),
       color var(--animation-speed) var(--animation-easing);
 
     svg {
-      width: 1rem;
-      height: 1rem;
+      width: 1.125rem;
+      height: 1.125rem;
       fill: currentColor;
     }
 
@@ -658,31 +740,331 @@
     }
   }
 
+  /* ---------- Certifications band ---------- */
+  .brand-footer__certs {
+    position: relative;
+    overflow: hidden;
+    color: var(--color-foreground);
+
+    /* Sections are painted transparent by base.css, so the band's color sits on its own layer. */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-background);
+    }
+  }
+
+  .brand-footer__certs-inner {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding-block: var(--padding-2xl) var(--padding-3xl);
+    text-align: center;
+  }
+
+  .brand-footer__certs-leaf {
+    position: absolute;
+    inset-block-start: 50%;
+    width: 15rem;
+    height: 15rem;
+    color: var(--brand-footer-accent-color);
+    opacity: var(--opacity-60);
+    pointer-events: none;
+
+    @media screen and (max-width: 989px) {
+      display: none;
+    }
+  }
+
+  .brand-footer__certs-leaf--start {
+    inset-inline-start: -2rem;
+    translate: 0 -45%;
+    rotate: 8deg;
+  }
+
+  .brand-footer__certs-leaf--end {
+    inset-inline-end: -2rem;
+    translate: 0 -45%;
+    scale: -1 1;
+    rotate: -8deg;
+  }
+
+  /* Illustration images sit flush with the band's outer edges, as in the design. */
+  .brand-footer__certs-art,
+  .brand-footer__certs-leaf {
+    /* Span every grid column so the drawings are positioned against the full band, not the page column. */
+    grid-column: 1 / -1;
+  }
+
+  .brand-footer__certs-art {
+    position: absolute;
+    z-index: 0;
+    width: clamp(11rem, 16vw, 15.5rem);
+    height: auto;
+    opacity: var(--opacity-85);
+    pointer-events: none;
+
+    @media screen and (max-width: 989px) {
+      display: none;
+    }
+  }
+
+  .brand-footer__certs-art--start {
+    inset-inline-start: 0;
+    inset-block-end: var(--padding-xl);
+  }
+
+  .brand-footer__certs-art--end {
+    inset-inline-end: 0;
+    inset-block-end: var(--padding-lg);
+  }
+
+  /* The drawings face the page edge they sit on, so they mirror with the reading direction. */
+  [dir='rtl'] .brand-footer__certs-art,
+  [dir='rtl'] .brand-footer__main-art {
+    scale: -1 1;
+  }
+
+  .brand-footer__certs-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-xl);
+    margin: 0 0 var(--margin-2xl);
+    font-weight: var(--brand-footer-font-weight);
+    font-size: clamp(0.9375rem, 1.4vw, 1.125rem);
+    line-height: 1.3;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 0 1 8rem;
+      height: 1px;
+      background-color: var(--brand-footer-accent-color);
+    }
+
+    @media screen and (max-width: 749px) {
+      gap: var(--gap-sm);
+      font-size: 0.8125rem;
+      letter-spacing: 0.14em;
+
+      &::before,
+      &::after {
+        flex-basis: 1.25rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .brand-footer__cert-list {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-2xl);
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      gap: 0;
+    }
+  }
+
+  .brand-footer__cert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding-inline: var(--padding-lg);
+
+    @media screen and (min-width: 750px) {
+      & + & {
+        border-inline-start: 1px solid var(--brand-footer-line);
+      }
+    }
+  }
+
+  .brand-footer__cert-link {
+    display: flex;
+    border-radius: 50%;
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--brand-footer-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  .brand-footer__cert-image {
+    display: block;
+    width: var(--brand-footer-badge-size);
+    max-width: 100%;
+    height: var(--brand-footer-badge-size);
+    object-fit: contain;
+  }
+
+  .brand-footer__cert-title {
+    margin: var(--margin-md) 0 var(--margin-2xs);
+    font-weight: var(--brand-footer-font-weight);
+    font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+    line-height: 1.15;
+    color: var(--brand-footer-cert-title, var(--color-foreground));
+  }
+
+  .brand-footer__cert-text {
+    max-width: 15rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+  }
+
+  .brand-footer__certs-more {
+    display: inline-block;
+    margin-block-start: var(--margin-xl);
+    font-size: 0.9375rem;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    text-decoration-color: rgb(var(--color-foreground-rgb) / var(--opacity-40));
+    transition: text-decoration-color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+
+  /* ---------- Closing band ---------- */
+  .brand-footer__main {
+    padding-block: var(--padding-2xl) var(--padding-block-end);
+  }
+
+  .brand-footer__main-inner {
+    min-width: 0;
+  }
+
+  .brand-footer__columns {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-2xl) var(--gap-xl);
+    padding-block-end: var(--padding-2xl);
+
+    > .brand-footer__newsletter,
+    > .brand-footer__slogan {
+      grid-column: 1 / -1;
+    }
+
+    @media screen and (min-width: 990px) {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+
+      > .brand-footer__links {
+        flex: 0 1 auto;
+        min-width: 12rem;
+        padding-inline-end: var(--padding-4xl);
+      }
+
+      > .brand-footer__links + .brand-footer__links {
+        padding-inline-start: var(--padding-4xl);
+        border-inline-start: 1px solid var(--brand-footer-line);
+      }
+
+      > .brand-footer__newsletter {
+        flex: 1 1 22rem;
+        padding-inline-start: var(--padding-4xl);
+      }
+    }
+  }
+
   .brand-footer__col-title {
     margin: 0 0 var(--margin-lg);
-    font-weight: var(--brand-footer-font-weight);
-    font-size: 1.25rem;
+    padding-block-end: var(--padding-sm);
+    font-family: var(--font-body--family);
+    font-weight: 500;
+    font-size: 0.875rem;
     line-height: 1.2;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
     color: var(--brand-footer-accent-color);
+    background: linear-gradient(var(--brand-footer-accent-color), var(--brand-footer-accent-color)) no-repeat start bottom / 2.5rem 1px;
   }
 
   .brand-footer__list {
     display: grid;
-    gap: var(--gap-sm);
+    gap: var(--gap-xs);
     margin: 0;
     padding: 0;
     list-style: none;
 
     a {
-      font-size: 1rem;
-      line-height: 1.3;
-      color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+      font-size: 1.3125rem;
+      line-height: 1.35;
+      color: var(--color-foreground);
       text-decoration: none;
       transition: color var(--animation-speed) var(--animation-easing);
 
       &:hover {
         color: var(--brand-footer-accent-color);
       }
+    }
+  }
+
+  .brand-footer__main-leaf {
+    display: none;
+
+    @media screen and (min-width: 990px) {
+      display: block;
+      flex: 1 1 auto;
+      align-self: stretch;
+      max-width: 15rem;
+      height: 9rem;
+      margin-inline-start: auto;
+      color: var(--brand-footer-accent-color);
+      opacity: var(--opacity-60);
+      rotate: 40deg;
+      pointer-events: none;
+    }
+  }
+
+  /* The sprig's stem runs down to the rule above the copyright, as in the design. */
+  .brand-footer__main-art {
+    display: none;
+
+    @media screen and (min-width: 990px) {
+      display: block;
+      flex: 0 1 15rem;
+      align-self: flex-end;
+      width: 15rem;
+      min-width: 0;
+      height: auto;
+      margin-inline-start: auto;
+      margin-block-end: calc(var(--padding-2xl) * -1);
+      opacity: var(--opacity-85);
+      pointer-events: none;
+    }
+  }
+
+  .brand-footer__slogan {
+    margin: 0;
+    padding-block-end: var(--padding-md);
+    font-style: italic;
+    font-weight: var(--brand-footer-font-weight);
+    font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+    line-height: 1.15;
+    text-align: center;
+    background: linear-gradient(var(--brand-footer-accent-color), var(--brand-footer-accent-color)) no-repeat center bottom / 3rem 1px;
+
+    @media screen and (min-width: 990px) {
+      flex: 0 0 auto;
+      margin-inline-start: var(--padding-2xl);
+      align-self: center;
     }
   }
 
@@ -852,76 +1234,8 @@
   .brand-footer__copyright,
   .brand-footer__note {
     margin: 0;
-    font-size: 0.9375rem;
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
-  }
-
-  /* Copyright with certification badges beside it; on phones the badges stack above the copyright, centered. */
-  .brand-footer__bottom-start {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--gap-md);
-
-    .brand-footer__certifications {
-      order: -1;
-      justify-content: center;
-    }
-
-    @media screen and (min-width: 750px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: var(--gap-md) var(--gap-lg);
-
-      .brand-footer__certifications {
-        order: 0;
-      }
-    }
-  }
-
-  .brand-footer__certifications {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--gap-sm);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .brand-footer__certification {
-    display: flex;
-  }
-
-  .brand-footer__certification-link {
-    display: flex;
-    border-radius: 2px;
-
-    &:focus-visible {
-      outline: var(--focus-outline-width) solid var(--brand-footer-accent-color);
-      outline-offset: var(--focus-outline-offset);
-    }
-  }
-
-  .brand-footer__certifications-more {
-    font-size: 0.875rem;
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-    text-decoration-color: rgb(var(--color-foreground-rgb) / var(--opacity-40));
-    transition: text-decoration-color var(--animation-speed) var(--animation-easing);
-
-    &:hover {
-      text-decoration-color: currentColor;
-    }
-  }
-
-  .brand-footer__certification-image {
-    display: block;
-    width: auto;
-    height: var(--brand-footer-cert-height, 2.5rem);
-    border-radius: 2px;
+    font-size: 1.0625rem;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
   }
 
   .brand-footer__bottom-end {
@@ -971,7 +1285,8 @@
     .brand-footer__social-link,
     .brand-footer__list a,
     .brand-footer__submit,
-    .brand-footer__submit svg {
+    .brand-footer__submit svg,
+    .brand-footer__certs-more {
       transition: none;
     }
   }
@@ -1123,6 +1438,16 @@
         },
         {
           "type": "text",
+          "id": "title",
+          "label": "t:settings.title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "t:settings.text"
+        },
+        {
+          "type": "text",
           "id": "alt",
           "label": "t:settings.alt_text",
           "info": "t:info.certification_alt"
@@ -1171,10 +1496,42 @@
       "visible_if": "{{ section.settings.show_logo_image == false }}"
     },
     {
+      "type": "text",
+      "id": "brand_heading",
+      "label": "t:settings.heading",
+      "default": "Your Favourite Foods. Done Right."
+    },
+    {
       "type": "richtext",
       "id": "tagline",
       "label": "t:settings.tagline",
       "default": "<p>Real ingredients. A brighter tomorrow. We create natural, wholesome essentials that bring goodness to everyday life.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "brand_background_image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "brand_background_image_mobile",
+      "label": "t:settings.mobile_image",
+      "visible_if": "{{ section.settings.brand_background_image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "brand_overlay_opacity",
+      "label": "t:settings.overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ section.settings.brand_background_image != blank }}"
     },
     {
       "type": "header",
@@ -1219,6 +1576,71 @@
       "id": "show_decoration",
       "label": "t:settings.show_decoration",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:names.certifications"
+    },
+    {
+      "type": "text",
+      "id": "certifications_heading",
+      "label": "t:settings.heading",
+      "default": "Certified. Not just claimed."
+    },
+    {
+      "type": "range",
+      "id": "certification_badge_size",
+      "label": "t:settings.badge_size",
+      "min": 80,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 140
+    },
+    {
+      "type": "color",
+      "id": "certifications_background",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "certifications_text_color",
+      "label": "t:settings.text_color",
+      "default": "{{ settings.color_palette.foreground }}"
+    },
+    {
+      "type": "color",
+      "id": "certifications_title_color",
+      "label": "t:settings.title_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "image_picker",
+      "id": "certifications_illustration_start",
+      "label": "t:settings.illustration_start",
+      "info": "t:info.footer_illustration"
+    },
+    {
+      "type": "image_picker",
+      "id": "certifications_illustration_end",
+      "label": "t:settings.illustration_end"
+    },
+    {
+      "type": "header",
+      "content": "t:content.links"
+    },
+    {
+      "type": "image_picker",
+      "id": "links_illustration",
+      "label": "t:settings.illustration",
+      "info": "t:info.footer_illustration"
+    },
+    {
+      "type": "textarea",
+      "id": "slogan",
+      "label": "t:settings.slogan",
+      "default": "Sahi Khao.\nSahi Jiyo!"
     },
     {
       "type": "header",

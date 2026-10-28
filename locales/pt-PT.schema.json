@@ -206,6 +206,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "illustration": "Ilustração",
+    "illustration_end": "Ilustração da direita",
+    "illustration_start": "Ilustração da esquerda",
+    "badge_size": "Tamanho do selo",
+    "slogan": "Slogan",
+    "title_color": "Cor do título",
     "menu_display": "Apresentação do menu",
     "show_account_icon": "Mostrar ícone da conta",
     "mobile_image": "Imagem para telemóvel",
@@ -1256,6 +1262,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "footer_illustration": "Um PNG transparente funciona melhor. Deixe vazio para mostrar o desenho de folhas integrado.",
     "menu_display": "A gaveta lateral mostra um botão de menu em todos os tamanhos de ecrã, como no telemóvel.",
     "slide_mobile_image": "Apresentada em ecrãs abaixo de 750 px em vez da imagem acima. Recomendado 1290 × 1200 px; centre o produto. Usa a imagem acima se vazia.",
     "promo_banner_mobile_image": "Ecrãs abaixo de 750 px, apresentada acima do texto. Recomendado 1500 × 1125 px (4:3). Usa a imagem para computador se vazia.",

@@ -206,6 +206,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "illustration": "Illustrazione",
+    "illustration_end": "Illustrazione destra",
+    "illustration_start": "Illustrazione sinistra",
+    "badge_size": "Dimensione del badge",
+    "slogan": "Slogan",
+    "title_color": "Colore del titolo",
     "menu_display": "Visualizzazione menu",
     "show_account_icon": "Mostra icona account",
     "mobile_image": "Immagine mobile",
@@ -1256,6 +1262,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "footer_illustration": "Un PNG trasparente funziona meglio. Lascia vuoto per mostrare il disegno di foglie integrato.",
     "menu_display": "Il pannello laterale mostra un pulsante menu su tutte le dimensioni dello schermo, come su mobile.",
     "slide_mobile_image": "Mostrata sugli schermi sotto i 750 px al posto dell’immagine sopra. Consigliato 1290 × 1200 px; centra il prodotto. Se vuota, usa l’immagine sopra.",
     "promo_banner_mobile_image": "Schermi sotto i 750 px, mostrata sopra il testo. Consigliato 1500 × 1125 px (4:3). Se vuota, usa l’immagine desktop.",

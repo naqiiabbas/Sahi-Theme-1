@@ -206,6 +206,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "illustration": "插图",
+    "illustration_end": "右侧插图",
+    "illustration_start": "左侧插图",
+    "badge_size": "徽章尺寸",
+    "slogan": "标语",
+    "title_color": "标题颜色",
     "menu_display": "菜单显示",
     "show_account_icon": "显示账户图标",
     "mobile_image": "移动端图片",
@@ -1256,6 +1262,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "footer_illustration": "透明 PNG 效果最佳。留空则显示内置的叶子图案。",
     "menu_display": "侧边抽屉会像在移动设备上一样，在所有屏幕尺寸上显示菜单按钮。",
     "slide_mobile_image": "在宽度小于 750 px 的屏幕上替代上方图片显示。建议 1290 × 1200 px，产品居中。留空则使用上方图片。",
     "promo_banner_mobile_image": "宽度小于 750 px 的屏幕，显示在文字上方。建议 1500 × 1125 px（4:3）。留空则使用桌面图片。",

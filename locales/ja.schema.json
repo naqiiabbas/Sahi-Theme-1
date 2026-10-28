@@ -206,6 +206,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "illustration": "イラスト",
+    "illustration_end": "右のイラスト",
+    "illustration_start": "左のイラスト",
+    "badge_size": "バッジのサイズ",
+    "slogan": "スローガン",
+    "title_color": "タイトルの色",
     "menu_display": "メニューの表示",
     "show_account_icon": "アカウントアイコンを表示",
     "mobile_image": "モバイル画像",
@@ -1256,6 +1262,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "footer_illustration": "透過PNGが最適です。空欄にすると、組み込みの葉のイラストが表示されます。",
     "menu_display": "サイドドロワーでは、モバイルと同様にすべての画面サイズでメニューボタンを表示します。",
     "slide_mobile_image": "幅750px未満の画面で上の画像の代わりに表示されます。推奨サイズは1290 × 1200px。商品は中央に配置してください。空の場合は上の画像を使用します。",
     "promo_banner_mobile_image": "幅750px未満の画面で、テキストの上に表示されます。推奨サイズは1500 × 1125px（4:3）。空の場合はデスクトップ画像を使用します。",

@@ -227,6 +227,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "footer_illustration": "Transparent PNG works best. Leave empty to show the built-in leaf drawing.",
     "menu_display": "Side drawer shows a menu button on every screen size, like on mobile.",
     "slide_mobile_image": "Shown on screens under 750 px instead of the image above. Recommended 1290 × 1200 px; keep the product centered. Uses the image above if empty.",
     "promo_banner_mobile_image": "Screens under 750 px, shown above the text. Recommended 1500 × 1125 px (4:3). Uses the desktop image if empty.",
@@ -851,6 +852,12 @@
     "below_media": "Below media"
   },
   "settings": {
+    "illustration": "Illustration",
+    "illustration_end": "Right illustration",
+    "illustration_start": "Left illustration",
+    "badge_size": "Badge size",
+    "slogan": "Slogan",
+    "title_color": "Title color",
     "menu_display": "Menu display",
     "show_account_icon": "Show account icon",
     "mobile_image": "Mobile image",

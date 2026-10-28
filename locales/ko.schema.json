@@ -206,6 +206,12 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "illustration": "일러스트",
+    "illustration_end": "오른쪽 일러스트",
+    "illustration_start": "왼쪽 일러스트",
+    "badge_size": "배지 크기",
+    "slogan": "슬로건",
+    "title_color": "제목 색상",
     "menu_display": "메뉴 표시",
     "show_account_icon": "계정 아이콘 표시",
     "mobile_image": "모바일 이미지",
@@ -1256,6 +1262,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "footer_illustration": "투명 PNG가 가장 좋습니다. 비워 두면 기본 나뭇잎 그림이 표시됩니다.",
     "menu_display": "사이드 서랍은 모바일처럼 모든 화면 크기에서 메뉴 버튼을 표시합니다.",
     "slide_mobile_image": "너비 750px 미만 화면에서 위 이미지 대신 표시됩니다. 권장 크기 1290 × 1200px. 제품을 가운데에 두세요. 비어 있으면 위 이미지를 사용합니다.",
     "promo_banner_mobile_image": "너비 750px 미만 화면, 텍스트 위에 표시됩니다. 권장 크기 1500 × 1125px(4:3). 비어 있으면 데스크톱 이미지를 사용합니다.",

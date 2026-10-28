@@ -66,43 +66,65 @@
             "image": "shopify://shop_images/Sahi_2_2d378538-5bf3-43fc-9c9a-b9e5269176e5.png",
             "fallback_image": "cert-gitcha-halal.png",
             "alt": "GITCHIA Institute of Global Certification, Halal",
-            "link": "/pages/certifications#halal"
+            "link": "/pages/certifications#halal",
+            "title": "Halal Certified",
+            "text": "Prepared in accordance with Halal standards."
           }
         },
         "cert_organic": {
           "type": "certification",
           "settings": {
-            "image": "shopify://shop_images/Sahi_4_48537a5c-963d-45d5-97b3-12ff15157416.png",
+            "image": "shopify://shop_images/Sahi_3_2720af19-2300-47f0-8b08-1cbed365836b.png",
             "fallback_image": "cert-gitcha-organic.jpg",
             "alt": "GITCHIA Product Certification, Organic, P26-92-1040",
-            "link": "/pages/certifications#organic"
+            "link": "/pages/certifications#organic",
+            "title": "Organic Certified",
+            "text": "Made with organically sourced ingredients."
           }
         },
         "cert_iso": {
           "type": "certification",
           "settings": {
-            "image": "shopify://shop_images/Sahi_3_2720af19-2300-47f0-8b08-1cbed365836b.png",
+            "image": "shopify://shop_images/Sahi_4_48537a5c-963d-45d5-97b3-12ff15157416.png",
             "fallback_image": "cert-gitcha-iso-22000.jpg",
             "alt": "GITCHIA System Certification, ISO 22000, H26-92-1039",
-            "link": "/pages/certifications#iso-22000"
+            "link": "/pages/certifications#iso-22000",
+            "title": "ISO 22000",
+            "text": "Food safety you can trust."
+          }
+        },
+        "explore": {
+          "type": "menu",
+          "settings": {
+            "heading": "Explore",
+            "menu": "footer-explore"
+          }
+        },
+        "customer_care": {
+          "type": "menu",
+          "settings": {
+            "heading": "Customer Care",
+            "menu": "footer-customer-care"
           }
         }
       },
       "block_order": [
         "shop",
         "best_sellers",
+        "explore",
+        "customer_care",
         "perk_offers",
         "perk_recipes",
         "perk_wellness",
         "cert_halal",
-        "cert_organic",
-        "cert_iso"
+        "cert_iso",
+        "cert_organic"
       ],
       "settings": {
         "show_logo_image": true,
-        "logo_width": 160,
+        "logo_width": 240,
         "brand_name": "",
-        "tagline": "<p>Real ingredients. A brighter tomorrow. We create natural, wholesome essentials that bring goodness to everyday life.</p>",
+        "tagline": "<p>Nothing Extra. Nothing Ordinary.</p>",
         "instagram_url": "https://instagram.com/sahifoods.co",
         "facebook_url": "https://www.facebook.com/share/1Cdyof9Xn5/",
         "tiktok_url": "https://www.tiktok.com/@sahifoods.co",
@@ -116,10 +138,10 @@
         "newsletter_text": "Get the latest updates, recipes and exclusive offers straight to your inbox.",
         "newsletter_placeholder": "Your email address",
         "copyright_text": "All rights reserved.",
-        "certifications_label": "Our certifications",
+        "certifications_label": "",
         "certifications_link": "/pages/certifications",
-        "show_payment_icons": true,
-        "closing_note": "Made with goodness.",
+        "show_payment_icons": false,
+        "closing_note": "",
         "title_font": "instrument_serif_n4",
         "background_color": "{{ settings.color_palette.color1 }}",
         "text_color": "{{ settings.color_palette.background }}",
@@ -128,7 +150,19 @@
         "button_text_color": "{{ settings.color_palette.background }}",
         "section_width": "page-width",
         "padding-block-start": 64,
-        "padding-block-end": 24
+        "padding-block-end": 24,
+        "brand_heading": "Your Favourite Foods. Done Right.",
+        "brand_background_image": "shopify://shop_images/Sahi_Footer_Background.png",
+        "brand_overlay_opacity": 0,
+        "certifications_heading": "Certified. Not just claimed.",
+        "certification_badge_size": 140,
+        "certifications_background": "{{ settings.color_palette.background }}",
+        "certifications_text_color": "{{ settings.color_palette.foreground }}",
+        "certifications_title_color": "",
+        "slogan": "Sahi Khao.\nSahi Jiyo!",
+        "certifications_illustration_start": "shopify://shop_images/Sahi_Footer_Leaf_Left.png",
+        "certifications_illustration_end": "shopify://shop_images/Sahi_Footer_Leaf_Right.png",
+        "links_illustration": "shopify://shop_images/Sahi_Footer_Leaf_Sprig.png"
       }
     },
     "floating_actions": {

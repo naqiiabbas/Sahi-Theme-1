@@ -206,6 +206,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "illustration": "Illustration",
+    "illustration_end": "Höger illustration",
+    "illustration_start": "Vänster illustration",
+    "badge_size": "Märkesstorlek",
+    "slogan": "Slogan",
+    "title_color": "Rubrikfärg",
     "menu_display": "Menyvisning",
     "show_account_icon": "Visa kontoikon",
     "mobile_image": "Bild för mobil",
@@ -1256,6 +1262,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "footer_illustration": "Transparent PNG fungerar bäst. Lämna tomt för att visa den inbyggda bladteckningen.",
     "menu_display": "Sidolådan visar en menyknapp på alla skärmstorlekar, som på mobilen.",
     "slide_mobile_image": "Visas på skärmar under 750 px i stället för bilden ovan. Rekommenderat 1290 × 1200 px; centrera produkten. Använder bilden ovan om tom.",
     "promo_banner_mobile_image": "Skärmar under 750 px, visas ovanför texten. Rekommenderat 1500 × 1125 px (4:3). Använder datorbilden om tom.",

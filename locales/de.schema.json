@@ -206,6 +206,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "illustration": "Illustration",
+    "illustration_end": "Rechte Illustration",
+    "illustration_start": "Linke Illustration",
+    "badge_size": "Siegelgröße",
+    "slogan": "Slogan",
+    "title_color": "Titelfarbe",
     "menu_display": "Menüanzeige",
     "show_account_icon": "Konto-Symbol anzeigen",
     "mobile_image": "Mobil-Bild",
@@ -1256,6 +1262,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "footer_illustration": "Transparente PNG-Dateien eignen sich am besten. Leer lassen, um die integrierte Blattzeichnung anzuzeigen.",
     "menu_display": "Die Seitenleiste zeigt auf allen Bildschirmgrößen eine Menüschaltfläche, wie auf Mobilgeräten.",
     "slide_mobile_image": "Wird auf Bildschirmen unter 750 px statt des Bildes oben angezeigt. Empfohlen 1290 × 1200 px; Produkt mittig platzieren. Leer: Bild oben wird verwendet.",
     "promo_banner_mobile_image": "Bildschirme unter 750 px, über dem Text angezeigt. Empfohlen 1500 × 1125 px (4:3). Leer: Desktop-Bild wird verwendet.",

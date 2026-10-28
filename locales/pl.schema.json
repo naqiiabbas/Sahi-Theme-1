@@ -206,6 +206,12 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "illustration": "Ilustracja",
+    "illustration_end": "Prawa ilustracja",
+    "illustration_start": "Lewa ilustracja",
+    "badge_size": "Rozmiar odznaki",
+    "slogan": "Slogan",
+    "title_color": "Kolor tytułu",
     "menu_display": "Wyświetlanie menu",
     "show_account_icon": "Pokaż ikonę konta",
     "mobile_image": "Obraz na telefon",
@@ -1256,6 +1262,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "footer_illustration": "Najlepiej sprawdza się przezroczysty PNG. Pozostaw puste, aby wyświetlić wbudowany rysunek liści.",
     "menu_display": "Panel boczny pokazuje przycisk menu na każdym rozmiarze ekranu, jak na telefonie.",
     "slide_mobile_image": "Wyświetlany na ekranach poniżej 750 px zamiast obrazu powyżej. Zalecane 1290 × 1200 px; umieść produkt na środku. Jeśli puste, używany jest obraz powyżej.",
     "promo_banner_mobile_image": "Ekrany poniżej 750 px, wyświetlany nad tekstem. Zalecane 1500 × 1125 px (4:3). Jeśli puste, używany jest obraz na komputer.",

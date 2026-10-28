@@ -206,6 +206,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "illustration": "插圖",
+    "illustration_end": "右側插圖",
+    "illustration_start": "左側插圖",
+    "badge_size": "徽章尺寸",
+    "slogan": "標語",
+    "title_color": "標題顏色",
     "menu_display": "選單顯示",
     "show_account_icon": "顯示帳戶圖示",
     "mobile_image": "行動裝置圖片",
@@ -1256,6 +1262,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "footer_illustration": "透明 PNG 效果最佳。留空則顯示內建的葉子圖案。",
     "menu_display": "側邊抽屜會像在行動裝置上一樣，在所有螢幕尺寸上顯示選單按鈕。",
     "slide_mobile_image": "在寬度小於 750 px 的螢幕上取代上方圖片顯示。建議 1290 × 1200 px，產品置中。留空則使用上方圖片。",
     "promo_banner_mobile_image": "寬度小於 750 px 的螢幕，顯示在文字上方。建議 1500 × 1125 px（4:3）。留空則使用桌面圖片。",

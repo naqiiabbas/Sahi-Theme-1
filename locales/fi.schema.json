@@ -206,6 +206,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "illustration": "Kuvitus",
+    "illustration_end": "Oikea kuvitus",
+    "illustration_start": "Vasen kuvitus",
+    "badge_size": "Merkin koko",
+    "slogan": "Iskulause",
+    "title_color": "Otsikon väri",
     "menu_display": "Valikon näyttö",
     "show_account_icon": "Näytä tilikuvake",
     "mobile_image": "Mobiilikuva",
@@ -1256,6 +1262,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "footer_illustration": "Läpinäkyvä PNG toimii parhaiten. Jätä tyhjäksi, niin sisäänrakennettu lehtipiirros näytetään.",
     "menu_display": "Sivupaneeli näyttää valikkopainikkeen kaikilla näyttökooilla, kuten mobiilissa.",
     "slide_mobile_image": "Näytetään alle 750 px:n näytöillä yllä olevan kuvan sijaan. Suositus 1290 × 1200 px; keskitä tuote. Käyttää yllä olevaa kuvaa, jos tyhjä.",
     "promo_banner_mobile_image": "Alle 750 px:n näytöt, näkyy tekstin yläpuolella. Suositus 1500 × 1125 px (4:3). Käyttää työpöytäkuvaa, jos tyhjä.",
