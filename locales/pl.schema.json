@@ -206,6 +206,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "heading_size": "Rozmiar nagłówka",
     "show_numbers": "Pokaż numery",
     "badge_size_mobile": "Rozmiar odznaki na telefonie",
     "certifications_text_mobile": "Pokaż tytuły i tekst na telefonie",

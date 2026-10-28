@@ -794,6 +794,7 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "heading_size": "גודל הכותרת",
     "show_numbers": "הצגת מספרים",
     "badge_size_mobile": "גודל התג בנייד",
     "certifications_text_mobile": "הצגת כותרות וטקסט בנייד",

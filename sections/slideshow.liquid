@@ -44,6 +44,10 @@
   endif
 
   assign slideshow_class = 'slideshow--content-' | append: section.settings.content_position
+  # Phones can stack the text in a panel under the image while larger screens keep the desktop layout.
+  if section.settings.mobile_content_position == 'below-media'
+    assign slideshow_class = slideshow_class | append: ' slideshow--mobile-content-below'
+  endif
   if section.blocks.size == 1
     assign slideshow_class = slideshow_class | append: ' slideshow--single-media'
   endif
@@ -84,7 +88,7 @@
 ></div>
 <div
   class="slideshow-section spacing-style section {{ section_width_class }}{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %} disable-section-top-offset"
-  style="{% render 'spacing-padding', settings: section.settings %}; --slideshow-gap: {{ section.settings.slideshow_gap }}px;{% if rounded_slide_corners %} --corner-radius: {{ section.settings.corner_radius }}px;{% endif %}"
+  style="{% render 'spacing-padding', settings: section.settings %}; --slideshow-gap: {{ section.settings.slideshow_gap }}px;{% if rounded_slide_corners %} --corner-radius: {{ section.settings.corner_radius }}px;{% endif %}{% if section.settings.mobile_content_position == 'below-media' %} --slideshow-mobile-image-ratio: {{ section.settings.mobile_image_ratio }}; --slideshow-mobile-heading-size: {{ section.settings.mobile_heading_size }}px;{% if section.settings.mobile_content_background != blank %} --slideshow-mobile-panel-bg: {{ section.settings.mobile_content_background }};{% endif %}{% if section.settings.mobile_content_text != blank %} --slideshow-mobile-panel-text: {{ section.settings.mobile_content_text }}; --slideshow-mobile-panel-text-rgb: {{ section.settings.mobile_content_text.rgb }};{% endif %}{% if section.settings.mobile_accent_color != blank %} --slideshow-mobile-panel-accent: {{ section.settings.mobile_accent_color }};{% endif %}{% endif %}"
 >
   <h2 class="visually-hidden">{{ 'accessibility.slideshow' | t }}</h2>
   {% render 'slideshow',
@@ -189,6 +193,86 @@
         opacity: 0;
         pointer-events: none;
       }
+    }
+  }
+
+  /* Mobile "Below media": the image sits on top at a fixed ratio and the slide text moves into a solid
+     panel underneath, matching the collection hero (sections/promo-banner.liquid) on phones. The extra
+     selector weight and !important beat the on-media slide styles in blocks/_slide.liquid. */
+  @media screen and (max-width: 749px) {
+    .slideshow--mobile-content-below slideshow-slides {
+      min-height: 0;
+    }
+
+    .slideshow--mobile-content-below slideshow-slide {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    .slideshow--mobile-content-below slideshow-slide > .slide__image-container {
+      position: relative;
+      inset: auto;
+      flex: 0 0 auto;
+      height: auto;
+      aspect-ratio: var(--slideshow-mobile-image-ratio, 4 / 3);
+    }
+
+    .slideshow--mobile-content-below slideshow-slide > .slide__image-container > .overlay {
+      display: none;
+    }
+
+    .slideshow--mobile-content-below slideshow-slide > .slide__content.slide__content {
+      flex: 1 1 auto;
+      height: auto;
+      padding: var(--padding-2xl) max(var(--page-margin), 4vw) !important;
+      background-color: var(--slideshow-mobile-panel-bg, var(--color-background)) !important;
+      color: var(--slideshow-mobile-panel-text, var(--color-foreground));
+    }
+
+    .slideshow--mobile-content-below slideshow-slide .slide__content > .group-block-content {
+      gap: var(--gap-md) !important;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block p,
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block :is(h1, h2, h3) {
+      text-shadow: none !important;
+    }
+
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block:first-child .text-block:first-child p {
+      color: var(--slideshow-mobile-panel-accent, var(--slideshow-mobile-panel-text, var(--color-foreground))) !important;
+    }
+
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block:first-child :is(h1, h2, h3) {
+      max-width: 14ch;
+      font-size: var(--slideshow-mobile-heading-size) !important;
+      line-height: 1.05 !important;
+      letter-spacing: -0.01em;
+      color: var(--slideshow-mobile-panel-text, var(--color-foreground)) !important;
+    }
+
+    /* Italic words in a slide heading read as the accent line, as on the collection hero. */
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block :is(h1, h2, h3) em {
+      display: block;
+      font-style: italic;
+      color: var(--slideshow-mobile-panel-accent, currentColor);
+    }
+
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block:last-child :is(h2, h3),
+    .slideshow--mobile-content-below slideshow-slide .slide__content .group-block:last-child .text-block p {
+      margin: 0 !important;
+      font-family: 'Instrument Serif', serif !important;
+      font-size: 1.125rem !important;
+      line-height: 1.45 !important;
+      letter-spacing: 0 !important;
+      text-align: start !important;
+      color: rgb(var(--slideshow-mobile-panel-text-rgb, var(--color-foreground-rgb)) / var(--opacity-80)) !important;
     }
   }
 {% endstylesheet %}
@@ -313,6 +397,79 @@
       "id": "background_color",
       "label": "t:settings.background_color",
       "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.mobile_layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_position",
+      "label": "t:settings.content_position",
+      "options": [
+        {
+          "value": "on-media",
+          "label": "t:options.on_media"
+        },
+        {
+          "value": "below-media",
+          "label": "t:options.below_media"
+        }
+      ],
+      "default": "on-media"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_ratio",
+      "label": "t:settings.image_ratio",
+      "options": [
+        {
+          "value": "4 / 3",
+          "label": "t:options.landscape"
+        },
+        {
+          "value": "1 / 1",
+          "label": "t:options.square"
+        },
+        {
+          "value": "4 / 5",
+          "label": "t:options.portrait"
+        }
+      ],
+      "default": "4 / 3",
+      "visible_if": "{{ section.settings.mobile_content_position == 'below-media' }}"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "t:settings.heading_size",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 50,
+      "visible_if": "{{ section.settings.mobile_content_position == 'below-media' }}"
+    },
+    {
+      "type": "color",
+      "id": "mobile_content_background",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.color1 }}",
+      "visible_if": "{{ section.settings.mobile_content_position == 'below-media' }}"
+    },
+    {
+      "type": "color",
+      "id": "mobile_content_text",
+      "label": "t:settings.text_color",
+      "default": "{{ settings.color_palette.background }}",
+      "visible_if": "{{ section.settings.mobile_content_position == 'below-media' }}"
+    },
+    {
+      "type": "color",
+      "id": "mobile_accent_color",
+      "label": "t:settings.accent_color",
+      "default": "{{ settings.color_palette.color3 }}",
+      "visible_if": "{{ section.settings.mobile_content_position == 'below-media' }}"
     },
     {
       "type": "header",

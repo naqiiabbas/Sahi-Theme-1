@@ -206,6 +206,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "heading_size": "Rubrikstorlek",
     "show_numbers": "Visa nummer",
     "badge_size_mobile": "Märkesstorlek på mobil",
     "certifications_text_mobile": "Visa rubriker och text på mobil",

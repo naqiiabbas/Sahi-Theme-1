@@ -652,7 +652,13 @@
         "autoplay_speed": 5,
         "show_pause_button": false,
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 0,
+        "mobile_content_position": "below-media",
+        "mobile_image_ratio": "4 / 3",
+        "mobile_heading_size": 50,
+        "mobile_content_background": "{{ settings.color_palette.color1 }}",
+        "mobile_content_text": "{{ settings.color_palette.background }}",
+        "mobile_accent_color": "{{ settings.color_palette.color3 }}"
       }
     },
     "category_showcase_main": {

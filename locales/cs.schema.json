@@ -206,6 +206,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "heading_size": "Velikost nadpisu",
     "show_numbers": "Zobrazit čísla",
     "badge_size_mobile": "Velikost odznaku na mobilu",
     "certifications_text_mobile": "Zobrazit nadpisy a text na mobilu",

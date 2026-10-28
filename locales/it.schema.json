@@ -206,6 +206,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "heading_size": "Dimensione del titolo",
     "show_numbers": "Mostra numeri",
     "badge_size_mobile": "Dimensione del badge su mobile",
     "certifications_text_mobile": "Mostra titoli e testo su mobile",

@@ -206,6 +206,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "heading_size": "標題大小",
     "show_numbers": "顯示編號",
     "badge_size_mobile": "行動裝置徽章尺寸",
     "certifications_text_mobile": "在行動裝置顯示標題和文字",
