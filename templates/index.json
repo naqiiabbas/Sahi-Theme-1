@@ -79,7 +79,7 @@
                 "slide_1_label": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>The</p>",
+                    "text": "<p>The Sahi</p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -105,7 +105,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Sahi Collection</h2>",
+                    "text": "<h2>Collection</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
