@@ -206,6 +206,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_account_icon": "显示账户图标",
     "mobile_image": "移动端图片",
     "laptop_image": "笔记本电脑图片",
     "desktop_image": "桌面图片",

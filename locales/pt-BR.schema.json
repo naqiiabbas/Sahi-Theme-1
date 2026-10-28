@@ -206,6 +206,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "show_account_icon": "Mostrar ícone da conta",
     "mobile_image": "Imagem para celular",
     "laptop_image": "Imagem para notebook",
     "desktop_image": "Imagem para desktop",

@@ -206,6 +206,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "show_account_icon": "Pokaż ikonę konta",
     "mobile_image": "Obraz na telefon",
     "laptop_image": "Obraz na laptop",
     "desktop_image": "Obraz na komputer",

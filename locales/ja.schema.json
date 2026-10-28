@@ -206,6 +206,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "show_account_icon": "アカウントアイコンを表示",
     "mobile_image": "モバイル画像",
     "laptop_image": "ノートPC画像",
     "desktop_image": "デスクトップ画像",

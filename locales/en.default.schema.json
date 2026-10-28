@@ -847,6 +847,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_account_icon": "Show account icon",
     "mobile_image": "Mobile image",
     "laptop_image": "Laptop image",
     "desktop_image": "Desktop image",

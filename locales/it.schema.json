@@ -206,6 +206,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_account_icon": "Mostra icona account",
     "mobile_image": "Immagine mobile",
     "laptop_image": "Immagine laptop",
     "desktop_image": "Immagine desktop",

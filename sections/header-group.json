@@ -151,6 +151,7 @@
         "bottom_border_color": "",
         "actions_display_style": "button",
         "show_cart_total": true,
+        "show_account_icon": false,
         "show_account_label": false,
         "actions_font_size": "1rem",
         "actions_font": "body",

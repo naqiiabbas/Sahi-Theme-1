@@ -789,6 +789,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "show_account_icon": "إظهار أيقونة الحساب",
     "mobile_image": "صورة الجوال",
     "laptop_image": "صورة الحاسوب المحمول",
     "desktop_image": "صورة سطح المكتب",

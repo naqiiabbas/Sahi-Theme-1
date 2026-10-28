@@ -789,6 +789,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "show_account_icon": "اکاؤنٹ آئیکن دکھائیں",
     "mobile_image": "موبائل تصویر",
     "laptop_image": "لیپ ٹاپ تصویر",
     "desktop_image": "ڈیسک ٹاپ تصویر",

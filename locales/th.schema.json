@@ -206,6 +206,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_account_icon": "แสดงไอคอนบัญชี",
     "mobile_image": "รูปภาพสำหรับมือถือ",
     "laptop_image": "รูปภาพสำหรับแล็ปท็อป",
     "desktop_image": "รูปภาพสำหรับเดสก์ท็อป",

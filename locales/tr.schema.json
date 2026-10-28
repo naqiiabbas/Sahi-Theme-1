@@ -206,6 +206,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_account_icon": "Hesap simgesini göster",
     "mobile_image": "Mobil görsel",
     "laptop_image": "Dizüstü görseli",
     "desktop_image": "Masaüstü görseli",

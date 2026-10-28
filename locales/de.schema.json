@@ -206,6 +206,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_account_icon": "Konto-Symbol anzeigen",
     "mobile_image": "Mobil-Bild",
     "laptop_image": "Laptop-Bild",
     "desktop_image": "Desktop-Bild",

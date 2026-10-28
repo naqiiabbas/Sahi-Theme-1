@@ -789,6 +789,7 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "show_account_icon": "הצגת סמל החשבון",
     "mobile_image": "תמונה לנייד",
     "laptop_image": "תמונה למחשב נייד",
     "desktop_image": "תמונה למחשב",

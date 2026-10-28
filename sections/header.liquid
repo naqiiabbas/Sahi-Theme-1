@@ -1,9 +1,15 @@
 
 
 {% liquid
+  # The layout order makes room for the account menu when customer accounts are on and the merchant keeps the icon.
+  assign show_account = false
+  if shop.customer_accounts_enabled and section.settings.show_account_icon
+    assign show_account = true
+  endif
+
   assign order = 'logo,menu,localization,search,drawer_search,actions'
 
-  if shop.customer_accounts_enabled
+  if show_account
     assign order = 'drawer_search,logo,menu,localization,search,actions'
   endif
 
@@ -102,7 +108,7 @@
   endif
 
   capture actions
-    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, show_cart_total: section.settings.show_cart_total, show_account_label: section.settings.show_account_label, section: section
+    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, show_cart_total: section.settings.show_cart_total, show_account_label: section.settings.show_account_label, show_account: section.settings.show_account_icon, section: section
   endcapture
 
   # The search trigger only knows icon and text styles; button-style actions keep an icon trigger.
@@ -111,20 +117,20 @@
     assign search_display_style = 'text'
   endif
 
-  if shop.customer_accounts_enabled
+  if show_account
     assign search_class = 'search-action--hidden-on-drawer'
   endif
 
   # Handle localization positioning
   if section.settings.localization_position == 'left'
     if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
+      if show_account
         assign order = 'drawer_search,logo,search,localization,menu,actions'
       else
         assign order = 'logo,search,localization,menu,drawer_search,actions'
       endif
     else
-      if shop.customer_accounts_enabled
+      if show_account
         assign order = 'drawer_search,logo,localization,menu,search,actions'
       else
         assign order = 'logo,localization,menu,search,drawer_search,actions'
@@ -132,7 +138,7 @@
     endif
   else
     if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
+      if show_account
         assign order = 'drawer_search,logo,search,menu,localization,actions'
       else
         assign order = 'logo,search,menu,localization,drawer_search,actions'
@@ -145,9 +151,9 @@
 
   # Skip drawer search under specific conditions:
   # Always render if search_row is bottom
-  # Don't render when shop.customer_accounts_enabled is false and search_position is left and search_style is not none
+  # Don't render when show_account is false and search_position is left and search_style is not none
   assign skip_drawer_search = false
-  if shop.customer_accounts_enabled == false and section.settings.search_position == 'left' and search_style != 'none'
+  if show_account == false and section.settings.search_position == 'left' and search_style != 'none'
     assign skip_drawer_search = true
   endif
 
@@ -1981,10 +1987,16 @@
     },
     {
       "type": "checkbox",
+      "id": "show_account_icon",
+      "label": "t:settings.show_account_icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
       "id": "show_account_label",
       "label": "t:settings.show_account_label",
       "default": true,
-      "visible_if": "{{ section.settings.actions_display_style == 'button' }}"
+      "visible_if": "{{ section.settings.actions_display_style == 'button' and section.settings.show_account_icon }}"
     },
     {
       "type": "select",

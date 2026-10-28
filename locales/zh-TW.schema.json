@@ -206,6 +206,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_account_icon": "顯示帳戶圖示",
     "mobile_image": "行動裝置圖片",
     "laptop_image": "筆電圖片",
     "desktop_image": "桌面圖片",

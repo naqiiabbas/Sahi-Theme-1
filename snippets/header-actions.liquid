@@ -8,6 +8,7 @@
   @param {string} [display_style] - Controls display mode for header actions: 'icon', 'text', or 'button'. Buttons use icons in the drawer layout.
   @param {boolean} [show_cart_total] - Shows the cart total and item count inside the cart button when display_style is 'button'.
   @param {boolean} [show_account_label] - Shows the "Account" label in the account button when display_style is 'button'. When false, the button is a round icon.
+  @param {boolean} [show_account] - Shows the account button (account menu, or a login link when customer accounts are off). Defaults to true.
   @param {string} [customer_account_menu] - The menu handle passed to the shopify-account component.
 
   @example
@@ -112,7 +113,9 @@
   {% endif %}
   {{- block.shopify_attributes -}}
 >
-  {% if shop.customer_accounts_enabled %}
+  {% if show_account == false %}
+    {% comment %} Account icon turned off in the header settings. {% endcomment %}
+  {% elsif shop.customer_accounts_enabled %}
     {% liquid
       assign account_actions_style = ''
       if display_style != 'icon' and section

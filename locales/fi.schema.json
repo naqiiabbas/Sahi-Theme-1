@@ -206,6 +206,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_account_icon": "Näytä tilikuvake",
     "mobile_image": "Mobiilikuva",
     "laptop_image": "Kannettavan kuva",
     "desktop_image": "Työpöytäkuva",

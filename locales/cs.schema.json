@@ -206,6 +206,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_account_icon": "Zobrazit ikonu účtu",
     "mobile_image": "Obrázek pro mobil",
     "laptop_image": "Obrázek pro notebook",
     "desktop_image": "Obrázek pro počítač",

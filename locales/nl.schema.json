@@ -206,6 +206,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_account_icon": "Accountpictogram weergeven",
     "mobile_image": "Mobiele afbeelding",
     "laptop_image": "Laptopafbeelding",
     "desktop_image": "Desktopafbeelding",

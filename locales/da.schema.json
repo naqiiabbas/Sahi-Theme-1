@@ -206,6 +206,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_account_icon": "Vis kontoikon",
     "mobile_image": "Billede til mobil",
     "laptop_image": "Billede til bærbar",
     "desktop_image": "Billede til computer",
