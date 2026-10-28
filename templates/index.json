@@ -105,7 +105,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>The Sahi<br/>Collection</h2>",
+                    "text": "<h2>The Sahi Collection</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
