@@ -23,6 +23,8 @@
   {%- capture media -%}
     <span class="category-showcase__media">
       {%- if block.settings.image != blank -%}
+        {%- comment -%} Filters are not allowed inside image_tag arguments: one there swallows the arguments after it. {%- endcomment -%}
+        {%- assign image_alt = block.settings.image.alt | default: '' -%}
         {{
           block.settings.image
           | image_url: width: 600
@@ -30,7 +32,7 @@
             widths: '200, 300, 400, 600',
             sizes: image_sizes,
             loading: 'lazy',
-            alt: block.settings.image.alt | default: '',
+            alt: image_alt,
             class: 'category-showcase__image'
         }}
       {%- elsif block.settings.fallback_image != blank -%}

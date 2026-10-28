@@ -103,6 +103,7 @@
 
     <div class="category-product-card__media{% if hover_media %} category-product-card__media--has-hover{% endif %}">
       {%- if card_media -%}
+        {%- assign card_alt = card_media.alt | default: product.title -%}
         {{
           card_media.preview_image
           | image_url: width: 900
@@ -110,7 +111,7 @@
             widths: '300, 450, 600, 900',
             sizes: sizes,
             loading: 'lazy',
-            alt: card_media.alt | default: product.title,
+            alt: card_alt,
             class: 'category-product-card__image'
         }}
         {%- if hover_media -%}

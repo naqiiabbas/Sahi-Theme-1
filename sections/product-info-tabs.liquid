@@ -186,6 +186,7 @@
 
         {%- if nutrition_image != blank -%}
           <div class="product-info-tabs__media">
+            {%- assign nutrition_alt = nutrition_image.alt | default: '' -%}
             {{
               nutrition_image
               | image_url: width: 1400
@@ -193,7 +194,7 @@
                 widths: '500, 750, 1000, 1400',
                 sizes: '(min-width: 990px) 45vw, 100vw',
                 loading: 'lazy',
-                alt: nutrition_image.alt | default: '',
+                alt: nutrition_alt,
                 class: 'product-info-tabs__image'
             }}
           </div>

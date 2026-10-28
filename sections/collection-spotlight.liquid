@@ -64,6 +64,7 @@
   <div class="collection-spotlight__banner">
     <div class="collection-spotlight__media">
       {%- if section.settings.image != blank -%}
+        {%- assign image_alt = section.settings.image.alt | default: '' -%}
         {{
           section.settings.image
           | image_url: width: 2400
@@ -71,7 +72,7 @@
             widths: '750, 1100, 1500, 2000, 2400',
             sizes: '100vw',
             loading: 'lazy',
-            alt: section.settings.image.alt | default: '',
+            alt: image_alt,
             class: 'collection-spotlight__image'
         }}
       {%- elsif section.settings.fallback_image != blank -%}
