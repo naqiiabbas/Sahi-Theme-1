@@ -18,6 +18,9 @@ import {
  * @typedef {CustomEvent<{ minimumReached: boolean }>} OverflowMinimumEvent
  */
 
+/** Pixels the page must scroll before the "scroll-up" sticky header changes direction. */
+const SCROLL_DIRECTION_THRESHOLD = 6;
+
 /**
  * A custom element that manages the site header.
  *
@@ -177,8 +180,16 @@ class HeaderComponent extends Component {
 
     const scrollTop = getScrollTop();
     const headerTop = this.getBoundingClientRect().top;
-    const isScrollingUp = scrollTop < this.#lastScrollTop;
+    const scrollDelta = scrollTop - this.#lastScrollTop;
+    const isScrollingUp = scrollDelta < 0;
     const isAtTop = headerTop >= 0;
+
+    // Smooth scrolling eases out in sub-pixel steps, so consecutive frames can report no movement or a
+    // tiny reversal. Treating those as "scrolling down" made the header slide out and back in near the
+    // top. Ignore them until the scroll has moved a few pixels; reaching the top always resets the header.
+    if (stickyMode !== 'always' && Math.abs(scrollDelta) < SCROLL_DIRECTION_THRESHOLD && !(isAtTop && isScrollingUp)) {
+      return;
+    }
 
     if (this.#timeout) {
       clearTimeout(this.#timeout);
