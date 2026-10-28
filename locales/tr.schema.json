@@ -206,6 +206,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_numbers": "Numaraları göster",
     "badge_size_mobile": "Mobilde rozet boyutu",
     "certifications_text_mobile": "Mobilde başlıkları ve metni göster",
     "illustration": "İllüstrasyon",

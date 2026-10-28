@@ -794,6 +794,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "show_numbers": "نمبر دکھائیں",
     "badge_size_mobile": "موبائل پر بیج کا سائز",
     "certifications_text_mobile": "موبائل پر عنوانات اور متن دکھائیں",
     "illustration": "تصویری خاکہ",

@@ -852,6 +852,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_numbers": "Show numbers",
     "badge_size_mobile": "Badge size on mobile",
     "certifications_text_mobile": "Show titles and text on mobile",
     "illustration": "Illustration",

@@ -794,6 +794,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "show_numbers": "إظهار الأرقام",
     "badge_size_mobile": "حجم الشارة على الجوال",
     "certifications_text_mobile": "إظهار العناوين والنص على الجوال",
     "illustration": "رسم توضيحي",

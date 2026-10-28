@@ -854,16 +854,18 @@
           "type": "feature",
           "settings": {
             "number": "",
-            "title": "Certified Organic",
-            "text": "Grown without synthetic chemicals for a cleaner tomorrow."
+            "title": "Carefully Sourced",
+            "text": "We choose the finest organic ingredients from trusted growers.",
+            "image": "shopify://shop_images/Sahi_Feature_Carefully_Sourced.png"
           }
         },
         "traditional_methods": {
           "type": "feature",
           "settings": {
             "number": "",
-            "title": "Traditional Methods",
-            "text": "Time-honoured processes for authentic flavour."
+            "title": "Thoughtfully Made",
+            "text": "Traditional methods and time-honoured processes for authentic flavour.",
+            "image": "shopify://shop_images/Sahi_Feature_Thoughtfully_Made.png"
           }
         },
         "real_ingredients": {
@@ -871,7 +873,8 @@
           "settings": {
             "number": "",
             "title": "Real Ingredients",
-            "text": "Nothing artificial. Nothing unnecessary. Just Sahi."
+            "text": "Nothing artificial. Nothing unnecessary. Just Sahi.",
+            "image": "shopify://shop_images/Sahi_Feature_Real_Ingredients_Jar.png"
           }
         }
       },
@@ -889,8 +892,11 @@
         "text_color": "{{ settings.color_palette.color1 }}",
         "accent_color": "{{ settings.color_palette.color2 }}",
         "divider_color": "",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 56,
+        "padding-block-end": 56,
+        "layout": "vertical",
+        "show_numbers": false,
+        "image_height": 148
       }
     },
     "collection_spotlight_honey": {

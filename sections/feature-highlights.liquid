@@ -1,7 +1,8 @@
 {% comment %}
   Section contract.
-  A row of numbered brand highlights (number, title, short text) separated by soft vertical dividers.
-  Numbers default to 01, 02, 03… from block order; a block can set its own.
+  A row of brand highlights (optional number, optional illustration, title, short text) separated by
+  soft vertical dividers. Horizontal layout puts the number beside the text; vertical layout centres the
+  illustration above the title and text. Numbers default to 01, 02, 03… from block order; a block can set its own.
   @example
   <!-- Add "Feature highlights", then add up to 6 Feature blocks -->
 {% endcomment %}
@@ -32,11 +33,12 @@
 
 <div class="section-background color-custom-{{ section.id }}"></div>
 <div
-  class="feature-highlights feature-highlights-{{ section.id }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.show_dividers %} feature-highlights--dividers{% endif %}"
+  class="feature-highlights feature-highlights-{{ section.id }} feature-highlights--{{ section.settings.layout }} spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}{% if section.settings.show_dividers %} feature-highlights--dividers{% endif %}"
   style="
     {% render 'spacing-padding', settings: section.settings %}
     --feature-highlights-columns: {{ item_count }};
     --feature-highlights-number-size: {{ section.settings.number_size }}px;
+    --feature-highlights-image-height: {{ section.settings.image_height }}px;
     {% if section.settings.accent_color != blank %}--feature-highlights-accent: {{ section.settings.accent_color }};{% endif %}
     {% if section.settings.divider_color != blank %}--feature-highlights-divider-rgb: {{ section.settings.divider_color.rgb }};{% endif %}
   "
@@ -53,12 +55,27 @@
         class="feature-highlights__item"
         {{ block.shopify_attributes }}
       >
-        <span
-          class="feature-highlights__number"
-          aria-hidden="true"
-        >
-          {{- number | escape -}}
-        </span>
+        {%- if section.settings.show_numbers -%}
+          <span
+            class="feature-highlights__number"
+            aria-hidden="true"
+          >
+            {{- number | escape -}}
+          </span>
+        {%- endif -%}
+        {%- if block.settings.image != blank -%}
+          {%- assign image_alt = block.settings.image.alt | default: '' -%}
+          {{
+            block.settings.image
+            | image_url: width: 700
+            | image_tag:
+              widths: '240, 350, 500, 700',
+              sizes: '(min-width: 750px) 350px, 240px',
+              loading: 'lazy',
+              alt: image_alt,
+              class: 'feature-highlights__image'
+          }}
+        {%- endif -%}
         <div class="feature-highlights__body">
           {%- if block.settings.title != blank -%}
             <h3 class="feature-highlights__title">{{ block.settings.title | escape }}</h3>
@@ -191,6 +208,58 @@
     line-height: 1.45;
     color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
   }
+
+  .feature-highlights__image {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    height: calc(var(--feature-highlights-image-height) * 0.8);
+    object-fit: contain;
+
+    @media screen and (min-width: 750px) {
+      height: var(--feature-highlights-image-height);
+    }
+  }
+
+  /* Vertical layout: illustration, title and text centred in a column. */
+  .feature-highlights--vertical {
+    .feature-highlights__item {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--gap-md);
+      padding-block: var(--padding-xl);
+      text-align: center;
+
+      @media screen and (min-width: 750px) {
+        justify-content: flex-start;
+        padding-block: var(--padding-xs);
+      }
+    }
+
+    .feature-highlights__body {
+      align-items: center;
+      gap: var(--gap-sm);
+      padding-block-start: 0;
+    }
+
+    .feature-highlights__title {
+      font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+      line-height: 1.1;
+    }
+
+    .feature-highlights__text {
+      max-width: 22rem;
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+    }
+  }
+
+  /* The text reads in the body font in the vertical layout; the selector out-ranks the font rule above. */
+  .feature-highlights.feature-highlights--vertical .feature-highlights__text {
+    font-family: var(--font-body--family) !important;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -208,6 +277,11 @@
           "id": "number",
           "label": "t:settings.number",
           "info": "t:info.feature_number"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.illustration"
         },
         {
           "type": "text",
@@ -242,6 +316,38 @@
       "default": "page-width"
     },
     {
+      "type": "select",
+      "id": "layout",
+      "label": "t:settings.layout",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "t:options.horizontal"
+        },
+        {
+          "value": "vertical",
+          "label": "t:options.vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_numbers",
+      "label": "t:settings.show_numbers",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "t:settings.image_height",
+      "min": 60,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "default": 140
+    },
+    {
       "type": "checkbox",
       "id": "show_dividers",
       "label": "t:settings.dividers",
@@ -265,7 +371,8 @@
       "max": 96,
       "step": 2,
       "unit": "px",
-      "default": 52
+      "default": 52,
+      "visible_if": "{{ section.settings.show_numbers }}"
     },
     {
       "type": "header",
