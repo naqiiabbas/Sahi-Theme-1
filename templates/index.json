@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/WhatsApp_Image_2026-10-28_at_5.10.12_AM.jpg",
+            "image_1": "shopify://shop_images/sahi_dark_burgundy_spotlight_1910x720_1fd56ed5-acb6-4977-bbf0-a983a5df095a.png",
             "image_asset": "hero-slide-1.jpg",
             "content_direction": "row",
             "vertical_on_mobile": true,
@@ -29,7 +29,7 @@
             "background_color": "",
             "toggle_overlay": true,
             "overlay_color": "#0000004d",
-            "overlay_style": "solid",
+            "overlay_style": "gradient",
             "gradient_direction": "to top",
             "padding-block-start": 32,
             "padding-block-end": 64,
@@ -79,7 +79,7 @@
                 "slide_1_label": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Handcrafted Heritage</p>",
+                    "text": "<p>The</p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -90,7 +90,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "text_color": "#D9A560",
+                    "text_color": "#d9a560",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -105,7 +105,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Sahi Achaars</h2>",
+                    "text": "<h2>Sahi Collection</h2>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -175,7 +175,7 @@
                 "slide_1_desc": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Time-honored recipes made with sun-ripened spices and pure cold-pressed oils. Authentic taste passed down through generations.</p>",
+                    "text": "<p>Certified Organic- No unnecessary intervention, and absolutely no interest in “good enough.”<br/></p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "right",
@@ -717,7 +717,7 @@
         "title": "Ingredients Sahi. Product Sahi.&nbsp;",
         "accent_new_line": false,
         "heading_tag": "h2",
-        "text": "Certified Organic- No unnecessary intervention, and absolutely no interest in “good enough.”&nbsp;",
+        "text": "",
         "note": "",
         "title_font": "instrument_serif_n4",
         "title_size": 64,
@@ -895,6 +895,7 @@
         "no_preservatives",
         "nutrients"
       ],
+      "disabled": true,
       "settings": {
         "fallback_image": "collection-spotlight-honey.jpg",
         "image_position": 70,

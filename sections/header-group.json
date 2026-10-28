@@ -68,6 +68,7 @@
         "announcement_mxxhta",
         "announcement_NNAHyT"
       ],
+      "disabled": true,
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 3,
@@ -125,7 +126,7 @@
         "menu_row": "bottom",
         "menu-row-padding-block-start": 15,
         "menu-row-padding-block-end": 15,
-        "customer_account_menu": "customer-account-main-menu",
+        "customer_account_menu": "",
         "show_search": true,
         "search_style": "bar",
         "search_placeholder": "Search for...",
