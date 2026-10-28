@@ -138,7 +138,16 @@
         "icon_background": "",
         "section_width": "page-width",
         "padding-block-start": 56,
-        "padding-block-end": 56
+        "padding-block-end": 56,
+        "show_social_links": true,
+        "social_heading": "Follow Us",
+        "social_text": "Recipes, behind the scenes and new arrivals.",
+        "instagram_url": "https://instagram.com/sahifoods.co",
+        "facebook_url": "https://www.facebook.com/share/1Cdyof9Xn5/",
+        "tiktok_url": "https://www.tiktok.com/@sahifoods.co",
+        "youtube_url": "",
+        "pinterest_url": "",
+        "twitter_url": ""
       }
     },
     "contact_highlights": {

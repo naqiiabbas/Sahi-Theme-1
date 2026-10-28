@@ -390,6 +390,57 @@
           {%- endfor -%}
         </ul>
       {%- endif -%}
+
+      {%- liquid
+        assign social_platforms = 'instagram,facebook,tiktok,youtube,pinterest,twitter' | split: ','
+        assign has_social = false
+        if section.settings.show_social_links
+          for platform in social_platforms
+            assign url_key = platform | append: '_url'
+            if section.settings[url_key] != blank
+              assign has_social = true
+            endif
+          endfor
+        endif
+      -%}
+      {%- if has_social -%}
+        <div class="contact-details__social">
+          {%- if section.settings.social_heading != blank -%}
+            <h3 class="contact-details__item-title">{{ section.settings.social_heading | escape }}</h3>
+          {%- endif -%}
+          {%- if section.settings.social_text != blank -%}
+            <p class="contact-details__item-text">{{ section.settings.social_text | escape }}</p>
+          {%- endif -%}
+          <ul
+            class="contact-details__social-list"
+            role="list"
+          >
+            {%- for platform in social_platforms -%}
+              {%- assign url_key = platform | append: '_url' -%}
+              {%- if section.settings[url_key] != blank -%}
+                <li>
+                  <a
+                    href="{{ section.settings[url_key] }}"
+                    class="contact-details__social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="{{ platform | capitalize }}"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      {%- render 'icon', icon: platform -%}
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -840,6 +891,55 @@
     color: rgb(var(--color-foreground-rgb) / var(--opacity-75));
   }
 
+  /* Social links: a divider, then round icon links matching the contact item icons. */
+  .contact-details__social {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+    margin-block-start: var(--margin-xl);
+    padding-block-start: var(--padding-xl);
+    border-block-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+  }
+
+  .contact-details__social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+    margin: var(--margin-sm) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .contact-details__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--cd-icon-bg-color);
+    color: var(--color-foreground);
+    transition:
+      color var(--animation-speed) var(--animation-easing),
+      background-color var(--animation-speed) var(--animation-easing);
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+    }
+
+    &:hover {
+      background-color: var(--cd-accent-color);
+      color: var(--color-background);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--cd-accent-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .contact-details__input,
     .custom-select__icon,
@@ -1049,6 +1149,66 @@
       "id": "details_text",
       "label": "t:settings.text",
       "default": "You can also reach us through any of the following channels. We're here to help!"
+    },
+    {
+      "type": "header",
+      "content": "t:content.social_media"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_links",
+      "label": "t:settings.show_social_links",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "t:settings.heading",
+      "default": "Follow Us",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "text",
+      "id": "social_text",
+      "label": "t:settings.text",
+      "default": "Recipes, behind the scenes and new arrivals.",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "t:options.instagram",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "t:options.facebook",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "t:options.tiktok",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "t:options.youtube",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "url",
+      "id": "pinterest_url",
+      "label": "t:options.pinterest",
+      "visible_if": "{{ section.settings.show_social_links }}"
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "t:options.twitter",
+      "visible_if": "{{ section.settings.show_social_links }}"
     },
     {
       "type": "header",
