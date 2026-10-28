@@ -697,7 +697,6 @@
         "olive_oils": {
           "type": "_category-showcase-item",
           "settings": {
-            "image": "shopify://shop_images/sahi_olive_oil_transparent_400x321_a3428827-1502-41d0-83f5-aa42a32fab28.png",
             "fallback_image": "category-olive-oils.png",
             "title": "Olive Oil",
             "link": "shopify://collections/olive-oils",
@@ -708,7 +707,6 @@
         "desi_ghee": {
           "type": "_category-showcase-item",
           "settings": {
-            "image": "shopify://shop_images/sahi_desi_ghee_transparent_400x321_7a2d1e86-86cf-4921-b065-77edf9105a4e.png",
             "fallback_image": "category-desi-ghee.png",
             "title": "Desi Ghee",
             "link": "shopify://collections/desi-ghee",
