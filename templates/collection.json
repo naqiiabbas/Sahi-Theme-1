@@ -158,7 +158,7 @@
         "products_per_page": 12,
         "columns_gap_horizontal": 20,
         "columns_gap_vertical": 20,
-        "image_ratio": "4 / 3",
+        "image_ratio": "1 / 1",
         "card_corner_radius": 4,
         "title_font": "instrument_serif_n4",
         "show_weight": false,
