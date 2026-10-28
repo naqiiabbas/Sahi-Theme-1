@@ -206,6 +206,9 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "mobile_image": "行動裝置圖片",
+    "laptop_image": "筆電圖片",
+    "desktop_image": "桌面圖片",
     "card_show_smallest_variant": "在卡片上顯示最小規格",
     "card_show_price_from": "在價格前顯示「起」",
     "certifications_link": "認證連結",
@@ -1249,6 +1252,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "promo_banner_mobile_image": "寬度小於 750 px 的螢幕，顯示在文字上方。建議 1500 × 1125 px（4:3）。留空則使用桌面圖片。",
+    "promo_banner_laptop_image": "寬度 750–1439 px 的螢幕。橫幅高度為 420 px 時建議 2880 × 960 px。將產品放在右側。留空則使用桌面圖片。",
+    "promo_banner_desktop_image": "寬度 1440 px 以上的螢幕。橫幅高度為 420 px 時建議 3840 × 840 px。將產品放在右側，左側位於文字下方。",
     "card_show_smallest_variant": "有多個規格的商品會在商品卡片上顯示價格最低的規格。商品頁面仍會以預設規格開啟。",
     "certificate_document": "連結到證書文件或核發機構的驗證頁面。",
     "certificate_anchor": "讓其他頁面直接連結到此證書，例如 /pages/certifications#organic。",

@@ -227,6 +227,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "promo_banner_mobile_image": "Screens under 750 px, shown above the text. Recommended 1500 × 1125 px (4:3). Uses the desktop image if empty.",
+    "promo_banner_laptop_image": "Screens 750–1439 px wide. Recommended 2880 × 960 px, for the 420 px banner height. Keep the product on the right. Uses the desktop image if empty.",
+    "promo_banner_desktop_image": "Screens 1440 px and wider. Recommended 3840 × 840 px, for the 420 px banner height. Keep the product on the right; the left side sits under the text.",
     "card_show_smallest_variant": "Products with several sizes show the lowest-priced size on product cards. The product page still opens on the default size.",
     "certificate_document": "Link to the certificate document or the issuer’s verification page.",
     "certificate_anchor": "Lets other pages link straight to this certificate, e.g. /pages/certifications#organic.",
@@ -844,6 +847,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "mobile_image": "Mobile image",
+    "laptop_image": "Laptop image",
+    "desktop_image": "Desktop image",
     "card_show_smallest_variant": "Show smallest size on cards",
     "card_show_price_from": "Show \"From\" before price",
     "certifications_link": "Certifications link",

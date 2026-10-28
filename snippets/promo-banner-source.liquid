@@ -1,0 +1,34 @@
+{%- doc -%}
+  Renders a responsive <source> for the promo banner's <picture>, so a breakpoint can use its own image.
+
+  @param {image} image - The image for this breakpoint
+  @param {string} media - Media query the source applies to
+  @param {string} widths - Comma-separated candidate widths; widths larger than the image are skipped
+
+  @example
+  {% render 'promo-banner-source', image: section.settings.image_mobile, media: '(max-width: 749px)', widths: '400, 800, 1500' %}
+{%- enddoc -%}
+
+{%- liquid
+  assign srcset = ''
+  assign candidates = widths | split: ','
+  for candidate in candidates
+    assign w = candidate | strip | plus: 0
+    if w >= image.width
+      continue
+    endif
+    assign url = image | image_url: width: w
+    assign srcset = srcset | append: url | append: ' ' | append: w | append: 'w, '
+  endfor
+  assign url = image | image_url
+  assign srcset = srcset | append: url | append: ' ' | append: image.width | append: 'w'
+  assign height = image.width | divided_by: image.aspect_ratio | round
+-%}
+
+<source
+  media="{{ media }}"
+  srcset="{{ srcset }}"
+  sizes="100vw"
+  width="{{ image.width }}"
+  height="{{ height }}"
+>

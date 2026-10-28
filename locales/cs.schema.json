@@ -206,6 +206,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "mobile_image": "Obrázek pro mobil",
+    "laptop_image": "Obrázek pro notebook",
+    "desktop_image": "Obrázek pro počítač",
     "card_show_smallest_variant": "Zobrazit na kartách nejmenší velikost",
     "card_show_price_from": "Zobrazit „Od“ před cenou",
     "certifications_link": "Odkaz na certifikace",
@@ -1249,6 +1252,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "promo_banner_mobile_image": "Obrazovky pod 750 px, zobrazeno nad textem. Doporučeno 1500 × 1125 px (4:3). Pokud je prázdné, použije se obrázek pro počítač.",
+    "promo_banner_laptop_image": "Obrazovky 750–1439 px. Doporučeno 2880 × 960 px pro výšku banneru 420 px. Produkt umístěte vpravo. Pokud je prázdné, použije se obrázek pro počítač.",
+    "promo_banner_desktop_image": "Obrazovky od 1440 px. Doporučeno 3840 × 840 px pro výšku banneru 420 px. Produkt umístěte vpravo; levá strana je pod textem.",
     "card_show_smallest_variant": "Produkty s více velikostmi zobrazí na kartách produktů nejlevnější velikost. Stránka produktu se stále otevře ve výchozí velikosti.",
     "certificate_document": "Odkaz na dokument certifikátu nebo ověřovací stránku vydavatele.",
     "certificate_anchor": "Umožní jiným stránkám odkazovat přímo na tento certifikát, např. /pages/certifications#organic.",

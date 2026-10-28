@@ -206,6 +206,9 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "mobile_image": "모바일 이미지",
+    "laptop_image": "노트북 이미지",
+    "desktop_image": "데스크톱 이미지",
     "card_show_smallest_variant": "카드에 가장 작은 크기 표시",
     "card_show_price_from": "가격 앞에 \"부터\" 표시",
     "certifications_link": "인증 링크",
@@ -1249,6 +1252,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "promo_banner_mobile_image": "너비 750px 미만 화면, 텍스트 위에 표시됩니다. 권장 크기 1500 × 1125px(4:3). 비어 있으면 데스크톱 이미지를 사용합니다.",
+    "promo_banner_laptop_image": "너비 750–1439px 화면. 배너 높이 420px 기준 권장 크기 2880 × 960px. 제품은 오른쪽에 두세요. 비어 있으면 데스크톱 이미지를 사용합니다.",
+    "promo_banner_desktop_image": "너비 1440px 이상 화면. 배너 높이 420px 기준 권장 크기 3840 × 840px. 제품은 오른쪽에 두세요. 왼쪽은 텍스트 아래에 위치합니다.",
     "card_show_smallest_variant": "여러 크기가 있는 상품은 상품 카드에 가장 저렴한 크기를 표시합니다. 상품 페이지는 계속 기본 크기로 열립니다.",
     "certificate_document": "인증서 문서 또는 발급 기관의 확인 페이지 링크입니다.",
     "certificate_anchor": "다른 페이지에서 이 인증서로 바로 연결할 수 있습니다. 예: /pages/certifications#organic.",

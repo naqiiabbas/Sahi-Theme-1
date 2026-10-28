@@ -206,6 +206,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "mobile_image": "Mobil görsel",
+    "laptop_image": "Dizüstü görseli",
+    "desktop_image": "Masaüstü görseli",
     "card_show_smallest_variant": "Kartlarda en küçük boyutu göster",
     "card_show_price_from": "Fiyattan önce \"Başlangıç\" göster",
     "certifications_link": "Sertifika bağlantısı",
@@ -1249,6 +1252,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "promo_banner_mobile_image": "750 px altındaki ekranlar, metnin üstünde gösterilir. Önerilen 1500 × 1125 px (4:3). Boşsa masaüstü görseli kullanılır.",
+    "promo_banner_laptop_image": "750–1439 px ekranlar. 420 px banner yüksekliği için önerilen 2880 × 960 px. Ürünü sağa yerleştirin. Boşsa masaüstü görseli kullanılır.",
+    "promo_banner_desktop_image": "1440 px ve daha geniş ekranlar. 420 px banner yüksekliği için önerilen 3840 × 840 px. Ürünü sağa yerleştirin; sol taraf metnin altında kalır.",
     "card_show_smallest_variant": "Birden fazla boyutu olan ürünler, ürün kartlarında en ucuz boyutu gösterir. Ürün sayfası yine varsayılan boyutta açılır.",
     "certificate_document": "Sertifika belgesine veya veren kuruluşun doğrulama sayfasına bağlantı.",
     "certificate_anchor": "Diğer sayfaların doğrudan bu sertifikaya bağlantı vermesini sağlar, ör. /pages/certifications#organic.",

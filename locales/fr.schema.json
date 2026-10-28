@@ -206,6 +206,9 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "mobile_image": "Image mobile",
+    "laptop_image": "Image portable",
+    "desktop_image": "Image ordinateur",
     "card_show_smallest_variant": "Afficher la plus petite taille sur les cartes",
     "card_show_price_from": "Afficher « À partir de » avant le prix",
     "certifications_link": "Lien des certifications",
@@ -1249,6 +1252,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "promo_banner_mobile_image": "Écrans de moins de 750 px, affichée au-dessus du texte. Recommandé 1500 × 1125 px (4:3). Utilise l’image ordinateur si vide.",
+    "promo_banner_laptop_image": "Écrans de 750 à 1439 px. Recommandé 2880 × 960 px pour une bannière de 420 px de haut. Placez le produit à droite. Utilise l’image ordinateur si vide.",
+    "promo_banner_desktop_image": "Écrans de 1440 px et plus. Recommandé 3840 × 840 px pour une bannière de 420 px de haut. Placez le produit à droite ; le côté gauche est sous le texte.",
     "card_show_smallest_variant": "Les produits proposés en plusieurs tailles affichent la taille la moins chère sur les cartes produit. La page produit s’ouvre toujours sur la taille par défaut.",
     "certificate_document": "Lien vers le document du certificat ou la page de vérification de l’organisme.",
     "certificate_anchor": "Permet aux autres pages de renvoyer directement à ce certificat, p. ex. /pages/certifications#organic.",

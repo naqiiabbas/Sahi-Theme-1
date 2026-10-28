@@ -1,0 +1,214 @@
+{
+  "sections": {
+    "collection_hero": {
+      "type": "promo-banner",
+      "settings": {
+        "image": "{{ collection.image }}",
+        "fallback_image": "promo-banner-pickles.jpg",
+        "image_position": 70,
+        "section_width": "full-width",
+        "min_height": 420,
+        "overlay_color": "{{ settings.color_palette.color1 }}",
+        "overlay_opacity": 100,
+        "eyebrow": "",
+        "title": "Our <em>{{ collection.title }}</em>",
+        "accent_new_line": true,
+        "heading_tag": "h1",
+        "text": "Pure, honest and carefully crafted essentials for a more natural, wholesome life.",
+        "note": "",
+        "title_font": "instrument_serif_n4",
+        "title_size": 80,
+        "button_label": "",
+        "button_link": "",
+        "button_radius": 2,
+        "show_breadcrumbs": false,
+        "breadcrumb_home_label": "Home",
+        "breadcrumb_nav_label": "Breadcrumb",
+        "tagline": "",
+        "tagline_style": "caps",
+        "tagline_font": "instrument_sans_n4",
+        "tagline_size": 30,
+        "show_tagline_flourish": false,
+        "background_color": "{{ settings.color_palette.color1 }}",
+        "text_color": "{{ settings.color_palette.background }}",
+        "accent_color": "{{ settings.color_palette.color3 }}",
+        "button_background": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "tagline_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "collection_categories": {
+      "type": "collection-categories",
+      "blocks": {
+        "nut_butters": {
+          "type": "category",
+          "settings": {
+            "collection": "nut-butters",
+            "label": "Nut Butters",
+            "fallback_icon": "category-icon-nut-butters.png"
+          }
+        },
+        "achaars": {
+          "type": "category",
+          "settings": {
+            "collection": "pickles",
+            "label": "Achaars",
+            "fallback_icon": "category-icon-achaars.png"
+          }
+        },
+        "raw_honey": {
+          "type": "category",
+          "settings": {
+            "collection": "raw-honey",
+            "label": "Raw Honey",
+            "fallback_icon": "category-icon-raw-honey.png"
+          }
+        },
+        "olive_oils": {
+          "type": "category",
+          "settings": {
+            "collection": "olive-oils",
+            "label": "Olive Oils",
+            "fallback_icon": "category-icon-olive-oils.png"
+          }
+        },
+        "desi_ghee": {
+          "type": "category",
+          "settings": {
+            "collection": "desi-ghee",
+            "label": "Desi Ghee",
+            "fallback_icon": "category-icon-desi-ghee.png"
+          }
+        }
+      },
+      "block_order": [
+        "nut_butters",
+        "achaars",
+        "raw_honey",
+        "olive_oils",
+        "desi_ghee"
+      ],
+      "settings": {
+        "nav_label": "Shop by category",
+        "show_all_link": true,
+        "all_label": "All Products",
+        "all_link": "shopify://collections/all",
+        "all_fallback_icon": "category-icon-all.svg",
+        "icon_size": 60,
+        "label_font": "instrument_sans_n4",
+        "show_divider": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "icon_background": "",
+        "active_icon_color": "{{ settings.color_palette.background }}",
+        "section_width": "page-width",
+        "padding-block-start": 28,
+        "padding-block-end": 16
+      }
+    },
+    "main": {
+      "type": "main-collection-sidebar",
+      "blocks": {
+        "filters": {
+          "type": "filters",
+          "static": true,
+          "settings": {
+            "enable_filtering": true,
+            "filter_style": "vertical",
+            "filter_width": "centered",
+            "text_label_case": "default",
+            "show_swatch_label": true,
+            "show_filter_label": false,
+            "show_value_counts": true,
+            "show_price_slider": true,
+            "enable_sorting": true,
+            "enable_grid_density": false,
+            "background_color": "",
+            "text_color": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "facets_margin_bottom": 8,
+            "facets_margin_right": 0
+          },
+          "blocks": {}
+        }
+      },
+      "settings": {
+        "filters_heading": "Filter by",
+        "clear_button_label": "Clear filters",
+        "sidebar_width": 260,
+        "count_text": "Showing [shown] of [count] products",
+        "columns": 3,
+        "mobile_columns": "2",
+        "enable_infinite_scroll": false,
+        "products_per_page": 12,
+        "columns_gap_horizontal": 20,
+        "columns_gap_vertical": 20,
+        "image_ratio": "1 / 1",
+        "card_corner_radius": 4,
+        "title_font": "instrument_serif_n4",
+        "show_weight": false,
+        "show_rating": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "sidebar_background": "",
+        "card_background": "",
+        "star_color": "",
+        "section_width": "page-width",
+        "padding-block-start": 32,
+        "padding-block-end": 56
+      }
+    },
+    "collection_promo": {
+      "type": "promo-banner",
+      "settings": {
+        "fallback_image": "hero-slide-1.jpg",
+        "image_position": 70,
+        "section_width": "full-width",
+        "min_height": 420,
+        "overlay_color": "{{ settings.color_palette.color1 }}",
+        "overlay_opacity": 100,
+        "eyebrow": "",
+        "title": "Good Ingredients <em>Better Days.</em>",
+        "accent_new_line": true,
+        "heading_tag": "h2",
+        "text": "Discover our full range of natural essentials made for real life.",
+        "note": "",
+        "title_font": "instrument_serif_n4",
+        "title_size": 64,
+        "button_label": "Shop all products",
+        "button_link": "shopify://collections/all",
+        "button_radius": 2,
+        "show_breadcrumbs": false,
+        "breadcrumb_home_label": "Home",
+        "breadcrumb_nav_label": "Breadcrumb",
+        "tagline": "Sahi\nIngredients\nBetter Days",
+        "tagline_style": "script",
+        "tagline_font": "pinyon_script_n4",
+        "tagline_size": 36,
+        "show_tagline_flourish": true,
+        "background_color": "{{ settings.color_palette.color1 }}",
+        "text_color": "{{ settings.color_palette.background }}",
+        "accent_color": "{{ settings.color_palette.color3 }}",
+        "button_background": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "tagline_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "collection_hero",
+    "collection_categories",
+    "main",
+    "collection_promo"
+  ]
+}

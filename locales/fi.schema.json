@@ -206,6 +206,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "mobile_image": "Mobiilikuva",
+    "laptop_image": "Kannettavan kuva",
+    "desktop_image": "Työpöytäkuva",
     "card_show_smallest_variant": "Näytä pienin koko korteissa",
     "card_show_price_from": "Näytä \"Alkaen\" ennen hintaa",
     "certifications_link": "Sertifikaattilinkki",
@@ -1249,6 +1252,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "promo_banner_mobile_image": "Alle 750 px:n näytöt, näkyy tekstin yläpuolella. Suositus 1500 × 1125 px (4:3). Käyttää työpöytäkuvaa, jos tyhjä.",
+    "promo_banner_laptop_image": "Näytöt 750–1439 px. Suositus 2880 × 960 px 420 px:n bannerikorkeudelle. Sijoita tuote oikealle. Käyttää työpöytäkuvaa, jos tyhjä.",
+    "promo_banner_desktop_image": "Näytöt 1440 px ja leveämmät. Suositus 3840 × 840 px 420 px:n bannerikorkeudelle. Sijoita tuote oikealle; vasen puoli jää tekstin alle.",
     "card_show_smallest_variant": "Useita kokoja sisältävät tuotteet näyttävät tuotekorteissa edullisimman koon. Tuotesivu avautuu edelleen oletuskoossa.",
     "certificate_document": "Linkki sertifikaattiasiakirjaan tai myöntäjän vahvistussivulle.",
     "certificate_anchor": "Antaa muiden sivujen linkittää suoraan tähän sertifikaattiin, esim. /pages/certifications#organic.",

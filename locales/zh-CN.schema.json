@@ -206,6 +206,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "mobile_image": "移动端图片",
+    "laptop_image": "笔记本电脑图片",
+    "desktop_image": "桌面图片",
     "card_show_smallest_variant": "在卡片上显示最小规格",
     "card_show_price_from": "在价格前显示\"起\"",
     "certifications_link": "认证链接",
@@ -1249,6 +1252,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "promo_banner_mobile_image": "宽度小于 750 px 的屏幕，显示在文字上方。建议 1500 × 1125 px（4:3）。留空则使用桌面图片。",
+    "promo_banner_laptop_image": "宽度 750–1439 px 的屏幕。横幅高度为 420 px 时建议 2880 × 960 px。将产品放在右侧。留空则使用桌面图片。",
+    "promo_banner_desktop_image": "宽度 1440 px 及以上的屏幕。横幅高度为 420 px 时建议 3840 × 840 px。将产品放在右侧，左侧位于文字下方。",
     "card_show_smallest_variant": "有多个规格的产品会在产品卡片上显示价格最低的规格。产品页面仍会以默认规格打开。",
     "certificate_document": "链接到证书文件或颁发机构的验证页面。",
     "certificate_anchor": "让其他页面直接链接到此证书，例如 /pages/certifications#organic。",

@@ -206,6 +206,9 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "mobile_image": "Bilde for mobil",
+    "laptop_image": "Bilde for bærbar",
+    "desktop_image": "Bilde for datamaskin",
     "card_show_smallest_variant": "Vis minste størrelse på kort",
     "card_show_price_from": "Vis «Fra» før prisen",
     "certifications_link": "Sertifiseringslenke",
@@ -1249,6 +1252,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "promo_banner_mobile_image": "Skjermer under 750 px, vises over teksten. Anbefalt 1500 × 1125 px (4:3). Bruker datamaskinbildet hvis tomt.",
+    "promo_banner_laptop_image": "Skjermer på 750–1439 px. Anbefalt 2880 × 960 px for en bannerhøyde på 420 px. Plasser produktet til høyre. Bruker datamaskinbildet hvis tomt.",
+    "promo_banner_desktop_image": "Skjermer fra 1440 px. Anbefalt 3840 × 840 px for en bannerhøyde på 420 px. Plasser produktet til høyre; venstre side ligger under teksten.",
     "card_show_smallest_variant": "Produkter med flere størrelser viser den billigste størrelsen på produktkort. Produktsiden åpnes fortsatt med standardstørrelsen.",
     "certificate_document": "Lenke til sertifikatdokumentet eller utstederens verifiseringsside.",
     "certificate_anchor": "Lar andre sider lenke direkte til dette sertifikatet, f.eks. /pages/certifications#organic.",
