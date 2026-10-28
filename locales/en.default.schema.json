@@ -227,6 +227,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "slide_mobile_image": "Shown on screens under 750 px instead of the image above. Recommended 1290 × 1200 px; keep the product centered. Uses the image above if empty.",
     "promo_banner_mobile_image": "Screens under 750 px, shown above the text. Recommended 1500 × 1125 px (4:3). Uses the desktop image if empty.",
     "promo_banner_laptop_image": "Screens 750–1439 px wide. Recommended 2880 × 960 px, for the 420 px banner height. Keep the product on the right. Uses the desktop image if empty.",
     "promo_banner_desktop_image": "Screens 1440 px and wider. Recommended 3840 × 840 px, for the 420 px banner height. Keep the product on the right; the left side sits under the text.",

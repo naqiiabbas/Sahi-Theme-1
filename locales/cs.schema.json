@@ -1253,6 +1253,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "slide_mobile_image": "Zobrazí se na obrazovkách pod 750 px místo obrázku výše. Doporučeno 1290 × 1200 px; produkt umístěte doprostřed. Pokud je prázdné, použije se obrázek výše.",
     "promo_banner_mobile_image": "Obrazovky pod 750 px, zobrazeno nad textem. Doporučeno 1500 × 1125 px (4:3). Pokud je prázdné, použije se obrázek pro počítač.",
     "promo_banner_laptop_image": "Obrazovky 750–1439 px. Doporučeno 2880 × 960 px pro výšku banneru 420 px. Produkt umístěte vpravo. Pokud je prázdné, použije se obrázek pro počítač.",
     "promo_banner_desktop_image": "Obrazovky od 1440 px. Doporučeno 3840 × 840 px pro výšku banneru 420 px. Produkt umístěte vpravo; levá strana je pod textem.",

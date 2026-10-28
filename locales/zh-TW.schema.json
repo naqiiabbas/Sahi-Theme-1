@@ -1253,6 +1253,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "slide_mobile_image": "在寬度小於 750 px 的螢幕上取代上方圖片顯示。建議 1290 × 1200 px，產品置中。留空則使用上方圖片。",
     "promo_banner_mobile_image": "寬度小於 750 px 的螢幕，顯示在文字上方。建議 1500 × 1125 px（4:3）。留空則使用桌面圖片。",
     "promo_banner_laptop_image": "寬度 750–1439 px 的螢幕。橫幅高度為 420 px 時建議 2880 × 960 px。將產品放在右側。留空則使用桌面圖片。",
     "promo_banner_desktop_image": "寬度 1440 px 以上的螢幕。橫幅高度為 420 px 時建議 3840 × 840 px。將產品放在右側，左側位於文字下方。",

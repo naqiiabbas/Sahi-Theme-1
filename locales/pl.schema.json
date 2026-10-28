@@ -1253,6 +1253,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "slide_mobile_image": "Wyświetlany na ekranach poniżej 750 px zamiast obrazu powyżej. Zalecane 1290 × 1200 px; umieść produkt na środku. Jeśli puste, używany jest obraz powyżej.",
     "promo_banner_mobile_image": "Ekrany poniżej 750 px, wyświetlany nad tekstem. Zalecane 1500 × 1125 px (4:3). Jeśli puste, używany jest obraz na komputer.",
     "promo_banner_laptop_image": "Ekrany 750–1439 px. Zalecane 2880 × 960 px przy wysokości banera 420 px. Umieść produkt po prawej. Jeśli puste, używany jest obraz na komputer.",
     "promo_banner_desktop_image": "Ekrany od 1440 px. Zalecane 3840 × 840 px przy wysokości banera 420 px. Umieść produkt po prawej; lewa strona znajduje się pod tekstem.",

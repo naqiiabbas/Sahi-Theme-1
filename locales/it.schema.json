@@ -1253,6 +1253,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "slide_mobile_image": "Mostrata sugli schermi sotto i 750 px al posto dell’immagine sopra. Consigliato 1290 × 1200 px; centra il prodotto. Se vuota, usa l’immagine sopra.",
     "promo_banner_mobile_image": "Schermi sotto i 750 px, mostrata sopra il testo. Consigliato 1500 × 1125 px (4:3). Se vuota, usa l’immagine desktop.",
     "promo_banner_laptop_image": "Schermi da 750 a 1439 px. Consigliato 2880 × 960 px per un banner alto 420 px. Posiziona il prodotto a destra. Se vuota, usa l’immagine desktop.",
     "promo_banner_desktop_image": "Schermi da 1440 px in su. Consigliato 3840 × 840 px per un banner alto 420 px. Posiziona il prodotto a destra; il lato sinistro è sotto il testo.",

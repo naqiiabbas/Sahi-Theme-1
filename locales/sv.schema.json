@@ -1253,6 +1253,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "slide_mobile_image": "Visas på skärmar under 750 px i stället för bilden ovan. Rekommenderat 1290 × 1200 px; centrera produkten. Använder bilden ovan om tom.",
     "promo_banner_mobile_image": "Skärmar under 750 px, visas ovanför texten. Rekommenderat 1500 × 1125 px (4:3). Använder datorbilden om tom.",
     "promo_banner_laptop_image": "Skärmar på 750–1439 px. Rekommenderat 2880 × 960 px för en bannerhöjd på 420 px. Placera produkten till höger. Använder datorbilden om tom.",
     "promo_banner_desktop_image": "Skärmar från 1440 px. Rekommenderat 3840 × 840 px för en bannerhöjd på 420 px. Placera produkten till höger; vänster sida ligger under texten.",

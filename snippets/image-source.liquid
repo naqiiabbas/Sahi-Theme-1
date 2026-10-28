@@ -1,12 +1,12 @@
 {%- doc -%}
-  Renders a responsive <source> for the promo banner's <picture>, so a breakpoint can use its own image.
+  Renders a responsive <source> for a <picture>, so a breakpoint (e.g. phones) can use its own image.
 
   @param {image} image - The image for this breakpoint
   @param {string} media - Media query the source applies to
   @param {string} widths - Comma-separated candidate widths; widths larger than the image are skipped
 
   @example
-  {% render 'promo-banner-source', image: section.settings.image_mobile, media: '(max-width: 749px)', widths: '400, 800, 1500' %}
+  {% render 'image-source', image: section.settings.image_mobile, media: '(max-width: 749px)', widths: '400, 800, 1500' %}
 {%- enddoc -%}
 
 {%- liquid

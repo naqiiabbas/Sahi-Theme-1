@@ -69,11 +69,20 @@
       -%}
 
       {%- if block_settings.media_type_1 == 'image' -%}
-        {{
-          block_settings.image_1
-          | image_url: width: 3840
-          | image_tag: height: height, sizes: sizes, widths: widths, class: 'slide__image', loading: loading, fetchpriority: fetchpriority
-        }}
+        <picture class="slide__picture">
+          {%- if block_settings.image_mobile != blank -%}
+            {% render 'image-source',
+              image: block_settings.image_mobile,
+              media: '(max-width: 749px)',
+              widths: '400, 600, 800, 1100, 1290'
+            %}
+          {%- endif -%}
+          {{
+            block_settings.image_1
+            | image_url: width: 3840
+            | image_tag: height: height, sizes: sizes, widths: widths, class: 'slide__image', loading: loading, fetchpriority: fetchpriority
+          }}
+        </picture>
       {%- else -%}
         {%- if block_settings.video_1.preview_image -%}
 
@@ -336,7 +345,13 @@
     inset: 0;
   }
 
+  /* The picture only adds a phone source; the image inside keeps the slide image layout. */
+  .slide__picture {
+    display: contents;
+  }
+
   .slide__image-container > .slide__image,
+  .slide__picture > .slide__image,
   .slide__image-container > .slide__video,
   .slide__image-container > .slide__video-poster {
     position: relative;
@@ -424,6 +439,13 @@
       "type": "image_picker",
       "id": "image_1",
       "label": "t:settings.image",
+      "visible_if": "{{ block.settings.media_type_1 == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:settings.mobile_image",
+      "info": "t:info.slide_mobile_image",
       "visible_if": "{{ block.settings.media_type_1 == 'image' }}"
     },
     {

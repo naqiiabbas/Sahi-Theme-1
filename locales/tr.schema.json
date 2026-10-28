@@ -1253,6 +1253,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "slide_mobile_image": "750 px altındaki ekranlarda yukarıdaki görselin yerine gösterilir. Önerilen 1290 × 1200 px; ürünü ortalayın. Boşsa yukarıdaki görsel kullanılır.",
     "promo_banner_mobile_image": "750 px altındaki ekranlar, metnin üstünde gösterilir. Önerilen 1500 × 1125 px (4:3). Boşsa masaüstü görseli kullanılır.",
     "promo_banner_laptop_image": "750–1439 px ekranlar. 420 px banner yüksekliği için önerilen 2880 × 960 px. Ürünü sağa yerleştirin. Boşsa masaüstü görseli kullanılır.",
     "promo_banner_desktop_image": "1440 px ve daha geniş ekranlar. 420 px banner yüksekliği için önerilen 3840 × 840 px. Ürünü sağa yerleştirin; sol taraf metnin altında kalır.",

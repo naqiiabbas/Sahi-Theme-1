@@ -1253,6 +1253,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "slide_mobile_image": "Apresentada em ecrãs abaixo de 750 px em vez da imagem acima. Recomendado 1290 × 1200 px; centre o produto. Usa a imagem acima se vazia.",
     "promo_banner_mobile_image": "Ecrãs abaixo de 750 px, apresentada acima do texto. Recomendado 1500 × 1125 px (4:3). Usa a imagem para computador se vazia.",
     "promo_banner_laptop_image": "Ecrãs de 750–1439 px. Recomendado 2880 × 960 px para uma faixa com 420 px de altura. Coloque o produto à direita. Usa a imagem para computador se vazia.",
     "promo_banner_desktop_image": "Ecrãs de 1440 px ou mais. Recomendado 3840 × 840 px para uma faixa com 420 px de altura. Coloque o produto à direita; o lado esquerdo fica sob o texto.",

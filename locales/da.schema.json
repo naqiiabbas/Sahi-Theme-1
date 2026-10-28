@@ -1253,6 +1253,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "slide_mobile_image": "Vises på skærme under 750 px i stedet for billedet ovenfor. Anbefalet 1290 × 1200 px; centrer produktet. Bruger billedet ovenfor, hvis tomt.",
     "promo_banner_mobile_image": "Skærme under 750 px, vist over teksten. Anbefalet 1500 × 1125 px (4:3). Bruger computerbilledet, hvis tomt.",
     "promo_banner_laptop_image": "Skærme på 750–1439 px. Anbefalet 2880 × 960 px til en bannerhøjde på 420 px. Placer produktet til højre. Bruger computerbilledet, hvis tomt.",
     "promo_banner_desktop_image": "Skærme fra 1440 px. Anbefalet 3840 × 840 px til en bannerhøjde på 420 px. Placer produktet til højre; venstre side ligger under teksten.",
