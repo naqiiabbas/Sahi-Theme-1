@@ -206,6 +206,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "menu_display": "Menuweergave",
     "show_account_icon": "Accountpictogram weergeven",
     "mobile_image": "Mobiele afbeelding",
     "laptop_image": "Laptopafbeelding",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "menu_bar": "Menubalk",
+    "menu_drawer": "Zijlade",
     "email": "E-mail",
     "whatsapp": "WhatsApp",
     "clock": "Klok",
@@ -1253,6 +1256,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "menu_display": "De zijlade toont op elk schermformaat een menuknop, net als op mobiel.",
     "slide_mobile_image": "Getoond op schermen onder 750 px in plaats van de afbeelding hierboven. Aanbevolen 1290 × 1200 px; zet het product in het midden. Gebruikt de afbeelding hierboven als leeg.",
     "promo_banner_mobile_image": "Schermen onder 750 px, getoond boven de tekst. Aanbevolen 1500 × 1125 px (4:3). Gebruikt de desktopafbeelding als leeg.",
     "promo_banner_laptop_image": "Schermen van 750–1439 px. Aanbevolen 2880 × 960 px voor een bannerhoogte van 420 px. Zet het product rechts. Gebruikt de desktopafbeelding als leeg.",

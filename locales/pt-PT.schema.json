@@ -206,6 +206,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "menu_display": "Apresentação do menu",
     "show_account_icon": "Mostrar ícone da conta",
     "mobile_image": "Imagem para telemóvel",
     "laptop_image": "Imagem para portátil",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "menu_bar": "Barra de menu",
+    "menu_drawer": "Gaveta lateral",
     "email": "E-mail",
     "whatsapp": "WhatsApp",
     "clock": "Relógio",
@@ -1253,6 +1256,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "menu_display": "A gaveta lateral mostra um botão de menu em todos os tamanhos de ecrã, como no telemóvel.",
     "slide_mobile_image": "Apresentada em ecrãs abaixo de 750 px em vez da imagem acima. Recomendado 1290 × 1200 px; centre o produto. Usa a imagem acima se vazia.",
     "promo_banner_mobile_image": "Ecrãs abaixo de 750 px, apresentada acima do texto. Recomendado 1500 × 1125 px (4:3). Usa a imagem para computador se vazia.",
     "promo_banner_laptop_image": "Ecrãs de 750–1439 px. Recomendado 2880 × 960 px para uma faixa com 420 px de altura. Coloque o produto à direita. Usa a imagem para computador se vazia.",

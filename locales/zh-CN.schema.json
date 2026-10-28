@@ -206,6 +206,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "menu_display": "菜单显示",
     "show_account_icon": "显示账户图标",
     "mobile_image": "移动端图片",
     "laptop_image": "笔记本电脑图片",
@@ -725,6 +726,8 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "menu_bar": "菜单栏",
+    "menu_drawer": "侧边抽屉",
     "email": "电子邮件",
     "whatsapp": "WhatsApp",
     "clock": "时钟",
@@ -1253,6 +1256,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "menu_display": "侧边抽屉会像在移动设备上一样，在所有屏幕尺寸上显示菜单按钮。",
     "slide_mobile_image": "在宽度小于 750 px 的屏幕上替代上方图片显示。建议 1290 × 1200 px，产品居中。留空则使用上方图片。",
     "promo_banner_mobile_image": "宽度小于 750 px 的屏幕，显示在文字上方。建议 1500 × 1125 px（4:3）。留空则使用桌面图片。",
     "promo_banner_laptop_image": "宽度 750–1439 px 的屏幕。横幅高度为 420 px 时建议 2880 × 960 px。将产品放在右侧。留空则使用桌面图片。",

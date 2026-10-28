@@ -206,6 +206,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "menu_display": "メニューの表示",
     "show_account_icon": "アカウントアイコンを表示",
     "mobile_image": "モバイル画像",
     "laptop_image": "ノートPC画像",
@@ -725,6 +726,8 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "menu_bar": "メニューバー",
+    "menu_drawer": "サイドドロワー",
     "email": "メール",
     "whatsapp": "WhatsApp",
     "clock": "時計",
@@ -1253,6 +1256,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "menu_display": "サイドドロワーでは、モバイルと同様にすべての画面サイズでメニューボタンを表示します。",
     "slide_mobile_image": "幅750px未満の画面で上の画像の代わりに表示されます。推奨サイズは1290 × 1200px。商品は中央に配置してください。空の場合は上の画像を使用します。",
     "promo_banner_mobile_image": "幅750px未満の画面で、テキストの上に表示されます。推奨サイズは1500 × 1125px（4:3）。空の場合はデスクトップ画像を使用します。",
     "promo_banner_laptop_image": "幅750〜1439pxの画面。バナーの高さ420pxに対して推奨サイズは2880 × 960px。商品は右側に配置してください。空の場合はデスクトップ画像を使用します。",

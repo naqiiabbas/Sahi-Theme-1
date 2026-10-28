@@ -122,6 +122,7 @@
       },
       "settings": {
         "logo_position": "center",
+        "menu_display": "drawer",
         "menu_position": "center",
         "menu_row": "bottom",
         "menu-row-padding-block-start": 15,

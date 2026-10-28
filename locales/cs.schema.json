@@ -206,6 +206,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "menu_display": "Zobrazení nabídky",
     "show_account_icon": "Zobrazit ikonu účtu",
     "mobile_image": "Obrázek pro mobil",
     "laptop_image": "Obrázek pro notebook",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "menu_bar": "Lišta nabídky",
+    "menu_drawer": "Boční panel",
     "email": "E-mail",
     "whatsapp": "WhatsApp",
     "clock": "Hodiny",
@@ -1253,6 +1256,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "menu_display": "Boční panel zobrazí tlačítko nabídky na všech velikostech obrazovky, jako na mobilu.",
     "slide_mobile_image": "Zobrazí se na obrazovkách pod 750 px místo obrázku výše. Doporučeno 1290 × 1200 px; produkt umístěte doprostřed. Pokud je prázdné, použije se obrázek výše.",
     "promo_banner_mobile_image": "Obrazovky pod 750 px, zobrazeno nad textem. Doporučeno 1500 × 1125 px (4:3). Pokud je prázdné, použije se obrázek pro počítač.",
     "promo_banner_laptop_image": "Obrazovky 750–1439 px. Doporučeno 2880 × 960 px pro výšku banneru 420 px. Produkt umístěte vpravo. Pokud je prázdné, použije se obrázek pro počítač.",

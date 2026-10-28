@@ -206,6 +206,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "menu_display": "Affichage du menu",
     "show_account_icon": "Afficher l’icône du compte",
     "mobile_image": "Image mobile",
     "laptop_image": "Image portable",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "menu_bar": "Barre de menu",
+    "menu_drawer": "Tiroir latéral",
     "email": "E-mail",
     "whatsapp": "WhatsApp",
     "clock": "Horloge",
@@ -1253,6 +1256,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "menu_display": "Le tiroir latéral affiche un bouton de menu sur toutes les tailles d’écran, comme sur mobile.",
     "slide_mobile_image": "Affichée sur les écrans de moins de 750 px à la place de l’image ci-dessus. Recommandé 1290 × 1200 px ; centrez le produit. Utilise l’image ci-dessus si vide.",
     "promo_banner_mobile_image": "Écrans de moins de 750 px, affichée au-dessus du texte. Recommandé 1500 × 1125 px (4:3). Utilise l’image ordinateur si vide.",
     "promo_banner_laptop_image": "Écrans de 750 à 1439 px. Recommandé 2880 × 960 px pour une bannière de 420 px de haut. Placez le produit à droite. Utilise l’image ordinateur si vide.",

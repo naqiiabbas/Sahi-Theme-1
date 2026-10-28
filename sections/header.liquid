@@ -176,7 +176,8 @@
 
   assign bottom_row_blocks = ''
 
-  if section.settings.menu_row == 'bottom'
+  # A drawer-only menu has no menu bar, so it never adds the bottom row (or its divider).
+  if section.settings.menu_row == 'bottom' and section.settings.menu_display != 'drawer'
     assign bottom_row_blocks = bottom_row_blocks | append: 'menu,'
   endif
 
@@ -193,6 +194,14 @@
   endif
 
   assign bottom_row_blocks = bottom_row_blocks | split: ',' | compact
+
+  # Drawer-only menu: the menu lives in the drawer, so drop the menu bar and an otherwise empty bottom row.
+  if section.settings.menu_display == 'drawer'
+    assign menu = ''
+    if bottom_row_blocks.size == 0
+      assign rows = 'top' | split: ','
+    endif
+  endif
 
   assign has_second_row = false
   if bottom_row_blocks.size > 0
@@ -382,6 +391,9 @@
   {% endif %}
   data-skip-node-update
   data-scroll-direction="none"
+  {% if section.settings.menu_display == 'drawer' %}
+    data-menu-display="drawer"
+  {% endif %}
   {% if section.settings.menu_row == 'top' and bottom_row_blocks.size > 0 %}
     data-submenu-overlap-bottom-row
   {% endif %}
@@ -564,6 +576,13 @@
 
   #header-component[data-menu-style='drawer'] .header__column {
     display: contents;
+  }
+
+  /* "Menu display: Side drawer" keeps the desktop layout and swaps the menu bar for the drawer button. */
+  @media screen and (min-width: 990px) {
+    #header-component[data-menu-display='drawer'][data-menu-style='menu'] .header__drawer {
+      display: flex;
+    }
   }
 
   @media screen and (min-width: 990px) {
@@ -1571,7 +1590,25 @@
     },
     {
       "type": "select",
+      "id": "menu_display",
+      "label": "t:settings.menu_display",
+      "info": "t:info.menu_display",
+      "options": [
+        {
+          "value": "bar",
+          "label": "t:options.menu_bar"
+        },
+        {
+          "value": "drawer",
+          "label": "t:options.menu_drawer"
+        }
+      ],
+      "default": "bar"
+    },
+    {
+      "type": "select",
       "id": "menu_position",
+      "visible_if": "{{ section.settings.menu_display != 'drawer' }}",
       "label": "t:settings.position",
       "options": [
         {
@@ -1592,6 +1629,7 @@
     {
       "type": "select",
       "id": "menu_row",
+      "visible_if": "{{ section.settings.menu_display != 'drawer' }}",
       "label": "t:settings.row",
       "options": [
         {
@@ -1608,7 +1646,7 @@
     {
       "type": "header",
       "content": "t:content.padding",
-      "visible_if": "{{ section.settings.menu_row == 'bottom' }}"
+      "visible_if": "{{ section.settings.menu_row == 'bottom' and section.settings.menu_display != 'drawer' }}"
     },
     {
       "type": "range",
@@ -1619,7 +1657,7 @@
       "step": 1,
       "unit": "px",
       "default": 5,
-      "visible_if": "{{ section.settings.menu_row == 'bottom' }}"
+      "visible_if": "{{ section.settings.menu_row == 'bottom' and section.settings.menu_display != 'drawer' }}"
     },
     {
       "type": "range",
@@ -1630,7 +1668,7 @@
       "step": 1,
       "unit": "px",
       "default": 5,
-      "visible_if": "{{ section.settings.menu_row == 'bottom' }}"
+      "visible_if": "{{ section.settings.menu_row == 'bottom' and section.settings.menu_display != 'drawer' }}"
     },
     {
       "type": "header",

@@ -206,6 +206,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "menu_display": "Menüanzeige",
     "show_account_icon": "Konto-Symbol anzeigen",
     "mobile_image": "Mobil-Bild",
     "laptop_image": "Laptop-Bild",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "menu_bar": "Menüleiste",
+    "menu_drawer": "Seitenleiste",
     "email": "E-Mail",
     "whatsapp": "WhatsApp",
     "clock": "Uhr",
@@ -1253,6 +1256,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "menu_display": "Die Seitenleiste zeigt auf allen Bildschirmgrößen eine Menüschaltfläche, wie auf Mobilgeräten.",
     "slide_mobile_image": "Wird auf Bildschirmen unter 750 px statt des Bildes oben angezeigt. Empfohlen 1290 × 1200 px; Produkt mittig platzieren. Leer: Bild oben wird verwendet.",
     "promo_banner_mobile_image": "Bildschirme unter 750 px, über dem Text angezeigt. Empfohlen 1500 × 1125 px (4:3). Leer: Desktop-Bild wird verwendet.",
     "promo_banner_laptop_image": "Bildschirme 750–1439 px. Empfohlen 2880 × 960 px für 420 px Bannerhöhe. Produkt rechts platzieren. Leer: Desktop-Bild wird verwendet.",

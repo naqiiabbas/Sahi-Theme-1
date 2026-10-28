@@ -206,6 +206,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "menu_display": "Menyvisning",
     "show_account_icon": "Visa kontoikon",
     "mobile_image": "Bild för mobil",
     "laptop_image": "Bild för bärbar",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "menu_bar": "Menyfält",
+    "menu_drawer": "Sidolåda",
     "email": "E-post",
     "whatsapp": "WhatsApp",
     "clock": "Klocka",
@@ -1253,6 +1256,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "menu_display": "Sidolådan visar en menyknapp på alla skärmstorlekar, som på mobilen.",
     "slide_mobile_image": "Visas på skärmar under 750 px i stället för bilden ovan. Rekommenderat 1290 × 1200 px; centrera produkten. Använder bilden ovan om tom.",
     "promo_banner_mobile_image": "Skärmar under 750 px, visas ovanför texten. Rekommenderat 1500 × 1125 px (4:3). Använder datorbilden om tom.",
     "promo_banner_laptop_image": "Skärmar på 750–1439 px. Rekommenderat 2880 × 960 px för en bannerhöjd på 420 px. Placera produkten till höger. Använder datorbilden om tom.",

@@ -206,6 +206,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "menu_display": "Menü görünümü",
     "show_account_icon": "Hesap simgesini göster",
     "mobile_image": "Mobil görsel",
     "laptop_image": "Dizüstü görseli",
@@ -725,6 +726,8 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "menu_bar": "Menü çubuğu",
+    "menu_drawer": "Yan çekmece",
     "email": "E-posta",
     "whatsapp": "WhatsApp",
     "clock": "Saat",
@@ -1253,6 +1256,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "menu_display": "Yan çekmece, mobilde olduğu gibi her ekran boyutunda bir menü düğmesi gösterir.",
     "slide_mobile_image": "750 px altındaki ekranlarda yukarıdaki görselin yerine gösterilir. Önerilen 1290 × 1200 px; ürünü ortalayın. Boşsa yukarıdaki görsel kullanılır.",
     "promo_banner_mobile_image": "750 px altındaki ekranlar, metnin üstünde gösterilir. Önerilen 1500 × 1125 px (4:3). Boşsa masaüstü görseli kullanılır.",
     "promo_banner_laptop_image": "750–1439 px ekranlar. 420 px banner yüksekliği için önerilen 2880 × 960 px. Ürünü sağa yerleştirin. Boşsa masaüstü görseli kullanılır.",
