@@ -16,6 +16,7 @@
         "collections_label": "Collections",
         "nav_label": "Breadcrumb",
         "product_parent": "type",
+        "skip_collections": "frontpage, best-sellers",
         "section_width": "page-width",
         "background_color": "{{ settings.color_palette.background }}",
         "text_color": "{{ settings.color_palette.color1 }}",
@@ -105,6 +106,7 @@
               "type": "product-eyebrow",
               "settings": {
                 "source": "type",
+                "skip_collections": "frontpage, best-sellers",
                 "custom_text": "",
                 "show_line": true,
                 "color": "{{ settings.color_palette.color2 }}"
@@ -503,10 +505,11 @@
       "settings": {
         "heading": "You May Also Like",
         "source": "product_collection",
+        "skip_collections": "frontpage, best-sellers",
         "collection": "",
         "product_count": 4,
         "link_label": "View All [collection] Products",
-        "image_ratio": "4 / 3",
+        "image_ratio": "1 / 1",
         "show_weight": true,
         "show_rating": true,
         "card_corner_radius": 4,
@@ -514,6 +517,8 @@
         "background_color": "{{ settings.color_palette.background }}",
         "text_color": "{{ settings.color_palette.color1 }}",
         "accent_color": "{{ settings.color_palette.color2 }}",
+        "card_background": "",
+        "star_color": "",
         "section_width": "page-width",
         "padding-block-start": 32,
         "padding-block-end": 64
