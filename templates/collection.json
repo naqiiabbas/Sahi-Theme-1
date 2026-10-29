@@ -12,7 +12,7 @@
     "collection_hero": {
       "type": "promo-banner",
       "settings": {
-        "image": "{{ collection.image }}",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-10-29_at_5.14.31_AM.jpg",
         "fallback_image": "promo-banner-pickles.jpg",
         "image_position": 70,
         "section_width": "full-width",
@@ -20,7 +20,7 @@
         "overlay_color": "{{ settings.color_palette.color1 }}",
         "overlay_opacity": 100,
         "eyebrow": "",
-        "title": "Our <em>{{ collection.title }}</em>",
+        "title": "Sahi <em>{{ collection.title }}</em>",
         "accent_new_line": true,
         "heading_tag": "h1",
         "text": "Pure, honest and carefully crafted essentials for a more natural, wholesome life.",
@@ -33,7 +33,7 @@
         "show_breadcrumbs": false,
         "breadcrumb_home_label": "Home",
         "breadcrumb_nav_label": "Breadcrumb",
-        "tagline": "Real ingredients.\nA brighter tomorrow.",
+        "tagline": "",
         "tagline_style": "caps",
         "tagline_font": "instrument_sans_n4",
         "tagline_size": 30,
@@ -177,6 +177,7 @@
     },
     "collection_promo": {
       "type": "promo-banner",
+      "disabled": true,
       "settings": {
         "fallback_image": "hero-slide-1.jpg",
         "image_position": 70,

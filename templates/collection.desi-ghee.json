@@ -178,6 +178,7 @@
     },
     "collection_promo": {
       "type": "promo-banner",
+      "disabled": true,
       "settings": {
         "fallback_image": "hero-slide-1.jpg",
         "image_position": 70,
