@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Příběh značky",
+    "pillars": "Pilíře",
+    "policy_content": "Obsah zásad",
+    "statement": "Prohlášení",
     "certifications": "Certifikace",
     "footer_certification": "Certifikace",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "heading_color": "Barva nadpisu",
+    "items": "Položky",
+    "marker_color": "Barva odrážek",
+    "show_table_of_contents": "Zobrazit obsah",
     "heading_size": "Velikost nadpisu",
     "show_numbers": "Zobrazit čísla",
     "badge_size_mobile": "Velikost odznaku na mobilu",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Nabídka zákaznického účtu"
   },
   "options": {
+    "display": "Výrazný",
+    "eyebrow": "Nadtitulek",
+    "gold": "Zlatá",
+    "green": "Zelená",
+    "italic": "Kurzíva",
+    "maroon": "Vínová",
+    "plain": "Prostý",
+    "quote": "Citát",
+    "title": "Nadpis",
     "menu_bar": "Lišta nabídky",
     "menu_drawer": "Boční panel",
     "email": "E-mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "one_item_per_line": "Jedna položka na řádek.",
+    "policy_table_of_contents": "Vypíše všechny nadpisy 2. úrovně v obsahu stránky, aby na ně návštěvníci mohli přejít.",
     "footer_illustration": "Nejlépe funguje průhledný PNG. Ponechte prázdné pro zobrazení vestavěné kresby listu.",
     "menu_display": "Boční panel zobrazí tlačítko nabídky na všech velikostech obrazovky, jako na mobilu.",
     "slide_mobile_image": "Zobrazí se na obrazovkách pod 750 px místo obrázku výše. Doporučeno 1290 × 1200 px; produkt umístěte doprostřed. Pokud je prázdné, použije se obrázek výše.",

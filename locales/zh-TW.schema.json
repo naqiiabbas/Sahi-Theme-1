@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "品牌故事",
+    "pillars": "支柱",
+    "policy_content": "政策內容",
+    "statement": "宣言",
     "certifications": "認證",
     "footer_certification": "認證",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "heading_color": "標題顏色",
+    "items": "項目",
+    "marker_color": "項目符號顏色",
+    "show_table_of_contents": "顯示目錄",
     "heading_size": "標題大小",
     "show_numbers": "顯示編號",
     "badge_size_mobile": "行動裝置徽章尺寸",
@@ -736,6 +744,15 @@
     "customer_account_menu": "顧客帳號選單"
   },
   "options": {
+    "display": "展示",
+    "eyebrow": "眉題",
+    "gold": "金色",
+    "green": "綠色",
+    "italic": "斜體",
+    "maroon": "酒紅色",
+    "plain": "一般",
+    "quote": "引用",
+    "title": "標題",
     "menu_bar": "選單列",
     "menu_drawer": "側邊抽屜",
     "email": "電子郵件",
@@ -1266,6 +1283,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "one_item_per_line": "每行一項。",
+    "policy_table_of_contents": "列出頁面內容中的所有二級標題，方便訪客跳轉。",
     "footer_illustration": "透明 PNG 效果最佳。留空則顯示內建的葉子圖案。",
     "menu_display": "側邊抽屜會像在行動裝置上一樣，在所有螢幕尺寸上顯示選單按鈕。",
     "slide_mobile_image": "在寬度小於 750 px 的螢幕上取代上方圖片顯示。建議 1290 × 1200 px，產品置中。留空則使用上方圖片。",

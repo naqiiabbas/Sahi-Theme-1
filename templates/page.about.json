@@ -1,0 +1,303 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_hero": {
+      "type": "promo-banner",
+      "settings": {
+        "fallback_image": "collection-spotlight-honey.jpg",
+        "image_position": 50,
+        "section_width": "full-width",
+        "min_height": 420,
+        "overlay_color": "{{ settings.color_palette.color1 }}",
+        "overlay_opacity": 100,
+        "eyebrow": "About SAHI",
+        "title": "Good Enough? <em>Not Our Thing.</em>",
+        "accent_new_line": true,
+        "heading_tag": "h1",
+        "text": "",
+        "note": "Nothing Extra.\nNothing Ordinary.",
+        "title_font": "instrument_serif_n4",
+        "title_size": 76,
+        "button_label": "",
+        "button_link": "",
+        "button_radius": 2,
+        "show_breadcrumbs": true,
+        "breadcrumb_home_label": "Home",
+        "breadcrumb_nav_label": "Breadcrumb",
+        "tagline": "",
+        "tagline_style": "script",
+        "tagline_font": "pinyon_script_n4",
+        "tagline_size": 36,
+        "show_tagline_flourish": false,
+        "background_color": "{{ settings.color_palette.color1 }}",
+        "text_color": "{{ settings.color_palette.background }}",
+        "accent_color": "{{ settings.color_palette.color3 }}",
+        "button_background": "{{ settings.color_palette.color2 }}",
+        "button_text_color": "{{ settings.color_palette.background }}",
+        "tagline_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "image": "shopify://shop_images/Regenerate_image_dimensions_and___957b1809_2K.jpg",
+        "image_mobile": "shopify://shop_images/Regenerate_image_dimensions_96a64f1b_2K_69f11091-bb42-4e1c-ab30-16431ac88611.jpg"
+      }
+    },
+    "about_story": {
+      "type": "brand-story",
+      "blocks": {
+        "story_01_statement": {
+          "type": "statement",
+          "settings": {
+            "text": "<p>Somewhere along the way, food got complicated.</p>",
+            "style": "plain",
+            "size": 44,
+            "color": "black"
+          }
+        },
+        "story_02_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Long ingredient lists. Unnecessary additives. Fancy claims. And a lot of things that sound better than they actually are.</p>",
+            "size": "lead",
+            "color": "default"
+          }
+        },
+        "story_03_statement": {
+          "type": "statement",
+          "settings": {
+            "text": "<p>We thought it was time to do things differently. Or rather, do them <em>Sahi</em> (right).</p>",
+            "style": "italic",
+            "size": 32,
+            "color": "maroon"
+          }
+        },
+        "story_04_heading": {
+          "type": "heading",
+          "settings": {
+            "text": "That’s where SAHI comes in.",
+            "style": "title",
+            "tag": "p",
+            "color": "green"
+          }
+        },
+        "story_05_pillars": {
+          "type": "pillars",
+          "settings": {
+            "items": "Simple, organic ingredients.\nTraditional processes.\nHigh standards."
+          }
+        },
+        "story_06_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe good food doesn’t need a long explanation. It needs the right ingredients, the right processes, and absolutely no unnecessary interventions.</p>",
+            "size": "lead",
+            "color": "default"
+          }
+        },
+        "story_07_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From traditional achaars and pure nut butters to raw honey, extra virgin olive oil, and desi ghee, we focus on everyday foods made with care, integrity, and respect for what goes into them, the way nature intended for them to be eaten.</p>",
+            "size": "regular",
+            "color": "default"
+          }
+        },
+        "story_08_statement": {
+          "type": "statement",
+          "settings": {
+            "text": "<p>No secret formulas. No unnecessary extras. No shortcuts disguised as innovation.</p>",
+            "style": "plain",
+            "size": 34,
+            "color": "green"
+          }
+        },
+        "story_09_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Just food that’s exactly what it claims to be, because not everything needs reinventing.</p>",
+            "size": "regular",
+            "color": "default"
+          }
+        },
+        "story_10_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Some of the best things have been around for generations. The methods, the ingredients, the flavours. They worked then. They work now.</p><p>We simply believe they deserve the same attention to quality today.</p>",
+            "size": "regular",
+            "color": "default"
+          }
+        },
+        "story_11_statement": {
+          "type": "statement",
+          "settings": {
+            "text": "<p>Because authenticity isn’t a trend. And quality shouldn’t be a luxury reserved for special occasions.</p>",
+            "style": "quote",
+            "size": 32,
+            "color": "maroon"
+          }
+        },
+        "story_12_divider": {
+          "type": "divider",
+          "settings": {
+            "color": "default"
+          }
+        },
+        "story_13_heading": {
+          "type": "heading",
+          "settings": {
+            "text": "The Sahi Way.",
+            "style": "title",
+            "tag": "h2",
+            "color": "black"
+          }
+        },
+        "story_14_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re particular about what goes into our products. And honest about what doesn’t.</p>",
+            "size": "lead",
+            "color": "maroon"
+          }
+        },
+        "story_15_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe in pure ingredients, thoughtful preparation, and keeping things as close to their natural goodness as possible.</p><p>No exaggerated promises. No pretending ordinary ingredients are revolutionary.</p>",
+            "size": "regular",
+            "color": "default"
+          }
+        },
+        "story_16_statement": {
+          "type": "statement",
+          "settings": {
+            "text": "<p>Just doing things properly.</p>",
+            "style": "italic",
+            "size": 30,
+            "color": "black"
+          }
+        },
+        "story_17_statement": {
+          "type": "statement",
+          "settings": {
+            "text": "<p>Nothing Extra. Nothing Ordinary.</p>",
+            "style": "plain",
+            "size": 52,
+            "color": "green"
+          }
+        },
+        "story_18_divider": {
+          "type": "divider",
+          "settings": {
+            "color": "default"
+          }
+        },
+        "story_19_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>SAHI</strong> — Because doing it right should never be optional.</p>",
+            "size": "lead",
+            "color": "black"
+          }
+        }
+      },
+      "block_order": [
+        "story_01_statement",
+        "story_02_text",
+        "story_03_statement",
+        "story_04_heading",
+        "story_05_pillars",
+        "story_06_text",
+        "story_07_text",
+        "story_08_statement",
+        "story_09_text",
+        "story_10_text",
+        "story_11_statement",
+        "story_12_divider",
+        "story_13_heading",
+        "story_14_text",
+        "story_15_text",
+        "story_16_statement",
+        "story_17_statement",
+        "story_18_divider",
+        "story_19_text"
+      ],
+      "settings": {
+        "alignment": "center",
+        "content_width": 48,
+        "title_font": "instrument_serif_n4",
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.foreground }}",
+        "black_color": "{{ settings.color_palette.color1 }}",
+        "maroon_color": "{{ settings.color_palette.color2 }}",
+        "green_color": "#2e4a2a",
+        "gold_color": "#a8844f",
+        "padding-block-start": 88,
+        "padding-block-end": 72
+      }
+    },
+    "about_values": {
+      "type": "feature-highlights",
+      "blocks": {
+        "certified_organic": {
+          "type": "feature",
+          "settings": {
+            "number": "",
+            "image": "shopify://shop_images/Sahi_Feature_Carefully_Sourced.png",
+            "title": "Carefully Sourced",
+            "text": "We choose the finest organic ingredients from trusted growers."
+          }
+        },
+        "traditional_methods": {
+          "type": "feature",
+          "settings": {
+            "number": "",
+            "image": "shopify://shop_images/Sahi_Feature_Thoughtfully_Made.png",
+            "title": "Thoughtfully Made",
+            "text": "Traditional methods and time-honoured processes for authentic flavour."
+          }
+        },
+        "real_ingredients": {
+          "type": "feature",
+          "settings": {
+            "number": "",
+            "image": "shopify://shop_images/Sahi_Feature_Real_Ingredients_Jar.png",
+            "title": "Real Ingredients",
+            "text": "Nothing artificial. Nothing unnecessary. Just Sahi."
+          }
+        }
+      },
+      "block_order": [
+        "certified_organic",
+        "traditional_methods",
+        "real_ingredients"
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "layout": "vertical",
+        "show_numbers": false,
+        "image_height": 148,
+        "show_dividers": true,
+        "title_font": "instrument_serif_n4",
+        "number_size": 52,
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "divider_color": "",
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
+    }
+  },
+  "order": [
+    "about_hero",
+    "about_story",
+    "about_values"
+  ]
+}

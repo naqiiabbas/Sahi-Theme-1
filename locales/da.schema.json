@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Brandhistorie",
+    "pillars": "Søjler",
+    "policy_content": "Politikindhold",
+    "statement": "Udsagn",
     "certifications": "Certificeringer",
     "footer_certification": "Certificering",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "heading_color": "Overskriftsfarve",
+    "items": "Elementer",
+    "marker_color": "Punktfarve",
+    "show_table_of_contents": "Vis indholdsfortegnelse",
     "heading_size": "Overskriftsstørrelse",
     "show_numbers": "Vis numre",
     "badge_size_mobile": "Mærkestørrelse på mobil",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Kundekontomenu"
   },
   "options": {
+    "display": "Display",
+    "eyebrow": "Overtitel",
+    "gold": "Guld",
+    "green": "Grøn",
+    "italic": "Kursiv",
+    "maroon": "Bordeaux",
+    "plain": "Almindelig",
+    "quote": "Citat",
+    "title": "Titel",
     "menu_bar": "Menulinje",
     "menu_drawer": "Sideskuffe",
     "email": "E-mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "one_item_per_line": "Ét element pr. linje.",
+    "policy_table_of_contents": "Viser alle overskrifter på niveau 2 i sidens indhold, så besøgende kan springe til dem.",
     "footer_illustration": "Gennemsigtig PNG fungerer bedst. Lad feltet være tomt for at vise den indbyggede bladtegning.",
     "menu_display": "Sideskuffe viser en menuknap på alle skærmstørrelser, ligesom på mobil.",
     "slide_mobile_image": "Vises på skærme under 750 px i stedet for billedet ovenfor. Anbefalet 1290 × 1200 px; centrer produktet. Bruger billedet ovenfor, hvis tomt.",

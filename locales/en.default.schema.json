@@ -227,6 +227,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "one_item_per_line": "One item per line.",
+    "policy_table_of_contents": "Lists every Heading 2 in the page content so visitors can jump to it.",
     "footer_illustration": "Transparent PNG works best. Leave empty to show the built-in leaf drawing.",
     "menu_display": "Side drawer shows a menu button on every screen size, like on mobile.",
     "slide_mobile_image": "Shown on screens under 750 px instead of the image above. Recommended 1290 × 1200 px; keep the product centered. Uses the image above if empty.",
@@ -304,6 +306,10 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "brand_story": "Brand story",
+    "pillars": "Pillars",
+    "policy_content": "Policy content",
+    "statement": "Statement",
     "certifications": "Certifications",
     "footer_certification": "Certification",
     "seo": "SEO",
@@ -508,6 +514,15 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "display": "Display",
+    "eyebrow": "Eyebrow",
+    "gold": "Gold",
+    "green": "Green",
+    "italic": "Italic",
+    "maroon": "Maroon",
+    "plain": "Plain",
+    "quote": "Quote",
+    "title": "Title",
     "menu_bar": "Menu bar",
     "menu_drawer": "Side drawer",
     "email": "Email",
@@ -852,6 +867,10 @@
     "below_media": "Below media"
   },
   "settings": {
+    "heading_color": "Heading color",
+    "items": "Items",
+    "marker_color": "Bullet color",
+    "show_table_of_contents": "Show table of contents",
     "heading_size": "Heading size",
     "show_numbers": "Show numbers",
     "badge_size_mobile": "Badge size on mobile",

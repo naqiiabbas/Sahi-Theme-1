@@ -1,0 +1,377 @@
+{% comment %}
+  Section contract.
+  Long-form policy page (shipping, privacy, terms): an eyebrow, the page title, and the page's own
+  content from Admin > Online Store > Pages, typeset with bold brand-coloured headings. Each <h2> in the
+  content becomes an anchor in an "On this page" list (sticky beside the text on desktop, collapsible on
+  phones), so long policies are easy to scan.
+  @example
+  <!-- Assign a page to the "policy" template; write sections as Heading 2 in the page editor -->
+{% endcomment %}
+
+{%- liquid
+  # Give every <h2> an anchor id and collect its text for the table of contents.
+  assign content = page.content
+  assign toc_ids = ''
+  assign toc_titles = ''
+  assign heading_count = 0
+
+  if content contains '<h2'
+    assign parts = content | split: '<h2'
+    assign rebuilt = parts.first
+    for part in parts offset: 1
+      assign heading_count = heading_count | plus: 1
+      assign anchor = 'policy-' | append: section.id | append: '-' | append: heading_count
+      assign heading_html = part | split: '</h2>' | first
+      assign heading_text = heading_html | split: '>' | slice: 1, 100 | join: '>' | strip_html | strip
+      assign rebuilt = rebuilt | append: '<h2 id="' | append: anchor | append: '"' | append: part
+      assign toc_ids = toc_ids | append: anchor | append: '|~|'
+      assign toc_titles = toc_titles | append: heading_text | append: '|~|'
+    endfor
+    assign content = rebuilt
+  endif
+
+  assign toc_ids = toc_ids | split: '|~|'
+  assign toc_titles = toc_titles | split: '|~|'
+
+  assign show_toc = false
+  if section.settings.show_toc and heading_count > 1
+    assign show_toc = true
+  endif
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="policy-content spacing-style section section--page-width color-custom-{{ section.id }}{% if show_toc %} policy-content--with-toc{% endif %}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --policy-heading-color: {{ section.settings.heading_color }};
+    --policy-accent-color: {{ section.settings.accent_color }};
+    --policy-marker-color: {{ section.settings.marker_color }};
+  "
+>
+  <div class="policy-content__inner">
+    <header class="policy-content__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="policy-content__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h1 class="policy-content__title">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="policy-content__layout">
+      {%- if show_toc -%}
+        <nav
+          class="policy-content__toc"
+          aria-label="{{ section.settings.toc_heading | escape }}"
+        >
+          <details
+            class="policy-content__toc-details"
+            open
+          >
+            <summary class="policy-content__toc-label">{{ section.settings.toc_heading | escape }}</summary>
+            <ol
+              class="policy-content__toc-list"
+              role="list"
+            >
+              {%- for id in toc_ids -%}
+                <li>
+                  {% comment %} Already HTML text from the page content (tags stripped), so it is not escaped again. {% endcomment %}
+                  <a href="#{{ id }}">{{ toc_titles[forloop.index0] }}</a>
+                </li>
+              {%- endfor -%}
+            </ol>
+          </details>
+        </nav>
+      {%- endif -%}
+
+      <article class="policy-content__body rte">
+        {{ content }}
+      </article>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .policy-content {
+    color: var(--color-foreground);
+  }
+
+  .policy-content__inner {
+    min-width: 0;
+  }
+
+  .policy-content__header {
+    max-width: 48rem;
+    margin-block-end: var(--margin-2xl);
+    padding-block-end: var(--padding-xl);
+    border-block-end: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+  }
+
+  /* Titles are bold, as the brand copy asks; !important beats the global heading font override. */
+  .policy-content .policy-content__eyebrow,
+  .policy-content .policy-content__title,
+  .policy-content .policy-content__toc-label,
+  .policy-content .policy-content__body :is(h2, h3, h4) {
+    font-family: var(--font-body--family) !important;
+  }
+
+  .policy-content__eyebrow {
+    margin: 0 0 var(--margin-sm);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--policy-marker-color);
+  }
+
+  .policy-content__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.1;
+    color: var(--policy-heading-color);
+    overflow-wrap: anywhere;
+  }
+
+  .policy-content__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-2xl);
+
+    @media screen and (min-width: 990px) {
+      .policy-content--with-toc & {
+        grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+        gap: var(--gap-3xl, 4rem);
+      }
+    }
+  }
+
+  /* On this page */
+  .policy-content__toc {
+    min-width: 0;
+
+    @media screen and (min-width: 990px) {
+      position: sticky;
+      inset-block-start: calc(var(--header-group-height, 0px) + var(--margin-lg));
+      align-self: start;
+    }
+  }
+
+  .policy-content__toc-details {
+    padding: var(--padding-lg);
+    border-inline-start: 3px solid var(--policy-accent-color);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .policy-content__toc-label {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--policy-heading-color);
+    list-style-position: inside;
+  }
+
+  .policy-content__toc-list {
+    display: grid;
+    gap: var(--gap-xs);
+    margin: var(--margin-md) 0 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+      display: block;
+      padding-block: 0.15rem;
+      font-size: 0.9375rem;
+      line-height: 1.4;
+      color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+      text-decoration: none;
+      transition: color var(--animation-speed) var(--animation-easing);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--policy-accent-color);
+      }
+    }
+  }
+
+  /* Policy text */
+  .policy-content__body {
+    max-width: 46rem;
+    min-width: 0;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-90));
+    overflow-wrap: break-word;
+
+    > :first-child {
+      margin-block-start: 0;
+    }
+
+    p {
+      margin: 0 0 var(--margin-md);
+    }
+
+    h2 {
+      margin: var(--margin-3xl, 3rem) 0 var(--margin-md);
+      padding-block-start: var(--padding-lg);
+      border-block-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-15));
+      font-weight: 700;
+      font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+      line-height: 1.25;
+      color: var(--policy-heading-color);
+      scroll-margin-block-start: calc(var(--header-group-height, 0px) + 1.5rem);
+    }
+
+    h3 {
+      margin: var(--margin-xl) 0 var(--margin-xs);
+      font-weight: 700;
+      font-size: 1.125rem;
+      line-height: 1.35;
+      color: var(--policy-accent-color);
+    }
+
+    strong,
+    b {
+      font-weight: 700;
+      color: var(--policy-heading-color);
+    }
+
+    ul,
+    ol {
+      margin: 0 0 var(--margin-md);
+      padding-inline-start: 1.25rem;
+    }
+
+    li {
+      margin-block-end: var(--margin-2xs, 0.35rem);
+      padding-inline-start: 0.25rem;
+    }
+
+    ul li::marker {
+      color: var(--policy-marker-color);
+    }
+
+    a {
+      color: var(--policy-accent-color);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    /* A highlighted note: write it as a block quote in the page editor. */
+    blockquote {
+      margin: var(--margin-lg) 0;
+      padding: var(--padding-md) var(--padding-lg);
+      border-inline-start: 3px solid var(--policy-marker-color);
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+      font-style: normal;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .policy-content__toc-list a {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.policy_content",
+  "class": "policy-content-section",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "default": "SAHI Foods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toc",
+      "label": "t:settings.show_table_of_contents",
+      "info": "t:info.policy_table_of_contents",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "toc_heading",
+      "label": "t:settings.heading",
+      "default": "On this page",
+      "visible_if": "{{ section.settings.show_toc }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "{{ settings.color_palette.foreground }}"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.heading_color",
+      "default": "{{ settings.color_palette.color1 }}"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "default": "{{ settings.color_palette.color2 }}"
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "t:settings.marker_color",
+      "default": "#2e4a2a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.policy_content"
+    }
+  ]
+}
+{% endschema %}

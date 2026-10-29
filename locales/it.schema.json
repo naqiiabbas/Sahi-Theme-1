@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Storia del brand",
+    "pillars": "Pilastri",
+    "policy_content": "Contenuto della politica",
+    "statement": "Dichiarazione",
     "certifications": "Certificazioni",
     "footer_certification": "Certificazione",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "heading_color": "Colore del titolo",
+    "items": "Elementi",
+    "marker_color": "Colore degli elenchi puntati",
+    "show_table_of_contents": "Mostra indice",
     "heading_size": "Dimensione del titolo",
     "show_numbers": "Mostra numeri",
     "badge_size_mobile": "Dimensione del badge su mobile",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Menu dell’account cliente"
   },
   "options": {
+    "display": "In evidenza",
+    "eyebrow": "Occhiello",
+    "gold": "Oro",
+    "green": "Verde",
+    "italic": "Corsivo",
+    "maroon": "Bordeaux",
+    "plain": "Semplice",
+    "quote": "Citazione",
+    "title": "Titolo",
     "menu_bar": "Barra dei menu",
     "menu_drawer": "Pannello laterale",
     "email": "Email",
@@ -1266,6 +1283,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "one_item_per_line": "Un elemento per riga.",
+    "policy_table_of_contents": "Elenca ogni titolo di livello 2 nel contenuto della pagina per permettere ai visitatori di raggiungerlo.",
     "footer_illustration": "Un PNG trasparente funziona meglio. Lascia vuoto per mostrare il disegno di foglie integrato.",
     "menu_display": "Il pannello laterale mostra un pulsante menu su tutte le dimensioni dello schermo, come su mobile.",
     "slide_mobile_image": "Mostrata sugli schermi sotto i 750 px al posto dell’immagine sopra. Consigliato 1290 × 1200 px; centra il prodotto. Se vuota, usa l’immagine sopra.",

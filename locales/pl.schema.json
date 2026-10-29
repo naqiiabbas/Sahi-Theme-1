@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Historia marki",
+    "pillars": "Filary",
+    "policy_content": "Treść zasad",
+    "statement": "Hasło",
     "certifications": "Certyfikaty",
     "footer_certification": "Certyfikat",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "heading_color": "Kolor nagłówka",
+    "items": "Elementy",
+    "marker_color": "Kolor punktorów",
+    "show_table_of_contents": "Pokaż spis treści",
     "heading_size": "Rozmiar nagłówka",
     "show_numbers": "Pokaż numery",
     "badge_size_mobile": "Rozmiar odznaki na telefonie",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Menu konta klienta"
   },
   "options": {
+    "display": "Wyróżniony",
+    "eyebrow": "Nadtytuł",
+    "gold": "Złoty",
+    "green": "Zielony",
+    "italic": "Kursywa",
+    "maroon": "Bordowy",
+    "plain": "Zwykły",
+    "quote": "Cytat",
+    "title": "Tytuł",
     "menu_bar": "Pasek menu",
     "menu_drawer": "Panel boczny",
     "email": "E-mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "one_item_per_line": "Jeden element w wierszu.",
+    "policy_table_of_contents": "Wyświetla każdy nagłówek poziomu 2 w treści strony, aby odwiedzający mogli do niego przejść.",
     "footer_illustration": "Najlepiej sprawdza się przezroczysty PNG. Pozostaw puste, aby wyświetlić wbudowany rysunek liści.",
     "menu_display": "Panel boczny pokazuje przycisk menu na każdym rozmiarze ekranu, jak na telefonie.",
     "slide_mobile_image": "Wyświetlany na ekranach poniżej 750 px zamiast obrazu powyżej. Zalecane 1290 × 1200 px; umieść produkt na środku. Jeśli puste, używany jest obraz powyżej.",

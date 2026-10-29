@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Brändin tarina",
+    "pillars": "Pilarit",
+    "policy_content": "Käytännön sisältö",
+    "statement": "Lausuma",
     "certifications": "Sertifikaatit",
     "footer_certification": "Sertifikaatti",
     "seo": "Hakukoneoptimointi",
@@ -206,6 +210,10 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "heading_color": "Otsikon väri",
+    "items": "Kohteet",
+    "marker_color": "Luettelomerkin väri",
+    "show_table_of_contents": "Näytä sisällysluettelo",
     "heading_size": "Otsikon koko",
     "show_numbers": "Näytä numerot",
     "badge_size_mobile": "Merkin koko mobiilissa",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Asiakastilin valikko"
   },
   "options": {
+    "display": "Näyttävä",
+    "eyebrow": "Yläotsikko",
+    "gold": "Kulta",
+    "green": "Vihreä",
+    "italic": "Kursiivi",
+    "maroon": "Viininpunainen",
+    "plain": "Tavallinen",
+    "quote": "Lainaus",
+    "title": "Otsikko",
     "menu_bar": "Valikkopalkki",
     "menu_drawer": "Sivupaneeli",
     "email": "Sähköposti",
@@ -1266,6 +1283,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "one_item_per_line": "Yksi kohde riviä kohden.",
+    "policy_table_of_contents": "Luettelee sivun sisällön kaikki 2-tason otsikot, jotta kävijät voivat siirtyä niihin.",
     "footer_illustration": "Läpinäkyvä PNG toimii parhaiten. Jätä tyhjäksi, niin sisäänrakennettu lehtipiirros näytetään.",
     "menu_display": "Sivupaneeli näyttää valikkopainikkeen kaikilla näyttökooilla, kuten mobiilissa.",
     "slide_mobile_image": "Näytetään alle 750 px:n näytöillä yllä olevan kuvan sijaan. Suositus 1290 × 1200 px; keskitä tuote. Käyttää yllä olevaa kuvaa, jos tyhjä.",

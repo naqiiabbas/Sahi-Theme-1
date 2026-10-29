@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "História da marca",
+    "pillars": "Pilares",
+    "policy_content": "Conteúdo da política",
+    "statement": "Declaração",
     "certifications": "Certificações",
     "footer_certification": "Certificação",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "heading_color": "Cor do título",
+    "items": "Itens",
+    "marker_color": "Cor dos marcadores",
+    "show_table_of_contents": "Mostrar sumário",
     "heading_size": "Tamanho do título",
     "show_numbers": "Mostrar números",
     "badge_size_mobile": "Tamanho do selo no celular",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Menu da conta de cliente"
   },
   "options": {
+    "display": "Destaque",
+    "eyebrow": "Sobretítulo",
+    "gold": "Dourado",
+    "green": "Verde",
+    "italic": "Itálico",
+    "maroon": "Bordô",
+    "plain": "Simples",
+    "quote": "Citação",
+    "title": "Título",
     "menu_bar": "Barra de menu",
     "menu_drawer": "Gaveta lateral",
     "email": "E-mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "one_item_per_line": "Um item por linha.",
+    "policy_table_of_contents": "Lista cada título de nível 2 do conteúdo da página para que os visitantes possam ir até ele.",
     "footer_illustration": "PNG transparente funciona melhor. Deixe vazio para mostrar o desenho de folhas integrado.",
     "menu_display": "A gaveta lateral mostra um botão de menu em todos os tamanhos de tela, como no celular.",
     "slide_mobile_image": "Exibida em telas abaixo de 750 px no lugar da imagem acima. Recomendado 1290 × 1200 px; centralize o produto. Usa a imagem acima se vazia.",

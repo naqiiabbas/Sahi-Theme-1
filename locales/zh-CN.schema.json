@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "品牌故事",
+    "pillars": "支柱",
+    "policy_content": "政策内容",
+    "statement": "宣言",
     "certifications": "认证",
     "footer_certification": "认证",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "heading_color": "标题颜色",
+    "items": "项目",
+    "marker_color": "项目符号颜色",
+    "show_table_of_contents": "显示目录",
     "heading_size": "标题大小",
     "show_numbers": "显示编号",
     "badge_size_mobile": "移动端徽章尺寸",
@@ -736,6 +744,15 @@
     "customer_account_menu": "客户账户菜单"
   },
   "options": {
+    "display": "展示",
+    "eyebrow": "眉题",
+    "gold": "金色",
+    "green": "绿色",
+    "italic": "斜体",
+    "maroon": "酒红色",
+    "plain": "普通",
+    "quote": "引用",
+    "title": "标题",
     "menu_bar": "菜单栏",
     "menu_drawer": "侧边抽屉",
     "email": "电子邮件",
@@ -1266,6 +1283,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "one_item_per_line": "每行一项。",
+    "policy_table_of_contents": "列出页面内容中的所有二级标题，方便访客跳转。",
     "footer_illustration": "透明 PNG 效果最佳。留空则显示内置的叶子图案。",
     "menu_display": "侧边抽屉会像在移动设备上一样，在所有屏幕尺寸上显示菜单按钮。",
     "slide_mobile_image": "在宽度小于 750 px 的屏幕上替代上方图片显示。建议 1290 × 1200 px，产品居中。留空则使用上方图片。",

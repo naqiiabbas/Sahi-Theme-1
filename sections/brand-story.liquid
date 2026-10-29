@@ -1,0 +1,759 @@
+{% comment %}
+  Section contract.
+  Long-form brand story (About page): a centred column of headings, paragraphs, large statements,
+  pillar cards and ornament dividers. Every block can take one of the section's brand colours
+  (black, maroon, green, gold) so key sentences stand out.
+  @example
+  <!-- Add "Brand story", then add Heading, Text, Statement, Pillars and Divider blocks in reading order -->
+{% endcomment %}
+
+{%- liquid
+  assign title_font = section.settings.title_font
+-%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+{% comment %} Font families contain quotes, so they live here rather than in the style attribute. {% endcomment %}
+{% style %}
+  {{ title_font | font_face: font_display: 'swap' }}
+
+  .brand-story-{{ section.id }} {
+    --brand-story-serif: {{ title_font.family }}, {{ title_font.fallback_families }};
+    --brand-story-serif-weight: {{ title_font.weight }};
+  }
+{% endstyle %}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="brand-story brand-story-{{ section.id }} brand-story--{{ section.settings.alignment }} spacing-style section section--page-width color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --brand-story-width: {{ section.settings.content_width }}rem;
+    --brand-story-black: {{ section.settings.black_color }};
+    --brand-story-maroon: {{ section.settings.maroon_color }};
+    --brand-story-green: {{ section.settings.green_color }};
+    --brand-story-gold: {{ section.settings.gold_color }};
+  "
+>
+  <div class="brand-story__inner">
+    {%- for block in section.blocks -%}
+      {%- assign color_class = 'brand-story__color--' | append: block.settings.color -%}
+      {%- case block.type -%}
+        {%- when 'heading' -%}
+          {%- if block.settings.text != blank -%}
+            {%- assign heading_tag = block.settings.tag | default: 'h2' -%}
+            <{{ heading_tag }}
+              class="brand-story__headline brand-story__headline--{{ block.settings.style }} {{ color_class }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text | escape | newline_to_br -}}
+            </{{ heading_tag }}>
+          {%- endif -%}
+
+        {%- when 'text' -%}
+          {%- if block.settings.text != blank -%}
+            <div
+              class="brand-story__text brand-story__text--{{ block.settings.size }} {{ color_class }}"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.text }}
+            </div>
+          {%- endif -%}
+
+        {%- when 'statement' -%}
+          {%- if block.settings.text != blank -%}
+            <div
+              class="brand-story__statement brand-story__statement--{{ block.settings.style }} {{ color_class }}"
+              style="--brand-story-statement-size: {{ block.settings.size }}px;"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.text }}
+            </div>
+          {%- endif -%}
+
+        {%- when 'pillars' -%}
+          {%- assign pillar_lines = block.settings.items | newline_to_br | split: '<br />' -%}
+          <ul
+            class="brand-story__pillars"
+            role="list"
+            {{ block.shopify_attributes }}
+          >
+            {%- for line in pillar_lines -%}
+              {%- assign pillar = line | strip -%}
+              {%- if pillar != blank -%}
+                <li class="brand-story__pillar">{{ pillar | escape }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+
+        {%- when 'divider' -%}
+          <div
+            class="brand-story__divider {{ color_class }}"
+            role="presentation"
+            {{ block.shopify_attributes }}
+          >
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 3 14.5 12 12 21 9.5 12Z"/>
+            </svg>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .brand-story {
+    color: var(--color-foreground);
+  }
+
+  .brand-story__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    width: 100%;
+    max-width: var(--brand-story-width);
+    min-width: 0;
+    margin-inline: auto;
+  }
+
+  .brand-story--center .brand-story__inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-story--left .brand-story__inner {
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  /* Brand colours a block can pick; "default" keeps the section text colour. */
+  .brand-story__color--black {
+    color: var(--brand-story-black);
+  }
+
+  .brand-story__color--maroon {
+    color: var(--brand-story-maroon);
+  }
+
+  .brand-story__color--green {
+    color: var(--brand-story-green);
+  }
+
+  .brand-story__color--gold {
+    color: var(--brand-story-gold);
+  }
+
+  /* !important and the extra class beat the global heading/paragraph font overrides in
+     theme-styles-variables.liquid, so these blocks keep their own fonts. */
+  .brand-story .brand-story__headline,
+  .brand-story .brand-story__text,
+  .brand-story .brand-story__text *,
+  .brand-story .brand-story__pillar {
+    font-family: var(--font-body--family) !important;
+  }
+
+  .brand-story .brand-story__headline--display,
+  .brand-story .brand-story__statement,
+  .brand-story .brand-story__statement * {
+    font-family: var(--brand-story-serif) !important;
+  }
+
+  .brand-story__headline {
+    max-width: 100%;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* Bold titles, as the brand copy asks for. */
+  .brand-story__headline--title {
+    margin-block-start: var(--margin-xl);
+    font-weight: 700;
+    font-size: clamp(1.375rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .brand-story__headline--eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-md);
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 2rem;
+      height: 1px;
+      background-color: currentColor;
+      opacity: var(--opacity-60);
+    }
+  }
+
+  .brand-story--left .brand-story__headline--eyebrow::before {
+    display: none;
+  }
+
+  .brand-story__headline--display {
+    font-weight: var(--brand-story-serif-weight);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+
+    em {
+      font-style: italic;
+      color: var(--brand-story-maroon);
+    }
+  }
+
+  .brand-story__text {
+    max-width: 40rem;
+    line-height: 1.7;
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-block-start: var(--margin-md);
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .brand-story__text.brand-story__color--default {
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-85));
+  }
+
+  .brand-story__text--regular {
+    font-size: 1.125rem;
+  }
+
+  .brand-story__text--lead {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.55;
+  }
+
+  .brand-story__statement {
+    max-width: 44rem;
+    margin-block: var(--margin-md);
+    font-weight: var(--brand-story-serif-weight);
+    font-size: calc(var(--brand-story-statement-size) * 0.75);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--brand-story-statement-size);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-block-start: var(--margin-xs);
+    }
+
+    em {
+      font-style: italic;
+    }
+  }
+
+  .brand-story__statement--italic {
+    font-style: italic;
+  }
+
+  /* Quote style: a coloured rule above the line, centred or at the start. */
+  .brand-story__statement--quote {
+    padding-block-start: var(--padding-lg);
+    background: linear-gradient(currentColor, currentColor) no-repeat top center / 3rem 2px;
+  }
+
+  .brand-story--left .brand-story__statement--quote {
+    background-position: top left;
+  }
+
+  /* Pillars: bold cards with a brand-coloured top rule that cycles green, maroon, black. */
+  .brand-story__pillars {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-md);
+    width: 100%;
+    margin: var(--margin-lg) 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      gap: var(--gap-lg);
+    }
+  }
+
+  .brand-story__pillar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 6rem;
+    padding: var(--padding-lg);
+    border-block-start: 3px solid var(--brand-story-green);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--brand-story-green);
+    overflow-wrap: anywhere;
+
+    &:nth-child(3n + 2) {
+      border-color: var(--brand-story-maroon);
+      color: var(--brand-story-maroon);
+    }
+
+    &:nth-child(3n + 3) {
+      border-color: var(--brand-story-black);
+      color: var(--brand-story-black);
+    }
+  }
+
+  .brand-story__divider {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    width: min(12rem, 60%);
+    margin-block: var(--margin-lg);
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1 1 auto;
+      height: 1px;
+      background-color: currentColor;
+      opacity: var(--opacity-60);
+    }
+
+    svg {
+      flex: 0 0 auto;
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+  }
+
+  .brand-story__divider.brand-story__color--default {
+    color: var(--brand-story-gold);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.brand_story",
+  "class": "brand-story-section",
+  "max_blocks": 50,
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:names.heading",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "t:settings.text",
+          "default": "The Sahi Way."
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "t:settings.style",
+          "options": [
+            {
+              "value": "eyebrow",
+              "label": "t:options.eyebrow"
+            },
+            {
+              "value": "title",
+              "label": "t:options.title"
+            },
+            {
+              "value": "display",
+              "label": "t:options.display"
+            }
+          ],
+          "default": "title"
+        },
+        {
+          "type": "select",
+          "id": "tag",
+          "label": "t:settings.heading_tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:options.h1"
+            },
+            {
+              "value": "h2",
+              "label": "t:options.h2"
+            },
+            {
+              "value": "h3",
+              "label": "t:options.h3"
+            },
+            {
+              "value": "p",
+              "label": "t:options.paragraph"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "select",
+          "id": "color",
+          "label": "t:settings.color",
+          "options": [
+            {
+              "value": "default",
+              "label": "t:options.default"
+            },
+            {
+              "value": "black",
+              "label": "t:options.black"
+            },
+            {
+              "value": "maroon",
+              "label": "t:options.maroon"
+            },
+            {
+              "value": "green",
+              "label": "t:options.green"
+            },
+            {
+              "value": "gold",
+              "label": "t:options.gold"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:names.text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:settings.text",
+          "default": "<p>Share a part of your story.</p>"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "t:settings.size",
+          "options": [
+            {
+              "value": "regular",
+              "label": "t:options.regular"
+            },
+            {
+              "value": "lead",
+              "label": "t:options.large"
+            }
+          ],
+          "default": "regular"
+        },
+        {
+          "type": "select",
+          "id": "color",
+          "label": "t:settings.color",
+          "options": [
+            {
+              "value": "default",
+              "label": "t:options.default"
+            },
+            {
+              "value": "black",
+              "label": "t:options.black"
+            },
+            {
+              "value": "maroon",
+              "label": "t:options.maroon"
+            },
+            {
+              "value": "green",
+              "label": "t:options.green"
+            },
+            {
+              "value": "gold",
+              "label": "t:options.gold"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "name": "t:names.statement",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:settings.text",
+          "default": "<p>A line worth remembering.</p>"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "t:settings.style",
+          "options": [
+            {
+              "value": "plain",
+              "label": "t:options.plain"
+            },
+            {
+              "value": "italic",
+              "label": "t:options.italic"
+            },
+            {
+              "value": "quote",
+              "label": "t:options.quote"
+            }
+          ],
+          "default": "plain"
+        },
+        {
+          "type": "range",
+          "id": "size",
+          "label": "t:settings.size",
+          "min": 20,
+          "max": 64,
+          "step": 2,
+          "unit": "px",
+          "default": 36
+        },
+        {
+          "type": "select",
+          "id": "color",
+          "label": "t:settings.color",
+          "options": [
+            {
+              "value": "default",
+              "label": "t:options.default"
+            },
+            {
+              "value": "black",
+              "label": "t:options.black"
+            },
+            {
+              "value": "maroon",
+              "label": "t:options.maroon"
+            },
+            {
+              "value": "green",
+              "label": "t:options.green"
+            },
+            {
+              "value": "gold",
+              "label": "t:options.gold"
+            }
+          ],
+          "default": "maroon"
+        }
+      ]
+    },
+    {
+      "type": "pillars",
+      "name": "t:names.pillars",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "t:settings.items",
+          "info": "t:info.one_item_per_line",
+          "default": "Simple, organic ingredients.\nTraditional processes.\nHigh standards."
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "t:names.divider",
+      "settings": [
+        {
+          "type": "select",
+          "id": "color",
+          "label": "t:settings.color",
+          "options": [
+            {
+              "value": "default",
+              "label": "t:options.default"
+            },
+            {
+              "value": "black",
+              "label": "t:options.black"
+            },
+            {
+              "value": "maroon",
+              "label": "t:options.maroon"
+            },
+            {
+              "value": "green",
+              "label": "t:options.green"
+            },
+            {
+              "value": "gold",
+              "label": "t:options.gold"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "left",
+          "label": "t:options.left"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "t:settings.width",
+      "min": 30,
+      "max": 70,
+      "step": 2,
+      "unit": "rem",
+      "default": 48
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "t:settings.font",
+      "default": "instrument_serif_n4"
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "{{ settings.color_palette.foreground }}"
+    },
+    {
+      "type": "color",
+      "id": "black_color",
+      "label": "t:options.black",
+      "default": "{{ settings.color_palette.color1 }}"
+    },
+    {
+      "type": "color",
+      "id": "maroon_color",
+      "label": "t:options.maroon",
+      "default": "{{ settings.color_palette.color2 }}"
+    },
+    {
+      "type": "color",
+      "id": "green_color",
+      "label": "t:options.green",
+      "default": "#2e4a2a"
+    },
+    {
+      "type": "color",
+      "id": "gold_color",
+      "label": "t:options.gold",
+      "default": "#a8844f"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.brand_story",
+      "blocks": {
+        "eyebrow": {
+          "type": "heading",
+          "settings": {
+            "text": "About us",
+            "style": "eyebrow",
+            "color": "maroon"
+          }
+        },
+        "title": {
+          "type": "heading",
+          "settings": {
+            "text": "Our story",
+            "style": "display",
+            "color": "default"
+          }
+        },
+        "text": {
+          "type": "text"
+        },
+        "pillars": {
+          "type": "pillars"
+        },
+        "statement": {
+          "type": "statement"
+        }
+      },
+      "block_order": ["eyebrow", "title", "text", "pillars", "statement"]
+    }
+  ]
+}
+{% endschema %}

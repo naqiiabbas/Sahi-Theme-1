@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Marka hikâyesi",
+    "pillars": "Temel değerler",
+    "policy_content": "Politika içeriği",
+    "statement": "İfade",
     "certifications": "Sertifikalar",
     "footer_certification": "Sertifika",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "heading_color": "Başlık rengi",
+    "items": "Öğeler",
+    "marker_color": "Madde imi rengi",
+    "show_table_of_contents": "İçindekileri göster",
     "heading_size": "Başlık boyutu",
     "show_numbers": "Numaraları göster",
     "badge_size_mobile": "Mobilde rozet boyutu",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Müşteri hesabı menüsü"
   },
   "options": {
+    "display": "Gösterişli",
+    "eyebrow": "Üst başlık",
+    "gold": "Altın",
+    "green": "Yeşil",
+    "italic": "İtalik",
+    "maroon": "Bordo",
+    "plain": "Sade",
+    "quote": "Alıntı",
+    "title": "Başlık",
     "menu_bar": "Menü çubuğu",
     "menu_drawer": "Yan çekmece",
     "email": "E-posta",
@@ -1266,6 +1283,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "one_item_per_line": "Her satıra bir öğe.",
+    "policy_table_of_contents": "Ziyaretçilerin atlayabilmesi için sayfa içeriğindeki her 2. düzey başlığı listeler.",
     "footer_illustration": "Şeffaf PNG en iyi sonucu verir. Yerleşik yaprak çizimini göstermek için boş bırakın.",
     "menu_display": "Yan çekmece, mobilde olduğu gibi her ekran boyutunda bir menü düğmesi gösterir.",
     "slide_mobile_image": "750 px altındaki ekranlarda yukarıdaki görselin yerine gösterilir. Önerilen 1290 × 1200 px; ürünü ortalayın. Boşsa yukarıdaki görsel kullanılır.",

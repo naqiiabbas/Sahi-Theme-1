@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "ブランドストーリー",
+    "pillars": "柱",
+    "policy_content": "ポリシー内容",
+    "statement": "ステートメント",
     "certifications": "認証",
     "footer_certification": "認証",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "heading_color": "見出しの色",
+    "items": "項目",
+    "marker_color": "箇条書きの色",
+    "show_table_of_contents": "目次を表示",
     "heading_size": "見出しのサイズ",
     "show_numbers": "番号を表示",
     "badge_size_mobile": "モバイルでのバッジのサイズ",
@@ -736,6 +744,15 @@
     "customer_account_menu": "お客様アカウントメニュー"
   },
   "options": {
+    "display": "ディスプレイ",
+    "eyebrow": "アイブロウ",
+    "gold": "ゴールド",
+    "green": "グリーン",
+    "italic": "斜体",
+    "maroon": "マルーン",
+    "plain": "プレーン",
+    "quote": "引用",
+    "title": "タイトル",
     "menu_bar": "メニューバー",
     "menu_drawer": "サイドドロワー",
     "email": "メール",
@@ -1266,6 +1283,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "one_item_per_line": "1行に1項目。",
+    "policy_table_of_contents": "ページ内容の見出し2をすべて一覧表示し、訪問者がその位置に移動できるようにします。",
     "footer_illustration": "透過PNGが最適です。空欄にすると、組み込みの葉のイラストが表示されます。",
     "menu_display": "サイドドロワーでは、モバイルと同様にすべての画面サイズでメニューボタンを表示します。",
     "slide_mobile_image": "幅750px未満の画面で上の画像の代わりに表示されます。推奨サイズは1290 × 1200px。商品は中央に配置してください。空の場合は上の画像を使用します。",

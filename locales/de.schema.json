@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Markengeschichte",
+    "pillars": "Säulen",
+    "policy_content": "Richtlinieninhalt",
+    "statement": "Aussage",
     "certifications": "Zertifizierungen",
     "footer_certification": "Zertifizierung",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "heading_color": "Überschriftfarbe",
+    "items": "Elemente",
+    "marker_color": "Aufzählungsfarbe",
+    "show_table_of_contents": "Inhaltsverzeichnis anzeigen",
     "heading_size": "Überschriftgröße",
     "show_numbers": "Nummern anzeigen",
     "badge_size_mobile": "Siegelgröße auf Mobilgeräten",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Kundenkontomenü"
   },
   "options": {
+    "display": "Display",
+    "eyebrow": "Dachzeile",
+    "gold": "Gold",
+    "green": "Grün",
+    "italic": "Kursiv",
+    "maroon": "Weinrot",
+    "plain": "Schlicht",
+    "quote": "Zitat",
+    "title": "Titel",
     "menu_bar": "Menüleiste",
     "menu_drawer": "Seitenleiste",
     "email": "E-Mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "one_item_per_line": "Ein Element pro Zeile.",
+    "policy_table_of_contents": "Listet jede Überschrift der Ebene 2 im Seiteninhalt auf, damit Besucher direkt dorthin springen können.",
     "footer_illustration": "Transparente PNG-Dateien eignen sich am besten. Leer lassen, um die integrierte Blattzeichnung anzuzeigen.",
     "menu_display": "Die Seitenleiste zeigt auf allen Bildschirmgrößen eine Menüschaltfläche, wie auf Mobilgeräten.",
     "slide_mobile_image": "Wird auf Bildschirmen unter 750 px statt des Bildes oben angezeigt. Empfohlen 1290 × 1200 px; Produkt mittig platzieren. Leer: Bild oben wird verwendet.",

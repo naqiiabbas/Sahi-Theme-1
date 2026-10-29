@@ -1,0 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "policy": {
+      "type": "policy-content",
+      "settings": {
+        "eyebrow": "SAHI Foods",
+        "show_toc": true,
+        "toc_heading": "On this page",
+        "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "{{ settings.color_palette.foreground }}",
+        "heading_color": "{{ settings.color_palette.color1 }}",
+        "accent_color": "{{ settings.color_palette.color2 }}",
+        "marker_color": "#2e4a2a",
+        "padding-block-start": 64,
+        "padding-block-end": 96
+      }
+    }
+  },
+  "order": [
+    "policy"
+  ]
+}

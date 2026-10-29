@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Historia de la marca",
+    "pillars": "Pilares",
+    "policy_content": "Contenido de la política",
+    "statement": "Declaración",
     "certifications": "Certificaciones",
     "footer_certification": "Certificación",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "heading_color": "Color del encabezado",
+    "items": "Elementos",
+    "marker_color": "Color de las viñetas",
+    "show_table_of_contents": "Mostrar índice",
     "heading_size": "Tamaño del encabezado",
     "show_numbers": "Mostrar números",
     "badge_size_mobile": "Tamaño del sello en móvil",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Menú de la cuenta de cliente"
   },
   "options": {
+    "display": "Destacado",
+    "eyebrow": "Antetítulo",
+    "gold": "Dorado",
+    "green": "Verde",
+    "italic": "Cursiva",
+    "maroon": "Granate",
+    "plain": "Simple",
+    "quote": "Cita",
+    "title": "Título",
     "menu_bar": "Barra de menú",
     "menu_drawer": "Panel lateral",
     "email": "Correo electrónico",
@@ -1266,6 +1283,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "one_item_per_line": "Un elemento por línea.",
+    "policy_table_of_contents": "Muestra cada encabezado de nivel 2 del contenido de la página para que los visitantes puedan ir a él.",
     "footer_illustration": "Funciona mejor un PNG transparente. Déjalo vacío para mostrar el dibujo de hojas integrado.",
     "menu_display": "El panel lateral muestra un botón de menú en todos los tamaños de pantalla, como en móvil.",
     "slide_mobile_image": "Se muestra en pantallas de menos de 750 px en lugar de la imagen superior. Recomendado 1290 × 1200 px; centra el producto. Usa la imagen superior si está vacía.",

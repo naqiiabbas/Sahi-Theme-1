@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Merkverhaal",
+    "pillars": "Pijlers",
+    "policy_content": "Beleidsinhoud",
+    "statement": "Statement",
     "certifications": "Certificeringen",
     "footer_certification": "Certificering",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "heading_color": "Kopkleur",
+    "items": "Items",
+    "marker_color": "Opsommingskleur",
+    "show_table_of_contents": "Inhoudsopgave tonen",
     "heading_size": "Kopgrootte",
     "show_numbers": "Nummers tonen",
     "badge_size_mobile": "Badgegrootte op mobiel",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Klantaccountmenu"
   },
   "options": {
+    "display": "Display",
+    "eyebrow": "Bovenkop",
+    "gold": "Goud",
+    "green": "Groen",
+    "italic": "Cursief",
+    "maroon": "Bordeauxrood",
+    "plain": "Eenvoudig",
+    "quote": "Citaat",
+    "title": "Titel",
     "menu_bar": "Menubalk",
     "menu_drawer": "Zijlade",
     "email": "E-mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "one_item_per_line": "Eén item per regel.",
+    "policy_table_of_contents": "Toont elke kop van niveau 2 in de pagina-inhoud, zodat bezoekers ernaartoe kunnen springen.",
     "footer_illustration": "Een transparante PNG werkt het best. Laat leeg om de ingebouwde bladtekening te tonen.",
     "menu_display": "De zijlade toont op elk schermformaat een menuknop, net als op mobiel.",
     "slide_mobile_image": "Getoond op schermen onder 750 px in plaats van de afbeelding hierboven. Aanbevolen 1290 × 1200 px; zet het product in het midden. Gebruikt de afbeelding hierboven als leeg.",

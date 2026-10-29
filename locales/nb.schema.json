@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Merkevarehistorie",
+    "pillars": "Søyler",
+    "policy_content": "Retningslinjeinnhold",
+    "statement": "Utsagn",
     "certifications": "Sertifiseringer",
     "footer_certification": "Sertifisering",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "heading_color": "Overskriftsfarge",
+    "items": "Elementer",
+    "marker_color": "Punktfarge",
+    "show_table_of_contents": "Vis innholdsfortegnelse",
     "heading_size": "Overskriftsstørrelse",
     "show_numbers": "Vis numre",
     "badge_size_mobile": "Merkestørrelse på mobil",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Kundekontomeny"
   },
   "options": {
+    "display": "Display",
+    "eyebrow": "Overtittel",
+    "gold": "Gull",
+    "green": "Grønn",
+    "italic": "Kursiv",
+    "maroon": "Vinrød",
+    "plain": "Enkel",
+    "quote": "Sitat",
+    "title": "Tittel",
     "menu_bar": "Menylinje",
     "menu_drawer": "Sideskuff",
     "email": "E-post",
@@ -1266,6 +1283,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "one_item_per_line": "Ett element per linje.",
+    "policy_table_of_contents": "Viser alle overskrifter på nivå 2 i sideinnholdet slik at besøkende kan hoppe til dem.",
     "footer_illustration": "Gjennomsiktig PNG fungerer best. La stå tomt for å vise den innebygde bladtegningen.",
     "menu_display": "Sideskuff viser en menyknapp på alle skjermstørrelser, som på mobil.",
     "slide_mobile_image": "Vises på skjermer under 750 px i stedet for bildet ovenfor. Anbefalt 1290 × 1200 px; sentrer produktet. Bruker bildet ovenfor hvis tomt.",

@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Histoire de la marque",
+    "pillars": "Piliers",
+    "policy_content": "Contenu de la politique",
+    "statement": "Déclaration",
     "certifications": "Certifications",
     "footer_certification": "Certification",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "heading_color": "Couleur du titre",
+    "items": "Éléments",
+    "marker_color": "Couleur des puces",
+    "show_table_of_contents": "Afficher la table des matières",
     "heading_size": "Taille du titre",
     "show_numbers": "Afficher les numéros",
     "badge_size_mobile": "Taille du badge sur mobile",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Menu du compte client"
   },
   "options": {
+    "display": "Grand titre",
+    "eyebrow": "Surtitre",
+    "gold": "Or",
+    "green": "Vert",
+    "italic": "Italique",
+    "maroon": "Bordeaux",
+    "plain": "Simple",
+    "quote": "Citation",
+    "title": "Titre",
     "menu_bar": "Barre de menu",
     "menu_drawer": "Tiroir latéral",
     "email": "E-mail",
@@ -1266,6 +1283,8 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "one_item_per_line": "Un élément par ligne.",
+    "policy_table_of_contents": "Répertorie chaque titre de niveau 2 du contenu de la page pour que les visiteurs puissent y accéder.",
     "footer_illustration": "Un PNG transparent fonctionne le mieux. Laissez vide pour afficher le dessin de feuilles intégré.",
     "menu_display": "Le tiroir latéral affiche un bouton de menu sur toutes les tailles d’écran, comme sur mobile.",
     "slide_mobile_image": "Affichée sur les écrans de moins de 750 px à la place de l’image ci-dessus. Recommandé 1290 × 1200 px ; centrez le produit. Utilise l’image ci-dessus si vide.",

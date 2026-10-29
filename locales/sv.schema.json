@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "brand_story": "Varumärkesberättelse",
+    "pillars": "Pelare",
+    "policy_content": "Policyinnehåll",
+    "statement": "Budskap",
     "certifications": "Certifieringar",
     "footer_certification": "Certifiering",
     "seo": "SEO",
@@ -206,6 +210,10 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "heading_color": "Rubrikfärg",
+    "items": "Poster",
+    "marker_color": "Punktfärg",
+    "show_table_of_contents": "Visa innehållsförteckning",
     "heading_size": "Rubrikstorlek",
     "show_numbers": "Visa nummer",
     "badge_size_mobile": "Märkesstorlek på mobil",
@@ -736,6 +744,15 @@
     "customer_account_menu": "Kundkontomeny"
   },
   "options": {
+    "display": "Display",
+    "eyebrow": "Överrubrik",
+    "gold": "Guld",
+    "green": "Grön",
+    "italic": "Kursiv",
+    "maroon": "Vinröd",
+    "plain": "Enkel",
+    "quote": "Citat",
+    "title": "Rubrik",
     "menu_bar": "Menyfält",
     "menu_drawer": "Sidolåda",
     "email": "E-post",
@@ -1266,6 +1283,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "one_item_per_line": "En post per rad.",
+    "policy_table_of_contents": "Listar varje rubrik på nivå 2 i sidans innehåll så att besökare kan hoppa dit.",
     "footer_illustration": "Transparent PNG fungerar bäst. Lämna tomt för att visa den inbyggda bladteckningen.",
     "menu_display": "Sidolådan visar en menyknapp på alla skärmstorlekar, som på mobilen.",
     "slide_mobile_image": "Visas på skärmar under 750 px i stället för bilden ovan. Rekommenderat 1290 × 1200 px; centrera produkten. Använder bilden ovan om tom.",
